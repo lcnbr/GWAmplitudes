@@ -1,0 +1,45 @@
+
+/*-- scss:functions --*/
+@font-face {
+  font-family: 'et-book';
+  font-weight: normal;
+  font-style: normal;
+  
+  src: url('assets/font/et-book-roman-line-figures.eot');
+  src: url('assets/font/et-book-roman-line-figures.eot') format('embedded-opentype'), url('assets/font/et-book-roman-line-figures.woff') format('woff'), url('assets/font/et-book-roman-line-figures.ttf') format('truetype'), url('assets/font/et-book-roman-line-figures.svg') format('svg');
+}
+@font-face {
+  font-family: 'et-book';
+  font-weight: normal;
+  font-style: italic;
+  
+  src: url('assets/font/et-book-display-italic-old-style-figures.eot');
+  src: url('assets/font/et-book-display-italic-old-style-figures.eot') format('embedded-opentype'), url('assets/font/et-book-display-italic-old-style-figures.woff') format('woff'), url('assets/font/et-book-display-italic-old-style-figures.ttf') format('truetype'), url('assets/font/et-book-display-italic-old-style-figures.svg') format('svg');
+}
+@font-face {
+  font-family: 'et-book';
+  font-weight: bold;
+  font-style: normal;
+  
+  src: url('assets/font/et-book-bold-line-figures.eot');
+  src: url('assets/font/et-book-bold-line-figures.eot') format('embedded-opentype'), url('assets/font/et-book-bold-line-figures.woff') format('woff'), url('assets/font/et-book-bold-line-figures.ttf') format('truetype'), url('assets/font/et-book-bold-line-figures.svg') format('svg');
+}
+@font-face {
+  font-family: 'et-book-roman-old-style';
+  font-weight: normal;
+  font-style: normal;
+  
+  src: url('assets/font/et-book-roman-old-style-figures.eot');
+  src: url('assets/font/et-book-roman-old-style-figures.eot') format('embedded-opentype'), url('assets/font/et-book-roman-old-style-figures.woff') format('woff'), url('assets/font/et-book-roman-old-style-figures.ttf') format('truetype'), url('assets/font/et-book-roman-old-style-figures.svg') format('svg');
+}
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "et-book", "et-book-roman-old-style", Georgia, "Times New Roman", Times, serif !default;
+$font-size-root: 16px !default;
+/*-- scss:rules --*/
+body {
+  font-family: $font-family-serif;
+  font-size: $font-size-root;
+  color: #111;
+}

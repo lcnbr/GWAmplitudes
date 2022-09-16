@@ -1,0 +1,1 @@
+{"rule":"PASSIVE_VOICE","sentence":"^\\QThese faint signals are often buried in the noise of the detector.\\E$"}

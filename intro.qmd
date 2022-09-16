@@ -1,0 +1,23 @@
+---
+
+---
+
+
+
+
+
+# Introduction
+
+The detection of gravitational waves by the \acr{ligo}  and Virgo collaborations in 2016 [-@LIGOScientific:2016aoc] has sparked a new era of gravitational wave astronomy. The first detections were of \acr{bbh} mergers. More recently, \acr{bns}  mergers [-@LIGOScientific:2017vwq]  as well as \acr{ns}-\acr{bh} mergers have been detected [-@LIGOScientific:2021qlt]. Future detectors will further increase sensitivity and will be able to detect a wide range of astrophysical sources. Studying these gravitational waves signals gives us a very powerful new window into the universe.  It allows us to study the properties of neutron stars and black holes, and the physics of compact object mergers, but also gives us a powerful testing apparatus for general relativity.
+
+To detect these faint signals \acr{ligo} and Virgo, have been made to be extraordinarily precise instruments. Thus, they demand correspondingly precise theoretical predictions and models. This is not just for comparison’s sake, but for detection as well. These faint signals are often buried in the noise of the detector. To counteract this experimental physicists make use of a matched filtering approach, where they try to match the signal to a template. The template is a model of the signal ideally provided by theoretical physicists based on physical theories. The more precise the template, the higher the signal-to-noise ratio, the more probable and precise the detection.
+
+In this thesis we will explore the theoretical landscape surrounding the generation of these templates.  We will focus on a nascent subfield where tools originally used for \acr{qft} and particle physics are being applied to the study of gravitational waves. Specifically we are interested in the diagrammatic objects that arise when framing the two body problem similarly to particle collisions. We will explain where these tools shine in the broader context of waveform approaches such as \acr{eob}, \acr{nrgr}, \acr{pm} and \acr{pn} approximations. We will also discuss the challenges that lie ahead in the field. 
+
+
+
+\let\oldsigma\sigma
+\renewcommand{\sigma}{{\mathtip{\href{index.html}{\oldsigma}}{\int\sin\d(x)}}}
+
+
+

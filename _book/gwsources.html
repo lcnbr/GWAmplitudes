@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Graviational Waves from Feynman Diagrams - 2&nbsp; Gravitational Wave Sources and Detection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./gwwfframeworks.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gravitational Wave Sources and Detection</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Graviational Waves from Feynman Diagrams</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/lcnhb/GWAmplitudes" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Graviational-Waves-from-Feynman-Diagrams.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Graviational-Waves-from-Feynman-Diagrams.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gwsources.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gravitational Wave Sources and Detection</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gwwfframeworks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Full Waveform Generation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inspiralframeworks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inspiral phase</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#gravitational-waves" id="toc-gravitational-waves" class="nav-link active" data-scroll-target="#gravitational-waves"><span class="toc-section-number">2.1</span>  Gravitational Waves</a></li>
+  <li><a href="#homogenous-solution" id="toc-homogenous-solution" class="nav-link" data-scroll-target="#homogenous-solution"><span class="toc-section-number">3</span>  Homogenous solution</a>
+  <ul class="collapse">
+  <li><a href="#gravitational-wave-sources" id="toc-gravitational-wave-sources" class="nav-link" data-scroll-target="#gravitational-wave-sources"><span class="toc-section-number">3.1</span>  Gravitational Wave Sources</a>
+  <ul class="collapse">
+  <li><a href="#binaries" id="toc-binaries" class="nav-link" data-scroll-target="#binaries"><span class="toc-section-number">3.1.1</span>  Black Hole (<abbr title="Black Hole">BH</abbr>) Binaries</a></li>
+  <li><a href="#binaries-1" id="toc-binaries-1" class="nav-link" data-scroll-target="#binaries-1"><span class="toc-section-number">3.1.2</span>  Neutron Star (<abbr title="Neutron Star">NS</abbr>) Binaries</a></li>
+  <li><a href="#exotic-sources" id="toc-exotic-sources" class="nav-link" data-scroll-target="#exotic-sources"><span class="toc-section-number">3.1.3</span>  Exotic Sources</a></li>
+  </ul></li>
+  <li><a href="#gravitational-wave-detection" id="toc-gravitational-wave-detection" class="nav-link" data-scroll-target="#gravitational-wave-detection"><span class="toc-section-number">3.2</span>  Gravitational Wave Detection</a>
+  <ul class="collapse">
+  <li><a href="#laser-interferometers" id="toc-laser-interferometers" class="nav-link" data-scroll-target="#laser-interferometers"><span class="toc-section-number">3.2.1</span>  Laser interferometers</a></li>
+  <li><a href="#pulsar-timing-arrays" id="toc-pulsar-timing-arrays" class="nav-link" data-scroll-target="#pulsar-timing-arrays"><span class="toc-section-number">3.2.2</span>  Pulsar Timing Arrays</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lcnhb/GWAmplitudes/edit/main/gwsources.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gravitational Wave Sources and Detection</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>First let us look at where and how gravitional waves are generated. We will look at how General Relativity (<abbr title="General Relativity">GR</abbr>) predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.</p>
+<section id="gravitational-waves" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="gravitational-waves"><span class="header-section-number">2.1</span> Gravitational Waves</h2>
+<p>Einstein’s field equations,</p>
+<p><span id="eq-EFE"><span class="math display">\[
+\boxed{\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}-\frac{\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}{2} \texttip{R}{Ricci scalar}+\texttip{\Lambda}{cosmological constant}\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}=-8 \pi \texttip{G}{gravitational constant}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}}
+\tag{2.1}\]</span></span> or, equivalently, eliminating the Ricci scalar,</p>
+<p><span id="eq-EFEwoR"><span class="math display">\[
+\boxed{\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}=-8 \pi G\left(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\frac{\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}{2}\right)+\texttip{\Lambda}{cosmological constant}\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}
+\tag{2.2}\]</span></span></p>
+<p>with <span class="math inline">\(\texttip{\Lambda}{cosmological constant}=0\)</span> admit wave solutions. We can see this by looking at these equations in the weak field approximation. Namely, we take the metric to be a Minkowskian background and a small perturbation</p>
+<p><span id="eq-WeakFA"><span class="math display">\[
+    \texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}= \texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}+ \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component},
+\tag{2.3}\]</span></span></p>
+<p>with <span class="math inline">\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)</span> small. The Ricci tensor in this approximation is <span id="eq-Ricciweak"><span class="math display">\[
+\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}= \frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\rho}}{contravariant Minkoski metric components +---}}{2}\left[ \texttip{\texttip{h}{weak metric tensor}_{\rho\alpha}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative} + \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\rho\alpha}}{Partial derivative} - \texttip{\texttip{h}{weak metric tensor}_{\mu\alpha}}{weak covariant metric tensor component}\texttip{{}_{,\rho\nu}}{Partial derivative} - \texttip{\texttip{h}{weak metric tensor}_{\nu\rho}}{weak covariant metric tensor component}\texttip{{}_{,\mu\alpha}}{Partial derivative} \right] + \mathcal{O}(h^2)=\texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}+ \mathcal{O}(h^2)
+\tag{2.4}\]</span></span></p>
+<p>To fix the ambiguity of choosing a coordinate system (‘gauge’), we impose the harmonic coordinate conditions, given by</p>
+<p><span class="math display">\[
+   \texttip{\texttip{g}{metric tensor}^{\alpha\beta}}{contravariant metric tensor component}\mathtip{\Gamma^{\mu}_{\phantom{\mu}\alpha\beta}}{\text{Levi-Civita Connection: }\Gamma^{\mu}_{\phantom{\mu}\alpha\beta}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\mu \rho}}{contravariant metric tensor component}
+\Big[
+    \texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+    +\texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    -\texttip{\texttip{g}{metric tensor}_{\alpha \mu}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+} =0
+\]</span></p>
+<div class="page-columns page-full"><p>Demanding the vanishing of the affine connection. Now we can impose the weak field approximation on the harmonic coordinate conditions (<a href="#eq-WeakFA"><span>2.3</span></a>), and we get pluggin in the affine connection in the weak field approximation <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The affine connection is given by<br>
+<span class="math display">\[\mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+\Big[
+    \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+    -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+\Big[
+\texttip{\texttip{g}{metric tensor}_{\rho \nu}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
++ \texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\nu}}{Partial derivative}
+- \texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+\]</span> and in the weak approximation <a href="#eq-WeakFA"><span>2.3</span></a> we have <span class="math display">\[\mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+\Big[
+    \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+    -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+} \approx \frac{1}{2} \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha \rho}}{contravariant Minkoski metric components +---}
+\Big[
+\texttip{\texttip{h}{weak metric tensor}_{\rho \nu}}{weak covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
++ \texttip{\texttip{h}{weak metric tensor}_{\rho \mu}}{weak covariant metric tensor component}\texttip{{}_{,\nu}}{Partial derivative}
+- \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]\]</span></p></li></div></div>
+<p><span class="math display">\[
+\begin{split}
+    (\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}+\texttip{\texttip{h}{weak metric tensor}^{\alpha\beta}}{weak contravariant metric tensor component})\frac{1}{2}(\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\rho}}{contravariant Minkoski metric components +---}+\texttip{\texttip{h}{weak metric tensor}^{\mu\rho}}{weak contravariant metric tensor component})\left[\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}+\texttip{\texttip{h}{weak metric tensor}_{\beta\rho}}{weak covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}-\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\right] &amp;= 0 \\
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\rho}}{contravariant Minkoski metric components +---}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\left[2\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}-\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\right]+ \mathcal{O}(h^2)&amp;= 0 \\
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative} &amp;= \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---} + \mathcal{O}(h^2).
+\end{split}
+\]</span> Thus <span class="math display">\[
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\mu}}{weak covariant metric tensor component}\texttip{{}_{,\nu\beta}}{Partial derivative} \approx \frac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative},
+\]</span> and <span class="math display">\[
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\beta\nu}}{weak covariant metric tensor component}\texttip{{}_{,\mu\alpha}}{Partial derivative} \approx \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative}.
+\]</span> With these two relations the expression for the linearized Ricci tensor <a href="#eq-Ricciweak"><span>2.4</span></a> simplifies to <span class="math display">\[
+    \texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}= \frac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\alpha\beta}}{Partial derivative} = \frac{1}{2}\Box_{SR} \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}.
+\]</span> For a system of harmonic coordinates, Einstein’s linearized equations become</p>
+<p><span id="eq-linearized"><span class="math display">\[
+\begin{aligned}
+    \square_{SR} \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}&amp;= -16\pi \texttip{G}{gravitational constant}\overbracket{(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\frac{\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace})}^{S_{\mu \nu}}  \\
+    h^{\alpha}_{\phantom{\alpha}\mu}\texttip{{}_{,\alpha}}{Partial derivative}&amp;=\frac{1}{2}h^{\alpha}_{\phantom{\alpha}\alpha}\texttip{{}_{,\mu}}{Partial derivative}.
+\end{aligned}
+\tag{2.5}\]</span></span></p>
+<p>Where raising and lowering indices has been done with the Minkowski metric. We can now see what sort of solutions come out of these equations.</p>
+<p>The first equation in <a href="#eq-linearized"><span>2.5</span></a> can be solved in a similar way to electrodynamics in the lorenz gauge. If we define the following retarded Green’s function <span class="math display">\[
+    \texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function} = -2\pi\,\texttip{\delta\left((x-x^\prime)^2\right)}{Dirac delta function}\texttip{\Theta\left(x^0&gt;x^{\prime 0}\right)}{Heaviside step function},
+\]</span> which satisfies</p>
+<p><span class="math display">\[
+    \Box_x\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function} = \texttip{\delta\left(x-x^\prime\right)}{Dirac delta function}.
+\]</span></p>
+<p>Then, the solution to</p>
+<p><span id="eq-EFEwave"><span class="math display">\[
+\Box_{SR} \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}=  -16 \pi \texttip{G}{gravitational constant}S_{\mu\nu}
+\tag{2.6}\]</span></span></p>
+<p>is given by:<span class="math inline">\(\mathrm{d}\)</span></p>
+<p><span id="eq-hsolInhom"><span class="math display">\[
+    \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(x) = 8G\int\,\mathrm{d}^{4}x^\prime\,\,\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function}S_{\mu\nu}(x^\prime),
+\tag{2.7}\]</span></span></p>
+<p>since when we plug in <a href="#eq-hsolInhom"><span>2.7</span></a> into <a href="#eq-EFEwave"><span>2.6</span></a> <span class="math display">\[
+    \Box_x\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= 8G\int\,\mathrm{d}^{4}x^\prime\,\,\big(\underbrace{\Box_x\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function}}_{=-2\pi\,\delta(x-x^\prime)}\big) S_{\mu\nu}(x^\prime) = -16\pi GS_{\mu\nu}(x).
+\]</span> Performing the <span class="math inline">\(x^{\prime0}\)</span> integration in <a href="#eq-hsolInhom"><span>2.7</span></a>, we have <span class="math display">\[
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(x) = 8G\int\,\mathrm{d}^{3}x^\prime\,\,S_{\mu\nu}(\vec{x}^{\,\prime},t)\,\mathrm{d}^{}t^\prime\,\frac{\delta(t\prime-(t-|x-\vec{x}^{\,\prime}|))}{2|x-\vec{x}^{\,\prime}|}
+\]</span></p>
+<p><span id="eq-solInhomt"><span class="math display">\[
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(\vec{x},t) = 4G\int\,\mathrm{d}^{3}x\,\,\frac{S_{\mu\nu}(\vec{x}^{\,\prime},t-|\vec{x}-\vec{x}^{\,\prime}|)}{|\vec{x}-\vec{x}^{\,\prime}|}.
+\tag{2.8}\]</span></span></p>
+<p>The retarded solution above satisfies the harmonic coordinate condition of <a href="#eq-linearized"><span>2.5</span></a>. Indeed, we have</p>
+<p><span class="math display">\[
+    \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{;\mu}}{Covariant derivative}=0\ \Rightarrow\ \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{,\mu}}{Partial derivative}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{,\mu}}{Partial derivative}=0,
+\]</span></p>
+<p>ignoring non-linearities. Then,</p>
+<p><span class="math display">\[
+    S^{\mu\nu}\texttip{{}_{,\mu}}{Partial derivative} = \partial_\mu\left(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\right) = -\frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\texttip{{}_{,\mu}}{Partial derivative}.
+\]</span></p>
+<p>Also</p>
+<p><span class="math display">\[
+    S^{\mu}_{\phantom{\mu}\mu} = \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\mu}{}_{\mu}}{Stress-Energy tensor trace} -\frac{\delta^{\mu}_{\phantom{\mu}\mu}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}= -\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}.
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+\begin{split}
+    S^{\mu\nu}\texttip{{}_{,\mu}}{Partial derivative} &amp;= \frac{1}{2}S^{\alpha}_{\phantom{\alpha}\alpha}\texttip{{}_{,\mu}}{Partial derivative}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---} \\
+    S^{\mu}_{\phantom{\mu}\nu}\texttip{{}_{,\mu}}{Partial derivative} &amp;= \frac{1}{2}S^{\alpha}_{\phantom{\alpha}\alpha}\texttip{{}_{,\nu}}{Partial derivative}.
+\end{split}
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+\begin{split}
+    \texttip{\texttip{h}{weak metric tensor}_\mu{}^\nu}{weak mixed metric tensor component}\texttip{{}_{,\mu}}{Partial derivative} &amp;= 8\texttip{G}{gravitational constant}\frac{\partial}{\partial x^\mu} \int\,\mathrm{d}^{4}x^\prime\, \texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function} S^{\mu}_{\phantom{\mu}\nu} (x^\prime) \\
+&amp;= 8\texttip{G}{gravitational constant}\int\,\mathrm{d}^{4}x^\prime\,\,\frac{\partial\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function}}{\partial x^\mu} S^{\mu}_{\phantom{\mu}\nu}(x^\prime) \\
+    &amp;= -8\texttip{G}{gravitational constant}\int\,\mathrm{d}^{4}x^\prime\,\frac{\partial\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function}}{\partial x^{\prime\mu}}S^{\mu}_{\phantom{\mu}\nu}(x^\prime) \\
+    &amp;= \underbrace{8G\texttip{\mathcal{G}_{\mathrm{ret}}\left(x-x^\prime\right)}{ret Green's function}\delta^{\mu}_{\phantom{\mu}\nu}(x^\prime)}_{=0\ \mathrm{for}\ x=x^\prime} + 8G\int\,\mathrm{d}^{4}x^\prime\,\,G_{\mathrm{ret}}S^{\mu}_{\phantom{\mu}\nu}(x^\prime)\texttip{{}_{,{\prime\mu}}}{Partial derivative} \\
+\end{split}
+\]</span></p>
+</section>
+<section id="homogenous-solution" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Homogenous solution</h1>
+<p>The general solution consists of the solution of [[#^hsolInhom]] and the solution of the homogeneous equation (compare to [[#^linEq]])</p>
+<p>$$</p>
+<pre><code>R^{(1)}{}_{\mu \nu}=0\iff\Box \weakmet = 0 </code></pre>
+<p>$$</p>
+<p>^hSolHom</p>
+<p>$$ <em>h = </em>h.</p>
+<p>$$</p>
+<p>^HarmCond</p>
+<p>The above can be solved as plane waves. The metric <span class="math inline">\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)</span> ought to be real-valued, thus we seek real solutions of the form</p>
+<p><span class="math display">\[
+    \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= \varepsilon_{\mu\nu}e^{{\mathring{\imath}}k\cdot x} + \varepsilon^\ast_{\mu\nu}e^{-{\mathring{\imath}}k\cdot x},
+\]</span></p>
+<p><span class="math inline">\(\ind^{tset}\)</span></p>
+<p>where <span class="math display">\[
+    k\cdot x\equiv\minkk^\mu k^\nu = k_\mu x^\mu.
+\]</span> Substituting into <span class="math inline">\(\Box \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}=0\)</span> gives <span class="math inline">\(k_\mu k^\mu\equiv k^2=0\)</span>. From <span class="math display">\[
+    h^{\mu}_{\phantom{\mu}\nu}\texttip{{}_{,\mu}}{Partial derivative} = \frac{1}{2}h^{\mu}_{\phantom{\mu}\mu}\texttip{{}_{,\nu}}{Partial derivative},
+\]</span> we have</p>
+<p>$$ k_= k_.</p>
+<p>$$</p>
+<section id="gravitational-wave-sources" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="gravitational-wave-sources"><span class="header-section-number">3.1</span> Gravitational Wave Sources</h2>
+<p>\def_st{test}</p>
+<p><span class="math inline">\(_st\)</span></p>
+<p><span class="math inline">\(x\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}_{\mu\nu}\texttip{{}_{,\alpha}}{Partial derivative}\)</span></p>
+<section id="binaries" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="binaries"><span class="header-section-number">3.1.1</span> Black Hole (<abbr title="Black Hole">BH</abbr>) Binaries</h3>
+</section>
+<section id="binaries-1" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="binaries-1"><span class="header-section-number">3.1.2</span> Neutron Star (<abbr title="Neutron Star">NS</abbr>) Binaries</h3>
+</section>
+<section id="exotic-sources" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="exotic-sources"><span class="header-section-number">3.1.3</span> Exotic Sources</h3>
+</section>
+</section>
+<section id="gravitational-wave-detection" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="gravitational-wave-detection"><span class="header-section-number">3.2</span> Gravitational Wave Detection</h2>
+<section id="laser-interferometers" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="laser-interferometers"><span class="header-section-number">3.2.1</span> Laser interferometers</h3>
+<section id="section" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">3.2.1.1</span> Laser Interferometer Gravitational-Wave Observatory (<abbr title="Laser Interferometer Gravitational-Wave Observatory">LIGO</abbr>)</h4>
+</section>
+<section id="section-1" class="level4" data-number="3.2.1.2">
+<h4 data-number="3.2.1.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">3.2.1.2</span> Laser Interferometer Space Antenna (<abbr title="Laser Interferometer Space Antenna">LISA</abbr>)</h4>
+</section>
+</section>
+<section id="pulsar-timing-arrays" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="pulsar-timing-arrays"><span class="header-section-number">3.2.2</span> Pulsar Timing Arrays</h3>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./gwwfframeworks.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Full Waveform Generation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include _latexmacros.qmd &gt;}}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># Gravitational Wave Sources and Detection</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>First let us look at where and how gravitional waves are generated. We will look at how \acr{gr} predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gravitational Waves</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Einstein's field equations,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>\boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \G \SEco}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>$${#eq-EFE}</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>or, equivalently, eliminating the Ricci scalar,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>\boxed{\RicciTco=-8 \pi G\left(\SEco-\trSE \frac{\met}{2}\right)+\cosmo \met} </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>$${#eq-EFEwoR}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>with $\cosmo=0$ admit wave solutions. We can see this by looking at these equations in the weak field approximation. Namely, we take the metric to be a Minkowskian background and a small perturbation</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    \met = \mink + \weakmet,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>$${#eq-WeakFA}</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>with $\weakmet$ small. The Ricci tensor in this approximation is</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>$$ </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>\RicciTco  = \frac{\invmink<span class="co">[</span><span class="ot">\alpha\rho</span><span class="co">]</span>}{2}\left<span class="co">[</span><span class="ot"> \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right</span><span class="co">]</span> + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>$${#eq-Ricciweak}</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>To fix the ambiguity of choosing a coordinate system ('gauge'), we impose the harmonic coordinate conditions, given by </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>$$ </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>   \invmet<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\LC{\mu}{\alpha}{\beta} =0</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>Demanding the vanishing of the affine connection. Now we can impose the weak field approximation on the harmonic coordinate conditions (@eq-WeakFA), and we get pluggin in the affine connection in the weak field approximation <span class="ot">[^weakaffine]</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>\begin{split}</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    (\invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>+\weakinvmet<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>)\frac{1}{2}(\invmink<span class="co">[</span><span class="ot">\mu\rho</span><span class="co">]</span>+\weakinvmet<span class="co">[</span><span class="ot">\mu\rho</span><span class="co">]</span>)\left<span class="co">[</span><span class="ot">\ipdv{\weakmet[\alpha\rho]}{\beta}+\ipdv{\weakmet[\beta\rho]}{\alpha}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right</span><span class="co">]</span> &amp;= 0 <span class="sc">\\</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    \invmink<span class="co">[</span><span class="ot">\mu\rho</span><span class="co">]</span>\invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\left<span class="co">[</span><span class="ot">2\ipdv{\weakmet[\alpha\rho]}{\beta}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right</span><span class="co">]</span>+ \mathcal{O}(h^2)&amp;= 0 <span class="sc">\\</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    \invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\ipdv{\weakmet<span class="co">[</span><span class="ot">\alpha\rho</span><span class="co">]</span>}{\beta} &amp;= \frac{1}{2}\ipdv{\weakmet<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>}{\rho}\invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span> + \mathcal{O}(h^2).</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>\end{split}</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>Thus</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    \invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\ipdv{\weakmet<span class="co">[</span><span class="ot">\alpha\mu</span><span class="co">]</span>}{\nu\beta} \approx \frac{1}{2}\invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\ipdv{\weakmet<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>}{\mu\nu},</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>and</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    \invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\ipdv{\weakmet<span class="co">[</span><span class="ot">\beta\nu</span><span class="co">]</span>}{\mu\alpha} \approx \frac{1}{2}\ipdv{\weakmet<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>}{\mu\nu}.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>With these two relations the expression for the linearized Ricci tensor @eq-Ricciweak simplifies to</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    \linRicciTco = \frac{1}{2}\invmink<span class="co">[</span><span class="ot">\alpha\beta</span><span class="co">]</span>\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\Box_{SR} \weakmet.</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>For a system of harmonic coordinates, Einstein's linearized equations become</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    \square_{SR} \weakmet &amp;= -16\pi \G \overbracket{(\SEco-\frac{\met}{2}\trSE)}^{S_{\mu \nu}}  <span class="sc">\\</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    \ipdv{h\ind{\alpha}{\mu}}{\alpha}&amp;=\frac{1}{2}\ipdv{h\ind{\alpha}{\alpha}}{\mu}. </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>$${#eq-linearized}</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>Where raising and lowering indices has been done with the Minkowski metric. We can now see what sort of solutions come out of these equations.</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>The first equation  in @eq-linearized can be solved in a similar way to electrodynamics in the lorenz gauge. If we define the following retarded Green's function</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    \greens{x-x^\prime} = -2\pi\,\deltafn{(x-x^\prime)^2}\thetafn{x^0&gt;x^{\prime0}},</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>which satisfies</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    \Box_x\greens{x-x^\prime} = \deltafn{x-x^\prime}.</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>Then, the solution to </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a> \Box_{SR} \weakmet =  -16 \pi \G S_{\mu\nu}</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>$${#eq-EFEwave}</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>is given by:$\differential$</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    \weakmet(x) = 8G\int\dd<span class="co">[</span><span class="ot">4</span><span class="co">]</span>{x^\prime}\,\greens{x-x^\prime}S_{\mu\nu}(x^\prime),</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>$${#eq-hsolInhom}</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>since when we plug in @eq-hsolInhom into @eq-EFEwave</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    \Box_x\weakmet = 8G\int\dd<span class="co">[</span><span class="ot">4</span><span class="co">]</span>{x^\prime}\,\big(\underbrace{\Box_x\greens{x-x^\prime}}_{=-2\pi\,\delta(x-x^\prime)}\big) S_{\mu\nu}(x^\prime) = -16\pi GS_{\mu\nu}(x).</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>Performing the $x^{\prime0}$ integration in @eq-hsolInhom, we have</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>\weakmet(x) = 8G\int\dd<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{x^\prime}\,S_{\mu\nu}(\x^{\,\prime},t)\dd{t^\prime}\frac{\delta(t\prime-(t-|x-\x^{\,\prime}|))}{2|x-\x^{\,\prime}|} </span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>\weakmet(\x,t) = 4G\int\dd<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{x}\,\frac{S_{\mu\nu}(\x^{\,\prime},t-|\x-\x^{\,\prime}|)}{|\x-\x^{\,\prime}|}.</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>$${#eq-solInhomt}</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>The retarded solution above satisfies the harmonic coordinate condition of @eq-linearized. Indeed, we have</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    \covd{\SEco}{\mu}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}=0,</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>ignoring non-linearities. Then, </span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    \ipdv{S^{\mu\nu}}{\mu} = \partial_\mu\left(\SEco-\frac{\invmink<span class="co">[</span><span class="ot">\mu\nu</span><span class="co">]</span>}{2}\trSE\right) = -\frac{\invmink<span class="co">[</span><span class="ot">\mu\nu</span><span class="co">]</span>}{2}\ipdv{\trSE}{\mu}.</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>Also</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    S\ind{\mu}{\mu} = \trSE<span class="co">[</span><span class="ot">\mu</span><span class="co">]</span> -\frac{\delta\ind{\mu}{\mu}}{2}\trSE = -\trSE.</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Thus</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>\begin{split}</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>    \ipdv{S^{\mu\nu}}{\mu} &amp;= \frac{1}{2}\ipdv{S\ind{\alpha}{\alpha}}{\mu}\invmink<span class="co">[</span><span class="ot">\mu\nu</span><span class="co">]</span> <span class="sc">\\</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>    \ipdv{S\ind{\mu}{\nu}}{\mu} &amp;= \frac{1}{2}\ipdv{S\ind{\alpha}{\alpha}}{\nu}.</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>\end{split}</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>Then</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>\begin{split}</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    \ipdv{\weakmixmet}{\mu} &amp;= 8\G\pdv{}{x^\mu} \int\dd<span class="co">[</span><span class="ot">4</span><span class="co">]</span>{x^\prime} \greens{x-x^\prime} S\ind{\mu}{\nu} (x^\prime) <span class="sc">\\</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>&amp;= 8\G\int\dd<span class="co">[</span><span class="ot">4</span><span class="co">]</span>{x^\prime}\,\pdv{\greens{x-x^\prime}}{x^\mu} S\ind{\mu}{\nu}(x^\prime) <span class="sc">\\</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    &amp;= -8\G\int\dd<span class="co">[</span><span class="ot">4</span><span class="co">]</span>{x^\prime}\pdv{\greens{x-x^\prime}}{x^{\prime\mu}}S\ind{\mu}{\nu}(x^\prime) <span class="sc">\\</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    &amp;= \underbrace{8G\greens{x-x^\prime}\delta\ind{\mu}{\nu}(x^\prime)}_{=0\ \mathrm{for}\ x=x^\prime} + 8G\int\dd[4]{x^\prime}\,G_{\mathrm{ret}}\ipdv{S\ind{\mu}{\nu}(x^\prime)}{{\prime\mu}} <span class="sc">\\</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>\end{split}</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="fu"># Homogenous solution</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>The general solution consists of the solution of [<span class="co">[</span><span class="ot">#^hsolInhom</span><span class="co">]</span>] and the solution of the homogeneous equation (compare to [<span class="co">[</span><span class="ot">#^linEq</span><span class="co">]</span>])</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="in">    R^{(1)}{}_{\mu \nu}=0\iff\Box \weakmet = 0 </span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>^hSolHom</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>    \partial_\mu h\ind{\mu}{\nu} = \frac{1}{2}\partial_\nu h\ind{\mu}{\mu}.</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>^HarmCond</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>The above can be solved as plane waves. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    \weakmet = \varepsilon_{\mu\nu}e^{\im k\cdot x} + \varepsilon^\ast_{\mu\nu}e^{-\im k\cdot x},</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>$\ind^{tset}$</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>where </span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>    k\cdot x\equiv\minkk^\mu k^\nu = k_\mu x^\mu.</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>Substituting into $\Box \weakmet=0$ gives $k_\mu k^\mu\equiv k^2=0$. From</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>    \ipdv{h\ind{\mu}{\nu}}{\mu} = \frac{1}{2}\ipdv{h\ind{\mu}{\mu}}{\nu},</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>we have</span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>    \varepsilon\ind{\mu}{\nu}k_\mu = \frac{1}{2}\varepsilon\ind{\mu}{\mu}k_\nu.</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gravitational Wave Sources</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>\def_st{test}</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>$_st$</span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>$x\ipdv{\mink_{\mu\nu}}{\alpha}$</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### \acr{bh} Binaries</span></span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="fu">### \acr{ns} Binaries</span></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exotic Sources  </span></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gravitational Wave Detection</span></span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### Laser interferometers</span></span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="fu">#### \acr{ligo}</span></span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a><span class="fu">#### \acr{lisa}</span></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pulsar Timing Arrays</span></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a><span class="ot">[^weakaffine]: </span>The affine connection is given by  </span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a>$$\LC{\alpha}{\mu}{\nu}=</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>\frac{1}{2} \invmet<span class="co">[</span><span class="ot">\alpha \rho</span><span class="co">]</span></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a>\brk<span class="co">[</span><span class="ot">\Big</span><span class="co">]</span>{</span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>    \ipdv{ \met<span class="co">[</span><span class="ot">\rho \nu</span><span class="co">]</span>}{\mu}</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>    +\ipdv{ \met<span class="co">[</span><span class="ot">\rho \mu</span><span class="co">]</span>}{\nu}</span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>    -\ipdv{ \met}{\rho}}</span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>$$ </span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a>  and in the weak approximation @eq-WeakFA we have </span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a>$$\LC{\alpha}{\mu}{\nu} \approx \frac{1}{2} \invmink<span class="co">[</span><span class="ot">\alpha \rho</span><span class="co">]</span></span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>\brk<span class="co">[</span><span class="ot">\Big</span><span class="co">]</span>{</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a>    \ipdv{ \weakmet<span class="co">[</span><span class="ot">\rho \nu</span><span class="co">]</span>}{\mu}</span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>    +\ipdv{ \weakmet<span class="co">[</span><span class="ot">\rho \mu</span><span class="co">]</span>}{\nu}</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a>    -\ipdv{ \weakmet}{\rho}}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

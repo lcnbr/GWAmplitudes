@@ -1,0 +1,111 @@
+project:
+  type: book
+
+book:
+  title: "Graviational Waves from Feynman Diagrams"
+  author: "Lucien Huber"
+  date: "9/13/2022"
+  search: true
+  repo-url: https://github.com/lcnhb/GWAmplitudes
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - gwsources.qmd
+    - gwwfframeworks.qmd
+    - inspiralframeworks.qmd
+    - summary.qmd
+    - references.qmd
+crossref:
+  fig-title: Fig     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  eq-title: Eqn     # (default is "Equation")
+  eq-prefix: " "
+comments:
+  hypothesis: true
+
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+
+
+
+
+filters: 
+  - assets/lua/parse_acronyms.lua
+acronyms:
+  style: long-short
+  insert_loa: false
+  insert_links: false
+  keys:
+    - shortname: Rmd
+      longname: Rmarkdown document
+    - key: yaml
+      shortname: YAML
+      longname: YAML Ain't Markup Language
+    - key: ligo
+      shortname: LIGO
+      longname: Laser Interferometer Gravitational-Wave Observatory
+    - key: gw
+      shortname: GW
+      longname: Gravitational Wave
+    - key: bh
+      shortname: BH
+      longname: Black Hole
+    - key: ns
+      shortname: NS
+      longname: Neutron Star
+    - key: bbh
+      shortname: BBH
+      longname: Binary Black Hole
+    - key: bns
+      shortname: BNS
+      longname: Binary Neutron Star
+    - key: eob
+      shortname: EOB
+      longname: Effective One-Body
+    - key: pm
+      shortname: PM
+      longname: Post-Minkowski
+    - key: pn
+      shortname: PN
+      longname: Post-Newtonian
+    - key: gr
+      shortname: GR
+      longname: General Relativity
+    - key: nr
+      shortname: NR
+      longname: Numerical Relativity
+    - key: nrgr
+      shortname: NRGR
+      longname: Nonrelativistic General Relativity
+    - key: eft
+      shortname: EFT
+      longname: Effective Field Theory
+    - key: qft
+      shortname: QFT
+      longname: Quantum Field Theory
+    - key: qm
+      shortname: QM
+      longname: Quantum Mechanics
+    - key: lisa
+      shortname: LISA
+      longname: Laser Interferometer Space Antenna  
+
+
+format:
+  html:
+    theme: [assets/css/theme.scss]
+#   css: assets/css/tufte.css
+    code-fold: true
+    code-tools: true
+  pdf:
+    documentclass: scrreprt
+    
+    
+
+
+
