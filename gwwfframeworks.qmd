@@ -1,3 +1,26 @@
-# Full Waveform Generation
+# Waveform Generation
+
+The matched filtering approach introduced in the previous section is a powerful tool for detecting signals in noise. Additionally, if the matching signal has some physical content, that same content can be expected to describe the emitting object with resonable error. Ideally the matching signal is entirely constructed from first priciples, thus when a match is obtained the physical inputs to the model 
+
+
+The matched filtering approach introduced in the previous section motivates tools for generating waveforms. These can be varied in physical content, but also in practicality. In all cases they need to be able to cover the set of parameters (the parameter space) that one is interested in exploring. Clearly if the waveform has been generated purely heuristically, then the physical content of the detection is close to zero. One can only say one has detected a phenomenon that produces this waveform, but not much more. However, if the input parameters are physically meaningful, like the mass ratio of a binary compact inspiraling system, then the waveform constructed purely from this input, if matched to the signal, tells us that a compact binary inspiraling system with this mass ratio has been detected. However, the waveform generation must be able to cover the whole parameter space (in this case all feasible mass ratios) to be useful, as one does *not* know the parameters of the object one is looking for.  Ideally this waveform generation can be done in a way that is computationally efficient, as the number of parameters to explore can be large. In the end, currently, waveform generation is done in a hybrid way, where some waveforms at some parameter space points are generated from first principles, and the rest of the parameter space waveforms are interpolated. 
+
+In this chapter we will look at the physically motivated waveform generation tools currently being developed in research. More specifically we are going to explore techniques for compact binary waveforms, as these are currently the objects to which \acr{ligo} and others are most sensitive to (see @sec-ligo) and by far the most common emitters of high intensity \acr{gw}s. As discussed in @sec-compactbinaries, orbiting and \acr{gw} emitting compact objects will necessarily inspiral and merge at somepoint. 
+
+For such inspiraling binaries, the waveform has three distinct parts, corresponding to distinct phases of a binary merger: a first inspiral phase, a merger phase where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or ringdown phase where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase has specific characteristics in the dynamics of the objects and thus correspondingly different frameworks are aimed at specific portions of the waveforms. Even within one phase, different regimes and thus frameworks exist, additionally dependent to the type/initial state of the two orbiting bodies.
+
+# Inspiral phase 
+
+
+
+## \acr{pn}
+
+## \acr{pm}
+
+## \acr{gsf}
+
+## \acr{eob}
+
+# Merger and Ringdown phase
 
 ## \acr{eob}

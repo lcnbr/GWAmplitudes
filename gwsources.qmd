@@ -1,46 +1,56 @@
-{{< include _latexmacros.qmd >}}
+ {{< include _latexmacros.qmd >}}
 
-# Gravitational Wave Sources and Detection
+# Gravitational Wave Generation
 
 
 First let us look at where and how gravitional waves are generated. We will look at how \acr{gr} predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.
 
 ## Gravitational Waves
 
-Einstein's field equations,
-
+The most complete theory of gravity we have right now is that of \acr{gr}, due to Einstein. It formulates spacetime as a Riemannian manifold with curvature, senstive to mass. Objects then move around in that deformed spacetime encoded in the metric $\met$. Objects interact gravitationally when the spacetime they move around in is affected by the curvature caused by other objects. The equation that governs this interaction between mass and curvature is Einstein's field equations,
 
 $$
-\boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \G \SEco}
+\boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \G \SEco} .
 $${#eq-EFE}
-or, equivalently, eliminating the Ricci scalar,
+
+The \acr{lhs} of this equation, contains several objects that are all only really dependent on the metric $\met$. $\RicciTco$ is the Ricci tensor[^riccitensor], a contraction of the Riemann curvature tensor $\Riem$. This tensor[^riemannT] encodes the curvature of spacetime, as it is essentially a measurement of the amount with which covariant derivatives don't commute. When they do, it means that they have collapsed to regular derivatives, and thus the Levi-civita connection[^LCconn] must have vanished. This is only possible if the metric is flat $\mink$. The Riemann curvature tensor is exclusively made up of the metric, its first, second derivatives and it is linear in the second derivative of the metric. In fact it is the only possible tensor of that sort. The second term on the \acr{lhs} is the Ricci scalar, a further contraction of the Ricci Tensor: $\RicciS = \invmet \RicciTco$. The final term on the \acr{lhs} is just a proportional constant factor of the metric, where $\cosmo$ is called the cosmological constant. It can be measured and has a low known upper bound. It is in part responsible for the expansion of the universe. 
+
+The \acr{rhs} of @eq-EFE encodes the effect of mass and energy on the metric. $\SEco$ is the stress-energy tensor, dependent on the dynamics of the system. In empty space this term is zero. It is further multiplied by the Gravitational constant $G$. 
+
+Equation @eq-EFE can be recast in a form where the Ricci scalar has been eliminated,
 
 $$
 \boxed{\RicciTco=-8 \pi G\left(\SEco-\trSE \frac{\met}{2}\right)+\cosmo \met} 
 $${#eq-EFEwoR}
 
-with $\cosmo=0$ admit wave solutions. We can see this by looking at these equations in the weak field approximation. Namely, we take the metric to be a Minkowskian background and a small perturbation
 
-
+Either equation @eq-EFE, @eq-EFEwoR with $\cosmo=0$ admit wave solutions. We can see this by looking at these equations in the weak field approximation. Namely, we take the metric to be a Minkowskian background and a small perturbation
 
 $$
     \met = \mink + \weakmet,
 $${#eq-WeakFA}
 
-with $\weakmet$ small. The Ricci tensor in this approximation is
+with $\weakmet$ small. Note that if we restrict ourselves to first order in $\weakmet$ then all raising and lowering of indices has to be done with $\mink$, or else we increase the order of the term by 1. Now since the \acr{lhs} of @eq-EFE is made up of the Ricci tensor and scalar, let us see how these behave in the weak approximation. Both are in fact made up of Levi-Civita connections, which to first order in $\weakmet$ is given by:
+$$\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
+\brk[\Big]{
+    \ipdv{ \weakmet[\rho \nu]}{\mu}
+    +\ipdv{ \weakmet[\rho \mu]}{\nu}
+    -\ipdv{ \weakmet}{\rho}} + \order[2]{h}\quad .$${#eq-weakaffine}
+
+Plugging in to the definition of the Ricci tensor we see that the terms with products of the connection vanish, and we are left with the derivative terms: 
+
 $$ 
-\RicciTco  = \frac{\invmink[\alpha\rho]}{2}\left[ \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right] + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)
+\RicciTco  =
+\toggle{ \frac{\invmink[\alpha\rho]}{2}\left[ \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right]}{\linRicciTco}\endtoggle + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)
 $${#eq-Ricciweak}
 
-
-To fix the ambiguity of choosing a coordinate system ('gauge'), we impose the harmonic coordinate conditions, given by 
+The linearized Ricci scalar is then just $\linRicciS=\invmink\linRicciTco$. Regardless of the weak approximation, @eq-EFE has some gauge freedom. This means that if we solve eq @eq-EFE, it won't be the only possible solution, and in fact we can generate the others by changing coordinated in such a way that the equation isn't effected. To fix this ambiguity we choose a coordinate system ('gauge'), by  imposing the harmonic coordinate conditions: 
 
 $$ 
    \invmet[\alpha\beta]\LC{\mu}{\alpha}{\beta} =0
-$$
+$${#eq-hcc}
 
-Demanding the vanishing of the affine connection. Now we can impose the weak field approximation on the harmonic coordinate conditions (@eq-WeakFA), and we get pluggin in the affine connection in the weak field approximation [^weakaffine]
-
+The harmonic coordinate conditions demand the vanishing of the Levi-Civita connection. They have a simplified form in the weak approximation, which  we can acces by plugging @eq-weakaffine into @eq-hcc, giving:
 $$
 \begin{split}
     (\invmink[\alpha\beta]+\weakinvmet[\alpha\beta])\frac{1}{2}(\invmink[\mu\rho]+\weakinvmet[\mu\rho])\left[\ipdv{\weakmet[\alpha\rho]}{\beta}+\ipdv{\weakmet[\beta\rho]}{\alpha}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right] &= 0 \\
@@ -48,7 +58,13 @@ $$
     \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\rho]}{\beta} &= \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\rho}\invmink[\alpha\beta] + \mathcal{O}(h^2).
 \end{split}
 $$
-Thus
+
+The last equation to first order is called the de Donder gauge and is often written:
+$$
+\ipdv[^]{\weakmet}{\mu} = \frac{1}{2}\ipdv{\trweakmet}{\nu}
+$$
+In de Donder gauge we can simplify the terms in @eq-Ricciweak to:
+
 $$
     \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\mu]}{\nu\beta} \approx \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet[\alpha\beta]}{\mu\nu},
 $$
@@ -58,56 +74,123 @@ $$
 $$
 With these two relations the expression for the linearized Ricci tensor @eq-Ricciweak simplifies to
 $$
-    \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\Box_{SR} \weakmet.
-$$
-For a system of harmonic coordinates, Einstein's linearized equations become
+    \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
+$${#eq-Ricciweak2}  
+Where we have defined the \acr{sr} D'Alembertian as: $\SRDA=\invmink \partialder_\mu\partialder_\nu$ We can plug this into @eq-EFEwoR, with $\cosmo=0$, and up to first order in $\weakmet$ we get the linearized Einstein field equations for a system of harmonic coordinates:
 
 $$
-\begin{aligned}
-    \square_{SR} \weakmet &= -16\pi \G \overbracket{(\SEco-\frac{\met}{2}\trSE)}^{S_{\mu \nu}}  \\
-    \ipdv{h\ind{\alpha}{\mu}}{\alpha}&=\frac{1}{2}\ipdv{h\ind{\alpha}{\alpha}}{\mu}. 
-\end{aligned}
+\square_{SR} \weakmet = -16\pi \G \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} 
 $${#eq-linearized}
-
-Where raising and lowering indices has been done with the Minkowski metric. We can now see what sort of solutions come out of these equations.
-
-The first equation  in @eq-linearized can be solved in a similar way to electrodynamics in the lorenz gauge. If we define the following retarded Green's function
 $$
-    \greens{x-x^\prime} = -2\pi\,\deltafn{(x-x^\prime)^2}\thetafn{x^0>x^{\prime0}},
-$$
-which satisfies
+\ipdv{\weakmixmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
+$${#eq-dedonder}
+Where raising and lowering indices has been done with the Minkowski metric. The tensor $\srcco$ encodes the behavior of the source of gravitional waves.
+One could also plug @eq-Ricciweak2 into @eq-EFE, with $\cosmo=0$, and if we change to the trace reversed perturbation: $\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink$, we get similar and simpler equations at the cost of a more complex perturbation: ^[Note that the inverse change of variables is just: $\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink$.] ^[We eliminate the trace of the stress-energy tensor by using: $\RicciS= 8\pi\G\trSE$. We can write $\linRicciS=-\frac{1}{2}\SRDA\trweakTRmet$, in de Donder gauge, which is precisely the extra term dropping out of $\SRDA\weakmet$ when we express it in terms of $\weakTRmet$ ]
 
 $$
-    \Box_x\greens{x-x^\prime} = \deltafn{x-x^\prime}.
+\square_{SR} \weakTRmet = -16\pi \G \SEco
+$${#eq-linearizedTR}
+$$
+    \ipdv[^]{\weakTRmet}{\nu}=0. 
+$${#eq-dedonderTR}
+
+In this form we can very easily recover the conservation equation for the stress-energy tensor. We take the divergence of @eq-linearizedTR and use @eq-dedonderTR to get:
+
+$$
+    \ipdv[^]{\SEco}{\nu}=0.
+$${#eq-SEcons}
+
+ Let us look at what sorts of solutions come out of these equations. 
+
+## Homogenous solutions
+
+ The simplest first step is to consider the homogeous solution, as all solutions will involve these terms. Setting $\SEco=0$ or $\srcco=0$ yields an easily recognisable wave equation. 
+$$
+   \SRDA \weakmet = 0 
+$${#eq-homogenous}
+
+The de Donder gauge (@eq-dedonder) and the remaining gauge freedom^[from changes in coordinates such as $\ct{x}\to\ct{x}+\ct{\xi}$ with $\SRDA\ct{\xi}=0$] restricts the possible forms of this solution to having only helicity $\pm2$ physically significant components (see @weinbergGravitationCosmologyPrinciples1972). Let us look at its generic form. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
+
+$$
+    \weakmet = \polco \exp{\im k\cdot x} + \conjpolco \exp{-\im k\cdot x},
+$$
+
+where $\polco$ is the polarization tensor and $k$ is the wave vector. The polarization tensor is a symmetric rank-2 tensor, since $\weakmet$ is. Additionally we define:
+$$
+    k\cdot x\equiv \mink \ct{k} \ct[\nu]{k} = \co{k} \ct{x}.
+$$
+Substituting into $\SRDA\weakmet=0$ gives $\co{k} \ct{k} \equiv k^2=0$^[assuming non-zero perturbation $\weakmet$ of course] ^[this is saying that the wavevector for the wave is null, thus that the wave propagates at the speed of light]. From @eq-dedonder we have
+$$
+    \polmix \co{k} = \frac{1}{2}\trpol k_\nu.
+$${#eq-polk}
+As said at the beginning of this subsection, we still have some remaining gauge freedom, which we now fix, choosing the following coordinate change $\ct{x}\to\ct{x}+\ct{\zeta}$ where:
+$$
+\ct{\zeta}=\im \ct{A} \exp{\im k\cdot x}    =  - \im \ct{\conj{A}} \exp{ -\im k\cdot x}
+$$
+
+
+Imposing this change yields the following modified perturbation:
+
+
+$$
+\weakT'_{\mu\nu}=\weakmet-\pdv{\co{\zeta}}{\ct[\nu]{x}}-\pdv{\co[\nu]{\zeta}}{\ct{x}}=\polTensor'_{\mu\nu} \exp{\im k\cdot x} + \polTensor^{\prime\ast}{}_{\mu\nu} \exp{-\im k\cdot x}.
+$$
+with 
+
+$$
+\polTensor'_{\mu\nu} = \polco + \co{k}\co[\nu]{A} + \co[\nu]{k}\co{A}
+$${#eq-polTprime}
+
+Equations @eq-polk and @eq-polTprime reduce the free components in the polarization tensor to just two. Additionally these equations can conspire to yield a traceless polarisation tensor $\trpol=0$, with $\polco[0\mu]=0$ (see @carrollSpacetimeGeometryIntroduction2019). This then extends to the metric perturbation, which when imposed to be traceless, becomes equal to its trace-reversed counterpart. This is the so-called transverse traceless gauge:
+
+$$
+\weakmet[0\mu]=0,\quad \trweakmet=0, \quad \ipdv[^]{\weakmet}{\nu}=0.
+$$
+
+The metric perturbation in this gauge is written as:  $\weakTTmet$. 
+
+## Inhomogenous solutions
+
+With the homogenous part of @eq-linearized accounted for, we can now look at the inhomogenous part. The solution in the presence of a source term of @eq-linearized will be heavily inspired by the analogous problem in electromagnetism.  If we define the following retarded Green's function
+$$
+    \greens{\ct{x}-\ct{x'}} = -2\pi\,\deltafn[(4)]{(\ct{x}-\ct{x'})^2}\thetafn{x^0>x^{\prime0}},
+$$
+which satisfies,
+
+$$
+    \SRDA\greens{\ct{x}-\ct{x'}} = \deltafn[(4)]{\ct{x}-\ct{x'}}.
 $$
 
 Then, the solution to 
 
 $$
- \Box_{SR} \weakmet =  -16 \pi \G S_{\mu\nu}
+ \SRDA \weakmet =  -16 \pi \G \srcco
 $${#eq-EFEwave}
 
-is given by:$\differential$
+is given by:
 
 $$
-    \weakmet(x) = 8G\int\dd[4]{x^\prime}\,\greens{x-x^\prime}S_{\mu\nu}(x^\prime),
+    \weakmet(x) = 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\srcco(x'),
 $${#eq-hsolInhom}
 
+::: {.column-margin}
+One gets the parallel solution to the trace reversed equation @eq-linearizedTR by swapping $\srcT$ with $\SETensor$ and all $\weakT$ with $\weakTTR$
+:::
 
 since when we plug in @eq-hsolInhom into @eq-EFEwave
 $$
-    \Box_x\weakmet = 8G\int\dd[4]{x^\prime}\,\big(\underbrace{\Box_x\greens{x-x^\prime}}_{=-2\pi\,\delta(x-x^\prime)}\big) S_{\mu\nu}(x^\prime) = -16\pi GS_{\mu\nu}(x).
+    \Box_x\weakmet = 8\G\int\dd[4]{x'}\par[\big]{(\underbrace{\Box_x\greens{\ct{x}-\ct{x'}}}_{=-2\pi\,\deltafn{\ct{x}-\ct{x'}}}} \srcco(x') = -16\pi \G\srcco(x).
 $$
-Performing the $x^{\prime0}$ integration in @eq-hsolInhom, we have
+We can perform the $x^{\prime0}=t'$ integration in @eq-hsolInhom, with the delta function, setting $t'=t-\abs{\ct{x}-\ct{x'}}= t_r$ the retarded time, i.e:
 $$
-\weakmet(x) = 8G\int\dd[3]{x^\prime}\,S_{\mu\nu}(\x^{\,\prime},t)\dd{t^\prime}\frac{\delta(t\prime-(t-|x-\x^{\,\prime}|))}{2|x-\x^{\,\prime}|} 
+\weakmet(x) = 8\G\int\dd[3]{\y}\srcco(t,\y)\dd{t'}\frac{\delta(t'-(t-\abs{\x-\y}))}{2\abs{\x-\y}} 
 $$
     
 $$
-\weakmet(\x,t) = 4G\int\dd[3]{x}\,\frac{S_{\mu\nu}(\x^{\,\prime},t-|\x-\x^{\,\prime}|)}{|\x-\x^{\,\prime}|}.
+\weakmet(\x,t) = 4\G\int\dd[3]{\y}\frac{\srcco(t-\abs{\x-\y},\y)}{\abs{\x-\y}}.
 $${#eq-solInhomt}
 
-The retarded solution above satisfies the harmonic coordinate condition of @eq-linearized. Indeed, we have
+We can interpret the solution at $(\x,t)$ above, as the perturbation due to the sumed up contributions of all the sources at the point $(\x-\y,t_r)$ on the past light cone. Put differently this will be the gravitational radiation produced by the source $\srcco$. Additionally, the form of the time argument of the source tensor, imposed by the definition of the Green's function, shows that the radiation propagates with velocity  $=1=c$. This retarded solution satisfies the harmonic coordinate condition of @eq-linearized, as required. Indeed, we have
 
 $$
     \covd{\SEco}{\mu}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}=0,
@@ -116,21 +199,21 @@ $$
 ignoring non-linearities. Then, 
 
 $$
-    \ipdv{S^{\mu\nu}}{\mu} = \partial_\mu\left(\SEco-\frac{\invmink[\mu\nu]}{2}\trSE\right) = -\frac{\invmink[\mu\nu]}{2}\ipdv{\trSE}{\mu}.
+    \ipdv{\srcct}{\mu} = \partial_\mu\left(\SEco-\frac{\invmink[\mu\nu]}{2}\trSE\right) = -\frac{\invmink[\mu\nu]}{2}\ipdv{\trSE}{\mu}.
 $$
 
 Also
 
 $$
-    S\ind{\mu}{\mu} = \trSE[\mu] -\frac{\delta\ind{\mu}{\mu}}{2}\trSE = -\trSE.
+    \trsrc[\mu] = \trSE[\mu] -\frac{\kron[_\mu^\mu]}{2}\trSE = -\trSE.
 $$
 
 Thus
 
 $$
 \begin{split}
-    \ipdv{S^{\mu\nu}}{\mu} &= \frac{1}{2}\ipdv{S\ind{\alpha}{\alpha}}{\mu}\invmink[\mu\nu] \\
-    \ipdv{S\ind{\mu}{\nu}}{\mu} &= \frac{1}{2}\ipdv{S\ind{\alpha}{\alpha}}{\nu}.
+    \ipdv{\srcct}{\mu} &= \frac{1}{2}\ipdv{\trsrc}{\mu}\invmink[\mu\nu] \\
+    \ipdv{\srcmix}{\mu} &= \frac{1}{2}\ipdv{\trsrc}{\nu}.
 \end{split}
 $$
 
@@ -138,91 +221,147 @@ Then
 
 $$
 \begin{split}
-    \ipdv{\weakmixmet}{\mu} &= 8\G\pdv{}{x^\mu} \int\dd[4]{x^\prime} \greens{x-x^\prime} S\ind{\mu}{\nu} (x^\prime) \\
-&= 8\G\int\dd[4]{x^\prime}\,\pdv{\greens{x-x^\prime}}{x^\mu} S\ind{\mu}{\nu}(x^\prime) \\
-    &= -8\G\int\dd[4]{x^\prime}\pdv{\greens{x-x^\prime}}{x^{\prime\mu}}S\ind{\mu}{\nu}(x^\prime) \\
-    &= \underbrace{8G\greens{x-x^\prime}\delta\ind{\mu}{\nu}(x^\prime)}_{=0\ \mathrm{for}\ x=x^\prime} + 8G\int\dd[4]{x^\prime}\,G_{\mathrm{ret}}\ipdv{S\ind{\mu}{\nu}(x^\prime)}{{\prime\mu}} \\
+    \ipdv{\weakmixmet}{\mu} &= 8\G\pdv{} {\ct{x}} \int\dd[4]{x'} \greens{\ct{x}-\ct{x'}} \srcmix (x') \\
+&= 8\G\int\dd[4]{x'}\,\pdv{\greens{\ct{x}-\ct{x'}}}{ \ct{x}} \srcmix(x') \\
+&= -8\G\int\dd[4]{x'}\pdv{\greens{\ct{x}-\ct{x'}}}{\ct{x'}}\srcmix(x') \\
+    &= \underbrace{8\G\greens{\ct{x}-\ct{x'}}\kron(x')}_{=0\ \mathrm{for}\ x=x'} + 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\pdv{\srcmix(x')}{\ct{x'}} \\
+    &= 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}} \frac{1}{2}\pdv{\trsrc(x')}{\ct{x'}} \\
+    &=\quad \dots \quad \text{repeat in reverse} \\
+    &= \pdv{} {\ct{x}} \brk[\Big]{8\G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}} \frac{1}{2}\trsrc(x')} \\
+    &= \frac{1}{2} \ipdv{\trweakmet}{\mu}.\checkmark
 \end{split}
 $$
-
-# Homogenous solution
-The general solution consists of the solution of [[#^hsolInhom]] and the solution of the homogeneous equation (compare to [[#^linEq]])
-
-$$
-
-    R^{(1)}{}_{\mu \nu}=0\iff\Box \weakmet = 0 
-
-$$
-
-^hSolHom
-
-$$
-    \partial_\mu h\ind{\mu}{\nu} = \frac{1}{2}\partial_\nu h\ind{\mu}{\mu}.
-
-$$
-
-^HarmCond
-
-
-The above can be solved as plane waves. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
-
-$$
-    \weakmet = \varepsilon_{\mu\nu}e^{\im k\cdot x} + \varepsilon^\ast_{\mu\nu}e^{-\im k\cdot x},
-$$
-
-$\ind^{tset}$
-
-where 
-$$
-    k\cdot x\equiv\minkk^\mu k^\nu = k_\mu x^\mu.
-$$
-Substituting into $\Box \weakmet=0$ gives $k_\mu k^\mu\equiv k^2=0$. From
-$$
-    \ipdv{h\ind{\mu}{\nu}}{\mu} = \frac{1}{2}\ipdv{h\ind{\mu}{\mu}}{\nu},
-$$
-we have
-
-$$
-    \varepsilon\ind{\mu}{\nu}k_\mu = \frac{1}{2}\varepsilon\ind{\mu}{\mu}k_\nu.
-
-$$
-
 
 
 
 ## Gravitational Wave Sources
 
+Now that we have the general form of the solutions to the linearized Einstein equations, we can proceed to the analysis of the sources of gravitational waves. The first step is to analyse the equations in the frequency domain. We will use the following notation:
 
-\def_st{test}
+$$\FT[t]{\phi}{\omega}(\omega,\x)=\int \dd{t} \phi(t,\x) \exp{\im\omega t}$$
+$$\invFT[\omega]{\phi}{t}(t,\x)=\int \frac{\dd{\omega}}{2\pi} \FT[t]{\phi}{\omega}(\omega,\x) \exp{- \im \omega t}$$
 
-$_st$
+Let us look at the trace reversed solution, as the conservation equation for 
+$$\begin{aligned} 
+\FT[t]{\weakmet}{\omega}(\omega, \x) &=\int \dd{t} \weakmet(t,\x) \exp{\im\omega t}
+\\ &=4\G\int\dd[3]{\y}\dd{t} \frac{\srcco(t-\abs{\x-\y},\y)}{\abs{\x-\y}}  \exp{\im\omega t}
+\\ &=4\G\int\dd[3]{\y}\dd{t_r} \frac{\srcco(t_r,\y)}{\abs{\x-\y}}  \exp{\im\omega t_r}\exp{\im\omega\abs{\x-\y}}
+\\ &=4\G\int\dd[3]{\y} \frac{\FT[t_r]{\srcco}{\omega}(\omega,\y)}{\abs{\x-\y}} \exp{\im\omega\abs{\x-\y}} 
+\end{aligned}$${#eq-FTweakmet}
+
+We can now apply various approximations to this form of the perturbation. The first is to consider that we look at the radiation only in the so called *wave zone*, at a distance $r=\abs{\x}$ much larger than the dimensions of the source $R=\abs{\y}_\text{max}$. Additionally we assume that $r \gg \frac{1}{\omega}$, i.e long wavelengths don't dominate. Finally we assume that $r \gg \omega R^2$, i.e. the ratio of $R$ to the wavelength is not comparable to the ratio of $r$ to $R$. Using this approximation we can write:
+
+$$
+\begin{split}
+    \abs{\x-\y} &= r\left(1-2\hat{\x}\cdot\y+\frac{\x^{\prime2}}{r^2}\right)^{1/2} \\
+    \abs{\x-\y} &\approx r\left(1-\frac{\hat{\x}\cdot\y}{r}\right) \quad \text{with: } \hat{\x} = \frac{\x}{r}.
+\end{split}
+$$
+
+If we additionally further separate the scales in the following way^[we just add the condition that $\frac{1}{\omega}\gg R$, that is the source radius is much smaller than the wavelength]
+
+$$
+r\gg \brc{\frac{1}{\omega},\omega R^2}\gg R,
+$$
+
+Then @eq-FTweakmet becomes much simpler^[the approximations all conspire to be able to neglect the $\y$ dependence of $\exp{\im\omega\abs{\x-\y}}$ in the integral]:
+
+$$
+\FT[t]{\weakmet}{\omega}(\omega, \x)=4\G\frac{\exp{\im\omega R}}{R} \int\dd[3]{\y} \FT[t]{\srcco}{\omega}(\omega,\y) 
+$${#eq-FTweakmet2}
+
+Now let us look at the fourier transform of the source term. By definition we have
+
+$$
+\FT[t]{\srcco}{\omega}(\omega,\y)=\FT[t]{\SEco}{\omega}(\omega,\y)+\half \mink\FT[t]{\trSE}{\omega}(\omega,\y)
+$$
+
+Thus the term to analyse is actually $\FT[t]{\SEco}{\omega}$. We can use the conservation equation @eq-SEcons in fourrier $t$-space to write:
+
+$$
+-\ipdv[^]{ \FT[t]{\SEco[i\mu]}{\omega}}{i} = \im \omega\FT[t]{\SEco[0\mu]}{\omega}
+$${#eq-FTSEcons}
 
 
+This equation becomes algebraic when we further fourrier transorm in $\x$-space:
 
-$x\ipdv{\mink_{\mu\nu}}{\alpha}$
+$$
+\ft[\x]{\SETensor}{\k}_{\mu\nu}(\ct[\alpha]{k}) =\ft[\x]{\SETensor}{\k}_{\mu\nu}(\omega,\k) = \int \dd[3]{\y} \FT[t]{\SEco}{\omega}(\omega,\y) \exp{\im\k\cdot\y}
+$$
+Then the conservation equation becomes:
+$$
+\ct{k}\SEco(\omega,\k) = 0
+$$
+
+These four equations enable us to just care about the purely spacelike components of $\SEco$. Let us apply @eq-FTSEcons to itself to obtain:
+
+$$
+\ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=-\omega^2\FT[t]{\SEco[00]}{\omega}
+$$
+which when multiplied by $\co[m]{x}\co[n]{x}$ and integrated over $\x$ gives^[two integrations by parts cancels the $\co[m]{x}\co[n]{x}$ term in the \acr{lhs}, since boundary terms are 0 (the source is finite) we have $$\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}$$ 
+The hessian of $\co[m]{x}\co[n]{x}$ is $(\kron[^i_m]+\kron[^i_n])(\kron[^j_n]+\kron[^j_m])$, but since $\SEco$ is symmetric the integral is $$\int \dd{\y} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\y) $$]:
+$$
+\int \dd{\x} \FT[t]{\SEco[mn]}{\omega}(\omega,\x)=-\Half[\omega] \int \dd{\x} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\x)
+$$
+
+Notice the last integral is in fact the fourrier transform of (a third of) the quadrupole moment tensor of the energy denisty^[$$q_{mn}=3\int \co[m]{x}\co[n]{x} \SEco[00](\omega,\x)$$]. We call it $\ft[t]{q}{\omega}_{mn}(\omega)$ and we can finally rewrite @eq-FTweakmet2 as:
 
 
+$$
+\FT[t]{\weakmet}{\omega}(\omega, \x)=-\frac{2\G\omega^2}{3}\frac{\exp{\im\omega R}}{R} \par{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}
+$$
+
+Going back $t$-space we have:
+
+$$
+\begin{aligned}
+\weakmet(t,\x)&=-\frac{\G}{3\pi R}\int \dd{\omega} \exp{-\im\omega(t-R)} \omega^2 \par{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{\G}{3\pi R}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \par{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{2\G}{3R}\odv[2]{}{t}\par{q_{mn}(t_r)+\half\mink q^n{}_n(t_r)}
+\end{aligned}
+$$
+
+This equation has a very nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the its energy denisty at the time where the past light cone of the observer intersects the source ($t_r$). The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the the change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for \acr{em}), or mass (for \acr{gr}), and while a center of charge is free to move around, the center of mass (of an isolated) is fixed by the conservation of momentum. The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitional system can modify. Finally the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitional radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
+
+
+Thus any object that is modifying its shape is a source of gravitional waves. All orbiting systems therefore are sources of \acr{gw}s. However as said just above, only very important 'changes in shape' have a chance to be detectable. These phenomena are what we will explore next. 
+
+### Compact binaries {#sec-compactbinaries}
+
+How could one construct a very powerful source of \acr{gw}s? One could take two very massive objects, (such that $\SEco[00]$ is large) and make them orbit each other. At that point one could hope to detect this orbit if the objects are massive enough and orbiting close enough for the 'change in shape' of the system to sizeable. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit \acr{gw}s, and in doing so they lose energy^[of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a very important change of shape and thus we have a constructed (if not all on purpose) a very powerful source of \acr{gw}s. Such objects are called compact binaries.
 
 ### \acr{bh} Binaries
 
+
+Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form (@birkhoffRelativityModernPhysics1923), called the Schwarzschild solution. The solution is given by: 
+
+
+
+
+
+
+
 ### \acr{ns} Binaries
 
-### Exotic Sources  
+We can also not go as far as having our compact object be a \acr{bh}, but can also consider \acr{ns}s. These object are notheless extremely dense (not infinitely so), and are essentially like big atomic nuclei. Not much is known about them and in fact \acr{gw} astronomy is could be 
 
-## Gravitational Wave Detection
+### Exotic Sources
 
-### Laser interferometers
-
-#### \acr{ligo}
-
-#### \acr{lisa}
-
-### Pulsar Timing Arrays
+Cosmic strings, supernovae, and other exotic sources of \acr{gw}s are also possible.
 
 
+[^riccitensor]: The Ricci Tensor is given by:
+$$
+\RicciTco \coloneq \Riem[\ind{\alpha}{\mu\alpha\nu}]=\invmet[\alpha\beta]\RiemCt[\alpha\mu\beta\nu]
+$$
 
 
-[^weakaffine]: The affine connection is given by  
+[^riemannT]: The Riemann Tensor is given by:
+$$
+    \Riem=\RiemannTensorExplicit{\beta}{\mu}{\nu}{\rho}.
+$$
+
+[^LCconn]: The Levi-Civita Connection is given by:
 $$\LC{\alpha}{\mu}{\nu}=
 \frac{1}{2} \invmet[\alpha \rho]
 \brk[\Big]{
@@ -230,9 +369,3 @@ $$\LC{\alpha}{\mu}{\nu}=
     +\ipdv{ \met[\rho \mu]}{\nu}
     -\ipdv{ \met}{\rho}}
 $$ 
-  and in the weak approximation @eq-WeakFA we have 
-$$\LC{\alpha}{\mu}{\nu} \approx \frac{1}{2} \invmink[\alpha \rho]
-\brk[\Big]{
-    \ipdv{ \weakmet[\rho \nu]}{\mu}
-    +\ipdv{ \weakmet[\rho \mu]}{\nu}
-    -\ipdv{ \weakmet}{\rho}}$$

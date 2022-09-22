@@ -15,8 +15,9 @@ book:
     - index.qmd
     - intro.qmd
     - gwsources.qmd
+    - gwdetect.qmd
     - gwwfframeworks.qmd
-    - inspiralframeworks.qmd
+    - scattering.qmd
     - summary.qmd
     - references.qmd
 crossref:
@@ -76,6 +77,9 @@ acronyms:
     - key: gr
       shortname: GR
       longname: General Relativity
+    - key: sr
+      shortname: SR
+      longname: Special Relativity
     - key: nr
       shortname: NR
       longname: Numerical Relativity
@@ -93,7 +97,44 @@ acronyms:
       longname: Quantum Mechanics
     - key: lisa
       shortname: LISA
-      longname: Laser Interferometer Space Antenna  
+      longname: Laser Interferometer Space Antenna 
+    - key: lhs
+      shortname: LHS
+      longname: Left-Hand Side
+    - key: rhs
+      shortname: RHS
+      longname: Right-Hand Side
+    - key: em
+      shortname: EM
+      longname: Electromagnetism
+    - key: efe
+      shortname: EFE
+      longname: Einstein Field Equations
+    - key: eom
+      shortname: EOM
+      longname: Equation of Motion
+    - key: lsz
+      shortname: LSZ
+      longname: Lehmann Symanzik and Zimmermann
+    - key: kmoc
+      shortname: KMOC
+      longname: Kosower Maybee and O'Connell
+    - key: sqed
+      shortname: SQED
+      longname: Scalar Quantum Electrodynamics
+    - key: qed
+      shortname: QED
+      longname: Quantum Electrodynamics
+    - key: qcd  
+      shortname: QCD
+      longname: Quantum Chromodynamics
+    - key: gsf
+      shortname: GSF
+      longname: Gravitational Self-Force
+    
+    
+
+
 
 
 format:
