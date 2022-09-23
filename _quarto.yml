@@ -143,8 +143,10 @@ format:
 #   css: assets/css/tufte.css
     code-fold: true
     code-tools: true
+    
   pdf:
     documentclass: scrreprt
+    include-before-body: latexmacros.tex
     
     
 

@@ -16,8 +16,6 @@ In this thesis we will explore the theoretical landscape surrounding the generat
 
 
 
-\let\oldsigma\sigma
-\renewcommand{\sigma}{{\mathtip{\href{index.html}{\oldsigma}}{\int\sin\d(x)}}}
 
 
 

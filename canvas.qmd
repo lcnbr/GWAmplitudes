@@ -1,4 +1,8 @@
+::: {.content-hidden unless-format="html"}
 
+{{< include _latexmacros.qmd >}}
+
+:::
 $$
 \begin{aligned}
 \Delta O_\text{r}=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,&r_2,X}\,\ddP[2]{p_1,p_2} \dh[4]q\,\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\\

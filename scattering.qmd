@@ -1,6 +1,9 @@
 # Scattering amplitudes and Gravitional waves 
+::: {.content-hidden unless-format="html"}
 
 {{< include _latexmacros.qmd >}}
+
+:::
 
 Throughout we use relativistically natural units, i.e. we do *not* set $\hbar=1$. In dimensional analysis we can therefore see that $c=1$ means that $[L][T]^{-1}=1 \implies [L]=[T]$, $$E=mc^2\implies[E]=[m]=[M]$$ and $$E=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]$$. Thus momentum $p$ is in units of $[p]=[M]$ mass and Wavenumber $[\bar{p}]=[\frac{p}{\hbar}]=[T]^{-1}$ is in units of inverse time. 
 

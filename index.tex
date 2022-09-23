@@ -1,0 +1,1456 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod,
+  oneside]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[left=1in,marginparwidth=2.0666666666667in,textwidth=4.1333333333333in,marginparsep=0.3in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Fig}
+\else
+  \newcommand\figurename{Fig}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tbl}
+\else
+  \newcommand\tablename{Tbl}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Graviational Waves from Feynman Diagrams},
+  pdfauthor={Lucien Huber},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Graviational Waves from Feynman Diagrams}
+\author{Lucien Huber}
+\date{9/13/2022}
+
+\begin{document}
+\maketitle
+
+\newcommand{\mathtip}[2]{#1}
+\newcommand{\texttip}[2]{#1}
+
+
+\newcommand{\ind}[2]{^{#1}_{\phantom{#1}#2}} 	
+\newcommand{\invind}[2]{_{#1}^{\phantom{#1}#2}}
+\newcommand{\notipiunit}{{\mathring{\imath}}}
+\newcommand{\iunit}{\mathtip{\notipiunit}{\text{Complex unit: } \notipiunit^2 = -1}}
+\let\i\oldi
+\newcommand{\i}{\iunit}
+
+\let\exp\oldexp
+\newcommand{\exp}[1]{\texttip{\mathrm{e}^{#1}}{exponential function}}
+\newcommand{\Exp}[2][\paren]{\texttip{\exp#1{#2}}{exponential function}} 
+
+\newcommand{\partialder}{\partial}
+\newcommand{\differential}{\mathrm{d}}
+
+
+\newcommand{\pdv}[3][]{\frac{\partialder^{#1} #2}{\partialder #3^{#1}}} 
+\newcommand{\odv}[3][]{\frac{\differential^{#1} #2}{\differential #3^{#1}}}
+\newcommand{\mdv}[3][]{\frac{\mathrm{D}^{#1} #2}{\mathrm{D} #3^{#1}}}
+\newcommand{\fdv}[3][]{\frac{\delta^{#1} #2}{\delta #3^{#1}}}
+\newcommand{\jdv}[3][]{\frac{\partialder ^{#1}(#2)}{\partialder (#3)^{#1}}}
+\newcommand{\adv}[3][]{\frac{\Delta^{#1} #2}{\Delta #3^{#1}}}
+
+
+\newcommand{\ipdv}[3][_]{#2\texttip{{}#1{,#3}}{Partial derivative}}
+
+\newcommand{\covd}[3][_]{#2\texttip{{}#1{;#3}}{Covariant derivative}}
+
+\newcommand{\half}[1][1]{\tfrac{#1}{2}}
+
+\newcommand{\Half}[1][1]{\frac{#1}{2}}
+
+\let\d\oldd
+\newcommand{\d}[1]{\,\differential#1\,}
+\newcommand{\dd}[2][]{\,\differential^{#1}#2\,}
+\newcommand{\greens}[2][ret]{\texttip{\mathcal{G}_{\mathrm{#1}}\left(#2\right)}{#1 Green's function}}
+
+\newcommand{\notipnormalized}[1]{\tilde{#1}}
+\newcommand{\normalized}[2][]{\mathtip{\notipnormalized{#2}}{\text{Normalized } #1 =#2(2\pi)^{#1}}}
+
+
+\newcommand{\dn}[2][]{\,\mathtip{\notipnormalized{\differential}^{#1}#2}{\notipnormalized{\differential}^{#1}#2=\frac{\dd[#1]{#2}}{(2\pi)^{#1}}}\,}
+
+\newcommand{\thetafn}[2][]{\texttip{\Theta^{(#1)}\left(#2\right)}{Heaviside step function}}
+\newcommand{\deltafn}[2][]{\texttip{\delta^{(#1)}\left(#2\right)}{Dirac delta function}}
+
+\newcommand{\notipndeltafn}[2][]{\notipnormalized{\delta}^{(#1)}\left(#2\right)}
+\newcommand{\ndeltafn}[2][]{\mathtip{\notipndeltafn[#1]{#2}}{\text 
+{Normalized Dirac delta function: } \notipndeltafn[#1]{#2} = (2\pi)^{#1}\delta^{#1}\left(#2\right)}}
+
+\newcommand{\notipposendelta}[2][-m^2]{\deltafn[+]{#2^2#1}}
+\newcommand{\posendelta}[2][-m^2]{\mathtip{\notipposdelta[#1]{#2}}{\text{Positive energy delta function: }\notipposdelta[#1]{#2}}=\deltafn{#2^2 #1}\thetafn{#2^0}}
+
+\newcommand{\notipnposendelta}[2][-m^2]{\notipndeltafn[+]{#2^2#1}}
+\newcommand{\nposendelta}[2][-m^2]{\mathtip{\notipnposendelta[#1]{#2}}{\text{Normalized positive energy delta function: }\notipnposendelta[#1]{#2}=\notipposendelta[#1]{#2} 2\pi= 2 \pi \deltafn{#2^2 #1}\thetafn{#2^0}}}
+
+
+\newcommand{\SRDA}{\mathtip{\Box_{SR}}{\invmink \partialder_\mu\partialder_\nu}}
+
+
+\newcommand{\deltat}[1][\mu]{\texttip{\delta_{#1}}{delta function}}
+
+\newcommand{\FT}[3][]{\mathtip{\mathcal{F}_{#1}\left[#2\right]}{\text{Fourier transform of $#2$ in variable $#1$: }{\mathcal{F}_{#1}\left[#2\right] = \int \dd{#1} #2(#1) \exp{\im#3 \cdot #1}   }}}
+
+\newcommand{\invFT}[3][]{\mathtip{\mathcal{F}^{-1}_{#1}\left[#2\right]}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\mathcal{F}_{#1}\left[#2\right] = \frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)  }}}
+
+\newcommand{\ft}[3][x]{\mathtip{\hat{#2}}{\text{Fourier transform of $#2$ in variable $#1$: }{\hat{#2}\left(#3\right)
+ = \int \dd{#1} #2(#1) \exp{\im#3 \cdot #1}}}}
+
+\newcommand{\invft}[3][x]{\mathtip{\check{#2}}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\hat{#2}\left(#3\right) =\frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)}}}
+\newcommand{\ddP}[2][]{\,\mathtip{\differential\Phi_{#1}(#2)}{\text{On shell integration measure: } \differential\Phi(p_i)=\dn[4]{p_i}\nposendelta[-m_i^2]{p_i}}\,}
+\newcommand{\AAngle}[1]{\Bigg\langle\hspace{-0.6em}\Bigg\langle #1\Bigg\rangle\hspace{-0.6em}\Bigg\rangle}
+
+
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\z}{\mathbf{z}}
+\let\k\oldk
+\newcommand{\k}{\mathbf{k}}
+\let\r\oldr
+\newcommand{\r}{\mathbf{r}}
+\let\p\oldp
+\newcommand{\p}{\mathbf{p}}
+\let\q\oldq
+\let\v\oldv
+\newcommand{\v}{\mathbf{v}}
+\newcommand{\q}{\mathbf{q}}
+\let\D\oldD
+\newcommand{\D}{\mathrm{D}}
+\newcommand{\im}{\iunit}
+
+\let\L\oldL
+\newcommand{\L}{\mathcal{L}}
+
+\newcommand{\paren}[2][]{#1(#2 #1)}
+\newcommand{\brk}[2][]{#1[#2 #1]}
+\newcommand{\brc}[2][]{#1\{#2 #1\}}
+\newcommand{\abs}[2][]{#1\vert#2 #1\vert}
+\newcommand{\norm}[2][]{#1\Vert#2 #1\Vert}
+\newcommand{\order}[2][]{\mathcal{O}\left(#2^{#1}\right)}
+
+\let\sigma\sigmaold
+\newcommand{\sigma}{{\mathtip{\href{index.html}{\sigmaold}}{\int\sin\d(x)}}}
+
+
+\newcommand{\h}{\texttip{h}{planck's constant}}
+\let\c\oldc
+\newcommand{\c}{\texttip{c}{speed of light}}
+\let\G\oldG
+\newcommand{\G}{\texttip{G}{gravitational constant}}
+\let\e\olde
+\newcommand{\e}{\texttip{e}{electric charge}}
+\let\m\oldm
+\newcommand{\m}{\texttip{m}{mass}}
+
+\newcommand{\metricTensor}{\texttip{g}{metric tensor}}
+\newcommand{\minkoskiMetric}{\texttip{\eta}{Minkoski metric tensor +---}}
+\newcommand{\mink}[1][{\mu\nu}]{\texttip{\minkoskiMetric_{#1}}{covariant Minkoski metric components +---}}
+\newcommand{\invmink}[1][{\mu\nu}]{\texttip{\minkoskiMetric^{#1}}{contravariant Minkoski metric components +---}}
+
+
+
+\newcommand{\met}[1][{\mu\nu}]{\texttip{\metricTensor_{#1}}{covariant metric tensor component}}
+\newcommand{\invmet}[1][{\mu\nu}]{\texttip{\metricTensor^{#1}}{contravariant metric tensor component}}
+\newcommand{\weakT}{\texttip{h}{weak metric tensor}}
+
+\newcommand{\weakmet}[1][{\mu\nu}]{\texttip{\weakT_{#1}}{weak covariant metric tensor component}}
+\newcommand{\weakinvmet}[1][{\mu\nu}]{\texttip{\weakT^{#1}}{weak contravariant metric tensor component}}
+\newcommand{\trweakmet}[1][\alpha]{\texttip{\weakT\ind{#1}{#1}}{weak metric tensor trace}}
+\newcommand{\weakmixmet}[1][\ind{\mu}{\nu}]{\texttip{\weakT#1}{weak mixed metric tensor component}} 
+
+\newcommand{\weakTTR}{\texttip{\bar{h}}{trace reversed weak metric tensor}}
+\newcommand{\weakTRmet}[1][\mu\nu]{\mathtip{\weakTTR_{#1}}{{\text{trace reversed weak covariant metric tensor component: } \weakTTR_{#1} = \weakmet-\frac{1}{2}\trweakmet\mink[#1]}}}
+\newcommand{\weakTRinvmet}[1][{\mu\nu}]{\texttip{\weakTTR^{#1}}{{\text{trace reversed weak contravariant metric tensor component: } \weakTTR^{#1} = \weakmet-\frac{1}{2}\trweakmet\mink[#1]}}}
+\newcommand{\trweakTRmet}[1][\alpha]{\texttip{\weakTTR\ind{#1}{#1}}{trace reversed weak metric tensor trace}}
+\newcommand{\weakTRmixmet}[1][\ind{\mu}{\nu}]{\texttip{\weakTTR#1}{trace reversed weak mixed metric tensor component}}
+
+\newcommand{\weakTTT}{\texttip{h^{TT}}{transverse traceless weak metric tensor}}
+\newcommand{\weakTTmet}[1][ij]{\mathtip{\weakTTT_{#1}}{{\text{transverse traceless weak covariant metric tensor component: } \weakTTT_{0\mu}=0,\quad \weakTTT\ind{i}{i}=0, \quad \ipdv[^]{\weakTTT_{ij}}{j}=0.}}}
+\newcommand{\weakTTinvmet}[1][{\mu\nu}]{\texttip{\weakTTT^{#1}}{{\text{transverse traceless weak contravariant metric tensor component: } \weakTTT_{0\mu}=0,\quad \weakTTT\ind{i}{i}=0, \quad \ipdv[^]{\weakTTT_{ij}}{j}=0.}}}
+\newcommand{\trweakTTmet}[1][\alpha]{\texttip{\weakTTT\ind{#1}{#1}}{transverse traceless weak metric tensor trace}}
+\newcommand{\weakTTmixmet}[1][\ind{\mu}{\nu}]{\texttip{\weakTTT#1}{transverse traceless weak mixed metric tensor component}}
+
+\newcommand{\RiemannTensor}{\texttip{R}{Riemann tensor}}
+\newcommand{\RiemannTensorExplicit}[4]{\ipdv{\LC{#1}{#2}{#3}}{#4} - \ipdv{\LC{#1}{#2}{#4}}{#3} - \LC{\alpha}{#2}{#4}\LC{#1}{\alpha}{#3}+\LC{\alpha}{#2}{#3}\LC{#1}{\alpha}{#4}}
+
+\newcommand{\Riem}[1][\ind{\beta}{\mu\nu\rho}]{\texttip{\RiemannTensor#1}{Riemann Tensor tensor component}}
+\newcommand{\RiemCt}[1][\beta\mu\nu\rho]{\texttip{\RiemannTensor_{#1}}{fully covariant Riemann tensor component}}
+
+\newcommand{\RicciTensor}{\texttip{R}{Ricci tensor}}
+\newcommand{\RicciTct}[1][{\mu\nu}]{\texttip{\RicciTensor^{#1}}{contravariant Ricci tensor component}}
+\newcommand{\RicciTco}[1][{\mu\nu}]{\texttip{\RicciTensor_{#1}}{covariant Ricci tensor component}}
+
+\newcommand{\linRicciTensor}{\texttip{R^{(1)}}{linearized Ricci tensor}}
+\newcommand{\linRicciTct}[1][{\mu\nu}]{\texttip{\linRicciTensor^{#1}}{contravariant linearized Ricci tensor component}}
+\newcommand{\linRicciTco}[1][{\mu\nu}]{\texttip{\linRicciTensor_{#1}}{covariant linearized Ricci tensor component}}
+
+\newcommand{\RicciS}{\texttip{R}{Ricci scalar}}
+\newcommand{\linRicciS}{\texttip{R^{(1)}}{linearized Ricci scalar}}
+
+\newcommand{\SETensor}{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}}
+\newcommand{\SEct}[1][{\mu\nu}]{\texttip{\SETensor^{#1}}{contravariant Stress-Energy tensor component}}
+\newcommand{\SEco}[1][{\mu\nu}]{\texttip{\SETensor_{#1}}{covariant Stress-Energy tensor component}}
+\newcommand{\trSE}[1][\alpha]{\texttip{\SETensor^{#1}{}_{#1}}{Stress-Energy tensor trace}}
+\newcommand{\SEmix}[1][\ind{\mu}{\nu}]{\texttip{\SETensor#1}{mixed Stress-Energy tensor component}} 
+
+
+
+
+\newcommand{\polTensor}{\texttip{\varepsilon}{Polarization tensor}}
+\newcommand{\polct}[1][{\mu\nu}]{\texttip{\polTensor^{#1}}{contravariant Polarization tensor component}}
+\newcommand{\polco}[1][{\mu\nu}]{\texttip{\polTensor_{#1}}{covariant Polarization tensor component}}
+\newcommand{\trpol}[1][\alpha]{\texttip{\polTensor^{#1}{}_{#1}}{Polarization tensor trace}}
+\newcommand{\polmix}[1][\ind{\mu}{\nu}]{\texttip{\polTensor#1}{mixed Polarization tensor component}}
+
+\newcommand{\conj}[1]{\texttip{#1^\ast}{conjugate of #1}}
+
+\newcommand{\conjpolTensor}{\texttip{\varepsilon^\ast}{Conjugate Polarization tensor}}
+\newcommand{\conjpolct}[1][{\mu\nu}]{\texttip{\conjpolTensor^{#1}}{contravariant conjugate Polarization tensor component}}
+\newcommand{\conjpolco}[1][{\mu\nu}]{\texttip{\conjpolTensor_{#1}}{covariant conjugate Polarization tensor component}}
+\newcommand{\trconjpol}[1][\alpha]{\texttip{\conjpolTensor^{#1}{}_{#1}}{conjugate Polarization tensor trace}}
+\newcommand{\conjpolmix}[1][\ind{\mu}{\nu}]{\texttip{\conjpolTensor#1}{mixed conjugate Polarization tensor component}}
+
+\newcommand{\co}[2][\mu]{\texttip{#2_{#1}}{covariant mathbftor component}}
+\newcommand{\ct}[2][\mu]{\texttip{#2^{#1}}{contravariant mathbftor component}}
+
+
+\newcommand{\srcT}{\texttip{S}{source tensor}}
+\newcommand{\srcco}[1][\mu\nu]{\texttip{\srcT_{#1}}{covariant source tensor component}}
+\newcommand{\srcct}[1][\mu\nu]{\texttip{\srcT^{#1}}{contravariant source tensor component}}
+\newcommand{\trsrc}[1][\alpha]{\texttip{\srcT^{#1}{}_{#1}}{source tensor trace}}
+\newcommand{\srcmix}[1][\ind{\mu}{\nu}]{\texttip{\srcT#1}{mixed source tensor component}}
+
+\newcommand{\kron}[1][_{\nu}^{\mu}]{\texttip{\delta#1}{Kronecker delta}}
+\newcommand{\cosmo}{\texttip{\Lambda}{cosmological constant}}
+
+
+
+
+
+\newcommand{\LC}[3]{\mathtip{\Gamma\ind{#1}{#2#3}}{\text{Levi-Civita Connection: }\Gamma\ind{#1}{#2#3}=
+\frac{1}{2} \invmet[#1 \rho]
+\brk[\Big]{
+    \ipdv{\met[\rho #1]}{#2}
+    +\ipdv{\met[\rho #2]}{#1}
+    -\ipdv{\met[#2 #1]}{\rho}}
+}} 
+
+\let\bra\oldbra
+\newcommand{\bra}[2][]{\mathtip{\sideset{_{\text{#1}}}{}\langle #2 \vert}{\text{Quantum state bra, dual to ket, a linear form on the Hilbert space: }#2: \mathcal{H} \rightarrow \mathbb{C}}}
+
+\let\ket\oldket
+\newcommand{\ket}[2][]{\mathtip{\sideset{}{_{\text{#1}}}{\vert #2 \rangle}}{\text{Quantum state ket, a vector of the Hilbert space: }#2\in\mathcal{H}}}
+
+
+\newcommand{\notipobs}[1]{\mathcal{#1}}
+\newcommand{\obs}[1]{\mathtip{\notipobs{#1}}{\text{Observable: }\notipobs{#1}}}
+
+\newcommand{\notipop}[1]{\mathbb{#1}}
+\newcommand{\op}[1]{\mathtip{\notipop{#1}}{\text{Operator: }\notipop{#1}}}
+
+\newcommand{\notipev}[2]{\langle#2 \vert  #1 \vert #2 \rangle}
+\newcommand{\ev}[2]{\mathtip{\notipev{#1}{#2}}{\text{Expectation value: }\notipev{#1}{#2}}}
+
+\newcommand{\notipip}[2]{\langle #1 \vert #2 \rangle}
+\newcommand{\ip}[2]{\mathtip{\notipip{#1}{#2}}{\text{Inner product: }\notipip{#1}{#2}}}
+
+\newcommand{\notipcom}[2]{[#1,#2]}
+\newcommand{\com}[2]{\mathtip{\notipcom{#1}{#2}}{\text{Commutator: }\notipcom{#1}{#2}}}
+
+\newcommand{\notipmel}[3]{\langle #1 \vert #2 \vert #3 \rangle}
+\newcommand{\mel}[3]{\mathtip{\notipmel{#1}{#2}{#3}}{\text{Matrix element: }\notipmel{#1}{#2}{#3}}}
+
+\let\S\oldS
+\newcommand{\S}{\texttip{S}{S-matrix}}
+\let\T\oldT
+\newcommand{\T}{\texttip{T}{Transfer-matrix}}
+
+
+\newcommand{\notipvInt}[1][\obs{O}]{\mathcal{I}_{\text{v}}(#1)} 
+\newcommand{\vInt}[1][\obs{O}]{\mathtip{\notipvInt[#1]}{\text{Virtual integrand: }\notipvInt[#1]}}
+
+\newcommand{\notiprInt}[1][\obs{O}]{\mathcal{I}_{\text{r}}(#1)}
+\newcommand{\rInt}[1][\obs{O}]{\mathtip{\notiprInt[#1]}{\text{Real integrand: }\notiprInt[#1]}}
+
+\newcommand{\notipobschange}[3][\obs{O}]{\underset{#2-#3}{\Delta} \!#1\,}
+
+\newcommand{\obschange}[3][\obs{O}]{\mathtip{\notipobschange[#1]{#2}{#3}}{\text{Observable change: }\notipobschange[#1]{#2}{#3}}}
+
+\newcommand{\notipamp}[2]{\mathcal{A}(#1\to#2)}
+\newcommand{\amp}[2]{\mathtip{\notipamp{#1}{#2}}{\text{Amplitude: }\notipamp{#1}{#2}}}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, boxrule=0pt, frame hidden, enhanced, sharp corners]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+This is a Quarto book. I am going to try and hyperlink it as much as
+possible
+
+To learn more about Quarto books visit
+\url{https://quarto.org/docs/books}.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The detection of gravitational waves by the
+Laser Interferometer Gravitational-Wave Observatory () and Virgo
+collaborations in 2016
+(2016)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-LIGOScientific:2016aoc}{}}%
+Abbott, B. P., R. Abbott, T. D. Abbott, et al. 2016. {``Observation of
+{Gravitational Waves} from a {Binary Black Hole Merger}.''}
+\emph{Physical Review Letters} 116 (6): 061102.
+\url{https://doi.org/10.1103/PhysRevLett.116.061102}.\vspace{2mm}\par\end{footnotesize}}
+has sparked a new era of gravitational wave astronomy. The first
+detections were of Binary Black Hole () mergers. More recently,
+Binary Neutron Star () mergers
+(2017)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-LIGOScientific:2017vwq}{}}%
+Abbott, B. P., Rich Abbott, Thomas D. Abbott, et al. 2017.
+{``{GW170817}: {Observation} of {Gravitational Waves} from a {Binary
+Neutron Star Inspiral}.''} \emph{Physical Review Letters} 119 (16):
+161101. \url{https://doi.org/10.1103/PhysRevLett.119.161101}.\vspace{2mm}\par\end{footnotesize}}
+as well as Neutron Star ()-Black Hole () mergers have been detected
+(2021)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-LIGOScientific:2021qlt}{}}%
+Abbott, R., T. D. Abbott, S. Abraham, F. Acernese, K. Ackley, A. Adams,
+C. Adams, et al. 2021. {``Observation of {Gravitational Waves} from {Two
+Neutron Star}\textendash{{Black Hole Coalescences}}.''} \emph{The
+Astrophysical Journal Letters} 915 (1): L5.
+\url{https://doi.org/10.3847/2041-8213/ac082e}.\vspace{2mm}\par\end{footnotesize}}.
+Future detectors will further increase sensitivity and will be able to
+detect a wide range of astrophysical sources. Studying these
+gravitational waves signals gives us a very powerful new window into the
+universe. It allows us to study the properties of neutron stars and
+black holes, and the physics of compact object mergers, but also gives
+us a powerful testing apparatus for general relativity.
+
+To detect these faint signals {LIGO} and Virgo, have been made to be
+extraordinarily precise instruments. Thus, they demand correspondingly
+precise theoretical predictions and models. This is not just for
+comparison's sake, but for detection as well. These faint signals are
+often buried in the noise of the detector. To counteract this
+experimental physicists make use of a matched filtering approach, where
+they try to match the signal to a template. The template is a model of
+the signal ideally provided by theoretical physicists based on physical
+theories. The more precise the template, the higher the signal-to-noise
+ratio, the more probable and precise the detection.
+
+In this thesis we will explore the theoretical landscape surrounding the
+generation of these templates. We will focus on a nascent subfield where
+tools originally used for Quantum Field Theory () and particle physics
+are being applied to the study of gravitational waves. Specifically we
+are interested in the diagrammatic objects that arise when framing the
+two body problem similarly to particle collisions. We will explain where
+these tools shine in the broader context of waveform approaches such as
+Effective One-Body (), Nonrelativistic General Relativity (),
+Post-Minkowski () and Post-Newtonian () approximations. We will also
+discuss the challenges that lie ahead in the field.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{gravitational-wave-generation}{%
+\chapter{Gravitational Wave
+Generation}\label{gravitational-wave-generation}}
+
+First let us look at where and how gravitional waves are generated. We
+will look at how General Relativity () predicts that graviational waves
+exist, and what conditions have to be met for them to become observable.
+We will also look at how we can detect them, and what we can learn from
+them.
+
+\hypertarget{gravitational-waves}{%
+\section{Gravitational Waves}\label{gravitational-waves}}
+
+The most complete theory of gravity we have right now is that of {GR},
+due to Einstein. It formulates spacetime as a Riemannian manifold with
+curvature, senstive to mass. Objects then move around in that deformed
+spacetime encoded in the metric
+\(\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}\).
+Objects interact gravitationally when the spacetime they move around in
+is affected by the curvature caused by other objects. The equation that
+governs this interaction between mass and curvature is Einstein's field
+equations,
+
+\begin{equation}\protect\hypertarget{eq-EFE}{}{
+\boxed{\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}-\frac{\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}{2} \texttip{R}{Ricci scalar}+\texttip{\Lambda}{cosmological constant}\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}=-8 \pi \oldG\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}} .
+}\label{eq-EFE}\end{equation}
+
+The Left-Hand Side () of this equation, contains several objects that
+are all only really dependent on the metric
+\(\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}\).
+\(\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}\)
+is the Ricci tensor\sidenote{\footnotesize The Ricci Tensor is given by: \[
+  \texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}\coloneq \texttip{\texttip{R}{Riemann tensor}^{\alpha}_{\phantom{\alpha}\mu\alpha\nu}}{Riemann Tensor tensor component}=\texttip{\texttip{g}{metric tensor}^{\alpha\beta}}{contravariant metric tensor component}\texttip{\texttip{R}{Riemann tensor}_{\alpha\mu\beta\nu}}{fully covariant Riemann tensor component}
+  \]}, a contraction of the Riemann curvature tensor
+\(\texttip{\texttip{R}{Riemann tensor}^{\beta}_{\phantom{\beta}\mu\nu\rho}}{Riemann Tensor tensor component}\).
+This tensor\sidenote{\footnotesize The Riemann Tensor is given by: \[
+  \texttip{\texttip{R}{Riemann tensor}^{\beta}_{\phantom{\beta}\mu\nu\rho}}{Riemann Tensor tensor component}=\mathtip{\Gamma^{\beta}_{\phantom{\beta}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\beta}_{\phantom{\beta}\mu\nu}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\beta \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \beta}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\mu \beta}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }\texttip{{}_{,\rho}}{Partial derivative} - \mathtip{\Gamma^{\beta}_{\phantom{\beta}\mu\rho}}{\text{Levi-Civita Connection: }\Gamma^{\beta}_{\phantom{\beta}\mu\rho}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\beta \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \beta}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\mu \beta}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }\texttip{{}_{,\nu}}{Partial derivative} - \mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\rho}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\rho}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }\mathtip{\Gamma^{\beta}_{\phantom{\beta}\alpha\nu}}{\text{Levi-Civita Connection: }\Gamma^{\beta}_{\phantom{\beta}\alpha\nu}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\beta \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \beta}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\alpha \beta}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }+\mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }\mathtip{\Gamma^{\beta}_{\phantom{\beta}\alpha\rho}}{\text{Levi-Civita Connection: }\Gamma^{\beta}_{\phantom{\beta}\alpha\rho}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\beta \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \beta}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\alpha \beta}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }.
+  \]} encodes the curvature of spacetime, as it is essentially a
+measurement of the amount with which covariant derivatives don't
+commute. When they do, it means that they have collapsed to regular
+derivatives, and thus the Levi-civita connection\sidenote{\footnotesize The
+  Levi-Civita Connection is given by:
+  \[\mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+  \Big[
+      \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+      +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+      -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  }=
+  \frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+  \Big[
+   \texttip{\texttip{g}{metric tensor}_{\rho \nu}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+  + \texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\nu}}{Partial derivative}
+  - \texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+  \]} must have vanished. This is only possible if the metric is flat
+\(\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\).
+The Riemann curvature tensor is exclusively made up of the metric, its
+first, second derivatives and it is linear in the second derivative of
+the metric. In fact it is the only possible tensor of that sort. The
+second term on the {LHS} is the Ricci scalar, a further contraction of
+the Ricci Tensor:
+\(\texttip{R}{Ricci scalar}= \texttip{\texttip{g}{metric tensor}^{{\mu\nu}}}{contravariant metric tensor component}\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}\).
+The final term on the {LHS} is just a proportional constant factor of
+the metric, where \(\texttip{\Lambda}{cosmological constant}\) is called
+the cosmological constant. It can be measured and has a low known upper
+bound. It is in part responsible for the expansion of the universe.
+
+The Right-Hand Side () of \ref{eq-EFE} encodes the effect of mass and
+energy on the metric.
+\(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\)
+is the stress-energy tensor, dependent on the dynamics of the system. In
+empty space this term is zero. It is further multiplied by the
+Gravitational constant \(G\).
+
+Equation \ref{eq-EFE} can be recast in a form where the Ricci scalar has
+been eliminated,
+
+\begin{equation}\protect\hypertarget{eq-EFEwoR}{}{
+\boxed{\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}=-8 \pi G\left(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\frac{\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}}{2}\right)+\texttip{\Lambda}{cosmological constant}\texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}} 
+}\label{eq-EFEwoR}\end{equation}
+
+Either equation \ref{eq-EFE}, \ref{eq-EFEwoR} with
+\(\texttip{\Lambda}{cosmological constant}=0\) admit wave solutions. We
+can see this by looking at these equations in the weak field
+approximation. Namely, we take the metric to be a Minkowskian background
+and a small perturbation
+
+\begin{equation}\protect\hypertarget{eq-WeakFA}{}{
+    \texttip{\texttip{g}{metric tensor}_{{\mu\nu}}}{covariant metric tensor component}= \texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}+ \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component},
+}\label{eq-WeakFA}\end{equation}
+
+with
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+small. Note that if we restrict ourselves to first order in
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+then all raising and lowering of indices has to be done with
+\(\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\),
+or else we increase the order of the term by 1. Now since the {LHS} of
+\ref{eq-EFE} is made up of the Ricci tensor and scalar, let us see how
+these behave in the weak approximation. Both are in fact made up of
+Levi-Civita connections, which to first order in
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+is given by:
+\begin{equation}\protect\hypertarget{eq-weakaffine}{}{\mathtip{\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}}{\text{Levi-Civita Connection: }\Gamma^{\alpha}_{\phantom{\alpha}\mu\nu}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\alpha \rho}}{contravariant metric tensor component}
+\Big[
+    \texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    +\texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+    -\texttip{\texttip{g}{metric tensor}_{\mu \alpha}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+} = \frac{1}{2} \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha \rho}}{contravariant Minkoski metric components +---}
+\Big[
+     \texttip{\texttip{h}{weak metric tensor}_{\rho \nu}}{weak covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    + \texttip{\texttip{h}{weak metric tensor}_{\rho \mu}}{weak covariant metric tensor component}\texttip{{}_{,\nu}}{Partial derivative}
+    - \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big] + \mathcal{O}\left(h^{2}\right)\quad .}\label{eq-weakaffine}\end{equation}
+
+Plugging in to the definition of the Ricci tensor we see that the terms
+with products of the connection vanish, and we are left with the
+derivative terms:
+
+\begin{equation}\protect\hypertarget{eq-Ricciweak}{}{ 
+\texttip{\texttip{R}{Ricci tensor}_{{\mu\nu}}}{covariant Ricci tensor component}=
+\toggle{ \frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\rho}}{contravariant Minkoski metric components +---}}{2}\left[ \texttip{\texttip{h}{weak metric tensor}_{\rho\alpha}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative} + \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\rho\alpha}}{Partial derivative} - \texttip{\texttip{h}{weak metric tensor}_{\mu\alpha}}{weak covariant metric tensor component}\texttip{{}_{,\rho\nu}}{Partial derivative} - \texttip{\texttip{h}{weak metric tensor}_{\nu\rho}}{weak covariant metric tensor component}\texttip{{}_{,\mu\alpha}}{Partial derivative} \right]}{\texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}}\endtoggle + \mathcal{O}(h^2)=\texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}+ \mathcal{O}(h^2)
+}\label{eq-Ricciweak}\end{equation}
+
+The linearized Ricci scalar is then just
+\(\texttip{R^{(1)}}{linearized Ricci scalar}=\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}\).
+Regardless of the weak approximation, \ref{eq-EFE} has some gauge
+freedom. This means that if we solve eq \ref{eq-EFE}, it won't be the
+only possible solution, and in fact we can generate the others by
+changing coordinated in such a way that the equation isn't effected. To
+fix this ambiguity we choose a coordinate system (`gauge'), by imposing
+the harmonic coordinate conditions:
+
+\begin{equation}\protect\hypertarget{eq-hcc}{}{ 
+   \texttip{\texttip{g}{metric tensor}^{\alpha\beta}}{contravariant metric tensor component}\mathtip{\Gamma^{\mu}_{\phantom{\mu}\alpha\beta}}{\text{Levi-Civita Connection: }\Gamma^{\mu}_{\phantom{\mu}\alpha\beta}=
+\frac{1}{2} \texttip{\texttip{g}{metric tensor}^{\mu \rho}}{contravariant metric tensor component}
+\Big[
+    \texttip{\texttip{g}{metric tensor}_{\rho \mu}}{covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}
+    +\texttip{\texttip{g}{metric tensor}_{\rho \alpha}}{covariant metric tensor component}\texttip{{}_{,\mu}}{Partial derivative}
+    -\texttip{\texttip{g}{metric tensor}_{\alpha \mu}}{covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative} \Big]
+} =0
+}\label{eq-hcc}\end{equation}
+
+The harmonic coordinate conditions demand the vanishing of the
+Levi-Civita connection. They have a simplified form in the weak
+approximation, which we can acces by plugging \ref{eq-weakaffine} into
+\ref{eq-hcc}, giving: \[
+\begin{split}
+    (\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}+\texttip{\texttip{h}{weak metric tensor}^{\alpha\beta}}{weak contravariant metric tensor component})\frac{1}{2}(\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\rho}}{contravariant Minkoski metric components +---}+\texttip{\texttip{h}{weak metric tensor}^{\mu\rho}}{weak contravariant metric tensor component})\left[\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}+\texttip{\texttip{h}{weak metric tensor}_{\beta\rho}}{weak covariant metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}-\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\right] &= 0 \\
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\rho}}{contravariant Minkoski metric components +---}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\left[2\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative}-\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\right]+ \mathcal{O}(h^2)&= 0 \\
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\rho}}{weak covariant metric tensor component}\texttip{{}_{,\beta}}{Partial derivative} &= \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\rho}}{Partial derivative}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---} + \mathcal{O}(h^2).
+\end{split}
+\]
+
+The last equation to first order is called the de Donder gauge and is
+often written: \[
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}^{,\mu}}{Partial derivative} = \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{{}_{,\nu}}{Partial derivative}
+\] In de Donder gauge we can simplify the terms in \ref{eq-Ricciweak}
+to:
+
+\[
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\mu}}{weak covariant metric tensor component}\texttip{{}_{,\nu\beta}}{Partial derivative} \approx \frac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative},
+\] and \[
+    \texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{\beta\nu}}{weak covariant metric tensor component}\texttip{{}_{,\mu\alpha}}{Partial derivative} \approx \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}_{\alpha\beta}}{weak covariant metric tensor component}\texttip{{}_{,\mu\nu}}{Partial derivative}.
+\] With these two relations the expression for the linearized Ricci
+tensor \ref{eq-Ricciweak} simplifies to
+\begin{equation}\protect\hypertarget{eq-Ricciweak2}{}{
+    \texttip{\texttip{R^{(1)}}{linearized Ricci tensor}_{{\mu\nu}}}{covariant linearized Ricci tensor component}= \frac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\alpha\beta}}{contravariant Minkoski metric components +---}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}_{,\alpha\beta}}{Partial derivative} = \frac{1}{2}\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}.
+}\label{eq-Ricciweak2}\end{equation}\\
+Where we have defined the Special Relativity () D'Alembertian as:
+\(\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}=\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu\)
+We can plug this into \ref{eq-EFEwoR}, with
+\(\texttip{\Lambda}{cosmological constant}=0\), and up to first order in
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+we get the linearized Einstein field equations for a system of harmonic
+coordinates:
+
+\begin{equation}\protect\hypertarget{eq-linearized}{}{
+\square_{SR} \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= -16\pi \oldG\overbracket{(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace})}^{\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}} 
+}\label{eq-linearized}\end{equation}
+\begin{equation}\protect\hypertarget{eq-dedonder}{}{
+\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\mu}}{weak mixed metric tensor component}\texttip{{}_{,\alpha}}{Partial derivative}=\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{{}_{,\mu}}{Partial derivative}. 
+}\label{eq-dedonder}\end{equation} Where raising and lowering indices
+has been done with the Minkowski metric. The tensor
+\(\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\)
+encodes the behavior of the source of gravitional waves. One could also
+plug \ref{eq-Ricciweak2} into \ref{eq-EFE}, with
+\(\texttip{\Lambda}{cosmological constant}=0\), and if we change to the
+trace reversed perturbation:
+\(\mathtip{\texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu}}{{\text{trace reversed weak covariant metric tensor component: } \texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu} = \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{\mu\nu}}{covariant Minkoski metric components +---}}}=\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}- \frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\),
+we get similar and simpler equations at the cost of a more complex
+perturbation: \sidenote{\footnotesize Note that the inverse change of variables is
+  just:
+  \(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}=\mathtip{\texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu}}{{\text{trace reversed weak covariant metric tensor component: } \texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu} = \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{\mu\nu}}{covariant Minkoski metric components +---}}}-\frac{1}{2}\texttip{\texttip{\bar{h}}{trace reversed weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{trace reversed weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\).}
+\sidenote{\footnotesize We eliminate the trace of the stress-energy tensor by using:
+  \(\texttip{R}{Ricci scalar}= 8\pi\oldG\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\).
+  We can write
+  \(\texttip{R^{(1)}}{linearized Ricci scalar}=-\frac{1}{2}\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{\bar{h}}{trace reversed weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{trace reversed weak metric tensor trace}\),
+  in de Donder gauge, which is precisely the extra term dropping out of
+  \(\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+  when we express it in terms of
+  \(\mathtip{\texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu}}{{\text{trace reversed weak covariant metric tensor component: } \texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu} = \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{\mu\nu}}{covariant Minkoski metric components +---}}}\)}
+
+\begin{equation}\protect\hypertarget{eq-linearizedTR}{}{
+\square_{SR} \mathtip{\texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu}}{{\text{trace reversed weak covariant metric tensor component: } \texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu} = \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{\mu\nu}}{covariant Minkoski metric components +---}}}= -16\pi \oldG\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}
+}\label{eq-linearizedTR}\end{equation}
+\begin{equation}\protect\hypertarget{eq-dedonderTR}{}{
+    \mathtip{\texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu}}{{\text{trace reversed weak covariant metric tensor component: } \texttip{\bar{h}}{trace reversed weak metric tensor}_{\mu\nu} = \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{1}{2}\texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{\mu\nu}}{covariant Minkoski metric components +---}}}\texttip{{}^{,\nu}}{Partial derivative}=0. 
+}\label{eq-dedonderTR}\end{equation}
+
+In this form we can very easily recover the conservation equation for
+the stress-energy tensor. We take the divergence of
+\ref{eq-linearizedTR} and use \ref{eq-dedonderTR} to get:
+
+\begin{equation}\protect\hypertarget{eq-SEcons}{}{
+    \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}^{,\nu}}{Partial derivative}=0.
+}\label{eq-SEcons}\end{equation}
+
+Let us look at what sorts of solutions come out of these equations.
+
+\hypertarget{homogenous-solutions}{%
+\section{Homogenous solutions}\label{homogenous-solutions}}
+
+The simplest first step is to consider the homogeous solution, as all
+solutions will involve these terms. Setting
+\(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}=0\)
+or
+\(\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}=0\)
+yields an easily recognisable wave equation.
+\begin{equation}\protect\hypertarget{eq-homogenous}{}{
+   \mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= 0 
+}\label{eq-homogenous}\end{equation}
+
+The de Donder gauge (\ref{eq-dedonder}) and the remaining gauge
+freedom\sidenote{\footnotesize from changes in coordinates such as
+  \(\texttip{x^{\mu}}{contravariant mathbftor component}\to\texttip{x^{\mu}}{contravariant mathbftor component}+\texttip{\xi^{\mu}}{contravariant mathbftor component}\)
+  with
+  \(\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\xi^{\mu}}{contravariant mathbftor component}=0\)}
+restricts the possible forms of this solution to having only helicity
+\(\pm2\) physically significant components (see Weinberg
+(1972)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-weinbergGravitationCosmologyPrinciples1972}{}}%
+Weinberg, Steven. 1972. \emph{Gravitation and Cosmology: Principles and
+Applications of the General Theory of Relativity}. {New York}: {Wiley}.\vspace{2mm}\par\end{footnotesize}}).
+Let us look at its generic form. The metric
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+ought to be real-valued, thus we seek real solutions of the form
+
+\[
+    \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= \texttip{\texttip{\varepsilon}{Polarization tensor}_{{\mu\nu}}}{covariant Polarization tensor component}\oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x} + \texttip{\texttip{\varepsilon^\ast}{Conjugate Polarization tensor}_{{\mu\nu}}}{covariant conjugate Polarization tensor component}\oldexp{-\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x},
+\]
+
+where
+\(\texttip{\texttip{\varepsilon}{Polarization tensor}_{{\mu\nu}}}{covariant Polarization tensor component}\)
+is the polarization tensor and \(k\) is the wave vector. The
+polarization tensor is a symmetric rank-2 tensor, since
+\(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+is. Additionally we define: \[
+    k\cdot x\equiv \texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\texttip{k^{\mu}}{contravariant mathbftor component} \texttip{k^{\nu}}{contravariant mathbftor component} = \texttip{k_{\mu}}{covariant mathbftor component} \texttip{x^{\mu}}{contravariant mathbftor component}.
+\] Substituting into
+\(\mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}=0\)
+gives
+\(\texttip{k_{\mu}}{covariant mathbftor component} \texttip{k^{\mu}}{contravariant mathbftor component} \equiv k^2=0\)\sidenote{\footnotesize assuming
+  non-zero perturbation
+  \(\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\)
+  of course} \sidenote{\footnotesize this is saying that the wavevector for the wave
+  is null, thus that the wave propagates at the speed of light}. From
+\ref{eq-dedonder} we have
+\begin{equation}\protect\hypertarget{eq-polk}{}{
+    \texttip{\texttip{\varepsilon}{Polarization tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed Polarization tensor component}\texttip{k_{\mu}}{covariant mathbftor component} = \frac{1}{2}\texttip{\texttip{\varepsilon}{Polarization tensor}^{\alpha}{}_{\alpha}}{Polarization tensor trace}k_\nu.
+}\label{eq-polk}\end{equation} As said at the beginning of this
+subsection, we still have some remaining gauge freedom, which we now
+fix, choosing the following coordinate change
+\(\texttip{x^{\mu}}{contravariant mathbftor component}\to\texttip{x^{\mu}}{contravariant mathbftor component}+\texttip{\zeta^{\mu}}{contravariant mathbftor component}\)
+where: \[
+\texttip{\zeta^{\mu}}{contravariant mathbftor component}=\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\texttip{A^{\mu}}{contravariant mathbftor component} \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x}    =  - \mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\texttip{\texttip{A^\ast}{conjugate of A}^{\mu}}{contravariant mathbftor component} \oldexp{ -\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x}
+\]
+
+Imposing this change yields the following modified perturbation:
+
+\[
+\texttip{h}{weak metric tensor}'_{\mu\nu}=\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}-\frac{\partial^{} \texttip{\zeta_{\mu}}{covariant mathbftor component}}{\partial\texttip{x^{\nu}}{contravariant mathbftor component}^{}}-\frac{\partial^{} \texttip{\zeta_{\nu}}{covariant mathbftor component}}{\partial\texttip{x^{\mu}}{contravariant mathbftor component}^{}}=\texttip{\varepsilon}{Polarization tensor}'_{\mu\nu} \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x} + \texttip{\varepsilon}{Polarization tensor}^{\prime\ast}{}_{\mu\nu} \oldexp{-\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}k\cdot x}.
+\] with
+
+\begin{equation}\protect\hypertarget{eq-polTprime}{}{
+\texttip{\varepsilon}{Polarization tensor}'_{\mu\nu} = \texttip{\texttip{\varepsilon}{Polarization tensor}_{{\mu\nu}}}{covariant Polarization tensor component}+ \texttip{k_{\mu}}{covariant mathbftor component}\texttip{A_{\nu}}{covariant mathbftor component} + \texttip{k_{\nu}}{covariant mathbftor component}\texttip{A_{\mu}}{covariant mathbftor component}
+}\label{eq-polTprime}\end{equation}
+
+Equations \ref{eq-polk} and \ref{eq-polTprime} reduce the free
+components in the polarization tensor to just two. Additionally these
+equations can conspire to yield a traceless polarisation tensor
+\(\texttip{\texttip{\varepsilon}{Polarization tensor}^{\alpha}{}_{\alpha}}{Polarization tensor trace}=0\),
+with
+\(\texttip{\texttip{\varepsilon}{Polarization tensor}_{0\mu}}{covariant Polarization tensor component}=0\)
+(see Carroll
+(2019)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-carrollSpacetimeGeometryIntroduction2019}{}}%
+Carroll, Sean M. 2019. {``Spacetime and {Geometry}: {An Introduction} to
+{General Relativity}.''} \emph{Higher Education from Cambridge
+University Press}.
+https://www.cambridge.org/highereducation/books/spacetime-and-geometry/38EDABF9E2BADCE6FBCF2B22DC12BFFE;
+{Cambridge University Press}.
+\url{https://doi.org/10.1017/9781108770385}.\vspace{2mm}\par\end{footnotesize}}).
+This then extends to the metric perturbation, which when imposed to be
+traceless, becomes equal to its trace-reversed counterpart. This is the
+so-called transverse traceless gauge:
+
+\[
+\texttip{\texttip{h}{weak metric tensor}_{0\mu}}{weak covariant metric tensor component}=0,\quad \texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}=0, \quad \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\texttip{{}^{,\nu}}{Partial derivative}=0.
+\]
+
+The metric perturbation in this gauge is written as:
+\(\mathtip{\texttip{h^{TT}}{transverse traceless weak metric tensor}_{ij}}{{\text{transverse traceless weak covariant metric tensor component: } \texttip{h^{TT}}{transverse traceless weak metric tensor}_{0\mu}=0,\quad \texttip{h^{TT}}{transverse traceless weak metric tensor}^{i}_{\phantom{i}i}=0, \quad \texttip{h^{TT}}{transverse traceless weak metric tensor}_{ij}\texttip{{}^{,j}}{Partial derivative}=0.}}\).
+
+\hypertarget{inhomogenous-solutions}{%
+\section{Inhomogenous solutions}\label{inhomogenous-solutions}}
+
+With the homogenous part of \ref{eq-linearized} accounted for, we can
+now look at the inhomogenous part. The solution in the presence of a
+source term of \ref{eq-linearized} will be heavily inspired by the
+analogous problem in electromagnetism. If we define the following
+retarded Green's function \[
+    \texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function} = -2\pi\,\texttip{\delta^{((4))}\left((\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component})^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(x^0>x^{\prime 0}\right)}{Heaviside step function},
+\] which satisfies,
+
+\[
+    \mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function} = \texttip{\delta^{((4))}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{Dirac delta function}.
+\]
+
+Then, the solution to
+
+\begin{equation}\protect\hypertarget{eq-EFEwave}{}{
+ \mathtip{\Box_{SR}}{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{{\mu\nu}}}{contravariant Minkoski metric components +---}\partial_\mu\partial_\nu}\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}=  -16 \pi \oldG\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}
+}\label{eq-EFEwave}\end{equation}
+
+is given by:
+
+\begin{equation}\protect\hypertarget{eq-hsolInhom}{}{
+    \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(x) = 8G\int\,\mathrm{d}^{4}x'\,\,\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(x'),
+}\label{eq-hsolInhom}\end{equation}
+
+\marginnote{\begin{footnotesize}
+
+One gets the parallel solution to the trace reversed equation
+\ref{eq-linearizedTR} by swapping \(\texttip{S}{source tensor}\) with
+\(\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}\) and all
+\(\texttip{h}{weak metric tensor}\) with
+\(\texttip{\bar{h}}{trace reversed weak metric tensor}\)
+
+\end{footnotesize}}
+
+since when we plug in \ref{eq-hsolInhom} into \ref{eq-EFEwave} \[
+    \Box_x\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}= 8\oldG\int\,\mathrm{d}^{4}x'\,\par[\big]{(\underbrace{\Box_x\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}}_{=-2\pi\,\texttip{\delta^{()}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{Dirac delta function}}} \texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(x') = -16\pi \oldG\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(x).
+\] We can perform the \(x^{\prime0}=t'\) integration in
+\ref{eq-hsolInhom}, with the delta function, setting
+\(t'=t-\vert\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component} \vert= t_r\)
+the retarded time, i.e: \[
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(x) = 8\oldG\int\,\mathrm{d}^{3}\mathbf{y}\,\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t,\mathbf{y})\,\mathrm{d}^{}t'\,\frac{\delta(t'-(t-\vert\mathbf{x}-\mathbf{y} \vert))}{2\vert\mathbf{x}-\mathbf{y} \vert} 
+\]
+
+\begin{equation}\protect\hypertarget{eq-solInhomt}{}{
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(\mathbf{x},t) = 4\oldG\int\,\mathrm{d}^{3}\mathbf{y}\,\frac{\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t-\vert\mathbf{x}-\mathbf{y} \vert,\mathbf{y})}{\vert\mathbf{x}-\mathbf{y} \vert}.
+}\label{eq-solInhomt}\end{equation}
+
+We can interpret the solution at \((\mathbf{x},t)\) above, as the
+perturbation due to the sumed up contributions of all the sources at the
+point \((\mathbf{x}-\mathbf{y},t_r)\) on the past light cone. Put
+differently this will be the gravitational radiation produced by the
+source
+\(\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\).
+Additionally, the form of the time argument of the source tensor,
+imposed by the definition of the Green's function, shows that the
+radiation propagates with velocity \(=1=c\). This retarded solution
+satisfies the harmonic coordinate condition of \ref{eq-linearized}, as
+required. Indeed, we have
+
+\[
+    \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{;\mu}}{Covariant derivative}=0\ \Rightarrow\ \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{,\mu}}{Partial derivative}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\texttip{{}_{,\mu}}{Partial derivative}=0,
+\]
+
+ignoring non-linearities. Then,
+
+\[
+    \texttip{\texttip{S}{source tensor}^{\mu\nu}}{contravariant source tensor component}\texttip{{}_{,\mu}}{Partial derivative} = \partial_\mu\left(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}-\frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\right) = -\frac{\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\texttip{{}_{,\mu}}{Partial derivative}.
+\]
+
+Also
+
+\[
+    \texttip{\texttip{S}{source tensor}^{\mu}{}_{\mu}}{source tensor trace} = \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\mu}{}_{\mu}}{Stress-Energy tensor trace} -\frac{\texttip{\delta_\mu^\mu}{Kronecker delta}}{2}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}= -\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}.
+\]
+
+Thus
+
+\[
+\begin{split}
+    \texttip{\texttip{S}{source tensor}^{\mu\nu}}{contravariant source tensor component}\texttip{{}_{,\mu}}{Partial derivative} &= \frac{1}{2}\texttip{\texttip{S}{source tensor}^{\alpha}{}_{\alpha}}{source tensor trace}\texttip{{}_{,\mu}}{Partial derivative}\texttip{\texttip{\eta}{Minkoski metric tensor +---}^{\mu\nu}}{contravariant Minkoski metric components +---} \\
+    \texttip{\texttip{S}{source tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed source tensor component}\texttip{{}_{,\mu}}{Partial derivative} &= \frac{1}{2}\texttip{\texttip{S}{source tensor}^{\alpha}{}_{\alpha}}{source tensor trace}\texttip{{}_{,\nu}}{Partial derivative}.
+\end{split}
+\]
+
+Then
+
+\[
+\begin{split}
+    \texttip{\texttip{h}{weak metric tensor}^{\mu}_{\phantom{\mu}\nu}}{weak mixed metric tensor component}\texttip{{}_{,\mu}}{Partial derivative} &= 8\oldG\frac{\partial^{} }{\partial\texttip{x^{\mu}}{contravariant mathbftor component}^{}} \int\,\mathrm{d}^{4}x'\, \texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function} \texttip{\texttip{S}{source tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed source tensor component}(x') \\
+&= 8\oldG\int\,\mathrm{d}^{4}x'\,\,\frac{\partial^{} \texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}}{\partial \texttip{x^{\mu}}{contravariant mathbftor component}^{}} \texttip{\texttip{S}{source tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed source tensor component}(x') \\
+&= -8\oldG\int\,\mathrm{d}^{4}x'\,\frac{\partial^{} \texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}}{\partial\texttip{x'^{\mu}}{contravariant mathbftor component}^{}}\texttip{\texttip{S}{source tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed source tensor component}(x') \\
+    &= \underbrace{8\oldG\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}\texttip{\delta_{\nu}^{\mu}}{Kronecker delta}(x')}_{=0\ \mathrm{for}\ x=x'} + 8G\int\,\mathrm{d}^{4}x'\,\,\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function}\frac{\partial^{} \texttip{\texttip{S}{source tensor}^{\mu}_{\phantom{\mu}\nu}}{mixed source tensor component}(x')}{\partial\texttip{x'^{\mu}}{contravariant mathbftor component}^{}} \\
+    &= 8G\int\,\mathrm{d}^{4}x'\,\,\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function} \frac{1}{2}\frac{\partial^{} \texttip{\texttip{S}{source tensor}^{\alpha}{}_{\alpha}}{source tensor trace}(x')}{\partial\texttip{x'^{\mu}}{contravariant mathbftor component}^{}} \\
+    &=\quad \dots \quad \text{repeat in reverse} \\
+    &= \frac{\partial^{} }{\partial\texttip{x^{\mu}}{contravariant mathbftor component}^{}} \Big[8\oldG\int\,\mathrm{d}^{4}x'\,\,\texttip{\mathcal{G}_{\mathrm{ret}}\left(\texttip{x^{\mu}}{contravariant mathbftor component}-\texttip{x'^{\mu}}{contravariant mathbftor component}\right)}{ret Green's function} \frac{1}{2}\texttip{\texttip{S}{source tensor}^{\alpha}{}_{\alpha}}{source tensor trace}(x') \Big] \\
+    &= \frac{1}{2} \texttip{\texttip{h}{weak metric tensor}^{\alpha}_{\phantom{\alpha}\alpha}}{weak metric tensor trace}\texttip{{}_{,\mu}}{Partial derivative}.\checkmark
+\end{split}
+\]
+
+\hypertarget{gravitational-wave-sources}{%
+\section{Gravitational Wave Sources}\label{gravitational-wave-sources}}
+
+Now that we have the general form of the solutions to the linearized
+Einstein equations, we can proceed to the analysis of the sources of
+gravitational waves. The first step is to analyse the equations in the
+frequency domain. We will use the following notation:
+
+\[\mathtip{\mathcal{F}_{t}\left[\phi\right]}{\text{Fourier transform of $\phi$ in variable $t$: }{\mathcal{F}_{t}\left[\phi\right] = \int \,\mathrm{d}^{}t\, \phi(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{x})=\int \,\mathrm{d}^{}t\, \phi(t,\mathbf{x}) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega t}\]
+\[\mathtip{\mathcal{F}^{-1}_{\omega}\left[\phi\right]}{\text{inverse Fourier transform of $\phi$ in variable $\omega$: }{\mathcal{F}_{\omega}\left[\phi\right] = \frac{1}{2\pi}\int  \,\mathrm{d}^{}\omega\,\oldexp{-\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}t \cdot \omega} \phi(\omega)  }}(t,\mathbf{x})=\int \frac{\,\mathrm{d}^{}\omega\,}{2\pi} \mathtip{\mathcal{F}_{t}\left[\phi\right]}{\text{Fourier transform of $\phi$ in variable $t$: }{\mathcal{F}_{t}\left[\phi\right] = \int \,\mathrm{d}^{}t\, \phi(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{x}) \oldexp{- \mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega t}\]
+
+Let us look at the trace reversed solution, as the conservation equation
+for
+\begin{equation}\protect\hypertarget{eq-FTweakmet}{}{\begin{aligned} 
+\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega, \mathbf{x}) &=\int \,\mathrm{d}^{}t\, \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(t,\mathbf{x}) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega t}
+\\ &=4\oldG\int\,\mathrm{d}^{3}\mathbf{y}\,\,\mathrm{d}^{}t\, \frac{\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t-\vert\mathbf{x}-\mathbf{y} \vert,\mathbf{y})}{\vert\mathbf{x}-\mathbf{y} \vert}  \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega t}
+\\ &=4\oldG\int\,\mathrm{d}^{3}\mathbf{y}\,\,\mathrm{d}^{}t_r\, \frac{\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t_r,\mathbf{y})}{\vert\mathbf{x}-\mathbf{y} \vert}  \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega t_r}\oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega\vert\mathbf{x}-\mathbf{y} \vert}
+\\ &=4\oldG\int\,\mathrm{d}^{3}\mathbf{y}\, \frac{\mathtip{\mathcal{F}_{t_r}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}$ in variable $t_r$: }{\mathcal{F}_{t_r}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right] = \int \,\mathrm{d}^{}t_r\, \texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t_r) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t_r}   }}(\omega,\mathbf{y})}{\vert\mathbf{x}-\mathbf{y} \vert} \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega\vert\mathbf{x}-\mathbf{y} \vert} 
+\end{aligned}}\label{eq-FTweakmet}\end{equation}
+
+We can now apply various approximations to this form of the
+perturbation. The first is to consider that we look at the radiation
+only in the so called \emph{wave zone}, at a distance
+\(r=\vert\mathbf{x} \vert\) much larger than the dimensions of the
+source \(R=\vert\mathbf{y} \vert_\text{max}\). Additionally we assume
+that \(r \gg \frac{1}{\omega}\), i.e long wavelengths don't dominate.
+Finally we assume that \(r \gg \omega R^2\), i.e.~the ratio of \(R\) to
+the wavelength is not comparable to the ratio of \(r\) to \(R\). Using
+this approximation we can write:
+
+\[
+\begin{split}
+    \vert\mathbf{x}-\mathbf{y} \vert &= r\left(1-2\hat{\mathbf{x}}\cdot\mathbf{y}+\frac{\mathbf{x}^{\prime2}}{r^2}\right)^{1/2} \\
+    \vert\mathbf{x}-\mathbf{y} \vert &\approx r\left(1-\frac{\hat{\mathbf{x}}\cdot\mathbf{y}}{r}\right) \quad \text{with: } \hat{\mathbf{x}} = \frac{\mathbf{x}}{r}.
+\end{split}
+\]
+
+If we additionally further separate the scales in the following
+way\sidenote{\footnotesize we just add the condition that \(\frac{1}{\omega}\gg R\),
+  that is the source radius is much smaller than the wavelength}
+
+\[
+r\gg \{\frac{1}{\omega},\omega R^2 \}\gg R,
+\]
+
+Then \ref{eq-FTweakmet} becomes much simpler\sidenote{\footnotesize the approximations
+  all conspire to be able to neglect the \(\mathbf{y}\) dependence of
+  \(\oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega\vert\mathbf{x}-\mathbf{y} \vert}\)
+  in the integral}:
+
+\begin{equation}\protect\hypertarget{eq-FTweakmet2}{}{
+\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega, \mathbf{x})=4\oldG\frac{\oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega R}}{R} \int\,\mathrm{d}^{3}\mathbf{y}\, \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y}) 
+}\label{eq-FTweakmet2}\end{equation}
+
+Now let us look at the fourier transform of the source term. By
+definition we have
+
+\[
+\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{S}{source tensor}_{\mu\nu}}{covariant source tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y})=\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y})+\tfrac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}^{\alpha}{}_{\alpha}}{Stress-Energy tensor trace}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y})
+\]
+
+Thus the term to analyse is actually
+\(\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}\).
+We can use the conservation equation \ref{eq-SEcons} in fourrier
+\(t\)-space to write:
+
+\begin{equation}\protect\hypertarget{eq-FTSEcons}{}{
+- \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{i\mu}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{i\mu}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{i\mu}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{i\mu}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}\texttip{{}^{,i}}{Partial derivative} = \mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{0\mu}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{0\mu}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{0\mu}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{0\mu}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}
+}\label{eq-FTSEcons}\end{equation}
+
+This equation becomes algebraic when we further fourrier transorm in
+\(\mathbf{x}\)-space:
+
+\[
+\mathtip{\hat{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}}}{\text{Fourier transform of $\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}$ in variable $\mathbf{x}$: }{\hat{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}}\left(\oldk\right)
+ = \int \,\mathrm{d}^{}\mathbf{x}\, \texttip{T}{Stress-Energy tensor, or energy-momentum tensor}(\mathbf{x}) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\oldk \cdot \mathbf{x}}}}_{\mu\nu}(\texttip{k^{\alpha}}{contravariant mathbftor component}) =\mathtip{\hat{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}}}{\text{Fourier transform of $\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}$ in variable $\mathbf{x}$: }{\hat{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}}\left(\oldk\right)
+ = \int \,\mathrm{d}^{}\mathbf{x}\, \texttip{T}{Stress-Energy tensor, or energy-momentum tensor}(\mathbf{x}) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\oldk \cdot \mathbf{x}}}}_{\mu\nu}(\omega,\oldk) = \int \,\mathrm{d}^{3}\mathbf{y}\, \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y}) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\oldk\cdot\mathbf{y}}
+\] Then the conservation equation becomes: \[
+\texttip{k^{\mu}}{contravariant mathbftor component}\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}(\omega,\oldk) = 0
+\]
+
+These four equations enable us to just care about the purely spacelike
+components of
+\(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\).
+Let us apply \ref{eq-FTSEcons} to itself to obtain:
+
+\[
+\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}\texttip{{}^{,ij}}{Partial derivative}=-\omega^2\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}
+\] which when multiplied by
+\(\texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component}\)
+and integrated over \(\mathbf{x}\) gives\sidenote{\footnotesize two integrations by
+  parts cancels the
+  \(\texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component}\)
+  term in the {LHS}, since boundary terms are 0 (the source is finite)
+  we have
+  \[\int \,\mathrm{d}^{}x\, \texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component} \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}\texttip{{}^{,ij}}{Partial derivative}=\int\,\mathrm{d}^{}x\, \texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component}\texttip{{}^{,ij}}{Partial derivative} \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{ij}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}\]
+  The hessian of
+  \(\texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component}\)
+  is
+  \((\texttip{\delta^i_m}{Kronecker delta}+\texttip{\delta^i_n}{Kronecker delta})(\texttip{\delta^j_n}{Kronecker delta}+\texttip{\delta^j_m}{Kronecker delta})\),
+  but since
+  \(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{{\mu\nu}}}{covariant Stress-Energy tensor component}\)
+  is symmetric the integral is
+  \[\int \,\mathrm{d}^{}\mathbf{y}\, 2\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{y}) \]}:
+\[
+\int \,\mathrm{d}^{}\mathbf{x}\, \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{mn}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{x})=-\frac{\omega}{2} \int \,\mathrm{d}^{}\mathbf{x}\, \texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component} \mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega,\mathbf{x})
+\]
+
+Notice the last integral is in fact the fourrier transform of (a third
+of) the quadrupole moment tensor of the energy denisty\sidenote{\footnotesize \[q_{mn}=3\int \texttip{x_{m}}{covariant mathbftor component}\texttip{x_{n}}{covariant mathbftor component} \texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}(\omega,\mathbf{x})\]}.
+We call it
+\(\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}_{mn}(\omega)\)
+and we can finally rewrite \ref{eq-FTweakmet2} as:
+
+\[
+\mathtip{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right]}{\text{Fourier transform of $\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}$ in variable $t$: }{\mathcal{F}_{t}\left[\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}\right] = \int \,\mathrm{d}^{}t\, \texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}   }}(\omega, \mathbf{x})=-\frac{2\oldG\omega^2}{3}\frac{\oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega R}}{R} \par{\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}_{mn}(\omega)+\tfrac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}^n{}_{n}(\omega)}
+\]
+
+Going back \(t\)-space we have:
+
+\[
+\begin{aligned}
+\texttip{\texttip{h}{weak metric tensor}_{{\mu\nu}}}{weak covariant metric tensor component}(t,\mathbf{x})&=-\frac{\oldG}{3\pi R}\int \,\mathrm{d}^{}\omega\, \oldexp{-\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega(t-R)} \omega^2 \par{\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}_{mn}(\omega)+\tfrac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}^n{}_{n}(\omega)}\\
+&=\frac{\oldG}{3\pi R}  \frac{\mathrm{d}^{2} }{\mathrm{d}t^{2}}\int \,\mathrm{d}^{}\omega\, \oldexp{-\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega(t_r)} \par{\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}_{mn}(\omega)+\tfrac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}\mathtip{\hat{q}}{\text{Fourier transform of $q$ in variable $t$: }{\hat{q}\left(\omega\right)
+ = \int \,\mathrm{d}^{}t\, q(t) \oldexp{\mathtip{{\mathring{\imath}}}{\text{Complex unit: } {\mathring{\imath}}^2 = -1}\omega \cdot t}}}^n{}_{n}(\omega)}\\
+&=\frac{2\oldG}{3R}\frac{\mathrm{d}^{2} }{\mathrm{d}t^{2}}\par{q_{mn}(t_r)+\tfrac{1}{2}\texttip{\texttip{\eta}{Minkoski metric tensor +---}_{{\mu\nu}}}{covariant Minkoski metric components +---}q^n{}_n(t_r)}
+\end{aligned}
+\]
+
+This equation has a very nice physical interpretation. The gravitational
+wave produced by a non-relativistic source is proportional to the second
+derivative of the quadrupole moment of the its energy denisty at the
+time where the past light cone of the observer intersects the source
+(\(t_r\)). The nature of gravitational radiation is in stark contrast to
+the leading electromagnetic contribution which is due the the change in
+the \emph{dipole} moment of the charge density. The change of the dipole
+moment can be attributed to the change in center of charge (for
+Electromagnetism ()), or mass (for {GR}), and while a center of charge
+is free to move around, the center of mass (of an isolated) is fixed by
+the conservation of momentum. The quadrupole moment, on the other hand,
+is sensitive to the shape of the source, which a gravitional system can
+modify. Finally the quadrupole radiation is subleading when compared to
+dipole radiation. Thus on top of the much smaller coupling constant,
+gravitional radiation is also weakened by this fact, and thus is usually
+orders of magnitude weaker than electromagnetic radiation.
+
+Thus any object that is modifying its shape is a source of gravitional
+waves. All orbiting systems therefore are sources of
+Gravitational Wave ()s. However as said just above, only very important
+`changes in shape' have a chance to be detectable. These phenomena are
+what we will explore next.
+
+\hypertarget{sec-compactbinaries}{%
+\subsection{Compact binaries}\label{sec-compactbinaries}}
+
+How could one construct a very powerful source of {GW}s? One could take
+two very massive objects, (such that
+\(\texttip{\texttip{T}{Stress-Energy tensor, or energy-momentum tensor}_{00}}{covariant Stress-Energy tensor component}\)
+is large) and make them orbit each other. At that point one could hope
+to detect this orbit if the objects are massive enough and orbiting
+close enough for the `change in shape' of the system to sizeable. For
+these very massive objects to be close enough for a small orbit, they
+have to be very compact. Assuming that is the case, a funny thing
+happens, as these objects orbit each other, they emit {GW}s, and in
+doing so they lose energy\sidenote{\footnotesize of course this happens in every
+  orbiting system just on a time scale that is neglible. Only systems
+  which are massive enough to produce large amounts of radiation
+  actually lose enough energy for it to matter}. Thus they slow down,
+and their orbit shrinks. This continues until the orbit is so small that
+the objects merge into a single object. Of course this is a very
+important change of shape and thus we have a constructed (if not all on
+purpose) a very powerful source of {GW}s. Such objects are called
+compact binaries.
+
+\hypertarget{binaries}{%
+\subsection{\texorpdfstring{{BH}
+Binaries}{BH Binaries}}\label{binaries}}
+
+Taking the process described above to the limit one could imagine asking
+for the most dense objects possible to orbit each other. In {GR} this
+object is called a black hole ({BH}). It is a possible solution to the
+full fat Einstein Field Equations () (\ref{eq-EFE}), where we consider a
+static and isotropic universe, with point like mass at its center. Then
+the solutions to the equations \ref{eq-EFE} have a unique form (Birkhoff
+and Langer
+(1923)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-birkhoffRelativityModernPhysics1923}{}}%
+Birkhoff, George David, and Rudolph Ernest Langer. 1923.
+\emph{Relativity and Modern Physics}. {Cambridge}: {Harvard University
+Press; {[}etc., etc.{]}}.\vspace{2mm}\par\end{footnotesize}}),
+called the Schwarzschild solution. The solution is given by:
+
+\hypertarget{binaries-1}{%
+\subsection{\texorpdfstring{{NS}
+Binaries}{NS Binaries}}\label{binaries-1}}
+
+We can also not go as far as having our compact object be a {BH}, but
+can also consider {NS}s. These object are notheless extremely dense (not
+infinitely so), and are essentially like big atomic nuclei. Not much is
+known about them and in fact {GW} astronomy is could be
+
+\hypertarget{exotic-sources}{%
+\subsection{Exotic Sources}\label{exotic-sources}}
+
+Cosmic strings, supernovae, and other exotic sources of {GW}s are also
+possible.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{gravitational-wave-detection}{%
+\chapter{Gravitational Wave
+Detection}\label{gravitational-wave-detection}}
+
+Gravitiional waves were first theorised by Einstein, accompanying his
+theory of general relativity. However it was not even clear whether this
+was an artefact of the theory or something real. Of course as we have
+seen, {GW}s are predicted to be very weak, and thus there initiall was
+little hope of ever detecting them. As evidence mounted that {GR} was
+indeed a very good theory of gravity, people started to investigate more
+seriously whether one could detect {GW}s. The first detectors were
+resonant antennas,
+
+thowever these have to date, not been sucessful in detecting {GW}s. The
+more modern laser based detectors were the final piece of the puzzle.
+With extremely high precision (the modern measurement accuracy at {LIGO}
+is equivalent to measuring the distance to alpha centauri to the width
+of a human hair), these detectors are able to detect {GW}s. The first
+detection was made in 2015, marking the beginning of a new era in
+astronomy, and maybe physics.
+
+\hypertarget{laser-interferometers}{%
+\section{Laser interferometers}\label{laser-interferometers}}
+
+\hypertarget{sec-ligo}{%
+\subsection{\texorpdfstring{{LIGO}}{LIGO}}\label{sec-ligo}}
+
+\hypertarget{section}{%
+\subsection{Laser Interferometer Space Antenna ()}\label{section}}
+
+\hypertarget{matched-filtering}{%
+\section{matched filtering}\label{matched-filtering}}
+
+The signals measured by the laser interferometers such as {LIGO}, are a
+measurement of strain over time. This waveform essentially measures the
+deformation of spacetime when a {GW} passes through a detector. While
+some {GW} signals coming out of laser interferometers, are clearly
+identified as such, mainly due to their extraordinary power output,
+smaller systems and weaker signals are harder to identify. In fact most
+of the detections have happened under the noise floor of the detectors.
+How is this possible? Matched filtering and waveform generation. In this
+chapter we will explain the matched filtering approach and then
+introduce the methods that are used to generate the waveforms to be
+matched against. Waveforms for spiraling binaries are the principle tool
+for comparing data from Gravitational wave detectors to the theory
+surrounding them. They are the bridge between theory and experiment.
+
+As we have seen, the matched filtering approach is contingent on having
+a waveform that corresponds to the physical process that is emitting the
+signal. Usually these processes can be parametrized by a set of
+parameters, such as in the case of a compact binary, the mass ratio of
+the binary, the orbit eccentricity, the possible spin etc. The filter
+waveform must then of course depend on these parameters, be it
+heuristically or physically (i.e., from first principles).
+
+\hypertarget{pulsar-timing-arrays}{%
+\section{Pulsar Timing Arrays}\label{pulsar-timing-arrays}}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{waveform-generation}{%
+\chapter{Waveform Generation}\label{waveform-generation}}
+
+The matched filtering approach introduced in the previous section is a
+powerful tool for detecting signals in noise. Additionally, if the
+matching signal has some physical content, that same content can be
+expected to describe the emitting object with resonable error. Ideally
+the matching signal is entirely constructed from first priciples, thus
+when a match is obtained the physical inputs to the model
+
+The matched filtering approach introduced in the previous section
+motivates tools for generating waveforms. These can be varied in
+physical content, but also in practicality. In all cases they need to be
+able to cover the set of parameters (the parameter space) that one is
+interested in exploring. Clearly if the waveform has been generated
+purely heuristically, then the physical content of the detection is
+close to zero. One can only say one has detected a phenomenon that
+produces this waveform, but not much more. However, if the input
+parameters are physically meaningful, like the mass ratio of a binary
+compact inspiraling system, then the waveform constructed purely from
+this input, if matched to the signal, tells us that a compact binary
+inspiraling system with this mass ratio has been detected. However, the
+waveform generation must be able to cover the whole parameter space (in
+this case all feasible mass ratios) to be useful, as one does \emph{not}
+know the parameters of the object one is looking for. Ideally this
+waveform generation can be done in a way that is computationally
+efficient, as the number of parameters to explore can be large. In the
+end, currently, waveform generation is done in a hybrid way, where some
+waveforms at some parameter space points are generated from first
+principles, and the rest of the parameter space waveforms are
+interpolated.
+
+In this chapter we will look at the physically motivated waveform
+generation tools currently being developed in research. More
+specifically we are going to explore techniques for compact binary
+waveforms, as these are currently the objects to which {LIGO} and others
+are most sensitive to (see Section~\ref{sec-ligo}) and by far the most
+common emitters of high intensity {GW}s. As discussed in
+Section~\ref{sec-compactbinaries}, orbiting and {GW} emitting compact
+objects will necessarily inspiral and merge at somepoint.
+
+For such inspiraling binaries, the waveform has three distinct parts,
+corresponding to distinct phases of a binary merger: a first inspiral
+phase, a merger phase where a remnant compact body is produced as a
+result of the coalescence of the two objects, and a postmerger, or
+ringdown phase where the remnant still emits gravitational radiation
+while settling to its new stable configuration. Each phase has specific
+characteristics in the dynamics of the objects and thus correspondingly
+different frameworks are aimed at specific portions of the waveforms.
+Even within one phase, different regimes and thus frameworks exist,
+additionally dependent to the type/initial state of the two orbiting
+bodies.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{inspiral-phase}{%
+\chapter{Inspiral phase}\label{inspiral-phase}}
+
+\hypertarget{section-1}{%
+\section{\texorpdfstring{{PN}}{PN}}\label{section-1}}
+
+\hypertarget{section-2}{%
+\section{\texorpdfstring{{PM}}{PM}}\label{section-2}}
+
+\hypertarget{section-3}{%
+\section{Gravitational Self-Force ()}\label{section-3}}
+
+\hypertarget{section-4}{%
+\section{\texorpdfstring{{EOB}}{EOB}}\label{section-4}}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{merger-and-ringdown-phase}{%
+\chapter{Merger and Ringdown phase}\label{merger-and-ringdown-phase}}
+
+\hypertarget{section-5}{%
+\section{\texorpdfstring{{EOB}}{EOB}}\label{section-5}}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{scattering-amplitudes-and-gravitional-waves}{%
+\chapter{Scattering amplitudes and Gravitional
+waves}\label{scattering-amplitudes-and-gravitional-waves}}
+
+Throughout we use relativistically natural units, i.e.~we do \emph{not}
+set \(\hbar=1\). In dimensional analysis we can therefore see that
+\(c=1\) means that \([L][T]^{-1}=1 \implies [L]=[T]\),
+\[E=mc^2\implies[E]=[m]=[M]\] and
+\[E=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]\].
+Thus momentum \(p\) is in units of \([p]=[M]\) mass and Wavenumber
+\([\bar{p}]=[\frac{p}{\hbar}]=[T]^{-1}\) is in units of inverse time.
+
+The setup of the Kosower Maybee and O'Connell () framework (Kosower,
+Maybee, and O'Connell
+(2019)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-kosowerAmplitudesObservablesClassical2019}{}}%
+Kosower, David A., Ben Maybee, and Donal O'Connell. 2019. {``Amplitudes,
+Observables, and Classical Scattering.''} \emph{Journal of High Energy
+Physics} 2019 (2): 137. \url{https://doi.org/10.1007/JHEP02(2019)137}.\vspace{2mm}\par\end{footnotesize}})
+is very general, and is aimed at taking the classical limit of a
+scattering event in an unspecified theory. We will later on apply it to
+\arc{sqed} and gravity. Imagine we want to scatter two particles into
+each other, obtaining two particles out. In {QFT} the framework that
+formalizes scattering of definite states is called the
+Lehmann Symanzik and Zimmermann ()
+
+in state into an at least 2 particle out state. This language
+
+Thus the in state is given by
+
+\begin{equation}\protect\hypertarget{eq-instate}{}{\oldket[in]{\psi}=\int \,\mathtip{\mathrm{d}\Phi_{2}(p_1,p_2)}{\text{On shell integration measure: } \mathrm{d}\Phi(p_i)=\,\mathtip{\tilde{\mathrm{d}}^{4}p_i}{\tilde{\mathrm{d}}^{4}p_i=\frac{\,\mathrm{d}^{4}p_i\,}{(2\pi)^{4}}}\,\mathtip{\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)}{\text{Normalized positive energy delta function: }\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)=\texttip{\delta^{(+)}\left(p_i^2-m_i^2\right)}{Dirac delta function} 2\pi= 2 \pi \texttip{\delta^{()}\left(p_i^2 -m_i^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(p_i^0\right)}{Heaviside step function}}}\, \phi_1(p_1) \phi_2(p_2) \oldexp{\oldi b_\mu p^\mu_1 /\hbar}\oldket{p_1,p_2}_\text{in}}\label{eq-instate}\end{equation}
+
+The \(\oldexp{\oldi b_\mu p^\mu_1 /\hbar}\) factor encodes the fact that
+we have translated the wavepacket of particle \(1\) relative to particle
+\(2\) by the impact parameter \(b\) .{[}\^{}2{]} We take it to be
+perpendicular to the initial momenta \(p_1,p_2\).
+
+The {KMOC} framework concerns itself with the change of an observable
+during a scattering event. For such an observable \({O}\), its change
+can be simply obtained by evaluating the difference of the expectation
+value of the corresponding Hermitian operator, \(\mathbb{O}\), between
+in and out states \[
+\Delta O=\mathtip{\langle\text{out} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{out} \rangle}{\text{Expectation value: }\langle\text{out} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{out} \rangle}-\mathtip{\langle\text{in} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{in} \rangle}
+\] In quantum mechanics, the out states are related to the in states by
+the time evolution operator, i.e.~the S-matrix:
+\(\oldket{\text{out}}=\oldS\oldket{\text{in}}\) and we can write
+\begin{equation}\protect\hypertarget{eq-DeltaO}{}{\begin{aligned}
+\Delta O&=\mathtip{\langle\text{in} \vert  \oldS^\dagger\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}\oldS \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \oldS^\dagger\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}\oldS \vert \text{in} \rangle}-\mathtip{\langle\text{in} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}} \vert \text{in} \rangle}\\
+&\stackrel{\oldS^\dagger \oldS=1}{=} \mathtip{\langle\text{in} \vert  \oldS^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldS]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldS]} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \oldS^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldS]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldS]} \vert \text{in} \rangle}\\
+&\stackrel{\oldS=1+\oldi\oldT}{=} \mathtip{\langle\text{in} \vert  \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]} \vert \text{in} \rangle}-\mathtip{\langle\text{in} \vert  \oldi\oldT^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \oldi\oldT^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},1+\oldi\oldT]} \vert \text{in} \rangle}\\
+&=\mathtip{\langle\text{in} \vert  \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert  \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert \text{in} \rangle}+\mathtip{\langle\text{in} \vert   \oldT^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert \text{in} \rangle}{\text{Expectation value: }\langle\text{in} \vert   \oldT^\dagger \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert \text{in} \rangle}\\
+&=\Delta O_\text{v}+\Delta O_\text{r}
+\end{aligned}}\label{eq-DeltaO}\end{equation}
+
+If we put in the definition of our in state (\ref{eq-instate}) we have:
+
+\[\Delta O = \int \,\mathtip{\mathrm{d}\Phi_{4}(p_1,p_2,p_1',p_2')}{\text{On shell integration measure: } \mathrm{d}\Phi(p_i)=\,\mathtip{\tilde{\mathrm{d}}^{4}p_i}{\tilde{\mathrm{d}}^{4}p_i=\frac{\,\mathrm{d}^{4}p_i\,}{(2\pi)^{4}}}\,\mathtip{\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)}{\text{Normalized positive energy delta function: }\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)=\texttip{\delta^{(+)}\left(p_i^2-m_i^2\right)}{Dirac delta function} 2\pi= 2 \pi \texttip{\delta^{()}\left(p_i^2 -m_i^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(p_i^0\right)}{Heaviside step function}}}\, \phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1')\phi_2^\dagger(p_2')\,\oldexp{\oldi b_\mu\frac{p_1^\mu-p_1'^\mu}{\hbar}}[\mathcal{I_\text{v}}(O)-\mathtip{\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}{\text{Real integrand: }\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})} ]\]
+Where \[\begin{aligned}
+\mathtip{\mathcal{I}_{\text{v}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}{\text{Virtual integrand: }\mathcal{I}_{\text{v}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}&=\mathtip{\langle p_1'p_2' \vert \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}\\
+\mathtip{\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}{\text{Real integrand: }\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}&=\mathtip{\langle p_1'p_2' \vert \oldT^\dagger\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT^\dagger\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}
+\end{aligned}\]
+
+\begin{quote}
+NB: the notation is slightly different in the Bern et al.
+(2021)\marginpar{\begin{footnotesize}\leavevmode\vadjust pre{\protect\hypertarget{ref-bernScalarQEDToy2021}{}}%
+Bern, Zvi, Juan Pablo Gatica, Enrico Herrmann, Andres Luna, and Mao
+Zeng. 2021. {``Scalar {QED} as a Toy Model for Higher-Order Effects in
+Classical Gravitational Scattering.''} \emph{arXiv:2112.12243 {[}Gr-Qc,
+Physics:hep-Th{]}}, December. \url{https://arxiv.org/abs/2112.12243}.\vspace{2mm}\par\end{footnotesize}}
+paper
+\end{quote}
+
+Let us first look at the virtual integrand \(\mathcal{I}_\text{v}\):
+
+\[\begin{aligned}
+\mathtip{\mathcal{I}_{\text{v}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}{\text{Virtual integrand: }\mathcal{I}_{\text{v}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}&=\mathtip{\langle p_1'p_2' \vert \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldi\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}  \\
+      &=\mathtip{\langle p_1'p_2' \vert \oldi\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}\oldT \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldi\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}\oldT \vert p_1p_2 \rangle}   - \mathtip{\langle p_1'p_2' \vert \oldi\oldT\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}  \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldi\oldT\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}}  \vert p_1p_2 \rangle}\\
+      &=\oldi\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}_{\text{in}'} \mathtip{\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}- \oldi\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}_{\text{in}}\mathtip{\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}\\
+      &=\oldi\mathtip{\underset{p-p'}{\Delta} \!\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}\,}{\text{Observable change: }\underset{p-p'}{\Delta} \!\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}\,} \, \mathtip{\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT \vert p_1p_2 \rangle}\\
+      &=\oldi\mathtip{\underset{p-p'}{\Delta} \!\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}\,}{\text{Observable change: }\underset{p-p'}{\Delta} \!\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}}\,}\,\mathtip{\tilde{\delta}^{(4)}\left(p_1+p_2-p_1'-p_2'\right)}{\text 
+{Normalized Dirac delta function: } \tilde{\delta}^{(4)}\left(p_1+p_2-p_1'-p_2'\right) = (2\pi)^{4}\delta^{4}\left(p_1+p_2-p_1'-p_2'\right)} \mathtip{\mathcal{A}(p_1,p_2\to p_1',p_2')}{\text{Amplitude: }\mathcal{A}(p_1,p_2\to p_1',p_2')}
+\end{aligned}\]
+
+Note that the amplitude is from in states to in states! Now for the real
+integrand \(\mathcal{I}_\text{r}\) we insert a complete set of states
+:{[}\^{}3{]}
+
+\$\$
+
+\begin{aligned}
+\mathtip{\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}{\text{Real integrand: }\mathcal{I}_{\text{r}}(\mathtip{\mathcal{O}}{\text{Observable: }\mathcal{O}})}&=\mathtip{\langle p_1'p_2' \vert \oldT^\dagger\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT^\dagger\mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}\\
+&=\sum\limits_X \int \,\mathtip{\mathrm{d}\Phi_{2+\vert X \vert}(r_1,r_2,X)}{\text{On shell integration measure: } \mathrm{d}\Phi(p_i)=\,\mathtip{\tilde{\mathrm{d}}^{4}p_i}{\tilde{\mathrm{d}}^{4}p_i=\frac{\,\mathrm{d}^{4}p_i\,}{(2\pi)^{4}}}\,\mathtip{\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)}{\text{Normalized positive energy delta function: }\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)=\texttip{\delta^{(+)}\left(p_i^2-m_i^2\right)}{Dirac delta function} 2\pi= 2 \pi \texttip{\delta^{()}\left(p_i^2 -m_i^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(p_i^0\right)}{Heaviside step function}}}\,\mathtip{\langle p_1'p_2' \vert \oldT^\dagger \vert r_1 r_2 X \rangle}{\text{Matrix element: }\langle p_1'p_2' \vert \oldT^\dagger \vert r_1 r_2 X \rangle}\mathtip{\langle r_1 r_2 X \vert \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}{\text{Matrix element: }\langle r_1 r_2 X \vert \mathtip{[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]}{\text{Commutator: }[\mathtip{\mathbb{O}}{\text{Operator: }\mathbb{O}},\oldT]} \vert p_1p_2 \rangle}\\
+&=\sum\limits_X \int \,\mathtip{\mathrm{d}\Phi_{2+\vert X \vert}(r_1,r_2,X)}{\text{On shell integration measure: } \mathrm{d}\Phi(p_i)=\,\mathtip{\tilde{\mathrm{d}}^{4}p_i}{\tilde{\mathrm{d}}^{4}p_i=\frac{\,\mathrm{d}^{4}p_i\,}{(2\pi)^{4}}}\,\mathtip{\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)}{\text{Normalized positive energy delta function: }\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)=\texttip{\delta^{(+)}\left(p_i^2-m_i^2\right)}{Dirac delta function} 2\pi= 2 \pi \texttip{\delta^{()}\left(p_i^2 -m_i^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(p_i^0\right)}{Heaviside step function}}}\,  \hat{\delta}^{(4)}\left(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}\right)\mathcal{A}\left(p_{1}, p_{2} \rightarrow r_{1}, r_{2}, r_{X}\right) \\
+&\qquad \underset{rX-p}{\Delta}\!\! O \,\hat{\delta}^{(4)}\left(p_{1}^{\prime}+p_{2}^{\prime}-r_{1}-r_{2}-r_{X}\right)   \mathcal{A}^{*}\left(p_{1}^{\prime}, p_{2}^{\prime} \rightarrow r_{1}, r_{2}, r_{X}\right)
+
+\end{aligned}
+
+\$\$
+
+For both integrands we can preform some variable changes and eliminate
+certain delta functions. We introduce momentum shifts \(q_i=p'_i-p_i\)
+and then integrate over \(q_2\) finally relabelling
+\(q_1 \to q\).{[}\^{}4{]} Thus we have
+
+\$\$
+
+\begin{aligned}
+\Delta O_\text{v}=\int \,\mathtip{\mathrm{d}\Phi_{2}(p_1,p_2)}{\text{On shell integration measure: } \mathrm{d}\Phi(p_i)=\,\mathtip{\tilde{\mathrm{d}}^{4}p_i}{\tilde{\mathrm{d}}^{4}p_i=\frac{\,\mathrm{d}^{4}p_i\,}{(2\pi)^{4}}}\,\mathtip{\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)}{\text{Normalized positive energy delta function: }\tilde{\delta}^{(+)}\left(p_i^2-m_i^2\right)=\texttip{\delta^{(+)}\left(p_i^2-m_i^2\right)}{Dirac delta function} 2\pi= 2 \pi \texttip{\delta^{()}\left(p_i^2 -m_i^2\right)}{Dirac delta function}\texttip{\Theta^{()}\left(p_i^0\right)}{Heaviside step function}}}\, \dh[4]q\, &\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\, \hat{\delta}(2 p_2 \cdot q-q^2) \Theta(p^0_2-q^0)\\
+&\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+q)\phi_2^\dagger(p_2-q)\,\oldexp{-\frac{\oldi}{\hbar} b_\mu q^\mu}\\
+&\times \oldi\underset{q}{\Delta} O\, \mathcal{A}(p_1,p_2 \to p_1+q,p_2-q)
+
+\end{aligned}
+
+\$\$\{\#eq-DeltaOv\}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{summary}{%
+\chapter{Summary}\label{summary}}
+
+In summary, this book has no content whatsoever.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+
+
+
+\end{document}
