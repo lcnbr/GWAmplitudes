@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Graviational Waves from Feynman Diagrams"
@@ -150,7 +151,9 @@ format:
       text: |
         \usepackage{amsmath}
         \usepackage{mathtools}
-    include-before-body: latexmacros.tex
+    include-before-body: 
+      - latexmacros.tex
+      - latexfix.tex
 
     
     

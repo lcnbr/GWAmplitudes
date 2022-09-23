@@ -1,4 +1,8 @@
+::: {.content-visible unless-format="pdf"}
 
+{{< include _latexmacros.qmd >}}
+
+:::
 
 # Gravitational Wave Generation
 
