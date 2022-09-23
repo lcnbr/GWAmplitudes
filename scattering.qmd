@@ -1,5 +1,11 @@
-# Scattering amplitudes and Gravitional waves 
+# Scattering amplitudes and Gravitional waves
+
 ::: {.content-hidden unless-format="html"}
+
+
+:::
+
+::: {.not-in-format .latex .beamer}
 
 {{< include _latexmacros.qmd >}}
 
@@ -7,14 +13,13 @@
 
 Throughout we use relativistically natural units, i.e. we do *not* set $\hbar=1$. In dimensional analysis we can therefore see that $c=1$ means that $[L][T]^{-1}=1 \implies [L]=[T]$, $$E=mc^2\implies[E]=[m]=[M]$$ and $$E=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]$$. Thus momentum $p$ is in units of $[p]=[M]$ mass and Wavenumber $[\bar{p}]=[\frac{p}{\hbar}]=[T]^{-1}$ is in units of inverse time. 
 
-The setup of the \acr{kmoc} framework (@kosowerAmplitudesObservablesClassical2019) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \arc{sqed} and gravity. Imagine we want to scatter two particles into each other, obtaining two particles out. In \acr{qft} the framework that formalizes scattering of definite states is called the \acr{lsz}
+The setup of the \acr{kmoc} framework (@kosowerAmplitudesObservablesClassical2019) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \acr{sqed} and gravity. Imagine we want to scatter two particles into each other, obtaining two particles out. In \acr{qft} the framework that formalizes scattering of definite states is called the \acr{lsz}
 
 in state into an at least 2 particle out state. This language 
 
 Thus the in state is given by 
 
-
-$$\ket[in]{\psi}=\int \ddP[2]{p_1,p_2} \phi_1(p_1) \phi_2(p_2) \exp{\im b_\mu p^\mu_1 /\hbar}\ket{p_1,p_2}_\text{in}$${#eq-instate}
+$$\ket[in]{\psi}=\int \ddP[2]{p_1,p_2} \phi_1(p_1) \phi_2(p_2) \exp{\im b_\mu p^\mu_1 /\hbar}\ket[in]{p_1,p_2}$${#eq-instate}
 
 
 
@@ -57,26 +62,22 @@ $$\begin{aligned}
 {p_1+p_2-p_1'-p_2'} \amp{p_1,p_2}{p_1',p_2'}
 \end{aligned}$$
 
-Note that the amplitude is from in states to in states! Now for the real integrand $\mathcal{I}_\text{r}$ we insert a complete set of states :[^3]
+Note that the amplitude is from in states to in states! Now for the real integrand $\mathcal{I}_\text{r}$ we insert a complete set of states :
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \rInt&=\mel{p_1'p_2'}{\Tmat^\dagger\com{\op{O}}{\Tmat}}{p_1p_2}\\
 &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\mel{p_1'p_2'}{\Tmat^\dagger}{r_1 r_2 X}\mel{r_1 r_2 X}{\com{\op{O}}{\Tmat}}{p_1p_2}\\
 &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \hat{\delta}^{(4)}\left(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}\right)\mathcal{A}\left(p_{1}, p_{2} \rightarrow r_{1}, r_{2}, r_{X}\right) \\
 &\qquad \underset{rX-p}{\Delta}\!\! O \,\hat{\delta}^{(4)}\left(p_{1}^{\prime}+p_{2}^{\prime}-r_{1}-r_{2}-r_{X}\right)   \mathcal{A}^{*}\left(p_{1}^{\prime}, p_{2}^{\prime} \rightarrow r_{1}, r_{2}, r_{X}\right)
+\end{aligned}$$
 
-\end{aligned}
-$$
-
-For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=p'_i-p_i$ and then integrate over $q_2$ finally relabelling $q_1 \to q$.[^4] Thus we have
+For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=p'_i-p_i$ and then integrate over $q_2$ finally relabelling $q_1 \to q$. Thus we have
 
 $$
 \begin{aligned}
 \Delta O_\text{v}=\int \ddP[2]{p_1,p_2} \dh[4]{q}\, &\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\, \hat{\delta}(2 p_2 \cdot q-q^2) \Theta(p^0_2-q^0)\\
 &\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+q)\phi_2^\dagger(p_2-q)\,\exp{-\frac{\im}{\hbar} b_\mu q^\mu}\\
 &\times \im \underset{q}{\Delta} O\, \mathcal{A}(p_1,p_2 \to p_1+q,p_2-q)
-
 \end{aligned}
 $${#eq-DeltaOv}
 

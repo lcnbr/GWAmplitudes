@@ -16,9 +16,9 @@ book:
     - index.qmd
     - intro.qmd
     - gwsources.qmd
-#    - gwdetect.qmd
-#    - gwwfframeworks.qmd
-#    - scattering.qmd
+    - gwdetect.qmd
+    - gwwfframeworks.qmd
+    - scattering.qmd
 #    - summary.qmd
     - references.qmd
 crossref:
@@ -38,6 +38,7 @@ citation-location: margin
 
 filters: 
   - assets/lua/parse_acronyms.lua
+  - assets/lua/not-in-format.lua
 acronyms:
   style: long-short
   insert_loa: false
@@ -146,6 +147,7 @@ format:
     code-tools: true
     
   pdf:
+    from: markdown-latex_macros
     documentclass: scrreprt
     include-in-header: 
       text: |
