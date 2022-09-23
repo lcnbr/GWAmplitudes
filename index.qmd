@@ -3,3 +3,4 @@
 This is a Quarto book. I am going to try and hyperlink it as much as possible
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.
+\acr{ligo}

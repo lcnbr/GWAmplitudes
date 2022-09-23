@@ -15,10 +15,10 @@ book:
     - index.qmd
     - intro.qmd
     - gwsources.qmd
-    - gwdetect.qmd
-    - gwwfframeworks.qmd
-    - scattering.qmd
-    - summary.qmd
+#    - gwdetect.qmd
+#    - gwwfframeworks.qmd
+#    - scattering.qmd
+#    - summary.qmd
     - references.qmd
 crossref:
   fig-title: Fig     # (default is "Figure")
@@ -135,7 +135,7 @@ acronyms:
     
 
 
-
+pdf-engine: lualatex
 
 format:
   html:
@@ -146,7 +146,12 @@ format:
     
   pdf:
     documentclass: scrreprt
+    include-in-header: 
+      text: |
+        \usepackage{amsmath}
+        \usepackage{mathtools}
     include-before-body: latexmacros.tex
+
     
     
 

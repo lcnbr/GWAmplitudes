@@ -14,22 +14,22 @@ in state into an at least 2 particle out state. This language
 Thus the in state is given by 
 
 
-$$\ket[in]{\psi}=\int \ddP[2]{p_1,p_2} \phi_1(p_1) \phi_2(p_2) \exp{\i b_\mu p^\mu_1 /\hbar}\ket{p_1,p_2}_\text{in}$${#eq-instate}
+$$\ket[in]{\psi}=\int \ddP[2]{p_1,p_2} \phi_1(p_1) \phi_2(p_2) \exp{\im b_\mu p^\mu_1 /\hbar}\ket{p_1,p_2}_\text{in}$${#eq-instate}
 
 
 
-The $\exp{\i b_\mu p^\mu_1 /\hbar}$ factor encodes the fact that we have translated the wavepacket of particle $1$ relative to particle $2$ by the impact parameter $b$ .[^2] We take it to be perpendicular to the initial momenta $p_1,p_2$.
+The $\exp{\im b_\mu p^\mu_1 /\hbar}$ factor encodes the fact that we have translated the wavepacket of particle $1$ relative to particle $2$ by the impact parameter $b$ .[^2] We take it to be perpendicular to the initial momenta $p_1,p_2$.
 
 The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable ${O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
 $$
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}
 $$
-In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e. the S-matrix: $\ket{\text{out}}=\S \ket{\text{in}}$ and we can write
+In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e. the S-matrix: $\ket{\text{out}}=\Smat \ket{\text{in}}$ and we can write
 $$\begin{aligned}
-\Delta O&=\ev{\S^\dagger\op{O}\S}{\text{in}}-\ev{\op{O}}{\text{in}}\\
-&\stackrel{\S^\dagger \S=1}{=} \ev{\S^\dagger \com{\op{O}}{\S}}{\text{in}}\\
-&\stackrel{\S=1+\i \T}{=} \ev{\com{\op{O}}{1+\i \T}}{\text{in}}-\ev{\i \T^\dagger \com{\op{O}}{1+\i \T}}{\text{in}}\\
-&=\ev{\i\com{\op{O}}{\T}}{\text{in}}+\ev{ \T^\dagger \com{\op{O}}{\T}}{\text{in}}\\
+\Delta O&=\ev{\Smat^\dagger\op{O}\Smat}{\text{in}}-\ev{\op{O}}{\text{in}}\\
+&\stackrel{\Smat^\dagger \Smat=1}{=} \ev{\Smat^\dagger \com{\op{O}}{\Smat}}{\text{in}}\\
+&\stackrel{\Smat=1+\im \Tmat}{=} \ev{\com{\op{O}}{1+\im \Tmat}}{\text{in}}-\ev{\im \Tmat^\dagger \com{\op{O}}{1+\im \Tmat}}{\text{in}}\\
+&=\ev{\im\com{\op{O}}{\Tmat}}{\text{in}}+\ev{ \Tmat^\dagger \com{\op{O}}{\Tmat}}{\text{in}}\\
 &=\Delta O_\text{v}+\Delta O_\text{r}
 \end{aligned}$${#eq-DeltaO}
 
@@ -37,11 +37,11 @@ $$\begin{aligned}
 If we put in the definition of our in state (@eq-instate) we have:
 
 
-$$\Delta O = \int \ddP[4]{p_1,p_2,p_1',p_2'} \phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1')\phi_2^\dagger(p_2')\,\exp{\i b_\mu\frac{p_1^\mu-p_1'^\mu}{\hbar}}\brk{\mathcal{I_\text{v}}(O)-\rInt}$$
+$$\Delta O = \int \ddP[4]{p_1,p_2,p_1',p_2'} \phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1')\phi_2^\dagger(p_2')\,\exp{\im b_\mu\frac{p_1^\mu-p_1'^\mu}{\hbar}}\brk{\mathcal{I_\text{v}}(O)-\rInt}$$
 Where 
 $$\begin{aligned}
-\vInt &=\mel{p_1'p_2'}{\i\com{\op{O}}{\T}}{p_1p_2}\\
-\rInt &=\mel{p_1'p_2'}{\T^\dagger\com{\op{O}}{\T}}{p_1p_2}
+\vInt &=\mel{p_1'p_2'}{\im\com{\op{O}}{\Tmat}}{p_1p_2}\\
+\rInt &=\mel{p_1'p_2'}{\Tmat^\dagger\com{\op{O}}{\Tmat}}{p_1p_2}
 \end{aligned}$$
 
 > NB: the notation is slightly different in the @bernScalarQEDToy2021 paper
@@ -49,11 +49,11 @@ $$\begin{aligned}
 Let us first look at the virtual integrand $\mathcal{I}_\text{v}$:
 
 $$\begin{aligned}
-\vInt &=\mel{p_1'p_2'}{\i\com{\op{O}}{\T}}{p_1p_2}  \\
-      &=\mel{p_1'p_2'}{\i\op{O}\T }{p_1p_2}   - \mel{p_1'p_2'}{\i \T\op{O} }{p_1p_2}\\
-      &=\i \obs{O}_{\text{in}'} \mel{p_1'p_2'}{\T}{p_1p_2}- \i \obs{O}_{\text{in}}\mel{p_1'p_2'}{\T}{p_1p_2}\\
-      &=\i \obschange{p}{p'} \, \mel{p_1'p_2'}{\T}{p_1p_2}\\
-      &=\i \obschange{p}{p'}\,\ndeltafn[4]
+\vInt &=\mel{p_1'p_2'}{\im\com{\op{O}}{\Tmat}}{p_1p_2}  \\
+      &=\mel{p_1'p_2'}{\im\op{O}\Tmat }{p_1p_2}   - \mel{p_1'p_2'}{\im \Tmat\op{O} }{p_1p_2}\\
+      &=\im \obs{O}_{\text{in}'} \mel{p_1'p_2'}{\Tmat}{p_1p_2}- \im \obs{O}_{\text{in}}\mel{p_1'p_2'}{\Tmat}{p_1p_2}\\
+      &=\im \obschange{p}{p'} \, \mel{p_1'p_2'}{\Tmat}{p_1p_2}\\
+      &=\im \obschange{p}{p'}\,\ndeltafn[4]
 {p_1+p_2-p_1'-p_2'} \amp{p_1,p_2}{p_1',p_2'}
 \end{aligned}$$
 
@@ -61,8 +61,8 @@ Note that the amplitude is from in states to in states! Now for the real integra
 
 $$
 \begin{aligned}
-\rInt&=\mel{p_1'p_2'}{\T^\dagger\com{\op{O}}{\T}}{p_1p_2}\\
-&=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\mel{p_1'p_2'}{\T^\dagger}{r_1 r_2 X}\mel{r_1 r_2 X}{\com{\op{O}}{\T}}{p_1p_2}\\
+\rInt&=\mel{p_1'p_2'}{\Tmat^\dagger\com{\op{O}}{\Tmat}}{p_1p_2}\\
+&=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\mel{p_1'p_2'}{\Tmat^\dagger}{r_1 r_2 X}\mel{r_1 r_2 X}{\com{\op{O}}{\Tmat}}{p_1p_2}\\
 &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \hat{\delta}^{(4)}\left(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}\right)\mathcal{A}\left(p_{1}, p_{2} \rightarrow r_{1}, r_{2}, r_{X}\right) \\
 &\qquad \underset{rX-p}{\Delta}\!\! O \,\hat{\delta}^{(4)}\left(p_{1}^{\prime}+p_{2}^{\prime}-r_{1}-r_{2}-r_{X}\right)   \mathcal{A}^{*}\left(p_{1}^{\prime}, p_{2}^{\prime} \rightarrow r_{1}, r_{2}, r_{X}\right)
 
@@ -73,9 +73,9 @@ For both integrands we can preform some variable changes and eliminate certain d
 
 $$
 \begin{aligned}
-\Delta O_\text{v}=\int \ddP[2]{p_1,p_2} \dh[4]q\, &\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\, \hat{\delta}(2 p_2 \cdot q-q^2) \Theta(p^0_2-q^0)\\
-&\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+q)\phi_2^\dagger(p_2-q)\,\exp{-\frac{\i}{\hbar} b_\mu q^\mu}\\
-&\times \i \underset{q}{\Delta} O\, \mathcal{A}(p_1,p_2 \to p_1+q,p_2-q)
+\Delta O_\text{v}=\int \ddP[2]{p_1,p_2} \dh[4]{q}\, &\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\, \hat{\delta}(2 p_2 \cdot q-q^2) \Theta(p^0_2-q^0)\\
+&\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+q)\phi_2^\dagger(p_2-q)\,\exp{-\frac{\im}{\hbar} b_\mu q^\mu}\\
+&\times \im \underset{q}{\Delta} O\, \mathcal{A}(p_1,p_2 \to p_1+q,p_2-q)
 
 \end{aligned}
 $${#eq-DeltaOv}

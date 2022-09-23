@@ -4,7 +4,9 @@
 \newcommand{\Half}[1][1]{\frac{#1}{2}}
 \newcommand{\pa}[2][]{#1(#2 #1)}
 \newcommand{\bc}[2][]{#1[#2 #1]}
+\newcommand{\brc}{\bc}
 \newcommand{\bk}[2][]{#1\{#2 #1\}}
+\newcommand{\brk}{\bk}
 \newcommand{\abs}[2][]{#1\vert#2 #1\vert}
 \newcommand{\norm}[2][]{#1\Vert#2 #1\Vert}
 \newcommand{\order}[2][]{\mathcal{O}\left(#2^{#1}\right)}
@@ -15,37 +17,37 @@
 \newcommand{\Diff}{\mathrm{D}}
 
 
-\newcommand{\pdv}[3][]{\frac{\partialder^{#1} #2}{\partialder #3^{#1}}} 
-\newcommand{\odv}[3][]{\frac{\differential^{#1} #2}{\differential #3^{#1}}}
-\newcommand{\mdv}[3][]{\frac{\Diff^{#1} #2}{\Diff #3^{#1}}}
-\newcommand{\fdv}[3][]{\frac{\delta^{#1} #2}{\delta #3^{#1}}}
-\newcommand{\jdv}[3][]{\frac{\partialder ^{#1}(#2)}{\partialder (#3)^{#1}}}
-\newcommand{\adv}[3][]{\frac{\Delta^{#1} #2}{\Delta #3^{#1}}}
+\newcommand{\pdv}[3][]{\frac{\partialder^{#1} #2}{\partialder {#3}^{#1}}} 
+\newcommand{\odv}[3][]{\frac{\differential^{#1} #2}{\differential {#3}^{#1}}}
+\newcommand{\mdv}[3][]{\frac{\Diff^{#1} #2}{\Diff {#3}^{#1}}}
+\newcommand{\fdv}[3][]{\frac{\delta^{#1} #2}{\delta {#3}^{#1}}}
+\newcommand{\jdv}[3][]{\frac{\partialder ^{#1}(#2)}{\partialder ({#3})^{#1}}}
+\newcommand{\adv}[3][]{\frac{\Delta^{#1} #2}{\Delta {#3}^{#1}}}
 
 \newcommand{\dd}[2][]{\,\differential^{#1}#2\,}
 
 
 \newcommand{\Exp}[2][\pdel]{\exp#1{#2}}
 \let\oldexp\exp
-\newcommand{\exp}[1]{\hrm{e}^{#1}}
+\renewcommand{\exp}[1]{\mathrm{e}^{#1}}
 
-\newcommand{\greens}[2][ret]{{\mathcal{G}_{\mathrm{#1}}\left(#2\right)}{#1 Green's function}}
-\newcommand{\thetafn}[2][]{{\Theta^{(#1)}\left(#2\right)}{Heaviside step function}}
-\newcommand{\deltafn}[2][]{{\delta^{(#1)}\left(#2\right)}{Dirac delta function}}
+\newcommand{\greens}[2][ret]{\mathcal{G}_{\mathrm{#1}}\left(#2\right)}
+\newcommand{\thetafn}[2][]{\Theta^{(#1)}\left(#2\right)}
+\newcommand{\deltafn}[2][]{\delta^{(#1)}\left(#2\right)}
 
 
 \newcommand{\iunit}{\mathring{\imath}}
-\let\im\iunit
+\newcommand{\im}{\iunit}
 
-\tv{1}{\mathbf{#1}}
-
-
+\newcommand{\tv}[1]{\mathbf{#1}}
 
 
-\let\oldbra\bra
+
+
+
 \newcommand{\bra}[2][]{\sideset{_{\text{#1}}}{}\langle #2 \vert}
 
-\let\oldket\ket
+
 \newcommand{\ket}[2][]{\sideset{}{_{\text{#1}}}{\vert #2 \rangle}}
 
 \newcommand{\obs}[1]{\mathcal{#1}}
@@ -60,8 +62,8 @@
 
 \newcommand{\mel}[3]{\langle #1 \vert #2 \vert #3 \rangle}
 
-\newcommand{\Smat}{{S}{S-matrix}}
-\newcommand{\Tmat}{{T}{Transfer-matrix}}
+\newcommand{\Smat}{S}
+\newcommand{\Tmat}{T}
 
 \newcommand{\amp}[2]{\mathcal{A}(#1\to#2)}
 
@@ -105,82 +107,82 @@
 
 
 
-\newcommand{\cov}[2][\mu]{#2_{#1}}
-\newcommand{\con}[2][\mu]{#2^{#1}}
-\newcommand{\covtwotensor}[2][\mu\nu]{\cov[#1]{#2}}
-\newcommand{\contwotensor}[2][\mu\nu]{\con[#1]{#2}}
+\newcommand{\co}[2][\mu]{#2{}_{#1}}
+\newcommand{\ct}[2][\mu]{#2{}^{#1}}
+\newcommand{\covtwotensor}[2][\mu\nu]{\co[#1]{#2}}
+\newcommand{\contwotensor}[2][\mu\nu]{\ct[#1]{#2}}
 \newcommand{\tensortrace}[2][\alpha]{#2\ind{#1}{#1}}
 \newcommand{\mixedtwotensor}[2][\ind{\mu}{\nu}]{#2#1}
 \newcommand{\tracereverse}[1]{\bar{#1}}
 \newcommand{\transverseTraceless}[1]{{#1}^{TT}}
 
 \newcommand{\metricTensor}{g}
-\newcommand{\met   }[1][\mu\nu]{\cov[#1]{\metricTensor}}
-\newcommand{\invmet}[1][\mu\nu]{\con[#1]{\metricTensor}}
+\newcommand{\met   }[1][\mu\nu]{\co[#1]{\metricTensor}}
+\newcommand{\invmet}[1][\mu\nu]{\ct[#1]{\metricTensor}}
 
 \newcommand{\minkoskiMetric}{\eta}
-\newcommand{\mink   }[1][\mu\nu]{\cov[#1]{\minkoskiMetric}}
-\newcommand{\invmink}[1][\mu\nu]{\con[#1]{\minkoskiMetric}}
+\newcommand{\mink   }[1][\mu\nu]{\co[#1]{\minkoskiMetric}}
+\newcommand{\invmink}[1][\mu\nu]{\ct[#1]{\minkoskiMetric}}
 
 \newcommand{\weakTensor}{h}
-\newcommand{\weakmet      }[1][\mu\nu]{\cov[#1]{\weakTensor}}
-\newcommand{\invweakmet   }[1][\mu\nu]{\con[#1]\weakTensor}} 
+\newcommand{\weakmet      }[1][\mu\nu]{\co[#1]{\weakTensor}}
+\newcommand{\invweakmet   }[1][\mu\nu]{\ct[#1]{\weakTensor}} 
 \newcommand{\trweakmet    }[1][\alpha]{\tensortrace[#1]{\weakTensor}}
 \newcommand{\mixweakmet   }[1][\ind{\mu}{\nu}]{\weakTensor#1}
 
 
 
 \newcommand{\weakTRTensor }{\tracereverse{\weakTensor}}
-\newcommand{\weakTRmet      }[1][\mu\nu]{\cov[#1]{\weakTRTensor}}
-\newcommand{\invweakTRmet   }[1][\mu\nu]{\con[#1]\weakTRTensor}} 
+\newcommand{\weakTRmet      }[1][\mu\nu]{\co[#1]{\weakTRTensor}}
+\newcommand{\invweakTRmet   }[1][\mu\nu]{\ct[#1]{\weakTRTensor}}
 \newcommand{\trweakTRmet    }[1][\alpha]{\tensortrace[#1]{\weakTRTensor}}
 \newcommand{\mixweakTRmet   }[1][\ind{\mu}{\nu}]{\weakTRTensor#1}
 
 \newcommand{\weakTTTensor}{\transverseTraceless{\weakTensor}}
-\newcommand{\weakTTmet      }[1][ij]{\cov[#1]{\weakTTTensor}}
-\newcommand{\invweakTTmet   }[1][ij]{\con[#1]\weakTTTensor}} 
+\newcommand{\weakTTmet      }[1][ij]{\co[#1]{\weakTTTensor}}
+\newcommand{\invweakTTmet   }[1][ij]{\ct[#1]{\weakTTTensor}} 
 \newcommand{\trweakTTmet    }[1][\alpha]{\tensortrace[#1]{\weakTTTensor}}
 \newcommand{\mixweakTTmet   }[1][\ind{\mu}{\nu}]{\weakTTTensor#1}
 
 \newcommand{\RiemannTensor}{R}
 \newcommand{\RiemannTensorExplicit}[4]{\ipdv{\LC{#1}{#2}{#3}}{#4} - \ipdv{\LC{#1}{#2}{#4}}{#3} - \LC{\alpha}{#2}{#4}\LC{#1}{\alpha}{#3}+\LC{\alpha}{#2}{#3}\LC{#1}{\alpha}{#4}}
 \newcommand{\Riem}[1][\ind{\beta}{\mu\nu\rho}]{\RiemannTensor#1}
-\newcommand{\RiemCt}[1][\beta\mu\nu\rho]{\con[#1]{\RiemannTensor}}
+\newcommand{\RiemCt}[1][\beta\mu\nu\rho]{\ct[#1]{\RiemannTensor}}
 
 \newcommand{\RicciTensor}{R}
-\newcommand{\RicciTct}[1][\mu\nu]{\con[#1]{\RicciTensor}}
-\newcommand{\RicciTco}[1][\mu\nu]{\cov[#1]{\RicciTensor}}
+\newcommand{\RicciTct}[1][\mu\nu]{\ct[#1]{\RicciTensor}}
+\newcommand{\RicciTco}[1][\mu\nu]{\co[#1]{\RicciTensor}}
 
 \newcommand{\linRicciTensor}{R^{(1)}}
-\newcommand{\linRicciTct}[1][\mu\nu]{\con[#1]{\linRicciTensor}}
-\newcommand{\linRicciTco}[1][\mu\nu]{\cov[#1]{\linRicciTensor}}
+\newcommand{\linRicciTct}[1][\mu\nu]{\ct[#1]{\linRicciTensor}}
+\newcommand{\linRicciTco}[1][\mu\nu]{\co[#1]{\linRicciTensor}}
 
 \newcommand{\RicciS}{R}
 \newcommand{\linRicciS}{R^{(1)}}
 
 \newcommand{\SETensor}{T}
-\newcommand{\SEct}[1][\mu\nu]{\con[#1]{\SETensor}}
-\newcommand{\SEco}[1][\mu\nu]{\cov[#1]{\SETensor}}
+\newcommand{\SEct}[1][\mu\nu]{\ct[#1]{\SETensor}}
+\newcommand{\SEco}[1][\mu\nu]{\co[#1]{\SETensor}}
 \newcommand{\trSE}[1][\alpha]{\tensortrace[#1]{\SETensor}}
 \newcommand{\SEmix}[1][\ind{\mu}{\nu}]{\SETensor#1}
 
-\newcommand{\polTensor}{\varepsilon}}
-\newcommand{\polct}[1][\mu\nu]{\con[#1]{\polTensor}}
-\newcommand{\polco}[1][\mu\nu]{\cov[#1]{\polTensor}}
+\newcommand{\polTensor}{\varepsilon}
+\newcommand{\polct}[1][\mu\nu]{\ct[#1]{\polTensor}}
+\newcommand{\polco}[1][\mu\nu]{\co[#1]{\polTensor}}
 \newcommand{\trpol}[1][\alpha]{\tensortrace[#1]{\polTensor}}
 \newcommand{\polmix}[1][\ind{\mu}{\nu}]{\polTensor#1}
 
-\newcommand{\conj}[1]{#1^\ast}
+\newcommand{\conj}[1]{{#1{}^\ast}}
 
 \newcommand{\conjpolTensor}{\conj{\varepsilon}}
-\newcommand{\conjpolct}[1][\mu\nu]{\con[#1]{\conjpolTensor}}
-\newcommand{\conjpolco}[1][\mu\nu]{\cov[#1]{\conjpolTensor}}
+\newcommand{\conjpolct}[1][\mu\nu]{\ct[#1]{\conjpolTensor}}
+\newcommand{\conjpolco}[1][\mu\nu]{\co[#1]{\conjpolTensor}}
 \newcommand{\trconjpol}[1][\alpha]{\tensortrace[#1]{\conjpolTensor}}
 \newcommand{\conjpolmix}[1][\ind{\mu}{\nu}]{\conjpolTensor#1}
 
 \newcommand{\srcTensor}{S}
-\newcommand{\srcct}[1][\mu\nu]{\con[#1]{\srcTensor}}
-\newcommand{\srcco}[1][\mu\nu]{\cov[#1]{\srcTensor}}
+\newcommand{\srcct}[1][\mu\nu]{\ct[#1]{\srcTensor}}
+\newcommand{\srcco}[1][\mu\nu]{\co[#1]{\srcTensor}}
 \newcommand{\trsrc}[1][\alpha]{\tensortrace[#1]{\srcTensor}}
 \newcommand{\srcmix}[1][\ind{\mu}{\nu}]{\srcTensor#1}
 
@@ -194,7 +196,7 @@
 \newcommand{\ddP}[2][]{\,\differential\Phi_{#1}(#2)\,}
 \newcommand{\AAngle}[1]{\Bigg\langle\hspace{-0.6em}\Bigg\langle #1\Bigg\rangle\hspace{-0.6em}\Bigg\rangle}
 
-\newcommand{\vInt}[1][\obs{O}]{\mathcal{I}_{\text{v}}(#1)} 
+\newcommand{\vInt}[1][\obs{O}]{\mathcal{I}_{\text{v}}(#1)}
 
 \newcommand{\rInt}[1][\obs{O}]{\mathcal{I}_{\text{r}}(#1)}
 

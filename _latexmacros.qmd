@@ -1,270 +1,271 @@
+{{< include latexmacros.tex >}}
+
 <!-- Math Utilities -->
 
 \let\@norm\norm
-\newcommand{\norm}[1]{\texttip{\norm{#1}}{Norm}}
+\renewcommand{\norm}[1]{\texttip{\norm{#1}}{Norm}}
 
 <!-- Special functions -->
 \let\@exp\exp
-\newcommand{\exp}[1]{\texttip{\@exp{#1}}{exponential function}}
+\renewcommand{\exp}[1]{\texttip{\@exp{#1}}{exponential function}}
 \let\@Exp\
-\newcommand{\Exp}[2][\paren]{\texttip{\@Exp#1{#2}}{exponential function}} 
+\renewcommand{\Exp}[2][\pa]{\texttip{\@Exp[#1]{#2}}{exponential function}} 
 
 \let\@greens\greens
-\newcommand{\greens}[2][ret]{\texttip{\@greens{#1}{#2}}{#1 Green's function}}
+\renewcommand{\greens}[2][ret]{\texttip{\@greens[#1]{#2}}{#1 Green's function}}
 
 \let\@thetafn\thetafn
-\newcommand{\thetafn}[2][]{\texttip{\@thetafn{#1}{#2}}{Heaviside step function}}
+\renewcommand{\thetafn}[2][]{\texttip{\@thetafn[#1]{#2}}{Heaviside step function}}
 \let\@deltafn\deltafn
-\newcommand{\deltafn}[2][]{\texttip{\@deltafn{#1}{#2}}{Dirac delta function}}
+\renewcommand{\deltafn}[2][]{\texttip{\@deltafn[#1]{#2}}{Dirac delta function}}
 
 
 <!-- Complex numbers -->
 
 \let\@iunit\iunit
-\newcommand{\iunit}{\mathtip{\@iunit}{\text{Complex unit: } \@iunit^2 = -1}}
-\let\im\iunit
+\renewcommand{\iunit}{\mathtip{\@iunit}{\text{Complex unit: } \@iunit^2 = -1}}
+\renewcommand{\im}{\iunit}
 
 
 <!-- Vectors -->
 \let\@tv\tv
-\newcommand{\tv}[1]{\texttip{\@tv{#1}}{3-vector}}
+\renewcommand{\tv}[1]{\texttip{\@tv{#1}}{3-vector}}
 
 <!-- Quantum operators -->
 
 
 \let\@bra\bra
-\newcommand{\bra}[2][]{\mathtip{\@bra[#1]{#2}}{\text{Quantum state bra, dual to ket, a linear form on the Hilbert space: }#2: \mathcal{H} \rightarrow \mathbb{C}}}
+\renewcommand{\bra}[2][]{\mathtip{\@bra[#1]{#2}}{\text{Quantum state bra, dual to ket, a linear form on the Hilbert space: }#2: \mathcal{H} \rightarrow \mathbb{C}}}
 
 \let\@ket\ket
-\newcommand{\ket}[2][]{\mathtip{\@ket[#1]{#2}}{\text{Quantum state ket, a vector of the Hilbert space: }#2\in\mathcal{H}}}
+\renewcommand{\ket}[2][]{\mathtip{\@ket[#1]{#2}}{\text{Quantum state ket, a vector of the Hilbert space: }#2\in\mathcal{H}}}
 
 
 \let\@obs\obs
-\newcommand{\obs}[1]{\mathtip{\@obs{#1}}{\text{Observable: }\@obs{#1}}}
+\renewcommand{\obs}[1]{\mathtip{\@obs{#1}}{\text{Observable: }\@obs{#1}}}
 
 \let\@op\op
-\newcommand{\op}[1]{\mathtip{\@op{#1}}{\text{Operator: }\@op{#1}}}
+\renewcommand{\op}[1]{\mathtip{\@op{#1}}{\text{Operator: }\@op{#1}}}
 
 \let\@ev\ev
-\newcommand{\ev}[2]{\mathtip{\@ev{#1}{#2}}{\text{Expectation value: }\@ev{#1}{#2}}}
+\renewcommand{\ev}[2]{\mathtip{\@ev{#1}{#2}}{\text{Expectation value: }\@ev{#1}{#2}}}
 
 \let\@ip\ip
-\newcommand{\ip}[2]{\mathtip{\@ip{#1}{#2}}{\text{Inner product: }\@ip{#1}{#2}}}
+\renewcommand{\ip}[2]{\mathtip{\@ip{#1}{#2}}{\text{Inner product: }\@ip{#1}{#2}}}
 
 \let\@com\com
-\newcommand{\com}[2]{\mathtip{\@com{#1}{#2}}{\text{Commutator: }\@com{#1}{#2}}}
+\renewcommand{\com}[2]{\mathtip{\@com{#1}{#2}}{\text{Commutator: }\@com{#1}{#2}}}
 
 \let\@mel\mel
-\newcommand{\mel}[3]{\mathtip{\@mel{#1}{#2}{#3}}{\text{Matrix element: }\@mel{#1}{#2}{#3}}}
+\renewcommand{\mel}[3]{\mathtip{\@mel{#1}{#2}{#3}}{\text{Matrix element: }\@mel{#1}{#2}{#3}}}
 
 \let\@Smat\Smat
-\newcommand{\S}{\texttip{\@Smat}{S-matrix}}
+\renewcommand{\Smat}{\texttip{\@Smat}{S-matrix}}
 \let\@Tmat\Tmat
-\newcommand{\Tmat}{\texttip{\@Tmat}{Transfer-matrix}}
+\renewcommand{\Tmat}{\texttip{\@Tmat}{Transfer-matrix}}
 
 
 \let\@amp\amp
-\newcommand{\amp}[2]{\mathtip{\@amp{#1}{#2}}{\text{Amplitude: }\@amp{#1}{#2}}}
+\renewcommand{\amp}[2]{\mathtip{\@amp{#1}{#2}}{\text{Amplitude: }\@amp{#1}{#2}}}
 
 <!-- Physics stuff -->
 
 \let\@posendelta\posendelta
-\newcommand{\posendelta}[2][-m^2]{\mathtip{\@posendelta[#1]{#2}}{\text{Positive energy delta function: }\@posendelta[#1]{#2}}=\deltafn{#2^2 #1}\thetafn{#2^0}}
+\renewcommand{\posendelta}[2][-m^2]{\mathtip{\@posendelta[#1]{#2}}{\text{Positive energy delta function: }\@posendelta[#1]{#2}}=\deltafn{#2^2 #1}\thetafn{#2^0}}
 
 \let\@normalized\normalized
-\newcommand{\normalized}[2][]{\mathtip{\@normalized{#2}}{\text{Normalized } #1 =#2(2\pi)^{#1}}}
+\renewcommand{\normalized}[2][]{\mathtip{\@normalized{#2}}{\text{Normalized } #1 =#2(2\pi)^{#1}}}
 
 \let\@dn\dn
-\newcommand{\dn}[2][]{\,\mathtip{\@dn[#1]{#2}}{\@normalized{\differential}^{#1}#2=\frac{\dd[#1]{#2}}{(2\pi)^{#1}}}\,}
+\renewcommand{\dn}[2][]{\,\mathtip{\@dn[#1]{#2}}{\@normalized{\differential}^{#1}#2=\frac{\dd[#1]{#2}}{(2\pi)^{#1}}}\,}
 
 
 \let\@nposendelta\nposendelta
-\newcommand{\nposendelta}[2][-m^2]{\mathtip{\@nposendelta[#1]{#2}}{\text{Normalized positive energy delta function: }\@nposendelta[#1]{#2}=\@posendelta[#1]{#2} 2\pi= 2 \pi \deltafn{#2^2 #1}\thetafn{#2^0}}}
+\renewcommand{\nposendelta}[2][-m^2]{\mathtip{\@nposendelta[#1]{#2}}{\text{Normalized positive energy delta function: }\@nposendelta[#1]{#2}=\@posendelta[#1]{#2} 2\pi= 2 \pi \deltafn{#2^2 #1}\thetafn{#2^0}}}
 \let\@ndeltafn\ndeltafn
-\newcommand{\ndeltafn}[2][]{\mathtip{\@ndeltafn[#1]{#2}}{\text 
+\renewcommand{\ndeltafn}[2][]{\mathtip{\@ndeltafn[#1]{#2}}{\text 
 {Normalized Dirac delta function: } \@ndeltafn[#1]{#2} = (2\pi)^{#1}\delta^{#1}\left(#2\right)}}
 
 <!-- Physics constants -->
 
 \let\@planck\planck
-\newcommand{\planck}{\texttip{\@planck}{planck's constant}}
+\renewcommand{\planck}{\texttip{\@planck}{planck's constant}}
 \let\@sol\sol
-\newcommand{\sol}{\texttip{\@sol}{speed of light}}
+\renewcommand{\sol}{\texttip{\@sol}{speed of light}}
 \let\@grav\grav
-\newcommand{\grav}{\texttip{\@grav}{gravitational constant}}
+\renewcommand{\grav}{\texttip{\@grav}{gravitational constant}}
 \let\@elch\elch
-\newcommand{\elch}{\texttip{\@elch}{electric charge}}
+\renewcommand{\elch}{\texttip{\@elch}{electric charge}}
 \let\@cosmo\cosmo
-\newcommand{\cosmo}{\texttip{\@cosmo}{cosmological constant}}
+\renewcommand{\cosmo}{\texttip{\@cosmo}{cosmological constant}}
 
 <!-- Physics Units -->
-
-\newcommand{\mass}[1]{\texttip{#1}{mass}}
+\let\@mass\mass
+\renewcommand{\mass}[1]{\texttip{#1}{mass}}
 
 <!-- Fourrier transforms  -->
 
 \let\@FT\FT
-\newcommand{\FT}[3][]{\mathtip{\@FT[#1]{#2}{#3}}{\text{Fourier transform of $#2$ in variable $#1$: }{\@FT[#1]{#2}{#3} = \int \dd{#1} #2(#1) \exp{\im#3 \cdot #1}}}}
+\renewcommand{\FT}[3][]{\mathtip{\@FT[#1]{#2}{#3}}{\text{Fourier transform of $#2$ in variable $#1$: }{\@FT[#1]{#2}{#3} = \int \dd{#1} #2(#1) \exp{\im#3 \cdot #1}}}}
 
 \let\@invFT\invFT
 
-\newcommand{\invFT}[3][]{\mathtip{\@invFT[#1]{#2}{#3}}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\@invFT[#1]{#2}{#3} = \frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)  }}}
+\renewcommand{\invFT}[3][]{\mathtip{\@invFT[#1]{#2}{#3}}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\@invFT[#1]{#2}{#3} = \frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)  }}}
 
 \let\@ft\ft
 
-\newcommand{\ft}[3][x]{\mathtip{\@ft[#1]{#2}{#3}}{\text{Fourier transform of $#2$ in variable $#1$: }{\@ft[#1]{#2}{#3}\left(#3\right)
+\renewcommand{\ft}[3][x]{\mathtip{\@ft[#1]{#2}{#3}}{\text{Fourier transform of $#2$ in variable $#1$: }{\@ft[#1]{#2}{#3}\left(#3\right)
  = \int \dd{#1} #2(#1) \exp{\im#3 \cdot #1}}}}
  
 \let\@invft\invft
 
-\newcommand{\invft}[3][x]{\mathtip{\@invft[#1]{#2}{#3}}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\@invft[#1]{#2}{#3}\left(#3\right) =\frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)}}}
+\renewcommand{\invft}[3][x]{\mathtip{\@invft[#1]{#2}{#3}}{\text{inverse Fourier transform of $#2$ in variable $#1$: }{\@invft[#1]{#2}{#3}\left(#3\right) =\frac{1}{2\pi}\int  \dd{#1}\exp{-\im#3 \cdot #1} #2(#1)}}}
 
 <!-- Tensors an indices -->
 
 \let\@ipdv\ipdv
-\newcommand{\ipdv}[3][_]{#2\texttip{{}#1{,#3}}{Partial derivative}}
+\renewcommand{\ipdv}[3][_]{#2\texttip{{}#1{,#3}}{Partial derivative}}
 \let\@covd\covd 
-\newcommand{\covd}[3][_]{#2\texttip{{}#1{;#3}}{Covariant derivative}}
+\renewcommand{\covd}[3][_]{#2\texttip{{}#1{;#3}}{Covariant derivative}}
 \let\@SRDA\SRDA
-\newcommand{\SRDA}{\mathtip{\@SRDA}{\invmink \partialder_\mu\partialder_\nu}}
+\renewcommand{\SRDA}{\mathtip{\@SRDA}{\invmink \partialder_\mu\partialder_\nu}}
 
-<!-- GR -->
+<!-- GR 
+-->
 
 
-\let\@cov\cov
-\newcommand{\cov}[2][\mu]{\texttip{\@cov[#1]{#2}}{covariant mathbftor component}}
-\let\@con\con
-\newcommand{\con}[2][\mu]{\texttip{\@con[#1]{#2}}}{contravariant mathbftor component}}
+\let\@co\co
+\renewcommand{\co}[2][\mu]{\texttip{\@co[#1]{#2}}{covariant mathbftor component}}
+\let\@ct\ct
+\renewcommand{\ct}[2][\mu]{\texttip{\@ct[#1]{#2}}{contravariant mathbftor component}}
 
 
 \let\@metricTensor\metricTensor
-\newcommand{\metricTensor}{\texttip{\@metricTensor}{metric tensor}}
+\renewcommand{\metricTensor}{\texttip{\@metricTensor}{metric tensor}}
 \let\@met\met
-\newcommand{\met}[1][{\mu\nu}]{\texttip{\@met{#1}}{covariant metric tensor component}}
+\renewcommand{\met}[1][{\mu\nu}]{\texttip{\@met[#1]}{covariant metric tensor component}}
 \let\@invmet\invmet
-\newcommand{\invmet}[1][{\mu\nu}]{\texttip{\@invmet{#1}}{contravariant metric tensor component}}
+\renewcommand{\invmet}[1][{\mu\nu}]{\texttip{\@invmet[#1]}{contravariant metric tensor component}}
 
 \let\@minkoskiMetric\minkoskiMetric
-\newcommand{\minkoskiMetric}{\texttip{\@minkoskiMetric}{Minkoski metric tensor +---}}
+\renewcommand{\minkoskiMetric}{\texttip{\@minkoskiMetric}{Minkoski metric tensor +---}}
 \let\@mink\mink
-\newcommand{\mink}[1][{\mu\nu}]{\texttip{\@mink{#1}}{covariant Minkoski metric components +---}}
+\renewcommand{\mink}[1][{\mu\nu}]{\texttip{\@mink[#1]}{covariant Minkoski metric components +---}}
 \let\@invmink\invmink
-\newcommand{\invmink}[1][{\mu\nu}]{\texttip{\@invmink{#1}}{contravariant Minkoski metric components +---}}
+\renewcommand{\invmink}[1][{\mu\nu}]{\texttip{\@invmink[#1]}{contravariant Minkoski metric components +---}}
 
 \let\@weakTensor\weakTensor
-\newcommand{\weakTensor}{\texttip{\@weakTensor}{weak metric tensor}}
+\renewcommand{\weakTensor}{\texttip{\@weakTensor}{weak metric tensor}}
 \let\@weakmet\weakmet
-\newcommand{\weakmet}[1][{\mu\nu}]{\texttip{\@weakmet{#1}}{weak covariant metric tensor component}}
+\renewcommand{\weakmet}[1][{\mu\nu}]{\texttip{\@weakmet[#1]}{weak covariant metric tensor component}}
 \let\@invweakmet\invweakmet
-\newcommand{\invweakmet}[1][{\mu\nu}]{\texttip{\@invweakmet{#1}}{weak contravariant metric tensor component}}
+\renewcommand{\invweakmet}[1][{\mu\nu}]{\texttip{\@invweakmet[#1]}{weak contravariant metric tensor component}}
 \let\@trweakmet\trweakmet
-\newcommand{\trweakmet}[1][\alpha]{\texttip{\@trweakmet{#1}}{weak metric tensor trace}}
+\renewcommand{\trweakmet}[1][\alpha]{\texttip{\@trweakmet[#1]}{weak metric tensor trace}}
 \let\@mixweakmet\mixweakmet
-\newcommand{\mixweakmet}[1][\ind{\mu}{\nu}]{\texttip{\mixweakmet{#1}}{weak mixed metric tensor component}} 
+\renewcommand{\mixweakmet}[1][\ind{\mu}{\nu}]{\texttip{\@mixweakmet[#1]}{weak mixed metric tensor component}} 
 
 \let\@weakTRTensor\weakTRTensor
-\newcommand{\weakTRTensor}{\texttip{\@weakTRTensor}{trace reversed weak metric tensor}}
+\renewcommand{\weakTRTensor}{\texttip{\@weakTRTensor}{trace reversed weak metric tensor}}
 \let\@weakTRmet\weakTRmet
-\newcommand{\weakTRmet}[1][{\mu\nu}]{\texttip{\@weakTRmet{#1}}{trace reversed weak covariant metric tensor component}}
+\renewcommand{\weakTRmet}[1][{\mu\nu}]{\texttip{\@weakTRmet[#1]}{trace reversed weak covariant metric tensor component}}
 \let\@invweakTRmet\invweakTRmet
-\newcommand{\invweakTRmet}[1][{\mu\nu}]{\texttip{\@invweakTRmet{#1}}{trace reversed weak contravariant metric tensor component}}
+\renewcommand{\invweakTRmet}[1][{\mu\nu}]{\texttip{\@invweakTRmet[#1]}{trace reversed weak contravariant metric tensor component}}
 \let\@trweakTRmet\trweakTRmet
-\newcommand{\trweakTRmet}[1][\alpha]{\texttip{\@trweakTRmet{#1}}{trace reversed weak metric tensor trace}}
+\renewcommand{\trweakTRmet}[1][\alpha]{\texttip{\@trweakTRmet[#1]}{trace reversed weak metric tensor trace}}
 \let\@mixweakTRmet\mixweakTRmet
-\newcommand{\mixweakTRmet}[1][\ind{\mu}{\nu}]{\texttip{\mixweakTRmet{#1}}{trace reversed weak mixed metric tensor component}} 
+\renewcommand{\mixweakTRmet}[1][\ind{\mu}{\nu}]{\texttip{\@mixweakTRmet[#1]}{trace reversed weak mixed metric tensor component}} 
 
 
 \let\@weakTTTensor\weakTTTensor
-\newcommand{\weakTTTensor}{\texttip{\@weakTTTensor}{transverse traceless weak metric tensor}}
+\renewcommand{\weakTTTensor}{\texttip{\@weakTTTensor}{transverse traceless weak metric tensor}}
 \let\@weakTTmet\weakTTmet
-\newcommand{\weakTTmet}[1][{\mu\nu}]{\texttip{\@weakTTmet{#1}}{transverse traceless weak covariant metric tensor component}}
+\renewcommand{\weakTTmet}[1][{\mu\nu}]{\texttip{\@weakTTmet[#1]}{transverse traceless weak covariant metric tensor component}}
 \let\@invweakTTmet\invweakTTmet
-\newcommand{\invweakTTmet}[1][{\mu\nu}]{\texttip{\@invweakTTmet{#1}}{transverse traceless weak contravariant metric tensor component}}
+\renewcommand{\invweakTTmet}[1][{\mu\nu}]{\texttip{\@invweakTTmet[#1]}{transverse traceless weak contravariant metric tensor component}}
 \let\@trweakTTmet\trweakTTmet
-\newcommand{\trweakTTmet}[1][\alpha]{\texttip{\@trweakTTmet{#1}}{transverse traceless weak metric tensor trace}}
+\renewcommand{\trweakTTmet}[1][\alpha]{\texttip{\@trweakTTmet[#1]}{transverse traceless weak metric tensor trace}}
 \let\@mixweakTTmet\mixweakTTmet
-\newcommand{\mixweakTTmet}[1][\ind{\mu}{\nu}]{\texttip{\mixweakTTmet{#1}}{transverse traceless weak mixed metric tensor component}} 
+\renewcommand{\mixweakTTmet}[1][\ind{\mu}{\nu}]{\texttip{\@mixweakTTmet[#1]}{transverse traceless weak mixed metric tensor component}} 
 
 
 \let\@RiemannTensor\RiemannTensor
-\newcommand{\RiemannTensor}{\texttip{\@RiemannTensor}{Riemann tensor}}
+\renewcommand{\RiemannTensor}{\texttip{\@RiemannTensor}{Riemann tensor}}
 
 \let\@Riem\Riem
-\newcommand{\Riem}[1][\ind{\beta}{\mu\nu\rho}]{\texttip{\Riem{#1}}{Riemann Tensor tensor component}}
+\renewcommand{\Riem}[1][\ind{\beta}{\mu\nu\rho}]{\texttip{\@Riem[#1]}{Riemann Tensor tensor component}}
 \let\@RiemCt\RiemCt
-\newcommand{\RiemCt}[1][\beta\mu\nu\rho]{\texttip{\RiemCt{#1}}{fully covariant Riemann tensor component}}
+\renewcommand{\RiemCt}[1][\beta\mu\nu\rho]{\texttip{\@RiemCt[#1]}{fully covariant Riemann tensor component}}
 
 \let\@RicciTensor\RicciTensor
-\newcommand{\RicciTensor}{\texttip{\@RicciTensor}{Ricci tensor}}
+\renewcommand{\RicciTensor}{\texttip{\@RicciTensor}{Ricci tensor}}
 \let\@RicciTct\RicciTct
-\newcommand{\RicciTct}[1][{\mu\nu}]{\texttip{\@RicciTct{#1}}{contravariant Ricci tensor component}}
+\renewcommand{\RicciTct}[1][{\mu\nu}]{\texttip{\@RicciTct[#1]}{contravariant Ricci tensor component}}
 \let\@RicciTco\RicciTco
-\newcommand{\RicciTco}[1][{\mu\nu}]{\texttip{\@RicciTco{#1}}{covariant Ricci tensor component}}
+\renewcommand{\RicciTco}[1][{\mu\nu}]{\texttip{\@RicciTco[#1]}{covariant Ricci tensor component}}
 
 \let\@linRicciTensor\linRicciTensor
-\newcommand{\linRicciTensor}{\texttip{\@linRicciTensor}{linearized Ricci tensor}}
+\renewcommand{\linRicciTensor}{\texttip{\@linRicciTensor}{linearized Ricci tensor}}
 \let\@linRicciTct\linRicciTct
-\newcommand{\linRicciTct}[1][{\mu\nu}]{\texttip{\@linRicciTct{#1}}{contravariant linearized Ricci tensor component}}
+\renewcommand{\linRicciTct}[1][{\mu\nu}]{\texttip{\@linRicciTct[#1]}{contravariant linearized Ricci tensor component}}
 \let\@linRicciTco\linRicciTco
-\newcommand{\linRicciTco}[1][{\mu\nu}]{\texttip{\@linRicciTco{#1}}{covariant linearized Ricci tensor component}}
+\renewcommand{\linRicciTco}[1][{\mu\nu}]{\texttip{\@linRicciTco[#1]}{covariant linearized Ricci tensor component}}
 
 \let\@RicciS\RicciS
-\newcommand{\RicciS}{\texttip{\@RicciS}{Ricci scalar}}
+\renewcommand{\RicciS}{\texttip{\@RicciS}{Ricci scalar}}
 \let\@linRicciS\linRicciS
-\newcommand{\linRicciS}{\texttip{\@linRicciS}{linearized Ricci scalar}}
+\renewcommand{\linRicciS}{\texttip{\@linRicciS}{linearized Ricci scalar}}
 
 \let\@SETensor\SETensor
-\newcommand{\SETensor}{\texttip{\@SETensor}{Stress-Energy tensor, or energy-momentum tensor}}
+\renewcommand{\SETensor}{\texttip{\@SETensor}{Stress-Energy tensor, or energy-momentum tensor}}
 \let\@SEct\SEct
-\newcommand{\SEct}[1][{\mu\nu}]{\texttip{\@SEct{#1}}{contravariant Stress-Energy tensor component}}
+\renewcommand{\SEct}[1][{\mu\nu}]{\texttip{\@SEct[#1]}{contravariant Stress-Energy tensor component}}
 \let\@SEco\SEco
-\newcommand{\SEco}[1][{\mu\nu}]{\texttip{\@SEco{#1}}{covariant Stress-Energy tensor component}}
+\renewcommand{\SEco}[1][{\mu\nu}]{\texttip{\@SEco[#1]}{covariant Stress-Energy tensor component}}
 \let\@trSE\trSE
-\newcommand{\trSE}[1][\alpha]{\texttip{\@trSE{#1}}{Stress-Energy tensor trace}}
+\renewcommand{\trSE}[1][\alpha]{\texttip{\@trSE[#1]}{Stress-Energy tensor trace}}
 \let\@SEmix\SEmix
-\newcommand{\SEmix}[1][\ind{\mu}{\nu}]{\texttip{\@SEmix{#1}}{mixed Stress-Energy tensor component}} 
+\renewcommand{\SEmix}[1][\ind{\mu}{\nu}]{\texttip{\@SEmix[#1]}{mixed Stress-Energy tensor component}} 
 
-\let\@SETensor\SETensor
-\newcommand{\polTensor}{\texttip{\@polTensor}{Polarization tensor}}
+\let\@polTensor\polTensor
+\renewcommand{\polTensor}{\texttip{\@polTensor}{Polarization tensor}}
 \let\@polct\polct
-\newcommand{\polct}[1][{\mu\nu}]{\texttip{\@polct{#1}}{contravariant Polarization tensor component}}
+\renewcommand{\polct}[1][{\mu\nu}]{\texttip{\@polct[#1]}{contravariant Polarization tensor component}}
 \let\@polco\polco
-\newcommand{\polco}[1][{\mu\nu}]{\texttip{\@polco{#1}}{covariant Polarization tensor component}}
+\renewcommand{\polco}[1][{\mu\nu}]{\texttip{\@polco[#1]}{covariant Polarization tensor component}}
 \let\@trpol\trpol
-\newcommand{\trpol}[1][\alpha]{\texttip{\@trpol{#1}}{Polarization tensor trace}}
+\renewcommand{\trpol}[1][\alpha]{\texttip{\@trpol[#1]}{Polarization tensor trace}}
 \let\@polmix\polmix
-\newcommand{\polmix}[1][\ind{\mu}{\nu}]{\texttip{\@polmix{#1}}{mixed Polarization tensor component}} 
+\renewcommand{\polmix}[1][\ind{\mu}{\nu}]{\texttip{\@polmix[#1]}{mixed Polarization tensor component}} 
 
 \let\@conjpolTensor\conjpolTensor
-\newcommand{\conjpolTensor}{\texttip{\@conjpolTensor}{Polarization tensor}}
+\renewcommand{\conjpolTensor}{\texttip{\@conjpolTensor}{Polarization tensor}}
 \let\@conjpolct\conjpolct
-\newcommand{\conjpolct}[1][{\mu\nu}]{\texttip{\@conjpolct{#1}}{contravariant Polarization tensor component}}
+\renewcommand{\conjpolct}[1][{\mu\nu}]{\texttip{\@conjpolct[#1]}{contravariant Polarization tensor component}}
 \let\@conjpolco\conjpolco
-\newcommand{\conjpolco}[1][{\mu\nu}]{\texttip{\@conjpolco{#1}}{covariant Polarization tensor component}}
+\renewcommand{\conjpolco}[1][{\mu\nu}]{\texttip{\@conjpolco[#1]}{covariant Polarization tensor component}}
 \let\@trconjpol\trconjpol
-\newcommand{\trconjpol}[1][\alpha]{\texttip{\@trconjpol{#1}}{Polarization tensor trace}}
+\renewcommand{\trconjpol}[1][\alpha]{\texttip{\@trconjpol[#1]}{Polarization tensor trace}}
 \let\@conjpolmix\conjpolmix
-\newcommand{\conjpolmix}[1][\ind{\mu}{\nu}]{\texttip{\@conjpolmix{#1}}{mixed Polarization tensor component}} 
+\renewcommand{\conjpolmix}[1][\ind{\mu}{\nu}]{\texttip{\@conjpolmix[#1]}{mixed Polarization tensor component}} 
 
-\let\@conj\conj
-\newcommand{\conj}[1]{\texttip{\@conj{#1}}{conjugate of #1}}
 
 \let\@srcTensor\srcTensor
-\newcommand{\srcTensor}{\texttip{\@srcTensor}{source tensor}}
+\renewcommand{\srcTensor}{\texttip{\@srcTensor}{source tensor}}
 \let\@srcct\srcct
-\newcommand{\srcct}[1][{\mu\nu}]{\texttip{\@srcct{#1}}{contravariant source tensor component}}
+\renewcommand{\srcct}[1][{\mu\nu}]{\texttip{\@srcct[#1]}{contravariant source tensor component}}
 \let\@srcco\srcco
-\newcommand{\srcco}[1][{\mu\nu}]{\texttip{\@srcco{#1}}{covariant source tensor component}}
+\renewcommand{\srcco}[1][{\mu\nu}]{\texttip{\@srcco[#1]}{covariant source tensor component}}
 \let\@trsrc\trsrc
-\newcommand{\trsrc}[1][\alpha]{\texttip{\@trsrc{#1}}{source tensor trace}}
+\renewcommand{\trsrc}[1][\alpha]{\texttip{\@trsrc[#1]}{source tensor trace}}
 \let\@srcmix\srcmix
-\newcommand{\srcmix}[1][\ind{\mu}{\nu}]{\texttip{\@srcmix{#1}}{mixed source tensor component}} 
+\renewcommand{\srcmix}[1][\ind{\mu}{\nu}]{\texttip{\@srcmix[#1]}{mixed source tensor component}} 
 
 
 \let\@kron\kron
-\newcommand{\kron}[1][_{\nu}^{\mu}]{\texttip{\@kron{#1}}{Kronecker delta}}
+\renewcommand{\kron}[1][_{\nu}^{\mu}]{\texttip{\@kron[#1]}{Kronecker delta}}
 \let\@LC\LC
-\newcommand{\LC}[3]{\mathtip{\@LC{#1}{#2}{#3}}{\text{Levi-Civita Connection: }\Gamma\ind{#1}{#2#3}=
+\renewcommand{\LC}[3]{\mathtip{\@LC{#1}{#2}{#3}}{\text{Levi-Civita Connection: }\Gamma\ind{#1}{#2#3}=
 \frac{1}{2} \invmet[#1 \rho]
 \brk[\Big]{
     \ipdv{\met[\rho #1]}{#2}
@@ -272,16 +273,15 @@
     -\ipdv{\met[#2 #1]}{\rho}}
     }}
     
-    
 <!-- Paper specific -->
 \let\@ddP\ddP
-\newcommand{\ddP}[2][]{\mathtip{\ddP{#1}{#2}}{\text{On shell integration measure: } \differential\Phi(p_i)=\dn[4]{p_i}\nposendelta[-m_i^2]{p_i}}}
+\renewcommand{\ddP}[2][]{\mathtip{\@ddP[#1]{#2}}{\text{On shell integration measure: } \differential\Phi(p_i)=\dn[4]{p_i}\nposendelta[-m_i^2]{p_i}}}
     
 \let\@vInt\vInt
-\newcommand{\vInt}[1][\obs{O}]{\mathtip{\@vInt[#1]}{\text{Virtual integrand: }\@vInt[#1]}}
+\renewcommand{\vInt}[1][\obs{O}]{\mathtip{\@vInt[#1]}{\text{Virtual integrand: }\@vInt[#1]}}
     
 \let\@rInt\rInt
-\newcommand{\rInt}[1][\obs{O}]{\mathtip{\@rInt[#1]}{\text{Real integrand: }\@rInt[#1]}}
+\renewcommand{\rInt}[1][\obs{O}]{\mathtip{\@rInt[#1]}{\text{Real integrand: }\@rInt[#1]}}
 
 \let\@obschange\obschange
-\newcommand{\obschange}[3][\obs{O}]{\mathtip{\@obschange[#1]{#2}{#3}}{\text{Observable change: }\@obschange[#1]{#2}{#3}}}
+\renewcommand{\obschange}[3][\obs{O}]{\mathtip{\@obschange[#1]{#2}{#3}}{\text{Observable change: }\@obschange[#1]{#2}{#3}}}
