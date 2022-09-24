@@ -156,6 +156,7 @@ format:
       text: |
         \usepackage{amsmath}
         \usepackage{mathtools}
+        \usepackage{cancel}
     include-before-body: 
       - latexmacros.tex
       - latexfix.tex

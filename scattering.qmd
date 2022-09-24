@@ -134,7 +134,7 @@ Classical limit of the wavefunctions should make sense, thus
 - The spread should not be too large as to interact between the two initial states
 - The overlap between the wavefunction and its conjugate should be nearly full, since they represent the same particle classically.
 
-Consider for example a nonrelativistic wavefunction:$\Exp{}$S
+Consider for example a nonrelativistic wavefunction:
 
 $$
 f(\tv{p})=\Exp[\Big]{-\frac{\tv{p}}{2 \hbar m \ell_c/\ell_\omega^2}}\stackrel{\hbar=\ell_c m}{=}\Exp[\Big]{-\frac{\tv{p}}{2 m^2 \ell_c^2 /\ell_\omega^2}}
@@ -192,7 +192,7 @@ $$\begin{aligned}
 \end{aligned}$$
 If we call $\frac{1}{\sqrt{-\bar{q}^2}}=\ell_s$ a scattering length[^7] then our dimensionless ratios are :
 
-$$\frac{\ell_c}{\ell_s} \qqtext{and} \ell_s\,\bar{q} \cdot u $$
+$$\frac{\ell_c}{\ell_s} \quad \text{and}\quad \ell_s\,\bar{q} \cdot u $$
 The delta function can be rewritten as:
 $$\hat{\delta}(2 p \cdot q+q^2)=\hat{\delta}(2\hbar m\, u\cdot \bar{q}+\hbar^2 \bar{q}^2)=\frac{1}{\hbar m}\hat{\delta}(2 \bar{q} \cdot u-\frac{\ell_c}{\ell_s^2})=\frac{\ell_s}{\hbar m}\hat{\delta}(2\ell_s\, \bar{q} \cdot u-\frac{\ell_c}{\ell_s})$$
 
@@ -263,11 +263,11 @@ We can now explore the integrands in different theories:
 
 Let us use the [[KMOC framework]] for [[scalar QED]] 
 
-$$\Debta O=\AAngle{\int \d {\overline{\Psi}(\bar{q})}\exp\pa[\big]{-\iunit\bar{q}^\mu b_\mu}\pa[\Big]{\vIntp{O}+\rIntb{O}}}  $$
+$$\Delta O=\AAngle{\int \dPsb{\bar{q}}\Exp[\Big]{-\iunit\bar{q}^\mu b_\mu}\pa[\Big]{\vIntp{O}+\rIntb{O}}}  $$
 
 Let us take $p_\mu^1$ as the observable corresponding to the momentum of the first particle.
 
-We then have: ^12c1d7
+We then have: 
 
 $$
 \begin{aligned}
@@ -291,45 +291,53 @@ $$\mathcal{A}(p_1,p_2\to r_1,r_2,X)=\sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2
 
 Going back to the integrands we have:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \vIntp{p_\mu^1}&=\hbar^3\iunit\,  \bar{q}\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{(L+1)}\bar{\mathcal{A}}^{(L)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})\\
 &=\iunit\,  \bar{q}\, \sum\limits_{L=0}^\infty e^{2(L+1)}{\hbar}^{(2-L)}\bar{\mathcal{A}}^{(L)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})
-\end{aligned}$$
+\end{aligned}
+$$
 
 as well as the real kernel:[^measurech]
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \rIntb{p_\mu^1}&=\hbar^2\sumint\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\hat{\delta}(2p_i \cdot w_i+w_i^2)\Theta(p_i^0+w_i^0) \\
 &\times w_1^\mu\,\hat{\delta}^{(4)}\left(w_1+w_2+r_{X}\right)
 \\
 &\times\mathcal{A}\left(p_{1}, p_{2} \rightarrow p_1+w_{1}, p_2+w_{2}, r_{X}\right) 
 \mathcal{A}^{*}\left(p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+w_{1}, p_2+w_{2}, r_{X}\right)\\
-&
-\end{aligned}$$
-$$\begin{aligned}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
 =\hbar^2\sumint&\ddP[\abs {X}]{{r}_X}\prod\limits_{i=1,2}\hbar^3\dn[4]{\bar{w}_i}\hat{\delta}(2p_i \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta(p_i^0+\hbar \bar{w}_i^0) \\
 &\times   \hbar \bar{w}_1^\mu\,\hbar^{-4}\hat{\delta}^{(4)}\pa[\big]{\bar{w}_1+\bar{w}_2+\frac{1}{\hbar}r_{X}}
 \\
-&\times\sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{2L+2+\abs{X})}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} 
-\mathcal\\\\
+&\times\sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{2L+2+\abs{X})}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} \\
 &\times\bar{\mathcal{A^{*}}}^{(L)}{}\pa{p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}}
-\end{aligned}$$
+\end{aligned}
+$$
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 =\sumint&\ddP[\abs {X}]{{r}_X}\prod\limits_{i=1,2}\dn[4]{\bar{w}_i}\hat{\delta}(2p_i \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta(p_i^0+\hbar \bar{w}_i^0) \\
 &\times    \bar{w}_1^\mu\,\hat{\delta}^{(4)}\pa[\big]{\bar{w}_1+\bar{w}_2+\frac{1}{\hbar}r_{X}}
 \\
-&\times\sum\limits_{L=0}^\infty e^{2(2L+2+\abs{X})}{\hbar}^{3-2L-\abs{X}}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} 
-\mathcal\\\\
+&\times\sum\limits_{L=0}^\infty e^{2(2L+2+\abs{X})}{\hbar}^{3-2L-\abs{X}}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} \\
 &\times\bar{\mathcal{A^{*}}}^{(L)}{}\pa{p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}}\\
-\end{aligned}$$
+\end{aligned}
+$$
 
 Schematically we have 
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \vIntb{p_\mu^1}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{2(L+1)})\\
 \rIntb{O}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{4(L+1)+2\abs{X}})
-\end{aligned}$$
+\end{aligned}
+$$
 
 The contributions from the virtual kernel are lower order for a given loop order. Both kernels contribute together provided that the following equation is verified.
 
@@ -339,11 +347,15 @@ Where $L$ is the loop count for the virtual kernel and $L'$, $\abs{X}$ are the r
 
 Now we see that the leading order contribution [^expand]to the impulse $\Delta p_1^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus we have the following equation.
 
-$$\Delta p_1^{\mu,(0)}=\AAngle{\int \d {\overline{\Psi}(\bar{q})}\exp\pa[\big]{-\iunit\bar{q}^\mu b_\mu}\ \vIntb{p_1^{\mu},L=0}} $$
+$$
+\Delta p_1^{\mu,(0)}=\AAngle{\int \dPsb{\bar{q}}\Exp[\big]{-\iunit\bar{q}^\mu b_\mu}\ \vIntb{p_1^{\mu},L=0}}
+$$
 
 And the integrand is given by the tree level 4 point amplitude.
 
-$$\vIntp{p_1^{\mu},L=0}=\iunit\,  \bar{q}^\mu\,  e^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})$$
+$$
+\vIntp{p_1^{\mu},L=0}=\iunit\,  \bar{q}^\mu\,  e^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})
+$$
 
 The amplitude is read off from the single tree level diagram and using [[feynman rules for SQED]]. 
 
