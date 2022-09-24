@@ -3,10 +3,6 @@
 ::: {.content-hidden unless-format="html"}
 
 
-:::
-
-::: {.not-in-format .latex .beamer}
-
 {{< include _latexmacros.qmd >}}
 
 :::
@@ -19,67 +15,376 @@ in state into an at least 2 particle out state. This language
 
 Thus the in state is given by 
 
-$$\ket[in]{\psi}=\int \ddP[2]{p_1,p_2} \phi_1(p_1) \phi_2(p_2) \exp{\im b_\mu p^\mu_1 /\hbar}\ket[in]{p_1,p_2}$${#eq-instate}
+$$
+\ket[in]{\psi}=\int \ddP[2]{\emom[1],\emom[2]} \fs[1](\emom[1]) \fs[2](\emom[2]) \exp{\im \co{\impactParameter} \ct{\emom[1]} /\hbar}\ket[in]{\emom[1],\emom[2]}
+$${#eq-instate}
 
-
-
-The $\exp{\im b_\mu p^\mu_1 /\hbar}$ factor encodes the fact that we have translated the wavepacket of particle $1$ relative to particle $2$ by the impact parameter $b$ .[^2] We take it to be perpendicular to the initial momenta $p_1,p_2$.
+The $\exp{\im \co{\impactParameter} \ct{\emom[1]} /\hbar}$ factor encodes the fact that we have translated the wavepacket of particle $1$ relative to particle $2$ by the impact parameter $b$ .[^2] We take it to be perpendicular to the initial momenta $\emom[1],\emom[2]$.
 
 The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable ${O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
 $$
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}
 $$
+
 In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e. the S-matrix: $\ket{\text{out}}=\Smat \ket{\text{in}}$ and we can write
-$$\begin{aligned}
-\Delta O&=\ev{\Smat^\dagger\op{O}\Smat}{\text{in}}-\ev{\op{O}}{\text{in}}\\
-&\stackrel{\Smat^\dagger \Smat=1}{=} \ev{\Smat^\dagger \com{\op{O}}{\Smat}}{\text{in}}\\
-&\stackrel{\Smat=1+\im \Tmat}{=} \ev{\com{\op{O}}{1+\im \Tmat}}{\text{in}}-\ev{\im \Tmat^\dagger \com{\op{O}}{1+\im \Tmat}}{\text{in}}\\
-&=\ev{\im\com{\op{O}}{\Tmat}}{\text{in}}+\ev{ \Tmat^\dagger \com{\op{O}}{\Tmat}}{\text{in}}\\
-&=\Delta O_\text{v}+\Delta O_\text{r}
-\end{aligned}$${#eq-DeltaO}
+
+$$
+\begin{aligned}
+\Delta O    &=\ev{\adj{\Smat}\op{O}\Smat}{\text{in}}-\ev{\op{O}}{\text{in}}\\
+            &\stackrel{\adj{\Smat} \Smat=1}{=}      \ev{\adj{\Smat} \com{\op{O}}{\Smat}}{\text{in}}\\
+            &\stackrel{\Smat=1+\im qat}{=}          \ev{\com{\op{O}}{1+\im qat}}{\text{in}}
+                                                      -\ev{\im \adj{qat} \com{\op{O}}{1+\im qat}}{\text{in}}\\
+            &=    \ev{\im\com{\op{O}}{qat}}{\text{in}}
+                  +\ev{ \adj{qat} \com{\op{O}}{qat}}{\text{in}}\\
+            &=\vchangeob+\Delta O_\text{r}
+\end{aligned}
+$${#eq-DeltaO}
 
 
 If we put in the definition of our in state (@eq-instate) we have:
 
 
-$$\Delta O = \int \ddP[4]{p_1,p_2,p_1',p_2'} \phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1')\phi_2^\dagger(p_2')\,\exp{\im b_\mu\frac{p_1^\mu-p_1'^\mu}{\hbar}}\brk{\mathcal{I_\text{v}}(O)-\rInt}$$
+$$
+\Delta O = \int \ddP[4]{\emom[1],\emom[2],\emom[1]',\emom[2]'} 
+                  \fs[1](\emom[1]) \fs[2](\emom[2]) \afs[1](\emom[1]') \afs[2](\emom[2]')
+                  \,\exp{\im \co{\impactParameter} \frac{\ct{\emom[1]}-\ct{\emom[1]'}}{\hbar}}
+                  \brk{\vInt-\rInt}
+$$
 Where 
-$$\begin{aligned}
-\vInt &=\mel{p_1'p_2'}{\im\com{\op{O}}{\Tmat}}{p_1p_2}\\
-\rInt &=\mel{p_1'p_2'}{\Tmat^\dagger\com{\op{O}}{\Tmat}}{p_1p_2}
-\end{aligned}$$
+$$
+\begin{aligned}
+\vInt &=\mel{\emom[1]'\emom[2]'}{\im\com{\op{O}}{qat}           }{\emom[1]\emom[2]}\\
+\rInt &=\mel{\emom[1]'\emom[2]'}{\adj{qat}\com{\op{O}}{qat}   }{\emom[1]\emom[2]}
+\end{aligned}
+$$
 
-> NB: the notation is slightly different in the @bernScalarQEDToy2021 paper
+> NB: the notation is slightly different in the @bernScalarqEDToy2021 paper
 
 Let us first look at the virtual integrand $\mathcal{I}_\text{v}$:
 
-$$\begin{aligned}
-\vInt &=\mel{p_1'p_2'}{\im\com{\op{O}}{\Tmat}}{p_1p_2}  \\
-      &=\mel{p_1'p_2'}{\im\op{O}\Tmat }{p_1p_2}   - \mel{p_1'p_2'}{\im \Tmat\op{O} }{p_1p_2}\\
-      &=\im \obs{O}_{\text{in}'} \mel{p_1'p_2'}{\Tmat}{p_1p_2}- \im \obs{O}_{\text{in}}\mel{p_1'p_2'}{\Tmat}{p_1p_2}\\
-      &=\im \obschange{p}{p'} \, \mel{p_1'p_2'}{\Tmat}{p_1p_2}\\
-      &=\im \obschange{p}{p'}\,\ndeltafn[4]
-{p_1+p_2-p_1'-p_2'} \amp{p_1,p_2}{p_1',p_2'}
-\end{aligned}$$
+$$
+\begin{aligned}
+\vInt &=\mel{\emom[1]'\emom[2]'}{\im\com{\op{O}}{qat}     }{\emom[1]\emom[2]}  \\
+      &=\mel{\emom[1]'\emom[2]'}{\im\op{O}qat             }{\emom[1]\emom[2]}   
+      - \mel{\emom[1]'\emom[2]'}{\im qat\op{O}            }{\emom[1]\emom[2]}\\
+      &=\im \obs{O}_{\text{in}'}    \mel{\emom[1]'\emom[2]'}{qat}{\emom[1]\emom[2]}
+      - \im \obs{O}_{\text{in}}     \mel{\emom[1]'\emom[2]'}{qat}{\emom[1]\emom[2]}\\
+      &=\im \obschange{p-p'} \,    \mel{\emom[1]'\emom[2]'}{qat}{\emom[1]\emom[2]}\\
+      &=\im \obschange{p-p'}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
+                                    \amp{\emom[1],\emom[2]}{\emom[1]',\emom[2]'}
+\end{aligned}
+$$
 
 Note that the amplitude is from in states to in states! Now for the real integrand $\mathcal{I}_\text{r}$ we insert a complete set of states :
 
-$$\begin{aligned}
-\rInt&=\mel{p_1'p_2'}{\Tmat^\dagger\com{\op{O}}{\Tmat}}{p_1p_2}\\
-&=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\mel{p_1'p_2'}{\Tmat^\dagger}{r_1 r_2 X}\mel{r_1 r_2 X}{\com{\op{O}}{\Tmat}}{p_1p_2}\\
-&=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \hat{\delta}^{(4)}\left(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}\right)\mathcal{A}\left(p_{1}, p_{2} \rightarrow r_{1}, r_{2}, r_{X}\right) \\
-&\qquad \underset{rX-p}{\Delta}\!\! O \,\hat{\delta}^{(4)}\left(p_{1}^{\prime}+p_{2}^{\prime}-r_{1}-r_{2}-r_{X}\right)   \mathcal{A}^{*}\left(p_{1}^{\prime}, p_{2}^{\prime} \rightarrow r_{1}, r_{2}, r_{X}\right)
-\end{aligned}$$
+$$
+\begin{aligned}
+\rInt &=\mel{\emom[1]'\emom[2]'}{\adj{qat}\com{\op{O}}{qat}}{\emom[1]\emom[2]}\\
+      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}   \mel{\emom[1]'\emom[2]'}{\adj{qat}}{r_1 r_2 X}
+                        \mel{r_1 r_2 X}{\com{\op{O}}{qat}}{\emom[1]\emom[2]}\\
+      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \ndeltafn[4]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}}\,
+      \amp{\emom[1], \emom[2]}{r_{1}, r_{2}, r_{X}} \\
+      &\qquad \obschange{rX-p}\,\ndeltafn[4]{\emom[1]^{\prime}+\emom[2]^{\prime}-r_{1}-r_{2}-r_{X}}\,
+      \aamp{\emom[1]^{\prime}, \emom[2]^{\prime}}{r_{1}, r_{2}, r_{X}}
+\end{aligned}
+$$
 
-For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=p'_i-p_i$ and then integrate over $q_2$ finally relabelling $q_1 \to q$. Thus we have
+For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=p'_i-p_i$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$. Thus we have
 
 $$
 \begin{aligned}
-\Delta O_\text{v}=\int \ddP[2]{p_1,p_2} \dh[4]{q}\, &\hat{\delta}(2 p_1 \cdot q+q^2) \Theta(p^0_1+q^0)\, \hat{\delta}(2 p_2 \cdot q-q^2) \Theta(p^0_2-q^0)\\
-&\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+q)\phi_2^\dagger(p_2-q)\,\exp{-\frac{\im}{\hbar} b_\mu q^\mu}\\
-&\times \im \underset{q}{\Delta} O\, \mathcal{A}(p_1,p_2 \to p_1+q,p_2-q)
+\vchangeob=\int \ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm}
+      &\ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{p^0_1+\tm^0}\, \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{p^0_2-\tm^0}\\
+      &\times\fs[1](\emom[1])\fs[2](\emom[2])\afs[1](\emom[1]+\tm)\afs[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} \co{\impactParameter} \tm^\mu}\\
+      &\times \im \obschange{\tm} \amp{\emom[1],\emom[2] }{\emom[1]+\tm,\emom[2]-\tm}
 \end{aligned}
 $${#eq-DeltaOv}
 
 
+$$
+\begin{aligned}
+\rchangeob=\sum\limits_X \int \ddP[2+\abs{X}]{r_1, r_2,X}
+      &\ddP[2]{p_1,p_2} \dn[4]{\tm} \ndeltafn{2 p_1 \cdot \tm+\tm^2} \thetafn{p^0_1+\tm^0}\\
+            &\times \ndeltafn{2 p_2 \cdot \tm-\tm^2} \thetafn{p^0_2-\tm^0}\\
+            &\times\phi_1(p_1)\phi_2(p_2)\phi_1^\dagger(p_1+\tm)\phi_2^\dagger(p_2-\tm)\,\exp{-\frac{\iunit}{\hbar} b_\mu \tm^\mu}\\
+            &\times\obschange{rX-p}\ndeltafn[(4)]{p_{1}+p_{2}-r_{1}-r_{2}-r_{X}} \\
+            &\times   \amp{p_{1}, p_{2} }{ r_{1}, r_{2}, r_{X}}\aamp{p_{1}+\tm, p_{2}-\tm }{r_{1}, r_{2}, r_{X}}
+\end{aligned}
+$${#eq-DeltaOr}
 
+
+
+# Classical limit
+
+Since we are concerned with classial observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. The first target is the wavefunctions. 
+
+## Classical limit of wavefunctions
+
+In \acr{kmoc} framework we are interested in the classical limit of a scattering event. It is then important to understand the precise simplifications this limit yields. 
+
+
+We have multiple conditions on the wavefunctions. The first are those imposed by \acr{lsz} reduction. That is,
+
+- Compact support momentum space wavefunction
+- Peaked around one value of momenta
+
+Classical limit of the wavefunctions should make sense, thus 
+
+- as $\hbar \to 0$ the wavefunction should approach a delta function
+- The spread should not be too large as to interact between the two initial states
+- The overlap between the wavefunction and its conjugate should be nearly full, since they represent the same particle classically.
+
+Consider for example a nonrelativistic wavefunction:$\Exp{}$S
+
+$$
+f(\tv{p})=\Exp[\Big]{-\frac{\tv{p}}{2 \hbar m \ell_c/\ell_\omega^2}}\stackrel{\hbar=\ell_c m}{=}\Exp[\Big]{-\frac{\tv{p}}{2 m^2 \ell_c^2 /\ell_\omega^2}}
+$$
+
+This wavefunction grows sharper in the $\hbar \to 0$ limit. 
+
+The Fourier transform of $f(\tv{p})$ gives us the position "probability density":
+$$
+\begin{aligned}
+\invFT[\tv{p}]{f}{\tv{x}}(\tv{x})   &=\int \frac{\dd{\tv{p}}}{2 \pi} \Exp[\Big]{-\pa[\big]{\frac{\tv{p}}{A}}^2}\Exp[\Big]{-\frac{\iunit}{\hbar} \tv{p}\cdot \tv{x}}\\
+            &=\frac{1}{2\pi}\underbracket{\int \dd{\tv{p}} \Exp[\Big]{-\pa[\Big]{\frac{\tv{p}}{A}-\frac{\iunit\tv{x}A}{2 \hbar}}^2}}_{\sqrt{\pi}A}\Exp[\Big]{- \frac{\tv{x}^2A}{4 \hbar^2}}\\
+      &=\frac{\sqrt{2}A}{2 \pi}\Exp[\Big]{-\frac{\tv{x}^2}{2 \ell_\omega^2}}
+\end{aligned}
+$$
+[^constA]
+This wavefunction grows sharper in the $\ell_\omega^2 \to 0$ limit. We must then still have that $\xi=\pa{\frac{\ell_c}{\ell_\omega}}^2\to0$ when $\hbar \to 0$ as-well. This works if we just directly take the classical limit to be the $\xi \to 0$ limit.
+
+
+Going back to the general conditions we want $\phi_i(p_i)$ s.t:
+
+- $\av{p^\mu_i}=\int \dd{\Phi(p_i)} p^\mu_i \abs{\phi_i(p_i)}^2\stackrel{!}{=}m_i \breve{u}_i^\mu f_{p,i}(\xi)$[^1] with $f_{p,i}(\xi)=1+\mathcal{O}(\xi^{\beta'})$
+- $\sigma^2(p_i)/m_i^2=\av{(p_i-\av{p_i})^2}/m_i^2=(\av{p^2_i}-\av{p_i}^2)/m_i^2=c_\Delta\xi^\beta$[^2]
+- $\breve{u}_i \cdot u_i = 1+ \mathcal{O}(\xi^{\beta''})$[^3]
+
+Additionally the wavefunction should be Lorentz invariant, thus naively we would have that $\phi(p_i^\mu)=\tilde{\phi}(p_i^2)$ however the integration measure enforces an on shell condition: $m_i^2=p_i^2$. Thus the wavefunction cannot usefully depend on $p_i^2$, we need to introduce at least one additional four vector parameter $u$. The simplest dimensionless combination of parameters it then $\frac{p \cdot u }{m}$. Of course the wavefunction must also depend on $\xi$ and the simplest form of argument will thus be $\frac{p \cdot u }{m \xi}$ so that any $p$ not aligned with $u$ will be strongly suppressed in the $\xi \to0$ limit.
+
+We now have control over most of the conditions:
+
+- The classical limit is well defined
+- The wavefunction spread is controlled
+- The arguments of the wavefunction is clear
+
+The last requirement concerns the overlap of $\phi$ and $\phi^\dagger$ must be $\mathcal{O}(1)$, equivalently and more precisely:
+
+$$\phi^\dagger(p+q)\sim \phi^\dagger(p) \implies \phi^\dagger(p+q)- \phi^\dagger(p)\ll 1 \implies q^\mu\partial_\mu{\phi^\dagger}(p)\ll1$$
+Making explicit the $\frac{p \cdot u }{m \xi}$ dependence: $\phi(p)=\varphi(\frac{p \cdot u }{m \xi})$   for $\varphi(x)$ a scalar function.
+$$\implies \frac{q^\mu u_\mu}{m \xi}\pdv{\varphi^\dagger}{x}(\frac{p \cdot u }{m \xi})\ll1$$
+Thus we require that for a characteristic value of $q=q_0$ we have:
+
+$$\frac{q_0\cdot u}{m \xi}=\bar{q}_0 \cdot u\frac{\ell_\omega^2}{\ell_c}\ll1\iff \bar{q}_0 \cdot u\,\ell_\omega\ll \sqrt{ \xi}$$[^4]
+We now want to examine the classical limit of something like  [[KMOC framework#^deltaOv]]. If we consider just the integration over the initial momenta $p_i$ and the initial wavefunctions with $\hat{\delta}(2 p_i \cdot q+q^2)$, the delta function will smear out to a sharply peaked function whose scale is the same order as the original wavefunctions. As $\xi$ gets smaller, this function will turn back into a delta function  
+imposed on the $q$ integration.[^5] Let us examine this statement more closely:
+
+
+$$d(m,\xi,u,q)=\int \dd{\Phi(p)} \hat{\delta}(2 p \cdot q+q^2) \Theta(p^0+q^2)\varphi(\frac{p \cdot u }{m \xi})\varphi^\dagger(\frac{(p+q) \cdot u }{m \xi})$$
+^dfunct
+
+This integral must be Lorentz invariant and depends on $m,\xi, u,q$ thus it must manifestly only depend on the following [[math/Lorentz group|Lorentz invariants]]: $u^2,q^2,u \cdot q, \xi$. One of these is not actually a variable as we will normalise $u^2=1$. The rest aren't fully dimensionless, and we can render them dimensionless:[^6]
+
+$$\begin{aligned}
+[q^2]&=[\hbar \bar{q}]^2=[M]^2\implies[\ell_c \sqrt{-\bar{q}^2}]=[\frac{\hbar}{m}\sqrt{-\bar{q}^2}]=\frac{[M]}{[M]}=1\\
+[u \cdot q]&=[M]\implies [\frac{u \cdot\bar{q}}{\sqrt{-\bar{q}^2}}]= [\frac{u \cdot{q}}{\sqrt{-{q}^2}}]=\frac{[M]}{[M]}=1\\
+[\xi]&=1
+\end{aligned}$$
+If we call $\frac{1}{\sqrt{-\bar{q}^2}}=\ell_s$ a scattering length[^7] then our dimensionless ratios are :
+
+$$\frac{\ell_c}{\ell_s} \qqtext{and} \ell_s\,\bar{q} \cdot u $$
+The delta function can be rewritten as:
+$$\hat{\delta}(2 p \cdot q+q^2)=\hat{\delta}(2\hbar m\, u\cdot \bar{q}+\hbar^2 \bar{q}^2)=\frac{1}{\hbar m}\hat{\delta}(2 \bar{q} \cdot u-\frac{\ell_c}{\ell_s^2})=\frac{\ell_s}{\hbar m}\hat{\delta}(2\ell_s\, \bar{q} \cdot u-\frac{\ell_c}{\ell_s})$$
+
+
+
+
+
+
+
+## Notation
+
+As we have now seen the phase space integrals over initial momenta, and over the wavefunctions can be readily eliminated in the classical limit, in which case the momenta   $p_1$ and $p_2$ can be replaced by their classical values. To make explicit that idea we introduce the following notation:
+
+
+
+$$
+\AAngle{f(p_1,p_2,\dots)}\coloneq \int\limits \ddP{p_1}\ddP{p_2} \abs{\phi_1(p_1)}^2\abs{\phi_2(p_2)}^2\,f(p_1,p_2,\dots)
+$$
+
+We can now rewrite @eq-DeltaO:
+
+$$
+\changeob = \AAngle{\int \overbracket{\dn[4]{\tm} \ndeltafn{2p_1\cdot \tm +\tm^2}\thetafn{p^0_1+\tm^0}  
+                                          \ndeltafn{2p_1\cdot \tm +\tm^2}\thetafn{p^0_2+\tm^0}}^{\dPs{\tm}}
+                  \exp{{-\frac{\iunit}{\hbar}}\tm^\mu b_\mu}\pa[\Big]{\vIntp+\rIntp} }
+$$
+
+Where 
+$$
+\begin{aligned}
+\vIntp      &=\iunit\,  \obschange{\tm} \amp{p_1,p_2 }{p_1+\tm,p_2-\tm}\\
+\rIntp      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\obschange{rX-p} 
+                  \ndeltafn[(4)]{p_{1}+p_{2}-r_{1}-r_{2}-r_{X}} \\
+            &\times   \amp{p_{1}, p_{2} }{ r_{1}, r_{2}, r_{X}} \aamp{p_{1}+\tm, p_{2}-\tm }{ r_{1}, r_{2}, r_{X}}
+\end{aligned}
+$$
+
+Additionally we want to make clear the dependence on $\hbar$ since we want to eventually take the $\hbar \to0$ limit. We can change integration variables to $\tw=\frac{\tm}{\hbar}$ and absorb that $\hbar$ dependence into the redefinition of the integrands:
+
+$$
+\begin{aligned}
+\dPs{\tm}
+&=\hbar^2\dPsb{\tw}
+=\hbar^{\cancelto{2}{4}}\dn[4]{\tw} 
+\cancel{\frac{1}{\hbar}}\ndeltafn{2p_1\cdot\tw+\hbar\tw^2}
+\thetafn{p^0_1+\tm^0}
+\cancel{\frac{1}{\hbar}}\ndeltafn{2p_1\cdot \tw +\hbar\tw^2}
+\thetafn{p^0_2+\tm^0}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\vIntb&=\hbar^2\vIntp\\
+\rIntb&=\hbar^2\rIntp
+\end{aligned}$$
+
+We can finally neatly write:
+
+$$\Delta O=\AAngle{\int \dPsb{\tw}\exp{-\iunit\tw^\mu b_\mu}\pa[\Big]{\vIntb+\rIntb}}  $$
+
+Now the $\hbar$ dependence is all in the integrands  (ignoring the $\hbar \tw^2$ factors in the delta function). 
+
+We can now explore the integrands in different theories: 
+
+
+
+
+Let us use the [[KMOC framework]] for [[scalar QED]] 
+
+$$\Debta O=\AAngle{\int \d {\overline{\Psi}(\bar{q})}\exp\pa[\big]{-\iunit\bar{q}^\mu b_\mu}\pa[\Big]{\vIntp{O}+\rIntb{O}}}  $$
+
+Let us take $p_\mu^1$ as the observable corresponding to the momentum of the first particle.
+
+We then have: ^12c1d7
+
+$$
+\begin{aligned}
+\vIntb{p_\mu^1}&=\hbar^2\iunit\,  q\, \mathcal{A}(p_1,p_2 \to p_1+\hbar \bar{q},p_2-\hbar \bar{q})\\
+\rIntb{p_\mu^1}&=\hbar^2\sumint\ddP[2+\abs{X}]{r_1,r_2,r_X}(r_1^\mu-p_1^\mu)\,\hat{\delta}^{(4)}\left(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}\right) \\
+&\times   \mathcal{A}\left(p_{1}, p_{2} \rightarrow r_{1}, r_{2}, r_{X}\right) \mathcal{A}^{*}\left(p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow r_{1}, r_{2}, r_{X}\right)
+\end{aligned}$$
+
+
+We can extract $\hbar$ from $q$ and from the amplitude, by extracting each $e$ along with an $\frac{1}{\sqrt{\hbar}}$ , thus quartic vertices yield a factor of $\frac{e^2}{\hbar}$ whereas cubic ones yield $\frac{e}{\sqrt{\hbar}}$.  If we count the number $V_3$ of all cubic vertices, and $V_4$ the number of quartic vertices we have that the number of internal lines is $I=\frac{1}{2}(3V_3+4V_4-E)$. This is because we have $3V_3+4V_4$  lines to start with, out of which $E$ are chosen to be external. The remaining $(3V_3+4V_4-E)$ ones are contracted among themselves to form $I$ internal lines. In our case we have $E=4+M$ where $M=\abs{X}$ is the number of messenger particles. Using the argument from [[loop counting]] we have that the number of loops of our graph $L$ is given by:
+$$
+\begin{aligned}
+        L=I-V+N=&\frac{1}{2}(3V_3+4V_4-4-M)-V_4-V_3+1\\
+=&\frac{1}{2}(V_3+2V_4)-1-\frac{M}{2}
+\end{aligned}
+$$
+where $N$ is the number of [[connected topological space|connected]] components ($=1$ in our case) . Thus we see that the amount of extracted $\hbar$s corresponds directly to the number of loops plus one! We can thus write the amplitude $\mathcal{A}$ as a sum over reduced $L$-loop amplitudes $\bar{\mathcal{A}}^{(L)}$:
+
+$$\mathcal{A}(p_1,p_2\to r_1,r_2,X)=\sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{(L+1+\frac{\abs{X}}{2})}\bar{\mathcal{A}}^{(L)}(p_1,p_2\to r_1,r_2,X)$$
+
+
+Going back to the integrands we have:
+
+$$\begin{aligned}
+\vIntp{p_\mu^1}&=\hbar^3\iunit\,  \bar{q}\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{(L+1)}\bar{\mathcal{A}}^{(L)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})\\
+&=\iunit\,  \bar{q}\, \sum\limits_{L=0}^\infty e^{2(L+1)}{\hbar}^{(2-L)}\bar{\mathcal{A}}^{(L)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})
+\end{aligned}$$
+
+as well as the real kernel:[^measurech]
+
+$$\begin{aligned}
+\rIntb{p_\mu^1}&=\hbar^2\sumint\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\hat{\delta}(2p_i \cdot w_i+w_i^2)\Theta(p_i^0+w_i^0) \\
+&\times w_1^\mu\,\hat{\delta}^{(4)}\left(w_1+w_2+r_{X}\right)
+\\
+&\times\mathcal{A}\left(p_{1}, p_{2} \rightarrow p_1+w_{1}, p_2+w_{2}, r_{X}\right) 
+\mathcal{A}^{*}\left(p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+w_{1}, p_2+w_{2}, r_{X}\right)\\
+&
+\end{aligned}$$
+$$\begin{aligned}
+=\hbar^2\sumint&\ddP[\abs {X}]{{r}_X}\prod\limits_{i=1,2}\hbar^3\dn[4]{\bar{w}_i}\hat{\delta}(2p_i \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta(p_i^0+\hbar \bar{w}_i^0) \\
+&\times   \hbar \bar{w}_1^\mu\,\hbar^{-4}\hat{\delta}^{(4)}\pa[\big]{\bar{w}_1+\bar{w}_2+\frac{1}{\hbar}r_{X}}
+\\
+&\times\sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{2L+2+\abs{X})}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} 
+\mathcal\\\\
+&\times\bar{\mathcal{A^{*}}}^{(L)}{}\pa{p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}}
+\end{aligned}$$
+
+$$\begin{aligned}
+=\sumint&\ddP[\abs {X}]{{r}_X}\prod\limits_{i=1,2}\dn[4]{\bar{w}_i}\hat{\delta}(2p_i \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta(p_i^0+\hbar \bar{w}_i^0) \\
+&\times    \bar{w}_1^\mu\,\hat{\delta}^{(4)}\pa[\big]{\bar{w}_1+\bar{w}_2+\frac{1}{\hbar}r_{X}}
+\\
+&\times\sum\limits_{L=0}^\infty e^{2(2L+2+\abs{X})}{\hbar}^{3-2L-\abs{X}}\bar{\mathcal{A}}^{(L)}\pa{p_{1}, p_{2} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}} 
+\mathcal\\\\
+&\times\bar{\mathcal{A^{*}}}^{(L)}{}\pa{p_1+\hbar \bar{q},p_2-\hbar \bar{q} \rightarrow p_1+\hbar\bar{w}_{1}, p_2+\hbar\bar{w}_2, r_{X}}\\
+\end{aligned}$$
+
+Schematically we have 
+
+$$\begin{aligned}
+\vIntb{p_\mu^1}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{2(L+1)})\\
+\rIntb{O}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{4(L+1)+2\abs{X}})
+\end{aligned}$$
+
+The contributions from the virtual kernel are lower order for a given loop order. Both kernels contribute together provided that the following equation is verified.
+
+$$L-1=2L'+\abs{X}$$
+
+Where $L$ is the loop count for the virtual kernel and $L'$, $\abs{X}$ are the real kernel loop count and messenger particle count respectively.
+
+Now we see that the leading order contribution [^expand]to the impulse $\Delta p_1^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus we have the following equation.
+
+$$\Delta p_1^{\mu,(0)}=\AAngle{\int \d {\overline{\Psi}(\bar{q})}\exp\pa[\big]{-\iunit\bar{q}^\mu b_\mu}\ \vIntb{p_1^{\mu},L=0}} $$
+
+And the integrand is given by the tree level 4 point amplitude.
+
+$$\vIntp{p_1^{\mu},L=0}=\iunit\,  \bar{q}^\mu\,  e^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})$$
+
+The amplitude is read off from the single tree level diagram and using [[feynman rules for SQED]]. 
+
+$$\iunit\bar{\mathcal{A}}^{(0)}(p_1,p_2\to p_1+\hbar \bar{q},p_2-\hbar\bar{q})=\iunit \frac{Q_1 Q_2 }{\hbar^2\bar{q}^2}\pa[\big]{4 p_1 \cdot p_2+\hbar^2\bar{q}^2}$$
+
+We can now safely take the $\hbar \to 0$ limit as the integrand contains no terms singular in $\hbar$ (the $\frac{1}{\hbar^2}$ is cancelled by the $\hbar^2$ pre-factor). Thus the classical limit is carried out and the final integral to compute is obtained. The integration measure is also simplified in the limit $\lim\limits_{\hbar \to0} \d{\overline{\Psi}(\bar{q})}=\dn[4]{\bar{q}} \hat{\delta}(2p_1\cdot\bar{q})\hat{\delta}(2p_1\cdot \bar{q} )$[^comp]
+
+$$\Delta p_1^{\mu,(0)}=e^2Q_1Q_2\int\dn[4]{\bar{q}} \hat{\delta}(2p_1\cdot\bar{q})\hat{\delta}(2p_1\cdot \bar{q} )\euler^{-\iunit\bar{q}\cdot b}\bar{q}^\mu \frac{4 p_1 \cdot p_2}{\hbar^2\bar{q}^2}$$
+
+This can be analytically computed (see [[LO impulse SQED]]) to find a closed form for the leading order impulse.
+
+$$\Delta p_1^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}$$
+
+For [[NLO impulse SQED]], using the order equation above we have a 1-loop contribution from the virtual integrand as well as a tree level cut contribution from the real integrand. See [[NLO impulse SQED]] for details.
+ 
+
+
+[^measurech]: We changed the integration variable from $r_i$ to $w_i=r_i-p_i$ thus the measure changes:$$\ddP[2+\abs{X}]{r_1,r_2,X}=\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\hat{\delta}(2p_i \cdot w_i+w_i^2)\Theta(p_i^0+w_i^0)$$ where we used the same reasoning as for the $q_i$ variable change.
+    
+[^expand]: Here the expansion is in powers of the coupling constant, so even though we want $\hbar$s to cancel, the loop order will still affect the order of the contribution through the coupling constant $e$  and the leading order corresponds to $e^2$
+[^comp]: Compare to $$\d{\overline{\Psi}(\bar{q})}=\dn[4]{\bar{q}} \hat{\delta}(2p_1\cdot\bar{q}+\hbar\bar{q}^2)\Theta(p^0_1+q^0) \hat{\delta}(2p_1\cdot \bar{q} +\hbar\bar{q}^2)\Theta(p^0_2+q^0)$$The theta functions cancel as $q^0\to0$ and $p_i$ becomes classical.  And as discussed in [[classical limit of wavefuctions in KMOC]] the integration implicit in the brackets yields new delta functions based on the classical momenta, and with the  $\bar{q}^2$s removed
+
+
+
+
+[^shift]: $f(x)=\int \ddP{p} \tilde{f}(\boldsymbol{p})\exp{-\frac{\iunit}{\hbar} p^\mu x_\mu}$. Then a shifted, i.e. translated version of $f(x)$ can be written:$$\begin{aligned}
+f(x-x_0)&=\int \ddP{p} \tilde{f}(\boldsymbol{p})\,\exp{-\frac{\iunit}{\hbar} p_\mu (x^\mu-x_0^\mu)}\\
+&=\int \ddP{p} \tilde{f}(\boldsymbol{p})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\exp{-\frac{\iunit}{\hbar} p_\mu x^\mu}
+\end{aligned}$$
+Thus the associated, translated state is:
+$$\ket{f}=\int \ddP{p} \tilde{f}(\boldsymbol{p})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\ket{p }$$
+
+[^complete]: $1=\sum\limits_X \int \dd{\Phi_{2+\abs{X}}}(r_1,r_2,X)\dyad{r_1 r_2 X}$ Where we could consider the states ${r_1,r_2,X}$ to be the final states after the scattering
+
+[^measureshift]: Introducing the momentum shifts modifies the measure in the following way:
+    $$\ddP{p_i'}=\ddP{p_i+q_i}=\dn[4]q_i\,\ndeltafn{(p_i+q_i)^2-m_i^2) \thetafn{p^0_i+q_i^0)$$
+            Now since we also have the on shell enforcing delta function from $\ddP{p_i}$ we can rewrite the delta functions:     $$\ddP{p_i}\,\ndeltafn{(p_i+q_i)^2-m_i^2)=\ddP{p_i}\ndeltafn{\underbracket{(p_i^2-m_i^2)}_{\text{redundant}}+2 p_i \cdot q_i+q_i^2)=\ddP{p_i}\ndeltafn{2 p_i \cdot q_i+q_i^2)$$
+            Finally when integrating over $q_2$ we choose to hit $\hat{\delta}^{(4)}(p_1+p_2-p_1'-p_2')=\hat{\delta}^{(4)}(q_1+q_2)$ and thus we just set $q_2=-q_1$
+
+[^constA]: $A$ absorbs the various constants, with $A=\sqrt{2}m\frac{\ell_c}{\ell_\omega}$ and $\tv{x}_0$ 
+[^2]: This means that the classical value of momentum $m_i \breve{u}_i^\mu$ is reached in the $\xi \to 0$ limit
+[^3]: This encodes the limit of the spread as $\xi \to0$. $\ev{p_i^2}=m_i^2$ is enforced by the measure $\dd{\Phi(p)}$
+[^4]: This enforces the normalisation condition $\breve{u}_i^2=1$ in the $\xi \to0$ limit 
+[^5]: Here $\bar{q}=\frac{q}{\hbar}$ is the wavenumber

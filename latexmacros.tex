@@ -26,14 +26,14 @@
 
 \newcommand{\dd}[2][]{\,\differential^{#1}#2\,}
 
-
-\newcommand{\Exp}[2][\pdel]{\exp#1{#2}}
+\newcommand{\euler}{e}
 \let\oldexp\exp
-\renewcommand{\exp}[1]{\mathrm{e}^{#1}}
+\newcommand{\Exp}[2][]{\oldexp#1({#2}#1)}
+\renewcommand{\exp}[1]{\mathrm{\euler}^{#1}}
 
-\newcommand{\greens}[2][ret]{\mathcal{G}_{\mathrm{#1}}\left(#2\right)}
-\newcommand{\thetafn}[2][]{\Theta^{(#1)}\left(#2\right)}
-\newcommand{\deltafn}[2][]{\delta^{(#1)}\left(#2\right)}
+\newcommand{\greens}[2][ret]{\mathcal{G}_{\mathrm{#1}}(#2)}
+\newcommand{\thetafn}[2][]{\Theta^{{#1}}(#2)}
+\newcommand{\deltafn}[2][]{\delta^{{#1}}(#2)}
 
 
 \newcommand{\iunit}{\mathring{\imath}}
@@ -43,22 +43,26 @@
 
 
 
-
+\newcommand{\fs}[1][]{\phi_{#1}}
+\newcommand{\afs}[1][]{\adj{\phi}_{#1}}
 
 \newcommand{\bra}[2][]{{}_{\text{#1}}\langle #2 \vert}
 
 
 \newcommand{\ket}[2][]{\vert #2 \rangle_{\text{#1}}}
 
-\newcommand{\obs}[1]{\mathcal{#1}}
+\newcommand{\obs}[1]{#1}
 
 \newcommand{\op}[1]{\mathbb{#1}}
 
 \newcommand{\ev}[2]{\langle#2 \vert  #1 \vert #2 \rangle}
+\newcommand{\av}[1]{\langle#1\rangle}
 
 \newcommand{\ip}[2]{\langle #1 \vert #2 \rangle}
 
 \newcommand{\com}[2]{[#1,#2]}
+
+\newcommand{\adj}[1]{#1^\dagger}
 
 \newcommand{\mel}[3]{\langle #1 \vert #2 \vert #3 \rangle}
 
@@ -66,16 +70,17 @@
 \newcommand{\Tmat}{T}
 
 \newcommand{\amp}[2]{\mathcal{A}(#1\to#2)}
+\newcommand{\aamp}[2]{\mathcal{\conj{A}}(#1\to#2)}
 
 
 
 
-\newcommand{\posendelta}[2][-m^2]{\deltafn[+]{#2^2#1}}
+\newcommand{\posendelta}[2][-m^2]{\deltafn[(+)]{#2^2#1}}
 
 \newcommand{\normalized}[1]{\tilde{#1}}
-\newcommand{\dn}[2][]{\,\normalized{\differential}^{#1}#2\,}
-\newcommand{\nposendelta}[2][-m^2]{\ndeltafn[+]{#2^2#1}}
-\newcommand{\ndeltafn}[2][]{\normalized{\delta}^{(#1)}\left(#2\right)}
+\newcommand{\dn}[2][]{\,\normalized{\differential}^\mathrlap{#1}#2\,}
+\newcommand{\ndeltafn}[2][]{\normalized{\delta}^{#1}(#2)}
+\newcommand{\nposendelta}[2][-m^2]{\ndeltafn[(+)]{#2^2#1}}
 
 
 \newcommand{\planck}{h}
@@ -83,6 +88,10 @@
 \newcommand{\grav}{G}
 \newcommand{\elch}{e}
 \newcommand{\cosmo}{\Lambda}
+\newcommand{\impactParameter}{b}
+\newcommand{\emom}[1][]{p_{#1}}
+\newcommand{\imom}[1][]{k_{#1}}
+\newcommand{\mom}[1]{#1}
 
 
 
@@ -194,11 +203,24 @@
 
 
 \newcommand{\ddP}[2][]{\,\differential\Phi_{#1}(#2)\,}
+\newcommand{\dPs}[2][]{\,\differential\Psi_{#1}(#2)\,}
+\newcommand{\dPsb}[2][]{\,\differential\overline{\Psi}_{#1}(#2)\,} 
 \newcommand{\AAngle}[1]{\Bigg\langle\hspace{-0.6em}\Bigg\langle #1\Bigg\rangle\hspace{-0.6em}\Bigg\rangle}
 
+\newcommand{\wavenumber}[1]{\bar{#1}}
+\newcommand{\tm}[1][]{q_{#1}}
+\newcommand{\tw}[1][]{\wavenumber{q}_{#1}}
+
 \newcommand{\vInt}[1][\obs{O}]{\mathcal{I}_{\text{v}}(#1)}
+\newcommand{\vIntp}[1][\obs{O}]{\mathcal{I'}_{\text{v}}(#1)}
+\newcommand{\vIntb}[1][\obs{O}]{\overline{\mathcal{I}}_{\text{v}}'}(#1)}
 
 \newcommand{\rInt}[1][\obs{O}]{\mathcal{I}_{\text{r}}(#1)}
+\newcommand{\rIntp}[1][\obs{O}]{\mathcal{I'}_{\text{r}}(#1)}
+\newcommand{\rIntb}[1][\obs{O}]{\overline{\mathcal{{I}}_{\text{r}}'}(#1)}
 
-\newcommand{\obschange}[3][\obs{O}]{\underset{#2-#3}{\Delta} \!#1\,}
-
+\newcommand{\obschange}[2][\obs{O}]{\underset{\mathclap{#2}}{\Delta}#1\,}
+\newcommand{\changeob}[1][\obs{O}]{\Delta #1\,}
+\newcommand{\vchangeob}[1][\obs{O}]{\Delta #1_\text{v}\,}
+\newcommand{\rchangeob}[1][\obs{O}]{\Delta #1_\text{r}\,}
+\newcommand{\sumint}{\int\mathllap{\sum}}

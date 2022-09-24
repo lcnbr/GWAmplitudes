@@ -8,8 +8,8 @@
 <!-- Special functions -->
 \let\@exp\exp
 \renewcommand{\exp}[1]{\texttip{\@exp{#1}}{exponential function}}
-\let\@Exp\
-\renewcommand{\Exp}[2][\pa]{\texttip{\@Exp[#1]{#2}}{exponential function}} 
+\let\@Exp\Exp
+\renewcommand{\Exp}[2][]{\texttip{\@Exp[#1]{#2}}{exponential function}} 
 
 \let\@greens\greens
 \renewcommand{\greens}[2][ret]{\texttip{\@greens[#1]{#2}}{#1 Green's function}}
@@ -90,6 +90,8 @@
 
 \let\@planck\planck
 \renewcommand{\planck}{\texttip{\@planck}{planck's constant}}
+\let\@hbar\hbar
+\renewcommand{\hbar}{\texttip{\@hbar}{reduced planck's constant}}
 \let\@sol\sol
 \renewcommand{\sol}{\texttip{\@sol}{speed of light}}
 \let\@grav\grav
@@ -99,6 +101,14 @@
 \let\@cosmo\cosmo
 \renewcommand{\cosmo}{\texttip{\@cosmo}{cosmological constant}}
 
+\let\@impactParameter\impactParameter
+\renewcommand{\impactParameter}{\texttip{\@impactParameter}{impact parameter}}
+\let\@emom\emom
+\renewcommand{\emom}[1][]{\texttip{\@emom[#1]}{external momentum}}
+\let\@imom\imom
+\renewcommand{\imom}[1][]{\texttip{\@imom[#1]}{internal momentum}}
+\let\@mom\mom
+\renewcommand{\mom}[1]{\texttip{\@mom{#1}}{momentum}}
 <!-- Physics Units -->
 \let\@mass\mass
 \renewcommand{\mass}[1]{\texttip{#1}{mass}}
@@ -284,4 +294,4 @@
 \renewcommand{\rInt}[1][\obs{O}]{\mathtip{\@rInt[#1]}{\text{Real integrand: }\@rInt[#1]}}
 
 \let\@obschange\obschange
-\renewcommand{\obschange}[3][\obs{O}]{\mathtip{\@obschange[#1]{#2}{#3}}{\text{Observable change: }\@obschange[#1]{#2}{#3}}}
+\renewcommand{\obschange}[2][\obs{O}]{\mathtip{\@obschange[#1]{#2}}{\text{Observable change: }\@obschange[#1]{#2}}}

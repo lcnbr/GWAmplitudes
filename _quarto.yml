@@ -1,7 +1,10 @@
 project:
   type: book
-  output-dir: docs
+  preview:
+    port: 4200
 
+editor:
+  render-on-save: true
 book:
   title: "Graviational Waves from Feynman Diagrams"
   author: "Lucien Huber"
@@ -19,7 +22,7 @@ book:
     - gwdetect.qmd
     - gwwfframeworks.qmd
     - scattering.qmd
-#    - summary.qmd
+    - summary.qmd
     - references.qmd
 crossref:
   fig-title: Fig     # (default is "Figure")
