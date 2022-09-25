@@ -136,6 +136,10 @@ acronyms:
     - key: gsf
       shortname: GSF
       longname: Gravitational Self-Force
+    - key: lhc
+      shortname: LHC
+      longname: Large Hadron Collider
+
     
     
 
