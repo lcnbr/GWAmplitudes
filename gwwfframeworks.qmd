@@ -1,6 +1,6 @@
 # Waveform Generation
 
-The matched filtering approach introduced in the previous section is a powerful tool for detecting signals in noise. Additionally, if the matching signal has some physical content, that same content can be expected to describe the emitting object with resonable error. Ideally the matching signal is entirely constructed from first priciples, thus when a match is obtained the physical inputs to the model 
+The matched filtering approach introduced in the previous section is a powerful tool for detecting signals in noise. Additionally, if the matching signal has some physical content, that same content can be expected to describe the emitting object with reasonable error. Ideally the matching signal is entirely constructed from first priciples, thus when a match is obtained the physical inputs to the model 
 
 
 The matched filtering approach introduced in the previous section motivates tools for generating waveforms. These can be varied in physical content, but also in practicality. In all cases they need to be able to cover the set of parameters (the parameter space) that one is interested in exploring. Clearly if the waveform has been generated purely heuristically, then the physical content of the detection is close to zero. One can only say one has detected a phenomenon that produces this waveform, but not much more. However, if the input parameters are physically meaningful, like the mass ratio of a binary compact inspiraling system, then the waveform constructed purely from this input, if matched to the signal, tells us that a compact binary inspiraling system with this mass ratio has been detected. However, the waveform generation must be able to cover the whole parameter space (in this case all feasible mass ratios) to be useful, as one does *not* know the parameters of the object one is looking for.  Ideally this waveform generation can be done in a way that is computationally efficient, as the number of parameters to explore can be large. In the end, currently, waveform generation is done in a hybrid way, where some waveforms at some parameter space points are generated from first principles, and the rest of the parameter space waveforms are interpolated. 
@@ -9,18 +9,26 @@ In this chapter we will look at the physically motivated waveform generation too
 
 For such inspiraling binaries, the waveform has three distinct parts, corresponding to distinct phases of a binary merger: a first inspiral phase, a merger phase where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or ringdown phase where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase has specific characteristics in the dynamics of the objects and thus correspondingly different frameworks are aimed at specific portions of the waveforms. Even within one phase, different regimes and thus frameworks exist, additionally dependent to the type/initial state of the two orbiting bodies.
 
-# Inspiral phase 
+## \acr{nr}
+
+The most successful physically motivated waveform-generation technique to date is numerical relativity (\acr{nr}). Pionneered by ..., it is the backbone of all other methods and is used to calibrate against. The idea is simple: \acr{efe} are a system of coupled partial differential equations (PDEs) (albeit quite nonlinear) that can be solved numerically by discretizing the fields involved, i.e. the metric in this case. Of course the story is not all that simple as the aforementioned non-linearities increase the stability requirements of any numerical scheme. Additionally, the gauge freedom that simplified the derivation in the last chapter, when discretized can play a leading role in the collapse of the numerical scheme. Finally, when compact binary objects are considered, the scales involved further complicate discretization, as one needs enough resolution to resolve the objects, as well as a large enough volume to have reasonable orbits. This leads to a huge amount of points in the model, meaning such simulations are very computationally expensive. All these factors conspire to make any sizable bank of \acr{nr} waveforms a very expensive endeavor. To date only a couple hundred parameter space points have been simulated. With these \acr{ligo} and others have been able to interpolate between parameter space points to reach the ones needed for detection. However, with the advent of \acr{lisa} on the horizon, a further problem will arise. \acr{nr} results by nature only take into actount the last few orbit cycles before merger. Any more than that, and computational time becomes prohibitive. \acr{lisa} with its low noise floor should be able to detect inspiraling bu not yet merging binaries. To do so however will require waveform templates with hundreds of orbits, well out of reach from any modern \acr{nr} package. Nonetheless, this technique has shown and will continue to show its worth, as no approximations other than discretization are made. This means that these waveforms are seen as the gold standard for the field, and thus are used to calibrate the other waveform generation techniques. 
+
+## Inspiral phase 
+
+The inspiral phase is the first phase of a binary merger. During this phase the two objects are still orbiting each other, and orbital approximations become valid. A whole family of frameworks have been developed to model this phase, each applying various different simplifying assumptions to turn the full \acr{efe} into a tractable problem. The first approximation, we have already encountered in a simple form. It is the essentially a weak field approximation or \acr{pm} approximation. One expands the metric around the background Minkowski metric, and then the \acr{efe} are expanded in perturbation orders. One can further expand in velocities, if we consider relatively slow moving objects, which is applicable to compact orbiting objects. This is called the \acr{pn} approximation. A very different approximation can be applied when the mass ratio of the object in question is large. Here one can expand around a fixed but *not* flat mertric, essentially considering one of the objects as a test -particle evolving on a background caused by the heavier object. This is called the \acr{gsf} formalism. Finally, one approach takes into account all  the results from the previous approximations, and fits them into a single object, applicable in all regimes. This is the \acr{eob} framework.
 
 
 
-## \acr{pn}
 
-## \acr{pm}
+### \acr{pm}
 
-## \acr{gsf}
 
-## \acr{eob}
+### \acr{pn}
 
-# Merger and Ringdown phase
+### \acr{gsf}
 
-## \acr{eob}
+### \acr{eob}
+
+## Merger and Ringdown phase
+
+### \acr{eob}
