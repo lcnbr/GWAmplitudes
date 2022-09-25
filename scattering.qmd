@@ -104,7 +104,7 @@ $$
 \end{aligned}
 $$
 
-For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom'_i-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$. Thus we have
+For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$. Thus we have
 
 $$
 \begin{aligned}
@@ -172,7 +172,7 @@ This wavefunction grows sharper in the $\ell_\omega^2 \to 0$ limit. We must then
 Going back to the general conditions we want $\fs[i](\emom[i])$ s.t:
 
 - $\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\fs[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu f_{\emom,i}(\xi)$ [^2] with $f_{\emom,i}(\xi)=1+\mathcal{O}(\xi^{\beta'})$
-- $\sigma^2(\emom[i])/m_i^2=\av{(\emom[i]-\av{\emom[i]})^2}/m_i^2=(\av{\emom^2_i}-\av{\emom[i]}^2)/m_i^2=c_\Delta\xi^\beta$[^3]
+- $\sigma^2(\emom[i])/m_i^2=\av{(\emom[i]-\av{\emom[i]})^2}/m_i^2=(\av{\emom[i]^2}-\av{\emom[i]}^2)/m_i^2=c_\Delta\xi^\beta$[^3]
 - $\breve{u}_i \cdot u_i = 1+ \mathcal{O}(\xi^{\beta''})$
 
 Additionally the wavefunction should be Lorentz invariant, thus naively we would have that $\fs(\emom[i]^\mu)=\tilde{\fs}(\emom[i]^2)$ however the integration measure enforces an on shell condition: $m_i^2=\emom[i]^2$. Thus the wavefunction cannot usefully depend on $\emom[i]^2$, we need to introduce at least one additional four vector parameter $u$. The simplest dimensionless combination of parameters it then $\frac{\emom \cdot u }{m}$. Of course the wavefunction must also depend on $\xi$ and the simplest form of argument will thus be $\frac{\emom \cdot u }{m \xi}$ so that any $\emom$ not aligned with $u$ will be strongly suppressed in the $\xi \to0$ limit.
