@@ -175,11 +175,14 @@ format:
     documentclass: scrreprt
     include-in-header: 
       text: |
+        \usepackage{fontspec}
         \usepackage{amsmath}
         \usepackage{mathtools}
         \usepackage{cancel}
-        \usepackage{svg}
         \usepackage{adjustbox}
+        \usepackage{microtype}
+        \defaultfontfeatures{Scale=MatchLowercase}
+        \setmainfont{TeX Gyre Pagella}[Scale=1.0,  Ligatures={Common, Discretionary, TeX}]
     include-before-body: 
       - latexmacros.tex
       - latexfix.tex
