@@ -1,0 +1,25 @@
+\begin{tikzpicture}[]
+\matrix{
+      \node{$\ampl_\text{EFT}$};&
+      \node{$=$};&
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6]  --[->-=.6,thick,blue] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=a to d,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6] --[->-=.6,thick,red] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red,bend right=90] d --[->-=.6,thick,blue] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=a to d,horizontal=i1 to o1,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6]--[->-=.6,thick,blue,bend left=90] c[circle,fill,scale=.6] --[->-=.6,thick,blue] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red,bend right=90] d--[->-=.6,thick,red,bend right=90] c --[->-=.6,thick,red] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,horizontal=a to b,anchor node=a]{
+            {i1} --[->-=.5,thick,red]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] b[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] c[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6] --[->-=.6,thick,red] o1;
+            i2 --[->-=.5,thick,blue]  a --[->-=.6,thick,red,bend right=90] b --[->-=.6,thick,red,bend right=90] c --[->-=.6,thick,red,bend right=90] d --[->-=.6,thick,blue] o2;};&
+      \node{$+$};&
+      \node{$\cdots$};
+      \\
+};
+\end{tikzpicture}
+

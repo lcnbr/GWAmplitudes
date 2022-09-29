@@ -1,4 +1,6 @@
 
+\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}
+\usegdlibrary{trees,force}
 
 \newcommand{\half}[1][1]{\tfrac{#1}{2}}
 \newcommand{\Half}[1][1]{\frac{#1}{2}}
@@ -12,7 +14,7 @@
 \newcommand{\order}[2][]{\mathcal{O}\left(#2^{#1}\right)}
 
 
-\newcommand{\partialder}{\partial}
+\newcommand{\partialder}[1][]{\partial_{#1}}
 \newcommand{\differential}{\mathrm{d}}
 \newcommand{\Diff}{\mathrm{D}}
 
@@ -30,6 +32,8 @@
 \let\oldexp\exp
 \newcommand{\Exp}[2][]{\oldexp#1({#2}#1)}
 \renewcommand{\exp}[1]{\mathrm{\euler}^{#1}}
+\let\oldln\ln
+\renewcommand{\ln}[2][]{\oldln#1({#2}#1)}
 
 \newcommand{\greens}[2][ret]{\mathcal{G}_{\mathrm{#1}}(#2)}
 \newcommand{\thetafn}[2][]{\Theta^{{#1}}(#2)}
@@ -39,12 +43,12 @@
 \newcommand{\iunit}{\mathring{\imath}}
 \newcommand{\im}{\iunit}
 
-\newcommand{\tv}[1]{\mathbf{#1}}
+\newcommand{\tv}[2][]{\mathbf{{#2}_{#1}}}
 
 
 
-\newcommand{\fs}[1][]{\phi_{#1}}
-\newcommand{\afs}[1][]{\adj{\phi}_{#1}}
+\newcommand{\scf}[1][]{\phi_{#1}}
+\newcommand{\ascf}[1][]{\adj{\phi}_{#1}}
 
 \newcommand{\bra}[2][]{{}_{\text{#1}}\langle #2 \vert}
 
@@ -68,6 +72,8 @@
 
 \newcommand{\Smat}{S}
 \newcommand{\Tmat}{T}
+
+\newcommand{\ampl}{\mathcal{A}}
 
 \newcommand{\amp}[2]{\mathcal{A}(#1\to#2)}
 \newcommand{\aamp}[2]{\mathcal{\conj{A}}(#1\to#2)}
@@ -95,7 +101,8 @@
 
 
 
-\newcommand{\mass}[1]{#1}
+\newcommand{\mass}[1][]{m_{#1}}
+
 
 
 
@@ -228,3 +235,32 @@
 \newcommand{\scatlen}{\ell_s}
 \newcommand{\comptlen}{\ell_c}
 \newcommand{\scatwidth}{\ell_w}
+
+\newcommand{\redmass}{\mu}
+\newcommand{\symmratio}{\nu}
+\newcommand{\totmass}{M}
+\newcommand{\ham}[3][]{\mathcal{H}_{#1}(#2,#3)}
+\newcommand{\lorentzfactor}{\gamma}
+\newcommand{\Heff}{\mathcal{H}_{\text{eff}}}
+\newcommand{\Heob}{\mathcal{H}_\text{eob}}
+\newcommand{\action}{S}
+\newcommand{\lag}[1][]{\mathcal{L}_\text{#1}}
+\newcommand{\pot}{V}
+\newcommand{\inv}[1]{\frac{1}{#1}}
+\newcommand{\coupling}{\kappa}
+\newcommand{\proptwobody}[1]{\Delta\pa{#1}}
+
+\newcommand{\energy}[1][]{E_{#1}}
+\newcommand{\redEratio}{\xi}
+\newcommand{\Dim}{D}
+\newcommand{\dimreg}{\epsilon}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow[scale=1.5]{>}}},postaction={decorate}}}
+\tikzset{
+bicolor/.style 2 args={
+  dashed,dash pattern=on 20pt off 20pt,#1,
+  postaction={draw,dashed,dash pattern=on 20pt off 20pt,#2,dash phase=20pt}
+  },
+}

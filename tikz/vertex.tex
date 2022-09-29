@@ -1,0 +1,15 @@
+\begin{tikzpicture}[]
+
+
+\matrix 
+{    \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,anchor node=a] 
+{
+  {i1} --[->-=.5,thick,"$\displaystyle \mathbf{k}$" font=\large,red]  a[circle,fill,scale=.6] --[->-=.6,thick,"$\displaystyle \mathbf{k'}$" {font=\large},red] o1;
+  i2 --[->-=.5,thick,"$\displaystyle -\mathbf{k}$" {font=\large, below,yshift=-5},blue]  a --[->-=.6,thick,"$\displaystyle  - \mathbf{k'}$"  {font=\large, below,yshift=-5,xshift=-5},blue] o2;
+};
+&
+    \node{$=$}; &
+    \node {$\displaystyle\iunit V(\mathbf{k},\mathbf{k'})$}; \\
+  };
+\end{tikzpicture}
+

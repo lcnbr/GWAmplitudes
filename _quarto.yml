@@ -34,7 +34,10 @@ comments:
 
 bibliography: references.bib
 reference-location: margin
-citation-location: margin
+citation-location: document
+fig-cap-location: margin
+execute:
+  freeze: auto  # re-render only when source changes
 
 
 
@@ -42,6 +45,7 @@ citation-location: margin
 filters: 
   - assets/lua/parse_acronyms.lua
   - assets/lua/not-in-format.lua
+  - assets/lua/diagram-generator.lua
 acronyms:
   style: long-short
   insert_loa: false
@@ -139,6 +143,18 @@ acronyms:
     - key: lhc
       shortname: LHC
       longname: Large Hadron Collider
+    - key: lsco
+      shortname: LSCO
+      longname: Last Stable Circular Orbit
+    - key: coma
+      shortname: COM
+      longname: Center of Mass
+    - key: com
+      shortname: COM
+      longname: Center of Momentum
+    - key: ibp
+      shortname: IBP
+      longname: Integration by Parts
 
     
     
@@ -152,6 +168,7 @@ format:
 #   css: assets/css/tufte.css
     code-fold: true
     code-tools: true
+    default-image-extension: svg
     
   pdf:
     from: markdown-latex_macros
@@ -161,9 +178,12 @@ format:
         \usepackage{amsmath}
         \usepackage{mathtools}
         \usepackage{cancel}
+        \usepackage{svg}
+        \usepackage{adjustbox}
     include-before-body: 
       - latexmacros.tex
       - latexfix.tex
+    default-image-extension:  tex
 
     
     

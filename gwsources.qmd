@@ -80,7 +80,7 @@ With these two relations the expression for the linearized Ricci tensor @eq-Ricc
 $$
     \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
 $${#eq-Ricciweak2}  
-Where we have defined the \acr{sr} D'Alembertian as: $\SRDA=\invmink \partialder_\mu\partialder_\nu$ We can plug this into @eq-EFEwoR, with $\cosmo=0$, and up to first order in $\weakmet$ we get the linearized Einstein field equations for a system of harmonic coordinates:
+Where we have defined the \acr{sr} D'Alembertian as: $\SRDA=\invmink \partialder[\mu]\partialder[\nu]$ We can plug this into @eq-EFEwoR, with $\cosmo=0$, and up to first order in $\weakmet$ we get the linearized Einstein field equations for a system of harmonic coordinates:
 
 $$
 \square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} 

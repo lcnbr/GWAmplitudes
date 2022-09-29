@@ -29,7 +29,7 @@
 
 <!-- Vectors -->
 \let\@tv\tv
-\renewcommand{\tv}[1]{\texttip{\@tv{#1}}{3-vector}}
+\renewcommand{\tv}[2][]{\texttip{\@tv[#1]{#2}}{3-vector}}
 
 <!-- Quantum operators -->
 
@@ -111,7 +111,7 @@
 \renewcommand{\mom}[1]{\texttip{\@mom{#1}}{momentum}}
 <!-- Physics Units -->
 \let\@mass\mass
-\renewcommand{\mass}[1]{\texttip{#1}{mass}}
+\renewcommand{\mass}[1][]{\texttip{\@mass[#1]}{mass}}
 
 <!-- Fourrier transforms  -->
 
