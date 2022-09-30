@@ -29,6 +29,10 @@ The most precise physically motivated waveform-generation technique to date is n
 
 In 2005 @Pretorius:2005gq and a little later @Campanelli:2005dd made a breakthrough advance and were able to fully compute an inspiral-merger-ringdown sequence for a \acr{bbh}. Pretorius made use of two techniques, \acr{amr} and the \acr{gh} formalism. \acr{amr}, like its name suggests dynamically modified the discretiztation as the two black holes orbited each other. The \acr{gh} formalism, on the other hand tackled the singularity problem validating the excision of the black hole, and crucially letting that region move. Both combined, were able to finally slay the proverbial  numerical dragon. 
 
+These waveforms, like the one in @fig-pretwave confirmed the predictions made in @Buonanno:2000ef, that the merger phase of a \acr{bbh} would not be as complicated as thought. As numercal techniques evolved further, they were able to elucidate more and more complex behaviors.
+
+![The first \acr{nr} waveform, as presented in @Pretorius:2005gq](pretwave.png){#fig-pretwave}
+
 Nowadays, it is the backbone of all other methods and is seen as the gold standard. Of course it remains very computationally expensive and making any sizable bank of purely \acr{nr} waveforms fools endeavor. To date only a couple hundred parameter space points have been simulated. Thus \acr{nr} is used to complement, calibrate and extend the other waveform generation techniques. For example to detect the first signals \acr{ligo} and others interpolated between parameter space points to reach the ones needed for detection. However, with the advent of \acr{lisa} on the horizon, a further problem will arise. \acr{nr} results by nature only take into account the last few orbit cycles before merger. Any more than that, and computational time becomes prohibitive. \acr{lisa} with its low noise floor should be able to detect inspiraling but not yet merging binaries. To do so however will require waveform templates with hundreds of orbits, well out of reach from any modern \acr{nr} package. Nonetheless, this technique has shown and will continue to show its worth, as no approximations other than discretization are made. The physical content of such waveforms is thus quite high. 
 
 ## Inspiral methods
@@ -37,7 +41,7 @@ Before continuing to the \acr{eob} method, let us look at the techniques that fo
 
 ### \acr{pn}
  This can be achieved with a by both a classical (albeit quite complicated) perturbative treatment [see @Blanchet:2013haa;@Blanchet:1995fg], and a more contemporary \acr{eft} based approach called coyly \acr{nrgr} because it was inspired by \acr{nrqcd}.
-  
+
 ### \acr{pm}
 
 Historically, it was less motivating to compute scattering than orbital dynamics, however with the rise of amplitude techniques from high energy physics, both \acr{eft} and full theory results have been succesful in extracting previously unreachable orders. Additionally \acr{eft}
