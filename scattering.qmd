@@ -104,7 +104,7 @@ Where the $\im 0$ is the Feynman prescription for avoiding the poles. The intera
 #| echo: false
 #| eval: false
 #| output: false 
-#| fig-align: center
+#| fig-align: center 
 using TikzPictures
 
 tp = TikzPicture(L"""
@@ -210,7 +210,7 @@ $$
 \ampl_\text{EFT}^{(i)}=\ampl_\text{full}^{(i)} \quad \forall i
 $$
 
-This enables us to fix the coefficients in the potential ansatz @eq-ansatzpot.  nthis fullfils the promised map from amplitude to potential. 
+This enables us to fix the coefficients in the potential ansatz @eq-ansatzpot.  This fullfils the promised map from amplitude to potential. 
 
 
 ## B2B map

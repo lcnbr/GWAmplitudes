@@ -155,6 +155,16 @@ acronyms:
     - key: ibp
       shortname: IBP
       longname: Integration by Parts
+    - key: amr
+      shortname: AMR
+      longname: Adaptive Mesh Refinement
+    - key: gh
+      shortname: GH
+      longname: Generalized Harmonic
+    - key: nrqcd
+      shortname: NRQCD
+      longname: Non-Relativistic Quantum Chromodynamics
+  
 
     
     
@@ -173,16 +183,7 @@ format:
   pdf:
     from: markdown-latex_macros
     documentclass: scrreprt
-    include-in-header: 
-      text: |
-        \usepackage{fontspec}
-        \usepackage{amsmath}
-        \usepackage{mathtools}
-        \usepackage{cancel}
-        \usepackage{adjustbox}
-        \usepackage{microtype}
-        \defaultfontfeatures{Scale=MatchLowercase}
-        \setmainfont{TeX Gyre Pagella}[Scale=1.0,  Ligatures={Common, Discretionary, TeX}]
+    include-in-header: preamble.tex
     include-before-body: 
       - latexmacros.tex
       - latexfix.tex
