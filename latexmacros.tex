@@ -45,8 +45,8 @@
 \newcommand{\iunit}{\mathring{\imath}}
 \newcommand{\im}{\iunit}
 
-\newcommand{\tv}[2][]{\mathbf{{#2}_{#1}}}
-
+\newcommand{\tv}[2][]{\mathbf{{#2}}_{#1}}
+\newcommand{\lv}[2][]{{#2}_{#1}}
 
 
 \newcommand{\scf}[1][]{\phi_{#1}}
@@ -65,7 +65,7 @@
 \newcommand{\av}[1]{\langle#1\rangle}
 
 \newcommand{\ip}[2]{\langle #1 \vert #2 \rangle}
-
+\newcommand{\dyad}[1]{\vert #1 \rangle \langle #1 \vert}
 \newcommand{\com}[2]{[#1,#2]}
 
 \newcommand{\adj}[1]{#1^\dagger}
@@ -86,7 +86,7 @@
 \newcommand{\posendelta}[2][-m^2]{\deltafn[(+)]{#2^2#1}}
 
 \newcommand{\normalized}[1]{\tilde{#1}}
-\newcommand{\dn}[2][]{\,\normalized{\differential}^{\mathrlap{#1}}#2\,}
+\newcommand{\dn}[2][]{\,\normalized{\differential}^{#1}#2\,}
 \newcommand{\ndeltafn}[2][]{\normalized{\delta}^{#1}(#2)}
 \newcommand{\nposendelta}[2][-m^2]{\ndeltafn[(+)]{#2^2#1}}
 
@@ -250,12 +250,33 @@
 \newcommand{\pot}{V}
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\coupling}{\kappa}
-\newcommand{\proptwobody}[1]{\Delta\pa{#1}}
+\newcommand{\proptwobody}[1]{\Delta_2\pa{#1}}
 
 \newcommand{\energy}[1][]{E_{#1}}
 \newcommand{\redEratio}{\xi}
 \newcommand{\Dim}{D}
 \newcommand{\dimreg}{\epsilon}
+\newcommand{\momket}[1][p]{\ket{#1}}
+\newcommand{\mombra}[1][p]{\bra{#1}}
+\newcommand{\momop}{\mathbb{P}}
+\newcommand{\createop}[1][p]{a_{#1}^{\dagger}}
+\newcommand{\annihilop}[1][p]{a_{#1}}
+\newcommand{\shellen}[1][\tv{p}]{\omega_{#1}}
+\newcommand{\barevac}{0}
+\newcommand{\barevack}{\ket{\barevac}}
+\newcommand{\barevacb}{\bra{\barevac}}
+\newcommand{\physvac}{\Omega}
+\newcommand{\physvack}{\ket{\physvac}}
+\newcommand{\physvacb}{\bra{\physvac}} 
+\newcommand{\shellft}[1]{\breve{#1}}
+\newcommand{\lrder}[1][\mu]{\overleftrightarrow{\partialder[#1]}}
+\newcommand{\defeq}{\stackrel{\text{def}}{=}}
+\newcommand{\askeq}{\stackrel{\text{?}}{=}}
+\newcommand{\musteq}{\stackrel{\text{!}}{=}}
+\newcommand{\sign}[1]{\text{sign}(#1)}
+\newcommand{\wf}[1][]{f_{#1}}
+\newcommand{\cwf}[1][]{\conj{f}_{#1}}
+
 
 \tikzset{->-/.style={decoration={
   markings,

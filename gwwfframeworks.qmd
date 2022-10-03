@@ -55,7 +55,7 @@ Historically, it was less motivating to compute scattering than orbital dynamics
 
 The second main full waveform generation technique is the the effective one body (\acr{eob}) formalism. It was develepped by @Buonanno:1998gg, initially as a non-perturbative re-summing of the \acr{pn} expansion. It was later extended to include the merger and ringdown effects in @Buonanno:2000ef. Thus it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the \acr{pn} expansions have gotten better, and even more recently \acr{pm} results have been included @Damour:2016gwp. Additonally \acr{nr} and \acr{eob} can be combined to produce a very accurate waveform, with less computional overhead than \acr{nr} alone. 
 
-As it's name suggests, the \acr{eob} framework tries to combine all the previous data into a hamitonian describing the motion of a single body. The idea comes from Newtonian binaries where the method to solve the two body problem is to turn it into a one body problem. Further inspiration came from the two body problem in \acr{qed} [@Brezin:1970zr] .
+As it's name suggests, the \acr{eob} framework tries to combine all the previous data into a hamitonian describing the motion of a single body. The idea comes from Newtonian binaries where the method to solve the two body problem is to turn it into a one body problem. Further inspiration came from the two body problem in \acr{qed} [see @Brezin:1970zr] .
 
 Consider two bodies, with masses $\mass[1]$ and $\mass[2]$, positions $\tv[1]{q}$, $\tv[1]{q}$ and momenta $\tv{\emom[1]}$ and $\tv{\emom[2]}$ respectievly. The system can be described by the following hamiltonian:
 
@@ -63,26 +63,26 @@ $$
 \ham[\text{newton}]{\tv[1]{q},\tv[1]{q}}{\tv{\emom[1]},\tv{\emom[2]}}= \frac{\tv{\emom[1]}^2}{2\mass[1]}  + \frac{\tv{\emom[2]}^2}{2\mass[2]}  - \frac{G\mass[1]\mass[2]}{\abs{\tv[1]{q}-\tv[1]{q}}}
 $$
 
-One then transforms this hamitionan into one descibing the relative motion $\tv{q}=\tv[1]{q}-\tv[1]{q}$. One can formalise this by defining a new set of generalised coordinates, through a canonical transformation. We can even go further and employ a generating function for the transformation, ensuring that hamiton's equations stay unchanged (see @goldsteinClassicalMechanics2002). To descibe relative motion, we use jacobi coordinates $(\tv{Q},\tv{q})$:
+One then transforms this hamitionan into one descibing the relative motion $\tv{q}=\tv[1]{q}-\tv[1]{q}$. One can formalise this by defining a new set of generalised coordinates, through a canonical transformation. We can even go further and employ a generating function for the transformation, ensuring that hamiton's equations stay unchanged (see @Goldstein:2002). To descibe relative motion, we use jacobi coordinates $(\tv{Q},\tv{q})$:
 $$
 \begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\mass[1]}{\totmass} & \frac{\mass[2]}{\totmass} \\ 1&-1 \end{pmatrix}}_{A} \begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}=\begin{pmatrix} \tv{Q} \\ \tv{q}\end{pmatrix}
 $${#eq-jacobi2}
 
-If we now define the following generating function for the transformation, depending on the old positions coordinates  $\tv{q_i}$ and the new momenta $\tv{P_i}$: [note the use of einstein summation]{.aside}
+If we now define the following generating function for the transformation, depending on the old positions coordinates  $\tv[i]{q}$ and the new momenta $\tv[i]{P}$: [note the use of einstein summation]{.aside}
 
 $$
-f_{II}(\tv{q_i},\tv{P_i})=\tv{P_i}A^{ij}\tv{q}_j
+f_{II}(\tv[i]{q},\tv[i]{P})=\tv[i]{P}A^{ij}\tv[j]{q}
 $${#eq-genfunc}
 
 Then the old momenta is given by: 
 
 $$
-\tv{\emom[i]}=\pdv{f_{II}}{\tv{q_i}}=\tv{P_i} A^{ij} \iff \tv{P_i}=[A^{-1}]{}^{ij}\tv{\emom[i]}
+\tv{\emom[i]}=\pdv{f_{II}}{\tv[i]{q}}=\tv[i]{P} A^{ij} \iff \tv[i]{P}=[A^{-1}]{}^{ij}\tv{\emom[i]}
 $${#eq-momtrans}
 Where we can directly invert this equation and obtain the new momenta as:
 
 $$
-  \begin{pmatrix} \tv{P} \\ \tv{p}\end{pmatrix}=\begin{pmatrix} \tv{P_1} \\ \tv{P_2}\end{pmatrix}=\begin{pmatrix} 1&1\\ \frac{\mass[2]}{\totmass} & -\frac{\mass[1]}{\totmass} \end{pmatrix} \begin{pmatrix} \tv{\emom[1]} \\ \tv{\emom[2]}\end{pmatrix}
+  \begin{pmatrix} \tv{P} \\ \tv{p}\end{pmatrix}=\begin{pmatrix} \tv[1]{P} \\ \tv[2]{P}\end{pmatrix}=\begin{pmatrix} 1&1\\ \frac{\mass[2]}{\totmass} & -\frac{\mass[1]}{\totmass} \end{pmatrix} \begin{pmatrix} \tv{\emom[1]} \\ \tv{\emom[2]}\end{pmatrix}
 $$
  
 Where as expected we obtain that one of the momenta descibes the center of mass momentum $\tv{P}=\tv{\emom[1]}+\tv{\emom[2]}$. The other positions are by constuction given by $\pdv{f_{II}}{\tv[1]{q}}=\tv{Q}$ and $\pdv{f_{II}}{\tv[1]{q}}=\tv{q}$ i.e the same as equation @eq-jacobi2. Finally the new hamitonian $\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}$ can be directly obtained by the generating function:^[We just plug in the definition of the old momenta in terms of the new (@eq-momtrans):

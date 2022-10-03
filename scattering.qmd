@@ -8,28 +8,32 @@ editor:
 ::: {.content-hidden unless-format="html"}
 
 
-{{< include _latexmacros.qmd >}}
+{{< include latexmacros.tex >}}
+\newcommand{\sumint}{\int\mathllap{\sum}}
 
 :::
 
 Whilst we have almost no hope to detect any \acr{gw} scattering events with current experiments, scattering calculations can still be very useful in the quest for orbital waveforms. Most importantly, while experimental data is not driving gravitational scattering theory, particle scattering experiment and theory have been an enormously fruitful endeavor for High energy physics. The back and forth between precise measurements (such as those conducted at the \acr{lhc}) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible. It would be therefore very beneficial if one could apply the large knowledge acquired for small non-gravitationally interacting particles, to large compact orbiting bodies. 
 
-Multiple formalisms have arisen to map the scattering problem to an orbital one. One key way is to map scattering data to the potential (as present in a hamiltonian for example). In fact this has been developped as early as the 1970s in [@Hiida:1972xs;@Iwasaki:1971vb]. Further developpents happened in [@Neill:2013wsa;@Bjerrum-Bohr:2013bxa;@Vaidya:2014kza;@Cachazo:2017jef;@Guevara:2017csg;@Damour:2016gwp]. Here we will follow the treatement in @Cheung:2018wkq, where one uses the conservative part of such scattering amplitudes to match to an \acr{eft} and subsequently to map to the potential. This can then be used as input to the \acr{eob} formalism. Furthermore, [@Kalin:2019rwq; @Kalin:2019inp], have shown a path forward in extending unbound data to bound orbits, obviating the need to use a potential and \acr{eob} at all. 
+Such techniques as \acr{eft}, double copy, generalized unitarity, \acr{ibp} reduction, differential equations methods, ll standing on the shoulders of feynman perturbative techniques have been applied to the scattering problem in gravity. A key part of applying tools originally devloppedd for mostly quantum systems is controlling the classical limit, and is part of the solution to implementing gravity in a \acr{qft} framework, a historically difficult endeavor. Once scattering data is obtained one needs to extract the relevant observables. This may be in an effort to compare results from the different methods, in which case gauge and diffeomorphism invariance are key, or to extract the relevant information for detection and data extraction, in which case the \acr{gw} waveform is the relevant observable. In the latter case one is mostly interested in the orbital waveform, and thus a map from unbound to bound orbits is necessary. 
 
-Finally one can also explore the classical observables possible in scattering scenarios. This has been developped in @Kosower:2018adc and was extended to local observable such as waveforms ^[local as in not time integrated aed thus presenting time dependent dynamics] in @Cristofoli:2021vyo.
+Multiple formalisms have arisen to map the scattering problem to an orbital one, and the quantum formalism to a classical one. One key way is to map scattering data to the potential (as present in a hamiltonian for example). In fact this has been developped as early as the 1970s in [@Hiida:1972xs;@Iwasaki:1971vb]. Further developpents happened in [@Neill:2013wsa;@Bjerrum-Bohr:2013bxa;@Vaidya:2014kza;@Cachazo:2017jef;@Guevara:2017csg;@Damour:2016gwp]. Here we will follow the treatement in @Cheung:2018wkq, where one uses the conservative part of such scattering amplitudes to match to an \acr{eft} and subsequently to map to the potential. Recently efforts to add disipative effects have been succesful aswell [see @Kalin:2022hph]. This potential can then be used as input to the \acr{eob} formalism. Furthermore, @Kalin:2019rwq; @Kalin:2019inp, have shown a path forward in directly extending unbound data to bound orbits, obviating the need to use a potential and \acr{eob} at all. 
 
-In this chapter we will look at all three of these approaches in varying detail. We will then compute the relevant amplitudes and compare to published results such as @Bern:2021xze
+Finally as mentioned in the last chapter, scattering can stand on its own and is still usefull, unextended to the orbital case. The \acr{pm} approximation can be computed from scattering amplitude in an \acr{eft} framework [@Kalin:2020mvi]. We can also explore the classical observables possible in scattering scenarios. This has been developped in @Kosower:2018adc and was extended to local observables^[local as in not time integrated and thus presenting time dependent dynamics] such as waveforms  in @Cristofoli:2021vyo.
 
-## Scattering amplitudes      
+
+In this chapter we will first look at how one uses amplitude data to extract orbital and scattering waveforms. We will then look at the \acr{kmoc} formalism to directly extract observables. Finally we will look at obtaining these amplitudes, combining all the methods and comparing to results such as those in [@Kosower:2018adc; @Bern:2021xze].
+
+## Scattering amplitudes {#sec-scatamp}     
 
 In \acr{qft} one way to encode scattering data is through a scattering amplitude. Consider a process where one starts out with a set of particles described by a state $\ket{i}$, we let them interact, and end up with a final state $\ket{f}$. The scattering amplitude is then defined as the probability amplitude for this process to occur. It simply given by 
-$$\mel{i}{\Smat-1}{f}=(2\pi)^4 \deltafn[(4)]{p_f-p_i}\im \ampl_{fi}$$
+$$\mel{i}{\Smat-1}{f}=(2\pi)^4 \deltafn[(4)]{p_f-p_i}\im \ampl_{fi},$$
 
-, where $\Smat$ is essentially the  operator that 'does the scattering'. We subtract the identity from it forming what some call the transfer matrix $\Tmat$ as we only are interested in processes where something happens (i.e. not everything stays the same). In the above equation we also define the *scattering matrix element* $\ampl_{fi}$ [see @srednickiQuantumFieldTheory2007, p. 76] or *invariant Feynman amplitude* [see @colemanQUANTUMFIELDTHEORY2018, p.214], by factoring out a normalised spacetime delta-function imposing conservation of momentum on the external fields, and a complex unit. The key point is that this amplitude can be computed using graphical techniques. This makes use of the \acr{lsz} [@Lehmann:1954rq;@Collins:2019ozc] formalism where such an amplitude  $\ampl_{fi}$, can be computed from products of time ordered correlation functions of the given QFT. These are also called Green's functions, who can then be encoded by sums of Feynman diagrams. The diagrams are generated by applying feynman rules which can be readily obtained from an action describing the theory. This technique will be exemplified in the following sections.
+where $\Smat$ is essentially the operator that 'does the scattering'. We subtract the identity from it, forming what some call the transfer matrix $\Tmat$ as we only are interested in processes where something happens (i.e. not everything stays the same). In the above equation we also define the *scattering matrix element* $\ampl_{fi}$ [see @Srednicki:2007, p. 76] or *invariant Feynman amplitude* [see @Coleman:2018, p.214], by factoring out a normalised spacetime delta-function imposing conservation of momentum on the external fields, and a complex unit. The key point is that this amplitude can be computed using graphical techniques. This makes use of the \acr{lsz} [@Lehmann:1954rq;@Collins:2019ozc] formalism where such an amplitude  $\ampl_{fi}$, can be computed from products of time ordered correlation functions of the given QFT. These are also called Green's functions, who can then be encoded by sums of Feynman diagrams. The diagrams are generated by applying feynman rules which can be readily obtained from an action describing the theory. This technique will be exemplified in the following sections.
 
 ## From amplitude to potential
 
-We first start with defining the effective theory that describes our problem as two scalar fields $\scf[1]$ and $\scf[2]$ with masses $\mass[1]$ and $\mass[2]$ interacting through a long range potential $V(r)$. It is the \acr{eft} for  non-relativistic fields. This \acr{eft} is described by the following action:
+Let us now look at how to map the amplitude to the gravitational potential, for use in the \acr{eob} formalism. We will follow the treatment in @Cheung:2018wkq. We first start with defining the effective theory that describes our problem as two scalar fields $\wf[1]$ and $\wf[2]$ with masses $\mass[1]$ and $\mass[2]$ interacting through a long range potential $V(r)$. It is the \acr{eft} for  non-relativistic fields. This \acr{eft} is described by the following action:
 
 $$
 \action=\int \dd{t} \lag[kin]+\lag[int]
@@ -39,16 +43,16 @@ where the kinetic term is given by:
 
 $$
 \begin{aligned}
-\lag[kin]=&\int \dn[\small \Dim-1]{\tv{k}} \ascf[1](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[1]} }\scf[1](\tv{k})
+\lag[kin]=&\int \dn[\small \Dim-1]{\tv{k}} \cwf[1](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[1]} }\wf[1](\tv{k})
 \\
-&+\int \dn[\small \Dim-1]{\tv{k}} \ascf[2](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[2]} }\scf[2](\tv{k})
+&+\int \dn[\small \Dim-1]{\tv{k}} \cwf[2](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[2]} }\wf[2](\tv{k})
 \end{aligned}
 $$
 
 and the interaction term is given by:
 
 $$
-\lag[int]=  -\int \dn[\small \Dim-1]{\tv{k}} \dn[\small \Dim-1]{\tv{k'}} \pot(\tv{k},\tv{k'}) \ascf[1](\tv{k'}) \ascf[2](-\tv{k'}) \scf[1](\tv{k}) \scf[2](- \tv{k})
+\lag[int]=  -\int \dn[\small \Dim-1]{\tv{k}} \dn[\small \Dim-1]{\tv{k'}} \pot(\tv{k},\tv{k'}) \cwf[1](\tv{k'}) \cwf[2](-\tv{k'}) \wf[1](\tv{k}) \wf[2](- \tv{k})
 $$
 
 This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential $\pot(\tv{k},\tv{k'})$ and taking the non-relativistic limit $\abs{\tv{k}},\abs{\tv{k'}}\ll \mass[1,2]$. In a classical system we consider the particles to be separated by a distance $\abs{\tv{r}}\sim\inv{\abs{\tv{k}-\tv{k'}}}$ much larger than their compton wavelengths $\comptlen\sim\inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}$. This results in the following heirarchy of scales:
@@ -219,23 +223,119 @@ This enables us to fix the coefficients in the potential ansatz @eq-ansatzpot.  
 
 ## \acr{kmoc}
 
+The setup of the \acr{kmoc} framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \acr{sqed} and gravity. First let us define our conventions. Throughout we use relativistically natural units, i.e. we do *not* set $\hbar=1$. In dimensional analysis we can therefore see that $c=1$ means that $[L][T]^{-1}=1 \implies [L]=[T]$, 
+$$q
+\energy=mc^2\implies[\energy]=[m]=[M]
+$$ 
 
-
-Throughout we use relativistically natural units, i.e. we do *not* set $\hbar=1$. In dimensional analysis we can therefore see that $c=1$ means that $[L][T]^{-1}=1 \implies [L]=[T]$, $$\energy=mc^2\implies[\energy]=[m]=[M]$$ and $$\energy=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]$$. Thus momentum $\emom$ is in units of $[\emom]=[M]$ mass and Wavenumber $[\bar{\emom}]=[\frac{\emom}{\hbar}]=[T]^{-1}$ is in units of inverse time. 
-
-The setup of the \acr{kmoc} framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \acr{sqed} and gravity. Imagine we want to scatter two particles into each other, obtaining two particles out. In \acr{qft} the framework that formalizes scattering of definite states is called the \acr{lsz}
-
-in state into an at least 2 particle out state. This language 
-
-Thus the in state is given by 
+and 
 
 $$
-\ket[in]{\psi}=\int \ddP[2]{\emom[1],\emom[2]} \scf[1](\emom[1]) \scf[2](\emom[2]) \exp{\im \co{\impactParameter} \ct{\emom[1]} /\hbar}\ket[in]{\emom[1],\emom[2]}
+\energy=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
+.$$ 
+
+Thus momentum $\emom$ is in units of $[\emom]=[M]$ mass and Wavenumber $[\bar{\emom}]=[\frac{\emom}{\hbar}]=[T]^{-1}$ is in units of inverse time. 
+We will denote the on $m$ shell measure by $\ddP{p}$^[Repeated integration will be denoted $\ddP[n]{p_1,\dots,p_n}$]:
+
+$$
+\int \ddP{p} \dots      = \int \frac{\dd[3]{\tv{p}}}{2\shellen (2\pi)^3} \dots = \int \dn[4]{p}\nposendelta[-m^2]{p} \dots
+$$
+
+where quantities denoted by bars have absorbed the relevant factors of $2\pi$, such that $\dn[n]{p}=\frac{\dd[n]p}{(2\pi)^n}$. Additionally we have defined $\shellen=\sqrt{\tv{p}^2+m^2}$ to be the on shell energy and  $\delta^{(+)}$ is the normalised positive energy on-shell delta function:
+
+$$
+\nposendelta[-m^2]{p}=(2\pi)\deltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}=\ndeltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}
+$$
+
+
+
+
+
+With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e. a classical two in two out scattering). As said in @sec-scatamp, in \acr{qft} the framework that formalizes scattering of definite particle number states is called the \acr{lsz} reduction. 
+
+[we work in the Heisenberg picture here]{.aside}
+
+Let us look at it in more detail. The first component is to define the states we want to scatter. Suppose our theory has one particle states $\momket$, with mass $\mass$, eigenstates of the momentum:
+
+$$\ct{\momop}\momket=\ct{\emom}\momket \quad \text{where} \quad p^0=\shellen=\sqrt{\tv{\emom}^2+\mass^2}$$
+
+These states can be seen as special cases (the plane wave states) of wavepacket states:^[A plane wave state $\ket{f}=\momket$ would be given by $\shellft{f}(k)=2 \shellen[\tv{k}]  \ndeltafn[(3)]{\tv{k}-\tv{p}}$]
+
+$$\ket{f}=\int \ddP{k} \shellft{f}(k) \momket[k]$$
+
+where $\shellft{f}(k)$ is the momentum space wavefunction or more mathematically the momeentum distribution function. Note that it is almost a fourier transform, but not quite, as it is performed on mass shell. If the we have the spactime 'wavefunction' ^[Note that the concept of coordinate space wavefunction is ill defined in interacting theories. However for such asymptotic states, the wavefunction outside the bulk (on the infinte time boundary) is that of a free wavefunction] given by:
+
+$$f(x)=\int \ddP{k} \shellft{f}(k) \exp{-\im\lv{k}\cdot\lv{x}}$${#eq-spacetimewf}
+
+The $\shellft{f}(k)$ is then given by:
+
+$$\ip{k}{f}=\shellft{f}(k)= 2 \shellen \int \dd[3]{\tv{x}}f(x) \exp{\im k\cdot x}$${#eq-momdist}
+
+
+If we now define the following operators:^[$f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g$]
+
+:::{.aside}
+Note that if we replace $f(x)$ by a plane wave state  $\exp{-\im k\cdot x}$ we obtain and define the following:
+
+$$
+\createop[\tv{k}](t)=  \int \dd[3]{\tv{x}} \exp{-\im k\cdot x} \brc[\Big]{\shellen[\tv{k}]\wf(x)-\im \partialder[0]\wf(x)}
+$$
+
+$$
+\annihilop[\tv{k}](t)=   \int \dd[3]{\tv{x}} \exp{\im k\cdot x} \brc[\Big]{\shellen[\tv{k}]\wf(x)+\im \partialder[0]\wf(x)}
+$$
+
+:::
+
+$$
+\createop[f](t)= -  \im \int \dd[3]{\tv{x}}f(x) \lrder[0] \wf(x)
+$$
+
+$$
+\annihilop[f](t)=   \im \int \dd[3]{\tv{x}}\conj{f}(x) \lrder[0] \wf(x)
+$$
+
+where $\wf(x)$ is the Heisenberg field operator. Note that while these operators are time dependent, this dependence is not given by applying the Heisenberg \acr{eom}s ^[$\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}$], instead it is present through the time dependence of the wavefunction $f(x)$. It turns out that these operators, suggestively written are the true creation and annilihation operators in the interacting theory. 
+
+Now we can actually define a general one particle state $\ket{f}$ as the result of a creation operator acting on the physical vacuum. Crucially however this only makes sense in the boundary of the bulk, i.e. at asymptotic times $t\to\pm\infty$.^[see @Coleman:2018 or @Collins:2019ozc for a more in depth discussion of this point]. Inside the bulk, any thusly created state would infact not have definite particle number. This definitely makes sense in the scattering problem because if you consider the whole system as a state, is only has definite particle number at asymptotic times, and inside the bulk the scattering happens, and the particle number is not conserved (at least quantum mechanically). 
+
+Consequently we only define asymptotic states, denoting them by an $\text{in}$ subscript if they were created at $t\to-\infty$ and $\text{out}$ if they were created at $t\to+\infty$. Thus we define a generic one particle in state as:
+
+$$ 
+\ket[in]{f}\defeq\lim_{t\to-\infty}\createop[f](t)\physvack=\createop[f;\text{in}]\physvack=\int \ddP{k} \shellft{f}(k) \underbracket{\createop[\tv{k}]\physvack}_{\momket[k]}
+$$
+
+and the corresponding $t \to +\infty$ state where in is replaced with out. It turns out the extension to multiparticle states is not much more complicated. The one thing to demand is that the momentum distributions say $\shellft{f_1},\shellft{f_2},\dots$ have no common support, i.e. they are not overlapping. In this case a n-particle in state is defined as: 
+
+$$
+\ket[in]{f_1,\dots,f_n}\defeq\createop[f_1;\text{in}]\createop[f_2;\text{in}]\dots\createop[f_n;\text{in}]\physvack=\int \ddP[n]{k_1,\dots,k_n} \shellft{f_1}(k_1)\dots\shellft{f_n}(k_n) \momket[k_1,\dots,k_n] 
+$$
+
+We now have the definitions for asymptotic in and out states for any number of particles. Before continuing to define the setup to scatter our two particles, let us look at the meaning of the position space wavefunction $f(x)$ as defined in @eq-spacetimewf. If we consider a sharply peaked, compactly supported momentum distribution $\shellft{f}(k)$ around a value $\tv[0]{p}$ and a characteristic width $\Delta p$. One such function could be:
+
+$$
+f\pa{\tv{p} ; \tv[0]{p}, \Delta p}=\left\{\begin{array}{ll}
+N \exp{-1 /\pa{1-\abs{\tv{p}-\tv[0]{p}}^2 / \Delta p^2}} & \text { if }\abs{\tv[0]{p}-\tv{p}}<\Delta p \\
+0 & \text { if }\abs{\tv[0]{p}-\tv{p}} \geq \Delta p
+\end{array}\right.
+$$
+
+where $N$ is a normalization constant. Now the integrand in @eq-spacetimewf, at large $t$ or $\tv{x}$, will be dominated by the stationary phase point $\tv[s]{p}$ which is given by:^[This then means that $$\tv[s]{p}=\frac{\mass\tv{x}\sign{t}}{\sqrt{t^2-\tv{x}^2}}$$ thus $$\shellen[{\tv[s]{p}}]=\frac{\mass\abs{t}}{\sqrt{t^2-\tv{x}^2}}$$]
+$$0=-\pdv{}{\tv[s]{p}}\shellen[{\tv[s]{p}}]t+\tv[s]{p}\cdot\tv{x}=-\frac{\tv[s]{p}t}{\shellen[{\tv[s]{p}}]}+\tv{x}$${#eq-stationaryphase}
+
+In the case of a sharply peaked momentum distribution, the coordinate space wavefunction will be largest when the stationary phase point is be the same as the peak of the momentum distribution, i.e. $\tv[s]{p}=\tv[0]{p}$ i.e. substituting $\tv[s]{p}$ into  @eq-stationaryphase gives:
+$$
+\tv{x}\simeq \frac{\tv[0]{p}t}{\shellen[{\tv[0]{p}}]}=\tv[0]{v}t
+$$
+
+This is precisely the trajectory of the classical relativistic particle. If we have two particles with different peaked momentum distributions their trajectories will have different velocities, but the same positions at time $0$. Thus we will shift one of these trajectories by a so called impact parameter $\ct{\impactParameter}$[^shift], parametrising the relative separtation of the two particles/wavepackets. This can be simply done by multiplying the momentum distribution $\shellft{\wf[1]}(p)$ by a factor of $\exp{\frac{\im}{\hbar} \impactParameter \cdot p}$. We take it to be perpendicular to the initial momenta $\emom[1],\emom[2]$. We now can write down the initial state that we are going to study:
+
+$$
+\ket{\text{in}}=\int \ddP[2]{\emom[1],\emom[2]} \shellft{\wf[1]}(\emom[1]) \shellft{\wf[2]}(\emom[2]) \exp{\frac{\im}{\hbar} \co{\impactParameter} \ct{\emom[1]}}\ket[in]{\emom[1],\emom[2]}
 $${#eq-instate}
 
-The $\exp{\im \co{\impactParameter} \ct{\emom[1]} /\hbar}$ factor encodes the fact that we have translated the wavepacket of particle $1$ relative to particle $2$ by the impact parameter $b$ .[^2] We take it to be perpendicular to the initial momenta $\emom[1],\emom[2]$.
 
-The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable ${O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
+From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable $\obs{O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
 $$
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}
 $$
@@ -264,56 +364,56 @@ If we put in the definition of our in state (@eq-instate) we have:
 
 $$
 \Delta O = \int \ddP[4]{\emom[1],\emom[2],\emom[1]',\emom[2]'} 
-                  \scf[1](\emom[1]) \scf[2](\emom[2]) \ascf[1](\emom[1]') \ascf[2](\emom[2]')
+                  \wf[1](\emom[1]) \wf[2](\emom[2]) \cwf[1](\emom[1]') \cwf[2](\emom[2]')
                   \,\exp{\im \co{\impactParameter} \frac{\ct{\emom[1]}-\ct{\emom[1]'}}{\hbar}}
                   \brc[\big]{\vInt-\rInt}
 $$
 Where we define the real integrand $\rInt$ and the virtual integrand $\vInt$ as the following matrix elements:
 $$
 \begin{aligned}
-\vInt &=\mel{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}           }{\emom[1]\emom[2]}\\
-\rInt &=\mel{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}   }{\emom[1]\emom[2]}
+\vInt &=\bra[in]{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}           }\ket[in]{\emom[1]\emom[2]}\\
+\rInt &=\bra[in]{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}   }\ket[in]{\emom[1]\emom[2]}
 \end{aligned}
 $$
 
-> NB: the notation is slightly different in the @bernScalarQEDToy2021 paper
+[NB: the notation is slightly different in the @Bern:2021xze paper]{.aside}
 
-Let us first look at the virtual integrand $\rInt$:
+Let us first look at the virtual integrand $\vInt$:^[Here we define $$\obs{O}_{\text{in}}\ket{\emom[1]\emom[2]}=\op{O}\ket{\emom[1]\emom[2]}$$ aswell as, $$\obs{O}_{\text{in}}'\bra{\emom[1]'\emom[2]'}=\bra{\emom[1]'\emom[2]'}\op{O}$$ and finally $$\obschange{\emom'-\emom}=\obs{O}_{\text{in}}'-\obs{O}_{\text{in}}$$]
 
 $$
 \begin{aligned}
-\vInt &=\mel{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}     }{\emom[1]\emom[2]}  \\
-      &=\mel{\emom[1]'\emom[2]'}{\im\op{O}\Tmat             }{\emom[1]\emom[2]}   
-      - \mel{\emom[1]'\emom[2]'}{\im \Tmat\op{O}            }{\emom[1]\emom[2]}\\
-      &=\im \obs{O}_{\text{in}'}    \mel{\emom[1]'\emom[2]'}{\Tmat}{\emom[1]\emom[2]}
-      - \im \obs{O}_{\text{in}}     \mel{\emom[1]'\emom[2]'}{\Tmat}{\emom[1]\emom[2]}\\
-      &=\im \obschange{\emom-\emom'} \,    \mel{\emom[1]'\emom[2]'}{\Tmat}{\emom[1]\emom[2]}\\
-      &=\im \obschange{\emom-\emom'}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
+\vInt &=\bra[in]{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}     }\ket[in]{\emom[1]\emom[2]}  \\
+      &=\bra[in]{\emom[1]'\emom[2]'}{\im\op{O}\Tmat             }\ket[in]{\emom[1]\emom[2]}   
+      - \bra[in]{\emom[1]'\emom[2]'}{\im \Tmat\op{O}            }\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obs{O}_{\text{in}'}  \; \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}
+      - \im \obs{O}_{\text{in}} \;    \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obschange{\emom'-\emom} \,    \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obschange{\emom'-\emom}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
                                     \amp{\emom[1],\emom[2]}{\emom[1]',\emom[2]'}
 \end{aligned}
 $$
 
-Note that the amplitude is from in states to in states! Now for the real integrand $\mathcal{I}_\text{r}$ we insert a complete set of states :
+Note that the amplitude is from in states to in states! Now for the real integrand $\rInt$ we insert a complete set of states :[^complete]
 
 $$
 \begin{aligned}
-\rInt &=\mel{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}}{\emom[1]\emom[2]}\\
-      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}   \mel{\emom[1]'\emom[2]'}{\adj{\Tmat}}{r_1 r_2 X}
-                        \mel{r_1 r_2 X}{\com{\op{O}}{\Tmat}}{\emom[1]\emom[2]}\\
+\rInt &=\bra[in]{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}}\ket[in]{\emom[1]\emom[2]}\\
+      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}   \bra[in]{\emom[1]'\emom[2]'}\adj{\Tmat}\vert{r_1 r_2 X}\rangle\langle {r_1 r_2 X} \vert
+                        \com{\op{O}}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
       &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \ndeltafn[4]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}}\,
       \amp{\emom[1], \emom[2]}{r_{1}, r_{2}, r_{X}} \\
-      &\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]^{\prime}+\emom[2]^{\prime}-r_{1}-r_{2}-r_{X}}\,
-      \aamp{\emom[1]^{\prime}, \emom[2]^{\prime}}{r_{1}, r_{2}, r_{X}}
+      &\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]'+\emom[2]'-r_{1}-r_{2}-r_{X}}\,
+      \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}}
 \end{aligned}
 $$
 
-For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$. Thus we have
+For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$   [^measureshift]. Thus we have
 
 $$
 \begin{aligned}
 \vchangeob=\int \ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm}
       &\ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\, \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
-      &\times\scf[1](\emom[1])\scf[2](\emom[2])\ascf[1](\emom[1]+\tm)\ascf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} \co{\impactParameter} \tm^\mu}\\
+      &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} \co{\impactParameter} \tm^\mu}\\
       &\times \im \obschange{\tm} \amp{\emom[1],\emom[2] }{\emom[1]+\tm,\emom[2]-\tm}
 \end{aligned}
 $${#eq-DeltaOv}
@@ -324,11 +424,13 @@ $$
 \rchangeob=\sum\limits_X \int \ddP[2+\abs{X}]{r_1, r_2,X}
       &\ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm} \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\\
             &\times \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
-            &\times\scf[1](\emom[1])\scf[2](\emom[2])\ascf[1](\emom[1]+\tm)\ascf[2](\emom[2]-\tm)\,\exp{-\frac{\iunit}{\hbar} b_\mu \tm^\mu}\\
+            &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\iunit}{\hbar} b_\mu \tm^\mu}\\
             &\times\obschange{rX-\emom}\ndeltafn[(4)]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}} \\
             &\times   \amp{\emom[1], \emom[2] }{ r_{1}, r_{2}, r_{X}}\aamp{\emom[1]+\tm, \emom[2]-\tm }{r_{1}, r_{2}, r_{X}}
 \end{aligned}
 $${#eq-DeltaOr}
+
+We have arrived at an integral expression for the change in observable $\obs{O}$ during observable. Luckily for us, we will not need to perform these integrals in the classical limit. We will just have carefully chosen replacement rules for the integrated variables! Let us look at this in more detail now.
 
 
 
@@ -372,13 +474,13 @@ $$
 This wavefunction grows sharper in the $\ell_\omega^2 \to 0$ limit. We must then still have that $\xi=\pa{\frac{\comptlen}{\ell_\omega}}^2\to0$ when $\hbar \to 0$ as-well. This works if we just directly take the classical limit to be the $\xi \to 0$ limit.
 
 
-Going back to the general conditions we want $\scf[i](\emom[i])$ s.t:
+Going back to the general conditions we want $\wf[i](\emom[i])$ s.t:
 
-- $\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\scf[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu f_{\emom,i}(\xi)$ [^2] with $f_{\emom,i}(\xi)=1+\mathcal{O}(\xi^{\beta'})$
+- $\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\wf[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu f_{\emom,i}(\xi)$ [^2] with $f_{\emom,i}(\xi)=1+\mathcal{O}(\xi^{\beta'})$
 - $\sigma^2(\emom[i])/m_i^2=\av{(\emom[i]-\av{\emom[i]})^2}/m_i^2=(\av{\emom[i]^2}-\av{\emom[i]}^2)/m_i^2=c_\Delta\xi^\beta$[^3]
 - $\breve{u}_i \cdot u_i = 1+ \mathcal{O}(\xi^{\beta''})$
 
-Additionally the wavefunction should be Lorentz invariant, thus naively we would have that $\scf(\emom[i]^\mu)=\tilde{\scf}(\emom[i]^2)$ however the integration measure enforces an on shell condition: $m_i^2=\emom[i]^2$. Thus the wavefunction cannot usefully depend on $\emom[i]^2$, we need to introduce at least one additional four vector parameter $u$. The simplest dimensionless combination of parameters it then $\frac{\emom \cdot u }{m}$. Of course the wavefunction must also depend on $\xi$ and the simplest form of argument will thus be $\frac{\emom \cdot u }{m \xi}$ so that any $\emom$ not aligned with $u$ will be strongly suppressed in the $\xi \to0$ limit.
+Additionally the wavefunction should be Lorentz invariant, thus naively we would have that $\wf(\emom[i]^\mu)=\tilde{\wf}(\emom[i]^2)$ however the integration measure enforces an on shell condition: $m_i^2=\emom[i]^2$. Thus the wavefunction cannot usefully depend on $\emom[i]^2$, we need to introduce at least one additional four vector parameter $u$. The simplest dimensionless combination of parameters it then $\frac{\emom \cdot u }{m}$. Of course the wavefunction must also depend on $\xi$ and the simplest form of argument will thus be $\frac{\emom \cdot u }{m \xi}$ so that any $\emom$ not aligned with $u$ will be strongly suppressed in the $\xi \to0$ limit.
 
 We now have control over most of the conditions:
 
@@ -386,12 +488,12 @@ We now have control over most of the conditions:
 - The wavefunction spread is controlled
 - The arguments of the wavefunction is clear
 
-The last requirement concerns the overlap of $\scf$ and $\ascf$ must be $\mathcal{O}(1)$, equivalently and more precisely:
+The last requirement concerns the overlap of $\wf$ and $\cwf$ must be $\mathcal{O}(1)$, equivalently and more precisely:
 
 $$
-\ascf(\emom+\tm)\sim \ascf(\emom) \implies \ascf(\emom+\tm)- \ascf(\emom)\ll 1 \implies \ct{\tm}\partial_\mu{\ascf}(\emom)\ll1
+\cwf(\emom+\tm)\sim \cwf(\emom) \implies \cwf(\emom+\tm)- \cwf(\emom)\ll 1 \implies \ct{\tm}\partial_\mu{\cwf}(\emom)\ll1
 $$
-Making explicit the $\frac{\emom \cdot u }{m \xi}$ dependence: $\scf(\emom)=\varphi(\frac{\emom \cdot u }{m \xi})$   for $\varphi(x)$ a scalar function.
+Making explicit the $\frac{\emom \cdot u }{m \xi}$ dependence: $\wf(\emom)=\varphi(\frac{\emom \cdot u }{m \xi})$   for $\varphi(x)$ a scalar function.
 $$\implies \frac{\ct{\tm} u_\mu}{m \xi}\pdv{\varphi^\dagger}{x}(\frac{\emom \cdot u }{m \xi})\ll1$$
 Thus we require that for a characteristic value of $\tm=\co[0]{\tm}$ we have:[^4]
 
@@ -435,7 +537,7 @@ As we have now seen the phase space integrals over initial momenta, and over the
 
 
 $$
-\AAngle{f(\emom[1],\emom[2],\dots)}\coloneq \int\limits \ddP{\emom[1]}\ddP{\emom[2]} \abs{\scf[1](\emom[1])}^2\abs{\scf[2](\emom[2])}^2\,f(\emom[1],\emom[2],\dots)
+\AAngle{f(\emom[1],\emom[2],\dots)}\coloneq \int\limits \ddP{\emom[1]}\ddP{\emom[2]} \abs{\wf[1](\emom[1])}^2\abs{\wf[2](\emom[2])}^2\,f(\emom[1],\emom[2],\dots)
 $$
 
 We can now rewrite @eq-DeltaO:
@@ -520,7 +622,7 @@ Going back to the integrands we have:
 
 $$
 \begin{aligned}
-\vIntp{\ct{\emom[1]}}&=\hbar^3\iunit\,  \tw\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{(L+1)}\bar{\mathcal{A}}^{(L)}(\emom[1],\emom[2]\to \emom[1]+\hbar \tw,\emom[2]-\hbar\tw)\\
+\vIntp[\ct{\emom[1]}]&=\hbar^3\iunit\,  \tw\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{e^{2}}{\hbar}}^{(L+1)}\bar{\mathcal{A}}^{(L)}(\emom[1],\emom[2]\to \emom[1]+\hbar \tw,\emom[2]-\hbar\tw)\\
 &=\iunit\,  \tw\, \sum\limits_{L=0}^\infty e^{2(L+1)}{\hbar}^{(2-L)}\bar{\mathcal{A}}^{(L)}(\emom[1],\emom[2]\to \emom[1]+\hbar \tw,\emom[2]-\hbar\tw)
 \end{aligned}
 $$
@@ -529,7 +631,7 @@ as well as the real kernel:[^measurech]
 
 $$
 \begin{aligned}
-\rIntb{\ct{\emom[1]}}&=\hbar^2\sumint\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\ndeltafn{2\emom[i] \cdot w_i+w_i^2}\thetafn{\emom[i]^0+w_i^0} \\
+\rIntb[\ct{\emom[1]}]&=\hbar^2\sumint\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\ndeltafn{2\emom[i] \cdot w_i+w_i^2}\thetafn{\emom[i]^0+w_i^0} \\
 &\times w_1^\mu\,\ndeltafn[(4)]{w_1+w_2+r_{X}}
 \\
 &\times\amp{\emom[1], \emom[2] }{ \emom[1]+w_{1}, \emom[2]+w_{2}, r_{X}} 
@@ -561,8 +663,8 @@ Schematically we have
 
 $$
 \begin{aligned}
-\vIntb{\ct{\emom[1]}}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{2(L+1)})\\
-\rIntb{O}&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{4(L+1)+2\abs{X}})
+\vIntb[\ct{\emom[1]}]&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{2(L+1)})\\
+\rIntb[\ct{\emom[1]}]&=\sum\limits_{L=0}^\infty \mathcal{O}(e^{4(L+1)+2\abs{X}})
 \end{aligned}
 $$
 
@@ -575,7 +677,7 @@ Where $L$ is the loop count for the virtual kernel and $L'$, $\abs{X}$ are the r
 Now we see that the leading order contribution [^expand]to the impulse $\Delta \emom[1]^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus we have the following equation.
 
 $$
-\Delta \emom[1]^{\mu,(0)}=\AAngle{\int \dPsb{\tw}\Exp[\big]{-\iunit\tw^\mu b_\mu}\ \vIntb{\emom[1]^{\mu},L=0}}
+\Delta \emom[1]^{\mu,(0)}=\AAngle{\int \dPsb{\tw}\Exp[\big]{-\iunit\tw^\mu b_\mu}\ \vIntb[\emom[1]^{\mu}],L=0}
 $$
 
 And the integrand is given by the tree level 4 point amplitude.
@@ -608,21 +710,16 @@ For NLO impulse SQED, using the order equation above we have a 1-loop contributi
 
 
 
-[^shift]: $f(x)=\int \ddP{\emom} \tilde{f}(\boldsymbol{\emom})\exp{-\frac{\iunit}{\hbar} \emom^\mu x_\mu}$. Then a shifted, i.e. translated version of $f(x)$ can be written:$$\begin{aligned}
-f(x-x_0)&=\int \ddP{\emom} \tilde{f}(\boldsymbol{\emom})\,\exp{-\frac{\iunit}{\hbar} p_\mu (x^\mu-x_0^\mu)}\\
-&=\int \ddP{\emom} \tilde{f}(\boldsymbol{\emom})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\exp{-\frac{\iunit}{\hbar} p_\mu x^\mu}
-\end{aligned}$$
-Thus the associated, translated state is:
-$$\ket{f}=\int \ddP{\emom} \tilde{f}(\boldsymbol{\emom})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\ket{\emom }$$
+[^shift]: $f(x)=\int \ddP{\emom} \shellft{f}({\emom})\exp{-\frac{\iunit}{\hbar} \emom^\mu x_\mu}$. Then a shifted, i.e. translated version of $f(x)$ can be written:$$\begin{aligned}f(x-x_0)&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{-\frac{\iunit}{\hbar} p_\mu (x^\mu-x_0^\mu)}\\&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\exp{-\frac{\iunit}{\hbar} p_\mu x^\mu}\end{aligned}$$ Thus the associated, translated state is:$$\ket{f}=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{\frac{\iunit}{\hbar}p_\mu x^\mu_0}\,\ket{\emom }$$
 
-[^complete]: $1=\sum\limits_X \int \dd{\scf_{2+\abs{X}}}(r_1,r_2,X)\dyad{r_1 r_2 X}$ Where we could consider the states ${r_1,r_2,X}$ to be the final states after the scattering
+[^complete]: $1=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\dyad{r_1 r_2 X}$ Where we could consider the states ${r_1,r_2,X}$ to be the final states after the scattering
 
 [^measureshift]: Introducing the momentum shifts modifies the measure in the following way:
-    $$\ddP{\emom[i]'}=\ddP{\emom[i]+q_i}=\dn[4]q_i\,\ndeltafn{(\emom[i]+q_i)^2-m_i^2} \thetafn{\emom^0_i+q_i^0}$$
-            Now since we also have the on shell enforcing delta function from $\ddP{\emom[i]}$ we can rewrite the delta functions:     $$\ddP{\emom[i]}\,\ndeltafn{(\emom[i]+q_i)^2-m_i^2}=\ddP{\emom[i]}\ndeltafn{\underbracket{(\emom[i]^2-m_i^2)}_{\text{redundant}}+2 \emom[i] \cdot q_i+q_i^2}=\ddP{\emom[i]}\ndeltafn{2 \emom[i] \cdot q_i+q_i^2}$$
+    $$\begin{aligned}\ddP{\emom[i]'}&=\ddP{\emom[i]+q_i}\\=&\dn[4]{q_i}\,\ndeltafn{{(\emom[i]+q_i)^2-m_i^2}} \thetafn{{\emom[i]^0+q_i^0}}\end{aligned}$$
+            Now since we also have the on shell enforcing delta function from $\ddP{\emom[i]}$ we can rewrite the delta functions:     $$\begin{aligned}\ddP{\emom[i]}&\,\ndeltafn{(\emom[i]+q_i)^2-m_i^2}\\&=\ddP{\emom[i]}\ndeltafn{\underbracket{(\emom[i]^2-m_i^2)}_{\text{redundant}}+2 \emom[i] \cdot q_i+q_i^2}\\&=\ddP{\emom[i]}\ndeltafn{2 \emom[i] \cdot q_i+q_i^2}\end{aligned}$$
             Finally when integrating over $q_2$ we choose to hit $\ndeltafn[(4)]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'}=\ndeltafn[(4)]{q_1+q_2}$ and thus we just set $q_2=-q_1$
 
-[^constA]: $A$ absorbs the various constants, with $A=\sqrt{2}m\frac{\comptlen}{\ell_\omega}$ and $\tv{x}_0$ 
+[^constA]: $A$ absorbs the various constants, with $A=\sqrt{2}m\frac{\comptlen}{\ell_\omega}$ and $\tv[0]{x}$ 
 [^2]: This means that the classical value of momentum $m_i \breve{u}_i^\mu$ is reached in the $\xi \to 0$ limit
 [^3]: This encodes the limit of the spread as $\xi \to0$. $\av{\emom[i]^2}=m_i^2$ is enforced by the measure $\ddP{\emom}$
 [^4]: This enforces the normalisation condition $\breve{u}_i^2=1$ in the $\xi \to0$ limit 

@@ -296,4 +296,4 @@
 \let\@obschange\obschange
 \renewcommand{\obschange}[2][\obs{O}]{\mathtip{\@obschange[#1]{#2}}{\text{Observable change: }\@obschange[#1]{#2}}}
 
-\newcommand{\sumint}{\int\mathllap{\sum}}
+
