@@ -13,7 +13,7 @@
 \newcommand{\brk}{\bk}
 \newcommand{\abs}[2][]{#1\vert#2 #1\vert}
 \newcommand{\norm}[2][]{#1\Vert#2 #1\Vert}
-\newcommand{\order}[2][]{\mathcal{O}\left(#2^{#1}\right)}
+\newcommand{\order}[2][]{\mathcal{O}(#2^{#1})}
 
 
 \newcommand{\partialder}[1][]{\partial_{#1}}
@@ -75,10 +75,15 @@
 \newcommand{\Smat}{S}
 \newcommand{\Tmat}{T}
 
-\newcommand{\ampl}{\mathcal{A}}
+\newcommand{\ampl}[1][]{\mathcal{A}^{#1}}
+\newcommand{\redampl}[1][]{\mathcal{\bar{A}}^{#1}}
 
-\newcommand{\amp}[2]{\mathcal{A}(#1\to#2)}
-\newcommand{\aamp}[2]{\mathcal{\conj{A}}(#1\to#2)}
+\newcommand{\amp}[3][]{\mathcal{A}^{#1}(#2\to#3)}
+\newcommand{\aamp}[3][]{\mathcal{\conj{A}}^{#1}(#2\to#3)}
+
+\newcommand{\redamp}[3][]{\mathcal{\bar{A}}^{#1}(#2\to#3)}
+\newcommand{\aredamp}[3][]{\mathcal{\conj{\bar{A}}}^{#1}(#2\to#3)}
+
 
 
 
@@ -103,9 +108,8 @@
 
 
 
-\newcommand{\mass}[1][]{m_{#1}}
-
-
+\newcommand{\mass}[1][]{m_{#1}} 
+\newcommand{\charge}[1][]{Q_{#1}}
 
 
 \newcommand{\FT}[3][]{\mathcal{F}_{#1}\left[#2\right]}
@@ -236,7 +240,7 @@
 \newcommand{\id}{\mathbb{1}} 
 \newcommand{\scatlen}{\ell_s}
 \newcommand{\comptlen}{\ell_c}
-\newcommand{\scatwidth}{\ell_w}
+\newcommand{\wfwidth}{\ell_\omega}
 
 \newcommand{\redmass}{\mu}
 \newcommand{\symmratio}{\nu}
@@ -276,7 +280,32 @@
 \newcommand{\sign}[1]{\text{sign}(#1)}
 \newcommand{\wf}[1][]{f_{#1}}
 \newcommand{\cwf}[1][]{\conj{f}_{#1}}
+\newcommand{\cls}[1]{\breve{#1}}
+\newcommand{\vel}[1][]{u_{#1}}
+\newcommand{\phprop}[1][{\mu \nu}]{\tilde{D}^{#1}}
+\newcommand{\feynprop}{\tilde{\Delta}_F}
+\newcommand{\mands}{s}
+\newcommand{\mandt}{t}
+\newcommand{\mandu}{u}
 
+\newcommand{\semom}[1][]{\tilde{p}_{#1}}
+\newcommand{\relfact}{\sigma}
+
+
+\tikzset{
+    photon/.style={
+        decoration={snake, amplitude=0.1cm, segment length=0.2cm},
+        decorate    
+    },
+    gluon/.style={
+        decoration={coil, aspect=0.75, mirror, segment length=1.5mm},
+        decorate
+    }, 
+    left/.style={
+        bend left=90,
+        looseness=1.75
+    }
+}
 
 \tikzset{->-/.style={decoration={
   markings,

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[]
+\matrix{
+      \node{$\displaystyle \im\amp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
+      \node{$=$};&
+     \graph[nodes=coordinate, empty nodes,spring layout,node distance=15mm,vertical=p1 to p2,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1["$\displaystyle \semom[1]-\Half[\tm]$"] --[->-=.5,thick]  a[circle,fill,scale=.5] --[->-=.7,thick] p4["$\displaystyle \semom[1]+\Half[\tm]$"];
+  a -- [photon,thick] b[circle,fill,scale=.5];
+  p2["$\displaystyle \semom[2]+\Half[\tm]$ "{below}] --[->-=.5,thick,]  b --[->-=.7,thick,] p3["$\displaystyle \semom[2]-\Half[\tm]$" below];
+};\\
+};
+\end{tikzpicture}
+

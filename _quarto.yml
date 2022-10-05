@@ -164,6 +164,21 @@ acronyms:
     - key: nrqcd
       shortname: NRQCD
       longname: Non-Relativistic Quantum Chromodynamics
+    - key: lo
+      shortname: LO
+      longname: Leading Order
+    - key: nlo
+      shortname: NLO
+      longname: Next-to-Leading Order
+    - key: nnlo
+      shortname: NNLO
+      longname: Next-to-Next-to-Leading Order
+    - key: nnnlo  
+      shortname: NNNLO
+      longname: Next-to-Next-to-Next-to-Leading Order
+    - key: nnnnlo
+      shortname: NNNNLO
+      longname: Next-to-Next-to-Next-to-Next-to-Leading Order
   
 
     
