@@ -111,6 +111,7 @@ save(PDF("./tikz/propagator.pdf"), tp)
 save(TEX("./tikz/propagator"; limit_to=:picture), tp)
 tp
 ```
+
 ![Propagator rule](tikz/propagator){#fig-propagator}
 
 
@@ -1046,6 +1047,8 @@ save(SVG("./tikz/treelevelsqed"), tp)
 tp
 ```
 
+
+![Tree](./tikz/treelevelsqed.pdf)
 
 
 

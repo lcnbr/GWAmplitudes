@@ -979,6 +979,12 @@ s=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)-\big(\tilde{p}_{2}+\frac{q_{}}{2
 t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Big)^2 = q_{}^2
 \]</span></p>
 <p>With all the ingredients in place, we can now go on to computing the amplitudes. We start with the tree level amplitude, the only LO contribution in for example <a href="#eq-impulseLO"><span>5.16</span></a>. The only possible diagram we can build with four external scalar legs, and vertices as defined in <a href="#tbl-sqedfrules">Table&nbsp;<span>5.1</span></a>, is the following tree:</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><embed src="./tikz/treelevelsqed.pdf" class="img-fluid"></p>
+<p></p><figcaption class="figure-caption margin-caption">Tree</figcaption><p></p>
+</figure>
+</div>
 <p>The amplitude is read off diagram and using feynman rules for SQED we have:</p>
 <p><span class="math display">\[
 \mathcal{A}^{(0)} = \mathring{\imath}\tilde{D}^{{\mu \nu}}(q)\cdot \,e^2Q_{1} Q_{2}2 \tilde{p}_{1}{}^{\mu} 2\tilde{p}_{2}{}^{\nu}=\frac{4e^2Q_{1} Q_{2}\tilde{p}_{1}\cdot\tilde{p}_{2}}{q_{}^2}
@@ -1350,6 +1356,7 @@ save(PDF("./tikz/propagator.pdf"), tp)
 save(TEX("./tikz/propagator"; limit_to=:picture), tp)
 tp
 ```
+
 ![Propagator rule](tikz/propagator){#fig-propagator}
 
 
@@ -2293,6 +2300,8 @@ save(SVG("./tikz/treelevelsqed"), tp)
 tp
 ```
 
+
+![Tree](./tikz/treelevelsqed.pdf)
 
 
 
