@@ -1,18 +1,24 @@
 # Gravitational Wave Detection
 
-Gravitational waves were first theorized by Einstein, accompanying his theory of general relativity. However, it was not even clear whether this was an artifact of the theory or something real. Of course as we have seen, \acr{gw}s are predicted to be very weak, and thus there initial was little hope of ever detecting them. As evidence mounted that \acr{gr} was indeed a very good theory of gravity, people started to investigate more seriously whether one could detect \acr{gw}s. The first detectors were resonant antennas, 
-
-   however, these have to date, not been successful in detecting \acr{gw}s. The more modern laser based detectors were the final piece of the puzzle. With extremely high precision (the modern measurement accuracy at \acr{ligo} is equivalent to measuring the distance to Alpha Centauri to the width of a human hair), these detectors are able to detect \acr{gw}s. The first detection was made in 2015, marking the beginning of a new era in astronomy, and maybe physics.
+Gravitational waves were first theorized by Einstein, accompanying his theory of general relativity. However, it was not even clear whether this was an artifact of the theory or something real. Of course as we have seen, \acr{gw}s are predicted to be very weak, and thus there initially very little hope of ever detecting them. As evidence mounted that \acr{gr} was indeed a very good theory of gravity, people started to investigate more seriously whether one could detect \acr{gw}s. The first detectors were resonant antennas, however, these have to date, not been successful in detecting \acr{gw}s. The more modern laser based detectors were the final piece of the puzzle. With extremely high precision (the modern measurement accuracy at \acr{ligo} is equivalent to measuring the distance to Alpha Centauri to the width of a human hair), these detectors are able to detect \acr{gw}s. The first detection was made in 2015, marking the beginning of a new era in astronomy, and maybe physics.
 
 ## Laser interferometers
 
+TODO
+
 ### \acr{ligo} {#sec-ligo}
+
+TODO
 
 ### \acr{lisa}
 
+TODO
+
 ## matched filtering
 
-The signals measured by the laser interferometers such as \acr{ligo}, are a measurement of strain over time. This waveform essentially measures the deformation of spacetime when a \acr{gw} passes through a detector. While some \acr{gw} signals coming out of laser interferometers, are clearly identified as such, mainly due to their extraordinary power output, smaller systems and weaker signals are harder to identify. In fact most of the detections have happened under the noise floor of the detectors. How is this possible? Matched filtering and waveform generation. In this chapter we will explain the matched filtering approach and then introduce the methods that are used to generate the waveforms to be matched against. Waveforms for spiraling binaries are the principle tool for comparing data from Gravitational wave detectors to the theory surrounding them. They are the bridge between theory and experiment. 
+The signals measured by the laser interferometers such as \acr{ligo}, are a measurement of strain over time. This waveform essentially measures the deformation of spacetime when a \acr{gw} passes through a detector. While some \acr{gw} signals coming out of laser interferometers, are clearly identified as such, mainly due to their extraordinary power output, smaller systems and weaker signals are harder to identify. In fact most of the detections have happened under the noise floor of the detectors. How is this possible? Matched filtering and waveform generation. In this section we will explain the matched filtering approach. 
+
+TODO
 
 As we have seen, the matched filtering approach is contingent on having a waveform that corresponds to the physical process that is emitting the signal. Usually these processes can be parametrized by a set of parameters, such as in the case of a compact binary, the mass ratio of the binary, the orbit eccentricity, the possible spin etc. The filter waveform must then of course depend on these parameters, be it heuristically or physically (i.e., from first principles). 
 
@@ -21,6 +27,6 @@ As we have seen, the matched filtering approach is contingent on having a wavefo
 ## Pulsar Timing Arrays
 
 
-
+TODO
 
 

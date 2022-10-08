@@ -1,0 +1,146 @@
+diags:=[
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p3)*
+ vrtx(phic1(2,-p1-p3),photon(-5,p3),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-7,p4),photon(-9,p5),phi1(1,p1+p3)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p4)*
+ vrtx(phic1(2,-p1-p4),photon(-7,p4),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-5,p3),photon(-9,p5),phi1(1,p1+p4)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p5)*
+ vrtx(phic1(2,-p1-p5),photon(-9,p5),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-5,p3),photon(-7,p4),phi1(1,p1+p5)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,-p2-p3)*
+ vrtx(phic1(-3,p2),photon(-5,p3),phi1(1,-p2-p3))*
+ vrtx(phic1(2,p2+p3),photon(-7,p4),photon(-9,p5),phi1(-1,p1)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,-p2-p4)*
+ vrtx(phic1(-3,p2),photon(-7,p4),phi1(1,-p2-p4))*
+ vrtx(phic1(2,p2+p4),photon(-5,p3),photon(-9,p5),phi1(-1,p1)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,-p2-p5)*
+ vrtx(phic1(-3,p2),photon(-9,p5),phi1(1,-p2-p5))*
+ vrtx(phic1(2,p2+p5),photon(-5,p3),photon(-7,p4),phi1(-1,p1)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p3)*
+ prop(phi1,3,4,-p2-p4)*
+ vrtx(phic1(2,-p1-p3),photon(-5,p3),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-7,p4),phi1(3,-p2-p4))*
+ vrtx(phic1(4,p2+p4),photon(-9,p5),phi1(1,p1+p3)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p3)*
+ prop(phi1,3,4,-p2-p5)*
+ vrtx(phic1(2,-p1-p3),photon(-5,p3),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-9,p5),phi1(3,-p2-p5))*
+ vrtx(phic1(4,p2+p5),photon(-7,p4),phi1(1,p1+p3)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p4)*
+ prop(phi1,3,4,-p2-p3)*
+ vrtx(phic1(2,-p1-p4),photon(-7,p4),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-5,p3),phi1(3,-p2-p3))*
+ vrtx(phic1(4,p2+p3),photon(-9,p5),phi1(1,p1+p4)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p4)*
+ prop(phi1,3,4,-p2-p5)*
+ vrtx(phic1(2,-p1-p4),photon(-7,p4),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-9,p5),phi1(3,-p2-p5))*
+ vrtx(phic1(4,p2+p5),photon(-5,p3),phi1(1,p1+p4)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p5)*
+ prop(phi1,3,4,-p2-p3)*
+ vrtx(phic1(2,-p1-p5),photon(-9,p5),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-5,p3),phi1(3,-p2-p3))*
+ vrtx(phic1(4,p2+p3),photon(-7,p4),phi1(1,p1+p5)),
+ 
+(+1)*
+ cpol(phi1, -1,p1)*
+ cpol(phic1, -3,p2)*
+ cpol(photon, -5,p3)*
+ cpol(photon, -7,p4)*
+ cpol(photon, -9,p5)*
+
+ prop(phi1,1,2,p1+p5)*
+ prop(phi1,3,4,-p2-p4)*
+ vrtx(phic1(2,-p1-p5),photon(-9,p5),phi1(-1,p1))*
+ vrtx(phic1(-3,p2),photon(-7,p4),phi1(3,-p2-p4))*
+ vrtx(phic1(4,p2+p4),photon(-5,p3),phi1(1,p1+p5)),
+NULL]:

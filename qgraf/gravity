@@ -1,0 +1,19 @@
+* propagators
+ [Phi1,Phi1c,+]
+ [Phi2,Phi2c,+]
+ [Graviton,Graviton,+]
+
+ 
+* vertices
+[Phi1c,Graviton,Phi1]
+[Phi2c,Graviton,Phi2]
+[Phi1c,Graviton,Graviton,Phi1]
+[Phi2c,Graviton,Graviton,Phi2]
+[Phi1c,Graviton,Graviton,Graviton,Phi1]
+[Phi2c,Graviton,Graviton,Graviton,Phi2]
+[Graviton,Graviton,Graviton]
+[Graviton,Graviton,Graviton,Graviton]
+[Graviton,Graviton,Graviton,Graviton,Graviton]
+[Graviton,Graviton,Graviton,Graviton,Graviton,Graviton]
+*too large: [Graviton,Graviton,Graviton,Graviton,Graviton,Graviton,Graviton]
+  

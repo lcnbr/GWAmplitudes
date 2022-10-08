@@ -113,7 +113,7 @@ $$
    \SRDA \weakmet = 0 
 $${#eq-homogenous}
 
-The de Donder gauge (@eq-dedonder) and the remaining gauge freedom^[from changes in coordinates such as $\ct{x}\to\ct{x}+\ct{\xi}$ with $\SRDA\ct{\xi}=0$] restricts the possible forms of this solution to having only helicity $\pm2$ physically significant components (see @weinbergGravitationCosmologyPrinciples1972). Let us look at its generic form. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
+The de Donder gauge (@eq-dedonder) and the remaining gauge freedom^[from changes in coordinates such as $\ct{x}\to\ct{x}+\ct{\xi}$ with $\SRDA\ct{\xi}=0$] restricts the possible forms of this solution to having only helicity $\pm2$ physically significant components (see @Weinberg:1972). Let us look at its generic form. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
 
 $$
     \weakmet = \polco \exp{\im k\cdot x} + \conjpolco \exp{-\im k\cdot x},
@@ -145,7 +145,7 @@ $$
 \polTensor'_{\mu\nu} = \polco + \co{k}\co[\nu]{A} + \co[\nu]{k}\co{A}
 $${#eq-polTprime}
 
-Equations @eq-polk and @eq-polTprime reduce the free components in the polarization tensor to just two. Additionally these equations can conspire to yield a traceless polarisation tensor $\trpol=0$, with $\polco[0\mu]=0$ (see @carrollSpacetimeGeometryIntroduction2019). This then extends to the metric perturbation, which when imposed to be traceless, becomes equal to its trace-reversed counterpart. This is the so-called transverse traceless gauge:
+Equations @eq-polk and @eq-polTprime reduce the free components in the polarization tensor to just two. Additionally these equations can conspire to yield a traceless polarisation tensor $\trpol=0$, with $\polco[0\mu]=0$ (see @Carroll:2019). This then extends to the metric perturbation, which when imposed to be traceless, becomes equal to its trace-reversed counterpart. This is the so-called transverse traceless gauge:
 
 $$
 \weakmet[0\mu]=0,\quad \trweakmet=0, \quad \ipdv[^]{\weakmet}{\nu}=0.
@@ -337,10 +337,10 @@ How could one construct a very powerful source of \acr{gw}s? One could take two 
 ### \acr{bh} Binaries
 
 
-Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form (@birkhoffRelativityModernPhysics1923), called the Schwarzschild solution. The solution is given by: 
+Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by: 
 
 
-
+TODO
 
 
 

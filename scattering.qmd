@@ -770,7 +770,7 @@ $$
 \vIntb[\ct{\emom[1]}]&=\hbar^3\im\,  \tw\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(L+1)}\redamp[(L)]{\emom[1],\emom[2]}{\emom[1]+\hbar \tw,\emom[2]-\hbar\tw}\\
 &=\im\, \hbar  \tw\, \sum\limits_{L=0}^\infty \coupling^{2(L+1)}{\hbar}^{(1-L)}\redamp[(L)]{\emom[1],\emom[2]}{\emom[1]+\hbar \tw,\emom[2]-\hbar\tw},
 \end{aligned}
-$$
+$$ {#eq-impulseIv}
 
 as well as the real kernel:[^measurech]
 
@@ -802,7 +802,7 @@ $$
 &\times\sum\limits_{L=0}^\infty \coupling^{2(2L+2+\abs{X})}{\hbar}^{2-2L-\abs{X}}\redamp[(L)]{\emom[1], \emom[2] }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}} \\
 &\times\aredamp[(L)]{\emom[1]+\hbar \tw,\emom[2]-\hbar \tw }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}}.\\
 \end{aligned}
-$$
+$$ {#eq-impulseIr}
 
 Schematically we have 
 
@@ -973,7 +973,7 @@ For the photon, we will take the Feynamn gauge, setting $\xi=1$ and thus $\phpro
 
 $$
 \inv{(\ell-\tm)^2}=\inv{\hbar^2}\inv{(\bar{\ell}-\tw)^2},
-$$
+$$ {#eq-photonscale}
 
 thus contributes $\order[-2]{\hbar}$ to the overall diagram. The matter propagator on the other hand, has inhomgenous $\hbar$ scaling, as we do not rescale the external momenta, (or equivalently the external momenta are not restricted by the regions). Note that we will not consider internal mass loops as the soft limit means that massive pair production is forbidden, thus massive propagators necessarily contain an external momentum. We can notheless expand a generic massive propagator in the soft limit:
 
@@ -982,7 +982,7 @@ $$
 \inv{(\ell-\emom[i])^2-\mass[i]^2}&=\inv{\ell^2-2\ell\cdot\emom[i] +\cancel{\emom[i]^2}-\cancel{\mass[i]^2}}= \inv{\hbar^2\bar{\ell}^2-2\hbar \bar{\ell}\cdot \emom[i]}\\
 &=-\inv{\hbar} \inv{2\bar{\ell}\cdot\emom[i]}\pa{1+\hbar\frac{ \bar{\ell}^2}{2\bar{\ell}\cdot\emom[i]}+\hbar^2\frac{ \bar{\ell}^4}{(2\bar{\ell}\cdot\emom[i])^2}+\dots}.\\
 \end{aligned}
-$$
+$$ {#eq-massiveScale}
 
 In other contexts one may say that the matter propagator has eikonalized (linearized). Before we compute the amplitudes let us set up some useful kinematic identities and variables. If we consider the two-to-two particle scattering, taking an all outgoing momentum convention we have the following masses:
 
@@ -1026,7 +1026,11 @@ $$
 \mandt=\pa[\Big]{-\pa[\big]{\semom[1]-\Half[\tm]}+\semom[1]+\Half[\tm]}^2 = \tm^2.
 $$
 
-With all the ingredients in place, we can now go on to computing the amplitudes. We start with the tree level amplitude, the only \acr{LO} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
+With all the ingredients in place, we can now go on to computing the amplitudes. 
+
+### Tree level
+
+We start with the tree level amplitude, the only \acr{LO} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
 
 
 ```{julia}
@@ -1079,18 +1083,266 @@ $$ {#eq-relfact}
 
 We now input the reduced version $\redampl[(0)]\elch^2=\ampl[(0)]$ of the amplitude, and take the $\hbar\to0$ limit of @eq-impulseLO. We can safely take the $\hbar \to 0$ limit as the integrand contains no terms singular in $\hbar$ (the $\frac{1}{\hbar^2}$ is cancelled by the $\hbar^2$ pre-factor).  Notice that the integration measure @eq-DeltaOclas simplifies in the classical limit:[^comp]
 
-$$\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} \cancel{\ndeltafn{2\semom[1]\cdot\tw}}\cancel{\ndeltafn{2\semom[1]\cdot \tw }}.$$
+$$
+\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} \cancel{\ndeltafn{2\semom[1]\cdot\tw}}\cancel{\ndeltafn{2\semom[1]\cdot \tw }}.
+$$
 
 The integrand corresponding to the \acr{lo} contribution to the impulse is then:
 
-$$\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}.$$
+$$
+\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}.
+$$
 
 This can be analytically computed (see LO impulse SQED) to find a closed form for the \acr{lo} impulse.
 
-$$\Delta \emom[1]^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}$$
+$$
+\Delta \emom[1]^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}
+$$
 
-For NLO impulse SQED, using the order equation above we have a 1-loop contribution from the virtual integrand as well as a tree level cut contribution from the real integrand. See NLO impulse SQED for details. 
- 
+
+### One loop
+
+Already at one loop the number of possible diagrams one can for increases dramatically from 1 to 13. One can nonetheless relatively easily enumerate them. As we increase loop count, the number of diagrams increases exponentially. It is therefore very useful to have a systematic, programmatic way to handle these diagrams, and while we are at it, also to compute the amplitudes. Note that all the code needed to do these computations can be found on the repository for this book.
+
+The first tool we will use is `QGRAF` @Nogueira:1993a, a fortran program that can generate Feynman diagrams for a given set of vertices and external legs. The first step to is to define the theory we are working in. This is essentially writing down the Feyman rules, without actually specifying what the graphical objects are. For \acr{sqed} the model file is short:
+
+
+```{.default filename="SQEDmodel"}
+* propagators
+ [Phi1,Phi1c,+]
+ [Phi2,Phi2c,+]
+ [Photon,Photon,+]
+
+* vertices
+ [Phi1c,Photon,Phi1]
+ [Phi2c,Photon,Phi2]
+ [Phi1c,Photon,Photon,Phi1]
+ [Phi2c,Photon,Photon,Phi2]
+```
+
+This file also defines the names of the fields in question. We can then give `QGRAF` additional options, such as the number of external legs, and the number of loops, written in a `qgraf.dat` file that can look like this:
+
+```{.default filename="qgraf.dat"}
+output= '{{output filename}}' ;
+style= './styles/julia.sty' ; 
+
+model= './qgraf/SQEDmodel';
+
+in= Phi1,  Phi2;
+out= Phi1,Phi2;
+loops= 1;
+loop_momentum= k;
+
+options=  notadpole,nosnail,onshell ;
+```
+
+where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the `julia.sty` style file. The `julia.sty` file is a style file that is used to generate the output in a format that can be read by a `Julia` [@Bezanson:2015]  package built to process and visualise the outputted graphs. This package is called (maybe too broadly) `QFT.jl` is hosted on [github](https://github.com/lcnhb/QFT.jl) . Let us see it in action. We can run `QGRAF` from the command line, and it will generate a file called `{{output filename}}` that contains the output of the program. We can then use this in a `Julia`  file to visualise the diagrams.
+
+```{julia}
+#| layout-ncol: 3
+using Images
+using QFT
+using QFT.Diagrams
+using QFT.FieldGraphs
+using QFT.Fields
+import  Catlab.Graphics.Graphviz: run_graphviz
+include("SQED.jl")
+diags=include("QGRAFout/julia/1lSQED.jl")
+
+
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+
+for (i,graf) in enumerate(grafs)
+    open("./png/diag$i.png";create=true,write=true) do io
+    run_graphviz(io,to_graphviz(graf),format="png")
+    end
+    display(Images.load("./png/diag$i.png"))  
+end
+nothing
+```
+
+
+
+We can notice a few things about the diagrams above. Not all the diagrams contribute to the classical limit. Clearly the diagrams with internal matter loops cannot be allowed when the momenta incoming to the loop is soft ^[scales like $\hbar$]. In the classical limit this momenta will go to 0, and since the scalars are massive, they need momentum greater than their mass to be pair produced, thus these diagrams do not contribute. Another class of diagrams that does not contribute to the classical limit are the ones with photon loops that start and end on the same matter line. These do not contribute because they are scaleless. An integral is scaleless when its integrand $\mathcal{I}_\text{scaleless}(\brk{\ell_i})$ scales homegenously under any rescaling of the loop momentum $\ell_i$:
+
+$$
+\mathcal{I}_\text{scaleless}(\brk{\ell_i})\stackrel{\ell_j\to\lambda \ell_j}{\longrightarrow}\lambda^\eta \mathcal{I}_\text{scaleless}(\brk{\ell_i})
+$$
+
+Thus any diagram that has a basis of loops that does not contain both scalar fields (i.e. does not cross over) cannot have its scale set by the momentum transfer, and is thus scaleless. Dimensionally regularised scaleless integrals vanish, thus we can also discard these diagrams. We can easily implement such a filter programatically, by checking that if cycles are present they touch either both types of scalars, or neither. To compute the cycle basis we use an algorithm derived from @Paton:1969, implemented in the [DirectedHalfEdgeGraphs.jl](https://github.com/lcnhb/DirectedHalfEdgeGraphs.jl) package.
+
+
+```{julia}
+#| layout-ncol: 5
+using Logging
+Logging.disable_logging(Logging.Info)
+function scaleless(g::AbstractFieldGraph)
+  cycles =cycle_basis(g)
+  isscaleless=false
+  for c in cycles
+    hs= collect(Iterators.flatten(half_edges.(Ref(g),c)))
+    fields=unique!(typeof.(field.(Ref(g),hs)))
+    if Bool(Phi1 in fields) ⊻  Bool(Phi2 in fields)
+      isscaleless=true
+    end
+  end
+  return isscaleless
+end
+
+noscalelessdiags=qDiags[.!scaleless.(grafs)]
+classicaldiags=noscalelessdiags[2:end]
+for (i,d) in enumerate(classicaldiags)
+  d.ID=i
+end
+for (i,graf) in enumerate(grafs[.!scaleless.(grafs)])
+    open("./png/diagscaleless$i.png";create=true,write=true) do io
+    run_graphviz(io,to_graphviz(graf),format="png")
+    end
+    display(Images.load("./png/diagscaleless$i.png"))  
+end
+nothing
+```
+
+There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous $\hbar^{-2}$ scaling (see @eq-photonscale), the vertices only bring constants, and the loop integration has $\hbar^4$ scaling. Together this means that the reduced amplitude has $\hbar^0$ scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum's $\hbar$ scale (see @eq-impulseIr). Thus the double seagull diagram dies in the classical limit.
+
+We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically^[at least at the unintegrated level]. We will also extract one of these integrands by hand, for completeness and comparison. 
+
+The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules as follows:
+
+```{julia}
+#| output: false
+#| eval: false
+#| code-overflow: wrap
+function feynmanRule(mime::MIME"text/FORM",p,f1::Photon,f2::Photon)
+  momen = repr(mime,p.symbol)
+  indx1 = repr(mime,index(f1))
+  indx2 = repr(mime,index(f2))
+  "_i* prop(-1,0,$momen)*d_($indx1,$indx2)"
+end
+
+@symmetric function feynmanRule(mime::MIME"text/FORM",p,[f1::Phi1,f2::Phi1c])
+  momen = repr(mime,p.symbol)
+  "_i* prop(-1,1,$momen)"
+end
+
+@symmetric function feynmanRule(mime::MIME"text/FORM",p,[f1::Phi2,f2::Phi2c])
+  momen = repr(mime,p.symbol)
+
+  "_i* prop(-1,2,$momen)"
+end
+
+@symmetric function feynmanRule(mime::MIME"text/FORM",[(pᵩ₁,a)::Tuple{Any,ScalarField{S}},
+            (pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},(pᵧ,γ)::Tuple{Any,Photon}]) where {S}
+  p1 = repr(mime,pᵩ₁(index(γ)))
+  p2 = repr(mime,pᵩ₂(index(γ)))
+  q = repr(mime,charge(a))
+  "_i*e*$q*($p2-$p1)"
+end
+
+@symmetric function feynmanRule(mime::MIME"text/FORM",[(pᵧ₁,γ₁)::Tuple{Any,Photon},(pᵧ₂,γ₂)::Tuple{Any,Photon},
+      (pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},(pᵩ₁,a)::Tuple{Any,ScalarField{S}}]) where {S}    
+  mu = repr(mime,index(γ₁))
+  nu = repr(mime,index(γ₂)) 
+  q = repr(mime,charge(a))
+  "2*_i*$q^2*e^2*d_($mu,$nu)"
+end 
+```
+
+where we define `prop(n,i,p)` as representing a generic Feynman propagator, which we will denote:
+
+$$
+ D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=\pa{p^2-m_i^2+i\epsilon}^{n} \quad \text{thus} \quad \mathtt{prop(-1,i,p)}=\frac{1}{p^2-m_i^2+i\epsilon}.
+$$
+
+We can now apply these feynamn rules to the graphs we have left, obtaining `FORM` readable integrands. For example the box diagram gives:
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+
+
+open("diags.frm";create=true,write=true) do io
+  write(io,"""
+  Symbol x;
+Auto V p;
+Auto V p;
+Auto V q;
+Auto S m;
+S e;
+Auto S Q;
+Auto I nu;
+CF prop;
+CF inv;
+  """)
+  for qd in classicaldiags
+    toform(io,qd)
+    println(io,"")
+  end
+end;
+```
+
+```{julia}
+toform(stdout,classicaldiags[3])
+```
+
+Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM` we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in @eq-newmom. The `FORM` version of the box integrand is then:
+
+```{.default}
+   [d3l1|o.3.4|i.3.4|i|o|] =
+         ( prop(-1,0,q - l1) )
+       * ( prop(-1,0,l1) )
+       * ( prop(-1,1,1/2*q - l1 + pb2) )
+       * ( prop(-1,2, - 1/2*q + l1 + pb1) )
+       * ( dot(l1,l1) )
+       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )
+       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) 
+       * ( e ) * ( e ) * ( e ) * ( e );
+```
+
+When applied to all 4 diagrams we obtain precisely the same integrands as those in @Kosower:2018adc. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:
+
+$$
+G_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
+$$ {#eq-boxfam}
+
+for powers $\brk{i}\in\brk{0,1}^4$, where the inverse propagators $\rho_i$ are:
+
+$$
+\rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(-\Half{q}+\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(\Half{q}-\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
+$$
+
+Note that in the classical limit we can expand the massive propagators as shown in @eq-massiveScale and obtain to first order in $\hbar$:
+
+$$
+\rho_3=(-\Half{q}+\ell)^2 +2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4=(\Half{q}-\ell)^2-2\ell\cdot\semom[2]+\im \epsilon
+$$
+
+The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
+
+$$
+\mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
+$$
+
+where ${S}$ and ${S'}$ are sets of coefficient matrices for all possible dot products. If we have a quadruplet $\brk{A,B,a,b}$ such that $A_{a,b}\neq0$ and $B_{a,b}neq0$ and $p_{a}$or $p_{b}$ is a loop momentum $\ell$, say $p_a=\ell$ then it is useful to write this component of the integrand as:
+
+$$
+\frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
+$$
+
+where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @box-fam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
+
+With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. 
+
+We have now completed the program of \acr{nlo} amplitudes 
+
+
+Add a section on everything together plus box and cross box cancelation ()
+
+
+
+
 
 
 

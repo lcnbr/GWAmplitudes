@@ -1,0 +1,17 @@
+
+ output= './QGRAFout/p1pp2p2L.h' ;
+
+ style= 'lulu.sty' ; 
+
+ model= 'SQEDmodel';
+
+ in= phi1, phi1c, phi2, phi2c;
+
+ out= ;
+
+ loops=2;
+
+ loop_momentum= k;
+
+ options= notadpole,nosnail,onshell ;
+

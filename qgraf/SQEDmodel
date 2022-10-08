@@ -1,0 +1,11 @@
+* propagators
+ [Phi1,Phi1c,+]
+ [Phi2,Phi2c,+]
+ [Photon,Photon,+]
+
+ 
+* vertices
+ [Phi1c,Photon,Phi1]
+ [Phi2c,Photon,Phi2]
+ [Phi1c,Photon,Photon,Phi1]
+ [Phi2c,Photon,Photon,Phi2]

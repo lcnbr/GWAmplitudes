@@ -1,0 +1,8 @@
+[deps]
+Catlab = "134e5e36-593f-5add-ad60-77f754baafbe"
+Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
+DirectedHalfEdgeGraphs = "f8c2e6cc-c85f-41e3-8cb9-9b946d74cdf0"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+MacroTools = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
+QFT = "17b27be6-71fe-44f0-935d-932b83ea039b"
+SymmetricDispatch = "1eb2ecf7-7547-4427-9254-f8e5a5c22f1d"

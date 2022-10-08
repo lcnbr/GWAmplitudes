@@ -1,4 +1,4 @@
-# References {.unnumbered}
+# References {.unnumbered .content-hidden unless-format="html"}
 
-::: {#refs}
+::: {#refs .content-hidden unless-format="html"}
 :::

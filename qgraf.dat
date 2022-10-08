@@ -1,0 +1,20 @@
+  
+output= './QGRAFout/julia/1lSQED.jl' ;
+*output= './QGRAFout/julia/2lGR.jl' ;
+
+
+ style= './styles/julia.sty' ; 
+
+model= './qgraf/SQEDmodel';
+*model= './qgraf/gravity';
+
+ in= Phi1,  Phi2;
+
+ out= Phi1,Phi2;
+
+ loops=           1 ;
+
+loop_momentum= k;
+
+ options=  notadpole,nosnail,onshell ;
+

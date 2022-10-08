@@ -22,7 +22,7 @@ book:
     - gwdetect.qmd
     - gwwfframeworks.qmd
     - scattering.qmd
-    - summary.qmd
+    - conclusion.qmd
     - references.qmd
 crossref:
   fig-title: Fig     # (default is "Figure")
@@ -34,8 +34,9 @@ comments:
 
 bibliography: references.bib
 reference-location: margin
-citation-location: document
+
 fig-cap-location: margin
+subfig-cap-location: bottom
 execute:
   freeze: auto  # re-render only when source changes
 
@@ -198,6 +199,9 @@ format:
   pdf:
     from: markdown-latex_macros
     documentclass: scrreprt
+    cite-method: biblatex
+    papersize: a4
+    colorlinks: true
     include-in-header: preamble.tex
     include-before-body: 
       - latexmacros.tex

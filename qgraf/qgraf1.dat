@@ -1,0 +1,32 @@
+
+output = 'output.py';
+style = './orientedGraphPython.sty';
+model = './model.dat';
+
+* incoming states
+in = photon[p1];
+
+* outgoing states
+out = photon[p1];
+
+loops = 3;
+loop_momentum = k;
+
+options = onshell, notadpole, nosnail;
+
+* coupling order
+true=vsum[QCD_QED,402,402];
+
+
+* final states
+true=iprop[d,1,30];
+true=iprop[dbar,1,30];
+
+
+* Vetos
+true=iprop[u,0,0];
+true=iprop[s,0,0];
+true=iprop[c,0,0];
+true=iprop[b,0,0];
+
+

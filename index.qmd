@@ -1,6 +1,4 @@
 # Preface {.unnumbered}
 
-This is a Quarto book. I am going to try and hyperlink it as much as possible
+This is a Quarto book. It is also hosted at [github.io](https://lcnhb.github.io/GWAmplitudes). 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-\acr{ligo}
