@@ -996,7 +996,7 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <p>With all the ingredients in place, we can now go on to computing the amplitudes.</p>
 <section id="tree-level" class="level3 page-columns page-full" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="tree-level"><span class="header-section-number">5.5.1</span> Tree level</h3>
-<p>We start with the tree level amplitude, the only LO contribution in for example <a href="#eq-impulseLO"><span>5.18</span></a>. The only possible diagram we can build with four external scalar legs, and vertices as defined in <a href="#tbl-sqedfrules">Table&nbsp;<span>5.1</span></a>, is the following tree:</p>
+<p>We start with the tree level amplitude, the only <abbr title="Leading Order">LO</abbr> contribution in for example <a href="#eq-impulseLO"><span>5.18</span></a>. The only possible diagram we can build with four external scalar legs, and vertices as defined in <a href="#tbl-sqedfrules">Table&nbsp;<span>5.1</span></a>, is the following tree:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="./tikz/treelevelsqed.svg" class="img-fluid figure-img"></p>
@@ -1296,10 +1296,11 @@ G_{i_1,i_2,i_3,i_4}=\frac{1}{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
 <p><span class="math display">\[
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\Big(1-\frac{\tilde{D}_A}{D_A} \Big).
 \]</span></p>
-<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like <span class="citation" data-cites="box-fam">(<a href="references.html#ref-box-fam" role="doc-biblioref"><strong>box-fam?</strong></a>)</span>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">(<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">Anastasiou and Lazopoulos 2004</a>)</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">(<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">Smirnov and Chukharev 2020</a>)</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">(<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">Maierhöfer and Usovitsch 2018</a>)</span>.</p>
+<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like <a href="#eq-boxfam"><span>5.25</span></a>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">(<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">Anastasiou and Lazopoulos 2004</a>)</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">(<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">Smirnov and Chukharev 2020</a>)</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">(<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">Maierhöfer and Usovitsch 2018</a>)</span>.</p>
 <p>With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at <abbr title="Next-to-Leading Order">NLO</abbr> that are then used in <a href="#eq-impulseIr"><span>5.14</span></a> and <a href="#eq-impulseIv"><span>5.13</span></a>.</p>
 <p>We have now completed the program of <abbr title="Next-to-Leading Order">NLO</abbr> amplitudes</p>
 <p>Add a section on everything together plus box and cross box cancelation ()</p>
+<!-- [^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber -->
 
 
 <!-- -->
@@ -2605,7 +2606,7 @@ With all the ingredients in place, we can now go on to computing the amplitudes.
 
 ### Tree level
 
-We start with the tree level amplitude, the only \acr{LO} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
+We start with the tree level amplitude, the only \acr{lo} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
 
 
 quarto-executable-code-5450563D
@@ -2918,7 +2919,7 @@ $$
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
 $$
 
-where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @box-fam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
+where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
 
 With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. 
 
@@ -2952,7 +2953,7 @@ Add a section on everything together plus box and cross box cancelation ()
 
 [^constA]: $A$ absorbs the various constants, with $A=\sqrt{2}m\frac{\comptlen}{\wfwidth}$ and $\tv[0]{x}$ 
 
-[^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber
+&lt;!-- [^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber --&gt;
 [^7]: t     $[\frac{1}{\sqrt{-\tw^2}}]=[T]=[L]=[\scatlen]$</code></pre>
 </div></div></div></div></div>
 </div> <!-- /content -->
