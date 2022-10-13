@@ -1030,7 +1030,7 @@ With all the ingredients in place, we can now go on to computing the amplitudes.
 
 ### Tree level
 
-We start with the tree level amplitude, the only \acr{LO} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
+We start with the tree level amplitude, the only \acr{lo} contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
 
 
 ```{julia}
@@ -1331,7 +1331,7 @@ $$
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
 $$
 
-where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @box-fam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
+where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
 
 With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. 
 
@@ -1365,5 +1365,5 @@ Add a section on everything together plus box and cross box cancelation ()
 
 [^constA]: $A$ absorbs the various constants, with $A=\sqrt{2}m\frac{\comptlen}{\wfwidth}$ and $\tv[0]{x}$ 
 
-[^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber
+<!-- [^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber -->
 [^7]: t     $[\frac{1}{\sqrt{-\tw^2}}]=[T]=[L]=[\scatlen]$

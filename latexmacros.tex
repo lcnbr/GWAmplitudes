@@ -11,6 +11,7 @@
 \newcommand{\brc}{\bc}
 \newcommand{\bk}[2][]{#1\{#2 #1\}}
 \newcommand{\brk}{\bk}
+\newcommand{\ang}[2][]{#1\langle #2 #1\rangle}
 \newcommand{\abs}[2][]{#1\vert#2 #1\vert}
 \newcommand{\norm}[2][]{#1\Vert#2 #1\Vert}
 \newcommand{\order}[2][]{\mathcal{O}(#2^{#1})}
@@ -152,7 +153,17 @@
 \newcommand{\trweakmet    }[1][\alpha]{\tensortrace[#1]{\weakTensor}}
 \newcommand{\mixweakmet   }[1][\ind{\mu}{\nu}]{\weakTensor#1}
 
+\newcommand{\pertTensor}{\textsf{h}}
+\newcommand{\pertmet      }[1][\mu\nu]{\co[#1]{\pertTensor}}
+\newcommand{\invpertmet   }[1][\mu\nu]{\ct[#1]{\pertTensor}} 
+\newcommand{\trpertmet    }[1][\alpha]{\tensortrace[#1]{\pertTensor}}
+\newcommand{\mixpertmet   }[1][\ind{\mu}{\nu}]{\pertTensor#1}
 
+\newcommand{\pertnTensor}[1][n]{\textsf{h}_{#1}}
+\newcommand{\pertnmet      }[2][\mu\nu]{\co[#1]{\pertnTensor[#2]}}
+\newcommand{\invpertnmet   }[2][\mu\nu]{\ct[#1]{\pertnTensor[#2]}} 
+\newcommand{\trpertnmet    }[2][\alpha]{\tensortrace[#1]{\pertnTensor[#2]}}
+\newcommand{\mixpertnmet   }[2][\ind{\mu}{\nu}]{\pertnTensor[#2]#1}
 
 \newcommand{\weakTRTensor }{\tracereverse{\weakTensor}}
 \newcommand{\weakTRmet      }[1][\mu\nu]{\co[#1]{\weakTRTensor}}
@@ -181,6 +192,12 @@
 
 \newcommand{\RicciS}{R}
 \newcommand{\linRicciS}{R^{(1)}}
+
+\newcommand{\relSETensor}{\tau}
+\newcommand{\relSEct}[1][\mu\nu]{\ct[#1]{\relSETensor}}
+\newcommand{\relSEco}[1][\mu\nu]{\co[#1]{\relSETensor}}
+\newcommand{\trrelSE}[1][\alpha]{\tensortrace[#1]{\relSETensor}}
+\newcommand{\relSEmix}[1][\ind{\mu}{\nu}]{\relSETensor#1}
 
 \newcommand{\SETensor}{T}
 \newcommand{\SEct}[1][\mu\nu]{\ct[#1]{\SETensor}}
@@ -287,7 +304,9 @@
 \newcommand{\mands}{s}
 \newcommand{\mandt}{t}
 \newcommand{\mandu}{u}
-
+\newcommand{\stellarmass}{M_\odot}
+\newcommand{\quadmom}[1][ij]{I_{#1}}
+\newcommand{\dist}{R}
 \newcommand{\semom}[1][]{\tilde{p}_{#1}}
 \newcommand{\relfact}{\sigma}
 

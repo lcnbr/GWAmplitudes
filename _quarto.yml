@@ -72,6 +72,15 @@ acronyms:
     - key: bbh
       shortname: BBH
       longname: Binary Black Hole
+    - key: smbh
+      shortname: SMBH
+      longname: Supermassive Black Hole
+    - key: imri
+      shortname: IMRI
+      longname: Intermediate Mass Ratio Inspiral
+    - key: emri
+      shortname: EMRI
+      longname: Extreme Mass Ratio Inspiral
     - key: bns
       shortname: BNS
       longname: Binary Neutron Star
@@ -180,6 +189,12 @@ acronyms:
     - key: nnnnlo
       shortname: NNNNLO
       longname: Next-to-Next-to-Next-to-Next-to-Leading Order
+    - key: pta
+      shortname: PTA
+      longname: Pulsar Timing Array
+    - key: toa
+      shortname: ToA
+      longname: Time of Arrival
   
 
     

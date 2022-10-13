@@ -271,7 +271,7 @@ $$
 Then @eq-FTweakmet becomes much simpler^[the approximations all conspire to be able to neglect the $\tv{y}$ dependence of $\exp{\im\omega\abs{\tv{x}-\tv{y}}}$ in the integral]:
 
 $$
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega R}}{R} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) 
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega r}}{r} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) 
 $${#eq-FTweakmet2}
 
 Now let us look at the fourier transform of the source term. By definition we have
@@ -308,22 +308,29 @@ $$
 \int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x})
 $$
 
-Notice the last integral is in fact the fourrier transform of (a third of) the quadrupole moment tensor of the energy denisty^[$$q_{mn}=3\int \co[m]{x}\co[n]{x} \SEco[00](\omega,\tv{x})$$]. We call it $\ft[t]{q}{\omega}_{mn}(\omega)$ and we can finally rewrite @eq-FTweakmet2 as:
+Notice the last integral is in fact the fourrier transform of (a third of) the quadrupole moment tensor of the energy denisty:
+
+$$
+\quadmom[mn]=\int \co[m]{x}\co[n]{x} \SEco[00](t,\tv{x})\dd[3]{x}.
+$$ {#eq-quadmom}
+
+
+We call its fourrier transform $\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)$ and we can finally rewrite @eq-FTweakmet2 as:
 
 
 $$
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=-\frac{2\grav\omega^2}{3}\frac{\exp{\im\omega R}}{R} \pa{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=-{2\grav\omega^2}\frac{\exp{\im\omega r}}{r} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}
 $$
 
 Going back $t$-space we have:
 
 $$
 \begin{aligned}
-\weakmet(t,\tv{x})&=-\frac{\grav}{3\pi R}\int \dd{\omega} \exp{-\im\omega(t-R)} \omega^2 \pa{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}\\
-&=\frac{\grav}{3\pi R}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \pa{\ft[t]{q}{\omega}_{mn}(\omega)+\half\mink\ft[t]{q}{\omega}^n{}_{n}(\omega)}\\
-&=\frac{2\grav}{3R}\odv[2]{}{t}\pa{q_{mn}(t_r)+\half\mink q^n{}_n(t_r)}
+\weakmet(t,\tv{x})&=-\frac{\grav}{\pi r}\int \dd{\omega} \exp{-\im\omega(t-r)} \omega^2 \pa{\ft[t]{\quadmom[]v}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{\grav}{\pi r}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{2\grav}{r}\odv[2]{}{t}\pa{\quadmom[mn](t_r)+\half\mink \quadmom[]^n{}_n(t_r)}
 \end{aligned}
-$$
+$$ {#eq-metricquadmom}
 
 This equation has a very nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the its energy denisty at the time where the past light cone of the observer intersects the source ($t_r$). The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the the change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for \acr{em}), or mass (for \acr{gr}), and while a center of charge is free to move around, the center of mass (of an isolated) is fixed by the conservation of momentum. The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitional system can modify. Finally the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitional radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
 
@@ -334,15 +341,135 @@ Thus any object that is modifying its shape is a source of gravitional waves. Al
 
 How could one construct a very powerful source of \acr{gw}s? One could take two very massive objects, (such that $\SEco[00]$ is large) and make them orbit each other. At that point one could hope to detect this orbit if the objects are massive enough and orbiting close enough for the 'change in shape' of the system to sizeable. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit \acr{gw}s, and in doing so they lose energy^[of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a very important change of shape and thus we have a constructed (if not all on purpose) a very powerful source of \acr{gw}s. Such objects are called compact binaries.
 
+
+To \acr{lo} we can use a newtonian circular orbit to describe the motion of the binary. nsuch a system is in fact equivalent to effective one body ^[This choice of wording is nota coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitional potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the binary. Such an orbit can easily be characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[or equivalently between conserved angular momentum and the derivative of the potential energy] 
+
+$$
+\frac{\grav \totmass\redmass}{\pa{\dist}^2}=\frac{\redmass \vel^2}{\dist},
+$$ {#eq-newtongrav}
+
+where $\vel$ is the norm of tangential velocity, and $\dist$ is the distance between the two objects. @eq-newtongrav gives us the the norm of the velocity:
+
+$$
+\vel=\sqrt{\frac{\grav \totmass}{\dist}}.
+$$
+
+Thus the orbital period is simply, in the case of 
+
+$$
+T=\frac{2\pi\dist}{\vel}=2\pi\sqrt{\frac{\dist^3}{\grav\totmass}}.
+$$
+
+This also gives us angular frequency:
+
+$$  
+\Omega=\frac{2\pi}{T}=\sqrt{\frac{\grav\totmass}{\dist^3}}.
+$$ {#eq-omega}
+
+Thus the \acr{eom} $\tv{r}(t)$ of the reduced mass is, in a circular orbit, in the $x-y$ plane:
+
+$$
+\tv[xy]{r}(t)= \begin{pmatrix} \dist \cos(\Omega t)\\ \dist \sin(\Omega t) \end{pmatrix} .
+$$
+
+The corresponding \acr{eom} for both masses is simply given by applying the following scaling:
+
+$$
+\redmass \tv{r}(t)  = \mass[1] \tv[2]{r}(t) = \mass[2] \tv[2]{r}(t).
+$$
+
+
+We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[the energy density is the same for the effective one body system and the two body system] by using the \acr{eom} of the reduced mass:   
+
+$$
+\SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)}.
+$$
+
+
+Which when plugged into @eq-quadmom gives us the quadrupole moment of the the rotating system:
+
+
+$$
+\begin{aligned}
+\quadmom[11] &= \redmass \dist^2 \cos ^2( \Omega t)= \redmass \dist^2(1+\cos (2 \Omega t)) \\
+\quadmom[22] &= \redmass \dist^2 \sin ^2( \Omega t)= \redmass \dist^2(1-\cos (2 \Omega t)) \\
+\quadmom[12]=\quadmom[21] &=2  \redmass \dist^2(\cos \Omega t)(\sin \Omega t)= \redmass \dist^2 \sin (2 \Omega t) \\
+\quadmom[i 3] &=0 .
+\end{aligned}
+$$
+
+Thus we have roughly:
+
+$$
+\quadmom[]\sim \redmass \dist^2 \cos (2 \Omega  t) \sim \redmass \dist^2 \sim \redmass \pa[\Big]{\frac{\grav\totmass}{\Omega^2}}^{\frac{2}{3}}= \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{-\frac{4}{3}},
+$$
+
+where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm ignoring constants:
+
+
+$$
+h \sim \frac{\ddot{\quadmom[]}}{r} \sim \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
+$$ {#eq-hnorm}
+
+
 ### \acr{bh} Binaries
 
 
-Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by: 
+Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by, in spherical coordinates:  
 
 
-TODO
+$$
+\dd{\tau^{2}}=\left[
+    1-\frac{R_{S}}{r}
+    \right]\dd{t^{2}}
+-\frac{\dd{r^2}}{1-\frac{R_{S}}{r}}-r^{2}\left(\dd{ \theta^2}+\sin ^{2} \theta \dd{ \varphi^2}\right)
+$$ {#eq-Schwarzschild}
 
 
+where $R_S$ is the Schwarzschild radius, given by:^[we reinstate the speed of light, as we want to compute orders of magnitudes]
+
+$$
+R_S=\frac{2GM}{c^2}.
+$$
+ 
+For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that @eq-Schwarzschild exhibits singularities (blowing up of the metric compontents) at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordiante independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the very real mass singularity of what we call a \acr{bh}.
+
+If we consider a compable stellar mass binary black hole system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency:
+
+$$
+f=\frac{\Omega}{2\pi}\approx\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}}
+$$
+
+and the metric perturbation is given by @eq-hnorm:
+
+$$
+h \approx \frac{R_S^2}{r\dist}.
+$$
+
+
+Now if we consider \acr{bh}s separated by ten times their Schwarzschild radius, at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we have the following scales:
+
+$$
+\begin{aligned}
+R_S &\approx 10^3\; \mathrm{m} \\
+\dist &\approx 10^4\; \mathrm{m} \\ 
+r &\approx 10^{23}\; \mathrm{m}.
+\end{aligned}
+$$
+
+Such a system would have an orbital frequency of:
+
+$$
+f\approx 10^{2}\; \mathrm{Hz},
+$$
+
+and would perturb the metric on earth by:
+
+$$
+h\approx 10^{-21}.
+$$
+
+To have any hope of detecting such systems, one would need to have detectors sensitive in the hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at \acr{ligo} and other detectors, and has enabled the detection of such systems. 
 
 
 ### \acr{ns} Binaries
