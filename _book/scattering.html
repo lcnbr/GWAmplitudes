@@ -641,37 +641,16 @@ d(m,\xi,u,q_{})=\int \,\mathrm{d}\Phi_{}(p_{})\, \tilde{\delta}^{}(2 p_{}\cdot q
 <p><span class="math display">\[
 d(m,\xi,u,q_{})=\text{peaked function imposing that } {2\ell_s\, \bar{q}_{}\cdot u=\frac{\ell_c}{\ell_s}}\text{ with width } \xi^\beta.
 \]</span></p>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">delta</span>(x)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">abs</span>(x)<span class="op">&lt;</span><span class="fl">1e-3</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">1</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">gauss</span>(x)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">exp</span>(<span class="op">-</span>x<span class="op">^</span><span class="fl">2</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sharpen</span>(f,eps,power)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">x-&gt;f</span>(x<span class="op">/</span>eps<span class="op">^</span>power)<span class="op">/</span>eps<span class="op">^</span>power</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>epss<span class="op">=</span><span class="fl">0.02</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">0.1</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>p<span class="op">=</span><span class="fu">plot</span>([<span class="fu">sharpen</span>(gauss,eps,<span class="fl">1</span>) for eps <span class="kw">in</span> epss], <span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>,label<span class="op">=</span>epss<span class="op">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<p><img src="scattering_files/figure-html/cell-5-output-1.svg" class="img-fluid"></p>
+<div class="cell page-columns page-full" data-execution_count="4">
+
+<div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="2">
+<div id="fig-gaussian" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="scattering_files/figure-html/fig-gaussian-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Fig&nbsp;5.4: Sharpening gaussian</figcaption><p></p>
+</figure>
 </div>
-</div>
+</div></div></div>
 <p>Let us disucss the wavefunction and the scales a bit more physically. The characteristic width <span class="math inline">\(\ell_\omega\)</span> is the particle’s position uncertainty, <span class="math inline">\(\frac{\hbar}{\ell_\omega}\)</span> is the associated momentum uncertainty. In the classical limit it makes sense that the position uncertainty is neglible with respect to minimum distance between the particles <span class="math inline">\(\ell_s\)</span>:</p>
 <p><span class="math display">\[
 \ell_\omega\ll \ell_s,
@@ -1036,58 +1015,58 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <div class="code-with-filename-file">
 <pre><strong>SQEDmodel</strong></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>* propagators</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> [Phi1,Phi1c,+]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> [Phi2,Phi2c,+]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> [Photon,Photon,+]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>* vertices</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Phi1]</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Phi2]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Photon,Phi1]</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Photon,Phi2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>* propagators</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> [Phi1,Phi1c,+]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> [Phi2,Phi2c,+]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> [Photon,Photon,+]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>* vertices</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Phi1]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Phi2]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Photon,Phi1]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Photon,Phi2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This file also defines the names of the fields in question. We can then give <code>QGRAF</code> additional options, such as the number of external legs, and the number of loops, written in a <code>qgraf.dat</code> file that can look like this:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>qgraf.dat</strong></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>output= '{{output filename}}' ;</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>style= './styles/julia.sty' ; </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>model= './qgraf/SQEDmodel';</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>in= Phi1,  Phi2;</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>out= Phi1,Phi2;</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>loops= 1;</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>loop_momentum= k;</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>options=  notadpole,nosnail,onshell ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>output= '{{output filename}}' ;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>style= './styles/julia.sty' ; </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>model= './qgraf/SQEDmodel';</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>in= Phi1,  Phi2;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>out= Phi1,Phi2;</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>loops= 1;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>loop_momentum= k;</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>options=  notadpole,nosnail,onshell ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the <code>julia.sty</code> style file. The <code>julia.sty</code> file is a style file that is used to generate the output in a format that can be read by a <code>Julia</code> <span class="citation" data-cites="Bezanson:2015">(<a href="references.html#ref-Bezanson:2015" role="doc-biblioref">Bezanson et al. 2015</a>)</span> package built to process and visualise the outputted graphs. This package is called (maybe too broadly) <code>QFT.jl</code> is hosted on <a href="https://github.com/lcnhb/QFT.jl">github</a> . Let us see it in action. We can run <code>QGRAF</code> from the command line, and it will generate a file called <code>{{output filename}}</code> that contains the output of the program. We can then use this in a <code>Julia</code> file to visualise the diagrams.</p>
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Images</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Diagrams</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.FieldGraphs</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Fields</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span>  <span class="bu">Catlab.Graphics.Graphviz</span>: run_graphviz</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"SQED.jl"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>diags<span class="op">=</span><span class="fu">include</span>(<span class="st">"QGRAFout/julia/1lSQED.jl"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>qDiags<span class="op">=</span>[<span class="fu">qDiagram</span>(;diag<span class="op">...</span>) for diag <span class="kw">in</span> diags]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>grafs<span class="op">=</span>(x <span class="op">-&gt;</span> x.g).(qDiags)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Images</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Diagrams</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.FieldGraphs</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Fields</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span>  <span class="bu">Catlab.Graphics.Graphviz</span>: run_graphviz</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"SQED.jl"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>diags<span class="op">=</span><span class="fu">include</span>(<span class="st">"QGRAFout/julia/1lSQED.jl"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>qDiags<span class="op">=</span>[<span class="fu">qDiagram</span>(;diag<span class="op">...</span>) for diag <span class="kw">in</span> diags]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>grafs<span class="op">=</span>(x <span class="op">-&gt;</span> x.g).(qDiags)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel" data-execution_count="6">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -1149,33 +1128,33 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Logging</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Logging</span>.<span class="fu">disable_logging</span>(<span class="bu">Logging</span>.Info)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scaleless</span>(g<span class="op">::</span><span class="dt">AbstractFieldGraph</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  cycles <span class="op">=</span><span class="fu">cycle_basis</span>(g)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  isscaleless<span class="op">=</span><span class="cn">false</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> c <span class="kw">in</span> cycles</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    hs<span class="op">=</span> <span class="fu">collect</span>(<span class="bu">Iterators</span>.<span class="fu">flatten</span>(<span class="fu">half_edges</span>.(<span class="fu">Ref</span>(g),c)))</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span><span class="fu">unique!</span>(<span class="fu">typeof</span>.(<span class="fu">field</span>.(<span class="fu">Ref</span>(g),hs)))</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">Bool</span>(Phi1 <span class="kw">in</span> fields) <span class="op">⊻</span>  <span class="fu">Bool</span>(Phi2 <span class="kw">in</span> fields)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      isscaleless<span class="op">=</span><span class="cn">true</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> isscaleless</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>noscalelessdiags<span class="op">=</span>qDiags[.!<span class="fu">scaleless</span>.(grafs)]</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>classicaldiags<span class="op">=</span>noscalelessdiags[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>]</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,d) <span class="kw">in</span> <span class="fu">enumerate</span>(classicaldiags)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  d.ID<span class="op">=</span>i</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs[.!<span class="fu">scaleless</span>.(grafs)])</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Logging</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Logging</span>.<span class="fu">disable_logging</span>(<span class="bu">Logging</span>.Info)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scaleless</span>(g<span class="op">::</span><span class="dt">AbstractFieldGraph</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  cycles <span class="op">=</span><span class="fu">cycle_basis</span>(g)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  isscaleless<span class="op">=</span><span class="cn">false</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> c <span class="kw">in</span> cycles</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    hs<span class="op">=</span> <span class="fu">collect</span>(<span class="bu">Iterators</span>.<span class="fu">flatten</span>(<span class="fu">half_edges</span>.(<span class="fu">Ref</span>(g),c)))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span><span class="fu">unique!</span>(<span class="fu">typeof</span>.(<span class="fu">field</span>.(<span class="fu">Ref</span>(g),hs)))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">Bool</span>(Phi1 <span class="kw">in</span> fields) <span class="op">⊻</span>  <span class="fu">Bool</span>(Phi2 <span class="kw">in</span> fields)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      isscaleless<span class="op">=</span><span class="cn">true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> isscaleless</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>noscalelessdiags<span class="op">=</span>qDiags[.!<span class="fu">scaleless</span>.(grafs)]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>classicaldiags<span class="op">=</span>noscalelessdiags[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>]</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,d) <span class="kw">in</span> <span class="fu">enumerate</span>(classicaldiags)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  d.ID<span class="op">=</span>i</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs[.!<span class="fu">scaleless</span>.(grafs)])</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel" data-execution_count="7">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -1203,39 +1182,39 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  indx1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f1))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  indx2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f2))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,0,</span><span class="sc">$</span>momen<span class="st">)*d_(</span><span class="sc">$</span>indx1<span class="st">,</span><span class="sc">$</span>indx2<span class="st">)"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> <span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi1</span>,f2<span class="op">::</span><span class="dt">Phi1c</span>])</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,1,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi2</span>,f2<span class="op">::</span><span class="dt">Phi2c</span>])</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,2,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵧ,γ)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>]) <span class="kw">where</span> {S}</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  p1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₁</span>(<span class="fu">index</span>(γ)))</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  p2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₂</span>(<span class="fu">index</span>(γ)))</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i*e*</span><span class="sc">$</span>q<span class="st">*(</span><span class="sc">$</span>p2<span class="st">-</span><span class="sc">$</span>p1<span class="st">)"</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵧ₁,γ₁)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,(pᵧ₂,γ₂)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>      (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>]) <span class="kw">where</span> {S}    </span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  mu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₁))</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  nu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₂)) </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2*_i*</span><span class="sc">$</span>q<span class="st">^2*e^2*d_(</span><span class="sc">$</span>mu<span class="st">,</span><span class="sc">$</span>nu<span class="st">)"</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  indx1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f1))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  indx2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f2))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,0,</span><span class="sc">$</span>momen<span class="st">)*d_(</span><span class="sc">$</span>indx1<span class="st">,</span><span class="sc">$</span>indx2<span class="st">)"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> <span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi1</span>,f2<span class="op">::</span><span class="dt">Phi1c</span>])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,1,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi2</span>,f2<span class="op">::</span><span class="dt">Phi2c</span>])</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,2,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵧ,γ)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>]) <span class="kw">where</span> {S}</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  p1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₁</span>(<span class="fu">index</span>(γ)))</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  p2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₂</span>(<span class="fu">index</span>(γ)))</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i*e*</span><span class="sc">$</span>q<span class="st">*(</span><span class="sc">$</span>p2<span class="st">-</span><span class="sc">$</span>p1<span class="st">)"</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵧ₁,γ₁)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,(pᵧ₂,γ₂)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>      (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>]) <span class="kw">where</span> {S}    </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  mu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₁))</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  nu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₂)) </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2*_i*</span><span class="sc">$</span>q<span class="st">^2*e^2*d_(</span><span class="sc">$</span>mu<span class="st">,</span><span class="sc">$</span>nu<span class="st">)"</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>where we define <code>prop(n,i,p)</code> as representing a generic Feynman propagator, which we will denote:</p>
@@ -1246,7 +1225,7 @@ D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=(p^2-m_i^2+i\epsilon )^{n} \quad \text{thus} \
 <div class="cell" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toform</span>(<span class="cn">stdout</span>,classicaldiags[<span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toform</span>(<span class="cn">stdout</span>,classicaldiags[<span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>*--#[d3l1:</code></pre>
@@ -1267,15 +1246,15 @@ Id q4= l1;
 </div>
 </div>
 <p>Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the <code>Julia</code> program, using kruskal’s algorithm <span class="citation" data-cites="Kruskal:1956">(<a href="references.html#ref-Kruskal:1956" role="doc-biblioref">Kruskal 1956</a>)</span> to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using <code>FORM</code> we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in <a href="#eq-newmom"><span>5.23</span></a>. The <code>FORM</code> version of the box integrand is then:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   [d3l1|o.3.4|i.3.4|i|o|] =</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>         ( prop(-1,0,q - l1) )</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,0,l1) )</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,1,1/2*q - l1 + pb2) )</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,2, - 1/2*q + l1 + pb1) )</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       * ( dot(l1,l1) )</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) </span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       * ( e ) * ( e ) * ( e ) * ( e );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   [d3l1|o.3.4|i.3.4|i|o|] =</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>         ( prop(-1,0,q - l1) )</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,0,l1) )</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,1,1/2*q - l1 + pb2) )</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,2, - 1/2*q + l1 + pb1) )</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       * ( dot(l1,l1) )</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       * ( e ) * ( e ) * ( e ) * ( e );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When applied to all 4 diagrams we obtain precisely the same integrands as those in <span class="citation" data-cites="Kosower:2018adc">Kosower, Maybee, and O’Connell (<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">2019</a>)</span>. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:</p>
 <p><span id="eq-boxfam"><span class="math display">\[
 G_{i_1,i_2,i_3,i_4}=\frac{1}{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
@@ -2183,6 +2162,10 @@ $$
 quarto-executable-code-5450563D
 
 ```julia
+#| echo: false
+#| label: fig-gaussian
+#| fig-cap: "Sharpening gaussian"
+#| column: margin
 using Plots
 
 function delta(x)

@@ -212,6 +212,7 @@ format:
     default-image-extension: svg
     
   pdf:
+    fontsize: "10pt"
     from: markdown-latex_macros
     documentclass: scrreprt
     cite-method: biblatex
