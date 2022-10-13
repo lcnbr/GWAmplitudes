@@ -53,7 +53,7 @@ $$
 \bar{v}^2\sim \frac{\grav \bar{M}}{\bar{R}}
 $$
 
-We therefor expand in both velocities and coupling constant. This can be achieved with a by both a classical (albeit quite complicated) perturbative treatment [see @Blanchet:2013haa;@Blanchet:1995fg], and a more contemporary \acr{eft} based approach called coyly \acr{nrgr} [@Goldberger:2004jt,@Sturani:2021xpq] as it was inspired by \acr{nrqcd}. We call specific orders of the expansion $nPM$ when the expansion is carried out to $\order[2n]{v}$. 
+We therefor expand in both velocities and coupling constant. This can be achieved with a by both a classical (albeit quite complicated) perturbative treatment [see @Blanchet:2013haa;@Blanchet:1995fg], and a more contemporary \acr{eft} based approach called coyly \acr{nrgr} [@Goldberger:2004jt;@Sturani:2021xpq] as it was inspired by \acr{nrqcd}. We call specific orders of the expansion $nPM$ when the expansion is carried out to $\order[2n]{v}$. 
 
 
 
