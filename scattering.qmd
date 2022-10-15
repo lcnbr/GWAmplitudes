@@ -256,7 +256,7 @@ To summarise, to obtain the form of the potential, we first compute the amplitud
 
 Unfortunately the procedure desribed above, and in fact *any* procedure trying to make contact with \acr{eob} through expanding the gravitiational potential, automatically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of \acr{eob} this radiation reaction was added after the fact, through direct modifications of the \acr{eom}s obtained from Hamilton's equations. It is not clear how to incorporate dissipative data from the amplitude in the \acr{eob} framework. 
 
-One way to not encounter this difficulty is to full bypass the \acr{eob} framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
+One way to not encounter this difficulty is to fully bypass the \acr{eob} framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
 
 
 
@@ -268,6 +268,8 @@ One way to not encounter this difficulty is to full bypass the \acr{eob} framewo
 ## \acr{kmoc} {#sec-kmoc}
 
 The setup of the \acr{kmoc} framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \acr{sqed} and gravity. 
+
+### Conventions
 
 First let us define our conventions. Throughout this section we use relativistically natural units, i.e. we do *not* set $\hbar=1$. This will essentially be the small parameter that multiplies the soft momenta, that defined the region in @sec-amp2pot. In this section we will further motivate this classical limit, in more detail, by taking the generally accepted limit that makes quantum physics collapse to classical physics: 
 
@@ -297,6 +299,7 @@ $$
 \nposendelta[-m^2]{p}=(2\pi)\deltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}=\ndeltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}
 $$
 
+### Intital State
 
 With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e. a classical two in two out scattering). As mentioned in @sec-scatamp, in \acr{qft} the framework that formalizes scattering of definite particle number states is called the \acr{lsz} reduction. 
 
@@ -384,7 +387,11 @@ $$
 $$ {#eq-instate}
 
 
-From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable $\obs{O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
+From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. Note that by extracting the impact parameter in this way, the wavefunctions can be identitcal in form, and will still be separate as required.
+
+### Change in observable
+
+The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable $\obs{O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
 $$
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}.
 $$
@@ -442,7 +449,7 @@ $$
       &=\im \obschange{\emom'-\emom}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
                                     \amp{\emom[1],\emom[2]}{\emom[1]',\emom[2]'}.
 \end{aligned}
-$$
+$$ {#eq-vInt}
 
 Note that the amplitude is from in states to in states! Now for the real integrand $\rInt$ we insert a complete set of states :[^complete]
 
@@ -456,7 +463,7 @@ $$
       &\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]'+\emom[2]'-r_{1}-r_{2}-r_{X}}\,
       \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}}.
 \end{aligned}
-$$
+$$ {#eq-rInt}
 
 For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$   [^measureshift]. Thus we have
 
@@ -487,14 +494,7 @@ We have arrived at an integral expression for the change in observable $\obs{O}$
 
 ### Classical limit
 
-Since we are concerned with classial observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. The first target is the wavefunctions. 
-
-#### Classical limit of wavefunctions
-
-In \acr{kmoc} framework we are interested in the classical limit of a scattering event. It is then important to understand the precise simplifications this limit yields. 
-
-
-We have multiple conditions on the wavefunctions. The first are those imposed by \acr{lsz} reduction. That is,
+Since we are concerned with classial observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. The first target is the wavefunctions. We have multiple conditions on the wavefunctions. The first are those imposed by \acr{lsz} reduction. That is,
 
 - Compact support momentum space wavefunction
 - Peaked around one value of momenta
@@ -830,7 +830,7 @@ $$ {#eq-hbarvirt}
 where the $O$ term is the order of $\hbar$ that is present as a result of the observable. In the case of particle 1's momentum, $O=1$. Similarly, the amplitudes in the real kernel must cancel with:
 
 $$
-\hbar^{2-2L-\abs{X}+O'}.
+\hbar^{2-2L'-\abs{X}+O}.
 $$ {#eq-hbarreal}
 
 Now we see that the \acr{lo} contribution [^expand]to the impulse $\Delta \emom[1]^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus we have the following equation,
@@ -1017,7 +1017,9 @@ The new momentum variables $\semom[i]$ are crucially orthogonal to momentum tran
 
 $$
 \semom[i]\cdot\tm=0,
-$$
+$$ {#eq-orthog}
+
+
  and the physical scattering region, given by $\mands>(\mass[1]+\mass[2])^2$ and $\tm^2<0$ is the given by the same formulas:
 
 $$
@@ -1045,7 +1047,7 @@ using TikzPictures
 
 tp = TikzPicture(L"""
 \matrix{
-      \node{$\displaystyle \im\amp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
+      \node{$\displaystyle \im\redamp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
       \node{$=$};&
      \graph[nodes=coordinate, empty nodes,spring layout,node distance=15mm,vertical=p1 to p2,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
 {
@@ -1070,14 +1072,15 @@ tp
 The amplitude is read off diagram and using Feynman rules for SQED we have: 
 
 $$
-\ampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
+\redampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
 $$
 
 using the mandelstahm invariants described above we can infact write this as:
 
 $$
-\ampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
-$$
+\redampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
+$$ {#eq-treeampl}
+
 
 where $\relfact$ is the relativistic factor of particle 1 in the rest frame of particle 2:
 
@@ -1212,7 +1215,7 @@ There is one final simplification we can do. The first diagram above has two pho
 
 We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically^[at least at the unintegrated level]. We will also extract one of these integrands by hand, for completeness and comparison. 
 
-The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules as follows:
+The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for \acr{sqed} as follows:
 
 ```{julia}
 #| output: false
@@ -1295,37 +1298,39 @@ toform(stdout,classicaldiags[3])
 
 Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM` we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in @eq-newmom. The `FORM` version of the box integrand is then:
 
-```{.default}
+```{.default #lst-formBox .sql lst-cap="Box integrand in FORM"}
+
    [d3l1|o.3.4|i.3.4|i|o|] =
          ( prop(-1,0,q - l1) )
        * ( prop(-1,0,l1) )
-       * ( prop(-1,1,1/2*q - l1 + pb2) )
-       * ( prop(-1,2, - 1/2*q + l1 + pb1) )
-       * ( dot(l1,l1) )
-       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )
-       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) 
+       * ( prop(-1,1,1/2*q - l1 + pb1) )
+       * ( prop(-1,2, - 1/2*q + l1 + pb2) )
+       * ( dot(q,q) - 2*dot(q,l1) - 2*dot(q,pb2) + 2*dot(q,pb1) + dot(l1,l1)
+          + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )
+       * ( dot(l1,l1) + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )
+       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 )
        * ( e ) * ( e ) * ( e ) * ( e );
 ```
 
 When applied to all 4 diagrams we obtain precisely the same integrands as those in @Kosower:2018adc. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:
 
 $$
-G_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
+\Box_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
 $$ {#eq-boxfam}
 
 for powers $\brk{i}\in\brk{0,1}^4$, where the inverse propagators $\rho_i$ are:
 
 $$
-\rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(-\Half{q}+\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(\Half{q}-\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
+\rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(\Half[q]-\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(-  \Half[q]+\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
 $$
 
 Note that in the classical limit we can expand the massive propagators as shown in @eq-massiveScale and obtain to first order in $\hbar$:
 
 $$
-\rho_3=(-\Half{q}+\ell)^2 +2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4=(\Half{q}-\ell)^2-2\ell\cdot\semom[2]+\im \epsilon
+\rho_3=2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4= -2\ell\cdot\semom[2]+\im \epsilon,
 $$
 
-The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
+where we used @eq-orthog. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
 
 $$
 \mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
@@ -1335,20 +1340,122 @@ where ${S}$ and ${S'}$ are sets of coefficient matrices for all possible dot pro
 
 $$
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
-$$
+$$ {#eq-scalarred}
 
 where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
 
-With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. 
+With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. The algorithm described above was implemented in `FORM` and is able to rapibly process the 1-loop diagrams. The code is available at the repository for this document. 
 
-We have now completed the program of \acr{nlo} amplitudes 
+Importantly we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from @lst-formBox that the integral for the box diagram $B$ is: 
+
+$$
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\ell} \Box_{1,1,1,1}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\tm-\ell}^2}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\ell}^2}
+$$
+
+we can apply the procedure described above, turning messenger momenta into wavenumbers:
+
+$$
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\bar{\ell}}\frac{\hbar^D}{\hbar^6} \Box_{\bar{1},\bar{1},\bar{1},\bar{1}}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\tw-\bar{\ell}}^2}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\bar{\ell}}^2},
+$$
+where $\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\inv{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}$ is the box family with wavenumber instead of messenger momenta, and $\hbar$s extracted. We notice that if we apply the scalar product reduction @eq-scalarred, we will necessarily still have an integral of the form^[along with ones that are of the form $\Box_{1,1,1,0}$ and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less $\hbar$, just enough to cancel what is left of the $\hbar$ in the numerator, and have an overall $\order[0]{\hbar}$ scaling.]:
+
+$$
+\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2 \int \dn[D]{{\ell}}\Box_{1,1,1,1}=\order[D-6]{\hbar}
+$$
+
+whislt we need to cancel with the $\hbar$ in the classical limit (@eq-hbarvirt), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent ($\inv{\hbar}$) contribution when taking the classical $\hbar\to 0$ limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:
+
+$$
+\tilde{\rho}_4=( \Half[q] -\ell+\semom[2])^2-\mass[2]^2+\im \epsilon\simeq  2\ell\cdot\semom[2]+\im \epsilon.
+$$
+
+If we write that $\Box_{+i_1,+i_2,+i_3,+i_4}=\Box_{i_1,i_2,i_3,i_4}$ where the sign is the sign of the $\im\epsilon$ presciption, then we can write the cross box integral as:
+$$
+\int \dn[D]{\ell} -\Box_{1,1,1,-1}
+$$
+
+thus summing up the two divergent contributions from the box and cross box we have:
 
 
-Add a section on everything together plus box and cross box cancelation ()
+$$
+\Box_{1,1,1,1}-\Box_{1,1,1,-1}=\Box_{1,1,1,0}\pa[\Big]{\inv{-2\ell\cdot\semom[2]+\im \epsilon}-\inv{    2\ell\cdot\semom[2]+\im \epsilon}}=-\im\Box_{1,1,1,0}\ndeltafn{2\ell\cdot\semom[2]},
+$$ {#eq-boxcross}
+
+where in the equation line we used *reverse unitarity* [@Anastasiou:2002yz;@Anastasiou:2002qz;@Anastasiou:2003yy]. This idea was developped in the context of cross-section calculations in the for collider physics computations. It enables to set on equal footing real contributions ^[such as ones in the real integrand @eq-rInt] where we integrate over on shell momenta ^[thus three dimensional momentum space] and virtual integrals, where the integration is over all possible four-momentum ^[as virtual particles can be off shell]. The idea is to trade the on-shell delta functions and their $n$-th derivatives for differences of (powers of) propagators with alternating $\im \epsilon$:
+
+$$
+\frac{\im}{(-1)^ nn!} \odv[n]{}{z} \ndeltafn{z}   = \inv{\pa{z  -\im \epsilon}^{(n+1)}}  - \inv{\pa{z+\im \epsilon}^{(n+1)}}.
+$$ {#eq-reverseunitarity}
+
+In our case @eq-reverseunitarity implies the following identities:
+
+$$
+\ndeltafn{-2\ell\cdot\semom[2]}=\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}
+$$ {#eq-revone}
+
+$$
+\ndeltafn{2\ell\cdot\semom[1]}=\im\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}
+$$ {#eq-revtwo}
+
+Since we where able to write this difference of propagators as a sort of cut, we could further compare the divergent part of the box and cross box with the corresponding real contribution, which is at tree level, with no cut messengers: $L'=0$ and $\abs{X}=0$ such that @eq-rvloopmatch is satisfied. We have:
 
 
+$$
+\begin{aligned}
+\int &\dn[4]{\bar{w}}\ndeltafn{2\semom[1]\cdot \bar{w}-\hbar\Half[\tw] \cdot \bar{w}  +\hbar\bar{w}^2}\ndeltafn{-2\semom[2] \cdot \bar{w}+\hbar\Half[\tw] \cdot \bar{w}+\hbar\bar{w}^2} \\
+&\times    \hbar\bar{w}^\mu\\
+&\times\coupling^{4}{\hbar}^{2}\redamp[(0)]{\semom[1]-\hbar\Half[\tw],\semom[2]+\hbar\Half[\tw] }{\semom[1]+\hbar\Half[\tw]+\hbar\bar{w}, \semom[2]-\hbar\Half[\tw]-\hbar\bar{w}_2} \\
+&\times\aredamp[(0)]{\semom[1]+\hbar\Half[\tw],\semom[2]+\hbar\Half[\tw]-\hbar \tw}{\semom[1]-\hbar\Half[\tw]+\hbar\bar{w}, \semom[2]+\hbar\Half[\tw]-   \hbar\bar{w}_2}.
+\end{aligned}
+$$
 
+where the $\redampl[(0)]$ we already computed in @eq-treeampl, and we have eliminated the theta functions in prepartation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with $\hbar^3$ (@eq-hbarreal) which at leading order is again overdone. The $\semom[1]\cdot \semom[2]$ contribution from each tree scales like $\inv{\hbar^4}$, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:
 
+$$
+\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2\inv{\hbar}\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
+$$
+
+where we've changed variables from $\bar{w}$ to $\bar{\ell}$ and removed the $\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)$ term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (@eq-revone,@eq-revtwo) and focus on the integral without the prefactors:
+
+$$
+\begin{aligned}
+\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu&\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
+&=-\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}\pa{\Box_{1,1,0,1}-\Box_{1,1,0,-1}} ,\\
+&=\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+\end{aligned}
+$$
+
+We now notice something interesting, this cut integral has a sort of horizontal flip symmetry, i.e. if we average over the existing 'loop' momentum labelling and a new $\ell'=q-\ell$ we eliminate the $\ct{\ell}$ dependence in the numerator:
+
+$$
+\Half\brc{\ct{\ell}+\pa{\ct{q}-\ct{\ell}}}=\ct{q}
+$$
+
+since the box families transform as:
+
+$$
+\Box'_{i,j,m,n}=(-1)^m(-1 )^n\Box_{j,i,-m,-n}.
+$$ {#eq-boxtrans}
+
+Thus we have that the cut integral with the $\ct{\tw}$ factored out:
+
+$$
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+$$
+
+We can apply the relabelling only this time only for the last two integrands, and the integral becomes, applying @eq-boxtrans:
+
+$$
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1}}}= \int \dn[4]{\bar{\ell}}\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}  .
+$$
+
+If we now add the box and cross box contributions from @eq-boxcross we get:
+
+$$
+\int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.
+$$
+
+The classically divergent terms have cancelled leaving us with only the finite terms!
 
 
 

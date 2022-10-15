@@ -472,13 +472,9 @@ $$
 To have any hope of detecting such systems, one would need to have detectors sensitive in the hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at \acr{ligo} and other detectors, and has enabled the detection of such systems. 
 
 
-### \acr{ns} Binaries
+Non spinning black holes are in a certain sense the simplest binary objects one could consider modelling. However they probably would never occur in nature. The nature of formations of black holes implies that they necessarily also spin. These black holes, called kerr black holes, have spin, and therefore a different metric defining the spacetime surrounding them. The modelling spinning black holes is still quite in its infancy and we will not treat it here. 
 
-We can also not go as far as having our compact object be a \acr{bh}, but can also consider \acr{ns}s. These object are notheless extremely dense (not infinitely so), and are essentially like big atomic nuclei. Not much is known about them and in fact \acr{gw} astronomy is could be 
-
-### Exotic Sources
-
-Cosmic strings, supernovae, and other exotic sources of \acr{gw}s are also possible.
+ There are naturally many other binaries that could be feasably be detected. Finite size binaries such as \acr{ns}s include very interesting tidal effects, that are not present in the \acr{bh} case. Other non binary objects could also produce detectable gravitational waves, such as Cosmic strings, corresponding to early universe topological defects creating a stochasitc \acr{gw} backround.
 
 
 [^riccitensor]: The Ricci Tensor is given by:

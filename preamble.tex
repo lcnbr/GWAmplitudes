@@ -3,9 +3,14 @@
 \usepackage{cancel}
 \usepackage{adjustbox}
 \usepackage{microtype}
+\let\[\relax \let\]\relax % avoid warnings in the log file
+\DeclareRobustCommand{\[}{\begin{equation}}
+\DeclareRobustCommand{\]}{\end{equation}}
+\usepackage{libertinus}
 
 
-
-
-
-
+\setromanfont[Scale=1.04]{Libertinus Serif}
+\setsansfont[Scale=1]{Libertinus Sans}
+\setmonofont[Scale=.89]{Fira Mono}
+\setmathfont[bold-style=ISO]{Libertinus Math}
+\usepackage{bm}

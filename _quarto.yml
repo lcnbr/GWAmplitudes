@@ -12,7 +12,7 @@ book:
   search: true
   repo-url: https://github.com/lcnhb/GWAmplitudes
   repo-actions: [edit]
-  downloads: [pdf, epub]
+  downloads: [pdf]
   
 
   chapters:

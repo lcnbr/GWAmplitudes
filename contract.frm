@@ -16,7 +16,7 @@ Set loopMom:k, k1,...,k'n',q,q1,...,q'n',l,l1,...,l'n';
 
 Off Statistics;
 
-#include diags.frm #d4l1
+#include diags.frm #d3l1
 
 #call momentumRouting
 
@@ -30,15 +30,15 @@ endargument;
 
 
 argument;
-Id p1=(pb1-q/2);
-Id p2=(pb1+q/2);
-Id p3=(pb2+q/2);
-Id p4=(pb2-q/2);
+Id p1=(pb2-q/2);
+Id p2=(pb2+q/2);
+Id p3=(pb1+q/2);
+Id p4=(pb1-q/2);
 endargument;
-Id p1=(pb1-q/2);
-Id p2=(pb1+q/2);
-Id p3=(pb2+q/2);
-Id p4=(pb2-q/2);
+Id p1=(pb2-q/2);
+Id p2=(pb2+q/2);
+Id p3=(pb1+q/2);
+Id p4=(pb1-q/2);
 id p?.q?=dot(p,q);
 Id dot(p?extMom,q)=0;
 
