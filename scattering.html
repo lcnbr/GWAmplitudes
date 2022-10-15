@@ -173,21 +173,7 @@ div.csl-indent {
       <a href="./">Graviational Waves from Feynman Diagrams</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/lcnhb/GWAmplitudes" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Graviational-Waves-from-Feynman-Diagrams.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Graviational-Waves-from-Feynman-Diagrams.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
+    <a href="./Graviational-Waves-from-Feynman-Diagrams.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -254,7 +240,10 @@ div.csl-indent {
   </ul></li>
   <li><a href="#sec-kmoc" id="toc-sec-kmoc" class="nav-link" data-scroll-target="#sec-kmoc"><span class="toc-section-number">5.3</span>  <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></a>
   <ul class="collapse">
-  <li><a href="#classical-limit" id="toc-classical-limit" class="nav-link" data-scroll-target="#classical-limit"><span class="toc-section-number">5.3.1</span>  Classical limit</a></li>
+  <li><a href="#conventions" id="toc-conventions" class="nav-link" data-scroll-target="#conventions"><span class="toc-section-number">5.3.1</span>  Conventions</a></li>
+  <li><a href="#intital-state" id="toc-intital-state" class="nav-link" data-scroll-target="#intital-state"><span class="toc-section-number">5.3.2</span>  Intital State</a></li>
+  <li><a href="#change-in-observable" id="toc-change-in-observable" class="nav-link" data-scroll-target="#change-in-observable"><span class="toc-section-number">5.3.3</span>  Change in observable</a></li>
+  <li><a href="#classical-limit" id="toc-classical-limit" class="nav-link" data-scroll-target="#classical-limit"><span class="toc-section-number">5.3.4</span>  Classical limit</a></li>
   </ul></li>
   <li><a href="#impulse-in" id="toc-impulse-in" class="nav-link" data-scroll-target="#impulse-in"><span class="toc-section-number">5.4</span>  Impulse in <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></a></li>
   <li><a href="#amplitudes" id="toc-amplitudes" class="nav-link" data-scroll-target="#amplitudes"><span class="toc-section-number">5.5</span>  <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> amplitudes</a>
@@ -412,12 +401,14 @@ m_{1},m_{2}\ll J \vert\mathbf{{q}}_{} \vert \ll \vert\mathbf{{q}}_{} \vert.
 <p><span class="math display">\[ \vert\mathbf{{u_{}}}_{} \vert\ll1.\]</span></p>
 <p>To summarise, to obtain the form of the potential, we first compute the amplitude in an <abbr title="Effective Field Theory">EFT</abbr>, absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can go ahead and compute this amplitude in the non-relativistic limit. This same amplitude can be computed in the full theory, but by still taking the limiting procedure we drastically reduce the kinematic region, simplifying calculations (in fact eliminating diagrams) and allowing us to match order by order the <abbr title="Effective Field Theory">EFT</abbr> amplitude. This fixes the coefficents postulated for the potential.</p>
 <p>Unfortunately the procedure desribed above, and in fact <em>any</em> procedure trying to make contact with <abbr title="Effective One-Body">EOB</abbr> through expanding the gravitiational potential, automatically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of <abbr title="Effective One-Body">EOB</abbr> this radiation reaction was added after the fact, through direct modifications of the Equation of Motion (<abbr title="Equation of Motion">EOM</abbr>)s obtained from Hamilton’s equations. It is not clear how to incorporate dissipative data from the amplitude in the <abbr title="Effective One-Body">EOB</abbr> framework.</p>
-<p>One way to not encounter this difficulty is to full bypass the <abbr title="Effective One-Body">EOB</abbr> framework and try to obtain observables directly from the amplitude. This is the subject of the following sections.</p>
+<p>One way to not encounter this difficulty is to fully bypass the <abbr title="Effective One-Body">EOB</abbr> framework and try to obtain observables directly from the amplitude. This is the subject of the following sections.</p>
 </section>
 </section>
 <section id="sec-kmoc" class="level2 page-columns page-full" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="sec-kmoc"><span class="header-section-number">5.3</span> <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></h2>
 <p>The setup of the <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework (<span class="citation" data-cites="Kosower:2018adc">Kosower, Maybee, and O’Connell (<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">2019</a>)</span>) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to Scalar Quantum Electrodynamics (<abbr title="Scalar Quantum Electrodynamics">SQED</abbr>) and gravity.</p>
+<section id="conventions" class="level3 page-columns page-full" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="conventions"><span class="header-section-number">5.3.1</span> Conventions</h3>
 <p>First let us define our conventions. Throughout this section we use relativistically natural units, i.e.&nbsp;we do <em>not</em> set <span class="math inline">\(\hbar=1\)</span>. This will essentially be the small parameter that multiplies the soft momenta, that defined the region in <a href="#sec-amp2pot"><span>Section&nbsp;5.2</span></a>. In this section we will further motivate this classical limit, in more detail, by taking the generally accepted limit that makes quantum physics collapse to classical physics:</p>
 <p><span class="math display">\[\hbar\to0.\]</span></p>
 <p>We still retain <span class="math inline">\(c=1\)</span>, meaning that, using dimensional analysis we have that <span class="math inline">\([L][T]^{-1}=1 \implies [L]=[T]\)</span>, length and time are measured in the same units. Correspondingly, energy is measured in units of mass: <span class="math display">\[
@@ -435,6 +426,9 @@ E_{}=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 <p><span class="math display">\[
 \tilde{\delta}^{(+)}(p^2-m^2)=(2\pi)\delta^{{}}({p}_{}^2-m^2)\Theta^{{}}(p{}^{0})=\tilde{\delta}^{}({p}_{}^2-m^2)\Theta^{{}}(p{}^{0})
 \]</span></p>
+</section>
+<section id="intital-state" class="level3 page-columns page-full" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="intital-state"><span class="header-section-number">5.3.2</span> Intital State</h3>
 <p>With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e.&nbsp;a classical two in two out scattering). As mentioned in <a href="#sec-scatamp"><span>Section&nbsp;5.1</span></a>, in <abbr title="Quantum Field Theory">QFT</abbr> the framework that formalizes scattering of definite particle number states is called the <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">we work in the Heisenberg picture here</span></div></div>
 <p>Let us look at it in more detail. The first component is to define the states we want to scatter. Suppose our theory has single particle states <span class="math inline">\(\vert p \rangle_{\text{}}\)</span>, with mass <span class="math inline">\(m_{}\)</span>, eigenstates of the momentum:</p>
@@ -486,7 +480,11 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
 <p><span id="eq-instate"><span class="math display">\[
 \vert \text{in} \rangle_{\text{}}=\int \,\mathrm{d}\Phi_{2}(p_{1},p_{2})\, \breve{f_{1}}(p_{1}) \breve{f_{2}}(p_{2}) \mathrm{e}^{\frac{\mathring{\imath}}{\hbar} b{}_{\mu} p_{1}{}^{\mu}}\vert p_{1},p_{2} \rangle_{\text{in}}.
 \tag{5.7}\]</span></span></p>
-<p>From now on we will drop the breve and infer from the arguments the type of <span class="math inline">\(f_{}\)</span> we are dealing with. The <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework concerns itself with the change of an observable during a scattering event. For such an observable <span class="math inline">\(O\)</span>, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, <span class="math inline">\(\mathbb{O}\)</span>, between in and out states <span class="math display">\[
+<p>From now on we will drop the breve and infer from the arguments the type of <span class="math inline">\(f_{}\)</span> we are dealing with. Note that by extracting the impact parameter in this way, the wavefunctions can be identitcal in form, and will still be separate as required.</p>
+</section>
+<section id="change-in-observable" class="level3 page-columns page-full" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="change-in-observable"><span class="header-section-number">5.3.3</span> Change in observable</h3>
+<p>The <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework concerns itself with the change of an observable during a scattering event. For such an observable <span class="math inline">\(O\)</span>, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, <span class="math inline">\(\mathbb{O}\)</span>, between in and out states <span class="math display">\[
 \Delta O=\langle\text{out} \vert  \mathbb{O} \vert \text{out} \rangle-\langle\text{in} \vert  \mathbb{O} \vert \text{in} \rangle.
 \]</span></p>
 <p>In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e.&nbsp;the S-matrix: <span class="math inline">\(\vert \text{out} \rangle_{\text{}}=S\vert \text{in} \rangle_{\text{}}\)</span> and we can write</p>
@@ -520,7 +518,7 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
 \]</span></p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">NB: the notation is slightly different in the <span class="citation" data-cites="Bern:2021xze">Zvi Bern et al. (<a href="references.html#ref-Bern:2021xze" role="doc-biblioref">2022</a>)</span> paper</span></div></div>
 <div class="page-columns page-full"><p>Let us first look at the virtual integrand <span class="math inline">\(\mathcal{I}_{\text{v}}(O)\)</span>:<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;Here we define <span class="math display">\[O_{\text{in}}\vert p_{1}p_{2} \rangle_{\text{}}=\mathbb{O}\vert p_{1}p_{2} \rangle_{\text{}}\]</span> aswell as, <span class="math display">\[O_{\text{in}}'{}_{\text{}}\langle p_{1}'p_{2}' \vert={}_{\text{}}\langle p_{1}'p_{2}' \vert\mathbb{O}\]</span> and finally <span class="math display">\[\underset{\mathclap{p_{}'-p_{}}}{\Delta}O\,=O_{\text{in}}'-O_{\text{in}}\]</span></p></li></div></div>
-<p><span class="math display">\[
+<p><span id="eq-vInt"><span class="math display">\[
 \begin{aligned}
 \mathcal{I}_{\text{v}}(O)&amp;={}_{\text{in}}\langle p_{1}'p_{2}' \vert{\mathring{\imath}[\mathbb{O},T]     }\vert p_{1}p_{2} \rangle_{\text{in}}  \\
       &amp;={}_{\text{in}}\langle p_{1}'p_{2}' \vert{\mathring{\imath}\mathbb{O}T}\vert p_{1}p_{2} \rangle_{\text{in}}   
@@ -531,9 +529,9 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
       &amp;=\mathring{\imath}\underset{\mathclap{p_{}'-p_{}}}{\Delta}O\,\,\tilde{\delta}^{4}(p_{1}+p_{2}-p_{1}'-p_{2}')
                                     \mathcal{A}^{}(p_{1},p_{2}\to p_{1}',p_{2}').
 \end{aligned}
-\]</span></p>
+\tag{5.9}\]</span></span></p>
 <div class="page-columns page-full"><p>Note that the amplitude is from in states to in states! Now for the real integrand <span class="math inline">\(\mathcal{I}_{\text{r}}(O)\)</span> we insert a complete set of states :<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn19"><p><sup>19</sup>&nbsp;<span class="math inline">\(1=\sum\limits_X \int \,\mathrm{d}\Phi_{2+\vert X \vert}(r_1,r_2,X)\,\vert r_1 r_2 X \rangle \langle r_1 r_2 X \vert\)</span> Where we could consider the states <span class="math inline">\({r_1,r_2,X}\)</span> to be the final states after the scattering</p></li></div></div>
-<p><span class="math display">\[
+<p><span id="eq-rInt"><span class="math display">\[
 \begin{aligned}
 \mathcal{I}_{\text{r}}(O)&amp;={}_{\text{in}}\langle p_{1}'p_{2}' \vert{T^\dagger[\mathbb{O},T]}\vert p_{1}p_{2} \rangle_{\text{in}}\\
       &amp;=\sum\limits_X \int \,\mathrm{d}\Phi_{2+\vert X \vert}(r_1,r_2,X)\,   {}_{\text{in}}\langle p_{1}'p_{2}' \vert T^\dagger\vert{r_1 r_2 X}\rangle\langle {r_1 r_2 X} \vert
@@ -543,7 +541,7 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
       &amp;\qquad \underset{\mathclap{rX-p_{}}}{\Delta}O\,\,\tilde{\delta}^{4}(p_{1}'+p_{2}'-r_{1}-r_{2}-r_{X})\,
       \mathcal{{A{}^\ast}}^{}(p_{1}', p_{2}'\to r_{1}, r_{2}, r_{X}).
 \end{aligned}
-\]</span></p>
+\tag{5.10}\]</span></span></p>
 <div class="page-columns page-full"><p>For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts <span class="math inline">\(q_i=p_{i}'-p_{i}\)</span> and then integrate over <span class="math inline">\(q_2\)</span> finally relabelling <span class="math inline">\(q_1 \to q_{}\)</span> <a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a>. Thus we have</p><div class="no-row-height column-margin column-container"><li id="fn20"><p><sup>20</sup>&nbsp;Introducing the momentum shifts modifies the measure in the following way: <span class="math display">\[\begin{aligned}\,\mathrm{d}\Phi_{}(p_{i}')\,&amp;=\,\mathrm{d}\Phi_{}(p_{i}+q_i)\,\\=&amp;\,\tilde{\mathrm{d}}^{4}q_i\,\,\tilde{\delta}^{}({(p_{i}+q_i)^2-m_i^2}) \Theta^{{}}({p_{i}^0+q_i^0})\end{aligned}\]</span> Now since we also have the on-shell enforcing delta function from <span class="math inline">\(\,\mathrm{d}\Phi_{}(p_{i})\,\)</span> we can rewrite the delta functions: <span class="math display">\[\begin{aligned}\,\mathrm{d}\Phi_{}(p_{i})\,&amp;\,\tilde{\delta}^{}((p_{i}+q_i)^2-m_i^2)\\&amp;=\,\mathrm{d}\Phi_{}(p_{i})\,\tilde{\delta}^{}(\underbracket{(p_{i}^2-m_i^2)}_{\text{redundant}}+2 p_{i} \cdot q_i+q_i^2)\\&amp;=\,\mathrm{d}\Phi_{}(p_{i})\,\tilde{\delta}^{}(2 p_{i} \cdot q_i+q_i^2)\end{aligned}\]</span> Finally when integrating over <span class="math inline">\(q_2\)</span> we choose to hit <span class="math inline">\(\tilde{\delta}^{(4)}(p_{1}+p_{2}-p_{1}'-p_{2}')=\tilde{\delta}^{(4)}(q_1+q_2)\)</span> and thus we just set <span class="math inline">\(q_2=-q_1\)</span></p></li></div></div>
 <p><span id="eq-DeltaOv"><span class="math display">\[
 \begin{aligned}
@@ -552,7 +550,7 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
       &amp;\times f_{1}(p_{1})f_{2}(p_{2}){f{}^\ast}_{1}(p_{1}+q_{}){f{}^\ast}_{2}(p_{2}-q_{})\,\mathrm{e}^{-\frac{\mathring{\imath}}{\hbar} b{}_{\mu} q_{}^\mu}\\
       &amp;\times \mathring{\imath}\underset{\mathclap{q_{}}}{\Delta}O\, \mathcal{A}^{}(p_{1},p_{2} \to p_{1}+q_{},p_{2}-q_{}),
 \end{aligned}
-\tag{5.9}\]</span></span></p>
+\tag{5.11}\]</span></span></p>
 <p><span id="eq-DeltaOr"><span class="math display">\[
 \begin{aligned}
 \Delta O_\text{r}\,=\sum\limits_X \int \,\mathrm{d}\Phi_{2+\vert X \vert}(r_1, r_2,X)\,
@@ -562,15 +560,12 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
             &amp;\times\underset{\mathclap{rX-p_{}}}{\Delta}O\,\tilde{\delta}^{(4)}(p_{1}+p_{2}-r_{1}-r_{2}-r_{X}) \\
             &amp;\times   \mathcal{A}^{}(p_{1}, p_{2} \to r_{1}, r_{2}, r_{X})\mathcal{{A{}^\ast}}^{}(p_{1}+q_{}, p_{2}-q_{}\to r_{1}, r_{2}, r_{X}).
 \end{aligned}
-\tag{5.10}\]</span></span></p>
+\tag{5.12}\]</span></span></p>
 <p>We have arrived at an integral expression for the change in observable <span class="math inline">\(O\)</span>. Luckily for us, we will not need to perform these integrals in the classical limit. We will just have carefully chosen replacement rules for the integrated variables! Let us look at this in more detail now.</p>
-<section id="classical-limit" class="level3 page-columns page-full" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="classical-limit"><span class="header-section-number">5.3.1</span> Classical limit</h3>
-<p>Since we are concerned with classial observables we need to explore the classical limit of <a href="#eq-DeltaO"><span>5.8</span></a>, i.e.&nbsp;the limit of <span class="math inline">\(\hbar \to 0\)</span>. The first target is the wavefunctions.</p>
-<section id="classical-limit-of-wavefunctions" class="level4 page-columns page-full" data-number="5.3.1.1">
-<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="classical-limit-of-wavefunctions"><span class="header-section-number">5.3.1.1</span> Classical limit of wavefunctions</h4>
-<p>In <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework we are interested in the classical limit of a scattering event. It is then important to understand the precise simplifications this limit yields.</p>
-<p>We have multiple conditions on the wavefunctions. The first are those imposed by <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction. That is,</p>
+</section>
+<section id="classical-limit" class="level3 page-columns page-full" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="classical-limit"><span class="header-section-number">5.3.4</span> Classical limit</h3>
+<p>Since we are concerned with classial observables we need to explore the classical limit of <a href="#eq-DeltaO"><span>5.8</span></a>, i.e.&nbsp;the limit of <span class="math inline">\(\hbar \to 0\)</span>. The first target is the wavefunctions. We have multiple conditions on the wavefunctions. The first are those imposed by <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction. That is,</p>
 <ul>
 <li>Compact support momentum space wavefunction</li>
 <li>Peaked around one value of momenta</li>
@@ -620,10 +615,10 @@ f(\frac{p_{}\cdot u }{m}\vert\breve{u_{i}};m_{i} ;\beta^{(i)}).
 \frac{q_{}{}_{0}\cdot u}{m \xi}=\bar{q}_{}{}_{0} \cdot u\frac{\ell_\omega^2}{\ell_c}\ll1\iff \bar{q}_{}{}_{0} \cdot u\,\ell_\omega\ll \sqrt{ \xi},
 \]</span></p>
 <p>where we denote by a bar, any quantity that has been rescaled by <span class="math inline">\(\hbar\)</span>. Thus a momentum <span class="math inline">\(p_{}\)</span> when divided by <span class="math inline">\(\hbar\)</span> will be written <span class="math inline">\(\bar{p_{}}\)</span> and called wavenumber. We will combine this inequality with ones we obtain from the specific cases of integrations required above.</p>
-<p>We now want to examine the classical limit of something like <a href="#eq-DeltaOv"><span>5.9</span></a>. If we consider just the integration over the initial momenta <span class="math inline">\(p_{i}\)</span> and the initial wavefunctions with <span class="math inline">\(\tilde{\delta}^{}(2 p_{i} \cdot q_{}+q_{}^2)\)</span>, the delta function will smear out to a sharply peaked function whose scale is the same order as the original wavefunctions. As <span class="math inline">\(\xi\)</span> gets smaller, this function will turn back into a delta function imposed on the <span class="math inline">\(q_{}\)</span> integration. Let us examine this statement more closely. We are interested in the classical limit of the integrals such as:</p>
+<p>We now want to examine the classical limit of something like <a href="#eq-DeltaOv"><span>5.11</span></a>. If we consider just the integration over the initial momenta <span class="math inline">\(p_{i}\)</span> and the initial wavefunctions with <span class="math inline">\(\tilde{\delta}^{}(2 p_{i} \cdot q_{}+q_{}^2)\)</span>, the delta function will smear out to a sharply peaked function whose scale is the same order as the original wavefunctions. As <span class="math inline">\(\xi\)</span> gets smaller, this function will turn back into a delta function imposed on the <span class="math inline">\(q_{}\)</span> integration. Let us examine this statement more closely. We are interested in the classical limit of the integrals such as:</p>
 <p><span id="eq-dfunct"><span class="math display">\[
 d(m,\xi,u,q_{})=\int \,\mathrm{d}\Phi_{}(p_{})\, \tilde{\delta}^{}(2 p_{}\cdot q_{}+q_{}^2) \Theta^{{}}(p_{}^0+q_{}^0)\varphi(\frac{p_{}\cdot u }{m \xi})\varphi^*(\frac{(p_{}+q_{}) \cdot u }{m \xi}).
-\tag{5.11}\]</span></span></p>
+\tag{5.13}\]</span></span></p>
 <p>This integral must be Lorentz invariant and depends on <span class="math inline">\(m,\xi, u,q_{}\)</span> thus it must manifestly only depend on the following Lorentz invariants: <span class="math inline">\(u^2,q_{}^2,u \cdot q_{}, \xi\)</span>. One of these is not actually a variable as we will normalise <span class="math inline">\(u^2=1\)</span>. The rest aren’t fully dimensionless, and we can render them dimensionless:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -637,41 +632,20 @@ d(m,\xi,u,q_{})=\int \,\mathrm{d}\Phi_{}(p_{})\, \tilde{\delta}^{}(2 p_{}\cdot q
 <p>The delta function can then be rewritten as: <span class="math display">\[
 \tilde{\delta}^{}(2 p_{}\cdot q_{}+q_{}^2)=\tilde{\delta}^{}(2\hbar m\, u\cdot \bar{q}_{}+\hbar^2 \bar{q}_{}^2)=\frac{1}{\hbar m}\tilde{\delta}^{}(2 \bar{q}_{}\cdot u-\frac{\ell_c}{\ell_s^2})=\frac{\ell_s}{\hbar m}\tilde{\delta}^{}(2\ell_s\, \bar{q}_{}\cdot u-\frac{\ell_c}{\ell_s}).
 \]</span></p>
-<p>Performing the integration over <span class="math inline">\(p_{}\)</span> in <a href="#eq-dfunct"><span>5.11</span></a> we obtain symbolically:</p>
+<p>Performing the integration over <span class="math inline">\(p_{}\)</span> in <a href="#eq-dfunct"><span>5.13</span></a> we obtain symbolically:</p>
 <p><span class="math display">\[
 d(m,\xi,u,q_{})=\text{peaked function imposing that } {2\ell_s\, \bar{q}_{}\cdot u=\frac{\ell_c}{\ell_s}}\text{ with width } \xi^\beta.
 \]</span></p>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">delta</span>(x)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">abs</span>(x)<span class="op">&lt;</span><span class="fl">1e-3</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">1</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">gauss</span>(x)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">exp</span>(<span class="op">-</span>x<span class="op">^</span><span class="fl">2</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sharpen</span>(f,eps,power)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">x-&gt;f</span>(x<span class="op">/</span>eps<span class="op">^</span>power)<span class="op">/</span>eps<span class="op">^</span>power</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>epss<span class="op">=</span><span class="fl">0.02</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">0.1</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>p<span class="op">=</span><span class="fu">plot</span>([<span class="fu">sharpen</span>(gauss,eps,<span class="fl">1</span>) for eps <span class="kw">in</span> epss], <span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>,label<span class="op">=</span>epss<span class="op">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<p><img src="scattering_files/figure-html/cell-5-output-1.svg" class="img-fluid"></p>
+<div class="cell page-columns page-full" data-execution_count="4">
+
+<div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="2">
+<div id="fig-gaussian" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="scattering_files/figure-html/fig-gaussian-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Fig&nbsp;5.4: Sharpening gaussian</figcaption><p></p>
+</figure>
 </div>
-</div>
+</div></div></div>
 <p>Let us disucss the wavefunction and the scales a bit more physically. The characteristic width <span class="math inline">\(\ell_\omega\)</span> is the particle’s position uncertainty, <span class="math inline">\(\frac{\hbar}{\ell_\omega}\)</span> is the associated momentum uncertainty. In the classical limit it makes sense that the position uncertainty is neglible with respect to minimum distance between the particles <span class="math inline">\(\ell_s\)</span>:</p>
 <p><span class="math display">\[
 \ell_\omega\ll \ell_s,
@@ -709,7 +683,7 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 \Delta O\,= \Bigg\langle\hspace{-0.6em}\Bigg\langle \int \overbracket{\,\tilde{\mathrm{d}}^{4}q_{}\, \tilde{\delta}^{}(2p_{1}\cdot q_{}+q_{}^2)\Theta^{{}}(p_{1}{}^{0}+q_{}^0)  
                                           \tilde{\delta}^{}(2p_{2}\cdot q_{}-q_{}^2)\Theta^{{}}(p_{2}{}^{0}+q_{}^0)}^{\,\mathrm{d}\Psi_{}(q_{})\,}
                   \mathrm{e}^{{-\frac{\mathring{\imath}}{\hbar}}q_{}^\mu b_\mu}\Big(\mathcal{I'}_{\text{v}}(O)+\mathcal{I'}_{\text{r}}(O) \Big) \Bigg\rangle\hspace{-0.6em}\Bigg\rangle,
-\tag{5.12}\]</span></span></p>
+\tag{5.14}\]</span></span></p>
 <p>where <span class="math display">\[
 \begin{aligned}
 \mathcal{I'}_{\text{v}}(O)&amp;=\mathring{\imath}\,  \underset{\mathclap{q_{}}}{\Delta}O\, \mathcal{A}^{}(p_{1},p_{2} \to p_{1}+q_{},p_{2}-q_{})\\
@@ -744,7 +718,6 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 <p>where <span class="math inline">\(\beta_{LO}\)</span> is the <abbr title="Leading Order">LO</abbr> <span class="math inline">\(\hbar\)</span>-dependence of the observable. This is so that <span class="math inline">\(\Delta O_{\text{classical}}\sim\hbar^0\)</span> i.e.&nbsp;classical scaling.</p>
 </section>
 </section>
-</section>
 <section id="impulse-in" class="level2 page-columns page-full" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="impulse-in"><span class="header-section-number">5.4</span> Impulse in <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></h2>
 <p>We can now explore the integrands for a specific observable. Consider the momentum of particle 1,<span class="math inline">\(p_{1}{}^{\mu}\)</span>, then the change in momentum is essentially the impulse of particle 1. The <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> formalisms gives us a way to write this as:</p>
@@ -771,7 +744,7 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 \overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})&amp;=\hbar^3\mathring{\imath}\,  \bar{q}_{}\, \sum\limits_{L=0}^\infty\Big(\frac{\kappa^{2}}{\hbar} \Big)^{(L+1)}\mathcal{\bar{A}}^{(L)}(p_{1},p_{2}\to p_{1}+\hbar \bar{q}_{},p_{2}-\hbar\bar{q}_{})\\
 &amp;=\mathring{\imath}\, \hbar  \bar{q}_{}\, \sum\limits_{L=0}^\infty \kappa^{2(L+1)}{\hbar}^{(1-L)}\mathcal{\bar{A}}^{(L)}(p_{1},p_{2}\to p_{1}+\hbar \bar{q}_{},p_{2}-\hbar\bar{q}_{}),
 \end{aligned}
-\tag{5.13}\]</span></span></p>
+\tag{5.15}\]</span></span></p>
 <div class="page-columns page-full"><p>as well as the real kernel:<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn25"><p><sup>25</sup>&nbsp;We changed the integration variable from <span class="math inline">\(r_i\)</span> to <span class="math inline">\(w_i=r_i-p_{i}\)</span> thus the measure changes:<span class="math display">\[\,\mathrm{d}\Phi_{2+\vert X \vert}(r_1,r_2,X)\,=\,\mathrm{d}\Phi_{\vert X \vert}(r_X)\,\prod\limits_{i=1,2}\,\tilde{\mathrm{d}}^{4}w_i\,\tilde{\delta}^{}(2p_{i} \cdot w_i+w_i^2)\Theta^{{}}(p_{i}^0+w_i^0)\]</span> where we used the same reasoning as for the <span class="math inline">\(q_i\)</span> variable change.</p></li></div></div>
 <p><span class="math display">\[
 \begin{aligned}
@@ -799,7 +772,7 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 &amp;\times\sum\limits_{L=0}^\infty \kappa^{2(2L+2+\vert X \vert)}{\hbar}^{2-2L-\vert X \vert}\mathcal{\bar{A}}^{(L)}(p_{1}, p_{2} \to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}) \\
 &amp;\times\mathcal{{\bar{A}{}^\ast}}^{(L)}(p_{1}+\hbar \bar{q}_{},p_{2}-\hbar \bar{q}_{}\to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}).\\
 \end{aligned}
-\tag{5.14}\]</span></span></p>
+\tag{5.16}\]</span></span></p>
 <p>Schematically we have</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -808,29 +781,29 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 \end{aligned}
 \]</span></p>
 <p>The contributions from the virtual kernel are lower order in the coupling <span class="math inline">\(\kappa\)</span> for a given loop order. Both kernels contribute together provided that the following equation is verified:</p>
-<p><span id="eq-rvloopmatch"><span class="math display">\[L-1=2L'+\vert X \vert. \tag{5.15}\]</span></span></p>
+<p><span id="eq-rvloopmatch"><span class="math display">\[L-1=2L'+\vert X \vert. \tag{5.17}\]</span></span></p>
 <p>Where <span class="math inline">\(L\)</span> is the loop count for the virtual kernel and <span class="math inline">\(L'\)</span>, <span class="math inline">\(\vert X \vert\)</span> are the real kernel loop count and messenger particle count respectively. Note that for a tree level virtual kernel, the real-kernel match does not exist. The real kernel is only present for <span class="math inline">\(L&gt;0\)</span>. When taking the classical limit we will only retain contributions from graphs that cancel the <span class="math inline">\(\hbar\)</span> divergences in each corresponding kernel. Thus at <span class="math inline">\(L\)</span> loop level, the amplitude in the virtual kernel must cancel with:</p>
 <p><span id="eq-hbarvirt"><span class="math display">\[
 \hbar^{1-L+O},
-\tag{5.16}\]</span></span></p>
+\tag{5.18}\]</span></span></p>
 <p>where the <span class="math inline">\(O\)</span> term is the order of <span class="math inline">\(\hbar\)</span> that is present as a result of the observable. In the case of particle 1’s momentum, <span class="math inline">\(O=1\)</span>. Similarly, the amplitudes in the real kernel must cancel with:</p>
 <p><span id="eq-hbarreal"><span class="math display">\[
-\hbar^{2-2L-\vert X \vert+O'}.
-\tag{5.17}\]</span></span></p>
+\hbar^{2-2L'-\vert X \vert+O}.
+\tag{5.19}\]</span></span></p>
 <div class="page-columns page-full"><p>Now we see that the <abbr title="Leading Order">LO</abbr> contribution <a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>to the impulse <span class="math inline">\(\Delta p_{1}^{\mu,(0)}\)</span> can only be from the virtual kernel at tree level. Thus we have the following equation,</p><div class="no-row-height column-margin column-container"><li id="fn26"><p><sup>26</sup>&nbsp;Here the expansion is in powers of the coupling constant, so even though we want <span class="math inline">\(\hbar\)</span>s to cancel, the loop order will still affect the order of the contribution through the coupling constant <span class="math inline">\(\kappa\)</span> and the <abbr title="Leading Order">LO</abbr> corresponds to <span class="math inline">\(\kappa\)</span></p></li></div></div>
 <p><span id="eq-impulseLO"><span class="math display">\[
 \Delta p_{1}^{\mu,(0)}=\Bigg\langle\hspace{-0.6em}\Bigg\langle \int \,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,\exp\big({-\mathring{\imath}\bar{q}_{}^\mu b_\mu}\big)\ \overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})^{(L=0)}\Bigg\rangle\hspace{-0.6em}\Bigg\rangle.
-\tag{5.18}\]</span></span></p>
+\tag{5.20}\]</span></span></p>
 <p>And the integrand is given by the tree level 4 point amplitude.</p>
 <p><span class="math display">\[
 \overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})^{L=0}=\mathring{\imath}\,  \bar{q}_{}^\mu\,  \kappa^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(p_{1},p_{2}\to p_{1}+\hbar \bar{q}_{},p_{2}-\hbar\bar{q}_{}).
 \]</span></p>
-<p>At Next-to-Leading Order (<abbr title="Next-to-Leading Order">NLO</abbr>), i.e.&nbsp;<span class="math inline">\(\kappa^4\)</span> order, both integrands contribute, as <a href="#eq-rvloopmatch"><span>5.15</span></a> can be satisfied for <span class="math inline">\(L=1\)</span>, <span class="math inline">\(L'=0\)</span> and <span class="math inline">\(\vert X \vert=2\)</span>. Thus we have the following equation:</p>
+<p>At Next-to-Leading Order (<abbr title="Next-to-Leading Order">NLO</abbr>), i.e.&nbsp;<span class="math inline">\(\kappa^4\)</span> order, both integrands contribute, as <a href="#eq-rvloopmatch"><span>5.17</span></a> can be satisfied for <span class="math inline">\(L=1\)</span>, <span class="math inline">\(L'=0\)</span> and <span class="math inline">\(\vert X \vert=2\)</span>. Thus we have the following equation:</p>
 <p><span id="eq-impulseNLO"><span class="math display">\[
 \Delta p_{1}^{\mu,(1)}=\Bigg\langle\hspace{-0.6em}\Bigg\langle \int \,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,\exp\big({-\mathring{\imath}\bar{q}_{}^\mu b_\mu}\big) \Big(\overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})^{(L=1)}+\overline{\mathcal{{I}}_{\text{r}}'}(p_{1}{}^{\mu})^{(L'=0)} \Big)\Bigg\rangle\hspace{-0.6em}\Bigg\rangle.
-\tag{5.19}\]</span></span></p>
+\tag{5.21}\]</span></span></p>
 <p>The virtual integrand is now given by the 1-loop level amplitude, and the real integrand is given by the square of a the tree level amplitude. This process can go on indefinetely, and is general to the the type of observable and the theory. Here we considered the change of momentum a particle, which for a black hole very far away would be very difficult to measure. However, we can also consider an observable such as the four-momentum of the radiated particles, or more precisely its expection value. Of course the operator corresponding to this observable gives zero when acting on the initial momentum states, and only gives a non-zero result when acting on the messenger states. Thus for this observable only the real integrand, starting with <span class="math inline">\(\vert X \vert=1\)</span> will contribute, the <abbr title="Leading Order">LO</abbr> contrybution being given by what is essentially the unitarity cut of a two loop amplitude. We see that regardless of observable, the objects that are needed are the amplitudes.</p>
-<p>For each loop level, many diagrams can contribute, but the classical limit enforces that they must cancel the <span class="math inline">\(\hbar\)</span> orders given by <a href="#eq-hbarreal"><span>5.17</span></a> and <a href="#eq-hbarvirt"><span>5.16</span></a>. The cancellation order is dependent on the considered observable and filters the contributing diagrams. It can also be reformulated in the language of the method of regions.</p>
+<p>For each loop level, many diagrams can contribute, but the classical limit enforces that they must cancel the <span class="math inline">\(\hbar\)</span> orders given by <a href="#eq-hbarreal"><span>5.19</span></a> and <a href="#eq-hbarvirt"><span>5.18</span></a>. The cancellation order is dependent on the considered observable and filters the contributing diagrams. It can also be reformulated in the language of the method of regions.</p>
 <p>To see the whole machinery in action, let us take <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> as an example theory, that shows the relevant subleties of the formalism.</p>
 </section>
 <section id="amplitudes" class="level2 page-columns page-full" data-number="5.5">
@@ -958,18 +931,18 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 <p>For the photon, we will take the Feynamn gauge, setting <span class="math inline">\(\xi=1\)</span> and thus <span class="math inline">\(\tilde{D}^{{\mu \nu}}_1(\ell)=\tilde{D}^{{\mu \nu}}(\ell)=\frac{-\mathring{\imath}\eta^{\mu \nu}}{\ell^{2}+\mathring{\imath}\varepsilon}\)</span>. Notice that if we rescale all photon momenta (taking them to be the loop momenta) by <span class="math inline">\(\hbar\)</span> or equivalently take them to be in the soft region: <span class="math inline">\(\vert k \vert\sim\vert q \vert\ll \vert p \vert\)</span>, where <span class="math inline">\(p\)</span> is the external momenta, then the photon propagator scales homgenously in <span class="math inline">\(\hbar\)</span>, typically:</p>
 <p><span id="eq-photonscale"><span class="math display">\[
 \frac{1}{(\ell-q_{})^2}=\frac{1}{\hbar^2}\frac{1}{(\bar{\ell}-\bar{q}_{})^2},
-\tag{5.20}\]</span></span></p>
+\tag{5.22}\]</span></span></p>
 <p>thus contributes <span class="math inline">\(\mathcal{O}(\hbar^{-2})\)</span> to the overall diagram. The matter propagator on the other hand, has inhomgenous <span class="math inline">\(\hbar\)</span> scaling, as we do not rescale the external momenta, (or equivalently the external momenta are not restricted by the regions). Note that we will not consider internal mass loops as the soft limit means that massive pair production is forbidden, thus massive propagators necessarily contain an external momentum. We can notheless expand a generic massive propagator in the soft limit:</p>
 <p><span id="eq-massiveScale"><span class="math display">\[
 \begin{aligned}
 \frac{1}{(\ell-p_{i})^2-m_{i}^2}&amp;=\frac{1}{\ell^2-2\ell\cdot p_{i} +\cancel{p_{i}^2}-\cancel{m_{i}^2}}= \frac{1}{\hbar^2\bar{\ell}^2-2\hbar \bar{\ell}\cdot p_{i}}\\
 &amp;=-\frac{1}{\hbar} \frac{1}{2\bar{\ell}\cdot p_{i}}(1+\hbar\frac{ \bar{\ell}^2}{2\bar{\ell}\cdot p_{i}}+\hbar^2\frac{ \bar{\ell}^4}{(2\bar{\ell}\cdot p_{i})^2}+\dots ).\\
 \end{aligned}
-\tag{5.21}\]</span></span></p>
+\tag{5.23}\]</span></span></p>
 <p>In other contexts one may say that the matter propagator has eikonalized (linearized). Before we compute the amplitudes let us set up some useful kinematic identities and variables. If we consider the two-to-two particle scattering, taking an all outgoing momentum convention we have the following masses:</p>
 <p><span id="eq-masses"><span class="math display">\[
 m_{1}^2=p_{4}^2 =p_{1}^2,\quad m_{2}^2=p_{2}^2 =p_{3}^2,
-\tag{5.22}\]</span></span></p>
+\tag{5.24}\]</span></span></p>
 <p>and mandelstam variables:</p>
 <p><span class="math display">\[
 s=(p_{1}+p_{2})^2,\quad t=q_{}^2=(p_{1}+p_{4})^2,\quad u=(p_{1}+p_{3})^2   ,
@@ -981,11 +954,12 @@ s+t+u=2(m_{1}^2+m_{2}^2).
 <p>We can also change the external momentum variables to ones more amenable to the soft limit, namely:</p>
 <p><span id="eq-newmom"><span class="math display">\[
 p_{1}=-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big), p_{2}=-\big(\tilde{p}_{2}+\frac{q_{}}{2} \big), p_{3}=\big(\tilde{p}_{2}-\frac{q_{}}{2} \big), p_{4}=\big(\tilde{p}_{1}+\frac{q_{}}{2} \big) .
-\tag{5.23}\]</span></span></p>
-<div class="page-columns page-full"><p>The new momentum variables <span class="math inline">\(\tilde{p}_{i}\)</span> are crucially orthogonal to momentum transfer <span class="math inline">\(q_{}\)</span> :<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn27"><p><sup>27</sup>&nbsp;we use <a href="#eq-masses"><span>5.22</span></a> </p></li></div></div>
-<p><span class="math display">\[
+\tag{5.25}\]</span></span></p>
+<div class="page-columns page-full"><p>The new momentum variables <span class="math inline">\(\tilde{p}_{i}\)</span> are crucially orthogonal to momentum transfer <span class="math inline">\(q_{}\)</span> :<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn27"><p><sup>27</sup>&nbsp;we use <a href="#eq-masses"><span>5.24</span></a> </p></li></div></div>
+<p><span id="eq-orthog"><span class="math display">\[
 \tilde{p}_{i}\cdot q_{}=0,
-\]</span> and the physical scattering region, given by <span class="math inline">\(s&gt;(m_{1}+m_{2})^2\)</span> and <span class="math inline">\(q_{}^2&lt;0\)</span> is the given by the same formulas:</p>
+\tag{5.26}\]</span></span></p>
+<p>and the physical scattering region, given by <span class="math inline">\(s&gt;(m_{1}+m_{2})^2\)</span> and <span class="math inline">\(q_{}^2&lt;0\)</span> is the given by the same formulas:</p>
 <p><span class="math display">\[
 s=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)-\big(\tilde{p}_{2}+\frac{q_{}}{2} \big) \Big)^2=(\tilde{p}_{1}+\tilde{p}_{2})^2
 \]</span></p>
@@ -996,7 +970,7 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <p>With all the ingredients in place, we can now go on to computing the amplitudes.</p>
 <section id="tree-level" class="level3 page-columns page-full" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="tree-level"><span class="header-section-number">5.5.1</span> Tree level</h3>
-<p>We start with the tree level amplitude, the only <abbr title="Leading Order">LO</abbr> contribution in for example <a href="#eq-impulseLO"><span>5.18</span></a>. The only possible diagram we can build with four external scalar legs, and vertices as defined in <a href="#tbl-sqedfrules">Table&nbsp;<span>5.1</span></a>, is the following tree:</p>
+<p>We start with the tree level amplitude, the only <abbr title="Leading Order">LO</abbr> contribution in for example <a href="#eq-impulseLO"><span>5.20</span></a>. The only possible diagram we can build with four external scalar legs, and vertices as defined in <a href="#tbl-sqedfrules">Table&nbsp;<span>5.1</span></a>, is the following tree:</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="./tikz/treelevelsqed.svg" class="img-fluid figure-img"></p>
@@ -1005,17 +979,17 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 </div>
 <p>The amplitude is read off diagram and using Feynman rules for SQED we have:</p>
 <p><span class="math display">\[
-\mathcal{A}^{(0)} = \mathring{\imath}\tilde{D}^{{\mu \nu}}(q)\cdot \,e^2Q_{1} Q_{2}2 \tilde{p}_{1}{}^{\mu} 2\tilde{p}_{2}{}^{\nu}=\frac{4e^2Q_{1} Q_{2}\tilde{p}_{1}\cdot\tilde{p}_{2}}{q_{}^2} ,
+\mathcal{\bar{A}}^{(0)} = \mathring{\imath}\tilde{D}^{{\mu \nu}}(q)\cdot \,e^2Q_{1} Q_{2}2 \tilde{p}_{1}{}^{\mu} 2\tilde{p}_{2}{}^{\nu}=\frac{4e^2Q_{1} Q_{2}\tilde{p}_{1}\cdot\tilde{p}_{2}}{q_{}^2} ,
 \]</span></p>
 <p>using the mandelstahm invariants described above we can infact write this as:</p>
-<p><span class="math display">\[
-\mathcal{A}^{(0)} =e^2Q_{1} Q_{2} \frac{4m_{1}m_{2}\sigma}{\hbar^2\bar{q}_{}^2},
-\]</span></p>
+<p><span id="eq-treeampl"><span class="math display">\[
+\mathcal{\bar{A}}^{(0)} =e^2Q_{1} Q_{2} \frac{4m_{1}m_{2}\sigma}{\hbar^2\bar{q}_{}^2},
+\tag{5.27}\]</span></span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the relativistic factor of particle 1 in the rest frame of particle 2:</p>
 <p><span id="eq-relfact"><span class="math display">\[
 \sigma=\frac{s-m_{1}^2-m_{2}^2}{2m_{1}m_{2}}=\frac{p_{1}\cdot p_{2}}{m_{1}m_{2}}=\frac{\tilde{p}_{1}\cdot\tilde{p}_{2}}{m_{1}m_{2}}+ \mathcal{O}(\hbar^{}).
-\tag{5.24}\]</span></span></p>
-<div class="page-columns page-full"><p>We now input the reduced version <span class="math inline">\(\mathcal{\bar{A}}^{(0)}e^2=\mathcal{A}^{(0)}\)</span> of the amplitude, and take the <span class="math inline">\(\hbar\to0\)</span> limit of <a href="#eq-impulseLO"><span>5.18</span></a>. We can safely take the <span class="math inline">\(\hbar \to 0\)</span> limit as the integrand contains no terms singular in <span class="math inline">\(\hbar\)</span> (the <span class="math inline">\(\frac{1}{\hbar^2}\)</span> is cancelled by the <span class="math inline">\(\hbar^2\)</span> pre-factor). Notice that the integration measure <a href="#eq-DeltaOclas"><span>5.12</span></a> simplifies in the classical limit:<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn28"><p><sup>28</sup>&nbsp;Compare to <span class="math display">\[\begin{aligned}\,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,&amp;=\,\tilde{\mathrm{d}}^{4}\bar{q}_{}\, \tilde{\delta}^{}(2p_{1}\cdot\bar{q}_{}+\hbar\bar{q}_{}^2)\Theta^{{}}(p_{1}{}^{0}+q_{}^0)\\&amp; \tilde{\delta}^{}(2p_{1}\cdot \bar{q}_{}+\hbar\bar{q}_{}^2)\Theta^{{}}(p_{2}{}^{0}+q_{}^0)\end{aligned}\]</span> The theta functions cancel as <span class="math inline">\(q_{}^0\to0\)</span> and <span class="math inline">\(p_{i}\)</span> becomes classical. Changing to the special kinematic variables <a href="#eq-newmom"><span>5.23</span></a> we can even eliminate the delta functions, since by constuction <span class="math inline">\(\tilde{p}_{1}\cdot\bar{q}_{}=0\)</span>.</p></li></div></div>
+\tag{5.28}\]</span></span></p>
+<div class="page-columns page-full"><p>We now input the reduced version <span class="math inline">\(\mathcal{\bar{A}}^{(0)}e^2=\mathcal{A}^{(0)}\)</span> of the amplitude, and take the <span class="math inline">\(\hbar\to0\)</span> limit of <a href="#eq-impulseLO"><span>5.20</span></a>. We can safely take the <span class="math inline">\(\hbar \to 0\)</span> limit as the integrand contains no terms singular in <span class="math inline">\(\hbar\)</span> (the <span class="math inline">\(\frac{1}{\hbar^2}\)</span> is cancelled by the <span class="math inline">\(\hbar^2\)</span> pre-factor). Notice that the integration measure <a href="#eq-DeltaOclas"><span>5.14</span></a> simplifies in the classical limit:<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn28"><p><sup>28</sup>&nbsp;Compare to <span class="math display">\[\begin{aligned}\,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,&amp;=\,\tilde{\mathrm{d}}^{4}\bar{q}_{}\, \tilde{\delta}^{}(2p_{1}\cdot\bar{q}_{}+\hbar\bar{q}_{}^2)\Theta^{{}}(p_{1}{}^{0}+q_{}^0)\\&amp; \tilde{\delta}^{}(2p_{1}\cdot \bar{q}_{}+\hbar\bar{q}_{}^2)\Theta^{{}}(p_{2}{}^{0}+q_{}^0)\end{aligned}\]</span> The theta functions cancel as <span class="math inline">\(q_{}^0\to0\)</span> and <span class="math inline">\(p_{i}\)</span> becomes classical. Changing to the special kinematic variables <a href="#eq-newmom"><span>5.25</span></a> we can even eliminate the delta functions, since by constuction <span class="math inline">\(\tilde{p}_{1}\cdot\bar{q}_{}=0\)</span>.</p></li></div></div>
 <p><span class="math display">\[
 \lim\limits_{\hbar \to0} \,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,=\,\tilde{\mathrm{d}}^{4}\bar{q}_{}\, \cancel{\tilde{\delta}^{}(2\tilde{p}_{1}\cdot\bar{q}_{})}\cancel{\tilde{\delta}^{}(2\tilde{p}_{1}\cdot \bar{q}_{})}.
 \]</span></p>
@@ -1036,58 +1010,58 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <div class="code-with-filename-file">
 <pre><strong>SQEDmodel</strong></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>* propagators</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> [Phi1,Phi1c,+]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> [Phi2,Phi2c,+]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> [Photon,Photon,+]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>* vertices</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Phi1]</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Phi2]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Photon,Phi1]</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Photon,Phi2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>* propagators</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> [Phi1,Phi1c,+]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> [Phi2,Phi2c,+]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> [Photon,Photon,+]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>* vertices</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Phi1]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Phi2]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a> [Phi1c,Photon,Photon,Phi1]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a> [Phi2c,Photon,Photon,Phi2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This file also defines the names of the fields in question. We can then give <code>QGRAF</code> additional options, such as the number of external legs, and the number of loops, written in a <code>qgraf.dat</code> file that can look like this:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>qgraf.dat</strong></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>output= '{{output filename}}' ;</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>style= './styles/julia.sty' ; </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>model= './qgraf/SQEDmodel';</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>in= Phi1,  Phi2;</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>out= Phi1,Phi2;</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>loops= 1;</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>loop_momentum= k;</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>options=  notadpole,nosnail,onshell ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>output= '{{output filename}}' ;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>style= './styles/julia.sty' ; </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>model= './qgraf/SQEDmodel';</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>in= Phi1,  Phi2;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>out= Phi1,Phi2;</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>loops= 1;</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>loop_momentum= k;</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>options=  notadpole,nosnail,onshell ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the <code>julia.sty</code> style file. The <code>julia.sty</code> file is a style file that is used to generate the output in a format that can be read by a <code>Julia</code> <span class="citation" data-cites="Bezanson:2015">(<a href="references.html#ref-Bezanson:2015" role="doc-biblioref">Bezanson et al. 2015</a>)</span> package built to process and visualise the outputted graphs. This package is called (maybe too broadly) <code>QFT.jl</code> is hosted on <a href="https://github.com/lcnhb/QFT.jl">github</a> . Let us see it in action. We can run <code>QGRAF</code> from the command line, and it will generate a file called <code>{{output filename}}</code> that contains the output of the program. We can then use this in a <code>Julia</code> file to visualise the diagrams.</p>
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Images</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Diagrams</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.FieldGraphs</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Fields</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span>  <span class="bu">Catlab.Graphics.Graphviz</span>: run_graphviz</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"SQED.jl"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>diags<span class="op">=</span><span class="fu">include</span>(<span class="st">"QGRAFout/julia/1lSQED.jl"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>qDiags<span class="op">=</span>[<span class="fu">qDiagram</span>(;diag<span class="op">...</span>) for diag <span class="kw">in</span> diags]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>grafs<span class="op">=</span>(x <span class="op">-&gt;</span> x.g).(qDiags)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Images</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Diagrams</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.FieldGraphs</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">QFT.Fields</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span>  <span class="bu">Catlab.Graphics.Graphviz</span>: run_graphviz</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="st">"SQED.jl"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>diags<span class="op">=</span><span class="fu">include</span>(<span class="st">"QGRAFout/julia/1lSQED.jl"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>qDiags<span class="op">=</span>[<span class="fu">qDiagram</span>(;diag<span class="op">...</span>) for diag <span class="kw">in</span> diags]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>grafs<span class="op">=</span>(x <span class="op">-&gt;</span> x.g).(qDiags)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diag</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel" data-execution_count="6">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -1149,33 +1123,33 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Logging</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Logging</span>.<span class="fu">disable_logging</span>(<span class="bu">Logging</span>.Info)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scaleless</span>(g<span class="op">::</span><span class="dt">AbstractFieldGraph</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  cycles <span class="op">=</span><span class="fu">cycle_basis</span>(g)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  isscaleless<span class="op">=</span><span class="cn">false</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> c <span class="kw">in</span> cycles</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    hs<span class="op">=</span> <span class="fu">collect</span>(<span class="bu">Iterators</span>.<span class="fu">flatten</span>(<span class="fu">half_edges</span>.(<span class="fu">Ref</span>(g),c)))</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span><span class="fu">unique!</span>(<span class="fu">typeof</span>.(<span class="fu">field</span>.(<span class="fu">Ref</span>(g),hs)))</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">Bool</span>(Phi1 <span class="kw">in</span> fields) <span class="op">⊻</span>  <span class="fu">Bool</span>(Phi2 <span class="kw">in</span> fields)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      isscaleless<span class="op">=</span><span class="cn">true</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> isscaleless</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>noscalelessdiags<span class="op">=</span>qDiags[.!<span class="fu">scaleless</span>.(grafs)]</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>classicaldiags<span class="op">=</span>noscalelessdiags[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>]</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,d) <span class="kw">in</span> <span class="fu">enumerate</span>(classicaldiags)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  d.ID<span class="op">=</span>i</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs[.!<span class="fu">scaleless</span>.(grafs)])</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Logging</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Logging</span>.<span class="fu">disable_logging</span>(<span class="bu">Logging</span>.Info)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scaleless</span>(g<span class="op">::</span><span class="dt">AbstractFieldGraph</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  cycles <span class="op">=</span><span class="fu">cycle_basis</span>(g)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  isscaleless<span class="op">=</span><span class="cn">false</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> c <span class="kw">in</span> cycles</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    hs<span class="op">=</span> <span class="fu">collect</span>(<span class="bu">Iterators</span>.<span class="fu">flatten</span>(<span class="fu">half_edges</span>.(<span class="fu">Ref</span>(g),c)))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span><span class="fu">unique!</span>(<span class="fu">typeof</span>.(<span class="fu">field</span>.(<span class="fu">Ref</span>(g),hs)))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">Bool</span>(Phi1 <span class="kw">in</span> fields) <span class="op">⊻</span>  <span class="fu">Bool</span>(Phi2 <span class="kw">in</span> fields)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      isscaleless<span class="op">=</span><span class="cn">true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> isscaleless</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>noscalelessdiags<span class="op">=</span>qDiags[.!<span class="fu">scaleless</span>.(grafs)]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>classicaldiags<span class="op">=</span>noscalelessdiags[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>]</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,d) <span class="kw">in</span> <span class="fu">enumerate</span>(classicaldiags)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  d.ID<span class="op">=</span>i</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i,graf) <span class="kw">in</span> <span class="fu">enumerate</span>(grafs[.!<span class="fu">scaleless</span>.(grafs)])</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">open</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>;create<span class="op">=</span><span class="cn">true</span>,write<span class="op">=</span><span class="cn">true</span>) <span class="cf">do</span> io</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_graphviz</span>(io,<span class="fu">to_graphviz</span>(graf),format<span class="op">=</span><span class="st">"png"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display</span>(Images.<span class="fu">load</span>(<span class="st">"./png/diagscaleless</span><span class="sc">$</span>i<span class="st">.png"</span>))  </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel" data-execution_count="7">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -1197,45 +1171,47 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 </div>
 </div>
 </div>
-<p>There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous <span class="math inline">\(\hbar^{-2}\)</span> scaling (see <a href="#eq-photonscale"><span>5.20</span></a>), the vertices only bring constants, and the loop integration has <span class="math inline">\(\hbar^4\)</span> scaling. Together this means that the reduced amplitude has <span class="math inline">\(\hbar^0\)</span> scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum’s <span class="math inline">\(\hbar\)</span> scale (see <a href="#eq-impulseIr"><span>5.14</span></a>). Thus the double seagull diagram dies in the classical limit.</p>
+<p>There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous <span class="math inline">\(\hbar^{-2}\)</span> scaling (see <a href="#eq-photonscale"><span>5.22</span></a>), the vertices only bring constants, and the loop integration has <span class="math inline">\(\hbar^4\)</span> scaling. Together this means that the reduced amplitude has <span class="math inline">\(\hbar^0\)</span> scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum’s <span class="math inline">\(\hbar\)</span> scale (see <a href="#eq-impulseIr"><span>5.16</span></a>). Thus the double seagull diagram dies in the classical limit.</p>
 <div class="page-columns page-full"><p>We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>. We will also extract one of these integrands by hand, for completeness and comparison.</p><div class="no-row-height column-margin column-container"><li id="fn30"><p><sup>30</sup>&nbsp;at least at the unintegrated level</p></li></div></div>
-<p>The first step is to define the Feynman rules in a computer readable format. We will use <code>Julia</code> to apply these rules at every vertex and every edge, but for the actual computation we will use <code>FORM</code> <span class="citation" data-cites="Vermaseren:2000nd Kuipers:2012rf">(<a href="references.html#ref-Vermaseren:2000nd" role="doc-biblioref">Vermaseren 2000</a>; <a href="references.html#ref-Kuipers:2012rf" role="doc-biblioref">Kuipers et al. 2013</a>)</span> which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of <code>Julia</code>s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules as follows:</p>
+<p>The first step is to define the Feynman rules in a computer readable format. We will use <code>Julia</code> to apply these rules at every vertex and every edge, but for the actual computation we will use <code>FORM</code> <span class="citation" data-cites="Vermaseren:2000nd Kuipers:2012rf">(<a href="references.html#ref-Vermaseren:2000nd" role="doc-biblioref">Vermaseren 2000</a>; <a href="references.html#ref-Kuipers:2012rf" role="doc-biblioref">Kuipers et al. 2013</a>)</span> which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of <code>Julia</code>s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> as follows:</p>
 <div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  indx1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f1))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  indx2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f2))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,0,</span><span class="sc">$</span>momen<span class="st">)*d_(</span><span class="sc">$</span>indx1<span class="st">,</span><span class="sc">$</span>indx2<span class="st">)"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> <span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi1</span>,f2<span class="op">::</span><span class="dt">Phi1c</span>])</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,1,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi2</span>,f2<span class="op">::</span><span class="dt">Phi2c</span>])</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,2,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵧ,γ)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>]) <span class="kw">where</span> {S}</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  p1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₁</span>(<span class="fu">index</span>(γ)))</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  p2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₂</span>(<span class="fu">index</span>(γ)))</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i*e*</span><span class="sc">$</span>q<span class="st">*(</span><span class="sc">$</span>p2<span class="st">-</span><span class="sc">$</span>p1<span class="st">)"</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵧ₁,γ₁)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,(pᵧ₂,γ₂)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>      (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>]) <span class="kw">where</span> {S}    </span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  mu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₁))</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  nu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₂)) </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2*_i*</span><span class="sc">$</span>q<span class="st">^2*e^2*d_(</span><span class="sc">$</span>mu<span class="st">,</span><span class="sc">$</span>nu<span class="st">)"</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  indx1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f1))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  indx2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(f2))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,0,</span><span class="sc">$</span>momen<span class="st">)*d_(</span><span class="sc">$</span>indx1<span class="st">,</span><span class="sc">$</span>indx2<span class="st">)"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> <span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi1</span>,f2<span class="op">::</span><span class="dt">Phi1c</span>])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,1,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,[f1<span class="op">::</span><span class="dt">Phi2</span>,f2<span class="op">::</span><span class="dt">Phi2c</span>])</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  momen <span class="op">=</span> <span class="fu">repr</span>(mime,p.symbol)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i* prop(-1,2,</span><span class="sc">$</span>momen<span class="st">)"</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            (pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>            (pᵧ,γ)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>]) <span class="kw">where</span> {S}</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  p1 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₁</span>(<span class="fu">index</span>(γ)))</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  p2 <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">pᵩ₂</span>(<span class="fu">index</span>(γ)))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"_i*e*</span><span class="sc">$</span>q<span class="st">*(</span><span class="sc">$</span>p2<span class="st">-</span><span class="sc">$</span>p1<span class="st">)"</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="pp">@symmetric</span> function <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,[(pᵧ₁,γ₁)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            (pᵧ₂,γ₂)<span class="op">::</span><span class="dt">Tuple{Any,Photon}</span>,(pᵩ₂,b)<span class="op">::</span><span class="dt">Tuple{Any,AdjointField{ScalarField{S}}}</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>            (pᵩ₁,a)<span class="op">::</span><span class="dt">Tuple{Any,ScalarField{S}}</span>]) <span class="kw">where</span> {S}    </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  mu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₁))</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  nu <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">index</span>(γ₂)) </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  q <span class="op">=</span> <span class="fu">repr</span>(mime,<span class="fu">charge</span>(a))</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2*_i*</span><span class="sc">$</span>q<span class="st">^2*e^2*d_(</span><span class="sc">$</span>mu<span class="st">,</span><span class="sc">$</span>nu<span class="st">)"</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>where we define <code>prop(n,i,p)</code> as representing a generic Feynman propagator, which we will denote:</p>
@@ -1246,7 +1222,7 @@ D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=(p^2-m_i^2+i\epsilon )^{n} \quad \text{thus} \
 <div class="cell" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toform</span>(<span class="cn">stdout</span>,classicaldiags[<span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toform</span>(<span class="cn">stdout</span>,classicaldiags[<span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>*--#[d3l1:</code></pre>
@@ -1266,46 +1242,133 @@ Id q4= l1;
 *--#]d3l1:</code></pre>
 </div>
 </div>
-<p>Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the <code>Julia</code> program, using kruskal’s algorithm <span class="citation" data-cites="Kruskal:1956">(<a href="references.html#ref-Kruskal:1956" role="doc-biblioref">Kruskal 1956</a>)</span> to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using <code>FORM</code> we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in <a href="#eq-newmom"><span>5.23</span></a>. The <code>FORM</code> version of the box integrand is then:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   [d3l1|o.3.4|i.3.4|i|o|] =</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>         ( prop(-1,0,q - l1) )</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,0,l1) )</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,1,1/2*q - l1 + pb2) )</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,2, - 1/2*q + l1 + pb1) )</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       * ( dot(l1,l1) )</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) </span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       * ( e ) * ( e ) * ( e ) * ( e );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the <code>Julia</code> program, using kruskal’s algorithm <span class="citation" data-cites="Kruskal:1956">(<a href="references.html#ref-Kruskal:1956" role="doc-biblioref">Kruskal 1956</a>)</span> to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using <code>FORM</code> we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in <a href="#eq-newmom"><span>5.25</span></a>. The <code>FORM</code> version of the box integrand is then:</p>
+<div id="lst-formBox" class="listing">
+<p>Listing&nbsp;5.1: Box integrand in FORM</p>
+<div class="sourceCode" id="lst-formBox" data-lst-cap="Box integrand in FORM"><pre class="sourceCode default sql code-with-copy"><code class="sourceCode default"><span id="lst-formBox-1"><a href="#lst-formBox-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-formBox-2"><a href="#lst-formBox-2" aria-hidden="true" tabindex="-1"></a>   [d3l1|o.3.4|i.3.4|i|o|] =</span>
+<span id="lst-formBox-3"><a href="#lst-formBox-3" aria-hidden="true" tabindex="-1"></a>         ( prop(-1,0,q - l1) )</span>
+<span id="lst-formBox-4"><a href="#lst-formBox-4" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,0,l1) )</span>
+<span id="lst-formBox-5"><a href="#lst-formBox-5" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,1,1/2*q - l1 + pb1) )</span>
+<span id="lst-formBox-6"><a href="#lst-formBox-6" aria-hidden="true" tabindex="-1"></a>       * ( prop(-1,2, - 1/2*q + l1 + pb2) )</span>
+<span id="lst-formBox-7"><a href="#lst-formBox-7" aria-hidden="true" tabindex="-1"></a>       * ( dot(q,q) - 2*dot(q,l1) - 2*dot(q,pb2) + 2*dot(q,pb1) + dot(l1,l1)</span>
+<span id="lst-formBox-8"><a href="#lst-formBox-8" aria-hidden="true" tabindex="-1"></a>          + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )</span>
+<span id="lst-formBox-9"><a href="#lst-formBox-9" aria-hidden="true" tabindex="-1"></a>       * ( dot(l1,l1) + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )</span>
+<span id="lst-formBox-10"><a href="#lst-formBox-10" aria-hidden="true" tabindex="-1"></a>       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 )</span>
+<span id="lst-formBox-11"><a href="#lst-formBox-11" aria-hidden="true" tabindex="-1"></a>       * ( e ) * ( e ) * ( e ) * ( e );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>When applied to all 4 diagrams we obtain precisely the same integrands as those in <span class="citation" data-cites="Kosower:2018adc">Kosower, Maybee, and O’Connell (<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">2019</a>)</span>. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:</p>
 <p><span id="eq-boxfam"><span class="math display">\[
-G_{i_1,i_2,i_3,i_4}=\frac{1}{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
-\tag{5.25}\]</span></span></p>
+\Box_{i_1,i_2,i_3,i_4}=\frac{1}{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
+\tag{5.29}\]</span></span></p>
 <p>for powers <span class="math inline">\(\{i \}\in\{0,1 \}^4\)</span>, where the inverse propagators <span class="math inline">\(\rho_i\)</span> are:</p>
 <p><span class="math display">\[
-\rho_1=\ell^2+\mathring{\imath}\epsilon,\quad \rho_2=(\ell-q)^2+\mathring{\imath}\epsilon,\quad \rho_3=(-\frac{1}{2}{q}+\ell+\tilde{p}_{1})^2-m_{1}^2+\mathring{\imath}\epsilon,\quad \rho_4=(\frac{1}{2}{q}-\ell+\tilde{p}_{2})^2-m_{2}^2+\mathring{\imath}\epsilon
+\rho_1=\ell^2+\mathring{\imath}\epsilon,\quad \rho_2=(\ell-q)^2+\mathring{\imath}\epsilon,\quad \rho_3=(\frac{q}{2}-\ell+\tilde{p}_{1})^2-m_{1}^2+\mathring{\imath}\epsilon,\quad \rho_4=(-  \frac{q}{2}+\ell+\tilde{p}_{2})^2-m_{2}^2+\mathring{\imath}\epsilon
 \]</span></p>
-<p>Note that in the classical limit we can expand the massive propagators as shown in <a href="#eq-massiveScale"><span>5.21</span></a> and obtain to first order in <span class="math inline">\(\hbar\)</span>:</p>
+<p>Note that in the classical limit we can expand the massive propagators as shown in <a href="#eq-massiveScale"><span>5.23</span></a> and obtain to first order in <span class="math inline">\(\hbar\)</span>:</p>
 <p><span class="math display">\[
-\rho_3=(-\frac{1}{2}{q}+\ell)^2 +2\ell\cdot\tilde{p}_{1}+\mathring{\imath}\epsilon,\quad \rho_4=(\frac{1}{2}{q}-\ell)^2-2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon
+\rho_3=2\ell\cdot\tilde{p}_{1}+\mathring{\imath}\epsilon,\quad \rho_4= -2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon,
 \]</span></p>
-<p>The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:</p>
+<p>where we used <a href="#eq-orthog"><span>5.26</span></a>. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:</p>
 <p><span class="math display">\[
 \mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
 \]</span></p>
 <p>where <span class="math inline">\({S}\)</span> and <span class="math inline">\({S'}\)</span> are sets of coefficient matrices for all possible dot products. If we have a quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span> such that <span class="math inline">\(A_{a,b}\neq0\)</span> and <span class="math inline">\(B_{a,b}neq0\)</span> and <span class="math inline">\(p_{a}\)</span>or <span class="math inline">\(p_{b}\)</span> is a loop momentum <span class="math inline">\(\ell\)</span>, say <span class="math inline">\(p_a=\ell\)</span> then it is useful to write this component of the integrand as:</p>
-<p><span class="math display">\[
+<p><span id="eq-scalarred"><span class="math display">\[
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\Big(1-\frac{\tilde{D}_A}{D_A} \Big).
+\tag{5.30}\]</span></span></p>
+<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like <a href="#eq-boxfam"><span>5.29</span></a>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">(<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">C. Anastasiou and Lazopoulos 2004</a>)</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">(<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">Smirnov and Chukharev 2020</a>)</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">(<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">Maierhöfer and Usovitsch 2018</a>)</span>.</p>
+<p>With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at <abbr title="Next-to-Leading Order">NLO</abbr> that are then used in <a href="#eq-impulseIr"><span>5.16</span></a> and <a href="#eq-impulseIv"><span>5.15</span></a>. The algorithm described above was implemented in <code>FORM</code> and is able to rapibly process the 1-loop diagrams. The code is available at the repository for this document.</p>
+<p>Importantly we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from <a href="#lst-formBox">Listing&nbsp;<span>5.1</span></a> that the integral for the box diagram <span class="math inline">\(B\)</span> is:</p>
+<p><span class="math display">\[
+\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\ell\, \Box_{1,1,1,1}(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(q_{}-\ell )^2 )(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(\ell )^2 )
 \]</span></p>
-<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like <a href="#eq-boxfam"><span>5.25</span></a>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">(<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">Anastasiou and Lazopoulos 2004</a>)</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">(<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">Smirnov and Chukharev 2020</a>)</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">(<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">Maierhöfer and Usovitsch 2018</a>)</span>.</p>
-<p>With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at <abbr title="Next-to-Leading Order">NLO</abbr> that are then used in <a href="#eq-impulseIr"><span>5.14</span></a> and <a href="#eq-impulseIv"><span>5.13</span></a>.</p>
-<p>We have now completed the program of <abbr title="Next-to-Leading Order">NLO</abbr> amplitudes</p>
-<p>Add a section on everything together plus box and cross box cancelation ()</p>
+<p>we can apply the procedure described above, turning messenger momenta into wavenumbers:</p>
+<div class="page-columns page-full"><p><span class="math display">\[
+\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\bar{\ell}\,\frac{\hbar^D}{\hbar^6} \Box_{\bar{1},\bar{1},\bar{1},\bar{1}}(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{q}_{}-\bar{\ell} )^2 )(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{\ell} )^2 ),
+\]</span> where <span class="math inline">\(\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\frac{1}{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}\)</span> is the box family with wavenumber instead of messenger momenta, and <span class="math inline">\(\hbar\)</span>s extracted. We notice that if we apply the scalar product reduction <a href="#eq-scalarred"><span>5.30</span></a>, we will necessarily still have an integral of the form<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn31"><p><sup>31</sup>&nbsp;along with ones that are of the form <span class="math inline">\(\Box_{1,1,1,0}\)</span> and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less <span class="math inline">\(\hbar\)</span>, just enough to cancel what is left of the <span class="math inline">\(\hbar\)</span> in the numerator, and have an overall <span class="math inline">\(\mathcal{O}(\hbar^{0})\)</span> scaling.</p></li></div></div>
+<p><span class="math display">\[
+e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2 \int \,\tilde{\mathrm{d}}^{D}{\ell}\,\Box_{1,1,1,1}=\mathcal{O}(\hbar^{D-6})
+\]</span></p>
+<p>whislt we need to cancel with the <span class="math inline">\(\hbar\)</span> in the classical limit (<a href="#eq-hbarvirt"><span>5.18</span></a>), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent (<span class="math inline">\(\frac{1}{\hbar}\)</span>) contribution when taking the classical <span class="math inline">\(\hbar\to 0\)</span> limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:</p>
+<p><span class="math display">\[
+\tilde{\rho}_4=( \frac{q}{2} -\ell+\tilde{p}_{2})^2-m_{2}^2+\mathring{\imath}\epsilon\simeq  2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon.
+\]</span></p>
+<p>If we write that <span class="math inline">\(\Box_{+i_1,+i_2,+i_3,+i_4}=\Box_{i_1,i_2,i_3,i_4}\)</span> where the sign is the sign of the <span class="math inline">\(\mathring{\imath}\epsilon\)</span> presciption, then we can write the cross box integral as: <span class="math display">\[
+\int \,\tilde{\mathrm{d}}^{D}\ell\, -\Box_{1,1,1,-1}
+\]</span></p>
+<p>thus summing up the two divergent contributions from the box and cross box we have:</p>
+<p><span id="eq-boxcross"><span class="math display">\[
+\Box_{1,1,1,1}-\Box_{1,1,1,-1}=\Box_{1,1,1,0}\Big(\frac{1}{-2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon}-\frac{1}{    2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon} \Big)=-\mathring{\imath}\Box_{1,1,1,0}\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{2}),
+\tag{5.31}\]</span></span></p>
+<div class="page-columns page-full"><p>where in the equation line we used <em>reverse unitarity</em> <span class="citation" data-cites="Anastasiou:2002yz Anastasiou:2002qz Anastasiou:2003yy">(<a href="references.html#ref-Anastasiou:2002yz" role="doc-biblioref">Charalampos Anastasiou and Melnikov 2002</a>; <a href="references.html#ref-Anastasiou:2002qz" role="doc-biblioref">Charalampos Anastasiou, Dixon, and Melnikov 2003</a>; <a href="references.html#ref-Anastasiou:2003yy" role="doc-biblioref">Charalampos Anastasiou et al. 2003</a>)</span>. This idea was developped in the context of cross-section calculations in the for collider physics computations. It enables to set on equal footing real contributions <a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a> where we integrate over on shell momenta <a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a> and virtual integrals, where the integration is over all possible four-momentum <a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>. The idea is to trade the on-shell delta functions and their <span class="math inline">\(n\)</span>-th derivatives for differences of (powers of) propagators with alternating <span class="math inline">\(\mathring{\imath}\epsilon\)</span>:</p><div class="no-row-height column-margin column-container"><li id="fn32"><p><sup>32</sup>&nbsp;such as ones in the real integrand <a href="#eq-rInt"><span>5.10</span></a></p></li><li id="fn33"><p><sup>33</sup>&nbsp;thus three dimensional momentum space</p></li><li id="fn34"><p><sup>34</sup>&nbsp;as virtual particles can be off shell</p></li></div></div>
+<p><span id="eq-reverseunitarity"><span class="math display">\[
+\frac{\mathring{\imath}}{(-1)^ nn!} \frac{\mathrm{d}^{n} }{\mathrm{d}{z}^{n}} \tilde{\delta}^{}(z)   = \frac{1}{(z  -\mathring{\imath}\epsilon )^{(n+1)}}  - \frac{1}{(z+\mathring{\imath}\epsilon )^{(n+1)}}.
+\tag{5.32}\]</span></span></p>
+<p>In our case <a href="#eq-reverseunitarity"><span>5.32</span></a> implies the following identities:</p>
+<p><span id="eq-revone"><span class="math display">\[
+\tilde{\delta}^{}(-2\ell\cdot\tilde{p}_{2})=\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,-1} )
+\tag{5.33}\]</span></span></p>
+<p><span id="eq-revtwo"><span class="math display">\[
+\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{1})=\mathring{\imath}(\Box_{0,0,1,0}-\Box_{0,0,-1,0} )
+\tag{5.34}\]</span></span></p>
+<p>Since we where able to write this difference of propagators as a sort of cut, we could further compare the divergent part of the box and cross box with the corresponding real contribution, which is at tree level, with no cut messengers: <span class="math inline">\(L'=0\)</span> and <span class="math inline">\(\vert X \vert=0\)</span> such that <a href="#eq-rvloopmatch"><span>5.17</span></a> is satisfied. We have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int &amp;\,\tilde{\mathrm{d}}^{4}\bar{w}\,\tilde{\delta}^{}(2\tilde{p}_{1}\cdot \bar{w}-\hbar\frac{\bar{q}_{}}{2} \cdot \bar{w}  +\hbar\bar{w}^2)\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{w}+\hbar\frac{\bar{q}_{}}{2} \cdot \bar{w}+\hbar\bar{w}^2) \\
+&amp;\times    \hbar\bar{w}^\mu\\
+&amp;\times\kappa^{4}{\hbar}^{2}\mathcal{\bar{A}}^{(0)}(\tilde{p}_{1}-\hbar\frac{\bar{q}_{}}{2},\tilde{p}_{2}+\hbar\frac{\bar{q}_{}}{2} \to\tilde{p}_{1}+\hbar\frac{\bar{q}_{}}{2}+\hbar\bar{w}, \tilde{p}_{2}-\hbar\frac{\bar{q}_{}}{2}-\hbar\bar{w}_2) \\
+&amp;\times\mathcal{{\bar{A}{}^\ast}}^{(0)}(\tilde{p}_{1}+\hbar\frac{\bar{q}_{}}{2},\tilde{p}_{2}+\hbar\frac{\bar{q}_{}}{2}-\hbar \bar{q}_{}\to\tilde{p}_{1}-\hbar\frac{\bar{q}_{}}{2}+\hbar\bar{w}, \tilde{p}_{2}+\hbar\frac{\bar{q}_{}}{2}-   \hbar\bar{w}_2).
+\end{aligned}
+\]</span></p>
+<p>where the <span class="math inline">\(\mathcal{\bar{A}}^{(0)}\)</span> we already computed in <a href="#eq-treeampl"><span>5.27</span></a>, and we have eliminated the theta functions in prepartation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with <span class="math inline">\(\hbar^3\)</span> (<a href="#eq-hbarreal"><span>5.19</span></a>) which at leading order is again overdone. The <span class="math inline">\(\tilde{p}_{1}\cdot \tilde{p}_{2}\)</span> contribution from each tree scales like <span class="math inline">\(\frac{1}{\hbar^4}\)</span>, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:</p>
+<p><span class="math display">\[
+e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2\frac{1}{\hbar}\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{\ell})\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
+\]</span></p>
+<p>where we’ve changed variables from <span class="math inline">\(\bar{w}\)</span> to <span class="math inline">\(\bar{\ell}\)</span> and removed the <span class="math inline">\(\hbar(\frac{\bar{q}_{}}{2} \cdot \bar{\ell}\pm\bar{ \ell}^2)\)</span> term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (<a href="#eq-revone"><span>5.33</span></a>,<a href="#eq-revtwo"><span>5.34</span></a>) and focus on the integral without the prefactors:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu&amp;\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{\ell})\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,-1} )\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
+&amp;=-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu(\Box_{0,0,1,0}-\Box_{0,0,-1,0} )(\Box_{1,1,0,1}-\Box_{1,1,0,-1} ) ,\\
+&amp;=\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box_{1,1,-1,1}-\Box_{1,1,-1,-1} ) ] .
+\end{aligned}
+\]</span></p>
+<p>We now notice something interesting, this cut integral has a sort of horizontal flip symmetry, i.e.&nbsp;if we average over the existing ‘loop’ momentum labelling and a new <span class="math inline">\(\ell'=q-\ell\)</span> we eliminate the <span class="math inline">\(\ell{}^{\mu}\)</span> dependence in the numerator:</p>
+<p><span class="math display">\[
+\frac{1}{2}[\ell{}^{\mu}+(q{}^{\mu}-\ell{}^{\mu} ) ]=q{}^{\mu}
+\]</span></p>
+<p>since the box families transform as:</p>
+<p><span id="eq-boxtrans"><span class="math display">\[
+\Box'_{i,j,m,n}=(-1)^m(-1 )^n\Box_{j,i,-m,-n}.
+\tag{5.35}\]</span></span></p>
+<p>Thus we have that the cut integral with the <span class="math inline">\(\bar{q}_{}{}^{\mu}\)</span> factored out:</p>
+<p><span class="math display">\[
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box_{1,1,-1,1}-\Box_{1,1,-1,-1} ) ] .
+\]</span></p>
+<p>We can apply the relabelling only this time only for the last two integrands, and the integral becomes, applying <a href="#eq-boxtrans"><span>5.35</span></a>:</p>
+<p><span class="math display">\[
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1} ) ]= \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )  .
+\]</span></p>
+<p>If we now add the box and cross box contributions from <a href="#eq-boxcross"><span>5.31</span></a> we get:</p>
+<p><span class="math display">\[
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}} )+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.
+\]</span></p>
+<p>The classically divergent terms have cancelled leaving us with only the finite terms!</p>
 <!-- [^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber -->
 
 
 <!-- -->
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-Anastasiou:2002qz" class="csl-entry" role="doc-biblioentry">
+Anastasiou, Charalampos, Lance Dixon, and Kirill Melnikov. 2003. <span>“<span>NLO Higgs</span> Boson Rapidity Distributions at Hadron Colliders.”</span> <em>Nuclear Physics B - Proceedings Supplements</em>, Proceedings of the 6th <span>International Symposium</span> on <span>Radiative Corrections</span> and the 6th <span>Zeuthen Workshop</span> on <span>Elementary Particle Theory</span>, 116: 193–97. <a href="https://doi.org/10.1016/S0920-5632(03)80168-8">https://doi.org/10.1016/S0920-5632(03)80168-8</a>.
+</div>
+<div id="ref-Anastasiou:2003yy" class="csl-entry" role="doc-biblioentry">
+Anastasiou, Charalampos, Lance Dixon, Kirill Melnikov, and Frank Petriello. 2003. <span>“Dilepton <span>Rapidity Distribution</span> in the <span>Drell-Yan Process</span> at <span class="nocase">Next-to-Next-to-Leading Order</span> in <span>QCD</span>.”</span> <em>Physical Review Letters</em> 91 (18): 182002. <a href="https://doi.org/10.1103/PhysRevLett.91.182002">https://doi.org/10.1103/PhysRevLett.91.182002</a>.
+</div>
+<div id="ref-Anastasiou:2002yz" class="csl-entry" role="doc-biblioentry">
+Anastasiou, Charalampos, and Kirill Melnikov. 2002. <span>“Higgs Boson Production at Hadron Colliders in <span>NNLO QCD</span>.”</span> <em>Nuclear Physics B</em> 646 (1): 220–56. <a href="https://doi.org/10.1016/S0550-3213(02)00837-4">https://doi.org/10.1016/S0550-3213(02)00837-4</a>.
+</div>
 <div id="ref-Anastasiou:2004" class="csl-entry" role="doc-biblioentry">
 Anastasiou, C., and A. Lazopoulos. 2004. <span>“Automatic <span>Integral Reduction</span> for <span>Higher Order Perturbative Calculations</span>.”</span> <em>Journal of High Energy Physics</em> 2004 (07): 046–46. <a href="https://doi.org/10.1088/1126-6708/2004/07/046">https://doi.org/10.1088/1126-6708/2004/07/046</a>.
 </div>
@@ -1830,7 +1893,7 @@ To summarise, to obtain the form of the potential, we first compute the amplitud
 
 Unfortunately the procedure desribed above, and in fact *any* procedure trying to make contact with \acr{eob} through expanding the gravitiational potential, automatically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of \acr{eob} this radiation reaction was added after the fact, through direct modifications of the \acr{eom}s obtained from Hamilton's equations. It is not clear how to incorporate dissipative data from the amplitude in the \acr{eob} framework. 
 
-One way to not encounter this difficulty is to full bypass the \acr{eob} framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
+One way to not encounter this difficulty is to fully bypass the \acr{eob} framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
 
 
 
@@ -1842,6 +1905,8 @@ One way to not encounter this difficulty is to full bypass the \acr{eob} framewo
 ## \acr{kmoc} {#sec-kmoc}
 
 The setup of the \acr{kmoc} framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to \acr{sqed} and gravity. 
+
+### Conventions
 
 First let us define our conventions. Throughout this section we use relativistically natural units, i.e. we do *not* set $\hbar=1$. This will essentially be the small parameter that multiplies the soft momenta, that defined the region in @sec-amp2pot. In this section we will further motivate this classical limit, in more detail, by taking the generally accepted limit that makes quantum physics collapse to classical physics: 
 
@@ -1871,6 +1936,7 @@ $$
 \nposendelta[-m^2]{p}=(2\pi)\deltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}=\ndeltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}
 $$
 
+### Intital State
 
 With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e. a classical two in two out scattering). As mentioned in @sec-scatamp, in \acr{qft} the framework that formalizes scattering of definite particle number states is called the \acr{lsz} reduction. 
 
@@ -1958,7 +2024,11 @@ $$
 $$ {#eq-instate}
 
 
-From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable $\obs{O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
+From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. Note that by extracting the impact parameter in this way, the wavefunctions can be identitcal in form, and will still be separate as required.
+
+### Change in observable
+
+The \acr{kmoc} framework concerns itself with the change of an observable during a scattering event. For such an observable $\obs{O}$, its change can be simply obtained by evaluating the difference of the expectation value of the corresponding Hermitian operator, $\mathbb{O}$, between in and out states
 $$
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}.
 $$
@@ -2016,7 +2086,7 @@ $$
       &amp;=\im \obschange{\emom'-\emom}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
                                     \amp{\emom[1],\emom[2]}{\emom[1]',\emom[2]'}.
 \end{aligned}
-$$
+$$ {#eq-vInt}
 
 Note that the amplitude is from in states to in states! Now for the real integrand $\rInt$ we insert a complete set of states :[^complete]
 
@@ -2030,7 +2100,7 @@ $$
       &amp;\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]'+\emom[2]'-r_{1}-r_{2}-r_{X}}\,
       \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}}.
 \end{aligned}
-$$
+$$ {#eq-rInt}
 
 For both integrands we can preform some variable changes and eliminate certain delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$ finally relabelling $q_1 \to \tm$   [^measureshift]. Thus we have
 
@@ -2061,14 +2131,7 @@ We have arrived at an integral expression for the change in observable $\obs{O}$
 
 ### Classical limit
 
-Since we are concerned with classial observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. The first target is the wavefunctions. 
-
-#### Classical limit of wavefunctions
-
-In \acr{kmoc} framework we are interested in the classical limit of a scattering event. It is then important to understand the precise simplifications this limit yields. 
-
-
-We have multiple conditions on the wavefunctions. The first are those imposed by \acr{lsz} reduction. That is,
+Since we are concerned with classial observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. The first target is the wavefunctions. We have multiple conditions on the wavefunctions. The first are those imposed by \acr{lsz} reduction. That is,
 
 - Compact support momentum space wavefunction
 - Peaked around one value of momenta
@@ -2183,6 +2246,10 @@ $$
 quarto-executable-code-5450563D
 
 ```julia
+#| echo: false
+#| label: fig-gaussian
+#| fig-cap: "Sharpening gaussian"
+#| column: margin
 using Plots
 
 function delta(x)
@@ -2402,7 +2469,7 @@ $$ {#eq-hbarvirt}
 where the $O$ term is the order of $\hbar$ that is present as a result of the observable. In the case of particle 1's momentum, $O=1$. Similarly, the amplitudes in the real kernel must cancel with:
 
 $$
-\hbar^{2-2L-\abs{X}+O'}.
+\hbar^{2-2L'-\abs{X}+O}.
 $$ {#eq-hbarreal}
 
 Now we see that the \acr{lo} contribution [^expand]to the impulse $\Delta \emom[1]^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus we have the following equation,
@@ -2589,7 +2656,9 @@ The new momentum variables $\semom[i]$ are crucially orthogonal to momentum tran
 
 $$
 \semom[i]\cdot\tm=0,
-$$
+$$ {#eq-orthog}
+
+
  and the physical scattering region, given by $\mands&gt;(\mass[1]+\mass[2])^2$ and $\tm^2&lt;0$ is the given by the same formulas:
 
 $$
@@ -2619,7 +2688,7 @@ using TikzPictures
 
 tp = TikzPicture(L"""
 \matrix{
-      \node{$\displaystyle \im\amp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&amp;
+      \node{$\displaystyle \im\redamp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&amp;
       \node{$=$};&amp;
      \graph[nodes=coordinate, empty nodes,spring layout,node distance=15mm,vertical=p1 to p2,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
 {
@@ -2644,14 +2713,15 @@ tp
 The amplitude is read off diagram and using Feynman rules for SQED we have: 
 
 $$
-\ampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
+\redampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
 $$
 
 using the mandelstahm invariants described above we can infact write this as:
 
 $$
-\ampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
-$$
+\redampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
+$$ {#eq-treeampl}
+
 
 where $\relfact$ is the relativistic factor of particle 1 in the rest frame of particle 2:
 
@@ -2790,7 +2860,7 @@ There is one final simplification we can do. The first diagram above has two pho
 
 We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically^[at least at the unintegrated level]. We will also extract one of these integrands by hand, for completeness and comparison. 
 
-The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules as follows:
+The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for \acr{sqed} as follows:
 
 quarto-executable-code-5450563D
 
@@ -2817,15 +2887,17 @@ end
 end
 
 @symmetric function feynmanRule(mime::MIME"text/FORM",[(pᵩ₁,a)::Tuple{Any,ScalarField{S}},
-            (pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},(pᵧ,γ)::Tuple{Any,Photon}]) where {S}
+            (pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},
+            (pᵧ,γ)::Tuple{Any,Photon}]) where {S}
   p1 = repr(mime,pᵩ₁(index(γ)))
   p2 = repr(mime,pᵩ₂(index(γ)))
   q = repr(mime,charge(a))
   "_i*e*$q*($p2-$p1)"
 end
 
-@symmetric function feynmanRule(mime::MIME"text/FORM",[(pᵧ₁,γ₁)::Tuple{Any,Photon},(pᵧ₂,γ₂)::Tuple{Any,Photon},
-      (pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},(pᵩ₁,a)::Tuple{Any,ScalarField{S}}]) where {S}    
+@symmetric function feynmanRule(mime::MIME"text/FORM",[(pᵧ₁,γ₁)::Tuple{Any,Photon},
+            (pᵧ₂,γ₂)::Tuple{Any,Photon},(pᵩ₂,b)::Tuple{Any,AdjointField{ScalarField{S}}},
+            (pᵩ₁,a)::Tuple{Any,ScalarField{S}}]) where {S}    
   mu = repr(mime,index(γ₁))
   nu = repr(mime,index(γ₂)) 
   q = repr(mime,charge(a))
@@ -2877,37 +2949,39 @@ toform(stdout,classicaldiags[3])
 
 Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM` we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in @eq-newmom. The `FORM` version of the box integrand is then:
 
-```{.default}
+```{.default #lst-formBox .sql lst-cap="Box integrand in FORM"}
+
    [d3l1|o.3.4|i.3.4|i|o|] =
          ( prop(-1,0,q - l1) )
        * ( prop(-1,0,l1) )
-       * ( prop(-1,1,1/2*q - l1 + pb2) )
-       * ( prop(-1,2, - 1/2*q + l1 + pb1) )
-       * ( dot(l1,l1) )
-       * ( dot(q,q) - 2*dot(q,l1) + dot(l1,l1) )
-       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 ) 
+       * ( prop(-1,1,1/2*q - l1 + pb1) )
+       * ( prop(-1,2, - 1/2*q + l1 + pb2) )
+       * ( dot(q,q) - 2*dot(q,l1) - 2*dot(q,pb2) + 2*dot(q,pb1) + dot(l1,l1)
+          + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )
+       * ( dot(l1,l1) + 2*dot(l1,pb2) - 2*dot(l1,pb1) - 4*dot(pb2,pb1) )
+       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 )
        * ( e ) * ( e ) * ( e ) * ( e );
 ```
 
 When applied to all 4 diagrams we obtain precisely the same integrands as those in @Kosower:2018adc. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:
 
 $$
-G_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
+\Box_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
 $$ {#eq-boxfam}
 
 for powers $\brk{i}\in\brk{0,1}^4$, where the inverse propagators $\rho_i$ are:
 
 $$
-\rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(-\Half{q}+\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(\Half{q}-\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
+\rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(\Half[q]-\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(-  \Half[q]+\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
 $$
 
 Note that in the classical limit we can expand the massive propagators as shown in @eq-massiveScale and obtain to first order in $\hbar$:
 
 $$
-\rho_3=(-\Half{q}+\ell)^2 +2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4=(\Half{q}-\ell)^2-2\ell\cdot\semom[2]+\im \epsilon
+\rho_3=2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4= -2\ell\cdot\semom[2]+\im \epsilon,
 $$
 
-The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
+where we used @eq-orthog. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
 
 $$
 \mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
@@ -2917,20 +2991,122 @@ where ${S}$ and ${S'}$ are sets of coefficient matrices for all possible dot pro
 
 $$
 \frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
-$$
+$$ {#eq-scalarred}
 
 where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
 
-With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. 
+With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at \acr{nlo} that are then used in @eq-impulseIr and @eq-impulseIv. The algorithm described above was implemented in `FORM` and is able to rapibly process the 1-loop diagrams. The code is available at the repository for this document. 
 
-We have now completed the program of \acr{nlo} amplitudes 
+Importantly we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from @lst-formBox that the integral for the box diagram $B$ is: 
+
+$$
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\ell} \Box_{1,1,1,1}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\tm-\ell}^2}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\ell}^2}
+$$
+
+we can apply the procedure described above, turning messenger momenta into wavenumbers:
+
+$$
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\bar{\ell}}\frac{\hbar^D}{\hbar^6} \Box_{\bar{1},\bar{1},\bar{1},\bar{1}}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\tw-\bar{\ell}}^2}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\bar{\ell}}^2},
+$$
+where $\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\inv{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}$ is the box family with wavenumber instead of messenger momenta, and $\hbar$s extracted. We notice that if we apply the scalar product reduction @eq-scalarred, we will necessarily still have an integral of the form^[along with ones that are of the form $\Box_{1,1,1,0}$ and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less $\hbar$, just enough to cancel what is left of the $\hbar$ in the numerator, and have an overall $\order[0]{\hbar}$ scaling.]:
+
+$$
+\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2 \int \dn[D]{{\ell}}\Box_{1,1,1,1}=\order[D-6]{\hbar}
+$$
+
+whislt we need to cancel with the $\hbar$ in the classical limit (@eq-hbarvirt), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent ($\inv{\hbar}$) contribution when taking the classical $\hbar\to 0$ limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:
+
+$$
+\tilde{\rho}_4=( \Half[q] -\ell+\semom[2])^2-\mass[2]^2+\im \epsilon\simeq  2\ell\cdot\semom[2]+\im \epsilon.
+$$
+
+If we write that $\Box_{+i_1,+i_2,+i_3,+i_4}=\Box_{i_1,i_2,i_3,i_4}$ where the sign is the sign of the $\im\epsilon$ presciption, then we can write the cross box integral as:
+$$
+\int \dn[D]{\ell} -\Box_{1,1,1,-1}
+$$
+
+thus summing up the two divergent contributions from the box and cross box we have:
 
 
-Add a section on everything together plus box and cross box cancelation ()
+$$
+\Box_{1,1,1,1}-\Box_{1,1,1,-1}=\Box_{1,1,1,0}\pa[\Big]{\inv{-2\ell\cdot\semom[2]+\im \epsilon}-\inv{    2\ell\cdot\semom[2]+\im \epsilon}}=-\im\Box_{1,1,1,0}\ndeltafn{2\ell\cdot\semom[2]},
+$$ {#eq-boxcross}
+
+where in the equation line we used *reverse unitarity* [@Anastasiou:2002yz;@Anastasiou:2002qz;@Anastasiou:2003yy]. This idea was developped in the context of cross-section calculations in the for collider physics computations. It enables to set on equal footing real contributions ^[such as ones in the real integrand @eq-rInt] where we integrate over on shell momenta ^[thus three dimensional momentum space] and virtual integrals, where the integration is over all possible four-momentum ^[as virtual particles can be off shell]. The idea is to trade the on-shell delta functions and their $n$-th derivatives for differences of (powers of) propagators with alternating $\im \epsilon$:
+
+$$
+\frac{\im}{(-1)^ nn!} \odv[n]{}{z} \ndeltafn{z}   = \inv{\pa{z  -\im \epsilon}^{(n+1)}}  - \inv{\pa{z+\im \epsilon}^{(n+1)}}.
+$$ {#eq-reverseunitarity}
+
+In our case @eq-reverseunitarity implies the following identities:
+
+$$
+\ndeltafn{-2\ell\cdot\semom[2]}=\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}
+$$ {#eq-revone}
+
+$$
+\ndeltafn{2\ell\cdot\semom[1]}=\im\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}
+$$ {#eq-revtwo}
+
+Since we where able to write this difference of propagators as a sort of cut, we could further compare the divergent part of the box and cross box with the corresponding real contribution, which is at tree level, with no cut messengers: $L'=0$ and $\abs{X}=0$ such that @eq-rvloopmatch is satisfied. We have:
 
 
+$$
+\begin{aligned}
+\int &amp;\dn[4]{\bar{w}}\ndeltafn{2\semom[1]\cdot \bar{w}-\hbar\Half[\tw] \cdot \bar{w}  +\hbar\bar{w}^2}\ndeltafn{-2\semom[2] \cdot \bar{w}+\hbar\Half[\tw] \cdot \bar{w}+\hbar\bar{w}^2} \\
+&amp;\times    \hbar\bar{w}^\mu\\
+&amp;\times\coupling^{4}{\hbar}^{2}\redamp[(0)]{\semom[1]-\hbar\Half[\tw],\semom[2]+\hbar\Half[\tw] }{\semom[1]+\hbar\Half[\tw]+\hbar\bar{w}, \semom[2]-\hbar\Half[\tw]-\hbar\bar{w}_2} \\
+&amp;\times\aredamp[(0)]{\semom[1]+\hbar\Half[\tw],\semom[2]+\hbar\Half[\tw]-\hbar \tw}{\semom[1]-\hbar\Half[\tw]+\hbar\bar{w}, \semom[2]+\hbar\Half[\tw]-   \hbar\bar{w}_2}.
+\end{aligned}
+$$
 
+where the $\redampl[(0)]$ we already computed in @eq-treeampl, and we have eliminated the theta functions in prepartation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with $\hbar^3$ (@eq-hbarreal) which at leading order is again overdone. The $\semom[1]\cdot \semom[2]$ contribution from each tree scales like $\inv{\hbar^4}$, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:
 
+$$
+\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2\inv{\hbar}\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
+$$
+
+where we've changed variables from $\bar{w}$ to $\bar{\ell}$ and removed the $\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)$ term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (@eq-revone,@eq-revtwo) and focus on the integral without the prefactors:
+
+$$
+\begin{aligned}
+\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu&amp;\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
+&amp;=-\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}\pa{\Box_{1,1,0,1}-\Box_{1,1,0,-1}} ,\\
+&amp;=\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+\end{aligned}
+$$
+
+We now notice something interesting, this cut integral has a sort of horizontal flip symmetry, i.e. if we average over the existing 'loop' momentum labelling and a new $\ell'=q-\ell$ we eliminate the $\ct{\ell}$ dependence in the numerator:
+
+$$
+\Half\brc{\ct{\ell}+\pa{\ct{q}-\ct{\ell}}}=\ct{q}
+$$
+
+since the box families transform as:
+
+$$
+\Box'_{i,j,m,n}=(-1)^m(-1 )^n\Box_{j,i,-m,-n}.
+$$ {#eq-boxtrans}
+
+Thus we have that the cut integral with the $\ct{\tw}$ factored out:
+
+$$
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+$$
+
+We can apply the relabelling only this time only for the last two integrands, and the integral becomes, applying @eq-boxtrans:
+
+$$
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1}}}= \int \dn[4]{\bar{\ell}}\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}  .
+$$
+
+If we now add the box and cross box contributions from @eq-boxcross we get:
+
+$$
+\int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.
+$$
+
+The classically divergent terms have cancelled leaving us with only the finite terms!
 
 
 
