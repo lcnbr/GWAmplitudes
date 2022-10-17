@@ -34,13 +34,14 @@ comments:
 
 bibliography: references.bib
 reference-location: margin
-
+link-citations: true
 fig-cap-location: margin
 subfig-cap-location: bottom
 execute:
   freeze: auto  # re-render only when source changes
+  cache: true
 
-
+keep-tex: true
 
 
 filters: 
@@ -198,7 +199,7 @@ acronyms:
   
 
     
-    
+csl: physical-review-letters.csl
 
 
 pdf-engine: lualatex
@@ -215,7 +216,6 @@ format:
     fontsize: "10pt"
     from: markdown-latex_macros
     documentclass: scrreprt
-    cite-method: biblatex
     papersize: a4
     colorlinks: true
     include-in-header: preamble.tex

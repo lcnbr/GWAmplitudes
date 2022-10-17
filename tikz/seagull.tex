@@ -1,0 +1,10 @@
+\begin{tikzpicture}[]
+     \graph[ empty nodes,spring layout,node distance=15mm,horizontal=p1 to p3 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[thick,->-=.55] p3;
+     q1[as=$\mu$] --[thick,photon]  p4 --[thick,photon] q3[as=$\nu$];
+};
+
+
+\end{tikzpicture}
+

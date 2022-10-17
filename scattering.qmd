@@ -955,18 +955,195 @@ $$
 
 The  Feynman rules are given in @tbl-sqedfrules
 
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
 
-:::{.column-body-outset}
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=20mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1[as=$\mu$] --[photon,thick,postaction={draw,->, 
+     shorten >=5mm, shorten <=5mm, 
+     decoration={sl,raise=3mm},decorate},"$\ell$" {auto=left ,inner sep=4mm}]  p4[as=$\nu$];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/photonprop"; limit_to=:picture), tp)
+save(PDF("./tikz/photonprop"), tp)
+save(SVG("./tikz/photonprop"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=12mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1[as=$\mu$] --[photon,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" {auto=left ,inner sep=4mm}]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/extphoton"; limit_to=:picture), tp)
+save(SVG("./tikz/extphoton"), tp)
+save(PDF("./tikz/extphoton"), tp)
+tp
+```
 
 
-| for Every | |write  |           
-| - | --- | ----------- | 
-|  | internal photon line  | $\phprop_\xi( \ell)=\frac{-\im}{ \ell^{2}+\im \varepsilon}\left[\eta_{\mu \nu}-(1-\xi) \frac{\ell_{\mu} \ell_{\nu}}{ ell^{2}}\right]$                                  |           
-|   | internal scalar   | $\feynprop(k^2)=\frac{\im}{k^{2}-m^{2}+\im \varepsilon}$|           
-|  | $\phi_i \phi_i^\dagger A_\mu A_\nu$  vertex  | $2 \im \charge[i]^2\,\elch^2\,\eta^{\mu \nu}$    |           
-|  | $\phi_i(k_i) \phi_i^\dagger(k'_i) A_\mu$ vertex  | $\im \elch\,\charge[i]\,(k_i^\mu-k_i^{\prime\mu})$  |           
-|  | External scalar       | $\times 1$        |           
-|  |$\left\{\begin{array}{c}\text { incoming } \\ \text { outgoing }\end{array}\right\}$ photon | $\times \left\{\begin{array}{c}\varepsilon_{\mu} \\ \varepsilon_{\mu}^{* \prime}\end{array}\right\}$, with $\varepsilon \cdot k=0, \varepsilon^{\prime} \cdot k^{\prime}=0$ | 
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=20mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=5mm, shorten <=5mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" above=3mm]  p4;
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/scalarprop"; limit_to=:picture), tp)
+save(SVG("./tikz/scalarprop"), tp)
+save(PDF("./tikz/scalarprop"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=12mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" above=3mm]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/extscalar"; limit_to=:picture), tp)
+save(SVG("./tikz/extscalar"), tp)
+save(PDF("./tikz/extscalar"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=15mm,horizontal=p1 to p3 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[thick,->-=.55] p3;
+     q1[as=$\mu$] --[thick,photon]  p4 --[thick,photon] q3[as=$\nu$];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/seagull"; limit_to=:picture), tp)
+save(SVG("./tikz/seagull"), tp)
+save(PDF("./tikz/seagull"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L""" 
+     \graph[ empty nodes,spring layout,node distance=15mm,horizontal=q3 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k_i$" {auto=left ,inner sep=3mm}]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k_i'$" {auto=left ,inner sep=3mm}] p3;
+    q3[as=$\nu$] --[thick,photon,] p4;
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/cubic"; limit_to=:picture), tp)
+save(SVG("./tikz/cubic"), tp)
+save(PDF("./tikz/cubic"), tp)
+tp
+```
+
+:::{.fullwidth}
+
++--------------------------------------------+------------------------+------------------------------------------------+
+| For every                                  |                        | Write                                          |
++:===========================================+:=======================+:===============================================+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/photonprop.svg)                 |internal photon line    | $\phprop_\xi( \ell)=\frac{-\im}{ \ell^{2}+     |
+| :::                                        |                        | \im \varepsilon}\left[\eta_{\mu \nu}-(1-\xi)   |
+| ::: {.content-hidden unless-format="pdf"}  |                        | \frac{\ell_{\mu} \ell_{\nu}}{ ell^{2}}\right]$ |
+| ![](./tikz/photonprop.pdf)                 |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/scalarprop.svg)                 |internal scalar         | $\feynprop(k^2)=\frac{\im}{k^{2}-m^{2}         |
+| :::                                        |                        | +\im \varepsilon}$                             |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/scalarprop.pdf)                 |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/seagull.svg)                    | $\phi_i \phi_i^\dagger | $2 \im \charge[i]^2\,\elch^2\,\eta^{\mu \nu}$  |
+| :::                                        |  A_\mu A_\nu$  vertex  |                                                |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/seagull.pdf)                    |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/cubic.svg)                      | $\phi_i(k_i)           | $\im \elch\,\charge[i]\,(k_i^\mu-              |
+| :::                                        | \phi_i^\dagger(k'_i)   |           k_i^{\prime\mu})$                    |
+| ::: {.content-hidden unless-format="pdf"}  |  A_\mu$ vertex         |                                                |
+| ![](./tikz/cubic.pdf)                      |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/extscalar.svg)                  | External scalar        | $\times 1$                                     |
+| :::                                        |                        |                                                |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/extscalar.pdf)                  |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/extphoton.svg)                  |$\left\{\begin{array}{c}|$\times \left\{\begin{array}{c}\varepsilon_{\mu}|
+| :::                                        |  \text { incoming } \\ |   \\ \varepsilon_{\mu}^{* \prime}              |
+| ::: {.content-hidden unless-format="pdf"}  |  \text { outgoing }    |     \end{array}\right\}$, with                 |
+| ![](./tikz/extphoton.pdf)                  | \end{array}\right\}$   |  $\varepsilon \cdot k=0,                       |
+| :::                                        |       photon           |      \varepsilon^{\prime} \cdot k^{\prime}=0$  |
++--------------------------------------------+------------------------+------------------------------------------------+
 
 : Feynman rules for \acr{sqed} {#tbl-sqedfrules tbl-colwidths="[25,25,50]"}
 :::
@@ -1049,14 +1226,24 @@ tp = TikzPicture(L"""
 \matrix{
       \node{$\displaystyle \im\redamp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
       \node{$=$};&
-     \graph[nodes=coordinate, empty nodes,spring layout,node distance=15mm,vertical=p1 to p2,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+     \graph[nodes=coordinate, empty nodes,spring layout,node distance=20mm,vertical=p1 to p2,random seed=1,anchor node=a,anchor at={(0,0.5)}] 
 {
-  p1["$\displaystyle \semom[1]-\Half[\tm]$"] --[->-=.5,thick]  a[circle,fill,scale=.5] --[->-=.7,thick] p4["$\displaystyle \semom[1]+\Half[\tm]$"];
-  a -- [photon,thick] b[circle,fill,scale=.5];
-  p2["$\displaystyle \semom[2]+\Half[\tm]$ "{below}] --[->-=.5,thick,]  b --[->-=.7,thick,] p3["$\displaystyle \semom[2]-\Half[\tm]$" below];
+  p1 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]-\Half[\tm]$" {auto=right ,inner sep=4mm}]  a[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]+\Half[\tm]$" {auto=right ,inner sep=4mm}] p4;
+  a -- [photon,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$q$" {auto=left ,inner sep=4mm}]] b[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+  p2 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$\semom[2]+\Half[\tm]$" {auto=left ,inner sep=4mm}]]  b --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$ \semom[2]-\Half[\tm]$" {auto=left ,inner sep=4mm}]] p3;
 };\\
 };"""
-,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
 
 save(TEX("./tikz/treelevelsqed"; limit_to=:picture), tp)
 save(PDF("./tikz/treelevelsqed"), tp)
@@ -1146,26 +1333,28 @@ options=  notadpole,nosnail,onshell ;
 where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the `julia.sty` style file. The `julia.sty` file is a style file that is used to generate the output in a format that can be read by a `Julia` [@Bezanson:2015]  package built to process and visualise the outputted graphs. This package is called (maybe too broadly) `QFT.jl` is hosted on [github](https://github.com/lcnhb/QFT.jl) . Let us see it in action. We can run `QGRAF` from the command line, and it will generate a file called `{{output filename}}` that contains the output of the program. We can then use this in a `Julia`  file to visualise the diagrams.
 
 ```{julia}
-#| layout-ncol: 3
+#| output: asis
 using Images
 using QFT
 using QFT.Diagrams
 using QFT.FieldGraphs
 using QFT.Fields
-import  Catlab.Graphics.Graphviz: run_graphviz
+import  Catlab.Graphics.Graphviz: pprint
 include("SQED.jl")
 diags=include("QGRAFout/julia/1lSQED.jl")
 
 
 qDiags=[qDiagram(;diag...) for diag in diags]
 grafs=(x -> x.g).(qDiags)
-
+println("::: {#fig-oneloopsqed  layout-ncol=3}")
 for (i,graf) in enumerate(grafs)
-    open("./png/diag$i.png";create=true,write=true) do io
-    run_graphviz(io,to_graphviz(graf),format="png")
-    end
-    display(Images.load("./png/diag$i.png"))  
+println("```{dot}")
+println("//| fig-width: 1.5")
+    pprint(stdout,to_graphviz(graf,graph_attrs=Dict("layout"=>"neato")))
+    println("```")
 end
+println("all one loop graphs in \\acr{sqed}")
+println(":::")
 nothing
 ```
 
@@ -1181,7 +1370,7 @@ Thus any diagram that has a basis of loops that does not contain both scalar fie
 
 
 ```{julia}
-#| layout-ncol: 5
+#| output: asis
 using Logging
 Logging.disable_logging(Logging.Info)
 function scaleless(g::AbstractFieldGraph)
@@ -1202,12 +1391,16 @@ classicaldiags=noscalelessdiags[2:end]
 for (i,d) in enumerate(classicaldiags)
   d.ID=i
 end
+
+println("::: {#fig-onefilterloopsqed  layout-ncol=5 fig-cap-location=margin}")
 for (i,graf) in enumerate(grafs[.!scaleless.(grafs)])
-    open("./png/diagscaleless$i.png";create=true,write=true) do io
-    run_graphviz(io,to_graphviz(graf),format="png")
-    end
-    display(Images.load("./png/diagscaleless$i.png"))  
+println("```{dot}")
+println("//| fig-width: 1")
+    pprint(stdout,to_graphviz(graf,graph_attrs=Dict("layout"=>"neato")))
+    println("```")
 end
+println("one loop graphs that contribute to the classical limit in \\acr{sqed}")
+println(":::")
 nothing
 ```
 
@@ -1293,6 +1486,7 @@ end;
 ```
 
 ```{julia}
+#| echo: fenced
 toform(stdout,classicaldiags[3])
 ```
 

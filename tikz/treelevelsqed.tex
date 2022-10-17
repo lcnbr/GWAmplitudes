@@ -1,12 +1,22 @@
 \begin{tikzpicture}[]
 \matrix{
-      \node{$\displaystyle \im\amp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
+      \node{$\displaystyle \im\redamp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
       \node{$=$};&
-     \graph[nodes=coordinate, empty nodes,spring layout,node distance=15mm,vertical=p1 to p2,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+     \graph[nodes=coordinate, empty nodes,spring layout,node distance=20mm,vertical=p1 to p2,random seed=1,anchor node=a,anchor at={(0,0.5)}] 
 {
-  p1["$\displaystyle \semom[1]-\Half[\tm]$"] --[->-=.5,thick]  a[circle,fill,scale=.5] --[->-=.7,thick] p4["$\displaystyle \semom[1]+\Half[\tm]$"];
-  a -- [photon,thick] b[circle,fill,scale=.5];
-  p2["$\displaystyle \semom[2]+\Half[\tm]$ "{below}] --[->-=.5,thick,]  b --[->-=.7,thick,] p3["$\displaystyle \semom[2]-\Half[\tm]$" below];
+  p1 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]-\Half[\tm]$" {auto=right ,inner sep=4mm}]  a[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]+\Half[\tm]$" {auto=right ,inner sep=4mm}] p4;
+  a -- [photon,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$q$" {auto=left ,inner sep=4mm}]] b[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+  p2 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$\semom[2]+\Half[\tm]$" {auto=left ,inner sep=4mm}]]  b --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$ \semom[2]-\Half[\tm]$" {auto=left ,inner sep=4mm}]] p3;
 };\\
 };
 \end{tikzpicture}

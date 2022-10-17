@@ -1,0 +1,11 @@
+\begin{tikzpicture}[]
+     \graph[ empty nodes,spring layout,node distance=12mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" above=3mm]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+};
+
+
+\end{tikzpicture}
+

@@ -1,5 +1,4 @@
-
-\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}
+\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}
 \usegdlibrary{trees,force}
 
 
@@ -326,12 +325,29 @@
     }
 }
 
+\pgfdeclaredecoration{sl}{initial}{
+  \state{initial}[width=\pgfdecoratedpathlength-1sp]{
+     \pgfmoveto{\pgfpointorigin}
+  }
+  \state{final}{
+     \pgflineto{\pgfpointorigin}
+    }
+}
+
+\tikzset{parallel arrow/.style={->, 
+     shorten >=2mm, shorten <=2mm, 
+     decoration={sl,raise=1mm},decorate}}
+
 \tikzset{->-/.style={decoration={
   markings,
-  mark=at position #1 with {\arrow[scale=1.5]{>}}},postaction={decorate}}}
+  mark=at position #1 with {\arrow[scale=1.5]{Triangle[]}}},postaction={decorate}}}
 \tikzset{
 bicolor/.style 2 args={
   dashed,dash pattern=on 20pt off 20pt,#1,
   postaction={draw,dashed,dash pattern=on 20pt off 20pt,#2,dash phase=20pt}
   },
+pics/mom/.style args = {#1/#2}{code={
+    \draw[solid,thin,<-]
+        (-2mm,1.5mm) -- node [#1,font=\footnotesize,inner sep=1pt] {#2} ++ (4mm,0mm);}
+                            },
 }

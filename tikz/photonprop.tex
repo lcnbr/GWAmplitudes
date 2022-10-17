@@ -1,0 +1,11 @@
+\begin{tikzpicture}[]
+     \graph[ empty nodes,spring layout,node distance=20mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1[as=$\mu$] --[photon,thick,postaction={draw,->, 
+     shorten >=5mm, shorten <=5mm, 
+     decoration={sl,raise=3mm},decorate},"$\ell$" {auto=left ,inner sep=4mm}]  p4[as=$\nu$];
+};
+
+
+\end{tikzpicture}
+
