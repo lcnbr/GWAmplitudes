@@ -326,20 +326,37 @@ function replaceExistingAcronym(acr_key)
     )
 end
 
+
+local t = {}
+    t["?"]    = "gls"
+    t["?s"]   = "glspl"
+    t[">"]    = "acrshort"
+    t[">>"]   = "acrlong"
+    t[">>>"]  = "acrfull"
 --[[
 Replace each `\acr{KEY}` with the correct text and link to the list of acronyms.
 --]]
 function replaceAcronym(el)
-    local acr_key = string.match(el.text, "\\acr{(.+)}")
-    if acr_key then
-        -- This is an acronym, we need to parse it.
-        if Acronyms:contains(acr_key) then
-            -- The acronym exists (and is recognized)
-            return replaceExistingAcronym(acr_key)
+
+    local a, style, key, b = string.match(el.text, "(%S*)%(([?>s]+):(%a+)%)(%S*)")
+    if key then
+    style = t[style]
+    if string.match(key,"(%u)") then
+        style = (style:gsub("^%l", string.upper)) -- first letter to upper
+    end
+        if FORMAT:match 'html' then
+            if Acronyms:contains(key) then
+                -- The acronym exists (and is recognized)
+                return replaceExistingAcronym(key)
+            else
+                -- The acronym does not exists
+                return replaceNonExistingAcronym(key)
+            end
         else
-            -- The acronym does not exists
-            return replaceNonExistingAcronym(acr_key)
+            return pandoc.RawInline('latex', '\\'..style..'{'..key..'}')
         end
+        -- This is an acronym, we need to parse it.
+        
     else
         -- This is not an acronym, return nil to leave it unchanged.
         return nil
@@ -352,7 +369,7 @@ end
 -- of acronyms is known (and we can sort the List of Acronyms accordingly)
 return {
     { Meta = Meta },
-    { RawInline = replaceAcronym },
+    { Str = replaceAcronym },
     { RawBlock = RawBlock },
     { Pandoc = appendLoA },
 }

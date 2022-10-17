@@ -213,6 +213,7 @@ format:
     default-image-extension: svg
     
   pdf:
+    keep-tex: true
     fontsize: "10pt"
     from: markdown-latex_macros
     documentclass: scrreprt

@@ -7,10 +7,14 @@
 \DeclareRobustCommand{\[}{\begin{equation}}
 \DeclareRobustCommand{\]}{\end{equation}}
 \usepackage{libertinus}
-
+\usepackage{glossaries}
+\usepackage[record]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
+\input{gls.tex}
 
 \setromanfont[Scale=1.04]{Libertinus Serif}
 \setsansfont[Scale=1]{Libertinus Sans}
-\setmonofont[Scale=.89]{Fira Mono}
+\setmonofont[Scale=.89,Extension = .ttf ,
+UprightFont    = *-Regular,Path           = assets/font/]{Julia Mono}
 \setmathfont[bold-style=ISO]{Libertinus Math}
 \usepackage{bm}

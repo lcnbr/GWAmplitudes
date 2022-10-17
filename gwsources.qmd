@@ -7,19 +7,19 @@
 # Gravitational Wave Generation
 
 
-First let us look at where and how gravitional waves are generated. We will look at how \acr{gr} predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.
+First let us look at where and how gravitional waves are generated. We will look at how (?:gr)  predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.
 
 ## Gravitational Waves
 
-The most complete theory of gravity we have right now is that of \acr{gr}, due to Einstein. It formulates spacetime as a Riemannian manifold with curvature, senstive to mass. Objects then move around in that deformed spacetime encoded in the metric $\met$. Objects interact gravitationally when the spacetime they move around in is affected by the curvature caused by other objects. The equation that governs this interaction between mass and curvature is Einstein's field equations,
+The most complete theory of gravity we have right now is that of (?:gr) , due to Einstein. It formulates spacetime as a Riemannian manifold with curvature, senstive to mass. Objects then move around in that deformed spacetime encoded in the metric $\met$. Objects interact gravitationally when the spacetime they move around in is affected by the curvature caused by other objects. The equation that governs this interaction between mass and curvature is Einstein's field equations,
 
 $$
 \boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \grav \SEco} .
 $${#eq-EFE}
 
-The \acr{lhs} of this equation, contains several objects that are all only really dependent on the metric $\met$. $\RicciTco$ is the Ricci tensor[^riccitensor], a contraction of the Riemann curvature tensor $\Riem$. This tensor[^riemannT] encodes the curvature of spacetime, as it is essentially a measurement of the amount with which covariant derivatives don't commute. When they do, it means that they have collapsed to regular derivatives, and thus the Levi-civita connection[^LCconn] must have vanished. This is only possible if the metric is flat $\mink$. The Riemann curvature tensor is exclusively made up of the metric, its first, second derivatives and it is linear in the second derivative of the metric. In fact it is the only possible tensor of that sort. The second term on the \acr{lhs} is the Ricci scalar, a further contraction of the Ricci Tensor: $\RicciS = \invmet \RicciTco$. The final term on the \acr{lhs} is just a proportional constant factor of the metric, where $\cosmo$ is called the cosmological constant. It can be measured and has a low known upper bound. It is in part responsible for the expansion of the universe. 
+The (?:lhs) of this equation, contains several objects that are all only really dependent on the metric $\met$. $\RicciTco$ is the Ricci tensor[^riccitensor], a contraction of the Riemann curvature tensor $\Riem$. This tensor[^riemannT] encodes the curvature of spacetime, as it is essentially a measurement of the amount with which covariant derivatives don't commute. When they do, it means that they have collapsed to regular derivatives, and thus the Levi-civita connection[^LCconn] must have vanished. This is only possible if the metric is flat $\mink$. The Riemann curvature tensor is exclusively made up of the metric, its first, second derivatives and it is linear in the second derivative of the metric. In fact it is the only possible tensor of that sort. The second term on the (?:lhs) is the Ricci scalar, a further contraction of the Ricci Tensor: $\RicciS = \invmet \RicciTco$. The final term on the (?:lhs) is just a proportional constant factor of the metric, where $\cosmo$ is called the cosmological constant. It can be measured and has a low known upper bound. It is in part responsible for the expansion of the universe. 
 
-The \acr{rhs} of @eq-EFE encodes the effect of mass and energy on the metric. $\SEco$ is the stress-energy tensor, dependent on the dynamics of the system. In empty space this term is zero. It is further multiplied by the Gravitational constant $\grav$. 
+The (?:rhs)  of @eq-EFE encodes the effect of mass and energy on the metric. $\SEco$ is the stress-energy tensor, dependent on the dynamics of the system. In empty space this term is zero. It is further multiplied by the Gravitational constant $\grav$. 
 
 Equation @eq-EFE can be recast in a form where the Ricci scalar has been eliminated,
 
@@ -34,7 +34,7 @@ $$
     \met = \mink + \weakmet,
 $${#eq-WeakFA}
 
-with $\weakmet$ small. Note that if we restrict ourselves to first order in $\weakmet$ then all raising and lowering of indices has to be done with $\mink$, or else we increase the order of the term by 1. Now since the \acr{lhs} of @eq-EFE is made up of the Ricci tensor and scalar, let us see how these behave in the weak approximation. Both are in fact made up of Levi-Civita connections, which to first order in $\weakmet$ is given by:
+with $\weakmet$ small. Note that if we restrict ourselves to first order in $\weakmet$ then all raising and lowering of indices has to be done with $\mink$, or else we increase the order of the term by 1. Now since the (?:lhs) of @eq-EFE is made up of the Ricci tensor and scalar, let us see how these behave in the weak approximation. Both are in fact made up of Levi-Civita connections, which to first order in $\weakmet$ is given by:
 $$\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
 \brk[\Big]{
     \ipdv{ \weakmet[\rho \nu]}{\mu}
@@ -80,7 +80,7 @@ With these two relations the expression for the linearized Ricci tensor @eq-Ricc
 $$
     \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
 $${#eq-Ricciweak2}  
-Where we have defined the \acr{sr} D'Alembertian as: $\SRDA=\invmink \partialder[\mu]\partialder[\nu]$ We can plug this into @eq-EFEwoR, with $\cosmo=0$, and up to first order in $\weakmet$ we get the linearized Einstein field equations for a system of harmonic coordinates:
+Where we have defined the (?:sr)  D'Alembertian as: $\SRDA=\invmink \partialder[\mu]\partialder[\nu]$ We can plug this into @eq-EFEwoR, with $\cosmo=0$, and up to first order in $\weakmet$ we get the linearized Einstein field equations for a system of harmonic coordinates:
 
 $$
 \square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} 
@@ -156,9 +156,11 @@ The metric perturbation in this gauge is written as:  $\weakTTmet$.
 ## Inhomogenous solutions
 
 With the homogenous part of @eq-linearized accounted for, we can now look at the inhomogenous part. The solution in the presence of a source term of @eq-linearized will be heavily inspired by the analogous problem in electromagnetism.  If we define the following retarded Green's function
+
 $$
     \greens{\ct{x}-\ct{x'}} = -2\pi\,\deltafn[4]{(\ct{x}-\ct{x'})^2}\thetafn{x^0>x^{\prime0}},
 $$
+
 which satisfies,
 
 $$
@@ -175,7 +177,7 @@ is given by:
 
 $$
     \weakmet(x) = 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\srcco(x'),
-$${#eq-hsolInhom}
+$$ {#eq-hsolInhom}
 
 ::: {.column-margin}
 One gets the parallel solution to the trace reversed equation @eq-linearizedTR by swapping $\srcTensor$ with $\SETensor$ and all $\weakTensor$ with $\weakTRTensor$
@@ -302,7 +304,7 @@ These four equations enable us to just care about the purely spacelike component
 $$
 \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=-\omega^2\FT[t]{\SEco[00]}{\omega}
 $$
-which when multiplied by $\co[m]{x}\co[n]{x}$ and integrated over $\tv{x}$ gives^[two integrations by parts cancel the $\co[m]{x}\co[n]{x}$ term in the \acr{lhs} and since boundary terms are 0 (the source is finite) we have $$\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}$$ 
+which when multiplied by $\co[m]{x}\co[n]{x}$ and integrated over $\tv{x}$ gives^[two integrations by parts cancel the $\co[m]{x}\co[n]{x}$ term in the (?:lhs) and since boundary terms are 0 (the source is finite) we have $$\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}$$ 
 The hessian of $\co[m]{x}\co[n]{x}$ is $(\kron[^i_m]+\kron[^i_n])(\kron[^j_n]+\kron[^j_m])$, but since $\SEco$ is symmetric the integral is $$\int \dd{\tv{y}} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\tv{y}) $$]:
 $$
 \int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x})
@@ -332,17 +334,17 @@ $$
 \end{aligned}
 $$ {#eq-metricquadmom}
 
-This equation has a very nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the energy denisty at the time where the past light cone of the observer intersects the source ($t_r$). The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the the change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for \acr{em}), or mass (for \acr{gr}), and while a center of charge is free to move around, the center of mass (of an isolated) is fixed by the conservation of momentum. The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitional system can modify. Finally the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitional radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
+This equation has a very nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the energy denisty at the time where the past light cone of the observer intersects the source ($t_r$). The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the the change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for (?:em) ), or mass (for (?:gr) ), and while a center of charge is free to move around, the center of mass (of an isolated) is fixed by the conservation of momentum. The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitional system can modify. Finally the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitional radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
 
 
-Thus any object that is modifying its shape is a source of gravitional waves. All orbiting systems therefore are sources of \acr{gw}s. However as said just above, only very important 'changes in shape' have a chance to be detectable. These phenomena are what we will explore next. 
+Thus any object that is modifying its shape is a source of gravitional waves. All orbiting systems therefore are sources of (?s:gw) . However as said just above, only very important 'changes in shape' have a chance to be detectable. These phenomena are what we will explore next. 
 
 ### Compact binaries {#sec-compactbinaries}
 
-How could one construct a very powerful source of \acr{gw}s? One could take two very massive objects, (such that $\SEco[00]$ is large) and make them orbit each other. At that point one could hope to detect this orbit if the objects are massive enough and orbiting close enough for the 'change in shape' of the system to sizeable. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit \acr{gw}s, and in doing so they lose energy^[of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a very important change of shape and thus we have a constructed (if not all on purpose) a very powerful source of \acr{gw}s. Such objects are called compact binaries.
+How could one construct a very powerful source of (?s:gw) ? One could take two very massive objects, (such that $\SEco[00]$ is large) and make them orbit each other. At that point one could hope to detect this orbit if the objects are massive enough and orbiting close enough for the 'change in shape' of the system to sizeable. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy^[of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a very important change of shape and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
 
 
-To \acr{lo} we can use a newtonian circular orbit to describe the motion of the binary. nsuch a system is in fact equivalent to effective one body ^[This choice of wording is nota coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitional potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the binary. Such an orbit can easily be characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[or equivalently between conserved angular momentum and the derivative of the potential energy] 
+To (?:lo)  we can use a newtonian circular orbit to describe the motion of the binary. nsuch a system is in fact equivalent to effective one body ^[This choice of wording is nota coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitional potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the binary. Such an orbit can easily be characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[or equivalently between conserved angular momentum and the derivative of the potential energy] 
 
 $$
 \frac{\grav \totmass\redmass}{\pa{\dist}^2}=\frac{\redmass \vel^2}{\dist},
@@ -366,20 +368,20 @@ $$
 \Omega=\frac{2\pi}{T}=\sqrt{\frac{\grav\totmass}{\dist^3}}.
 $$ {#eq-omega}
 
-Thus the \acr{eom} $\tv{r}(t)$ of the reduced mass is, in a circular orbit, in the $x-y$ plane:
+Thus the (?:eom) $\tv{r}(t)$ of the reduced mass is, in a circular orbit, in the $x-y$ plane:
 
 $$
 \tv[xy]{r}(t)= \begin{pmatrix} \dist \cos(\Omega t)\\ \dist \sin(\Omega t) \end{pmatrix} .
 $$
 
-The corresponding \acr{eom} for both masses is simply given by applying the following scaling:
+The corresponding (?:eom) for both masses is simply given by applying the following scaling:
 
 $$
 \redmass \tv{r}(t)  = \mass[1] \tv[2]{r}(t) = \mass[2] \tv[2]{r}(t).
 $$
 
 
-We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[the energy density is the same for the effective one body system and the two body system] by using the \acr{eom} of the reduced mass:   
+We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[the energy density is the same for the effective one body system and the two body system] by using the (?:eom) of the reduced mass:   
 
 $$
 \SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)}.
@@ -412,10 +414,10 @@ h \sim \frac{\ddot{\quadmom[]}}{r} \sim \frac{1}{r} \frac{\grav\mass[1]\mass[2]}
 $$ {#eq-hnorm}
 
 
-### \acr{bh} Binaries
+### (?:bh)  Binaries
 
 
-Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In \acr{gr} this object is called a black hole (\acr{bh}). It is a possible solution to the full fat \acr{efe} (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by, in spherical coordinates:  
+Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In (?:gr)  this object is called a black hole ( (?:bh) ). It is a possible solution to the full fat (?:efe) (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by, in spherical coordinates:  
 
 
 $$
@@ -432,7 +434,7 @@ $$
 R_S=\frac{2GM}{c^2}.
 $$
  
-For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that @eq-Schwarzschild exhibits singularities (blowing up of the metric compontents) at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordiante independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the very real mass singularity of what we call a \acr{bh}.
+For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that @eq-Schwarzschild exhibits singularities (blowing up of the metric compontents) at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordiante independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the very real mass singularity of what we call a (?:bh) .
 
 If we consider a compable stellar mass binary black hole system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency:
 
@@ -447,7 +449,7 @@ h \approx \frac{R_S^2}{r\dist}.
 $$
 
 
-Now if we consider \acr{bh}s separated by ten times their Schwarzschild radius, at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we have the following scales:
+Now if we consider (?s:bh)  separated by ten times their Schwarzschild radius, at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we have the following scales:
 
 $$
 \begin{aligned}
@@ -469,12 +471,12 @@ $$
 h\approx 10^{-21}.
 $$
 
-To have any hope of detecting such systems, one would need to have detectors sensitive in the hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at \acr{ligo} and other detectors, and has enabled the detection of such systems. 
+To have any hope of detecting such systems, one would need to have detectors sensitive in the hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at (?:ligo) and other detectors, and has enabled the detection of such systems. 
 
 
 Non spinning black holes are in a certain sense the simplest binary objects one could consider modelling. However they probably would never occur in nature. The nature of formations of black holes implies that they necessarily also spin. These black holes, called kerr black holes, have spin, and therefore a different metric defining the spacetime surrounding them. The modelling spinning black holes is still quite in its infancy and we will not treat it here. 
 
- There are naturally many other binaries that could be feasably be detected. Finite size binaries such as \acr{ns}s include very interesting tidal effects, that are not present in the \acr{bh} case. Other non binary objects could also produce detectable gravitational waves, such as Cosmic strings, corresponding to early universe topological defects creating a stochasitc \acr{gw} backround.
+ There are naturally many other binaries that could be feasably be detected. Finite size binaries such as (?s:ns) include very interesting tidal effects, that are not present in the (?:bh)  case. Other non binary objects could also produce detectable gravitational waves, such as Cosmic strings, corresponding to early universe topological defects creating a stochasitc (?:gw)  backround.
 
 
 [^riccitensor]: The Ricci Tensor is given by:
