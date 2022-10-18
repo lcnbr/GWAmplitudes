@@ -42,7 +42,18 @@ In @fig-masses, the current library of compact binary systems detected by (?:lig
 
 ### (?:lisa)
 
-TODO
+There are many planned next generation (?:gw) detectors, from the Einstein telescope to Cosmic explorer. The most interesting one however is (?:lisa), the first genuine space based (?:gw) observatory. It is a joint project between ESA and NASA, and is scheduled to launch in 2037. It will consist of three satellites, in triangular formation, at a distance of 2.5 million kilometers of each other. Each of the three (?:lisa) spacecraft contains a test mass free falling within its body. Each spacecraft then measures the distance to its neighboring test mass thus forming a space based laser interferometer. 
+
+There are a few key differences with ground based detectors. The first is the size of the arms means it will be sensitive to frequency ranges such as:
+
+$$
+\brc{10^{-4},10^{0}}\text{ Hz}.
+$$
+
+This means that it will be sensitive to the most massive binaries in the universe, supermassive black holes, such as those found at the centers of galaxies. 
+
+The second is that it will be completely isolated from seismic activity, and thus has a much lower noise floor. This combined with the arm length means that (?:lisa) is also predicted to be able to observe (?s:emri), where stellar compact objects ($<60 \stellarmass$) orbit around a massive black hole of around $10^5 \stellarmass$ or more. In this configuration the small mass is in a slowly decaying orbit, and thus can spend around $10^5$ orbits and between a few months and a few years in the LISA sensitivity band before merging. This will provide us with a very interesting new source of (?:gw) , that also allows us to test new approximations, such as those based on mass ratio expansions: (?:gsf).
+
 
 ## Matched filtering
 

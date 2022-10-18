@@ -13,10 +13,21 @@ book:
   repo-url: https://github.com/lcnhb/GWAmplitudes
   repo-actions: [edit]
   downloads: [pdf]
+  abstract: |
+      # Abstract {.unnumbered}
+
+      The goal of this thesis is to explain the nascent field of scattering amplitudes in gravitational wave physics. We explore the context in which these tools are revolutionizing the field, and then go into detail of their construction and application. 
+
+      We begin with a brief overview of the topic and the academic context. The next chapter is devoted to the theoretical foundations of gravitational waves, and their important sources. In the third chapter we discuss the detection of these waves, highlighting the importance of the theoretical templates. The fourth chapter explores the theoretical methods for producing full wave templates, such as (?:eob) and (?:nr) as well as the expansions and approximations used for the inspiral: the (?:pn) and (?:pm) approximations. 
+
+      The fifth chapter is the main focus of the thesis, and is devoted to the scattering amplitude techniques that can be applied to the general relativistic two-body problem. We begin with the (?:eft) matching technique to motivate the production of gravitational amplitudes. The (?:kmoc) formalism, defining the classical limit of wave functions, is explained in detail. Finally, amplitudes in a simplified theory, (?:sqed) are computed, with a focus on automation of calculations. The corresponding graphs, filters, Feynman rules and further simplifications are all implemented in a cocktail of the relevant languages. We also compare the results obtained with those found in the literature.
+      
+      In the last chapter we provide some concluding remarks and a brief outlook.
   
 
   chapters:
     - index.qmd
+    - acknowledgements.qmd
     - intro.qmd
     - gwsources.qmd
     - gwdetect.qmd
