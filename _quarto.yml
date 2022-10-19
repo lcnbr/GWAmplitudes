@@ -14,7 +14,6 @@ book:
   repo-actions: [edit]
   downloads: [pdf]
   abstract: |
-      # Abstract {.unnumbered}
 
       The goal of this thesis is to explain the nascent field of scattering amplitudes in gravitational wave physics. We explore the context in which these tools are revolutionizing the field, and then go into detail of their construction and application. 
 
@@ -207,6 +206,9 @@ acronyms:
     - key: toa
       shortname: ToA
       longname: Time of Arrival
+    - key: nsbh
+      shortname: NS-BH
+      longname: Neutron Star - Black Hole
   
 
     

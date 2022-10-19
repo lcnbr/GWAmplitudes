@@ -242,12 +242,6 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\hypertarget{abstract}{%
-\chapter*{Abstract}\label{abstract}}
-\addcontentsline{toc}{chapter}{Abstract}
-
-\markboth{Abstract}{Abstract}
-
 The goal of this thesis is to explain the nascent field of scattering
 amplitudes in gravitational wave physics. We explore the context in
 which these tools are revolutionizing the field, and then go into detail
@@ -633,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, boxrule=0pt, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, enhanced, boxrule=0pt, breakable, interior hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -696,7 +690,7 @@ collaborations in 2016
 new era of gravitational wave astronomy. The first detections were of
 \gls{bbh} mergers. More recently, \gls{bns} mergers
 ~{[}\protect\hyperlink{ref-LIGOScientific:2017vwq}{2}{]} as well as
-(?:ns)-\gls{bh} mergers have been detected
+\gls{nsbh} mergers have been detected
 ~{[}\protect\hyperlink{ref-LIGOScientific:2021qlt}{3}{]}. Future
 detectors will further increase sensitivity and will be able to detect a
 wide range of astrophysical sources. Studying these gravitational waves
