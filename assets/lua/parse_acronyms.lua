@@ -353,7 +353,7 @@ function replaceAcronym(el)
                 return replaceNonExistingAcronym(key)
             end
         else
-            return pandoc.RawInline('latex', '\\'..style..'{'..key..'}')
+            return pandoc.RawInline('latex', a..'\\'..style..'{'..key..'}'..b)
         end
         -- This is an acronym, we need to parse it.
         

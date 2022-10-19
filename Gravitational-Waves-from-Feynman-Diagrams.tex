@@ -8,7 +8,7 @@
   a4paper,
   DIV=11,
   numbers=noendperiod,
-  oneside]{scrreprt}
+  twoside]{scrreprt}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -155,11 +155,11 @@
 \setabbreviationstyle[acronym]{long-short}
 \input{gls.tex}
 
-\setromanfont[Scale=1.04]{Libertinus Serif}
-\setsansfont[Scale=1]{Libertinus Sans}
-\setmonofont[Scale=.89,Extension = .ttf ,
-UprightFont    = *-Regular,Path           = assets/font/]{Julia Mono}
-\setmathfont[bold-style=ISO]{Libertinus Math}
+
+
+\usepackage{libertinus} % Includes unicode-math
+\setmonofont[Scale=.89,Extension = .ttf,UprightFont= *-Regular,Path = assets/font/]{Julia Mono}
+
 \usepackage{bm}
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -226,7 +226,7 @@ UprightFont    = *-Regular,Path           = assets/font/]{Julia Mono}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Graviational Waves from Feynman Diagrams},
+  pdftitle={Gravitational Waves from Feynman Diagrams},
   pdfauthor={Lucien Huber},
   colorlinks=true,
   linkcolor={blue},
@@ -235,7 +235,7 @@ UprightFont    = *-Regular,Path           = assets/font/]{Julia Mono}
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Graviational Waves from Feynman Diagrams}
+\title{Gravitational Waves from Feynman Diagrams}
 \author{Lucien Huber}
 \date{9/13/22}
 
@@ -633,7 +633,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, frame hidden, enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, boxrule=0pt, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -696,7 +696,7 @@ collaborations in 2016
 new era of gravitational wave astronomy. The first detections were of
 \gls{bbh} mergers. More recently, \gls{bns} mergers
 ~{[}\protect\hyperlink{ref-LIGOScientific:2017vwq}{2}{]} as well as
-\gls{bh} mergers have been detected
+(?:ns)-\gls{bh} mergers have been detected
 ~{[}\protect\hyperlink{ref-LIGOScientific:2021qlt}{3}{]}. Future
 detectors will further increase sensitivity and will be able to detect a
 wide range of astrophysical sources. Studying these gravitational waves
@@ -709,7 +709,7 @@ To detect these faint signals \gls{ligo} and Virgo, have been made to be
 extraordinarily precise instruments. Thus, they demand correspondingly
 precise theoretical predictions and models. This is not just for
 comparison's sake, but for detection as well. These faint signals are
-often buried in the noise of the detector. To counteract this
+often buried in the noise of the detector. To counteract this,
 experimental physicists make use of a matched filtering approach, where
 they try to match the signal to a template. The template is a model of
 the signal ideally provided by theoretical physicists based on physical
@@ -735,32 +735,32 @@ holes.
 
 These two physics leviathans do not get along, however. \gls{gr} is a
 theory of geometry, and \gls{qft} is a theory of interactions. We can
-try to write an interpret one in the language of the other, but in
+try to write and interpret one in the language of the other, but in
 either case difficulties arise. Writing \gls{gr} in terms of
-perturbative \gls{qft} one introduces the graviton. However it turns out
-that such a theory breaks down at high energies, and is
+perturbative \gls{qft} one introduces the graviton. However, it turns
+out that such a theory breaks down at high energies, and is
 un-renormalisable . In fact the presence of black holes, that dominate
-the high energy spectrum of \gls{gr} is a testament to that fact
+the high energy spectrum of \gls{gr}, is a testament to that fact
 ~{[}\protect\hyperlink{ref-Shomer:2007vq}{4}{]}. On the other hand,
 whilst one can write \glspl{qft} on a curved background, this is does
-not quantize gravity itself, and therefore does not really adress the
+not quantize gravity itself, and therefore does not really address the
 problem. Background independent theories such as loop quantum gravity
-does not as of yet have semiclassical limit collapsoing to \gls{gr}
+does not as of yet have semiclassical limit collapsing to \gls{gr}.
 String theory, on the other hand, introduces spurious dimensions that
-need to be compactified, which leads to uncountably many different
-solutions. In short, there is no satisfactory theory of that combines
-\gls{gr} and \gls{qft} in a consistent way.
+need to be compactified, which leads to uncountably many solutions. In
+short, there is no satisfactory theory of that combines \gls{gr} and
+\gls{qft} consistently.
 
 Regardless of this fact however, one can still use the powerful tools of
-ine to tackle problems in the other. Specifically, if one considers the
+one to tackle problems in the other. Specifically, if one considers the
 classical limit of \gls{qft} for example, one is able to extract
 perturbative gravitational dynamics from an initially quantum
 description of the setup. This is interesting because the tools
 developed for high energy physics have become extremely powerful and
 efficient theoretical machines, often making use of diagrammatic
 reasoning. Tools such as Feynman diagrams, differential equations and
-more recently generalised unitarity, can all be applied to
-\emph{classical} orbital dynamics in \gls{gr} This is exactly the
+more recently generalized unitarity, can all be applied to
+\emph{classical} orbital dynamics in \gls{gr}. This is exactly the
 subject of this thesis.
 
 Specifically we are interested in the diagrammatic objects that arise
@@ -778,7 +778,7 @@ signals for the noise, and look at the motivation for precise
 theoretical predictions. In chapter 3 we look at how to generate partial
 and full waveforms. We explore the \gls{eob} and \gls{nr} frameworks.
 Motivated by the need for more precise ingredients to input into
-\gls{eob} , in chapter 4 we look at the state of the art formalsims that
+\gls{eob} , in chapter 4 we look at the state of the art formalisms that
 incorporate amplitudes tools into the program. We take a look at the
 conservative \gls{eft} matching approach as well as the dissipation
 including \gls{kmoc} formalism. This is where we take a deeper look at
@@ -1610,7 +1610,7 @@ objects are, and if they are not just measurement artefacts.
 
 There are many planned next generation \gls{gw} detectors, from the
 Einstein telescope to Cosmic explorer. The most interesting one however
-is \gls{lisa} the first genuine space based \gls{gw} observatory. It is
+is \gls{lisa}, the first genuine space based \gls{gw} observatory. It is
 a joint project between ESA and NASA, and is scheduled to launch in
 2037. It will consist of three satellites, in triangular formation, at a
 distance of 2.5 million kilometers of each other. Each of the three
@@ -1633,14 +1633,14 @@ of galaxies.
 The second is that it will be completely isolated from seismic activity,
 and thus has a much lower noise floor. This combined with the arm length
 means that \gls{lisa} is also predicted to be able to observe
-\glspl{emri} where stellar compact objects (\(<60 \stellarmass\)) orbit
+\glspl{emri}, where stellar compact objects (\(<60 \stellarmass\)) orbit
 around a massive black hole of around \(10^5 \stellarmass\) or more. In
 this configuration the small mass is in a slowly decaying orbit, and
 thus can spend around \(10^5\) orbits and between a few months and a few
 years in the LISA sensitivity band before merging. This will provide us
 with a very interesting new source of \gls{gw} , that also allows us to
 test new approximations, such as those based on mass ratio expansions:
-\gls{gsf}
+\gls{gsf} .
 
 \hypertarget{matched-filtering}{%
 \section{Matched filtering}\label{matched-filtering}}
@@ -2275,7 +2275,7 @@ fits the gold standard \gls{nr} result up to the merger, well out of the
 \gls{pn} regime. Crucially this Hamiltonian framework does not take into
 account radiation reaction by construction (since it is based on
 conserved energy). These dissipative effects are rather added after the
-fact, as friction terms in the \gls{eom} The normal conservative eom is
+fact, as friction terms in the \gls{eom}. The normal conservative eom is
 straightforwardly obtained through Hamiltions equations:
 
 \[
@@ -2334,7 +2334,7 @@ results using amplitudes in the next section.
 
 \hypertarget{scattering-amplitudes-and-gws}{%
 \chapter{\texorpdfstring{Scattering amplitudes and
-\gls{gw}}{Scattering amplitudes and }}\label{scattering-amplitudes-and-gws}}
+\gls{gw}s}{Scattering amplitudes and }}\label{scattering-amplitudes-and-gws}}
 
 Whilst we have almost no hope to detect any \gls{gw} scattering events
 with current experiments, scattering calculations can still be very
@@ -2349,7 +2349,7 @@ one could apply the large knowledge acquired for small
 non-gravitationally interacting particles, to large compact orbiting
 bodies.
 
-Such techniques as \gls{eft} double copy, generalized unitarity,
+Such techniques as \gls{eft}, double copy, generalized unitarity,
 \gls{ibp} reduction, differential equations methods, all standing on the
 shoulders of Feynman perturbative techniques have been applied to the
 scattering problem in gravity. A key part of applying tools originally
@@ -2530,7 +2530,7 @@ note that in gravity this is precisely a \gls{pm} expansion!
 
 The first step in establishing a link to the potential from a generic
 scattering amplitude computed in the full theory is to compute the
-amplitude in the \gls{eft} We first identitify the Feynman rules from
+amplitude in the \gls{eft}. We first identitify the Feynman rules from
 the action. The kinetic term encodes the propagator:
 
 \hypertarget{fig-propagator}{}
@@ -2644,9 +2644,9 @@ the \gls{com} frame. Finally we can write what the diagram at loop level
 \]
 
 This integral can be perfomed in the non-relativistic limit, as done by
-~{[}\protect\hyperlink{ref-Bern:2019crd}{47}{]} up to \gls{pm} using
-\gls{ibp} reduction yielding, up to \gls{pm} the amplitudes of the
-\gls{eft}\sidenote{\footnotesize here the repartioning mentioned above has been
+~{[}\protect\hyperlink{ref-Bern:2019crd}{47}{]} up to 3\gls{pm}, using
+\gls{ibp} reduction yielding, up to 2\gls{pm}, the amplitudes of the
+\gls{eft}:\sidenote{\footnotesize here the repartioning mentioned above has been
   applied and a change in loop momenta:
   \(\tv[i]{k}\to\tv{p}+\tv[i]{\ell}\)}
 
@@ -2710,9 +2710,9 @@ where we use that the \gls{nr} expansion is a given by
 \[ \abs{\tv{\vel}}\ll1.\]
 
 To summarise, to obtain the form of the potential, we first compute the
-amplitude in an \gls{eft} absorbing all force carrying particles into an
-effective vertex. Making an ansatz for the potential we can go ahead and
-compute this amplitude in the non-relativistic limit. This same
+amplitude in an \gls{eft}, absorbing all force carrying particles into
+an effective vertex. Making an ansatz for the potential we can go ahead
+and compute this amplitude in the non-relativistic limit. This same
 amplitude can be computed in the full theory, but by still taking the
 limiting procedure we drastically reduce the kinematic region,
 simplifying calculations (in fact eliminating diagrams) and allowing us
@@ -2727,7 +2727,7 @@ that they are not isolated, energy conserving systems. The energy of the
 system is lost to the gravitational waves that enable us to detect them.
 Any conservative dynamics, by construction, cannot capture this loss of
 energy. In the context of \gls{eob} this radiation reaction was added
-after the fact, through direct modifications of the \gls{eom} obtained
+after the fact, through direct modifications of the \gls{eom}s obtained
 from Hamilton's equations. It is not clear how to incorporate
 dissipative data from the amplitude in the \gls{eob} framework.
 
@@ -3562,7 +3562,7 @@ And the integrand is given by the tree level 4 point amplitude.
 \vIntb[\ct{\emom[1]}]^{L=0}=\im\,  \tw^\mu\,  \coupling^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(\emom[1],\emom[2]\to \emom[1]+\hbar \tw,\emom[2]-\hbar\tw).
 \]
 
-At \gls{nlo} i.e.~\(\kappa^4\) order, both integrands contribute, as
+At \gls{nlo}, i.e.~\(\kappa^4\) order, both integrands contribute, as
 \ref{eq-rvloopmatch} can be satisfied for \(L=1\), \(L'=0\) and
 \(\abs{X}=2\). Thus we have the following equation:
 

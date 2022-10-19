@@ -6,7 +6,7 @@ project:
 editor:
   render-on-save: true
 book:
-  title: "Graviational Waves from Feynman Diagrams"
+  title: "Gravitational Waves from Feynman Diagrams"
   author: "Lucien Huber"
   date: "9/13/2022"
   search: true
@@ -228,6 +228,7 @@ format:
     fontsize: "10pt"
     from: markdown-latex_macros
     documentclass: scrreprt
+    classoption: [twoside]
     papersize: a4
     colorlinks: true
     include-in-header: preamble.tex

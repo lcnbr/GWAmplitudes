@@ -1,5 +1,5 @@
 # Preface {.unnumbered}
 
-This document represents my, Lucien Huber, master thesis, the last step in my master's degree at ETH Zurich. It can be viewed as either a webpage at https://lcnhb.github.io/GWAmplitudes, or downloaded as a PDF file. All code used for the thesis is provided in the GitHub repository https://github.com/lcnhb/GWAmplitudes. 
+This document represents my, Lucien Huber, master thesis, the last step in my master's degree at ETH Zurich. It can be viewed as either a webpage at <https://lcnhb.github.io/GWAmplitudes>, or downloaded as a PDF file. All code used for the thesis is provided in the GitHub repository <https://github.com/lcnhb/GWAmplitudes>. 
 
 

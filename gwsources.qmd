@@ -48,7 +48,7 @@ $$
  \frac{\invmink[\alpha\rho]}{2}\left[ \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right] + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)
 $${#eq-Ricciweak}
 
-The linearized Ricci scalar is then just $\linRicciS=\invmink\linRicciTco$. Regardless of the weak approximation, @eq-EFE has some gauge freedom. This means that if we solve eq @eq-EFE, it won't be the only possible solution, and in fact we can generate the others by changing coordinated in such a way that the equation isn't effected. To fix this ambiguity we choose a coordinate system ('gauge'), by  imposing the harmonic coordinate conditions: 
+The linearized Ricci scalar is then just $\linRicciS=\invmink\linRicciTco$. Regardless of the weak approximation, @eq-EFE has some gauge freedom. This means that if we solve eq @eq-EFE, it won't be the only possible solution, and in fact we can generate the others by changing coordinates in such a way that the equation isn't affected. To fix this ambiguity we choose a coordinate system ('gauge'), by  imposing the harmonic coordinate conditions: 
 
 $$ 
    \invmet[\alpha\beta]\LC{\mu}{\alpha}{\beta} =0

@@ -52,7 +52,7 @@ $$
 
 This means that it will be sensitive to the most massive binaries in the universe, supermassive black holes, such as those found at the centers of galaxies. 
 
-The second is that it will be completely isolated from seismic activity, and thus has a much lower noise floor. This combined with the arm length means that (?:lisa) is also predicted to be able to observe (?s:emri), where stellar compact objects ($<60 \stellarmass$) orbit around a massive black hole of around $10^5 \stellarmass$ or more. In this configuration the small mass is in a slowly decaying orbit, and thus can spend around $10^5$ orbits and between a few months and a few years in the LISA sensitivity band before merging. This will provide us with a very interesting new source of (?:gw) , that also allows us to test new approximations, such as those based on mass ratio expansions: (?:gsf).
+The second is that it will be completely isolated from seismic activity, and thus has a much lower noise floor. This combined with the arm length means that (?:lisa) is also predicted to be able to observe (?s:emri), where stellar compact objects ($<60 \stellarmass$) orbit around a massive black hole of around $10^5 \stellarmass$ or more. In this configuration the small mass is in a slowly decaying orbit, and thus can spend around $10^5$ orbits and between a few months and a few years in the LISA sensitivity band before merging. This will provide us with a very interesting new source of (?:gw) , that also allows us to test new approximations, such as those based on mass ratio expansions: (?:gsf) .
 
 
 ## Matched filtering
