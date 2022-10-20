@@ -357,16 +357,16 @@ In summary, any object that is modifying its shape is a source of (?s:gw). All o
 
 ### Compact binaries {#sec-compactbinaries}
 
-How could one construct a very powerful source of (?s:gw) ? One could take two very massive objects, (such that $\SEco[00]$ is large) and make them orbit each other. At that point one could hope to detect this orbit if the objects are massive enough and orbiting close enough for the 'change in shape' of the system to sizeable. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy^[of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a significant change of shape and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
+How could one construct a very powerful source of (?s:gw) ? An example would be that of two highly-massive bodies (such that $\SEco[00]$ is large) that orbit each other. Furthermore in order for the (?s:gw) emitted by the system to be detectable they must orbit close enough to each other that their quadrupole moment is large. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy^[Of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter.]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a significant change of shape and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
 
 
-To (?:lo)  we can use a newtonian circular orbit to describe the motion of the binary. nsuch a system is in fact equivalent to effective one body ^[This choice of wording is nota coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitational potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the binary. Such an orbit can easily be characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[or equivalently between conserved angular momentum and the derivative of the potential energy] 
+To (?:lo) in $\grav$ the motion of the binary is described by a newtonian circular orbit. In baricentric coordinates, such a system is in fact equivalent to effective one body ^[This choice of wording is not a coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitational potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the two bodies forming the binary. The orbit is characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[Or equivalently between conserved angular momentum and the derivative of the potential energy.] 
 
 $$
 \frac{\grav \totmass\redmass}{\pa{\dist}^2}=\frac{\redmass \vel^2}{\dist},
 $$ {#eq-newtongrav}
 
-where $\vel$ is the norm of tangential velocity, and $\dist$ is the distance between the two objects. @eq-newtongrav gives us the the norm of the velocity:
+where $\vel$ is the norm of tangential velocity, and $\dist$ is the distance between the two objects. @eq-newtongrav gives us the the norm of the velocity
 
 $$
 \vel=\sqrt{\frac{\grav \totmass}{\dist}}.
@@ -384,27 +384,27 @@ $$
 \Omega=\frac{2\pi}{T}=\sqrt{\frac{\grav\totmass}{\dist^3}}.
 $$ {#eq-omega}
 
-Thus the (?:eom) $\tv{r}(t)$ of the reduced mass is, in a circular orbit, in the $x-y$ plane:
+Thus the (?:eom) $\tv{r}(t)$ of the reduced mass is described by a circular orbit in the $x-y$ plane i.e.:
 
 $$
 \tv[xy]{r}(t)= \begin{pmatrix} \dist \cos(\Omega t)\\ \dist \sin(\Omega t) \end{pmatrix} .
-$$
+$$ {#eq-eomred}
 
-The corresponding (?:eom) for both masses is simply given by applying the following scaling:
-
-$$
-\redmass \tv{r}(t)  = \mass[1] \tv[2]{r}(t) = \mass[2] \tv[2]{r}(t).
-$$
-
-
-We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[the energy density is the same for the effective one body system and the two body system] by using the (?:eom) of the reduced mass:   
+We have not written the third $z$ component of the trajectory as that can be set to zero, for a well chosen set of inertial coordinates. The corresponding trajectory for both masses is simply given by applying the following scaling:
 
 $$
-\SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)}.
+\redmass \tv{r}(t)  = \mass[1] \tv[1]{r}(t) = \mass[2] \tv[2]{r}(t).
+$$ 
+
+
+We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[The energy density is the same for the effective one body system and the two body system.] by using the (?:eom) of the reduced mass (@eq-eomred):   
+
+$$
+\SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)},
 $$
 
 
-Which when plugged into @eq-quadmom gives us the quadrupole moment of the the rotating system:
+which when plugged into @eq-quadmom, gives us the quadrupole moment of the rotating system:
 
 
 $$
@@ -422,18 +422,20 @@ $$
 \quadmom[]\sim \redmass \dist^2 \cos (2 \Omega  t) \sim \redmass \dist^2 \sim \redmass \pa[\Big]{\frac{\grav\totmass}{\Omega^2}}^{\frac{2}{3}}= \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{-\frac{4}{3}},
 $$
 
-where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm ignoring constants:
+where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm proportional to:
 
 
-$$
-h \sim \frac{\ddot{\quadmom[]}}{r} \sim \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
+$$q
+h \propto \frac{\ddot{\quadmom[]}}{r} \propto \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
 $$ {#eq-hnorm}
 
 
 ### (?:bh)  Binaries
 
 
-Taking the process described above to the limit one could imagine asking for the most dense objects possible to orbit each other. In (?:gr)  this object is called a black hole ( (?:bh) ). It is a possible solution to the full fat (?:efe) (@eq-EFE), where we consider a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. The solution is given by, in spherical coordinates:  
+Taking the process described above to the limit of more massive and more compact objects one could imagine asking for the most dense objects possible to orbit each other. In (?:gr)  this object is called a black hole ( (?:bh) ). It is a possible solution to the full fat (?:efe) (@eq-EFE), in a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. 
+
+The solution is given by, in spherical coordinates:  
 
 
 $$
@@ -450,27 +452,27 @@ $$
 R_S=\frac{2GM}{c^2}.
 $$
  
-For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that @eq-Schwarzschild exhibits singularities (blowing up of the metric compontents) at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordiante independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the very real mass singularity of what we call a (?:bh) .
+For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that the metric given in @eq-Schwarzschild exhibits singularities at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordinate independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the non-spurious mass singularity that gives rise to the (?:bh) phenomena  .
 
-If we consider a compable stellar mass binary black hole system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency:
+If we consider a comparable stellar mass (?:bbh) system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency
 
 $$
-f=\frac{\Omega}{2\pi}\approx\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}}
+f=\frac{\Omega}{2\pi}=\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}},
 $$
 
 and the metric perturbation is given by @eq-hnorm:
 
 $$
-h \approx \frac{R_S^2}{r\dist}.
+h = \frac{R_S^2}{r\dist}.
 $$
 
 
-Now if we consider (?s:bh)  separated by ten times their Schwarzschild radius, at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we have the following scales:
+Thus, if we consider (?s:bh)  separated by ten times their Schwarzschild radius, observed at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we obtain the values for the scales characterising the binary system:
 
 $$
 \begin{aligned}
-R_S &\approx 10^3\; \mathrm{m} \\
-\dist &\approx 10^4\; \mathrm{m} \\ 
+R_S &\approx 10^3\; \mathrm{m} ,\\
+\dist &\approx 10^4\; \mathrm{m} ,\\ 
 r &\approx 10^{23}\; \mathrm{m}.
 \end{aligned}
 $$
@@ -487,12 +489,12 @@ $$
 h\approx 10^{-21}.
 $$
 
-To have any hope of detecting such systems, one would need to have detectors sensitive in the hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at (?:ligo) and other detectors, and has enabled the detection of such systems. 
+To have any hope of detecting such systems, one would need to have detectors sensitive to frequency spectra up to hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at (?:ligo) and other detectors, and has enabled the detection of such systems. 
 
 
-Non spinning black holes are in a certain sense the simplest binary objects one could consider modelling. However they probably would never occur in nature. The nature of formations of black holes implies that they necessarily also spin. These black holes, called kerr black holes, have spin, and therefore a different metric defining the spacetime surrounding them. The modelling spinning black holes is still quite in its infancy and we will not treat it here. 
+Non-spinning black holes orbiting around each other are the simplest binary system to model. However, they are extremely unlikely to occur in nature (realistic physical scenarios). The nature of (?:bh) formation implies that they necessarily also spin. Spinning black holes, also refered to as Kerr black holes, are characterized by a different metric tensor defining the spacetime surrounding them. The modelling of spinning black holes is still in its infancy and will not be treated it here.
 
- There are naturally many other binaries that could be feasably be detected. Finite size binaries such as (?s:ns) include very interesting tidal effects, that are not present in the (?:bh)  case. Other non binary objects could also produce detectable (?s:gw), such as Cosmic strings, corresponding to early universe topological defects creating a stochasitc (?:gw)  backround.
+ There are many other binary systems that could feasably be detected. Finite-size binaries such as (?s:ns) result in tidal phenomena that are not present in the (?:bh)  case. Also non-binary sytems, such as Cosmic strings, corresponding to early universe topological defects, could produce a detectable stochasitc (?:gw) backround.
 
 
 [^riccitensor]: The Ricci Tensor is given by:
