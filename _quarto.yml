@@ -56,7 +56,6 @@ keep-tex: true
 
 filters:   
   - assets/lua/parse_acronyms.lua
-  - assets/lua/not-in-format.lua
   - assets/lua/diagram-generator.lua
 acronyms:
   style: long-short
@@ -209,6 +208,9 @@ acronyms:
     - key: nsbh
       shortname: NS-BH
       longname: Neutron Star - Black Hole
+    - key: hep
+      shortname: HEP
+      longname: High Energy Physics 
   
 
     
@@ -227,7 +229,7 @@ format:
     
   pdf:
     keep-tex: true
-    fontsize: "10pt"
+    fontsize: "11pt"
     from: markdown-latex_macros
     documentclass: scrreprt
     classoption: [twoside]
