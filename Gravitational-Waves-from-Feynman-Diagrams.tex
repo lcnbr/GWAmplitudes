@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, sharp corners, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable, frame hidden, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -2921,17 +2921,17 @@ If we now define the following operators\sidenote{\footnotesize \(f\lrder g=f\pa
 \annihilop[f](t)=   \im \int \dd[3]{\tv{x}}\conj{f}(x) \lrder[0] \scf(x),
 \]
 
-where \(\scf(x)\) is the Heisenberg field operator of our theory. Note
-that while these operators are time dependent, this dependence is not
-given by applying the Heisenberg \glspl{eom} \sidenote{\footnotesize \(\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}\)},
+where \(\scf(x)\) is the Heisenberg field operator of our theory. While
+these operators are time dependent, this dependence is not obtained from
+applying the Heisenberg \glspl{eom} \sidenote{\footnotesize \(\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}\)},
 instead it is present through the time dependence of the wavefunction
 \(f(x)\). It turns out that these operators, suggestively written are
 the true creation and annilihation operators in the interacting theory.
 
-Now we can actually define a general one particle state \(\ket{f}\) as
-the result of a creation operator acting on the physical vacuum.
-Crucially however this only makes sense in the boundary of the bulk,
-i.e.~at asymptotic times \(t\to\pm\infty\)\sidenote{\footnotesize see
+We can now define a general one particle state \(\ket{f}\) as the result
+of a creation operator acting on the physical vacuum. Crucially, this
+only makes sense in the boundary of the bulk, i.e.~at asymptotic times
+\(t\to\pm\infty\)\sidenote{\footnotesize See
   ~{[}\protect\hyperlink{ref-Coleman:2018a}{51}{]} or
   ~{[}\protect\hyperlink{ref-Collins:2019ozc}{53}{]} for a more in depth
   discussion of this point}. Inside the bulk, any thusly created state
@@ -2941,10 +2941,9 @@ as a state, it only has definite particle number at asymptotic times,
 and inside the bulk the scattering happens, and the particle number is
 not conserved (at least quantum mechanically).
 
-Consequently we only define asymptotic states, denoting them by an
+Consequently, we only define asymptotic states, denoting them by an
 \(\text{in}\) subscript if they were created at \(t\to-\infty\) and
-\(\text{out}\) if they were created at \(t\to+\infty\). Thus we define a
-generic single particle in state as:
+\(\text{out}\) if they were created at \(t\to+\infty\):
 
 \[ 
 \ket[in]{f}\defeq\lim_{t\to-\infty}\createop[f](t)\physvack=\createop[f;\text{in}]\physvack=\int \ddP{k} \shellft{f}(k) \underbracket{\createop[\tv{k}]\physvack}_{\momket[k]}
@@ -2954,7 +2953,7 @@ and the corresponding \(t \to +\infty\) state where in is replaced with
 out. It turns out that the extension to multiparticle states is not much
 more complicated. The one thing to demand is that the momentum
 distributions say \(\shellft{f_1},\shellft{f_2},\dots\) have no common
-support, i.e.~they are not overlapping. In this case a n-particle in
+support, i.e.~they are not overlapping. In this case an n-particle in
 state is defined as:
 
 \[
@@ -2962,12 +2961,12 @@ state is defined as:
 \]
 
 We now have the definitions for asymptotic in and out states for any
-number of particles. Before continuing to define the setup to scatter
-our two particles, let us look at the meaning of the position space
-wavefunction \(f(x)\) as defined in eq.~\ref{eq-spacetimewf}. Consider a
-sharply peaked, compactly supported momentum distribution
-\(\shellft{f}(k)\) around a value \(\tv[0]{p}\) and a characteristic
-width \(\Delta p\). One such function could be:
+number of particles. Before defining the setup to scatter two particles,
+let us look at the meaning of the position space wavefunction \(f(x)\)
+as defined in eq.~\ref{eq-spacetimewf}. Consider a sharply peaked,
+compactly supported momentum distribution \(\shellft{f}(k)\) around a
+value \(\tv[0]{p}\) and a characteristic width \(\Delta p\). One such
+function could be:
 
 \begin{equation}\protect\hypertarget{eq-peak}{}{
 f\pa{\tv{p} ; \tv[0]{p}, \Delta p}=\left\{\begin{array}{ll}
@@ -2976,16 +2975,18 @@ N \exp{-1 /\pa{1-\abs{\tv{p}-\tv[0]{p}}^2 / \Delta p^2}} & \text { if }\abs{\tv[
 \end{array}\right.,
 }\label{eq-peak}\end{equation}
 
-where \(N\) is a normalization constant. Now the integrand in
+where \(N\) is a normalization constant. The integrand in
 eq.~\ref{eq-spacetimewf}, at large \(t\) or \(\tv{x}\), will be
 dominated by the stationary phase point \(\tv[s]{p}\) which is given
 by:\sidenote{\footnotesize This then means that
   \[\tv[s]{p}=\frac{\mass\tv{x}\sign{t}}{\sqrt{t^2-\tv{x}^2}}\] thus
   \[\hbar\shellen[{\tv[s]{p}}]=\frac{\mass\abs{t}}{\sqrt{t^2-\tv{x}^2}}\]}
-\begin{equation}\protect\hypertarget{eq-stationaryphase}{}{0=-\pdv{}{\tv[s]{p}}\pa{\hbar\shellen[{\tv[s]{p}}]t+\tv[s]{p}\cdot\tv{x}}=-\frac{\tv[s]{p}t}{\hbar\shellen[{\tv[s]{p}}]}+\tv{x}.}\label{eq-stationaryphase}\end{equation}
+
+\begin{equation}\protect\hypertarget{eq-stationaryphase}{}{0=-\pdv{}{\tv[s]{p}}\pa{\hbar\shellen[{\tv[s]{p}}]t+\tv[s]{p}\cdot\tv{x}}=-\frac{\tv[s]{p}t}{\hbar\shellen[{\tv[s]{p}}]}+\tv{x}.
+}\label{eq-stationaryphase}\end{equation}
 
 In the case of a sharply peaked momentum distribution, the coordinate
-space wavefunction will be largest when the stationary phase point is be
+space wavefunction will be largest when the stationary phase point is
 the same as the peak of the momentum distribution,
 i.e.~\(\tv[s]{p}=\tv[0]{p}\) i.e.~substituting \(\tv[s]{p}\) into
 eq.~\ref{eq-stationaryphase} gives: \[
@@ -2993,10 +2994,11 @@ eq.~\ref{eq-stationaryphase} gives: \[
 \]
 
 This is precisely the trajectory of the classical relativistic particle.
-If we have two particles with different peaked momentum distributions
-their trajectories will have different velocities, but the same
-positions at time \(0\). Thus we will shift one of these trajectories by
-a so called impact parameter \(\ct{\impactParameter}\)\sidenote{\footnotesize \(f(x)=\int \ddP{\emom} \shellft{f}({\emom})\exp{-\frac{\im}{\hbar} \emom^\mu x_\mu}\).
+Now consider the case of two particles with different peaked momentum
+distributions their trajectories will have different velocities, but the
+same positions at time \(0\). Thus we will shift one of these
+trajectories by a so called impact parameter
+\(\ct{\impactParameter}\)\sidenote{\footnotesize \(f(x)=\int \ddP{\emom} \shellft{f}({\emom})\exp{-\frac{\im}{\hbar} \emom^\mu x_\mu}\).
   Then a shifted, i.e.~translated version of \(f(x)\) can be
   written:\[\begin{aligned}f(x-x_0)&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{-\frac{\im}{\hbar} p_\mu (x^\mu-x_0^\mu)}\\&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{\frac{\im}{\hbar}p_\mu x^\mu_0}\,\exp{-\frac{\im}{\hbar} p_\mu x^\mu}\end{aligned}\]
   Thus the associated, translated state
@@ -3013,24 +3015,24 @@ write down the initial state that we are going to study:
 }\label{eq-instate}\end{equation}
 
 From now on we will drop the breve and infer from the arguments the type
-of \(\wf\) we are dealing with. Note that by extracting the impact
+of \(\wf\) we are dealing with. Observe that by extracting the impact
 parameter in this way, the wavefunctions can be identitcal in form, and
-will still be separate as required.
+will still be separated as required.
 
 \hypertarget{change-in-observable}{%
 \subsection{Change in observable}\label{change-in-observable}}
 
 The \gls{kmoc} framework concerns itself with the change of an
-observable during a scattering event. For such an observable
-\(\obs{O}\), its change can be simply obtained by evaluating the
-difference of the expectation value of the corresponding Hermitian
-operator, \(\mathbb{O}\), between in and out states \[
+observable quantity during a scattering event encoded in an operator
+\(\op{O}\). For such an observable quantitiy \(\obs{O}\) , its change is
+obtained by evaluating the difference of the expectation value of
+\(\op{O}\), between in and out states \[
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}.
 \]
 
 In quantum mechanics, the out states are related to the in states by the
-time evolution operator, i.e.~the S-matrix:
-\(\ket{\text{out}}=\Smat \ket{\text{in}}\) and we can write
+time evolution operator, i.e.~the S-matrix,
+\(\ket{\text{out}}=\Smat \ket{\text{in}}\). Thus:
 
 \marginnote{\begin{footnotesize}
 
@@ -3053,18 +3055,20 @@ identity vanish (as \(\id\) commutes with everything).
 \end{aligned}
 }\label{eq-DeltaO}\end{equation}
 
-If we put in the definition of our in state (eq.~\ref{eq-instate}) we
-have:
+If we put in the definition of our in state (eq.~\ref{eq-instate}), we
+have
 
 \[
 \Delta O = \int \ddP[4]{\emom[1],\emom[2],\emom[1]',\emom[2]'} 
                   \wf[1](\emom[1]) \wf[2](\emom[2]) \cwf[1](\emom[1]') \cwf[2](\emom[2]')
                   \,\exp{\im \co{\impactParameter} \frac{\ct{\emom[1]}-\ct{\emom[1]'}}{\hbar}}
-                  \brc[\big]{\vInt-\rInt}.
+                  \brc[\big]{\vInt-\rInt},
 \]
 
-Where we define the real integrand \(\rInt\) and the virtual integrand
-\(\vInt\) as the following matrix elements:
+where we defined the real integrand \(\rInt\) and the virtual integrand
+\(\vInt\) as the following matrix elements \sidenote{\footnotesize NB: the notation is
+  slightly different in the
+  ~{[}\protect\hyperlink{ref-Bern:2021xze}{49}{]} paper}
 
 \[
 \begin{aligned}
@@ -3072,10 +3076,6 @@ Where we define the real integrand \(\rInt\) and the virtual integrand
 \rInt &=\bra[in]{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}   }\ket[in]{\emom[1]\emom[2]}.
 \end{aligned}
 \]
-
-{\marginnote{\begin{footnotesize}NB: the notation is slightly different
-in the ~{[}\protect\hyperlink{ref-Bern:2021xze}{49}{]}
-paper\end{footnotesize}}}
 
 Let us first look at the virtual integrand \(\vInt\):\sidenote{\footnotesize Here we
   define
@@ -3098,10 +3098,15 @@ Let us first look at the virtual integrand \(\vInt\):\sidenote{\footnotesize Her
 \end{aligned}
 }\label{eq-vInt}\end{equation}
 
-Note that the amplitude is from in states to in states! Now for the real
-integrand \(\rInt\) we insert a complete set of states :\sidenote{\footnotesize \(1=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\dyad{r_1 r_2 X}\)
+Note that the amplitude is from in states to in states. In order to
+obtain the real integrand \(\rInt\), we insert a complete set of states
+:\sidenote{\footnotesize \(1=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\dyad{r_1 r_2 X}\)
   Where we could consider the states \({r_1,r_2,X}\) to be the final
-  states after the scattering}
+  states after the scattering. Note that we always impose having two
+  \glspl{bh}, at all times, as we have no pair annihilation, which is
+  why the sum always has a two particle dyad. The additional states
+  encoded in \(X\) are all possible additional messenger states (we also
+  have no \gls{bh} pair production).}
 
 \begin{equation}\protect\hypertarget{eq-rInt}{}{
 \begin{aligned}
@@ -3111,27 +3116,29 @@ integrand \(\rInt\) we insert a complete set of states :\sidenote{\footnotesize 
       &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \ndeltafn[4]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}}\,
       \amp{\emom[1], \emom[2]}{r_{1}, r_{2}, r_{X}} \\
       &\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]'+\emom[2]'-r_{1}-r_{2}-r_{X}}\,
-      \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}}.
+      \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}},
 \end{aligned}
 }\label{eq-rInt}\end{equation}
 
-For both integrands we can preform some variable changes and eliminate
-certain delta functions. We introduce momentum shifts
-\(q_i=\emom[i]'-\emom[i]\) and then integrate over \(q_2\) finally
-relabelling \(q_1 \to \tm\) \sidenote{\footnotesize Introducing the momentum shifts
-  modifies the measure in the following way:
+where the \(X\) encodes any number of additional messenger states, and
+\(r_{X}\) is the sum of their momenta. For both integrands we can
+preform some variable changes and eliminate certain Dirac delta
+functions. We introduce momentum shifts \(q_i=\emom[i]'-\emom[i]\) and
+then integrate over \(q_2\), and finally relabel \(q_1 \to \tm\)
+\sidenote{\footnotesize Introducing the momentum shifts modifies the measure in the
+  following way:
   \[\begin{aligned}\ddP{\emom[i]'}&=\ddP{\emom[i]+q_i}\\=&\dn[4]{q_i}\,\ndeltafn{{(\emom[i]+q_i)^2-m_i^2}} \thetafn{{\emom[i]^0+q_i^0}}\end{aligned}\]
   Now since we also have the on-shell enforcing delta function from
   \(\ddP{\emom[i]}\) we can rewrite the delta functions:
   \[\begin{aligned}\ddP{\emom[i]}&\,\ndeltafn{(\emom[i]+q_i)^2-m_i^2}\\&=\ddP{\emom[i]}\ndeltafn{\underbracket{(\emom[i]^2-m_i^2)}_{\text{redundant}}+2 \emom[i] \cdot q_i+q_i^2}\\&=\ddP{\emom[i]}\ndeltafn{2 \emom[i] \cdot q_i+q_i^2}\end{aligned}\]
-  Finally when integrating over \(q_2\) we choose to hit
+  Finally we integrate \(q_2\) by solving
   \(\ndeltafn[(4)]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'}=\ndeltafn[(4)]{q_1+q_2}\)
   and thus we just set \(q_2=-q_1\)}. Thus we have
 
 \begin{equation}\protect\hypertarget{eq-DeltaOv}{}{
 \begin{aligned}
-\vchangeob=\int \ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm}
-      &\ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\, \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
+\vchangeob=\int &\ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm}
+      \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\, \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
       &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} \co{\impactParameter} \tm^\mu}\\
       &\times \im \obschange{\tm} \amp{\emom[1],\emom[2] }{\emom[1]+\tm,\emom[2]-\tm},
 \end{aligned}
@@ -3139,8 +3146,8 @@ relabelling \(q_1 \to \tm\) \sidenote{\footnotesize Introducing the momentum shi
 
 \begin{equation}\protect\hypertarget{eq-DeltaOr}{}{
 \begin{aligned}
-\rchangeob=\sum\limits_X \int \ddP[2+\abs{X}]{r_1, r_2,X}
-      &\ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm} \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\\
+\rchangeob=\sum\limits_X \int &\ddP[2+\abs{X}]{r_1, r_2,X}
+      \ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm} \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\\
             &\times \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
             &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} b_\mu \tm^\mu}\\
             &\times\obschange{rX-\emom}\ndeltafn[(4)]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}} \\
@@ -3149,19 +3156,19 @@ relabelling \(q_1 \to \tm\) \sidenote{\footnotesize Introducing the momentum shi
 }\label{eq-DeltaOr}\end{equation}
 
 We have arrived at an integral expression for the change in observable
-\(\obs{O}\). Luckily for us, we will not need to perform these integrals
-in the classical limit. We will just have carefully chosen replacement
-rules for the integrated variables! Let us look at this in more detail
-now.
+\(\Delta\obs{O}\). Luckily for us, we will not need to perform these
+integrals in the classical limit. We will just have carefully chosen
+replacement rules for the integrated variables! Let us look at this in
+more detail now.
 
 \hypertarget{classical-limit}{%
 \subsection{Classical limit}\label{classical-limit}}
 
-Since we are concerned with classial observables we need to explore the
+Since we are concerned with classical observables we need to explore the
 classical limit of eq.~\ref{eq-DeltaO}, i.e.~the limit of
-\(\hbar \to 0\). The first target is the wavefunctions. We have multiple
-conditions on the wavefunctions. The first are those imposed by
-\gls{lsz} reduction. That is,
+\(\hbar \to 0\). We first discuss the classical limit of wavefunctions.
+We impose multiple conditions on the wavefunctions. The first are those
+imposed by \gls{lsz} reduction. That is,
 
 \begin{itemize}
 \tightlist
@@ -3171,14 +3178,16 @@ conditions on the wavefunctions. The first are those imposed by
   Peaked around one value of momenta
 \end{itemize}
 
-Classical limit of the wavefunctions should make sense, thus
+Furthermore the classical limit of the wavefunctions should make sense,
+i.e.~
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   as \(\hbar \to 0\) the position and momentum wavefunction should
-  approach delta functions, centered around their classical values.
+  approach Dirac delta functions, centered around their classical
+  values.
 \item
   The overlap between the wavefunction and its conjugate should be
   nearly full, since they represent the same particle classically.
@@ -3188,26 +3197,26 @@ Consider for example a nonrelativistic wavefunction for a particle of
 mass \(\mass\):
 
 \[
-f(\tv{\emom})=\Exp[\Big]{-\frac{\tv{\emom}}{2 \hbar m \comptlen/\wfwidth^2}}\stackrel{\hbar=\comptlen m}{=}\Exp[\Big]{-\frac{\tv{\emom}}{2 m^2 \comptlen^2 /\wfwidth^2}},
+f(\tv{\emom})=\Exp[\Big]{-\frac{\abs{\tv{\emom}}}{2 \hbar m \comptlen/\wfwidth^2}}\stackrel{\hbar=\comptlen m}{=}\Exp[\Big]{-\frac{\abs{\tv{\emom}}}{2 m^2 \comptlen^2 /\wfwidth^2}},
 \]
 
-where \(\comptlen\) is the compton wavelength of the particle
-\(\frac{\hbar}{m}\) and \(\wfwidth\) is a characteristic width. This
-wavefunction grows sharper in the \(\hbar \to 0\) limit. If we now take
-the Fourier transform of \(f(\tv{\emom})\) to gives us the position
-``probability density'', we have:\sidenote{\footnotesize \(A\) absorbs the various
-  constants, with \(A=\sqrt{2}m\frac{\comptlen}{\wfwidth}\) and
-  \(\tv[0]{x}\)} \[
+where \(\comptlen=\frac{\hbar}{m}\) is the compton wavelength of the
+particle and \(\wfwidth\) is a characteristic width. This wavefunction,
+with the proper normalization, grows sharper in the \(\hbar \to 0\)
+limit. If we now take the Fourier transform of \(f(\tv{\emom})\) to
+obtain the position ``probability density'', we have:\sidenote{\footnotesize \(A\)
+  absorbs the various constants, with
+  \(A=\sqrt{2}m\frac{\comptlen}{\wfwidth}\) and \(\tv[0]{x}\)} \[
 \begin{aligned}
 \invFT[\tv{\emom}]{f}{\tv{x}}(\tv{x})   &=\int \frac{\dd{\tv{\emom}}}{2 \pi} \Exp[\Big]{-\pa[\big]{\frac{\tv{\emom}}{A}}^2}\Exp[\Big]{-\frac{\im}{\hbar} \tv{\emom}\cdot \tv{x}}\\
-            &=\frac{1}{2\pi}\underbracket{\int \dd{\tv{\emom}} \Exp[\Big]{-\pa[\Big]{\frac{\tv{\emom}}{A}-\frac{\im\tv{x}A}{2 \hbar}}^2}}_{\sqrt{\pi}A}\Exp[\Big]{- \frac{\tv{x}^2A}{4 \hbar^2}}\\
+            &=\frac{1}{2\pi}\underbracket{\int \dd{\tv{\emom}} \Exp[\Big]{-\pa[\Big]{\frac{\tv{\emom}}{A}-\frac{\im\tv{x}A}{2 \hbar}}^2}}_{\sqrt{\pi}A}\Exp[\Big]{- \frac{\tv{x}^2A^2}{4 \hbar^2}}\\
       &=\frac{\sqrt{2}A}{2 \pi}\Exp[\Big]{-\frac{\tv{x}^2}{2 \wfwidth^2}}.
 \end{aligned}
 \]
 
-This elucidates more clearly the meaning of characterisic width, as
-\(\wfwidth\) is the width of the wavefunction in position space. Thus,
-the position space-wavefunction grows sharper in the
+This elucidates more clearly the meaning of characteristic width, as
+\(\wfwidth\) is the standard deviation of the wavefunction in position
+space. Thus, the position-space wavefunction grows sharper in the
 \(\wfwidth^2 \to 0\) limit. For both wavefunctions to simultaneously
 grow sharper in the classical limit, we must then have that
 \(\xi=\pa{\frac{\comptlen}{\wfwidth}}^2\to0\) remembering that the
@@ -3215,22 +3224,22 @@ grow sharper in the classical limit, we must then have that
 Finally the meaning of classical limit in this context is the
 \(\xi \to 0\) limit.
 
-Going back to the general conditions we want a wavefunction
-\(\wf[i](\emom[i])\) s.t in the classical limit the momentum reaches
-it's classical value: \(\cls{\emom[i]}=\mass[i]\cls{\vel[i]}\), with
-\(\cls{\vel[i]}\) the classical four-velocity of particle \(i\),
-normalized to \(\cls{\vel[i]}^2=1\).
+Going back to the general conditions, we want a wavefunction
+\(\wf[i](\emom[i])\) such that in the classical limit the momentum
+reaches its classical value: \(\cls{\emom[i]}=\mass[i]\cls{\vel[i]}\),
+with \(\cls{\vel[i]}\) the classical four-velocity of particle \(i\),
+normalized to \(\cls{\vel[i]}^2=1\). In other words,
 
 \[
-\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\wf[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu (1+\order[\beta']{\xi})
+\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\wf[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu (1+\order[\beta']{\xi}),
 \]
 
 where \(\beta'\) encodes the speed at which the classical value is
 reached in the \(\xi\to0\) limit. The velocity normalization convergence
-is controlled by \(\beta''\):
-\[\breve{u}_i \cdot u_i = 1+ \order[\beta'']{\xi}\]
+is controlled by \(\beta''\)
+\[\breve{u}_i \cdot u_i = 1+ \order[\beta'']{\xi},\]
 
-And finally wavefunction spread is controlled by \(\beta\), and must
+Finally wavefunction's spread is controlled by \(\beta\), and must
 converge to 0:
 \[\begin{aligned} \sigma^2(\emom[i])/m_i^2&=\inv{m_i^2}\av{(\emom[i]-\av{\emom[i]})^2}\\&=\inv{m_i^2}(\av{\emom[i]^2}-\av{\emom[i]}^2)\\&=\inv{\mass[i]^2}(\mass[i]^2-(\mass[i]\cls{\vel[i]}(1+\order[\beta']{\xi}))^2)
 \\&\propto\xi^\beta,\end{aligned}\]
@@ -3238,10 +3247,10 @@ converge to 0:
 where \(\av{\emom[i]^2}=m_i^2\) is enforced by the measure
 \(\ddP{\emom}\).
 
-Additionally the wavefunction should be Lorentz invariant, thus naively
+Additionally, the wavefunction should be Lorentz invariant, and naively
 we would have that \(\wf(\emom[i]^\mu)=\wf'(\emom[i]^2)\). However the
 integration measure enforces an on-shell condition:
-\(m_i^2=\emom[i]^2\). Thus the wavefunction cannot usefully depend on
+\(m_i^2=\emom[i]^2\). Thus the wavefunction cannot depend on
 \(\emom[i]^2\), and we need to introduce at least one additional four
 vector parameter \(u\). The simplest dimensionless combination of
 parameters it then \(\frac{\emom \cdot u }{m}\). Of course the
@@ -3287,31 +3296,31 @@ we have:
 \frac{\co[0]{\tm}\cdot u}{m \xi}=\co[0]{\tw} \cdot u\frac{\wfwidth^2}{\comptlen}\ll1\iff \co[0]{\tw} \cdot u\,\wfwidth\ll \sqrt{ \xi},
 \]
 
-where we denote by a bar, any quantity that has been rescaled by
-\(\hbar\). Thus a momentum \(\emom\) when divided by \(\hbar\) will be
+having we denoted by a bar any quantity that has been rescaled by
+\(\hbar\). Thus, a momentum \(\emom\), when divided by \(\hbar\) will be
 written \(\bar{\emom}\) and called wavenumber. We will combine this
 inequality with ones we obtain from the specific cases of integrations
 required above.
 
-We now want to examine the classical limit of something like
+We now want to examine the classical limit of the integrands of the form
 eq.~\ref{eq-DeltaOv}. If we consider just the integration over the
 initial momenta \(\emom[i]\) and the initial wavefunctions with
 \(\ndeltafn{2 \emom[i] \cdot \tm+\tm^2}\), the delta function will smear
-out to a sharply peaked function whose scale is the same order as the
+out to a sharply peaked function whose scale is of the same order as the
 original wavefunctions. As \(\xi\) gets smaller, this function will turn
-back into a delta function imposed on the \(\tm\) integration. Let us
-examine this statement more closely. We are interested in the classical
-limit of the integrals such as:
+back into a Dirac delta function imposed on the \(\tm\) integration. Let
+us examine this statement more closely. We are interested in the
+classical limit of the integrals such as:
 
 \begin{equation}\protect\hypertarget{eq-dfunct}{}{
-d(m,\xi,u,\tm)=\int \ddP{\emom} \ndeltafn{2 \emom \cdot \tm+\tm^2} \thetafn{\emom^0+\tm^0}\varphi(\frac{\emom \cdot u }{m \xi})\varphi^*(\frac{(\emom+\tm) \cdot u }{m \xi}).
+d(m,\xi,u,\tm)=\int \ddP{\emom} \ndeltafn{2 \emom \cdot \tm+\tm^2} \thetafn{\emom^0+\tm^0}\varphi \pa[\Big]{\frac{\emom \cdot u }{m \xi}}\varphi^*\pa[\Big]{\frac{(\emom+\tm) \cdot u }{m \xi}}.
 }\label{eq-dfunct}\end{equation}
 
 This integral must be Lorentz invariant and depends on \(m,\xi, u,\tm\)
 thus it must manifestly only depend on the following Lorentz invariants:
 \(u^2,\tm^2,u \cdot \tm, \xi\). One of these is not actually a variable
-as we will normalise \(u^2=1\). The rest aren't fully dimensionless, and
-we can render them dimensionless:
+as we will normalise \(u^2=1\). The rest are not fully dimensionless,
+but we can render them dimensionless:
 
 \[
 \begin{aligned}
@@ -3327,7 +3336,7 @@ our dimensionless ratios become :
 
 \[\frac{\comptlen}{\scatlen} \quad \text{and}\quad \scatlen\,\tw \cdot u .\]
 
-The delta function can then be rewritten as: \[
+The Dirac delta function can then be rewritten as: \[
 \ndeltafn{2 \emom \cdot \tm+\tm^2}=\ndeltafn{2\hbar m\, u\cdot \tw+\hbar^2 \tw^2}=\frac{1}{\hbar m}\ndeltafn{2 \tw \cdot u-\frac{\comptlen}{\scatlen^2}}=\frac{\scatlen}{\hbar m}\ndeltafn{2\scatlen\, \tw \cdot u-\frac{\comptlen}{\scatlen}}.
 \]
 
@@ -3348,12 +3357,12 @@ d(m,\xi,u,\tm)=\text{peaked function imposing that } {2\scatlen\, \tw \cdot u=\f
 
 \end{marginfigure}
 
-Let us disucss the wavefunction and the scales a bit more physically.
-The characteristic width \(\wfwidth\) is the particle's position
-uncertainty, \(\frac{\hbar}{\wfwidth}\) is the associated momentum
-uncertainty. In the classical limit it makes sense that the position
-uncertainty is neglible with respect to minimum distance between the
-particles \(\scatlen\):
+Let us disucss the wavefunction and the scales from a physical
+perspective. The characteristic width \(\wfwidth\) is the particle's
+position uncertainty, \(\frac{\hbar}{\wfwidth}\) is the associated
+momentum uncertainty. In the classical limit the position uncertainty is
+neglible with respect to minimum distance between the particles
+\(\scatlen\):
 
 \[
 \wfwidth\ll \scatlen,
@@ -3372,7 +3381,7 @@ Putting these together we obtain the goldilocks inequality:
 \comptlen\ll\wfwidth\ll\scatlen.
 \]
 
-Now we can go back and look at the arguments of \(d\) and we see that
+Looking back at the arguments of \(d\) we see that
 
 \[
 \scatlen\, \tw \cdot u\gg\wfwidth \tw \cdot u \sim \sqrt{\xi} =   \frac{\comptlen}{\wfwidth}\gg\frac{\comptlen}{\scatlen}.
@@ -3384,8 +3393,8 @@ Thus in the classical limit we have that \(d\) collapses to:
 d(m,\xi,u,\tm)\propto\ndeltafn{ \tw \cdot u}.
 \]
 
-Thus the wavefunction-weighted on-shell phase-space integration
-disappears in the classical limit! The only condition is that the
+Thus, the wavefunction-weighted on-shell phase-space integration
+disappears in the classical limit. The resulting condition is that the
 integration momenta take on their physical values. The sequence that we
 have gone through should be done for all the integrands of type \(d\).
 We will not do this explicitly every time but instead apply the
@@ -3414,13 +3423,13 @@ following rules:
 \end{enumerate}
 
 To make this idea explicit we introduce the following notation, meaning
-that the steps above have been applied:
+that the steps above have been applied
 
 \[
 \AAngle{g(\emom[1],\emom[2],\dots)}\defeq \int\limits \ddP{\emom[1]}\ddP{\emom[2]} \abs{\wf[1](\emom[1])}^2\abs{\wf[2](\emom[2])}^2\,g(\emom[1],\emom[2],\dots)
 \]
 
-We can now rewrite eq.~\ref{eq-DeltaO}:
+We can now rewrite eq.~\ref{eq-DeltaO}
 
 \begin{equation}\protect\hypertarget{eq-DeltaOclas}{}{
 \changeob = \AAngle{\int \overbracket{\dn[4]{\tm} \ndeltafn{2\emom[1]\cdot \tm +\tm^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}  
@@ -3437,11 +3446,11 @@ where \[
 \end{aligned}
 \]
 
-Additionally we want to make clear the dependence on \(\hbar\) since we
-want to eventually take the \(\hbar \to0\) limit. We apply step 1.
-above, and change integration variables to \(\tw=\frac{\tm}{\hbar}\) and
-absorb that \(\hbar\) dependence into the redefinition of the integrands
-and the measure:
+Additionally, we make clear the dependence on \(\hbar\) since we want to
+eventually take the \(\hbar \to0\) limit. We apply step 1. above, and
+change integration variables to \(\tw=\frac{\tm}{\hbar}\) and absorb the
+\(\hbar\) dependence into the redefinition of the integrands and the
+measure:
 
 \[
 \begin{aligned}
@@ -3465,16 +3474,16 @@ We can finally neatly write:
 
 \[\Delta O=\AAngle{\int \dPsb{\tw}\exp{-\im\tw^\mu b_\mu}\pa[\Big]{\vIntb+\rIntb}}  .\]
 
-Now the \(\hbar\) dependence is all in the integrands (ignoring the
-\(\hbar \tw^2\) factors in the delta function). The classical limit of
-this observable is then simply, dropping the angle brackets, since these
-dissappear in the classical limit:
+The \(\hbar\) dependence is now entirely contained in the integrands
+(ignoring the \(\hbar \tw^2\) factors in the delta function). The
+classical limit of this observable is then simply,
 
 \[
 \Delta O_{\text{classical}}=\lim_{\hbar\to0}\hbar^{\beta_{LO}}\brc[\Big]{\int \dPsb{\tw}\pa[\Big]{\vIntb+\rIntb}},
 \]
 
-where \(\beta_{LO}\) is the \gls{lo} \(\hbar\)-dependence of the
+dropping the angle brackets, since these dissappear in the classical
+limit. Here \(\beta_{LO}\) is the \gls{lo} \(\hbar\)-dependence of the
 observable. This is so that \(\Delta O_{\text{classical}}\sim\hbar^0\)
 i.e.~classical scaling.
 
@@ -3483,8 +3492,7 @@ i.e.~classical scaling.
 \gls{kmoc}}{Impulse in }}\label{impulse-in-kmoc}}
 
 We can now explore the integrands for a specific observable. Consider
-the momentum of particle 1,\(\ct{\emom[1]}\), then the change in
-momentum is essentially the impulse of particle 1. The \gls{kmoc}
+the change in momentum, or impulse of particle 1. The \gls{kmoc}
 formalisms gives us a way to write this as:
 
 \[\Delta \ct{\emom[1]}=\AAngle{\int \dPsb{\tw}\Exp[\Big]{-\im\tw^\mu b_\mu}\pa[\Big]{\vIntb[\ct{\emom[1]}]+\rIntb[\ct{\emom[1]}]}}  .\]
@@ -3499,23 +3507,23 @@ We then have:
 \end{aligned}
 \]
 
-We can extract \(\hbar\) from \(\tm\) and from the amplitude, by
-extracting each coupling constant \(\kappa\) along with an
-\(\frac{1}{\sqrt{\hbar}}\), thus quartic vertices yield a factor of
-\(\frac{\coupling^2}{\hbar}\) whereas cubic ones yield
-\(\frac{\kappa}{\sqrt{\hbar}}\)\sidenote{\footnotesize as mentioned in the last
-  section, this is true for gravity and \gls{sqed} and we will extend
-  this fact to schematically rescale the vertex coupling by
+We can extract \(\hbar\) from \(\tm\) and from the amplitude. In order
+to determine the \(\hbar\) scalin of \(\ampl\) we extract each coupling
+constant \(\kappa\) along with an \(\frac{1}{\sqrt{\hbar}}\), so that
+quartic vertices yield a factor of \(\frac{\coupling^2}{\hbar}\) whereas
+cubic ones yield \(\frac{\kappa}{\sqrt{\hbar}}\)\sidenote{\footnotesize as mentioned
+  in the last section, this is true for gravity and \gls{sqed} and we
+  will extend this fact to schematically rescale the vertex coupling by
   \(\hbar^-\Half[d-2]\), for \(d\) the degree of the vertex in question.}.
 If we count the number \(V_3\) of all cubic vertices, \(V_4\) the number
 of quartic vertices, and so on, we have that the number of internal
 lines is \(I=\frac{1}{2}(\sum_{d=3}dV_d-E)\). This is because we have
 \(\sum_{d=3}dV_d\) lines to start with, out of which \(E\) are chosen to
-be external. The remaining \((\sum_{d=3}dV_d-E)\) ones are contracted
-among themselves to form \(I\) internal lines. In our case we have
-\(E=4+M\) where \(M=\abs{X}\) is the number of messenger particles.
-Using the argument from loop counting we have that the number of loops
-of our graph \(L\) is given by: \[
+be external. The remaining \((\sum_{d=3}dV_d-E)\) ones are contracted in
+pairs among themselves to form \(I\) internal lines, yielding the factor
+of \(\half\). In our case we have \(E=4+M\) where \(M=\abs{X}\) is the
+number of messenger particles. Using the argument from loop counting we
+have that the number of loops of our graph \(L\) is given by: \[
 \begin{aligned}
         L=I-V+N=&\frac{1}{2}(\sum_{d=3}d\cdot V_d-4-M)-\sum_{d=3}V_d+1\\
 =&\frac{1}{2}(\sum_{d=3}(d-2)V_d)-1-\frac{M}{2},
@@ -3524,9 +3532,10 @@ of our graph \(L\) is given by: \[
 
 where \(N\) is the number of connected components (\(=1\) in our case) .
 Thus we see that the amount of extracted \(\hbar\)s corresponds directly
-to the number of loops plus one\sidenote{\footnotesize and the number of extracted
-  couplings being twice that}! We can thus write the amplitude \(\ampl\)
-as a sum over reduced \(L\)-loop amplitudes \(\redampl[(L)]\):
+to the number of loops plus one plus the number of additonal messenger
+particles. \sidenote{\footnotesize The number of extracted couplings being twice that.}
+We can thus write the amplitude \(\ampl\) as a sum over reduced
+\(L\)-loop amplitudes \(\redampl[(L)]\):
 
 \[\amp{\emom[1],\emom[2]}{ r_1,r_2,X}=\sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(L+1+\frac{\abs{X}}{2})}\redamp[(L)]{\emom[1],\emom[2]}{r_1,r_2,X}.\]
 
@@ -3589,14 +3598,14 @@ together provided that the following equation is verified:
 
 \begin{equation}\protect\hypertarget{eq-rvloopmatch}{}{L-1=2L'+\abs{X}.}\label{eq-rvloopmatch}\end{equation}
 
-Where \(L\) is the loop count for the virtual kernel and \(L'\),
+where \(L\) is the loop count for the virtual kernel and \(L'\),
 \(\abs{X}\) are the real kernel loop count and messenger particle count
 respectively. Note that for a tree level virtual kernel, the real-kernel
 match does not exist. The real kernel is only present for \(L>0\). When
 taking the classical limit we will only retain contributions from graphs
 that cancel the \(\hbar\) divergences in each corresponding kernel. Thus
-at \(L\) loop level, the amplitude in the virtual kernel must cancel
-with:
+at the \(L\)-loop level, the amplitude in the virtual kernel must cancel
+with terms of order
 
 \begin{equation}\protect\hypertarget{eq-hbarvirt}{}{
 \hbar^{1-L+O},
@@ -3614,9 +3623,9 @@ Now we see that the \gls{lo} contribution \sidenote{\footnotesize Here the expan
   is in powers of the coupling constant, so even though we want
   \(\hbar\)s to cancel, the loop order will still affect the order of
   the contribution through the coupling constant \(\coupling\) and the
-  \gls{lo} corresponds to \(\coupling\)}to the impulse
+  \gls{lo} corresponds to \(\coupling\)}to the impulse, which we denote
 \(\Delta \emom[1]^{\mu,(0)}\) can only be from the virtual kernel at
-tree level. Thus we have the following equation,
+tree level. Thus, we have the following equation,
 
 \begin{equation}\protect\hypertarget{eq-impulseLO}{}{
 \Delta \emom[1]^{\mu,(0)}=\AAngle{\int \dPsb{\tw}\Exp[\big]{-\im\tw^\mu b_\mu}\ \vIntb[\ct{\emom[1]}]^{(L=0)}}.
@@ -3638,16 +3647,16 @@ eq.~\ref{eq-rvloopmatch} can be satisfied for \(L=1\), \(L'=0\) and
 
 The virtual integrand is now given by the 1-loop level amplitude, and
 the real integrand is given by the square of a the tree level amplitude.
-This process can go on indefinetely, and is general to the the type of
+This process can go on indefinetely, and is independent of the type of
 observable and the theory. Here we considered the change of momentum a
 particle, which for a black hole very far away would be very difficult
 to measure. However, we can also consider an observable such as the
 four-momentum of the radiated particles, or more precisely its expection
-value. Of course the operator corresponding to this observable gives
+value. Of course, the operator corresponding to this observable gives
 zero when acting on the initial momentum states, and only gives a
-non-zero result when acting on the messenger states. Thus for this
+non-zero result when acting on the messenger states. Thus, for this
 observable only the real integrand, starting with \(\abs{X}=1\) will
-contribute, the \gls{lo} contrybution being given by what is essentially
+contribute, the \gls{lo} contribution being given by what is essentially
 the unitarity cut of a two loop amplitude. We see that regardless of
 observable, the objects that are needed are the amplitudes.
 
@@ -3666,11 +3675,11 @@ example theory, that shows the relevant subleties of the formalism.
 amplitudes}{ amplitudes}}\label{sqed-amplitudes}}
 
 We want to couple a set of massive scalar fields to electromagnetism. We
-will use the minimal coupling prescirption to ensure that the resulting
+will use the minimal coupling prescription to ensure that the resulting
 lagrangian exhibits the required gauge symmetry. The minimal coupling
-prescription works provided that our base mass lagrangian admits a
-conserved current. Our base mass lagrangian for two complex scalar
-fields is:
+prescription works provided that our free mass lagrangian admits a
+conserved current. Our free mass lagrangian for two complex scalar
+fields with different masses is:
 
 \[
 \mathcal{L}_m=\sum\limits_{i=1}^2 \partial_\mu \phi_i^\dagger\,\partial^\mu \phi_i - m_i^2 \phi^\dagger_i \phi_i.
@@ -3695,13 +3704,16 @@ or infinitesimally:
 \]
 
 the above Lagrangian is unchanged. We will identitfy \(\charge[i]\) with
-the charge, in units of \(\elch\), of each particle. Note the sign of
-the transformation is important. If we upgrade the parameter \(\lambda\)
-to a spacetime function \(\lambda(x)\), the Lagrangian is not invariant
-anymore and invariance is restored if we replace all the derivatives
-\(\partial_\mu\) with the gauge-covariant derivative \(D_\mu\), i.e.~if
-along with the transformation above, we perform a gauge transformation
-of the photon field:
+the charge, in units of \(\elch\), of each particle. If we upgrade the
+parameter \(\lambda\) to a spacetime function \(\lambda(x)\), the
+Lagrangian is not invariant anymore and invariance is restored if we
+replace all the derivatives \(\partial_\mu\) with the gauge-covariant
+derivatives \(D_\mu\):
+
+\[D_\mu=\partial_\mu+\im \,\elch\,\charge[i]\,A_\mu,\]
+
+i.e.~if along with the transformation above, we perform a gauge
+transformation of the photon field:
 
 \[A_\mu\rightarrow A_\mu + \frac{1}{\elch} \partial_\mu \lambda\]
 
@@ -3713,12 +3725,8 @@ then the whole lagrangian:
 
 \[\mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,\partial_\mu \phi_i)\rightarrow \mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,D_\mu \phi_i),\]
 
-is invariant under the above defined gauge transformation, with the
-gauge-covariant derivative defined as:
-
-\[D_\mu=\partial_\mu+\im \,\elch\,\charge[i]\,A_\mu.\]
-
-The final lagrangian is:
+is invariant under the above defined gauge transformation. The final
+lagrangian is:
 
 \[\mathcal{L}=-\frac{1}{4} F_{\mu \nu} F^{\mu \nu}+\sum_{i=1}^{2}\left[\left(D_{\mu} \phi_{i}\right)^{\dagger}\left(D^{\mu} \phi_{i}\right)-m_{i}^{2} \phi_{i}^{\dagger} \phi_{i}\right],\]
 
@@ -3761,17 +3769,8 @@ implement gauge fixing in the usual way:
 \end{aligned}
 \]
 
-Where in the last lines we identify the terms contributing to the feyman
-rules. Our fields are given by the usual:
-
-\[
-\begin{aligned}
-\phi(x) &=\int \frac{d^{3} \mathbf{p}}{(2 \pi)^{3 / 2} \sqrt{2 \omega_{\mathbf{p}}}}\left[b_{\mathbf{p}} \exp{-i p \cdot x}+c_{\mathbf{p}}^{\dagger} \exp{i p \cdot x}\right] \\
-\phi^{*}(x) &=\int \frac{d^{3} \mathbf{p}}{(2 \pi)^{3 / 2} \sqrt{2 \omega_{\mathbf{p}}}}\left[b_{\mathbf{p}}^{\dagger} \exp{i p \cdot x}+c_{\mathbf{p}} \exp{-i p \cdot x}\right].
-\end{aligned}
-\]
-
-The Feynman rules are given in Table~\ref{tbl-sqedfrules}
+In the last lines we identify the terms contributing to the Feynman
+rules. They are given in Table~\ref{tbl-sqedfrules}
 
 \hypertarget{tbl-sqedfrules}{}
 \begin{longtable}[]{@{}
@@ -3829,15 +3828,18 @@ with
 \end{longtable}
 
 where we consider only incoming momenta and the arrows denote incoming
-or outgoing particles.
-
-For the photon, we will take the Feynamn gauge, setting \(\xi=1\) and
-thus
+or outgoing particles. For the photon, we will take the Feynamn gauge,
+setting \(\xi=1\) and thus
 \(\phprop_1(\ell)=\phprop(\ell)=\frac{-\im \eta^{\mu \nu}}{\ell^{2}+\im \varepsilon}\).
+
+\hypertarget{expansions-and-simplifications}{%
+\subsection{Expansions and
+simplifications}\label{expansions-and-simplifications}}
+
 Notice that if we rescale all photon momenta (taking them to be the loop
 momenta) by \(\hbar\) or equivalently take them to be in the soft
 region: \(\abs{k}\sim\abs{q}\ll \abs{p}\), where \(p\) is the external
-momenta, then the photon propagator scales homgenously in \(\hbar\),
+momenta, then the photon propagator scales homgeneously in \(\hbar\),
 typically:
 
 \begin{equation}\protect\hypertarget{eq-photonscale}{}{
@@ -3845,13 +3847,13 @@ typically:
 }\label{eq-photonscale}\end{equation}
 
 thus contributes \(\order[-2]{\hbar}\) to the overall diagram. The
-matter propagator on the other hand, has inhomgenous \(\hbar\) scaling,
+matter propagator on the other hand, has inhomgeneous \(\hbar\) scaling,
 as we do not rescale the external momenta, (or equivalently the external
 momenta are not restricted by the regions). Note that we will not
 consider internal mass loops as the soft limit means that massive pair
-production is forbidden, thus massive propagators necessarily contain an
-external momentum. We can notheless expand a generic massive propagator
-in the soft limit:
+production is forbidden, thus massive propagators necessarily route an
+external momentum. We can nonetheless expand a generic massive
+propagator in the soft limit:
 
 \begin{equation}\protect\hypertarget{eq-massiveScale}{}{
 \begin{aligned}
@@ -3861,22 +3863,22 @@ in the soft limit:
 }\label{eq-massiveScale}\end{equation}
 
 In other contexts one may say that the matter propagator has eikonalized
-(linearized). Before we compute the amplitudes let us set up some useful
-kinematic identities and variables. If we consider the two-to-two
-particle scattering, taking an all outgoing momentum convention we have
-the following masses:
+(it is now linear in \(\ell\)). Before we compute the amplitudes let us
+set up some useful kinematic identities and variables. If we consider
+the two-to-two particle scattering, taking an all outgoing momentum
+convention we have the following masses:
 
 \begin{equation}\protect\hypertarget{eq-masses}{}{
  \mass[1]^2=\emom[4]^2 =\emom[1]^2,\quad \mass[2]^2=\emom[2]^2 =\emom[3]^2,
 }\label{eq-masses}\end{equation}
 
-and mandelstam variables:
+and Mandelstahm variables:
 
 \[
  \mands=(\emom[1]+\emom[2])^2,\quad \mandt=\tm^2=(\emom[1]+\emom[4])^2,\quad \mandu=(\emom[1]+\emom[3])^2   ,
 \]
 
-subject to the usual constraint:
+subject to the usual equation:
 
 \[
 \mands+\mandt+\mandu=2(\mass[1]^2+\mass[2]^2).
@@ -3910,7 +3912,7 @@ and
 \mandt=\pa[\Big]{-\pa[\big]{\semom[1]-\Half[\tm]}+\semom[1]+\Half[\tm]}^2 = \tm^2.
 \]
 
-With all the ingredients in place, we can now go on to computing the
+With all the ingredients in place, we can now go on to compute the
 amplitudes.
 
 \hypertarget{tree-level}{%
@@ -3945,7 +3947,7 @@ have:
 \redampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
 \]
 
-using the mandelstahm invariants described above we can infact write
+using the Mandelstahm invariants described above we can infact write
 this as:
 
 \begin{equation}\protect\hypertarget{eq-treeampl}{}{
@@ -4005,7 +4007,7 @@ The first tool we will use is \texttt{QGRAF}
 ~{[}\protect\hyperlink{ref-Nogueira:1993a}{56}{]}, a fortran program
 that can generate Feynman diagrams for a given set of vertices and
 external legs. The first step to is to define the theory we are working
-in. This is essentially writing down the Feyman rules, without actually
+in. This is essentially writing down the Feynman rules, without actually
 specifying what the graphical objects are. For \gls{sqed} the model file
 is short:
 
