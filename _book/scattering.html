@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.186">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -261,7 +261,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scattering amplitudes and Gravitational Wave (<abbr title="Gravitational Wave">GW</abbr>)</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-scat" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scattering amplitudes and Gravitational Wave (<abbr title="Gravitational Wave">GW</abbr>)</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -269,7 +269,6 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -433,7 +432,7 @@ E_{}=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 <section id="intital-state" class="level3 page-columns page-full" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="intital-state"><span class="header-section-number">5.3.2</span> Intital State</h3>
 <p>With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e.&nbsp;a classical two in two out scattering). As mentioned in <a href="#sec-scatamp"><span>Section&nbsp;5.1</span></a>, in <abbr title="Quantum Field Theory">QFT</abbr> the framework that formalizes scattering of definite particle number states is called the <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">we work in the Heisenberg picture here</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">we work in the Heisenberg picture here</span></div></div>
 <p>Let us look at it in more detail. The first component is to define the states we want to scatter. Suppose our theory has single particle states <span class="math inline">\(\vert p \rangle_{\text{}}\)</span>, with mass <span class="math inline">\(m_{}\)</span>, eigenstates of the momentum:</p>
 <p><span class="math display">\[\mathbb{P}{}^{\mu}\vert p \rangle_{\text{}}=p_{}{}^{\mu}\vert p \rangle_{\text{}}\quad \text{where} \quad p^0=\hbar\omega_{\mathbf{{p}}_{}}=\sqrt{\mathbf{{p_{}}}_{}^2+m_{}^2}.\]</span></p>
 <div class="page-columns page-full"><p>These states can be seen as special cases (the plane wave states) of wavepacket states:<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;A plane wave state <span class="math inline">\(\vert f \rangle_{\text{}}=\vert p \rangle_{\text{}}\)</span> would be given by <span class="math inline">\(\breve{f}(k)=2 \hbar\omega_{\mathbf{{k}}_{}} \tilde{\delta}^{(3)}(\mathbf{{k}}_{}-\mathbf{{p}}_{})\)</span></p></li></div></div>
@@ -443,8 +442,7 @@ E_{}=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 <p>the <span class="math inline">\(\breve{f}(k)\)</span> is consequently given by:</p>
 <p><span id="eq-momdist"><span class="math display">\[\langle k \vert f \rangle=\breve{f}(k)= 2 \hbar\omega_{\mathbf{{p}}_{}}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,f(x) \mathrm{e}^{\mathring{\imath}k\cdot x}. \tag{5.4}\]</span></span></p>
 <div class="page-columns page-full"><p>If we now define the following operators:<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;<span class="math inline">\(f\overleftrightarrow{\partial_{\mu}}g=f(\partial_{\mu}g )-(\partial_{\mu}f )g\)</span></p></li></div></div>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<div class="aside">
 <p>Note that if we replace <span class="math inline">\(f(x)\)</span> by a plane wave state <span class="math inline">\(\mathrm{e}^{-\mathring{\imath}k\cdot x}\)</span> we obtain and define the following:</p>
 <p><span class="math display">\[
 a_{\mathbf{{k}}_{}}^{\dagger}(t)=  \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{-\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)-\mathring{\imath}\partial_{0}f_{}(x) \Big]
@@ -452,7 +450,8 @@ a_{\mathbf{{k}}_{}}^{\dagger}(t)=  \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathr
 <p><span class="math display">\[
 a_{\mathbf{{k}}_{}}(t)=   \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)+\mathring{\imath}\partial_{0}f_{}(x) \Big]
 \]</span></p>
-</div></div><p><span class="math display">\[
+</div>
+<p><span class="math display">\[
 a_{f}^{\dagger}(t)= -  \mathring{\imath}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,f(x) \overleftrightarrow{\partial_{0}} \phi_{}(x)
 \]</span></p>
 <p><span class="math display">\[
@@ -491,10 +490,10 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
 \Delta O=\langle\text{out} \vert  \mathbb{O} \vert \text{out} \rangle-\langle\text{in} \vert  \mathbb{O} \vert \text{in} \rangle.
 \]</span></p>
 <p>In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e.&nbsp;the S-matrix: <span class="math inline">\(\vert \text{out} \rangle_{\text{}}=S\vert \text{in} \rangle_{\text{}}\)</span> and we can write</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<div class="aside">
 <p>In order, we use the unitarity of the S-matrix, then express the S-matrex as the identity (no actual interaction) and the transfer matrix <span class="math inline">\(T\)</span>. The commutators are then expanded and the part with the identity vanish (as <span class="math inline">\(\mathbb{1}\)</span> commutes with everything).</p>
-</div></div><p><span id="eq-DeltaO"><span class="math display">\[
+</div>
+<p><span id="eq-DeltaO"><span class="math display">\[
 \begin{aligned}
 \Delta O    &amp;=\langle\text{in} \vert  S^\dagger\mathbb{O}S \vert \text{in} \rangle-\langle\text{in} \vert  \mathbb{O} \vert \text{in} \rangle\\
             &amp;\stackrel{S^\dagger S=\mathbb{1}}{=}      \langle\text{in} \vert  S^\dagger [\mathbb{O},S] \vert \text{in} \rangle\\
@@ -519,7 +518,7 @@ N \mathrm{e}^{-1 /(1-\vert\mathbf{{p}}_{}-\mathbf{{p}}_{0} \vert^2 / \Delta p^2 
 \mathcal{I}_{\text{r}}(O)&amp;={}_{\text{in}}\langle p_{1}'p_{2}' \vert{T^\dagger[\mathbb{O},T]   }\vert p_{1}p_{2} \rangle_{\text{in}}.
 \end{aligned}
 \]</span></p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">NB: the notation is slightly different in the <span class="citation" data-cites="Bern:2021xze">&nbsp;[<a href="references.html#ref-Bern:2021xze" role="doc-biblioref">16</a>]</span> paper</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">NB: the notation is slightly different in the <span class="citation" data-cites="Bern:2021xze">&nbsp;[<a href="references.html#ref-Bern:2021xze" role="doc-biblioref">16</a>]</span> paper</span></div></div>
 <div class="page-columns page-full"><p>Let us first look at the virtual integrand <span class="math inline">\(\mathcal{I}_{\text{v}}(O)\)</span>:<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;Here we define <span class="math display">\[O_{\text{in}}\vert p_{1}p_{2} \rangle_{\text{}}=\mathbb{O}\vert p_{1}p_{2} \rangle_{\text{}}\]</span> aswell as, <span class="math display">\[O_{\text{in}}'{}_{\text{}}\langle p_{1}'p_{2}' \vert={}_{\text{}}\langle p_{1}'p_{2}' \vert\mathbb{O}\]</span> and finally <span class="math display">\[\underset{\mathclap{p_{}'-p_{}}}{\Delta}O\,=O_{\text{in}}'-O_{\text{in}}\]</span></p></li></div></div>
 <p><span id="eq-vInt"><span class="math display">\[
 \begin{aligned}
@@ -641,7 +640,7 @@ d(m,\xi,u,q_{})=\text{peaked function imposing that } {2\ell_s\, \bar{q}_{}\cdot
 \]</span></p>
 <div class="cell page-columns page-full" data-execution_count="5">
 
-<div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="2">
+<div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="5">
 <div id="fig-gaussian" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="scattering_files/figure-html/fig-gaussian-output-1.svg" class="img-fluid figure-img"></p>
@@ -2518,24 +2517,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -2622,42 +2604,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>
@@ -2677,7 +2641,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 editor:
       render-on-save: true
 ---
-# Scattering amplitudes and (?:gw)s
+# Scattering amplitudes and (?:gw)s {#sec-scat}
 
 
 ::: {.content-hidden unless-format="html"}

@@ -1,4 +1,4 @@
-# Gravitational Wave Detection
+# Gravitational Wave Detection {#sec-gwdetect}
 
 ::: {.content-visible unless-format="pdf"}
 

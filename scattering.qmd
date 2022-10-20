@@ -2,7 +2,7 @@
 editor:
       render-on-save: true
 ---
-# Scattering amplitudes and (?:gw)s
+# Scattering amplitudes and (?:gw)s {#sec-scat}
 
 
 ::: {.content-hidden unless-format="html"}

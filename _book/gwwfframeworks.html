@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.186">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -250,7 +250,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Waveform Generation</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-wfgen" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Waveform Generation</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -258,7 +258,6 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -379,7 +378,7 @@ F(t_r)=F(t)-{r} \dot{F}(t)+\frac{r^2}{2} \ddot{F}(t)+\ldots
 <p>One then transforms this hamitionan into one descibing the relative motion <span class="math inline">\(\texttip{\mathbf{{q}}_{}}{3-vector}=\texttip{\mathbf{{q}}_{1}}{3-vector}-\texttip{\mathbf{{q}}_{1}}{3-vector}\)</span>. One can formalise this by defining a new set of generalised coordinates, through a canonical transformation. We can even go further and employ a generating function for the transformation, ensuring that hamiton’s equations stay unchanged (see <span class="citation" data-cites="Goldstein:2002">&nbsp;[<a href="references.html#ref-Goldstein:2002" role="doc-biblioref">17</a>]</span>). To descibe relative motion, we use jacobi coordinates <span class="math inline">\((\texttip{\mathbf{{Q}}_{}}{3-vector},\texttip{\mathbf{{q}}_{}}{3-vector})\)</span>: <span id="eq-jacobi2"><span class="math display">\[
 \begin{pmatrix} \texttip{\mathbf{{q}}_{1}}{3-vector} \\ \texttip{\mathbf{{q}}_{1}}{3-vector}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\texttip{m_{1}}{mass}}{M} &amp; \frac{\texttip{m_{2}}{mass}}{M} \\ 1&amp;-1 \end{pmatrix}}_{A} \begin{pmatrix} \texttip{\mathbf{{q}}_{1}}{3-vector} \\ \texttip{\mathbf{{q}}_{1}}{3-vector}\end{pmatrix}=\begin{pmatrix} \texttip{\mathbf{{Q}}_{}}{3-vector} \\ \texttip{\mathbf{{q}}_{}}{3-vector}\end{pmatrix}
 \tag{4.4}\]</span></span></p>
-<div class="page-columns page-full"><p>If we now define the following generating function for the transformation, depending on the old positions coordinates <span class="math inline">\(\texttip{\mathbf{{q}}_{i}}{3-vector}\)</span> and the new momenta <span class="math inline">\(\texttip{\mathbf{{P}}_{i}}{3-vector}\)</span>: </p><div class="no-row-height column-margin column-container"><span class="">note the use of einstein summation</span></div></div>
+<div class="page-columns page-full"><p>If we now define the following generating function for the transformation, depending on the old positions coordinates <span class="math inline">\(\texttip{\mathbf{{q}}_{i}}{3-vector}\)</span> and the new momenta <span class="math inline">\(\texttip{\mathbf{{P}}_{i}}{3-vector}\)</span>: </p><div class="no-row-height column-margin column-container"><span class="aside">note the use of einstein summation</span></div></div>
 <p><span id="eq-genfunc"><span class="math display">\[
 f_{II}(\texttip{\mathbf{{q}}_{i}}{3-vector},\texttip{\mathbf{{P}}_{i}}{3-vector})=\texttip{\mathbf{{P}}_{i}}{3-vector}A^{ij}\texttip{\mathbf{{q}}_{j}}{3-vector}
 \tag{4.5}\]</span></span></p>
@@ -549,24 +548,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -653,42 +635,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>
@@ -704,7 +668,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Waveform Generation</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Waveform Generation {#sec-wfgen}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>::: {.content-visible unless-format="pdf"}</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>

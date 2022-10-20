@@ -237,7 +237,7 @@
 
 \title{Gravitational Waves from Feynman Diagrams}
 \author{Lucien Huber}
-\date{9/13/22}
+\date{9/13/2022}
 
 \begin{document}
 \maketitle
@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, interior hidden, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}, frame hidden, interior hidden, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -641,8 +641,6 @@ pics/mom/.style args = {#1/#2}{code={
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-\markboth{Preface}{Preface}
-
 This document represents my, Lucien Huber, master thesis, the last step
 in my master's degree at ETH Zurich. It can be viewed as either a
 webpage at \url{https://lcnhb.github.io/GWAmplitudes}, or downloaded as
@@ -654,8 +652,6 @@ repository \url{https://github.com/lcnhb/GWAmplitudes}.
 \hypertarget{acknowledgements}{%
 \chapter*{Acknowledgements}\label{acknowledgements}}
 \addcontentsline{toc}{chapter}{Acknowledgements}
-
-\markboth{Acknowledgements}{Acknowledgements}
 
 I would like to thank my supervisor, Prof.~Babis Anastasiou, for his
 trust, his support, and kindness throughout the last half year that has
@@ -684,22 +680,21 @@ and support, and without whom I would not be here today.
 \hypertarget{sec-intro}{%
 \chapter{Introduction}\label{sec-intro}}
 
-The detection of gravitational waves by the \gls{ligo} and Virgo
-collaborations in 2016
-~{[}\protect\hyperlink{ref-LIGOScientific:2016aoc}{1}{]} has sparked a
-new era of gravitational wave astronomy. The first detections were of
+The detection of \glspl{gw} by the \gls{ligo} and Virgo collaborations
+in 2016 ~{[}\protect\hyperlink{ref-LIGOScientific:2016aoc}{1}{]} has
+sparked a new era of \gls{gw} astronomy. The first detections were of
 \gls{bbh} mergers. More recently, \gls{bns} mergers
 ~{[}\protect\hyperlink{ref-LIGOScientific:2017vwq}{2}{]} as well as
 \gls{nsbh} mergers have been detected
 ~{[}\protect\hyperlink{ref-LIGOScientific:2021qlt}{3}{]}. Future
 observatories will further increase sensitivity and will be able to
-detect a wide range of astrophysical sources. Studying these
-gravitational waves signals gives us a very powerful new window into the
-universe. It allows us to study the properties of neutron stars and
-black holes, and the physics of compact object mergers, but also gives
-us a powerful testing apparatus for general relativity.
+detect a wide range of astrophysical sources. Studying these \glspl{gw}
+signals gives us a very powerful new window into the universe. It allows
+us to study the properties of neutron stars and black holes, and the
+physics of compact object mergers, but also gives us a powerful testing
+apparatus for general relativity.
 
-To detect these faint signals \gls{ligo} and Virgo, have been made to be
+To detect these faint signals \gls{ligo} and Virgo have been made to be
 extraordinarily sensitive instruments. This sensitivity had been the
 main barrier to overcome ever since \gls{gw} were first predicted by
 Einstein. Whilst sensitive measurements generally demand, and thus drive
@@ -720,18 +715,20 @@ component of the detection process, and there is a strong incentive to
 improve their precision and breadth of applicability.
 
 In recent years, an unlikely ally in this precision race has arisen,
-based on \gls{qft} techniques. This is seemingly an impossibility as
-\gls{qft} and \gls{gr} have historically been the two irreconcilable
-theories that `together' span the whole range of scales in the universe.
-\gls{qft} and the standard model, describe physics at the smallest
-scales, where quantum effects dominate. This is the physics of
-colliders, and condensed matter. The standard model is our best guess as
-to the nature of the fundamental constituents of `matter' and `light'.
+based on \gls{qft} techniques
+~{[}\protect\hyperlink{ref-Neill:2013wsa}{7}{]}. This is seemingly an
+impossibility as \gls{qft} and \gls{gr} have historically been the two
+irreconcilable theories that `together' span the whole range of scales
+in the universe. \gls{qft} and the standard model, describe physics at
+the smallest scales, where quantum effects dominate. This is the physics
+of colliders, and condensed matter. The standard model is our best guess
+as to the nature of the fundamental constituents of `matter' and
+`light'.
 
 \gls{gr} on the other hand describes physics at the largest scales,
 where gravity dominates. It was developed by Einstein as the successor
 to the Newtonian theory of gravity, which was not able to account for
-such orbital mechanics as the precession of the perihelion of mercury.
+orbital mechanics such as the precession of the perihelion of mercury.
 Having passed every experimental test we have thrown at it, \gls{gr} is
 by far the best theory of gravity we have yet. It can describe
 cosmological phenomena, as well as the compact objects known as black
@@ -741,11 +738,11 @@ These two physics leviathans do not get along, unfortunately. \gls{gr}
 is a theory of geometry, and \gls{qft} is a theory of interactions. We
 can try to write and interpret one in the language of the other, but in
 either case difficulties arise. Writing \gls{gr} in terms of
-perturbative \gls{qft} one introduces the graviton. Disappointingly,
-such a theory breaks down at high energies, and is un-renormalisable .
-In fact the presence of black holes, that dominate the high energy
-spectrum of \gls{gr}, is a testament to that fact
-~{[}\protect\hyperlink{ref-Shomer:2007vq}{4}{]}. On the other hand,
+perturbative \gls{qft} one introduces the graviton, the spin 2 quantum
+of gravity. Disappointingly, such a theory breaks down at high energies,
+and is un-renormalisable . In fact the presence of black holes, that
+dominate the high energy spectrum of \gls{gr}, is a testament to that
+fact ~{[}\protect\hyperlink{ref-Shomer:2007vq}{8}{]}. On the other hand,
 whilst one can write \glspl{qft} on a curved background, this does not
 quantize gravity itself, and therefore does not really address the
 problem. Background independent theories such as loop quantum gravity
@@ -755,17 +752,19 @@ be compactified, which leads to uncountably many solutions. In short,
 there is no satisfactory theory of that combines \gls{gr} and \gls{qft}
 consistently.
 
-Surprisingly, one can still use the powerful tools of one to tackle
-problems in the other. Specifically, if one considers the classical
-limit of \gls{qft}, one is able to extract perturbative gravitational
+Surprisingly, one can still use the powerful tools of one theory to
+tackle problems in the other. Specifically, considering the classical
+limit of \gls{qft}, allows the extraction of perturbative gravitational
 dynamics from an initially quantum description of the setup. This is
 interesting because the tools developed for high energy physics have
 become extremely powerful and efficient theoretical machines, often
 making use of diagrammatic reasoning. Tools such as Feynman diagrams,
-differential equations and more recently generalized unitarity, all
-yielding efficient computations for scattering amplitudes, can all be
-applied to \emph{classical} orbital dynamics in \gls{gr}. This is
-exactly the subject of this thesis.
+differential equations ~{[}\protect\hyperlink{ref-Kotikov:1990kg}{11}{]}
+and more recently generalized unitarity
+~{[}\protect\hyperlink{ref-Anastasiou:2006jv}{15}{]}, all yielding
+efficient computations for scattering amplitudes, can all be applied to
+\emph{classical} orbital dynamics in \gls{gr}. This is exactly the
+subject of this thesis.
 
 Specifically we are interested in the diagrammatic objects that arise
 when framing the two body problem similarly to particle collisions.
@@ -775,33 +774,33 @@ We will explain where these tools shine in the broader context of
 waveform approaches such as \gls{eob} , \gls{nrgr} , \gls{pm} and
 \gls{pn} approximations.
 
-The document is organized as follows. In chapter two we deal with the
-theoretical foundations of gravitational waves, exploring how they come
-about if one linearizes Einsteins' field equations. The subsequent
-chapter discusses the experimental apparatuses that are used to detect
-gravitational waves. We look at the techniques used to extract the
-signals for the noise, and look at the motivation for precise
-theoretical predictions. In chapter 3 we look at how to generate partial
-and full waveforms. We explore the \gls{eob} and \gls{nr} frameworks.
-Motivated by the need for more precise ingredients to input into
-\gls{eob} , in chapter 4 we look at the state of the art formalisms that
-incorporate amplitudes tools into the program. We take a look at the
-conservative \gls{eft} matching approach as well as the dissipation
-including \gls{kmoc} formalism. This is where we take a deeper look at
-the amplitude computing tools, and how they apply in this specific
-application. We close with a discussion of the challenges that lie
-ahead, and the future of gravitational wave astronomy.
+This thesis is organized as follows. In Chapter~\ref{sec-gwgen} we deal
+with the theoretical foundations of \glspl{gw}, exploring how they arise
+through the linearized Einsteins' field equations. The subsequent
+Chapter~\ref{sec-gwdetect} discusses the experimental apparatuses that
+are used to detect \glspl{gw}. We describe at the techniques used to
+extract the signals from the noise, and motivate precise theoretical
+predictions. In Chapter~\ref{sec-wfgen} we look at how to generate
+partial and full waveforms. We explore the \gls{eob} and \gls{nr}
+frameworks. Motivated by the need for more precise ingredients to input
+into \gls{eob}, in Chapter~\ref{sec-scat} we explain the state of the
+art formalisms that incorporate amplitude tools into the program. We
+describe the conservative \gls{eft} matching approach, where the system
+does not lose energy to its environement. Taking into account the loss
+of energy due to \glspl{gw} necesitates another method: the \gls{kmoc}
+formalism, which makes up the second half of the chapter. In this
+context, we take a deeper look at amplitude computing tools. We conclude
+with a discussion of the challenges that lie ahead, and the future of
+\gls{gw} astronomy.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{gravitational-wave-generation}{%
-\chapter{Gravitational Wave
-Generation}\label{gravitational-wave-generation}}
+\hypertarget{sec-gwgen}{%
+\chapter{Gravitational Wave Generation}\label{sec-gwgen}}
 
-First let us look at where and how gravitional waves are generated. We
-will look at how \gls{gr} predicts that graviational waves exist, and
-what conditions have to be met for them to become observable. We will
-also look at how we can detect them, and what we can learn from them.
+We start by looking at where and how \glspl{gw} are generated. We will
+see that \gls{gr} predicts the existence of \glspl{gw}, and we will
+explore what conditions have to be met for them to become observable.
 
 \hypertarget{gravitational-waves}{%
 \section{Gravitational Waves}\label{gravitational-waves}}
@@ -941,7 +940,7 @@ of harmonic coordinates:
 \ipdv{\mixweakmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
 }\label{eq-dedonder}\end{equation} Where raising and lowering indices
 has been done with the Minkowski metric. The tensor \(\srcco\) encodes
-the behavior of the source of gravitional waves. One could also plug
+the behavior of the source of \glspl{gw}. One could also plug
 \ref{eq-Ricciweak2} into \ref{eq-EFE}, with \(\cosmo=0\), and if we
 change to the trace reversed perturbation:
 \(\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink\), we get similar and
@@ -986,7 +985,7 @@ freedom\sidenote{\footnotesize from changes in coordinates such as
   \(\ct{x}\to\ct{x}+\ct{\xi}\) with \(\SRDA\ct{\xi}=0\)} restricts the
 possible forms of this solution to having only helicity \(\pm2\)
 physically significant components (see
-~{[}\protect\hyperlink{ref-Weinberg:1972}{5}{]}). Let us look at its
+~{[}\protect\hyperlink{ref-Weinberg:1972}{16}{]}). Let us look at its
 generic form. The metric \(\weakmet\) ought to be real-valued, thus we
 seek real solutions of the form
 
@@ -1026,7 +1025,7 @@ Equations \ref{eq-polk} and \ref{eq-polTprime} reduce the free
 components in the polarization tensor to just two. Additionally these
 equations can conspire to yield a traceless polarisation tensor
 \(\trpol=0\), with \(\polco[0\mu]=0\) (see
-~{[}\protect\hyperlink{ref-Carroll:2019}{6}{]}). This then extends to
+~{[}\protect\hyperlink{ref-Carroll:2019}{17}{]}). This then extends to
 the metric perturbation, which when imposed to be traceless, becomes
 equal to its trace-reversed counterpart. This is the so-called
 transverse traceless gauge:
@@ -1275,11 +1274,10 @@ radiation. Thus on top of the much smaller coupling constant,
 gravitional radiation is also weakened by this fact, and thus is usually
 orders of magnitude weaker than electromagnetic radiation.
 
-Thus any object that is modifying its shape is a source of gravitional
-waves. All orbiting systems therefore are sources of \glspl{gw} .
-However as said just above, only very important `changes in shape' have
-a chance to be detectable. These phenomena are what we will explore
-next.
+Thus any object that is modifying its shape is a source of \glspl{gw}.
+All orbiting systems therefore are sources of \glspl{gw} . However as
+said just above, only very important `changes in shape' have a chance to
+be detectable. These phenomena are what we will explore next.
 
 \hypertarget{sec-compactbinaries}{%
 \subsection{Compact binaries}\label{sec-compactbinaries}}
@@ -1397,7 +1395,7 @@ this object is called a black hole ( \gls{bh} ). It is a possible
 solution to the full fat \gls{efe} (\ref{eq-EFE}), where we consider a
 static and isotropic universe, with point like mass at its center. Then
 the solutions to the equations \ref{eq-EFE} have a unique form
-~{[}\protect\hyperlink{ref-Birkhoff:1923}{7}{]}, called the
+~{[}\protect\hyperlink{ref-Birkhoff:1923}{18}{]}, called the
 Schwarzschild solution. The solution is given by, in spherical
 coordinates:
 
@@ -1487,9 +1485,8 @@ topological defects creating a stochasitc \gls{gw} backround.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{gravitational-wave-detection}{%
-\chapter{Gravitational Wave
-Detection}\label{gravitational-wave-detection}}
+\hypertarget{sec-gwdetect}{%
+\chapter{Gravitational Wave Detection}\label{sec-gwdetect}}
 
 Gravitational waves were first theorized by Einstein, accompanying his
 theory of general relativity. However, it was not even clear whether
@@ -1752,7 +1749,7 @@ poles, which when not aligned with rotational poles, emit in the manner
 of a lighthouse. The measured pulses are extremely regular in nature,
 with periods ranging from a few milliseconds to a few seconds. Over a
 year the variation in the pulse period is on the order of a few
-microseconds ~{[}\protect\hyperlink{ref-Detweiler:1979wn}{8}{]}. We can
+microseconds ~{[}\protect\hyperlink{ref-Detweiler:1979wn}{19}{]}. We can
 therefor use these as clocks, and measure their variation from their
 normal cycle time.
 
@@ -1768,12 +1765,12 @@ setup is essentially a blown up version of \gls{ligo} with light-year
 scale arms instead of kilometer scale arms.
 
 Currently the set of pulsars suitable for this type of measurement is
-around 40 ~{[}\protect\hyperlink{ref-Maiorano:2021}{9}{]}. Many more
+around 40 ~{[}\protect\hyperlink{ref-Maiorano:2021}{20}{]}. Many more
 pulsars have been measured but not all are suitably regular to be used
 in \glspl{pta} . The frequency range of sensititivity of \glspl{pta} has
 a lowe bound set by observation duration and higher bound set by cadence
 of measurement. Currently the IPTA
-~{[}\protect\hyperlink{ref-Hobbs:2009yy}{10}{]} has been measuring for
+~{[}\protect\hyperlink{ref-Hobbs:2009yy}{21}{]} has been measuring for
 13 years, with measurements being taken every week yielding a
 sensitivity in a drastically different band than that of \gls{ligo} and
 \gls{lisa} :
@@ -1791,8 +1788,8 @@ galaxies\sidenote{\footnotesize more massive objects have longer orbital periods
 
 \bookmarksetup{startatroot}
 
-\hypertarget{waveform-generation}{%
-\chapter{Waveform Generation}\label{waveform-generation}}
+\hypertarget{sec-wfgen}{%
+\chapter{Waveform Generation}\label{sec-wfgen}}
 
 The matched filtering approach introduced in the previous section
 motivates tools for generating waveforms. Specifically the matched
@@ -1845,11 +1842,11 @@ additionally dependent to the type/initial state of the two orbiting
 bodies.
 
 For scattering binaries there is hope of detecting them
-~{[}\protect\hyperlink{ref-Mukherjee:2020hnm}{11}{]}, but they are
+~{[}\protect\hyperlink{ref-Mukherjee:2020hnm}{22}{]}, but they are
 mainly used as a testbed for new theories making use of particle physics
 knowledge. Additionally one might be able to extend their validity to
 inspiraling binaries ~{[}see
-\protect\hyperlink{ref-Kalin:2019rwq}{12}{]}.
+\protect\hyperlink{ref-Kalin:2019rwq}{23}{]}.
 
 Most of these techniques have two important parts. The first consists in
 the precise modelling of the evolution of the emitting system. In most
@@ -1872,7 +1869,7 @@ compared to other methods. Let us look at it now before proceeding to
 
 The most precise physically motivated waveform-generation technique to
 date is numerical relativity ( \gls{nr} ). It was first developed as
-early as the 1960s ~{[}\protect\hyperlink{ref-hahn:1964}{13}{]}.
+early as the 1960s ~{[}\protect\hyperlink{ref-hahn:1964}{24}{]}.
 Initially and until relatively recently, these numerical methods were
 unusable because of numerical instabilities. The idea, however, is
 simple: the \gls{efe} are a system of coupled partial differential
@@ -1894,8 +1891,8 @@ reasonable orbits. This leads to a huge amount of points in the model,
 meaning such simulations (even if stable) are extremely computationally
 expensive.
 
-In 2005 ~{[}\protect\hyperlink{ref-Pretorius:2005gq}{14}{]} and a little
-later ~{[}\protect\hyperlink{ref-Campanelli:2005dd}{15}{]} made a
+In 2005 ~{[}\protect\hyperlink{ref-Pretorius:2005gq}{25}{]} and a little
+later ~{[}\protect\hyperlink{ref-Campanelli:2005dd}{26}{]} made a
 breakthrough advance and were able to fully compute an
 inspiral-merger-ringdown sequence for a \gls{bbh} . Pretorius made use
 of two techniques, \gls{amr} and the \gls{gh} formalism. \gls{amr} ,
@@ -1906,7 +1903,7 @@ black hole, and crucially letting that region move. Both combined, were
 able to finally slay the proverbial numerical dragon.
 
 These waveforms, like the one in Figure~\ref{fig-pretwave} confirmed the
-predictions made in ~{[}\protect\hyperlink{ref-Buonanno:2000ef}{16}{]},
+predictions made in ~{[}\protect\hyperlink{ref-Buonanno:2000ef}{27}{]},
 that the merger phase of a \gls{bbh} would not be as complicated as
 thought. As numercal techniques evolved further, they were able to
 elucidate more and more complex behaviors.
@@ -1914,7 +1911,7 @@ elucidate more and more complex behaviors.
 \begin{figure}
 
 \sidecaption{\label{fig-pretwave}The first \gls{nr} waveform, as
-presented in ~{[}\protect\hyperlink{ref-Pretorius:2005gq}{14}{]}}
+presented in ~{[}\protect\hyperlink{ref-Pretorius:2005gq}{25}{]}}
 
 {\centering \includegraphics{./pretwave.png}
 
@@ -1983,9 +1980,9 @@ thus we can consider the following equivalent small parameters:
 We therefor expand in both velocities and coupling constant. This can be
 achieved with a by both a classical (albeit quite complicated)
 perturbative treatment ~{[}see
-\protect\hyperlink{ref-Blanchet:2013haa}{17},\protect\hyperlink{ref-Blanchet:1995fg}{18}{]},
+\protect\hyperlink{ref-Blanchet:2013haa}{28},\protect\hyperlink{ref-Blanchet:1995fg}{29}{]},
 and a more contemporary \gls{eft} based approach called coyly \gls{nrgr}
-~{[}\protect\hyperlink{ref-Goldberger:2004jt}{19},\protect\hyperlink{ref-Sturani:2021xpq}{20}{]}
+~{[}\protect\hyperlink{ref-Goldberger:2004jt}{4},\protect\hyperlink{ref-Sturani:2021xpq}{30}{]}
 as it was inspired by \gls{nrqcd} . We call specific orders of the
 expansion \(nPM\) when the expansion is carried out to
 \(\order[2n]{v}\).
@@ -2104,10 +2101,10 @@ This method can be supplemented by a multipolar expansion of the
 \(\invpertnmet{n}\), that are truncated to a specific order
 corresponding to the \gls{pm} order we are interested in. This combined
 expansion was pioneered by
-~{[}\protect\hyperlink{ref-Bonnor:1959}{21}{]}, then formalised by
-~{[}\protect\hyperlink{ref-Thorne:1980ru}{22}{]}, and finally applied in
+~{[}\protect\hyperlink{ref-Bonnor:1959}{31}{]}, then formalised by
+~{[}\protect\hyperlink{ref-Thorne:1980ru}{32}{]}, and finally applied in
 this present context by
-~{[}\protect\hyperlink{ref-Blanchet:1986}{23}{]}.
+~{[}\protect\hyperlink{ref-Blanchet:1986}{33}{]}.
 
 In terms of source dynamics, it is more appropriate (and uniquely able)
 to describe inherently relativistic phenomena, like gravitional
@@ -2130,14 +2127,14 @@ chapter.
 
 The second main full waveform generation technique is the the effective
 one body ( \gls{eob} ) formalism. It was develepped by
-~{[}\protect\hyperlink{ref-Buonanno:1998gg}{24}{]}, initially as a
+~{[}\protect\hyperlink{ref-Buonanno:1998gg}{34}{]}, initially as a
 non-perturbative re-summing of the \gls{pn} expansion. It was later
 extended to include the merger and ringdown effects in
-~{[}\protect\hyperlink{ref-Buonanno:2000ef}{16}{]}. Thus it became the
+~{[}\protect\hyperlink{ref-Buonanno:2000ef}{27}{]}. Thus it became the
 first full waveform generating technique to actually produce a waveform.
 It has gotten progressively more powerful, as the \gls{pn} expansions
 have gotten better, and even more recently \gls{pm} results have been
-included ~{[}\protect\hyperlink{ref-Damour:2016gwp}{25}{]}. Additonally
+included ~{[}\protect\hyperlink{ref-Damour:2016gwp}{35}{]}. Additonally
 \gls{nr} and \gls{eob} can be combined to produce a very accurate
 waveform, with less computional overhead than \gls{nr} alone.
 
@@ -2146,7 +2143,7 @@ previous data into a hamitonian describing the motion of a single body.
 The idea comes from Newtonian binaries where the method to solve the two
 body problem is to turn it into a one body problem. Further inspiration
 came from the two body problem in \gls{qed} ~{[}see
-\protect\hyperlink{ref-Brezin:1970zr}{26}{]} .
+\protect\hyperlink{ref-Brezin:1970zr}{36}{]} .
 
 Consider two bodies, with masses \(\mass[1]\) and \(\mass[2]\),
 positions \(\tv[1]{q}\), \(\tv[1]{q}\) and momenta \(\tv{\emom[1]}\) and
@@ -2162,7 +2159,7 @@ motion \(\tv{q}=\tv[1]{q}-\tv[1]{q}\). One can formalise this by
 defining a new set of generalised coordinates, through a canonical
 transformation. We can even go further and employ a generating function
 for the transformation, ensuring that hamiton's equations stay unchanged
-(see ~{[}\protect\hyperlink{ref-Goldstein:2002}{27}{]}). To descibe
+(see ~{[}\protect\hyperlink{ref-Goldstein:2002}{37}{]}). To descibe
 relative motion, we use jacobi coordinates \((\tv{Q},\tv{q})\):
 \begin{equation}\protect\hypertarget{eq-jacobi2}{}{
 \begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\mass[1]}{\totmass} & \frac{\mass[2]}{\totmass} \\ 1&-1 \end{pmatrix}}_{A} \begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}=\begin{pmatrix} \tv{Q} \\ \tv{q}\end{pmatrix}
@@ -2324,7 +2321,7 @@ given the inputs, namely \gls{pn} . The matching can also be done with
 \gls{pm} and \gls{nr} results, further increasing the validity and
 precision of \gls{eob} . Of course we are still missing the merger and
 ringdown. The merger, or plunge was predicted in
-~{[}\protect\hyperlink{ref-Buonanno:2000ef}{16}{]} to be simply the peak
+~{[}\protect\hyperlink{ref-Buonanno:2000ef}{27}{]} to be simply the peak
 in the waveform. This waveform is conected smoothly to a ringdown
 waveform, defined by a sum of quasi -normal modes of the remnant after
 merger. Thus one obtains a sort of frankenstein waveform, pooling
@@ -2338,9 +2335,9 @@ results using amplitudes in the next section.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{scattering-amplitudes-and-gws}{%
+\hypertarget{sec-scat}{%
 \chapter{\texorpdfstring{Scattering amplitudes and
-\gls{gw}s}{Scattering amplitudes and }}\label{scattering-amplitudes-and-gws}}
+\gls{gw}s}{Scattering amplitudes and }}\label{sec-scat}}
 
 Whilst we have almost no hope to detect any \gls{gw} scattering events
 with current experiments, scattering calculations can still be very
@@ -2374,38 +2371,37 @@ Multiple formalisms have arisen to map the scattering problem to an
 orbital one, and the quantum formalism to a classical one. One key way
 is to map scattering data to the potential (as present in a Hamiltonian
 for example). In fact this has been developped as early as the 1970s in
-~{[}\protect\hyperlink{ref-Hiida:1972xs}{28},\protect\hyperlink{ref-Iwasaki:1971vb}{29}{]}.
+~{[}\protect\hyperlink{ref-Hiida:1972xs}{38},\protect\hyperlink{ref-Iwasaki:1971vb}{39}{]}.
 Further developments happened in
-~{[}\protect\hyperlink{ref-Damour:2016gwp}{25},\protect\hyperlink{ref-Neill:2013wsa}{30}--\protect\hyperlink{ref-Guevara:2017csg}{34}{]}.
+~{[}\protect\hyperlink{ref-Neill:2013wsa}{7},\protect\hyperlink{ref-Damour:2016gwp}{35},\protect\hyperlink{ref-Bjerrum-Bohr:2013bxa}{40}--\protect\hyperlink{ref-Guevara:2017csg}{43}{]}.
 Here we will follow the treatment in
-~{[}\protect\hyperlink{ref-Cheung:2018wkq}{35}{]}, where one uses the
+~{[}\protect\hyperlink{ref-Cheung:2018wkq}{44}{]}, where one uses the
 conservative part of such scattering amplitudes to match to an \gls{eft}
 and subsequently to map to the potential. Recently efforts to add
 disipative effects have been succesful aswell ~{[}see
-\protect\hyperlink{ref-Kalin:2022hph}{36}{]}. This potential can then be
+\protect\hyperlink{ref-Kalin:2022hph}{45}{]}. This potential can then be
 used as input to the \gls{eob} formalism. Furthermore,
-~{[}\protect\hyperlink{ref-Kalin:2019rwq}{12}{]};
-~{[}\protect\hyperlink{ref-Kalin:2019inp}{37}{]}, have shown a path
+~{[}\protect\hyperlink{ref-Kalin:2019rwq}{23}{]};
+~{[}\protect\hyperlink{ref-Kalin:2019inp}{46}{]}, have shown a path
 forward in directly extending unbound data to bound orbits, obviating
 the need to use a potential and \gls{eob} at all.
 
 Finally as mentioned in the last chapter, scattering can stand on its
 own and is still usefull, unextended to the orbital case. The \gls{pm}
 approximation can be computed from scattering amplitudes in an \gls{eft}
-framework ~{[}\protect\hyperlink{ref-Kalin:2020mvi}{38}{]}. We can also
+framework ~{[}\protect\hyperlink{ref-Kalin:2020mvi}{47}{]}. We can also
 explore the classical observables possible in scattering scenarios. This
-has been developped in
-~{[}\protect\hyperlink{ref-Kosower:2018adc}{39}{]} and was extended to
-local observables\sidenote{\footnotesize local as in not time integrated and thus
-  presenting time dependent dynamics} such as waveforms in
-~{[}\protect\hyperlink{ref-Cristofoli:2021vyo}{40}{]}.
+has been developped in ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}
+and was extended to local observables\sidenote{\footnotesize local as in not time
+  integrated and thus presenting time dependent dynamics} such as
+waveforms in ~{[}\protect\hyperlink{ref-Cristofoli:2021vyo}{48}{]}.
 
 In this chapter we will first look at how one uses amplitude data to
 extract orbital and scattering waveforms. We will then look at the
 \gls{kmoc} formalism to directly extract observables. Finally we will
 look at obtaining these amplitudes, combining all the methods and
 comparing to results such as those in
-~{[}\protect\hyperlink{ref-Kosower:2018adc}{39},\protect\hyperlink{ref-Bern:2021xze}{41}{]}.
+~{[}\protect\hyperlink{ref-Kosower:2018adc}{5},\protect\hyperlink{ref-Bern:2021xze}{49}{]}.
 
 \hypertarget{sec-scatamp}{%
 \section{Scattering amplitudes}\label{sec-scatamp}}
@@ -2423,13 +2419,13 @@ We subtract the identity from it, forming what some call the transfer
 matrix \(\Tmat\) as we only are interested in processes where something
 happens (i.e.~not everything stays the same). In the above equation we
 also define the \emph{scattering matrix element} \(\ampl_{fi}\) ~{[}see
-\protect\hyperlink{ref-Srednicki:2007}{42}{]} or \emph{invariant Feynman
-amplitude} ~{[}see \protect\hyperlink{ref-Coleman:2018a}{43}{]}, by
+\protect\hyperlink{ref-Srednicki:2007}{50}{]} or \emph{invariant Feynman
+amplitude} ~{[}see \protect\hyperlink{ref-Coleman:2018a}{51}{]}, by
 factoring out a normalised spacetime delta-function imposing
 conservation of momentum on the external fields, and a complex unit. The
 key point is that this amplitude can be computed using graphical
 techniques. This makes use of the \gls{lsz}
-~{[}\protect\hyperlink{ref-Lehmann:1954rq}{44},\protect\hyperlink{ref-Collins:2019ozc}{45}{]}
+~{[}\protect\hyperlink{ref-Lehmann:1954rq}{52},\protect\hyperlink{ref-Collins:2019ozc}{53}{]}
 formalism where such an amplitude \(\ampl_{fi}\), can be computed from
 products of time ordered correlation functions of the given QFT. These
 are also called Green's functions, which can then be encoded by sums of
@@ -2442,7 +2438,7 @@ technique will be exemplified in the following sections.
 
 Let us now look at how to map the amplitude to the gravitational
 potential, for use in the \gls{eob} formalism. We will follow the
-treatment in ~{[}\protect\hyperlink{ref-Cheung:2018wkq}{35}{]}. We first
+treatment in ~{[}\protect\hyperlink{ref-Cheung:2018wkq}{44}{]}. We first
 start with defining the effective theory that describes our problem as
 two scalar fields \(\wf[1]\) and \(\wf[2]\) with masses \(\mass[1]\) and
 \(\mass[2]\) interacting through a long range potential \(V(r)\). It is
@@ -2525,7 +2521,7 @@ independent. The ansatz is chosen such that only the combination
 others being combinations reachable by field redefinition, or vanishing
 on-shell, such as \(\tv{k}^2-\tv{k'}^2\). Note as-well that we work in
 \(\Dim=4-2\dimreg\) dimensions such that the integrals are dimensionally
-regulated ~{[}see \protect\hyperlink{ref-tHooft:1972tcz}{46}{]}. This
+regulated ~{[}see \protect\hyperlink{ref-tHooft:1972tcz}{54}{]}. This
 means that an \(\dimreg\)-power corresponds to a
 logarithm\sidenote{\footnotesize the third term in the sum is given by
   \(\coupling^3\ln{\tv{k}-\tv{k'}}^2 c_3\pa[\Big]{\Half{\tv{k}^2+\tv{k'}^2}}\)}.Finally
@@ -2650,7 +2646,7 @@ the \gls{com} frame. Finally we can write what the diagram at loop level
 \]
 
 This integral can be perfomed in the non-relativistic limit, as done by
-~{[}\protect\hyperlink{ref-Bern:2019crd}{47}{]} up to 3\gls{pm}, using
+~{[}\protect\hyperlink{ref-Bern:2019crd}{55}{]} up to 3\gls{pm}, using
 \gls{ibp} reduction yielding, up to 2\gls{pm}, the amplitudes of the
 \gls{eft}:\sidenote{\footnotesize here the repartioning mentioned above has been
   applied and a change in loop momenta:
@@ -2745,8 +2741,8 @@ amplitude. This is the subject of the following sections.
 \section{\texorpdfstring{\gls{kmoc}}{}}\label{sec-kmoc}}
 
 The setup of the \gls{kmoc} framework
-(~{[}\protect\hyperlink{ref-Kosower:2018adc}{39}{]}) is very general,
-and is aimed at taking the classical limit of a scattering event in an
+(~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}) is very general, and
+is aimed at taking the classical limit of a scattering event in an
 unspecified theory. We will later on apply it to \gls{sqed} and gravity.
 
 \hypertarget{conventions}{%
@@ -2873,8 +2869,8 @@ Now we can actually define a general one particle state \(\ket{f}\) as
 the result of a creation operator acting on the physical vacuum.
 Crucially however this only makes sense in the boundary of the bulk,
 i.e.~at asymptotic times \(t\to\pm\infty\)\sidenote{\footnotesize see
-  ~{[}\protect\hyperlink{ref-Coleman:2018a}{43}{]} or
-  ~{[}\protect\hyperlink{ref-Collins:2019ozc}{45}{]} for a more in depth
+  ~{[}\protect\hyperlink{ref-Coleman:2018a}{51}{]} or
+  ~{[}\protect\hyperlink{ref-Collins:2019ozc}{53}{]} for a more in depth
   discussion of this point}. Inside the bulk, any thusly created state
 would infact not have definite particle number. This definitely makes
 sense in the scattering problem because if you consider the whole system
@@ -3014,7 +3010,7 @@ Where we define the real integrand \(\rInt\) and the virtual integrand
 \]
 
 {\marginnote{\begin{footnotesize}NB: the notation is slightly different
-in the ~{[}\protect\hyperlink{ref-Bern:2021xze}{41}{]}
+in the ~{[}\protect\hyperlink{ref-Bern:2021xze}{49}{]}
 paper\end{footnotesize}}}
 
 Let us first look at the virtual integrand \(\vInt\):\sidenote{\footnotesize Here we
@@ -3942,7 +3938,7 @@ at it, also to compute the amplitudes. Note that all the code needed to
 do these computations can be found on the repository for this book.
 
 The first tool we will use is \texttt{QGRAF}
-~{[}\protect\hyperlink{ref-Nogueira:1993a}{48}{]}, a fortran program
+~{[}\protect\hyperlink{ref-Nogueira:1993a}{56}{]}, a fortran program
 that can generate Feynman diagrams for a given set of vertices and
 external legs. The first step to is to define the theory we are working
 in. This is essentially writing down the Feyman rules, without actually
@@ -3994,7 +3990,7 @@ scattering). We also specify that we want to compute the one loop
 amplitude, and that we want to use the \texttt{julia.sty} style file.
 The \texttt{julia.sty} file is a style file that is used to generate the
 output in a format that can be read by a \texttt{Julia}
-~{[}\protect\hyperlink{ref-Bezanson:2015}{49}{]} package built to
+~{[}\protect\hyperlink{ref-Bezanson:2015}{57}{]} package built to
 process and visualise the outputted graphs. This package is called
 (maybe too broadly) \texttt{QFT.jl} is hosted on
 \href{https://github.com/lcnhb/QFT.jl}{github} . Let us see it in
@@ -4266,7 +4262,7 @@ scaleless integrals vanish, thus we can also discard these diagrams. We
 can easily implement such a filter programatically, by checking that if
 cycles are present they touch either both types of scalars, or neither.
 To compute the cycle basis we use an algorithm derived from
-~{[}\protect\hyperlink{ref-Paton:1969}{50}{]}, implemented in the
+~{[}\protect\hyperlink{ref-Paton:1969}{58}{]}, implemented in the
 \href{https://github.com/lcnhb/DirectedHalfEdgeGraphs.jl}{DirectedHalfEdgeGraphs.jl}
 package.
 
@@ -4410,7 +4406,7 @@ by hand, for completeness and comparison.
 The first step is to define the Feynman rules in a computer readable
 format. We will use \texttt{Julia} to apply these rules at every vertex
 and every edge, but for the actual computation we will use \texttt{FORM}
-~{[}\protect\hyperlink{ref-Vermaseren:2000nd}{51},\protect\hyperlink{ref-Kuipers:2012rf}{52}{]}
+~{[}\protect\hyperlink{ref-Vermaseren:2000nd}{59},\protect\hyperlink{ref-Kuipers:2012rf}{60}{]}
 which can automatically contract indices and does expression
 manipulations in an extremely fast way. The Feynman rules implementation
 in the package developped for this thesis make use of \texttt{Julia}s
@@ -4501,7 +4497,7 @@ Notice that we also define the momentum routing by imposing the
 replacement rules, one per vertex. This can be done in many ways but to
 ensure proper scaling we set the loop momenta on the massless lines.
 This is done by the \texttt{Julia} program, using kruskal's algorithm
-~{[}\protect\hyperlink{ref-Kruskal:1956}{53}{]} to find the maximal-mass
+~{[}\protect\hyperlink{ref-Kruskal:1956}{61}{]} to find the maximal-mass
 spanning tree of the graph, and then setting the loop momenta to be
 those internal edges that are missing from the tree. Using \texttt{FORM}
 we can contract indices and apply the momentum conservation rules.
@@ -4533,7 +4529,7 @@ Finallly we also apply the relableing rules described in
 \end{codelisting}
 
 When applied to all 4 diagrams we obtain precisely the same integrands
-as those in ~{[}\protect\hyperlink{ref-Kosower:2018adc}{39}{]}.
+as those in ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}.
 Additionally we notice that the two triangles and the box diagram have
 overlapping propagators. In fact the denominators of the integrands for
 all three can be written as:
@@ -4589,9 +4585,9 @@ integrand containing only so called \emph{irreducible} loop-momenta
 scalar products. In the cases we have here, they all dissapear, leaving
 us truely with a family of integrands like \ref{eq-boxfam}. This can be
 readily fed into a IBP solver, such as \texttt{AIR}
-~{[}\protect\hyperlink{ref-Anastasiou:2004}{54}{]}, \texttt{FIRE}
-~{[}\protect\hyperlink{ref-Smirnov:2020}{55}{]} or \texttt{Kira}
-~{[}\protect\hyperlink{ref-Maierhofer:2018}{56}{]}.
+~{[}\protect\hyperlink{ref-Anastasiou:2004}{62}{]}, \texttt{FIRE}
+~{[}\protect\hyperlink{ref-Smirnov:2020}{63}{]} or \texttt{Kira}
+~{[}\protect\hyperlink{ref-Maierhofer:2018}{64}{]}.
 
 With such a solver we can obtain a complete family of integrals, that
 one can then look up. We are thus able to obtain the integrated
@@ -4655,7 +4651,7 @@ box we have:
 }\label{eq-boxcross}\end{equation}
 
 where in the equation line we used \emph{reverse unitarity}
-~{[}\protect\hyperlink{ref-Anastasiou:2002yz}{57}--\protect\hyperlink{ref-Anastasiou:2003yy}{59}{]}.
+~{[}\protect\hyperlink{ref-Anastasiou:2002yz}{65}--\protect\hyperlink{ref-Anastasiou:2003yy}{67}{]}.
 This idea was developped in the context of cross-section calculations in
 the for collider physics computations. It enables to set on equal
 footing real contributions \sidenote{\footnotesize such as ones in the real integrand
@@ -4762,8 +4758,8 @@ finite terms!
 
 \bookmarksetup{startatroot}
 
-\hypertarget{conclusion}{%
-\chapter{Conclusion}\label{conclusion}}
+\hypertarget{sec-conclusion}{%
+\chapter{Conclusion}\label{sec-conclusion}}
 
 In this thesis we explored the landscape of theoretical research that
 surrounds gravitational waves. We showed the existence of gravitational
@@ -4793,7 +4789,7 @@ amplitudes and their unitarity cuts. We then went on to implement a
 programmatic framework for expressing the necessary integrals that the
 amplitudes yield. We used custom code to apply Feynman rules, manipulate
 and filter the graphs. We matched the results from
-~{[}\protect\hyperlink{ref-Kosower:2018adc}{39}{]}, and then implemented
+~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}, and then implemented
 a scalar product reduction for preparing the input to IBP reduction
 programs.
 
@@ -4814,8 +4810,6 @@ wave theory.
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
-
-\markboth{References}{References}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
@@ -4845,47 +4839,124 @@ Inspiral}}}, Physical Review Letters \textbf{119}, 161101 (2017).}
 Star}\textendash{{Black Hole Coalescences}}}}, The Astrophysical Journal
 Letters \textbf{915}, L5 (2021).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Shomer:2007vq}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-Goldberger:2004jt}{}}%
 \CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{W. D. Goldberger and I. Z. Rothstein,
+\emph{\href{https://doi.org/10.1103/PhysRevD.73.104029}{Effective Field
+Theory of Gravity for Extended Objects}}, Physical Review D \textbf{73},
+104029 (2006).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Kosower:2018adc}{}}%
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{D. A. Kosower, B. Maybee, and D. O'Connell,
+\emph{\href{https://doi.org/10.1007/JHEP02(2019)137}{Amplitudes,
+Observables, and Classical Scattering}}, Journal of High Energy Physics
+\textbf{02}, 137 (2019).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Porto:2016pyg}{}}%
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{R. A. Porto,
+\emph{\href{https://doi.org/10.1016/j.physrep.2016.04.003}{The
+{Effective Field Theorist}'s {Approach} to {Gravitational Dynamics}}},
+Physics Reports \textbf{633}, 1 (2016).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Neill:2013wsa}{}}%
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{D. Neill and I. Z. Rothstein,
+\emph{\href{https://doi.org/10.1016/j.nuclphysb.2013.09.007}{Classical
+Space\textendash times from the {S-matrix}}}, Nuclear Physics B
+\textbf{877}, 177 (2013).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Shomer:2007vq}{}}%
+\CSLLeftMargin{{[}8{]} }%
 \CSLRightInline{A. Shomer,
 \emph{\href{https://arxiv.org/abs/0709.3555}{A Pedagogical Explanation
 for the Non-Renormalizability of Gravity}}, (2007).}
 
+\leavevmode\vadjust pre{\hypertarget{ref-Remiddi:1997ny}{}}%
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{E. Remiddi,
+\emph{\href{https://doi.org/10.1007/BF03185566}{Differential Equations
+for {Feynman} Graph Amplitudes}}, Il Nuovo Cimento A (1971-1996)
+\textbf{110}, 1435 (1997).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Bern:1993kr}{}}%
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Z. Bern, L. Dixon, and D. A. Kosower,
+\emph{\href{https://doi.org/10.1016/0550-3213(94)90398-0}{Dimensionally-Regulated
+Pentagon Integrals}}, Nuclear Physics B \textbf{412}, 751 (1994).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Kotikov:1990kg}{}}%
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{A. V. Kotikov,
+\emph{\href{https://doi.org/10.1016/0370-2693(91)90413-K}{Differential
+Equations Method. {New} Technique for Massive {Feynman} Diagram
+Calculation}}, Physics Letters B \textbf{254}, 158 (1991).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Bern:1994cg}{}}%
+\CSLLeftMargin{{[}12{]} }%
+\CSLRightInline{Z. Bern, L. Dixon, D. C. Dunbar, and D. A. Kosower,
+\emph{\href{https://doi.org/10.1016/0550-3213(94)00488-Z}{Fusing {Gauge
+Theory Tree Amplitudes Into Loop Amplitudes}}}, Nuclear Physics B
+\textbf{435}, 59 (1995).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Bern:2004ky}{}}%
+\CSLLeftMargin{{[}13{]} }%
+\CSLRightInline{Z. Bern, V. Del Duca, L. J. Dixon, and D. A. Kosower,
+\emph{\href{https://doi.org/10.1103/PhysRevD.71.045006}{All
+{Non-Maximally-Helicity-Violating One-Loop Seven-Gluon Amplitudes} in
+{N}=4 {Super-Yang-Mills Theory}}}, Physical Review D \textbf{71}, 045006
+(2005).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Buchbinder:2005wp}{}}%
+\CSLLeftMargin{{[}14{]} }%
+\CSLRightInline{E. I. Buchbinder and F. Cachazo,
+\emph{\href{https://doi.org/10.1088/1126-6708/2005/11/036}{Two-{Loop
+Amplitudes} of {Gluons} and {Octa-Cuts} in {N}=4 {Super Yang-Mills}}},
+Journal of High Energy Physics \textbf{11}, 036 (2005).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Anastasiou:2006jv}{}}%
+\CSLLeftMargin{{[}15{]} }%
+\CSLRightInline{C. Anastasiou, R. Britto, B. Feng, Z. Kunszt, and P.
+Mastrolia,
+\emph{\href{https://doi.org/10.1016/j.physletb.2006.12.022}{D-Dimensional
+Unitarity Cut Method}}, Physics Letters B \textbf{645}, 213 (2007).}
+
 \leavevmode\vadjust pre{\hypertarget{ref-Weinberg:1972}{}}%
-\CSLLeftMargin{{[}5{]} }%
+\CSLLeftMargin{{[}16{]} }%
 \CSLRightInline{S. Weinberg, \emph{Gravitation and Cosmology: Principles
 and Applications of the General Theory of Relativity} ({Wiley}, {New
 York}, 1972).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Carroll:2019}{}}%
-\CSLLeftMargin{{[}6{]} }%
+\CSLLeftMargin{{[}17{]} }%
 \CSLRightInline{S. M. Carroll,
 \emph{\href{https://doi.org/10.1017/9781108770385}{Spacetime and
 {Geometry}: {An Introduction} to {General Relativity}}}, Higher
 Education from Cambridge University Press (2019).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Birkhoff:1923}{}}%
-\CSLLeftMargin{{[}7{]} }%
+\CSLLeftMargin{{[}18{]} }%
 \CSLRightInline{G. D. Birkhoff and R. E. Langer, \emph{Relativity and
 Modern Physics} ({Harvard University Press; {[}etc., etc.{]}},
 {Cambridge}, 1923).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Detweiler:1979wn}{}}%
-\CSLLeftMargin{{[}8{]} }%
+\CSLLeftMargin{{[}19{]} }%
 \CSLRightInline{S. Detweiler,
 \emph{\href{https://doi.org/10.1086/157593}{Pulsar Timing Measurements
 and the Search for Gravitational Waves}}, The Astrophysical Journal
 \textbf{234}, 1100 (1979).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Maiorano:2021}{}}%
-\CSLLeftMargin{{[}9{]} }%
+\CSLLeftMargin{{[}20{]} }%
 \CSLRightInline{M. Maiorano, F. De Paolis, and A. A. Nucita,
 \emph{\href{https://doi.org/10.3390/sym13122418}{Principles of
 {Gravitational-Wave Detection} with {Pulsar Timing Arrays}}}, Symmetry
 \textbf{13}, 2418 (2021).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hobbs:2009yy}{}}%
-\CSLLeftMargin{{[}10{]} }%
+\CSLLeftMargin{{[}21{]} }%
 \CSLRightInline{G. Hobbs et al.,
 \emph{\href{https://doi.org/10.1088/0264-9381/27/8/084013}{The
 International Pulsar Timing Array Project: Using Pulsars as a
@@ -4893,7 +4964,7 @@ Gravitational Wave Detector}}, Classical and Quantum Gravity
 \textbf{27}, 084013 (2010).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Mukherjee:2020hnm}{}}%
-\CSLLeftMargin{{[}11{]} }%
+\CSLLeftMargin{{[}22{]} }%
 \CSLRightInline{S. Mukherjee, S. Mitra, and S. Chatterjee,
 \emph{\href{https://doi.org/10.1093/mnras/stab2721}{Gravitational {Wave}
 Observatories May Be Able to Detect Hyperbolic Encounters of {Black
@@ -4901,28 +4972,28 @@ Holes}}}, Monthly Notices of the Royal Astronomical Society
 \textbf{508}, 5064 (2021).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kalin:2019rwq}{}}%
-\CSLLeftMargin{{[}12{]} }%
+\CSLLeftMargin{{[}23{]} }%
 \CSLRightInline{G. Kalin and R. A. Porto,
 \emph{\href{https://doi.org/10.1007/JHEP01(2020)072}{From Boundary Data
 to Bound States}}, Journal of High Energy Physics \textbf{01}, 072
 (2020).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hahn:1964}{}}%
-\CSLLeftMargin{{[}13{]} }%
+\CSLLeftMargin{{[}24{]} }%
 \CSLRightInline{S. G. Hahn and R. W. Lindquist,
 \emph{\href{https://doi.org/10.1016/0003-4916(64)90223-4}{The Two-Body
 Problem in Geometrodynamics}}, Annals of Physics \textbf{29}, 304
 (1964).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Pretorius:2005gq}{}}%
-\CSLLeftMargin{{[}14{]} }%
+\CSLLeftMargin{{[}25{]} }%
 \CSLRightInline{F. Pretorius,
 \emph{\href{https://doi.org/10.1103/PhysRevLett.95.121101}{Evolution of
 {Binary Black-Hole Spacetimes}}}, Physical Review Letters \textbf{95},
 121101 (2005).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Campanelli:2005dd}{}}%
-\CSLLeftMargin{{[}15{]} }%
+\CSLLeftMargin{{[}26{]} }%
 \CSLRightInline{M. Campanelli, C. O. Lousto, P. Marronetti, and Y.
 Zlochower,
 \emph{\href{https://doi.org/10.1103/PhysRevLett.96.111101}{Accurate
@@ -4930,36 +5001,29 @@ Zlochower,
 Physical Review Letters \textbf{96}, 111101 (2006).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Buonanno:2000ef}{}}%
-\CSLLeftMargin{{[}16{]} }%
+\CSLLeftMargin{{[}27{]} }%
 \CSLRightInline{A. Buonanno and T. Damour,
 \emph{\href{https://doi.org/10.1103/PhysRevD.62.064015}{Transition from
 Inspiral to Plunge in Binary Black Hole Coalescences}}, Physical Review
 D \textbf{62}, 064015 (2000).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Blanchet:2013haa}{}}%
-\CSLLeftMargin{{[}17{]} }%
+\CSLLeftMargin{{[}28{]} }%
 \CSLRightInline{L. Blanchet,
 \emph{\href{https://doi.org/10.12942/lrr-2014-2}{Gravitational
 {Radiation} from {Post-Newtonian Sources} and {Inspiralling Compact
 Binaries}}}, Living Reviews in Relativity \textbf{17}, 2 (2014).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Blanchet:1995fg}{}}%
-\CSLLeftMargin{{[}18{]} }%
+\CSLLeftMargin{{[}29{]} }%
 \CSLRightInline{L. Blanchet, T. Damour, and B. R. Iyer,
 \emph{\href{https://doi.org/10.1103/PhysRevD.51.5360}{Gravitational
 Waves from Inspiralling Compact Binaries: {Energy} Loss and Waveform to
 Second-Post-{Newtonian} Order}}, Physical Review D \textbf{51}, 5360
 (1995).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Goldberger:2004jt}{}}%
-\CSLLeftMargin{{[}19{]} }%
-\CSLRightInline{W. D. Goldberger and I. Z. Rothstein,
-\emph{\href{https://doi.org/10.1103/PhysRevD.73.104029}{Effective Field
-Theory of Gravity for Extended Objects}}, Physical Review D \textbf{73},
-104029 (2006).}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Sturani:2021xpq}{}}%
-\CSLLeftMargin{{[}20{]} }%
+\CSLLeftMargin{{[}30{]} }%
 \CSLRightInline{R. Sturani,
 \emph{\href{https://doi.org/10.1007/978-981-15-4702-7_32-1}{Effective
 {Field Theory Methods} to {Model Compact Binaries}}}, in \emph{Handbook
@@ -4967,7 +5031,7 @@ of {Gravitational Wave Astronomy}}, edited by C. Bambi, S. Katsanevas,
 and K. D. Kokkotas ({Springer}, {Singapore}, 2021), pp. 1--33.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bonnor:1959}{}}%
-\CSLLeftMargin{{[}21{]} }%
+\CSLLeftMargin{{[}31{]} }%
 \CSLRightInline{W. B. Bonnor and L. Rosenhead,
 \emph{\href{https://doi.org/10.1098/rsta.1959.0003}{Spherical
 Gravitational Waves}}, Philosophical Transactions of the Royal Society
@@ -4975,14 +5039,14 @@ of London. Series A, Mathematical and Physical Sciences \textbf{251},
 233 (1959).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Thorne:1980ru}{}}%
-\CSLLeftMargin{{[}22{]} }%
+\CSLLeftMargin{{[}32{]} }%
 \CSLRightInline{K. S. Thorne,
 \emph{\href{https://doi.org/10.1103/RevModPhys.52.299}{Multipole
 Expansions of Gravitational Radiation}}, Reviews of Modern Physics
 \textbf{52}, 299 (1980).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Blanchet:1986}{}}%
-\CSLLeftMargin{{[}23{]} }%
+\CSLLeftMargin{{[}33{]} }%
 \CSLRightInline{L. Blanchet and T. Damour, \emph{Radiative
 {Gravitational Fields} in {General Relativity I}. {General Structure} of
 the {Field} Outside the {Source}}, Philosophical Transactions of the
@@ -4990,75 +5054,68 @@ Royal Society of London. Series A, Mathematical and Physical Sciences
 \textbf{320}, 379 (1986).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Buonanno:1998gg}{}}%
-\CSLLeftMargin{{[}24{]} }%
+\CSLLeftMargin{{[}34{]} }%
 \CSLRightInline{A. Buonanno and T. Damour,
 \emph{\href{https://doi.org/10.1103/PhysRevD.59.084006}{Effective
 One-Body Approach to General Relativistic Two-Body Dynamics}}, Physical
 Review D \textbf{59}, 084006 (1999).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Damour:2016gwp}{}}%
-\CSLLeftMargin{{[}25{]} }%
+\CSLLeftMargin{{[}35{]} }%
 \CSLRightInline{T. Damour,
 \emph{\href{https://doi.org/10.1103/PhysRevD.94.104015}{Gravitational
 Scattering, Post-{Minkowskian} Approximation and {Effective One-Body}
 Theory}}, Physical Review D \textbf{94}, 104015 (2016).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Brezin:1970zr}{}}%
-\CSLLeftMargin{{[}26{]} }%
+\CSLLeftMargin{{[}36{]} }%
 \CSLRightInline{E. Brezin, C. Itzykson, and J. Zinn-Justin,
 \emph{\href{https://doi.org/10.1103/PhysRevD.1.2349}{Relativistic
 {Balmer Formula Including Recoil Effects}}}, Physical Review D
 \textbf{1}, 2349 (1970).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Goldstein:2002}{}}%
-\CSLLeftMargin{{[}27{]} }%
+\CSLLeftMargin{{[}37{]} }%
 \CSLRightInline{H. Goldstein, C. P. Poole, and J. L. Safko,
 \emph{Classical {Mechanics}} ({Addison Wesley}, 2002).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hiida:1972xs}{}}%
-\CSLLeftMargin{{[}28{]} }%
+\CSLLeftMargin{{[}38{]} }%
 \CSLRightInline{K. Hiida and H. Okamura,
 \emph{\href{https://doi.org/10.1143/PTP.47.1743}{Gauge {Transformation}
 and {Gravitational Potentials}}}, Progress of Theoretical Physics
 \textbf{47}, 1743 (1972).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Iwasaki:1971vb}{}}%
-\CSLLeftMargin{{[}29{]} }%
+\CSLLeftMargin{{[}39{]} }%
 \CSLRightInline{Y. Iwasaki,
 \emph{\href{https://doi.org/10.1143/PTP.46.1587}{Quantum {Theory} of
 {Gravitation} Vs. {Classical Theory}*): {Fourth-Order Potential}}},
 Progress of Theoretical Physics \textbf{46}, 1587 (1971).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Neill:2013wsa}{}}%
-\CSLLeftMargin{{[}30{]} }%
-\CSLRightInline{D. Neill and I. Z. Rothstein,
-\emph{\href{https://doi.org/10.1016/j.nuclphysb.2013.09.007}{Classical
-Space\textendash times from the {S-matrix}}}, Nuclear Physics B
-\textbf{877}, 177 (2013).}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Bjerrum-Bohr:2013bxa}{}}%
-\CSLLeftMargin{{[}31{]} }%
+\CSLLeftMargin{{[}40{]} }%
 \CSLRightInline{N. E. J. Bjerrum-Bohr, J. F. Donoghue, and P. Vanhove,
 \emph{\href{https://doi.org/10.1007/JHEP02(2014)111}{On-Shell Techniques
 and Universal Results in Quantum Gravity}}, Journal of High Energy
 Physics \textbf{02}, 111 (2014).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Vaidya:2014kza}{}}%
-\CSLLeftMargin{{[}32{]} }%
+\CSLLeftMargin{{[}41{]} }%
 \CSLRightInline{V. Vaidya,
 \emph{\href{https://doi.org/10.1103/PhysRevD.91.024017}{Gravitational
 Spin {Hamiltonians} from the {S} Matrix}}, Physical Review D
 \textbf{91}, 024017 (2015).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cachazo:2017jef}{}}%
-\CSLLeftMargin{{[}33{]} }%
+\CSLLeftMargin{{[}42{]} }%
 \CSLRightInline{F. Cachazo and A. Guevara,
 \emph{\href{https://doi.org/10.1007/JHEP02(2020)181}{Leading
 {Singularities} and {Classical Gravitational Scattering}}}, \textbf{02},
 181 (2020).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Guevara:2017csg}{}}%
-\CSLLeftMargin{{[}34{]} }%
+\CSLLeftMargin{{[}43{]} }%
 \CSLRightInline{A. Guevara,
 \emph{\href{https://doi.org/10.1007/JHEP04(2019)033}{Holomorphic
 {Classical Limit} for {Spin Effects} in {Gravitational} and
@@ -5066,7 +5123,7 @@ Spin {Hamiltonians} from the {S} Matrix}}, Physical Review D
 \textbf{04}, 033 (2019).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cheung:2018wkq}{}}%
-\CSLLeftMargin{{[}35{]} }%
+\CSLLeftMargin{{[}44{]} }%
 \CSLRightInline{C. Cheung, I. Z. Rothstein, and M. P. Solon,
 \emph{\href{https://doi.org/10.1103/PhysRevLett.121.251101}{From
 {Scattering Amplitudes} to {Classical Potentials} in the
@@ -5074,42 +5131,35 @@ Spin {Hamiltonians} from the {S} Matrix}}, Physical Review D
 251101 (2018).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kalin:2022hph}{}}%
-\CSLLeftMargin{{[}36{]} }%
+\CSLLeftMargin{{[}45{]} }%
 \CSLRightInline{G. Kälin, J. Neef, and R. A. Porto,
 \emph{\href{https://arxiv.org/abs/2207.00580}{Radiation-{Reaction} in
 the {Effective Field Theory Approach} to {Post-Minkowskian Dynamics}}},
 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kalin:2019inp}{}}%
-\CSLLeftMargin{{[}37{]} }%
+\CSLLeftMargin{{[}46{]} }%
 \CSLRightInline{G. Kalin and R. A. Porto,
 \emph{\href{https://doi.org/10.1007/JHEP02(2020)120}{From Boundary Data
 to Bound States. {Part II}. {Scattering} Angle to Dynamical Invariants
 (with Twist)}}, Journal of High Energy Physics \textbf{02}, 120 (2020).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kalin:2020mvi}{}}%
-\CSLLeftMargin{{[}38{]} }%
+\CSLLeftMargin{{[}47{]} }%
 \CSLRightInline{G. Kälin and R. A. Porto,
 \emph{\href{https://doi.org/10.1007/JHEP11(2020)106}{Post-{Minkowskian
 Effective Field Theory} for {Conservative Binary Dynamics}}}, Journal of
 High Energy Physics \textbf{11}, 106 (2020).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Kosower:2018adc}{}}%
-\CSLLeftMargin{{[}39{]} }%
-\CSLRightInline{D. A. Kosower, B. Maybee, and D. O'Connell,
-\emph{\href{https://doi.org/10.1007/JHEP02(2019)137}{Amplitudes,
-Observables, and Classical Scattering}}, Journal of High Energy Physics
-\textbf{02}, 137 (2019).}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Cristofoli:2021vyo}{}}%
-\CSLLeftMargin{{[}40{]} }%
+\CSLLeftMargin{{[}48{]} }%
 \CSLRightInline{A. Cristofoli, R. Gonzo, D. A. Kosower, and D.
 O'Connell,
 \emph{\href{https://doi.org/10.1103/PhysRevD.106.056007}{Waveforms from
 Amplitudes}}, Phys. Rev. D \textbf{106}, 056007 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bern:2021xze}{}}%
-\CSLLeftMargin{{[}41{]} }%
+\CSLLeftMargin{{[}49{]} }%
 \CSLRightInline{Z. Bern, J. P. Gatica, E. Herrmann, A. Luna, and M.
 Zeng, \emph{\href{https://doi.org/10.1007/JHEP08(2022)131}{Scalar {QED}
 as a Toy Model for Higher-Order Effects in Classical Gravitational
@@ -5117,77 +5167,77 @@ Scattering}}, arXiv:2112.12243 {[}Gr-Qc, Physics:hep-Th{]} \textbf{08},
 131 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Srednicki:2007}{}}%
-\CSLLeftMargin{{[}42{]} }%
+\CSLLeftMargin{{[}50{]} }%
 \CSLRightInline{M. A. Srednicki, \emph{Quantum Field Theory} ({Cambridge
 University Press}, {Cambridge ; New York}, 2007).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Coleman:2018a}{}}%
-\CSLLeftMargin{{[}43{]} }%
+\CSLLeftMargin{{[}51{]} }%
 \CSLRightInline{S. Coleman,
 \emph{\href{https://doi.org/10.1142/9371}{Lectures of {Sidney Coleman}
 on {Quantum Field Theory}}} ({WSP}, {Hackensack}, 2018).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Lehmann:1954rq}{}}%
-\CSLLeftMargin{{[}44{]} }%
+\CSLLeftMargin{{[}52{]} }%
 \CSLRightInline{H. Lehmann, K. Symanzik, and W. Zimmermann,
 \emph{\href{https://doi.org/10.1007/BF02731765}{{Zur Formulierung
 quantisierter Feldtheorien}}}, Il Nuovo Cimento (1955-1965) \textbf{1},
 205 (1955).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Collins:2019ozc}{}}%
-\CSLLeftMargin{{[}45{]} }%
+\CSLLeftMargin{{[}53{]} }%
 \CSLRightInline{J. Collins,
 \emph{\href{https://arxiv.org/abs/1904.10923}{A New Approach to the
 {LSZ} Reduction Formula}}, (2019).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tHooft:1972tcz}{}}%
-\CSLLeftMargin{{[}46{]} }%
+\CSLLeftMargin{{[}54{]} }%
 \CSLRightInline{G. 't Hooft and M. Veltman,
 \emph{\href{https://doi.org/10.1016/0550-3213(72)90279-9}{Regularization
 and Renormalization of Gauge Fields}}, Nuclear Physics B \textbf{44},
 189 (1972).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bern:2019crd}{}}%
-\CSLLeftMargin{{[}47{]} }%
+\CSLLeftMargin{{[}55{]} }%
 \CSLRightInline{Z. Bern, C. Cheung, R. Roiban, C.-H. Shen, M. P. Solon,
 and M. Zeng, \emph{\href{https://doi.org/10.1007/JHEP10(2019)206}{Black
 Hole Binary Dynamics from the Double Copy and Effective Theory}},
 Journal of High Energy Physics \textbf{10}, 206 (2019).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Nogueira:1993a}{}}%
-\CSLLeftMargin{{[}48{]} }%
+\CSLLeftMargin{{[}56{]} }%
 \CSLRightInline{P. Nogueira,
 \emph{\href{https://doi.org/10.1006/jcph.1993.1074}{Automatic {Feynman
 Graph Generation}}}, Journal of Computational Physics \textbf{105}, 279
 (1993).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bezanson:2015}{}}%
-\CSLLeftMargin{{[}49{]} }%
+\CSLLeftMargin{{[}57{]} }%
 \CSLRightInline{J. Bezanson, A. Edelman, S. Karpinski, and V. B. Shah,
 \emph{\href{https://arxiv.org/abs/1411.1607}{Julia: {A Fresh Approach}
 to {Numerical Computing}}}, arXiv:1411.1607 (2015).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Paton:1969}{}}%
-\CSLLeftMargin{{[}50{]} }%
+\CSLLeftMargin{{[}58{]} }%
 \CSLRightInline{K. Paton,
 \emph{\href{https://doi.org/10.1145/363219.363232}{An Algorithm for
 Finding a Fundamental Set of Cycles of a Graph}}, Communications of the
 ACM \textbf{12}, 514 (1969).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Vermaseren:2000nd}{}}%
-\CSLLeftMargin{{[}51{]} }%
+\CSLLeftMargin{{[}59{]} }%
 \CSLRightInline{J. A. M. Vermaseren,
 \emph{\href{https://arxiv.org/abs/math-ph/0010025}{New Features of
 {FORM}}}, (2000).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kuipers:2012rf}{}}%
-\CSLLeftMargin{{[}52{]} }%
+\CSLLeftMargin{{[}60{]} }%
 \CSLRightInline{J. Kuipers, T. Ueda, J. A. M. Vermaseren, and J.
 Vollinga, \emph{\href{https://doi.org/10.1016/j.cpc.2012.12.028}{{FORM}
 Version 4.0}}, Comput. Phys. Commun. \textbf{184}, 1453 (2013).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kruskal:1956}{}}%
-\CSLLeftMargin{{[}53{]} }%
+\CSLLeftMargin{{[}61{]} }%
 \CSLRightInline{J. B. Kruskal,
 \emph{\href{https://doi.org/10.1090/S0002-9939-1956-0078686-7}{On the
 Shortest Spanning Subtree of a Graph and the Traveling Salesman
@@ -5195,41 +5245,41 @@ Problem}}, Proceedings of the American Mathematical Society \textbf{7},
 48 (1956).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Anastasiou:2004}{}}%
-\CSLLeftMargin{{[}54{]} }%
+\CSLLeftMargin{{[}62{]} }%
 \CSLRightInline{C. Anastasiou and A. Lazopoulos,
 \emph{\href{https://doi.org/10.1088/1126-6708/2004/07/046}{Automatic
 {Integral Reduction} for {Higher Order Perturbative Calculations}}},
 Journal of High Energy Physics \textbf{2004}, 046 (2004).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Smirnov:2020}{}}%
-\CSLLeftMargin{{[}55{]} }%
+\CSLLeftMargin{{[}63{]} }%
 \CSLRightInline{A. V. Smirnov and F. S. Chukharev,
 \emph{\href{https://doi.org/10.1016/j.cpc.2019.106877}{{FIRE6}: {Feynman
 Integral REduction} with {Modular Arithmetic}}}, Computer Physics
 Communications \textbf{247}, 106877 (2020).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Maierhofer:2018}{}}%
-\CSLLeftMargin{{[}56{]} }%
+\CSLLeftMargin{{[}64{]} }%
 \CSLRightInline{P. Maierhöfer and J. Usovitsch,
 \emph{\href{https://arxiv.org/abs/1812.01491}{Kira 1.2 {Release
 Notes}}}, arXiv:1812.01491 {[}Hep-Ph{]} (2018).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Anastasiou:2002yz}{}}%
-\CSLLeftMargin{{[}57{]} }%
+\CSLLeftMargin{{[}65{]} }%
 \CSLRightInline{C. Anastasiou and K. Melnikov,
 \emph{\href{https://doi.org/10.1016/S0550-3213(02)00837-4}{Higgs Boson
 Production at Hadron Colliders in {NNLO QCD}}}, Nuclear Physics B
 \textbf{646}, 220 (2002).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Anastasiou:2002qz}{}}%
-\CSLLeftMargin{{[}58{]} }%
+\CSLLeftMargin{{[}66{]} }%
 \CSLRightInline{C. Anastasiou, L. Dixon, and K. Melnikov,
 \emph{\href{https://doi.org/10.1016/S0920-5632(03)80168-8}{{NLO Higgs}
 Boson Rapidity Distributions at Hadron Colliders}}, Nuclear Physics B -
 Proceedings Supplements \textbf{116}, 193 (2003).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Anastasiou:2003yy}{}}%
-\CSLLeftMargin{{[}59{]} }%
+\CSLLeftMargin{{[}67{]} }%
 \CSLRightInline{C. Anastasiou, L. Dixon, K. Melnikov, and F. Petriello,
 \emph{\href{https://doi.org/10.1103/PhysRevLett.91.182002}{Dilepton
 {Rapidity Distribution} in the {Drell-Yan Process} at

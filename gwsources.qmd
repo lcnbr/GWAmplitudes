@@ -4,10 +4,10 @@
 
 :::
 
-# Gravitational Wave Generation
+# Gravitational Wave Generation {#sec-gwgen}
 
 
-First let us look at where and how gravitional waves are generated. We will look at how (?:gr)  predicts that graviational waves exist, and what conditions have to be met for them to become observable. We will also look at how we can detect them, and what we can learn from them.
+We start by looking at where and how (?s:gw) are generated. We will see that (?:gr) predicts the existence of (?s:gw), and we will explore what conditions have to be met for them to become observable.
 
 ## Gravitational Waves
 
@@ -88,7 +88,7 @@ $${#eq-linearized}
 $$
 \ipdv{\mixweakmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
 $${#eq-dedonder}
-Where raising and lowering indices has been done with the Minkowski metric. The tensor $\srcco$ encodes the behavior of the source of gravitional waves.
+Where raising and lowering indices has been done with the Minkowski metric. The tensor $\srcco$ encodes the behavior of the source of (?s:gw).
 One could also plug @eq-Ricciweak2 into @eq-EFE, with $\cosmo=0$, and if we change to the trace reversed perturbation: $\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink$, we get similar and simpler equations at the cost of a more complex perturbation: ^[Note that the inverse change of variables is just: $\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink$.] ^[We eliminate the trace of the stress-energy tensor by using: $\RicciS= 8\pi\grav\trSE$. We can write $\linRicciS=-\frac{1}{2}\SRDA\trweakTRmet$, in de Donder gauge, which is precisely the extra term dropping out of $\SRDA\weakmet$ when we express it in terms of $\weakTRmet$ ]
 
 $$
@@ -337,7 +337,7 @@ $$ {#eq-metricquadmom}
 This equation has a very nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the energy denisty at the time where the past light cone of the observer intersects the source ($t_r$). The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the the change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for (?:em) ), or mass (for (?:gr) ), and while a center of charge is free to move around, the center of mass (of an isolated) is fixed by the conservation of momentum. The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitional system can modify. Finally the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitional radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
 
 
-Thus any object that is modifying its shape is a source of gravitional waves. All orbiting systems therefore are sources of (?s:gw) . However as said just above, only very important 'changes in shape' have a chance to be detectable. These phenomena are what we will explore next. 
+Thus any object that is modifying its shape is a source of (?s:gw). All orbiting systems therefore are sources of (?s:gw) . However as said just above, only very important 'changes in shape' have a chance to be detectable. These phenomena are what we will explore next. 
 
 ### Compact binaries {#sec-compactbinaries}
 

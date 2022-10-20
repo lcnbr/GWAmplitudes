@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec-conclusion}
 
 In this thesis we explored the landscape of theoretical research that surrounds gravitational waves.  We showed the existence of gravitational waves theoretically. We motivated waveform generation techniques grounded in first principles' physics. It is only through such precise frameworks that we can hope to elucidate the nature of the objects that emit this gravitational radiation. We looked at (?:nr)  and (?:eob)  two complementary approaches to waveform generation that enabled (?:ligo)  to make that field changing detection in 2016. Both approaches have their challenges, (?:nr)  with stability and computational cost, and (?:eob)  with higher order perturbative calculations. Each increase in precision enables a more precise match of the signal, enabling a much richer analysis of the incoming wave. Purely analytical tools have recently come into the crosshairs of particle physicits aswell.
 

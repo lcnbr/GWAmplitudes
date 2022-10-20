@@ -1,4 +1,4 @@
-# Waveform Generation
+# Waveform Generation {#sec-wfgen}
 
 ::: {.content-visible unless-format="pdf"}
 
