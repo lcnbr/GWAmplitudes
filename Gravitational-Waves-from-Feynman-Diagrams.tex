@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, enhanced, boxrule=0pt, breakable, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, interior hidden, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -681,8 +681,8 @@ and support, and without whom I would not be here today.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\hypertarget{sec-intro}{%
+\chapter{Introduction}\label{sec-intro}}
 
 The detection of gravitational waves by the \gls{ligo} and Virgo
 collaborations in 2016
@@ -692,23 +692,32 @@ new era of gravitational wave astronomy. The first detections were of
 ~{[}\protect\hyperlink{ref-LIGOScientific:2017vwq}{2}{]} as well as
 \gls{nsbh} mergers have been detected
 ~{[}\protect\hyperlink{ref-LIGOScientific:2021qlt}{3}{]}. Future
-detectors will further increase sensitivity and will be able to detect a
-wide range of astrophysical sources. Studying these gravitational waves
-signals gives us a very powerful new window into the universe. It allows
-us to study the properties of neutron stars and black holes, and the
-physics of compact object mergers, but also gives us a powerful testing
-apparatus for general relativity.
+observatories will further increase sensitivity and will be able to
+detect a wide range of astrophysical sources. Studying these
+gravitational waves signals gives us a very powerful new window into the
+universe. It allows us to study the properties of neutron stars and
+black holes, and the physics of compact object mergers, but also gives
+us a powerful testing apparatus for general relativity.
 
 To detect these faint signals \gls{ligo} and Virgo, have been made to be
-extraordinarily precise instruments. Thus, they demand correspondingly
-precise theoretical predictions and models. This is not just for
-comparison's sake, but for detection as well. These faint signals are
-often buried in the noise of the detector. To counteract this,
-experimental physicists make use of a matched filtering approach, where
-they try to match the signal to a template. The template is a model of
-the signal ideally provided by theoretical physicists based on physical
-theories. The more precise the template, the higher the signal-to-noise
-ratio, the more probable and precise the detection.
+extraordinarily sensitive instruments. This sensitivity had been the
+main barrier to overcome ever since \gls{gw} were first predicted by
+Einstein. Whilst sensitive measurements generally demand, and thus drive
+equally precise theoretical predictions, for \gls{gw} astronomy, the
+case for theoretical models is even stronger. Indeed, theoretical models
+are necessary components to the detection mechanisms used at current
+laser interferometers. The faint signals of strain due to the passage of
+a \gls{gw} are often buried in the noise of the detector. To counteract
+this, experimental physicists make use of matched filtering, an approach
+where a template signal is cross correlated to the detector output. The
+template is a model of the signal provided by theoretical physicists
+based on physical models. The upper bound to physical content of the
+detection is thus in fact set by the physical content of the template
+and therefore of the theoretical model. Additionally, the more precise
+the template, the higher the signal-to-noise ratio, the more probable
+and precise the detection. Theoretical models are thus a crucial
+component of the detection process, and there is a strong incentive to
+improve their precision and breadth of applicability.
 
 In recent years, an unlikely ally in this precision race has arisen,
 based on \gls{qft} techniques. This is seemingly an impossibility as
@@ -718,6 +727,7 @@ theories that `together' span the whole range of scales in the universe.
 scales, where quantum effects dominate. This is the physics of
 colliders, and condensed matter. The standard model is our best guess as
 to the nature of the fundamental constituents of `matter' and `light'.
+
 \gls{gr} on the other hand describes physics at the largest scales,
 where gravity dominates. It was developed by Einstein as the successor
 to the Newtonian theory of gravity, which was not able to account for
@@ -727,41 +737,43 @@ by far the best theory of gravity we have yet. It can describe
 cosmological phenomena, as well as the compact objects known as black
 holes.
 
-These two physics leviathans do not get along, however. \gls{gr} is a
-theory of geometry, and \gls{qft} is a theory of interactions. We can
-try to write and interpret one in the language of the other, but in
+These two physics leviathans do not get along, unfortunately. \gls{gr}
+is a theory of geometry, and \gls{qft} is a theory of interactions. We
+can try to write and interpret one in the language of the other, but in
 either case difficulties arise. Writing \gls{gr} in terms of
-perturbative \gls{qft} one introduces the graviton. However, it turns
-out that such a theory breaks down at high energies, and is
-un-renormalisable . In fact the presence of black holes, that dominate
-the high energy spectrum of \gls{gr}, is a testament to that fact
+perturbative \gls{qft} one introduces the graviton. Disappointingly,
+such a theory breaks down at high energies, and is un-renormalisable .
+In fact the presence of black holes, that dominate the high energy
+spectrum of \gls{gr}, is a testament to that fact
 ~{[}\protect\hyperlink{ref-Shomer:2007vq}{4}{]}. On the other hand,
-whilst one can write \glspl{qft} on a curved background, this is does
-not quantize gravity itself, and therefore does not really address the
+whilst one can write \glspl{qft} on a curved background, this does not
+quantize gravity itself, and therefore does not really address the
 problem. Background independent theories such as loop quantum gravity
-does not as of yet have semiclassical limit collapsing to \gls{gr}.
-String theory, on the other hand, introduces spurious dimensions that
-need to be compactified, which leads to uncountably many solutions. In
-short, there is no satisfactory theory of that combines \gls{gr} and
-\gls{qft} consistently.
+does not yet have semiclassical limit collapsing to \gls{gr}. String
+theory, on the other hand, introduces spurious dimensions that need to
+be compactified, which leads to uncountably many solutions. In short,
+there is no satisfactory theory of that combines \gls{gr} and \gls{qft}
+consistently.
 
-Regardless of this fact however, one can still use the powerful tools of
-one to tackle problems in the other. Specifically, if one considers the
-classical limit of \gls{qft} for example, one is able to extract
-perturbative gravitational dynamics from an initially quantum
-description of the setup. This is interesting because the tools
-developed for high energy physics have become extremely powerful and
-efficient theoretical machines, often making use of diagrammatic
-reasoning. Tools such as Feynman diagrams, differential equations and
-more recently generalized unitarity, can all be applied to
-\emph{classical} orbital dynamics in \gls{gr}. This is exactly the
-subject of this thesis.
+Surprisingly, one can still use the powerful tools of one to tackle
+problems in the other. Specifically, if one considers the classical
+limit of \gls{qft}, one is able to extract perturbative gravitational
+dynamics from an initially quantum description of the setup. This is
+interesting because the tools developed for high energy physics have
+become extremely powerful and efficient theoretical machines, often
+making use of diagrammatic reasoning. Tools such as Feynman diagrams,
+differential equations and more recently generalized unitarity, all
+yielding efficient computations for scattering amplitudes, can all be
+applied to \emph{classical} orbital dynamics in \gls{gr}. This is
+exactly the subject of this thesis.
 
 Specifically we are interested in the diagrammatic objects that arise
-when framing the two body problem similarly to particle collisions. We
-will explain where these tools shine in the broader context of waveform
-approaches such as \gls{eob} , \gls{nrgr} , \gls{pm} and \gls{pn}
-approximations.
+when framing the two body problem similarly to particle collisions.
+Diagrammatics are interesting as they are an abstraction of the problem
+that enables efficient reasoning about and automation of the solutions.
+We will explain where these tools shine in the broader context of
+waveform approaches such as \gls{eob} , \gls{nrgr} , \gls{pm} and
+\gls{pn} approximations.
 
 The document is organized as follows. In chapter two we deal with the
 theoretical foundations of gravitational waves, exploring how they come
