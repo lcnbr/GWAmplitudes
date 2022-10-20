@@ -240,7 +240,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#eft-amplitude" id="toc-eft-amplitude" class="nav-link" data-scroll-target="#eft-amplitude"><span class="toc-section-number">5.2.1</span>  EFT amplitude</a></li>
   </ul></li>
-  <li><a href="#sec-kmoc" id="toc-sec-kmoc" class="nav-link" data-scroll-target="#sec-kmoc"><span class="toc-section-number">5.3</span>  <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></a>
+  <li><a href="#sec-kmoc" id="toc-sec-kmoc" class="nav-link" data-scroll-target="#sec-kmoc"><span class="toc-section-number">5.3</span>  <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework</a>
   <ul class="collapse">
   <li><a href="#conventions" id="toc-conventions" class="nav-link" data-scroll-target="#conventions"><span class="toc-section-number">5.3.1</span>  Conventions</a></li>
   <li><a href="#intital-state" id="toc-intital-state" class="nav-link" data-scroll-target="#intital-state"><span class="toc-section-number">5.3.2</span>  Intital State</a></li>
@@ -278,71 +278,71 @@ div.csl-indent {
 <div>
 
 </div>
-<p>Whilst we have almost no hope to detect any <abbr title="Gravitational Wave">GW</abbr> scattering events with current experiments, scattering calculations can still be very useful in the quest for orbital waveforms. Most importantly, while experimental data is not driving gravitational scattering theory, particle scattering experiment and theory have been an enormously fruitful endeavor for High energy physics. The back and forth between precise measurements (such as those conducted at the Large Hadron Collider (<abbr title="Large Hadron Collider">LHC</abbr>) ) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible. It would be therefore very beneficial if one could apply the large knowledge acquired for small non-gravitationally interacting particles, to large compact orbiting bodies.</p>
-<p>Such techniques as <abbr title="Effective Field Theory">EFT</abbr> double copy, generalized unitarity, Integration by Parts (<abbr title="Integration by Parts">IBP</abbr>) reduction, differential equations methods, all standing on the shoulders of Feynman perturbative techniques have been applied to the scattering problem in gravity. A key part of applying tools originally developed for mostly quantum systems is controlling the classical limit, and is part of the solution to implementing gravity in a Quantum Field Theory (<abbr title="Quantum Field Theory">QFT</abbr>) framework, a historically difficult endeavor. Once scattering data is obtained one needs to extract the relevant observables. This may be in an effort to compare results from the different methods, in which case gauge and diffeomorphism invariance are key. It can also be to extract the relevant information for detection and data extraction, in which case the <abbr title="Gravitational Wave">GW</abbr> waveform is the relevant observable. In the latter case one is mostly interested in the orbital waveform, and thus a map from unbound to bound orbits is necessary.</p>
-<p>Multiple formalisms have arisen to map the scattering problem to an orbital one, and the quantum formalism to a classical one. One key way is to map scattering data to the potential (as present in a Hamiltonian for example). In fact this has been developped as early as the 1970s in <span class="citation" data-cites="Hiida:1972xs Iwasaki:1971vb">&nbsp;[<a href="references.html#ref-Hiida:1972xs" role="doc-biblioref">1</a>,<a href="references.html#ref-Iwasaki:1971vb" role="doc-biblioref">2</a>]</span>. Further developments happened in <span class="citation" data-cites="Neill:2013wsa Bjerrum-Bohr:2013bxa Vaidya:2014kza Cachazo:2017jef Guevara:2017csg Damour:2016gwp">&nbsp;[<a href="references.html#ref-Neill:2013wsa" role="doc-biblioref">3</a>–<a href="references.html#ref-Damour:2016gwp" role="doc-biblioref">8</a>]</span>. Here we will follow the treatment in <span class="citation" data-cites="Cheung:2018wkq">&nbsp;[<a href="references.html#ref-Cheung:2018wkq" role="doc-biblioref">9</a>]</span>, where one uses the conservative part of such scattering amplitudes to match to an <abbr title="Effective Field Theory">EFT</abbr> and subsequently to map to the potential. Recently efforts to add disipative effects have been succesful aswell <span class="citation" data-cites="Kalin:2022hph">&nbsp;[see <a href="references.html#ref-Kalin:2022hph" role="doc-biblioref">10</a>]</span>. This potential can then be used as input to the <abbr title="Effective One-Body">EOB</abbr> formalism. Furthermore, <span class="citation" data-cites="Kalin:2019rwq">&nbsp;[<a href="references.html#ref-Kalin:2019rwq" role="doc-biblioref">11</a>]</span>; <span class="citation" data-cites="Kalin:2019inp">&nbsp;[<a href="references.html#ref-Kalin:2019inp" role="doc-biblioref">12</a>]</span>, have shown a path forward in directly extending unbound data to bound orbits, obviating the need to use a potential and <abbr title="Effective One-Body">EOB</abbr> at all.</p>
-<div class="page-columns page-full"><p>Finally as mentioned in the last chapter, scattering can stand on its own and is still usefull, unextended to the orbital case. The <abbr title="Post-Minkowski">PM</abbr> approximation can be computed from scattering amplitudes in an <abbr title="Effective Field Theory">EFT</abbr> framework <span class="citation" data-cites="Kalin:2020mvi">&nbsp;[<a href="references.html#ref-Kalin:2020mvi" role="doc-biblioref">13</a>]</span>. We can also explore the classical observables possible in scattering scenarios. This has been developped in <span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span> and was extended to local observables<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> such as waveforms in <span class="citation" data-cites="Cristofoli:2021vyo">&nbsp;[<a href="references.html#ref-Cristofoli:2021vyo" role="doc-biblioref">15</a>]</span>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;local as in not time integrated and thus presenting time dependent dynamics</p></li></div></div>
-<p>In this chapter we will first look at how one uses amplitude data to extract orbital and scattering waveforms. We will then look at the <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> formalism to directly extract observables. Finally we will look at obtaining these amplitudes, combining all the methods and comparing to results such as those in <span class="citation" data-cites="Kosower:2018adc Bern:2021xze">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>,<a href="references.html#ref-Bern:2021xze" role="doc-biblioref">16</a>]</span>.</p>
+<p>Whilst we have almost no hope to detect any <abbr title="Gravitational Wave">GW</abbr> scattering events with current experimental apparatuses, the scattering formalism can still be very useful in the quest for orbital waveforms. Most importantly, while experimental data has not been driving <em>gravitational</em> scattering theory, the interplay between <em>particle</em> scattering experiment and theory have been an enormously fruitful endeavor for the understanding of fundamental interactions in High Energy Physics (<abbr title="High Energy Physics">HEP</abbr>) The back and forth between precise measurements (such as those conducted at the Large Hadron Collider (<abbr title="Large Hadron Collider">LHC</abbr>) ) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible. It would be therefore very beneficial if one could apply the large knowledge acquired for small non-gravitationally interacting particles, to large compact orbiting bodies. We will see that it is indeed the case.</p>
+<p>Such techniques including <abbr title="Effective Field Theory">EFT</abbr> double copy, generalized unitarity, Integration by Parts (<abbr title="Integration by Parts">IBP</abbr>) reduction, differential equations methods, developed in the context of perturbative computations of collider observables now find an application to the scattering problem in gravity. A key part of applying tools originally developed for quantum systems to problems in gravity is controlling the classical limit, a historically difficult endeavor. Once scattering data is obtained one needs to extract the relevant observables. This may be in an effort to compare results from the different methods, in which case gauge and diffeomorphism, and lorentz invariance are key, since different methods make different gauge and frame choices. It can also be to extract the relevant information for detection and data extraction, in which case the <abbr title="Gravitational Wave">GW</abbr> waveform is the relevant observable. In the latter case one is mostly interested in the orbital waveform, and thus a map from unbound to bound orbits is necessary.</p>
+<p>Multiple formalisms have arisen to map the scattering problem to an orbital one, and the quantum formalism to a classical one. One key way is to map scattering data to a potential (as present in a Hamiltonian for example). In fact this has been developped as early as the 1970s in <span class="citation" data-cites="Hiida:1972xs Iwasaki:1971vb">&nbsp;[<a href="references.html#ref-Hiida:1972xs" role="doc-biblioref">1</a>,<a href="references.html#ref-Iwasaki:1971vb" role="doc-biblioref">2</a>]</span>. Further developments happened in <span class="citation" data-cites="Neill:2013wsa Bjerrum-Bohr:2013bxa Vaidya:2014kza Cachazo:2017jef Guevara:2017csg Damour:2016gwp">&nbsp;[<a href="references.html#ref-Neill:2013wsa" role="doc-biblioref">3</a>–<a href="references.html#ref-Damour:2016gwp" role="doc-biblioref">8</a>]</span>. Here we will follow the treatment in <span class="citation" data-cites="Cheung:2018wkq">&nbsp;[Cheung, Rothstein, and Solon <a href="references.html#ref-Cheung:2018wkq" role="doc-biblioref">9</a>]</span>, where the conservative part of such scattering amplitudes is matched to an <abbr title="Effective Field Theory">EFT</abbr> and subsequently to mapped to a potential. Recent efforts to add dissipative effects have also been successful <span class="citation" data-cites="Kalin:2022hph">&nbsp;[see <a href="references.html#ref-Kalin:2022hph" role="doc-biblioref">10</a>]</span>. This potential can then be used as input to the <abbr title="Effective One-Body">EOB</abbr> formalism. Furthermore, <span class="citation" data-cites="Kalin:2019rwq Kalin:2019inp">&nbsp;[Kalin and Porto <a href="references.html#ref-Kalin:2019rwq" role="doc-biblioref">11</a>,<a href="references.html#ref-Kalin:2019inp" role="doc-biblioref">12</a>]</span>, have shown a path forward in directly extending unbound data to bound orbits, obviating the need to use a potential and <abbr title="Effective One-Body">EOB</abbr> at all.</p>
+<div class="page-columns page-full"><p>Finally, as mentioned in the last chapter, scattering can stand on its own and still be usefull without being extended to the orbital case. The <abbr title="Post-Minkowski">PM</abbr> approximation can be computed from scattering amplitudes in an <abbr title="Effective Field Theory">EFT</abbr> framework <span class="citation" data-cites="Kalin:2020mvi">&nbsp;[<a href="references.html#ref-Kalin:2020mvi" role="doc-biblioref">13</a>]</span>. We can also explore the classical observables possible in scattering scenarios. This has been developped in <span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span> and was extended to local observables<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> such as waveforms in <span class="citation" data-cites="Cristofoli:2021vyo">&nbsp;[<a href="references.html#ref-Cristofoli:2021vyo" role="doc-biblioref">15</a>]</span>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;local as in not time integrated and thus presenting time dependent dynamics</p></li></div></div>
+<p>In this chapter we will first look at how to use amplitude data to extract orbital and scattering waveforms. We will then look at the <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> formalism to directly extract observables. Finally we will look at how to compute amplitudes, and comparing to results such as those in <span class="citation" data-cites="Kosower:2018adc Bern:2021xze">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>,<a href="references.html#ref-Bern:2021xze" role="doc-biblioref">16</a>]</span>.</p>
 <section id="sec-scatamp" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="sec-scatamp"><span class="header-section-number">5.1</span> Scattering amplitudes</h2>
-<p>In <abbr title="Quantum Field Theory">QFT</abbr> one way to encode scattering data is through a scattering amplitude. Consider a process where one starts out with a set of particles described by a state <span class="math inline">\(\vert i \rangle_{\text{}}\)</span>, we let them interact, and end up with a final state <span class="math inline">\(\vert f \rangle_{\text{}}\)</span>. The scattering amplitude is then defined as the probability amplitude for this process to occur. It is simply given by <span class="math display">\[\langle i \vert S-1 \vert f \rangle=(2\pi)^4 \delta^{{(4)}}(p_f-p_i)\mathring{\imath}\mathcal{A}^{}_{fi},\]</span></p>
-<p>where <span class="math inline">\(S\)</span> is essentially the operator that ‘does the scattering’. We subtract the identity from it, forming what some call the transfer matrix <span class="math inline">\(T\)</span> as we only are interested in processes where something happens (i.e.&nbsp;not everything stays the same). In the above equation we also define the <em>scattering matrix element</em> <span class="math inline">\(\mathcal{A}^{}_{fi}\)</span> <span class="citation" data-cites="Srednicki:2007">&nbsp;[see <a href="references.html#ref-Srednicki:2007" role="doc-biblioref">17</a>]</span> or <em>invariant Feynman amplitude</em> <span class="citation" data-cites="Coleman:2018a">&nbsp;[see <a href="references.html#ref-Coleman:2018a" role="doc-biblioref">18</a>]</span>, by factoring out a normalised spacetime delta-function imposing conservation of momentum on the external fields, and a complex unit. The key point is that this amplitude can be computed using graphical techniques. This makes use of the Lehmann Symanzik and Zimmermann (<abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr>) <span class="citation" data-cites="Lehmann:1954rq Collins:2019ozc">&nbsp;[<a href="references.html#ref-Lehmann:1954rq" role="doc-biblioref">19</a>,<a href="references.html#ref-Collins:2019ozc" role="doc-biblioref">20</a>]</span> formalism where such an amplitude <span class="math inline">\(\mathcal{A}^{}_{fi}\)</span>, can be computed from products of time ordered correlation functions of the given QFT. These are also called Green’s functions, which can then be encoded by sums of Feynman diagrams. The diagrams are generated by applying Feynman rules which can be readily obtained from an action describing the theory. This technique will be exemplified in the following sections.</p>
+<p>In Quantum Field Theory (<abbr title="Quantum Field Theory">QFT</abbr>) to date the only way to encode scattering data is through a scattering amplitude. Consider a process where one starts out with a set of particles described by a state <span class="math inline">\(\vert i \rangle_{\text{}}\)</span>, that interact, and yield a final state <span class="math inline">\(\vert f \rangle_{\text{}}\)</span>. The scattering amplitude is then defined as the probability amplitude for this process to occur. It is simply given by <span class="math display">\[\langle i \vert S-1 \vert f \rangle=(2\pi)^4 \delta^{{(4)}}(p_f-p_i)\mathring{\imath}\mathcal{A}^{}_{fi},\]</span></p>
+<p>where <span class="math inline">\(S\)</span> is the S-matrix, encoding asymptotic time evolution, <span class="math inline">\(S=U_t(-\infty,+\infty)\)</span>. We subtract the identity from it, forming what some call the transfer matrix <span class="math inline">\(T\)</span>, as we only are interested in processes where something happens (i.e.&nbsp;not everything stays the same). In the above equation we also define the <em>scattering matrix element</em> <span class="math inline">\(\mathcal{A}^{}_{fi}\)</span> <span class="citation" data-cites="Srednicki:2007">&nbsp;[see <a href="references.html#ref-Srednicki:2007" role="doc-biblioref">17</a>]</span> or <em>invariant Feynman amplitude</em> <span class="citation" data-cites="Coleman:2018a">&nbsp;[see <a href="references.html#ref-Coleman:2018a" role="doc-biblioref">18</a>]</span>, by factoring out a normalised spacetime delta-function that impose the conservation of momentum on the external particles, and a complex unit. The computation of <span class="math inline">\(\mathcal{A}^{}\)</span> is made possible by the Lehmann Symanzik and Zimmermann (<abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr>) <span class="citation" data-cites="Lehmann:1954rq Collins:2019ozc">&nbsp;[<a href="references.html#ref-Lehmann:1954rq" role="doc-biblioref">19</a>,<a href="references.html#ref-Collins:2019ozc" role="doc-biblioref">20</a>]</span> formalism, which relates <span class="math inline">\(\mathcal{A}^{}_{fi}\)</span> to time-ordered correlation functions (also known as Green’s functions) of the given QFT. Green’s functions, can be expanded as an infinite sum of diagrams, weighted by a small coupling. The diagrams encode integrals that are obtained by applying Feynman rules which can be readily extracted from an action describing the theory.</p>
 </section>
 <section id="sec-amp2pot" class="level2 page-columns page-full" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-amp2pot"><span class="header-section-number">5.2</span> From amplitude to potential</h2>
-<p>Let us now look at how to map the amplitude to the gravitational potential, for use in the <abbr title="Effective One-Body">EOB</abbr> formalism. We will follow the treatment in <span class="citation" data-cites="Cheung:2018wkq">&nbsp;[<a href="references.html#ref-Cheung:2018wkq" role="doc-biblioref">9</a>]</span>. We first start with defining the effective theory that describes our problem as two scalar fields <span class="math inline">\(f_{1}\)</span> and <span class="math inline">\(f_{2}\)</span> with masses <span class="math inline">\(m_{1}\)</span> and <span class="math inline">\(m_{2}\)</span> interacting through a long range potential <span class="math inline">\(V(r)\)</span>. It is simply the <abbr title="Effective Field Theory">EFT</abbr> for non-relativistic fields. This <abbr title="Effective Field Theory">EFT</abbr> is described by the following action:</p>
+<p>Let us now look at how to map the amplitude to the gravitational potential within the <abbr title="Effective One-Body">EOB</abbr> formalism. We will follow the treatment in <span class="citation" data-cites="Cheung:2018wkq">&nbsp;[<a href="references.html#ref-Cheung:2018wkq" role="doc-biblioref">9</a>]</span>. We start by defining the effective theory that describes our problem: thi orbiting bodies are described by two scalar fields <span class="math inline">\(f_{1}\)</span> and <span class="math inline">\(f_{2}\)</span> with masses <span class="math inline">\(m_{1}\)</span> and <span class="math inline">\(m_{2}\)</span> interacting through a long range potential <span class="math inline">\(V(r)\)</span>. It is the <abbr title="Effective Field Theory">EFT</abbr> for non-relativistic fields. This <abbr title="Effective Field Theory">EFT</abbr> is described by the following action</p>
 <p><span class="math display">\[
 S=\int \,\mathrm{d}^{}t\, \mathcal{L}_\text{kin}+\mathcal{L}_\text{int},
 \]</span></p>
 <p>where the kinetic term is given by:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\mathcal{L}_\text{kin}=&amp;\int \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{}\, {f{}^\ast}_{1}(-\mathbf{{k}}_{}) \Big(\mathring{\imath}\partial_{t}-\sqrt{\mathbf{{k}}_{}^2+m_{1}}  \Big)f_{1}(\mathbf{{k}}_{})
+\mathcal{L}_\text{kin}=&amp;\int \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{}\, {f{}^\ast}_{1}(-\mathbf{{k}}_{}) \Big(\mathring{\imath}\partial_{t}-\sqrt{\mathbf{{k}}_{}^2+m_{1}}  \Big)f_{1}(\mathbf{{k}}_{}),
 \\
-&amp;+\int \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{}\, {f{}^\ast}_{2}(-\mathbf{{k}}_{}) \Big(\mathring{\imath}\partial_{t}-\sqrt{\mathbf{{k}}_{}^2+m_{2}}  \Big)f_{2}(\mathbf{{k}}_{})
+&amp;+\int \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{}\, {f{}^\ast}_{2}(-\mathbf{{k}}_{}) \Big(\mathring{\imath}\partial_{t}-\sqrt{\mathbf{{k}}_{}^2+m_{2}}  \Big)f_{2}(\mathbf{{k}}_{}),
 \end{aligned}
 \]</span></p>
-<p>and the interaction term is given by:</p>
+<p>and the interaction term is given by</p>
 <p><span class="math display">\[
 \mathcal{L}_\text{int}=  -\int \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{}\, \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k'}}_{}\, V(\mathbf{{k}}_{},\mathbf{{k'}}_{}) {f{}^\ast}_{1}(\mathbf{{k'}}_{}) {f{}^\ast}_{2}(-\mathbf{{k'}}_{}) f_{1}(\mathbf{{k}}_{}) f_{2}(- \mathbf{{k}}_{}).
 \]</span></p>
-<div class="page-columns page-full"><p>This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential <span class="math inline">\(V(\mathbf{{k}}_{},\mathbf{{k'}}_{})\)</span> and taking the non-relativistic limit <span class="math inline">\(\vert\mathbf{{k}}_{} \vert,\vert\mathbf{{k'}}_{} \vert\ll m_{1,2}\)</span>. In a classical system we consider the particles to be separated by a minimum distance, called impact parameter <span class="math inline">\(\vert\mathbf{{b}}_{} \vert\)</span>, and consider that their compton wavelength <span class="math inline">\(\ell_c\sim\frac{1}{\vert\mathbf{{k}}_{} \vert},\frac{1}{\vert\mathbf{{k'}}_{} \vert}\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is much smaller than this separation:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;note the use of natural units</p></li></div></div>
+<div class="page-columns page-full"><p>This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential <span class="math inline">\(V(\mathbf{{k}}_{},\mathbf{{k'}}_{})\)</span> and taking the non-relativistic limit <span class="math inline">\(\vert\mathbf{{k}}_{} \vert,\vert\mathbf{{k'}}_{} \vert\ll m_{1,2}\)</span>. In a classical system we assume the particles to be separated by a minimum distance, called impact parameter <span class="math inline">\(\vert\mathbf{{b}}_{} \vert\)</span>, and consider that their Compton wavelength <span class="math inline">\(\ell_c\sim\frac{1}{\vert\mathbf{{k}}_{} \vert},\frac{1}{\vert\mathbf{{k'}}_{} \vert}\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is much smaller than this separation,</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Note the use of natural units.</p></li></div></div>
 <p><span class="math display">\[
-\vert\mathbf{{b}}_{} \vert\ll \ell_c\simeq \frac{1}{\vert\mathbf{{k}}_{} \vert},\frac{1}{\vert\mathbf{{k'}}_{} \vert}
+\vert\mathbf{{b}}_{} \vert\ll \ell_c\simeq \frac{1}{\vert\mathbf{{k}}_{} \vert},\frac{1}{\vert\mathbf{{k'}}_{} \vert}.
 \]</span></p>
-<p>This ensures that the particles are not interacting quantum mechanically in any significant way. Interestingly this heirachy of scales can be rewritten as:</p>
+<p>This ensures that the particles are not interacting quantum mechanically in any significant way. Interestingly this hierarchy of scales can be rewritten as:</p>
 <p><span class="math display">\[
-\mathbf{{J}}_{}\sim\vert\mathbf{{k}}_{}\times\mathbf{{b}}_{} \vert\gg 1
+\mathbf{{J}}_{}\sim\vert\mathbf{{k}}_{}\times\mathbf{{b}}_{} \vert\gg 1.
 \]</span></p>
-<p>Thus any two body classical system has large angular momentum. We can thus extract the classical part of any quantity by taking the Leading Order (<abbr title="Leading Order">LO</abbr>) contribution in the inverse of angular momentum, or equivalently:</p>
+<p>Thus, any two body classical system has large angular momentum. We can extract the classical part of any quantity by taking the Leading Order (<abbr title="Leading Order">LO</abbr>) contribution in the inverse of the angular momentum, or equivalently:</p>
 <p><span id="eq-invang"><span class="math display">\[
-  \frac{1}{J} \propto \frac{1}{\vert b \vert} \sim \vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert\propto \frac{1}{\kappa}
+  \frac{1}{J} \propto \frac{1}{\vert b \vert} \sim \vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert\propto \frac{1}{\kappa},
 \tag{5.1}\]</span></span></p>
-<p>Where we used in the first step that angular momentum is proportional to separation. We then applied the fact that in scattering scenarios the impact parameter is proportional to the inverse of the momentum transfer <span class="math inline">\(\sim\frac{1}{\vert\mathbf{{q}}_{} \vert}\)</span> where :</p>
+<p>where <span class="math inline">\(\kappa\)</span> is the coupling constant, which in the case of gravity is <span class="math inline">\(\kappa=4\pi G\)</span>. For the first relation we used that angular momentum is proportional to separation. We then applied the fact that in scattering scenarios the impact parameter is proportional to the inverse of the momentum transfer <span class="math inline">\(\sim\frac{1}{\vert\mathbf{{q}}_{} \vert}\)</span> where :</p>
 <p><span class="math display">\[
 q=(0,\mathbf{{q}}_{})=(0,\mathbf{{k}}_{}-\mathbf{{k'}}_{}).
 \]</span></p>
-<p>The last relation in <a href="#eq-invang">eq.&nbsp;<span>5.1</span></a> holds due to the virial theorem. Where <span class="math inline">\(\kappa\)</span> is the coupling constant, which in the case of gravity is <span class="math inline">\(\kappa=4\pi G\)</span>. Since the potential must encode the coulomb potential <span class="math inline">\(\kappa/\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert^2\propto J^3\)</span>, it must scale similarly. We thus formulate the following ansatz for the potential: <span id="eq-ansatzpot"><span class="math display">\[
-V(\mathbf{{k}}_{},\mathbf{{k'}}_{})=\sum_{n=0}^\infty \frac{\kappa^n}{\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert^{D-1-n}} c_n\Big(\frac{\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2}{2} \Big)
+<p>The last relation in <a href="#eq-invang">eq.&nbsp;<span>5.1</span></a> holds due to the virial theorem. Since the potential must encode the coulomb potential <span class="math inline">\(\kappa/\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert^2\propto J^3\)</span>, it must scale similarly. We thus formulate the following ansatz for the potential: <span id="eq-ansatzpot"><span class="math display">\[
+V(\mathbf{{k}}_{},\mathbf{{k'}}_{})=\sum_{n=1}^\infty \frac{\kappa^n}{\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert^{D-1-n}} c_n\Big(\frac{\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2}{2} \Big)
 \tag{5.2}\]</span></span></p>
-<div class="page-columns page-full"><p>Note that higher order terms in the potential could be formed by any combination of momentum invariants <span class="math inline">\(\mathbf{{k}}_{}^2\)</span>, <span class="math inline">\(\mathbf{{k'}}_{}^2\)</span>, and <span class="math inline">\(\mathbf{{k}}_{}\cdot\mathbf{{k'}}_{}\)</span>, however not all combinations of these are independent. The ansatz is chosen such that only the combination <span class="math inline">\(\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert\)</span> and <span class="math inline">\(\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2\)</span> is present, the others being combinations reachable by field redefinition, or vanishing on-shell, such as <span class="math inline">\(\mathbf{{k}}_{}^2-\mathbf{{k'}}_{}^2\)</span>. Note as-well that we work in <span class="math inline">\(D=4-2\epsilon\)</span> dimensions such that the integrals are dimensionally regulated <span class="citation" data-cites="tHooft:1972tcz">&nbsp;[see <a href="references.html#ref-tHooft:1972tcz" role="doc-biblioref">21</a>]</span>. This means that an <span class="math inline">\(\epsilon\)</span>-power corresponds to a logarithm<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.Finally note that in gravity this is precisely a <abbr title="Post-Minkowski">PM</abbr> expansion!</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;the third term in the sum is given by <span class="math inline">\(\kappa^3\ln({\mathbf{{k}}_{}-\mathbf{{k'}}_{}})^2 c_3\Big(\frac{1}{2}{\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2} \Big)\)</span></p></li></div></div>
+<div class="page-columns page-full"><p>Note that higher order terms in the potential could be formed by any polynomial of momentum invariants <span class="math inline">\(\mathbf{{k}}_{}^2\)</span>, <span class="math inline">\(\mathbf{{k'}}_{}^2\)</span>, and <span class="math inline">\(\mathbf{{k}}_{}\cdot\mathbf{{k'}}_{}\)</span>. However, not all combinations of these are independent. The ansatz is chosen such that only the variables <span class="math inline">\(\vert\mathbf{{k}}_{}-\mathbf{{k'}}_{} \vert\)</span> and <span class="math inline">\(\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2\)</span> are present, as the others can be reabsorbed by field redefinitions, or vanish on-shell, such as <span class="math inline">\(\mathbf{{k}}_{}^2-\mathbf{{k'}}_{}^2\)</span>. Note as-well that we work in <span class="math inline">\(D=4-2\epsilon\)</span> dimensions such that the integrals are dimensionally regulated <span class="citation" data-cites="tHooft:1972tcz">&nbsp;[see <a href="references.html#ref-tHooft:1972tcz" role="doc-biblioref">21</a>]</span>. In particular an <span class="math inline">\(\epsilon\)</span>-power corresponds to a logarithm<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Finally, note that in gravity this is precisely a <abbr title="Post-Minkowski">PM</abbr> expansion!</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The third term in the sum is given by <span class="math inline">\(\kappa^3\ln({\mathbf{{k}}_{}-\mathbf{{k'}}_{}})^2 c_3\Big(\frac{1}{2}{\mathbf{{k}}_{}^2+\mathbf{{k'}}_{}^2} \Big)\)</span>.</p></li></div></div>
 <section id="eft-amplitude" class="level3 page-columns page-full" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="eft-amplitude"><span class="header-section-number">5.2.1</span> EFT amplitude</h3>
-<p>The first step in establishing a link to the potential from a generic scattering amplitude computed in the full theory is to compute the amplitude in the <abbr title="Effective Field Theory">EFT</abbr> We first identitify the Feynman rules from the action. The kinetic term encodes the propagator:</p>
+<p>The first step in establishing determining the potential from a generic scattering amplitude computed in the full theory is to compute the amplitude in the <abbr title="Effective Field Theory">EFT</abbr> We first identify the Feynman rules from the action. The kinetic term encodes the propagator:</p>
 <div id="fig-propagator" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="tikz/propagator.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption margin-caption">Fig&nbsp;5.1: Propagator rule</figcaption><p></p>
 </figure>
 </div>
-<p>where the <span class="math inline">\(\mathring{\imath}0\)</span> is the Feynman prescription for avoiding the poles. The interaction term encodes the vertex:</p>
+<p>where the <span class="math inline">\(\mathring{\imath}0\)</span> is the Feynman prescription for avoiding the poles. The interaction term is encoded in the vertex</p>
 <div id="fig-vertex" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="tikz/vertex.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption margin-caption">Fig&nbsp;5.2: Vertex rule</figcaption><p></p>
 </figure>
 </div>
-<div class="page-columns page-full"><p>The key point is that the EFT amplitude for two-to-two scattering must be equal to the full amplitude at every order in the coupling constant <span class="math inline">\(\kappa\)</span>. The expression for the <abbr title="Effective Field Theory">EFT</abbr> amplitude will contain the coefficient functions from <a href="#eq-ansatzpot">eq.&nbsp;<span>5.2</span></a> since they will be present as vertex terms. Particle number must be conserved in the non-relativistic limit <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, so the amplitude is a sum of bubble diagrams:</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;as pair production is kinematically forbidden</p></li></div></div>
+<div class="page-columns page-full"><p>The expression for the <abbr title="Effective Field Theory">EFT</abbr> amplitude will contain the coefficient functions from <a href="#eq-ansatzpot">eq.&nbsp;<span>5.2</span></a> since they will be present as vertex terms. Particle number must be conserved in the non-relativistic limit <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, so the amplitude is a sum of bubble diagrams:</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;As pair production is kinematically forbidden.</p></li></div></div>
 <div id="fig-eftampl" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="./tikz/eftampl.svg" class="img-fluid figure-img"></p>
@@ -351,34 +351,35 @@ V(\mathbf{{k}}_{},\mathbf{{k'}}_{})=\sum_{n=0}^\infty \frac{\kappa^n}{\vert\math
 </div>
 <p>We can consequently neatly organise the amplitude into a sum of terms with specific loop counts. We can also equivalently organise it into a sum of terms with specific <span class="math inline">\(\kappa\)</span> powers. We write,</p>
 <p><span class="math display">\[\mathcal{A}^{}_\text{EFT}=\sum\limits_{L=0}^\infty\mathcal{A}^{L\text{loop}}_\text{EFT}=\sum\limits_{i=1}^\infty \mathcal{A}^{(i)}_\text{EFT}.\]</span></p>
-<p>Notably, these partitions do not line up for the <abbr title="Effective Field Theory">EFT</abbr> since the vertex contains all powers of the coupling. This is in contrast to the full theory where usually they yield the same partition. We will eventually want to partition over the coupling power to compare the full theory.</p>
-<div class="page-columns page-full"><p>Since every vertex has degree 4, and we have two scalars in and two scalars out, it is convient to define a 2-body propagator. We can already integrate over the energy component of the loop momentum, since the vertex does not have an energy dependence:<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;the 4-momentum conservation at each vertex means that the energy components of the two propagating momenta must carry along the energy component of the initial state <span class="math inline">\(E_{}=E_{1}+E_{2}\)</span>. This can be encoded by demanding that <span class="math inline">\(\omega_1+\omega_2=E_{}\)</span>. Taking the Center of Momentum (<abbr title="Center of Momentum">COM</abbr>) frame for the intial momenta means that the 3 momenta of each propagator must cancel i.e.&nbsp;<span class="math inline">\(\mathbf{{k}}_{1}+\mathbf{{k}}_{2}\)</span></p></li></div></div>
+<p>Notably, these partitions do not line up for the <abbr title="Effective Field Theory">EFT</abbr> since the vertex contains all powers of the coupling. This is in contrast to the full theory where in fact they yield the same partition. We will eventually want to partition over the coupling power to compare the full theory.</p>
+<div class="page-columns page-full"><p>Since every cut of the diagrams contributing to <span class="math inline">\(\mathcal{A}^{}_\text{EFT}\)</span> contains two propagators it is useful to define a 2-body propagator. We can integrate over the energy components of the loop momentum, since the vertex does not have an energy dependence:<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;The 4-momentum conservation at each vertex means that the energy components of the two propagating momenta must carry along the energy component of the initial state <span class="math inline">\(E_{}=E_{1}+E_{2}\)</span>. This can be encoded by demanding that <span class="math inline">\(\omega_1+\omega_2=E_{}\)</span>. Taking the Center of Momentum (<abbr title="Center of Momentum">COM</abbr>) frame for the intial momenta means that the 3 momenta of each propagator must cancel i.e.&nbsp;<span class="math inline">\(\mathbf{{k}}_{1}+\mathbf{{k}}_{2}=0\)</span></p></li></div></div>
 <p><span class="math display">\[\mathring{\imath}\Delta_2(\mathbf{{k}}_{} )=\int \,\tilde{\mathrm{d}}^{}\omega\, \frac{\mathring{\imath}}{\omega-\sqrt{\mathbf{{k}}_{}^2+m_1^2}}\frac{\mathring{\imath}}{E_{}-\omega-\sqrt{\mathbf{{k}}_{}^2+m_2^2}}=\frac{\mathring{\imath}}{E_{}-\sqrt{\mathbf{{k}}_{}^2+m_{1}^2}-\sqrt{\mathbf{{k}}_{}^2+m_{2}^2}},\]</span></p>
-<div class="page-columns page-full"><p>where the integral is performed using the residue theorem, closing the contour in either half plane, where in either case a pole is present. Note that we define <span class="math inline">\(E_{}=E_{1}+E_{2}\)</span> to be the <abbr title="Center of Momentum">COM</abbr> energy of the two inital states:<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;which is equal to the outgoing energy</p></li></div></div>
+<div class="page-columns page-full"><p>where the integral is performed using the residue theorem, closing the contour in either half plane, where in either case a pole is present. We have define <span class="math inline">\(E_{}=E_{1}+E_{2}\)</span> to be the <abbr title="Center of Momentum">COM</abbr> energy of the two inital states:<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;which is equal to the outgoing energy</p></li></div></div>
 <p><span class="math display">\[
-E_{1,2}=\sqrt{\mathbf{{p}}_{}^2+m_{1,2}^2}=\sqrt{\mathbf{{p'}}_{}^2+m_{1,2}^2},
+E_{i}=\sqrt{\mathbf{{p}}_{}^2+m_{i}^2}=\sqrt{\mathbf{{p'}}_{}^2+m_{i}^2},
 \]</span></p>
-<div class="page-columns page-full"><p>where <span class="math inline">\(\mathbf{{p}}_{}\)</span> and <span class="math inline">\(\mathbf{{p'}}_{}\)</span> are the initial and final three-momenta of the two states <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> in the <abbr title="Center of Momentum">COM</abbr> frame. Finally we can write what the diagram at loop level <span class="math inline">\(L&gt;0\)</span> encodes:</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;for example in the initial state one scalar field will have 3-momentum <span class="math inline">\(\mathbf{{p}}_{}\)</span>, and the other <span class="math inline">\(-\mathbf{{p}}_{}\)</span></p></li></div></div>
+<div class="page-columns page-full"><p>where <span class="math inline">\(\mathbf{{p}}_{}\)</span> and <span class="math inline">\(\mathbf{{p'}}_{}\)</span> are the initial and final three-momenta of the two states <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> in the <abbr title="Center of Momentum">COM</abbr> frame. Finally, we can write the diagram at loop level <span class="math inline">\(L&gt;0\)</span> encodes:</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;For example in the initial state one scalar field will have 3-momentum <span class="math inline">\(\mathbf{{p}}_{}\)</span>, and the other <span class="math inline">\(-\mathbf{{p}}_{}\)</span></p></li></div></div>
 <p><span class="math display">\[
 \mathcal{A}^{L\text{loop}}_\text{EFT}= \int\prod\limits_{i=1}^L  \,\tilde{\mathrm{d}}^{\small D-1}\mathbf{{k}}_{i}\, V(\mathbf{{p}}_{},\mathbf{{k}}_{1})\Delta_2(\mathbf{{k}}_{1} )\cdots\Delta_2(\mathbf{{k}}_{L} )V(\mathbf{{k}}_{L},\mathbf{{p'}}_{}).
 \]</span></p>
-<div class="page-columns page-full"><p>This integral can be perfomed in the non-relativistic limit, as done by <span class="citation" data-cites="Bern:2019crd">&nbsp;[<a href="references.html#ref-Bern:2019crd" role="doc-biblioref">22</a>]</span> up to <abbr title="Post-Minkowski">PM</abbr> using <abbr title="Integration by Parts">IBP</abbr> reduction yielding, up to <abbr title="Post-Minkowski">PM</abbr> the amplitudes of the <abbr title="Effective Field Theory">EFT</abbr><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;here the repartioning mentioned above has been applied and a change in loop momenta: <span class="math inline">\(\mathbf{{k}}_{i}\to\mathbf{{p}}_{}+\mathbf{{\ell}}_{i}\)</span></p></li></div></div>
+<div class="page-columns page-full"><p>This integral can be performed in the non-relativistic limit, as done by <span class="citation" data-cites="Bern:2019crd">&nbsp;[Bern et al. <a href="references.html#ref-Bern:2019crd" role="doc-biblioref">22</a>]</span> up to <abbr title="Post-Minkowski">PM</abbr> Up to <abbr title="Post-Minkowski">PM</abbr> the amplitudes of the <abbr title="Effective Field Theory">EFT</abbr> is:<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Here the repartioning mentioned above has been applied and a change in loop momenta: <span class="math inline">\(\mathbf{{k}}_{i}\to\mathbf{{p}}_{}+\mathbf{{\ell}}_{i}\)</span>.</p></li></div></div>
 <p><span class="math display">\[
 \begin{aligned}
-\mathcal{A}^{(1)}_\text{EFT}&amp;=-\frac{4\pi Gc_1}{\mathbf{{q}}_{}^2}\\
+\mathcal{A}^{(1)}_\text{EFT}&amp;=-\frac{4\pi Gc_1}{\mathbf{{q}}_{}^2},\\
 \mathcal{A}^{(2)}_\text{EFT}&amp;= \pi^2G^2 \Big(-\frac{2 c_2}{\vert\mathbf{{q}}_{} \vert}+\frac{1}{E_{}\xi\vert\mathbf{{q}}_{} \vert}\Big[(1-3\xi)c_1^2+4\xi^2E_{}^2c_1 c'_1 \Big]\\
                   &amp; \int \,\tilde{\mathrm{d}}^{D-1}\mathbf{{\ell}}_{}\,\frac{32E_{}\xi c_1^2}{\mathbf{{\ell}}_{}^2(\mathbf{{q}}_{}+\mathbf{{\ell}}_{})^2(\mathbf{{\ell}}_{}^2+2\mathbf{{p}}_{}\mathbf{{\ell}}_{})}\Big),
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(\xi=\frac{E_{1}E_{2}}{(E_{1}+E_{2} )^2}\)</span> is the reduced energy ratio. The arguments of the coefficent functions <span class="math inline">\(c_1\)</span> are kept iplicit and a prime denotes a derivative with respect to <span class="math inline">\(\mathbf{{p_{}}}_{}\)</span>. Additionally we define <span class="math inline">\(\mathbf{{q}}_{}=\mathbf{{p'}}_{}-\mathbf{{p}}_{}\)</span> to be the 3-momentum transfer. Now provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we have that</p>
+<p>where <span class="math inline">\(\xi=\frac{E_{1}E_{2}}{(E_{1}+E_{2} )^2}\)</span> is the reduced energy ratio. The arguments of the coefficient functions <span class="math inline">\(c_1\)</span> are kept implicit and a prime denotes a derivative with respect to <span class="math inline">\(\mathbf{{p_{}}}_{}\)</span>. Additionally, we defined <span class="math inline">\(\mathbf{{q}}_{}=\mathbf{{p'}}_{}-\mathbf{{p}}_{}\)</span> to be the 3-momentum transfer.</p>
+<p>The key point is that the matching procedure requires the EFT amplitude for two-to-two scattering to be equal to the full amplitude at every order in the coupling constant <span class="math inline">\(\kappa\)</span>, i.e.&nbsp;provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we impose that</p>
 <p><span class="math display">\[
 \mathcal{A}^{(i)}_\text{EFT}=\mathcal{A}^{(i)}_\text{full} \quad \forall i.
 \]</span></p>
-<p>This enables us to fix the coefficients in the potential ansatz <a href="#eq-ansatzpot">eq.&nbsp;<span>5.2</span></a>, and fullfils the promised map from amplitude to potential. Importantly we must apply the limiting procedure applied above, i.e.&nbsp;the classical and non relativitic limit. We can summarise this by setting the following heirarchy:</p>
+<p>which fixes the coefficients in the potential ansatz <a href="#eq-ansatzpot">eq.&nbsp;<span>5.2</span></a>, and fullfils the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e.&nbsp;the classical and non relativistic limit, which is summarised by the following heirarchy of scales:</p>
 <p><span class="math display">\[
 m_{1},m_{2}\ll J \vert\mathbf{{q}}_{} \vert \ll \vert\mathbf{{q}}_{} \vert.
 \]</span></p>
-<p>For the full theory this can be encoded as restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:</p>
+<p>In the full theory this hierarchy is equivalent to restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -397,65 +398,63 @@ m_{1},m_{2}\ll J \vert\mathbf{{q}}_{} \vert \ll \vert\mathbf{{q}}_{} \vert.
 </tr>
 </tbody>
 </table>
-<p>The soft region is responsible for the classical limit in this language, as we consider a small <span class="math inline">\(\vert\mathbf{{q_{}}}_{} \vert\)</span> expansion. We will infact explore this fact in a different light in <a href="#sec-kmoc"><span>Section&nbsp;5.3</span></a>. Taking the <abbr title="Numerical Relativity">NR</abbr> limit corresponds to a subregion of the soft region, the so-called potential region:</p>
-<p><span class="math display">\[ (\omega,\mathbf{{\ell}}_{})\sim (\vert\mathbf{{q_{}}}_{} \vert,\vert\mathbf{{q_{}}}_{} \vert),\]</span></p>
+<p>In this language, the soft region is responsible for the classical limit, since we consider a small <span class="math inline">\(\vert\mathbf{{q_{}}}_{} \vert\)</span> expansion. We will infact explore this expansion in a different light in <a href="#sec-kmoc"><span>Section&nbsp;5.3</span></a>. Taking the <abbr title="Numerical Relativity">NR</abbr> limit corresponds to a subregion of the soft region, the so-called potential region:</p>
+<p><span class="math display">\[ (\omega,\mathbf{{\ell}}_{})\sim (\vert\mathbf{{u_{}}}_{} \vert\vert\mathbf{{q_{}}}_{} \vert,\vert\mathbf{{q_{}}}_{} \vert),\]</span></p>
 <div class="page-columns page-full"><p>where we use that the <abbr title="Numerical Relativity">NR</abbr> expansion is a given by <span class="math display">\[\vert\mathbf{{p_{}}}_{} \vert\ll m\]</span> and thus equivalently<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> by a small relative velocity:</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;dividing by mass</p></li></div></div>
 <p><span class="math display">\[ \vert\mathbf{{u_{}}}_{} \vert\ll1.\]</span></p>
-<p>To summarise, to obtain the form of the potential, we first compute the amplitude in an <abbr title="Effective Field Theory">EFT</abbr> absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can go ahead and compute this amplitude in the non-relativistic limit. This same amplitude can be computed in the full theory, but by still taking the limiting procedure we drastically reduce the kinematic region, simplifying calculations (in fact eliminating diagrams) and allowing us to match order by order the <abbr title="Effective Field Theory">EFT</abbr> amplitude. This fixes the coefficents postulated for the potential.</p>
-<p>Unfortunately the procedure desribed above, and in fact <em>any</em> procedure trying to make contact with <abbr title="Effective One-Body">EOB</abbr> through expanding the gravitiational potential, automatically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of <abbr title="Effective One-Body">EOB</abbr> this radiation reaction was added after the fact, through direct modifications of the Equation of Motion (<abbr title="Equation of Motion">EOM</abbr>) obtained from Hamilton’s equations. It is not clear how to incorporate dissipative data from the amplitude in the <abbr title="Effective One-Body">EOB</abbr> framework.</p>
+<p>To summarise, in order to obtain the form of the potential, we first compute the amplitude in an <abbr title="Effective Field Theory">EFT</abbr> absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can compute the amplitude in the non-relativistic limit in terms of unknown coefficients. This same amplitude can be computed in the full theory, which, as a consequence of the limiting procedure, has simplified kinematic dependence. The coefficients of the <abbr title="Effective Field Theory">EFT</abbr> amplitude are then determined by matching it order by order with the full amplitude.</p>
+<p>Unfortunately, the procedure described above, and in fact <em>any</em> procedure trying to make contact with <abbr title="Effective One-Body">EOB</abbr> by expanding the gravitiational potential, intrinsically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of <abbr title="Effective One-Body">EOB</abbr> this radiation reaction was added after the fact, through direct modifications of the Equation of Motion (<abbr title="Equation of Motion">EOM</abbr>) obtained from Hamilton’s equations. It is not clear how to incorporate dissipative data from the amplitude in the <abbr title="Effective One-Body">EOB</abbr> framework.</p>
 <p>One way to not encounter this difficulty is to fully bypass the <abbr title="Effective One-Body">EOB</abbr> framework and try to obtain observables directly from the amplitude. This is the subject of the following sections.</p>
 </section>
 </section>
 <section id="sec-kmoc" class="level2 page-columns page-full" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="sec-kmoc"><span class="header-section-number">5.3</span> <abbr title="Kosower Maybee and O’Connell">KMOC</abbr></h2>
-<p>The setup of the <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework (<span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span>) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> and gravity.</p>
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-kmoc"><span class="header-section-number">5.3</span> <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework</h2>
+<p>The <abbr title="Kosower Maybee and O’Connell">KMOC</abbr> framework (<span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span>) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will apply it later on to <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> and gravity.</p>
 <section id="conventions" class="level3 page-columns page-full" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="conventions"><span class="header-section-number">5.3.1</span> Conventions</h3>
-<p>First let us define our conventions. Throughout this section we use relativistically natural units, i.e.&nbsp;we do <em>not</em> set <span class="math inline">\(\hbar=1\)</span>. This will essentially be the small parameter that multiplies the soft momenta, that defined the region in <a href="#sec-amp2pot"><span>Section&nbsp;5.2</span></a>. In this section we will further motivate this classical limit, in more detail, by taking the generally accepted limit that makes quantum physics collapse to classical physics:</p>
+<p>First let us define our conventions. Throughout this section we use relativistically natural units, i.e.&nbsp;we do <em>not</em> set <span class="math inline">\(\hbar=1\)</span>. This will essentially be the small parameter that multiplies the soft momenta that defined the region in <a href="#sec-amp2pot"><span>Section&nbsp;5.2</span></a>. In this section we will further motivate this classical limit in more detail by taking the generally accepted limit that makes quantum physics collapse to classical physics</p>
 <p><span class="math display">\[\hbar\to0.\]</span></p>
-<p>We still retain <span class="math inline">\(c=1\)</span>, meaning that, using dimensional analysis we have that <span class="math inline">\([L][T]^{-1}=1 \implies [L]=[T]\)</span>, length and time are measured in the same units. Correspondingly, energy is measured in units of mass: <span class="math display">\[
-E_{}=mc^2\implies[E_{}]=[m]=[M]
+<p>We still retain <span class="math inline">\(c=1\)</span>, meaning that, using dimensional analysis we have that <span class="math inline">\([L][T]^{-1}=1\)</span> i.e.&nbsp;<span class="math inline">\([L]=[T]\)</span>, length and time are measured in the same units. Correspondingly, energy is measured in units of mass <span class="math display">\[
+E_{}=mc^2\implies[E_{}]=[m]=[M],
 \]</span></p>
-<p>and <span class="math inline">\(\hbar\)</span> has the following units:</p>
+<p>and <span class="math inline">\(\hbar\)</span> has the following units</p>
 <p><span class="math display">\[
 E_{}=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 .\]</span></p>
-<div class="page-columns page-full"><p>Thus momentum <span class="math inline">\(p_{}\)</span> has units of <span class="math inline">\([p_{}]=[M]\)</span> mass and Wavenumber <span class="math inline">\([\bar{p_{}}]=[\frac{p_{}}{\hbar}]=[T]^{-1}\)</span> has units of inverse time. We will denote the on-mass-<span class="math inline">\(m\)</span>-shell measure by <span class="math inline">\(\,\mathrm{d}\Phi_{}(p)\,\)</span><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Repeated integration will be denoted <span class="math inline">\(\,\mathrm{d}\Phi_{n}(p_1,\dots,p_n)\,\)</span></p></li></div></div>
+<div class="page-columns page-full"><p>Thus momentum <span class="math inline">\(p_{}\)</span> has units of <span class="math inline">\([p_{}]=[M]\)</span> mass and Wavenumber <span class="math inline">\([\bar{p_{}}]=[\frac{p_{}}{\hbar}]=[T]^{-1}\)</span> has units of inverse time. We will denote the Lorentz-invariant phase space measure by <span class="math inline">\(\,\mathrm{d}\Phi_{}(p)\,\)</span><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Repeated integration will be denoted <span class="math inline">\(\,\mathrm{d}\Phi_{n}(p_1,\dots,p_n)\,\)</span></p></li></div></div>
 <p><span class="math display">\[
 \int \,\mathrm{d}\Phi_{}(p)\, \dots      = \int \frac{\,\mathrm{d}^{3}\mathbf{{p}}_{}\,}{2\hbar\omega_{\mathbf{{p}}_{}}(2\pi)^3} \dots = \int \,\tilde{\mathrm{d}}^{4}p\,\tilde{\delta}^{(+)}(p^2-m^2) \dots,
 \]</span></p>
-<p>where quantities denoted by bars absorb the relevant factors of <span class="math inline">\(2\pi\)</span>, such that <span class="math inline">\(\,\tilde{\mathrm{d}}^{n}p\,=\frac{\,\mathrm{d}^{n}p\,}{(2\pi)^n}\)</span>. Additionally we have defined <span class="math inline">\(\hbar\omega_{\mathbf{{p}}_{}}=\sqrt{\mathbf{{p}}_{}^2+m^2}\)</span> to be the on-shell energy and <span class="math inline">\(\delta^{(+)}\)</span> is the normalised positive energy on-shell delta function:</p>
+<p>where quantities denoted by bars absorb the relevant factors of <span class="math inline">\(2\pi\)</span>, such that <span class="math inline">\(\,\tilde{\mathrm{d}}^{n}p\,=\frac{\,\mathrm{d}^{n}p\,}{(2\pi)^n}\)</span>. Additionally, we have defined <span class="math inline">\(\hbar\omega_{\mathbf{{p}}_{}}=\sqrt{\mathbf{{p}}_{}^2+m^2}\)</span> to be the on-shell energy and <span class="math inline">\(\delta^{(+)}\)</span> is the normalised positive energy on-shell delta function:</p>
 <p><span class="math display">\[
 \tilde{\delta}^{(+)}(p^2-m^2)=(2\pi)\delta^{{}}({p}_{}^2-m^2)\Theta^{{}}(p{}^{0})=\tilde{\delta}^{}({p}_{}^2-m^2)\Theta^{{}}(p{}^{0})
 \]</span></p>
 </section>
 <section id="intital-state" class="level3 page-columns page-full" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="intital-state"><span class="header-section-number">5.3.2</span> Intital State</h3>
-<p>With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e.&nbsp;a classical two in two out scattering). As mentioned in <a href="#sec-scatamp"><span>Section&nbsp;5.1</span></a>, in <abbr title="Quantum Field Theory">QFT</abbr> the framework that formalizes scattering of definite particle number states is called the <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction.</p>
+<p>With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons, into each other, with a constant particle number (i.e.&nbsp;a classical two in two out scattering). As mentioned in <a href="#sec-scatamp"><span>Section&nbsp;5.1</span></a>, in <abbr title="Quantum Field Theory">QFT</abbr> the framework that formalizes scattering of definite particle number states is based on the <abbr title="Lehmann Symanzik and Zimmermann">LSZ</abbr> reduction formula.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">we work in the Heisenberg picture here</span></div></div>
-<p>Let us look at it in more detail. The first component is to define the states we want to scatter. Suppose our theory has single particle states <span class="math inline">\(\vert p \rangle_{\text{}}\)</span>, with mass <span class="math inline">\(m_{}\)</span>, eigenstates of the momentum:</p>
-<p><span class="math display">\[\mathbb{P}{}^{\mu}\vert p \rangle_{\text{}}=p_{}{}^{\mu}\vert p \rangle_{\text{}}\quad \text{where} \quad p^0=\hbar\omega_{\mathbf{{p}}_{}}=\sqrt{\mathbf{{p_{}}}_{}^2+m_{}^2}.\]</span></p>
+<p>Let us look at it in more detail. The first step is to define the states we want to scatter. Suppose our theory has single particle states <span class="math inline">\(\vert p \rangle_{\text{}}\)</span>, with mass <span class="math inline">\(m_{}\)</span>, eigenstates of the momentum:</p>
+<p><span class="math display">\[\mathbb{P}{}^{\mu}\vert p \rangle_{\text{}}=p_{}{}^{\mu}\vert p \rangle_{\text{}}\quad \text{with} \quad p^0=\hbar\omega_{\mathbf{{p}}_{}}=\sqrt{\mathbf{{p_{}}}_{}^2+m_{}^2}.\]</span></p>
 <div class="page-columns page-full"><p>These states can be seen as special cases (the plane wave states) of wavepacket states:<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;A plane wave state <span class="math inline">\(\vert f \rangle_{\text{}}=\vert p \rangle_{\text{}}\)</span> would be given by <span class="math inline">\(\breve{f}(k)=2 \hbar\omega_{\mathbf{{k}}_{}} \tilde{\delta}^{(3)}(\mathbf{{k}}_{}-\mathbf{{p}}_{})\)</span></p></li></div></div>
 <p><span class="math display">\[\vert f \rangle_{\text{}}=\int \,\mathrm{d}\Phi_{}(k)\, \breve{f}(k) \vert k \rangle_{\text{}},\]</span></p>
-<div class="page-columns page-full"><p>where <span class="math inline">\(\breve{f}(k)\)</span> is the momentum space wavefunction or more mathematically the momentum distribution function. Note that it is almost a fourier transform, but not quite, as it is performed on mass shell. If the spacetime ‘wavefunction’ <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> is given by:</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;Note that the concept of coordinate space wavefunction is ill defined in interacting theories. However for such asymptotic states, the wavefunction outside the bulk (on the infinte time boundary) is that of a free wavefunction</p></li></div></div>
+<div class="page-columns page-full"><p>where <span class="math inline">\(\breve{f}(k)\)</span> is the momentum space wavefunction or, more mathematically, the momentum distribution function. Note that it is almost a Fourier transform, but not quite, as it is performed on the mass shell. If the spacetime ‘wavefunction’ <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> is given by</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;Note that the concept of coordinate space wavefunction is ill defined in interacting theories. However for such asymptotic states, the wavefunction outside the bulk (on the infinte time boundary) is that of a free wavefunction.</p></li></div></div>
 <p><span id="eq-spacetimewf"><span class="math display">\[f(x)=\int \,\mathrm{d}\Phi_{}(k)\, \breve{f}(k) \mathrm{e}^{-\mathring{\imath}{k}_{}\cdot{x}_{}}, \tag{5.3}\]</span></span></p>
-<p>the <span class="math inline">\(\breve{f}(k)\)</span> is consequently given by:</p>
+<p>so that <span class="math inline">\(\breve{f}(k)\)</span> is consequently given by</p>
 <p><span id="eq-momdist"><span class="math display">\[\langle k \vert f \rangle=\breve{f}(k)= 2 \hbar\omega_{\mathbf{{p}}_{}}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,f(x) \mathrm{e}^{\mathring{\imath}k\cdot x}. \tag{5.4}\]</span></span></p>
-<div class="page-columns page-full"><p>If we now define the following operators:<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;<span class="math inline">\(f\overleftrightarrow{\partial_{\mu}}g=f(\partial_{\mu}g )-(\partial_{\mu}f )g\)</span></p></li></div></div>
-<div class="aside">
-<p>Note that if we replace <span class="math inline">\(f(x)\)</span> by a plane wave state <span class="math inline">\(\mathrm{e}^{-\mathring{\imath}k\cdot x}\)</span> we obtain and define the following:</p>
+<div class="page-columns page-full"><p>If we now define the following operators<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> ^[ Note that if we replace <span class="math inline">\(f(x)\)</span> by a plane wave state <span class="math inline">\(\mathrm{e}^{-\mathring{\imath}k\cdot x}\)</span> we obtain and define the following:</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;<span class="math inline">\(f\overleftrightarrow{\partial_{\mu}}g=f(\partial_{\mu}g )-(\partial_{\mu}f )g\)</span></p></li></div></div>
 <p><span class="math display">\[
-a_{\mathbf{{k}}_{}}^{\dagger}(t)=  \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{-\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)-\mathring{\imath}\partial_{0}f_{}(x) \Big]
+a_{\mathbf{{k}}_{}}^{\dagger}(t)=  \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{-\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)-\mathring{\imath}\partial_{0}f_{}(x) \Big],
 \]</span></p>
 <p><span class="math display">\[
-a_{\mathbf{{k}}_{}}(t)=   \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)+\mathring{\imath}\partial_{0}f_{}(x) \Big]
+a_{\mathbf{{k}}_{}}(t)=   \int \,\mathrm{d}^{3}\mathbf{{x}}_{}\, \mathrm{e}^{\mathring{\imath}k\cdot x} \Big[\hbar\omega_{\mathbf{{k}}_{}}f_{}(x)+\mathring{\imath}\partial_{0}f_{}(x) \Big],
 \]</span></p>
-</div>
+<p>]</p>
 <p><span class="math display">\[
-a_{f}^{\dagger}(t)= -  \mathring{\imath}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,f(x) \overleftrightarrow{\partial_{0}} \phi_{}(x)
+a_{f}^{\dagger}(t)= -  \mathring{\imath}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,f(x) \overleftrightarrow{\partial_{0}} \phi_{}(x),
 \]</span></p>
 <p><span class="math display">\[
-a_{f}(t)=   \mathring{\imath}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,{f{}^\ast}(x) \overleftrightarrow{\partial_{0}} \phi_{}(x)
+a_{f}(t)=   \mathring{\imath}\int \,\mathrm{d}^{3}\mathbf{{x}}_{}\,{f{}^\ast}(x) \overleftrightarrow{\partial_{0}} \phi_{}(x),
 \]</span></p>
 <div class="page-columns page-full"><p>where <span class="math inline">\(\phi_{}(x)\)</span> is the Heisenberg field operator of our theory. Note that while these operators are time dependent, this dependence is not given by applying the Heisenberg <abbr title="Equation of Motion">EOM</abbr> <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>, instead it is present through the time dependence of the wavefunction <span class="math inline">\(f(x)\)</span>. It turns out that these operators, suggestively written are the true creation and annilihation operators in the interacting theory.</p><div class="no-row-height column-margin column-container"><li id="fn14"><p><sup>14</sup>&nbsp;<span class="math inline">\(\frac{\mathrm{d}^{} A_H(t)}{\mathrm{d}{t}^{}}=\mathring{\imath}[H_H,A_H(t)]\)</span></p></li></div></div>
 <div class="page-columns page-full"><p>Now we can actually define a general one particle state <span class="math inline">\(\vert f \rangle_{\text{}}\)</span> as the result of a creation operator acting on the physical vacuum. Crucially however this only makes sense in the boundary of the bulk, i.e.&nbsp;at asymptotic times <span class="math inline">\(t\to\pm\infty\)</span><a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Inside the bulk, any thusly created state would infact not have definite particle number. This definitely makes sense in the scattering problem because if you consider the whole system as a state, it only has definite particle number at asymptotic times, and inside the bulk the scattering happens, and the particle number is not conserved (at least quantum mechanically).</p><div class="no-row-height column-margin column-container"><li id="fn15"><p><sup>15</sup>&nbsp;see <span class="citation" data-cites="Coleman:2018a">&nbsp;[<a href="references.html#ref-Coleman:2018a" role="doc-biblioref">18</a>]</span> or <span class="citation" data-cites="Collins:2019ozc">&nbsp;[<a href="references.html#ref-Collins:2019ozc" role="doc-biblioref">20</a>]</span> for a more in depth discussion of this point</p></li></div></div>
@@ -638,7 +637,7 @@ d(m,\xi,u,q_{})=\int \,\mathrm{d}\Phi_{}(p_{})\, \tilde{\delta}^{}(2 p_{}\cdot q
 <p><span class="math display">\[
 d(m,\xi,u,q_{})=\text{peaked function imposing that } {2\ell_s\, \bar{q}_{}\cdot u=\frac{\ell_c}{\ell_s}}\text{ with width } \xi^\beta.
 \]</span></p>
-<div class="cell page-columns page-full" data-execution_count="4">
+<div class="cell page-columns page-full" data-execution_count="5">
 
 <div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="2">
 <div id="fig-gaussian" class="quarto-figure quarto-figure-center anchored page-columns page-full">
@@ -2180,7 +2179,7 @@ n7-&gt;n2
 <p>There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous <span class="math inline">\(\hbar^{-2}\)</span> scaling (see <a href="#eq-photonscale">eq.&nbsp;<span>5.22</span></a>), the vertices only bring constants, and the loop integration has <span class="math inline">\(\hbar^4\)</span> scaling. Together this means that the reduced amplitude has <span class="math inline">\(\hbar^0\)</span> scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum’s <span class="math inline">\(\hbar\)</span> scale (see <a href="#eq-impulseIr">eq.&nbsp;<span>5.16</span></a>). Thus the double seagull diagram dies in the classical limit.</p>
 <div class="page-columns page-full"><p>We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>. We will also extract one of these integrands by hand, for completeness and comparison.</p><div class="no-row-height column-margin column-container"><li id="fn30"><p><sup>30</sup>&nbsp;at least at the unintegrated level</p></li></div></div>
 <p>The first step is to define the Feynman rules in a computer readable format. We will use <code>Julia</code> to apply these rules at every vertex and every edge, but for the actual computation we will use <code>FORM</code> <span class="citation" data-cites="Vermaseren:2000nd Kuipers:2012rf">&nbsp;[<a href="references.html#ref-Vermaseren:2000nd" role="doc-biblioref">26</a>,<a href="references.html#ref-Kuipers:2012rf" role="doc-biblioref">27</a>]</span> which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of <code>Julia</code>s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> as follows:</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
@@ -2225,7 +2224,7 @@ n7-&gt;n2
 D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=(p^2-m_i^2+i\epsilon )^{n} \quad \text{thus} \quad \mathtt{prop(-1,i,p)}=\frac{1}{p^2-m_i^2+i\epsilon}.
 \]</span></p>
 <p>We can now apply these feynamn rules to the graphs we have left, obtaining <code>FORM</code> readable integrands. For example the box diagram gives:</p>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{julia}</span></span>
@@ -2657,27 +2656,27 @@ editor:
 
 
 
-Whilst we have almost no hope to detect any (?:gw) scattering events with current experiments, scattering calculations can still be very useful in the quest for orbital waveforms. Most importantly, while experimental data is not driving gravitational scattering theory, particle scattering experiment and theory have been an enormously fruitful endeavor for High energy physics. The back and forth between precise measurements (such as those conducted at the (?:lhc) ) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible. It would be therefore very beneficial if one could apply the large knowledge acquired for small non-gravitationally interacting particles, to large compact orbiting bodies. 
+Whilst we have almost no hope to detect any (?:gw) scattering events with current experimental apparatuses, the scattering formalism can still be very useful in the quest for orbital waveforms. Most importantly, while experimental data has not been driving *gravitational* scattering theory, the interplay between *particle* scattering experiment and theory have been an enormously fruitful endeavor for the understanding of fundamental interactions in (?:hep). The back and forth between precise measurements (such as those conducted at the (?:lhc) ) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible. It would be therefore very beneficial if one could apply the large knowledge acquired for small non-gravitationally interacting particles, to large compact orbiting bodies. We will see that it is indeed the case.
 
-Such techniques as (?:eft), double copy, generalized unitarity, (?:ibp) reduction, differential equations methods, all standing on the shoulders of Feynman perturbative techniques have been applied to the scattering problem in gravity. A key part of applying tools originally developed for mostly quantum systems is controlling the classical limit, and is part of the solution to implementing gravity in a (?:qft) framework, a historically difficult endeavor. Once scattering data is obtained one needs to extract the relevant observables. This may be in an effort to compare results from the different methods, in which case gauge and diffeomorphism invariance are key. It can also be to extract the relevant information for detection and data extraction, in which case the (?:gw) waveform is the relevant observable. In the latter case one is mostly interested in the orbital waveform, and thus a map from unbound to bound orbits is necessary. 
+Such techniques including (?:eft), double copy, generalized unitarity, (?:ibp) reduction, differential equations methods, developed in the context of perturbative computations of collider observables now find an application to the scattering problem in gravity. A key part of applying tools originally developed for quantum systems to problems in gravity is controlling the classical limit, a historically difficult endeavor. Once scattering data is obtained one needs to extract the relevant observables. This may be in an effort to compare results from the different methods, in which case gauge and diffeomorphism, and lorentz invariance are key, since different methods make different gauge and frame choices. It can also be to extract the relevant information for detection and data extraction, in which case the (?:gw) waveform is the relevant observable. In the latter case one is mostly interested in the orbital waveform, and thus a map from unbound to bound orbits is necessary. 
 
-Multiple formalisms have arisen to map the scattering problem to an orbital one, and the quantum formalism to a classical one. One key way is to map scattering data to the potential (as present in a Hamiltonian for example). In fact this has been developped as early as the 1970s in [@Hiida:1972xs;@Iwasaki:1971vb]. Further developments happened in [@Neill:2013wsa;@Bjerrum-Bohr:2013bxa;@Vaidya:2014kza;@Cachazo:2017jef;@Guevara:2017csg;@Damour:2016gwp]. Here we will follow the treatment in @Cheung:2018wkq, where one uses the conservative part of such scattering amplitudes to match to an (?:eft) and subsequently to map to the potential. Recently efforts to add disipative effects have been succesful aswell [see @Kalin:2022hph]. This potential can then be used as input to the (?:eob) formalism. Furthermore, @Kalin:2019rwq; @Kalin:2019inp, have shown a path forward in directly extending unbound data to bound orbits, obviating the need to use a potential and (?:eob) at all. 
+Multiple formalisms have arisen to map the scattering problem to an orbital one, and the quantum formalism to a classical one. One key way is to map scattering data to a potential (as present in a Hamiltonian for example). In fact this has been developped as early as the 1970s in [@Hiida:1972xs;@Iwasaki:1971vb]. Further developments happened in [@Neill:2013wsa;@Bjerrum-Bohr:2013bxa;@Vaidya:2014kza;@Cachazo:2017jef;@Guevara:2017csg;@Damour:2016gwp]. Here we will follow the treatment in [Cheung, Rothstein, and Solon @Cheung:2018wkq], where the conservative part of such scattering amplitudes is matched to an (?:eft) and subsequently to mapped to a potential. Recent efforts to add dissipative effects have also been successful [see @Kalin:2022hph]. This potential can then be used as input to the (?:eob) formalism. Furthermore, [Kalin and Porto @Kalin:2019rwq; @Kalin:2019inp], have shown a path forward in directly extending unbound data to bound orbits, obviating the need to use a potential and (?:eob) at all. 
 
-Finally as mentioned in the last chapter, scattering can stand on its own and is still usefull, unextended to the orbital case. The (?:pm) approximation can be computed from scattering amplitudes in an (?:eft) framework [@Kalin:2020mvi]. We can also explore the classical observables possible in scattering scenarios. This has been developped in @Kosower:2018adc and was extended to local observables^[local as in not time integrated and thus presenting time dependent dynamics] such as waveforms  in @Cristofoli:2021vyo.
+Finally, as mentioned in the last chapter, scattering can stand on its own and still be usefull without being extended to the orbital case. The (?:pm) approximation can be computed from scattering amplitudes in an (?:eft) framework [@Kalin:2020mvi]. We can also explore the classical observables possible in scattering scenarios. This has been developped in @Kosower:2018adc and was extended to local observables^[local as in not time integrated and thus presenting time dependent dynamics] such as waveforms  in @Cristofoli:2021vyo.
 
 
-In this chapter we will first look at how one uses amplitude data to extract orbital and scattering waveforms. We will then look at the (?:kmoc) formalism to directly extract observables. Finally we will look at obtaining these amplitudes, combining all the methods and comparing to results such as those in [@Kosower:2018adc; @Bern:2021xze].
+In this chapter we will first look at how to use amplitude data to extract orbital and scattering waveforms. We will then look at the (?:kmoc) formalism to directly extract observables. Finally we will look at how to compute amplitudes, and comparing to results such as those in [@Kosower:2018adc; @Bern:2021xze].
 
 ## Scattering amplitudes {#sec-scatamp}     
 
-In (?:qft) one way to encode scattering data is through a scattering amplitude. Consider a process where one starts out with a set of particles described by a state $\ket{i}$, we let them interact, and end up with a final state $\ket{f}$. The scattering amplitude is then defined as the probability amplitude for this process to occur. It is simply given by 
+In (?:qft), to date the only way to encode scattering data is through a scattering amplitude. Consider a process where one starts out with a set of particles described by a state $\ket{i}$, that interact, and yield a final state $\ket{f}$. The scattering amplitude is then defined as the probability amplitude for this process to occur. It is simply given by 
 $$\mel{i}{\Smat-1}{f}=(2\pi)^4 \deltafn[(4)]{p_f-p_i}\im \ampl_{fi},$$
 
-where $\Smat$ is essentially the operator that 'does the scattering'. We subtract the identity from it, forming what some call the transfer matrix $\Tmat$ as we only are interested in processes where something happens (i.e. not everything stays the same). In the above equation we also define the *scattering matrix element* $\ampl_{fi}$ [see @Srednicki:2007, p. 76] or *invariant Feynman amplitude* [see @Coleman:2018a, p.214], by factoring out a normalised spacetime delta-function imposing conservation of momentum on the external fields, and a complex unit. The key point is that this amplitude can be computed using graphical techniques. This makes use of the (?:lsz) [@Lehmann:1954rq;@Collins:2019ozc] formalism where such an amplitude  $\ampl_{fi}$, can be computed from products of time ordered correlation functions of the given QFT. These are also called Green's functions, which can then be encoded by sums of Feynman diagrams. The diagrams are generated by applying Feynman rules which can be readily obtained from an action describing the theory. This technique will be exemplified in the following sections.
+where $\Smat$ is the S-matrix, encoding asymptotic time evolution, $\Smat=U_t(-\infty,+\infty)$. We subtract the identity from it, forming what some call the transfer matrix $\Tmat$, as we only are interested in processes where something happens (i.e. not everything stays the same). In the above equation we also define the *scattering matrix element* $\ampl_{fi}$ [see @Srednicki:2007, p. 76] or *invariant Feynman amplitude* [see @Coleman:2018a, p.214], by factoring out a normalised spacetime delta-function that impose the conservation of momentum on the external particles, and a complex unit. The computation of $\ampl$ is made possible by the (?:lsz) [@Lehmann:1954rq;@Collins:2019ozc] formalism, which relates $\ampl_{fi}$ to time-ordered correlation functions (also known as Green's functions) of the given QFT. Green's functions, can be expanded as an infinite sum of diagrams, weighted by a small coupling. The diagrams encode integrals that are obtained by applying Feynman rules which can be readily extracted from an action describing the theory. 
 
 ## From amplitude to potential {#sec-amp2pot}
 
-Let us now look at how to map the amplitude to the gravitational potential, for use in the (?:eob) formalism. We will follow the treatment in @Cheung:2018wkq. We first start with defining the effective theory that describes our problem as two scalar fields $\wf[1]$ and $\wf[2]$ with masses $\mass[1]$ and $\mass[2]$ interacting through a long range potential $V(r)$. It is simply the (?:eft) for  non-relativistic fields. This (?:eft) is described by the following action:
+Let us now look at how to map the amplitude to the gravitational potential within the (?:eob) formalism. We will follow the treatment in @Cheung:2018wkq. We start by defining the effective theory that describes our problem: thi orbiting bodies are described by two scalar fields $\wf[1]$ and $\wf[2]$ with masses $\mass[1]$ and $\mass[2]$ interacting through a long range potential $V(r)$. It is the (?:eft) for  non-relativistic fields. This (?:eft) is described by the following action
 
 $$
 \action=\int \dd{t} \lag[kin]+\lag[int],
@@ -2687,53 +2686,53 @@ where the kinetic term is given by:
 
 $$
 \begin{aligned}
-\lag[kin]=&amp;\int \dn[\small \Dim-1]{\tv{k}} \cwf[1](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[1]} }\wf[1](\tv{k})
+\lag[kin]=&amp;\int \dn[\small \Dim-1]{\tv{k}} \cwf[1](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[1]} }\wf[1](\tv{k}),
 \\
-&amp;+\int \dn[\small \Dim-1]{\tv{k}} \cwf[2](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[2]} }\wf[2](\tv{k})
+&amp;+\int \dn[\small \Dim-1]{\tv{k}} \cwf[2](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[2]} }\wf[2](\tv{k}),
 \end{aligned}
 $$
 
-and the interaction term is given by:
+and the interaction term is given by
 
 $$
 \lag[int]=  -\int \dn[\small \Dim-1]{\tv{k}} \dn[\small \Dim-1]{\tv{k'}} \pot(\tv{k},\tv{k'}) \cwf[1](\tv{k'}) \cwf[2](-\tv{k'}) \wf[1](\tv{k}) \wf[2](- \tv{k}).
 $$
 
-This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential $\pot(\tv{k},\tv{k'})$ and taking the non-relativistic limit $\abs{\tv{k}},\abs{\tv{k'}}\ll \mass[1,2]$. In a classical system we consider the particles to be separated by a minimum distance, called impact parameter $\abs{\tv{\impactParameter}}$, and consider that their compton wavelength $\comptlen\sim\inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}$^[note the use of natural units] is much smaller than this separation:
+This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential $\pot(\tv{k},\tv{k'})$ and taking the non-relativistic limit $\abs{\tv{k}},\abs{\tv{k'}}\ll \mass[1,2]$. In a classical system we assume the particles to be separated by a minimum distance, called impact parameter $\abs{\tv{\impactParameter}}$, and consider that their Compton wavelength $\comptlen\sim\inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}$^[Note the use of natural units.] is much smaller than this separation,
 
 $$
-\abs{\tv{\impactParameter}}\ll \comptlen \simeq \inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}
+\abs{\tv{\impactParameter}}\ll \comptlen \simeq \inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}.
 $$
  
-This ensures that the particles are not interacting quantum mechanically in any significant way. Interestingly this heirachy of scales can be rewritten as:
+This ensures that the particles are not interacting quantum mechanically in any significant way. Interestingly this hierarchy of scales can be rewritten as:
 
 $$
-\tv{J}\sim\abs{\tv{k}\times\tv{\impactParameter}}\gg 1
+\tv{J}\sim\abs{\tv{k}\times\tv{\impactParameter}}\gg 1.
 $$
 
-Thus any two body classical system has large angular momentum. We can thus extract the classical part of any quantity by taking the (?:lo) contribution in the inverse of angular momentum, or equivalently:
+Thus, any two body classical system has large angular momentum. We can extract the classical part of any quantity by taking the (?:lo) contribution in the inverse of the angular momentum, or equivalently:
 
 $$
-  \inv{J} \propto \inv{\abs{\impactParameter}} \sim \abs{\tv{k}-\tv{k'}}\propto \inv{\kappa}
+  \inv{J} \propto \inv{\abs{\impactParameter}} \sim \abs{\tv{k}-\tv{k'}}\propto \inv{\kappa},
 $$ {#eq-invang}
 
-Where we used in the first step that angular momentum is proportional to separation. We then applied the fact that in scattering scenarios the impact parameter is proportional to the inverse of the momentum transfer  $\sim\inv{\abs{\tv{q}}}$ where :
+where $\kappa$ is the coupling constant, which in the case of gravity is $\kappa=4\pi\grav$. For the first relation we used that angular momentum is proportional to separation. We then applied the fact that in scattering scenarios the impact parameter is proportional to the inverse of the momentum transfer  $\sim\inv{\abs{\tv{q}}}$ where :
 
 $$
 q=(0,\tv{q})=(0,\tv{k}-\tv{k'}).
 $$
 
-The last relation in @eq-invang holds due to the virial theorem. Where $\kappa$ is the coupling constant, which in the case of gravity is $\kappa=4\pi\grav$. Since the potential must encode the coulomb potential $\kappa/\abs{\tv{k}-\tv{k'}}^2\propto J^3$, it must scale similarly. We thus formulate the following ansatz for the potential:
+The last relation in @eq-invang holds due to the virial theorem. Since the potential must encode the coulomb potential $\kappa/\abs{\tv{k}-\tv{k'}}^2\propto J^3$, it must scale similarly. We thus formulate the following ansatz for the potential:
 $$
-\pot(\tv{k},\tv{k'})=\sum_{n=0}^\infty \frac{\kappa^n}{\abs{\tv{k}-\tv{k'}}^{\Dim-1-n}} c_n\pa[\Big]{\frac{\tv{k}^2+\tv{k'}^2}{2}}
+\pot(\tv{k},\tv{k'})=\sum_{n=1}^\infty \frac{\kappa^n}{\abs{\tv{k}-\tv{k'}}^{\Dim-1-n}} c_n\pa[\Big]{\frac{\tv{k}^2+\tv{k'}^2}{2}}
 $${#eq-ansatzpot}
 
-Note that higher order terms in the potential could be formed by any combination of momentum invariants $\tv{k}^2$, $\tv{k'}^2$, and $\tv{k}\cdot\tv{k'}$, however not all combinations of these are independent. The ansatz is chosen such that only the combination $\abs{\tv{k}-\tv{k'}}$ and $\tv{k}^2+\tv{k'}^2$ is present, the others being combinations reachable by field redefinition, or vanishing on-shell, such as $\tv{k}^2-\tv{k'}^2$. Note as-well that we work in $\Dim=4-2\dimreg$ dimensions such that the integrals are dimensionally regulated [see @tHooft:1972tcz]. This means that an $\dimreg$-power corresponds to a logarithm^[the third term in the sum is given by $\coupling^3\ln{\tv{k}-\tv{k'}}^2 c_3\pa[\Big]{\Half{\tv{k}^2+\tv{k'}^2}}$].Finally note that in gravity this is precisely a (?:pm) expansion! 
+Note that higher order terms in the potential could be formed by any polynomial of momentum invariants $\tv{k}^2$, $\tv{k'}^2$, and $\tv{k}\cdot\tv{k'}$. However, not all combinations of these are independent. The ansatz is chosen such that only the variables $\abs{\tv{k}-\tv{k'}}$ and $\tv{k}^2+\tv{k'}^2$ are present, as the others can be reabsorbed by field redefinitions, or vanish on-shell, such as $\tv{k}^2-\tv{k'}^2$. Note as-well that we work in $\Dim=4-2\dimreg$ dimensions such that the integrals are dimensionally regulated [see @tHooft:1972tcz]. In particular an $\dimreg$-power corresponds to a logarithm^[The third term in the sum is given by $\coupling^3\ln{\tv{k}-\tv{k'}}^2 c_3\pa[\Big]{\Half{\tv{k}^2+\tv{k'}^2}}$.]. Finally, note that in gravity this is precisely a (?:pm) expansion! 
 
 
 ### EFT amplitude 
 
-The first step in establishing a link to the potential from a generic scattering amplitude computed in the full theory is to compute the amplitude in the (?:eft). We first identitify the Feynman rules from the action. The kinetic term encodes the propagator: 
+The first step in establishing determining the potential from a generic scattering amplitude computed in the full theory is to compute the amplitude in the (?:eft). We first identify the Feynman rules from the action. The kinetic term encodes the propagator: 
 
 quarto-executable-code-5450563D
 
@@ -2761,7 +2760,7 @@ tp
 
 
 
-where the $\im 0$ is the Feynman prescription for avoiding the poles. The interaction term encodes the vertex:
+where the $\im 0$ is the Feynman prescription for avoiding the poles. The interaction term is encoded in the vertex
 
 
 quarto-executable-code-5450563D
@@ -2794,7 +2793,7 @@ tp
 
 ![Vertex rule](tikz/vertex){#fig-vertex} 
 
-The key point is that the EFT amplitude for two-to-two scattering must be equal to the full amplitude at every order in the coupling constant $\coupling$. The expression for the (?:eft) amplitude will contain the coefficient functions from @eq-ansatzpot since they will be present as vertex terms. Particle number must be conserved in the non-relativistic limit ^[as pair production is kinematically forbidden], so the amplitude is a sum of bubble diagrams:
+The expression for the (?:eft) amplitude will contain the coefficient functions from @eq-ansatzpot since they will be present as vertex terms. Particle number must be conserved in the non-relativistic limit ^[As pair production is kinematically forbidden.], so the amplitude is a sum of bubble diagrams:
 
 quarto-executable-code-5450563D
 
@@ -2841,68 +2840,68 @@ We can consequently neatly organise the amplitude into a sum of terms with speci
 
 $$\ampl_\text{EFT}=\sum\limits_{L=0}^\infty\ampl[L\text{loop}]_\text{EFT}=\sum\limits_{i=1}^\infty \ampl[(i)]_\text{EFT}.$$
 
- Notably, these partitions do not line up for the (?:eft) since the vertex contains all powers of the coupling. This is in contrast to the full theory where usually they yield the same partition. We will eventually want to partition over the coupling power  to compare the full theory.
+ Notably, these partitions do not line up for the (?:eft) since the vertex contains all powers of the coupling. This is in contrast to the full theory where in fact they yield the same partition. We will eventually want to partition over the coupling power to compare the full theory.
 
-
-
-Since every vertex has degree 4, and we have two scalars in and two scalars out, it is convient to define a 2-body propagator. We can already integrate over the energy component of the loop momentum, since the vertex does not have an energy dependence:^[the 4-momentum conservation at each vertex means that the energy components of the two propagating momenta must carry along the energy component of the initial state $\energy=\energy[1]+\energy[2]$. This can be encoded by demanding that $\omega_1+\omega_2=\energy$.  Taking the (?:com) frame for the intial momenta means that the 3 momenta of each propagator must cancel i.e. $\tv[1]{k}+\tv[2]{k}$]
+Since every cut of the diagrams contributing to $\ampl_\text{EFT}$ contains two propagators it is useful to define a 2-body propagator. We can integrate over the energy components of the loop momentum, since the vertex does not have an energy dependence:^[The 4-momentum conservation at each vertex means that the energy components of the two propagating momenta must carry along the energy component of the initial state $\energy=\energy[1]+\energy[2]$. This can be encoded by demanding that $\omega_1+\omega_2=\energy$.  Taking the (?:com) frame for the intial momenta means that the 3 momenta of each propagator must cancel i.e. $\tv[1]{k}+\tv[2]{k}=0$]
 
 
 $$\im \proptwobody{\tv{k}}=\int \dn{\omega} \frac{\im}{\omega-\sqrt{\tv{k}^2+m_1^2}}\frac{\im}{\energy-\omega-\sqrt{\tv{k}^2+m_2^2}}=\frac{\im}{\energy-\sqrt{\tv{k}^2+\mass[1]^2}-\sqrt{\tv{k}^2+\mass[2]^2}},$$
 
-where the integral is performed using the residue theorem, closing the contour in either half plane, where in either case a pole is present. Note that we define $\energy=\energy[1]+\energy[2]$ to be the (?:com) energy of the  two inital states:^[which is equal to the outgoing energy]
+where the integral is performed using the residue theorem, closing the contour in either half plane, where in either case a pole is present. We have define $\energy=\energy[1]+\energy[2]$ to be the (?:com) energy of the  two inital states:^[which is equal to the outgoing energy]
 
 $$
-\energy[1,2]=\sqrt{\tv{p}^2+\mass[1,2]^2}=\sqrt{\tv{p'}^2+\mass[1,2]^2},
+\energy[i]=\sqrt{\tv{p}^2+\mass[i]^2}=\sqrt{\tv{p'}^2+\mass[i]^2},
 $$
 
-where $\tv{p}$ and $\tv{p'}$ are the initial and final three-momenta of the two states ^[for example in the initial state one scalar field will have 3-momentum $\tv{p}$, and the other $-\tv{p}$] in the (?:com) frame. Finally we can write what the diagram at loop level $L&gt;0$ encodes:
+where $\tv{p}$ and $\tv{p'}$ are the initial and final three-momenta of the two states ^[For example in the initial state one scalar field will have 3-momentum $\tv{p}$, and the other $-\tv{p}$] in the (?:com) frame. Finally, we can write the diagram at loop level $L&gt;0$ encodes:
 
 $$ 
 \ampl[L\text{loop}]_\text{EFT}= \int\prod\limits_{i=1}^L  \dn[\small \Dim-1]{\tv[i]{k}} \pot(\tv{p},\tv[1]{k})\proptwobody{\tv[1]{k}}\cdots\proptwobody{\tv[L]{k}}\pot(\tv[L]{k},\tv{p'}).
 $$
 
-This integral can be perfomed in the non-relativistic limit, as done by @Bern:2019crd up to 3(?:pm), using (?:ibp) reduction yielding, up to 2(?:pm), the amplitudes of the (?:eft):^[here the repartioning mentioned above has been applied and a change in loop momenta: $\tv[i]{k}\to\tv{p}+\tv[i]{\ell}$] 
+This integral can be performed in the non-relativistic limit, as done by [Bern et al. @Bern:2019crd] up to 3(?:pm). Up to 2(?:pm), the amplitudes of the (?:eft) is:^[Here the repartioning mentioned above has been applied and a change in loop momenta: $\tv[i]{k}\to\tv{p}+\tv[i]{\ell}$.] 
 
 $$
 \begin{aligned}
-\ampl[(1)]_\text{EFT}&amp;=-\frac{4\pi\grav c_1}{\tv{q}^2}\\
+\ampl[(1)]_\text{EFT}&amp;=-\frac{4\pi\grav c_1}{\tv{q}^2},\\
 \ampl[(2)]_\text{EFT}&amp;= \pi^2\grav^2 \Big(-\frac{2 c_2}{\abs{\tv{q}}}+\inv{\energy \redEratio \abs{\tv{q}}}\brc[\Big]{(1-3\redEratio)c_1^2+4\redEratio^2\energy^2c_1 c'_1}\\
                   &amp; \int \dn[\Dim-1]{\tv{\ell}}\frac{32\energy\redEratio c_1^2}{\tv{\ell}^2(\tv{q}+\tv{\ell})^2(\tv{\ell}^2+2\tv{p}\tv{\ell})}\Big),
 \end{aligned}
 $$
 
-where $\redEratio=\frac{\energy[1]\energy[2]}{\pa{\energy[1]+\energy[2]}^2}$ is the reduced energy ratio. The arguments of the coefficent functions $c_1$ are kept iplicit and a prime denotes a derivative with respect to $\tv{\emom}$. Additionally we define $\tv{q}=\tv{p'}-\tv{p}$ to be the 3-momentum transfer. Now provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we have that
+where $\redEratio=\frac{\energy[1]\energy[2]}{\pa{\energy[1]+\energy[2]}^2}$ is the reduced energy ratio. The arguments of the coefficient functions $c_1$ are kept implicit and a prime denotes a derivative with respect to $\tv{\emom}$. Additionally, we defined $\tv{q}=\tv{p'}-\tv{p}$ to be the 3-momentum transfer. 
+
+The key point is that the matching procedure requires the EFT amplitude for two-to-two scattering to be equal to the full amplitude at every order in the coupling constant $\coupling$, i.e. provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we impose that
 
 $$
 \ampl[(i)]_\text{EFT}=\ampl[(i)]_\text{full} \quad \forall i.
 $$
 
-This enables us to fix the coefficients in the potential ansatz @eq-ansatzpot, and fullfils the promised map from amplitude to potential. Importantly we must apply the limiting procedure applied above, i.e. the classical and non relativitic limit. We can summarise this by setting the following heirarchy:
+which fixes the coefficients in the potential ansatz @eq-ansatzpot, and fullfils the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e. the classical and non relativistic limit, which is summarised by the following heirarchy of scales:
 
 $$
 \mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
 $$
 
-For the full theory this can be encoded as restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:
+In the full theory this hierarchy is equivalent to restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:
 
 
 | Region | Momentum $\ell = (\omega,\tv{\ell})$ |
-|---:|:---:|
-| hard | $(m,m)$ |
-| soft | $(\abs{\tv{\tm}},\abs{\tv{\tm}})$  |
+| -----: | :----------------------------------: |
+|   hard |               $(m,m)$                |
+|   soft |  $(\abs{\tv{\tm}},\abs{\tv{\tm}})$   |
 
-The soft region is responsible for the classical limit in this language, as we consider a small $\abs{\tv{\tm}}$ expansion. We will infact explore this fact in a different light in @sec-kmoc. Taking the (?:nr) limit corresponds to a subregion of the soft region, the so-called potential region:
+In this language, the soft region is responsible for the classical limit, since we consider a small $\abs{\tv{\tm}}$ expansion. We will infact explore this expansion in a different light in @sec-kmoc. Taking the (?:nr) limit corresponds to a subregion of the soft region, the so-called potential region:
 
-$$ (\omega,\tv{\ell})\sim (\abs{\tv{\tm}},\abs{\tv{\tm}}),$$
+$$ (\omega,\tv{\ell})\sim (\abs{\tv{\vel}}\abs{\tv{\tm}},\abs{\tv{\tm}}),$$
 
 where we use that the (?:nr) expansion is a given by $$\abs{\tv{\emom}}\ll m$$ and thus equivalently^[dividing by mass] by a small relative velocity:
 
 $$ \abs{\tv{\vel}}\ll1.$$
 
-To summarise, to obtain the form of the potential, we first compute the amplitude in an (?:eft), absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can go ahead and compute this amplitude in the non-relativistic limit. This same amplitude can be computed in the full theory, but by still taking the limiting procedure we drastically reduce the kinematic region, simplifying calculations (in fact eliminating diagrams) and allowing us to match order by order the (?:eft) amplitude. This fixes the coefficents postulated for the potential. 
+To summarise, in order to obtain the form of the potential, we first compute the amplitude in an (?:eft), absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can compute the amplitude in the non-relativistic limit in terms of unknown coefficients. This same amplitude can be computed in the full theory, which, as a consequence of the limiting procedure, has simplified kinematic dependence.  The coefficients of the (?:eft) amplitude are then determined by matching it order by order with the full amplitude.
 
-Unfortunately the procedure desribed above, and in fact *any* procedure trying to make contact with (?:eob) through expanding the gravitiational potential, automatically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of (?:eob) this radiation reaction was added after the fact, through direct modifications of the (?:eom)s obtained from Hamilton's equations. It is not clear how to incorporate dissipative data from the amplitude in the (?:eob) framework. 
+Unfortunately, the procedure described above, and in fact *any* procedure trying to make contact with (?:eob) by expanding the gravitiational potential, intrinsically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of (?:eob), this radiation reaction was added after the fact, through direct modifications of the (?:eom)s obtained from Hamilton's equations. It is not clear how to incorporate dissipative data from the amplitude in the (?:eob) framework. 
 
 One way to not encounter this difficulty is to fully bypass the (?:eob) framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
 
@@ -2913,35 +2912,35 @@ One way to not encounter this difficulty is to fully bypass the (?:eob) framewor
 
 
 
-## (?:kmoc) {#sec-kmoc}
+## (&gt;:kmoc) framework {#sec-kmoc}
 
-The setup of the (?:kmoc) framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will later on apply it to (?:sqed) and gravity. 
+The (&gt;&gt;&gt;:kmoc) framework (@Kosower:2018adc) is very general, and is aimed at taking the classical limit of a scattering event in an unspecified theory. We will apply it later on  to (?:sqed) and gravity. 
 
 ### Conventions
 
-First let us define our conventions. Throughout this section we use relativistically natural units, i.e. we do *not* set $\hbar=1$. This will essentially be the small parameter that multiplies the soft momenta, that defined the region in @sec-amp2pot. In this section we will further motivate this classical limit, in more detail, by taking the generally accepted limit that makes quantum physics collapse to classical physics: 
+First let us define our conventions. Throughout this section we use relativistically natural units, i.e. we do *not* set $\hbar=1$. This will essentially be the small parameter that multiplies the soft momenta that defined the region in @sec-amp2pot. In this section we will further motivate this classical limit in more detail by taking the generally accepted limit that makes quantum physics collapse to classical physics
 
 $$\hbar\to0.$$ 
 
-We still retain $c=1$, meaning that, using dimensional analysis we have that $[L][T]^{-1}=1 \implies [L]=[T]$,  length and time are measured in the same units. Correspondingly, energy is measured in units of mass:
+We still retain $c=1$, meaning that, using dimensional analysis we have that $[L][T]^{-1}=1$ i.e. $[L]=[T]$,  length and time are measured in the same units. Correspondingly, energy is measured in units of mass
 $$
-\energy=mc^2\implies[\energy]=[m]=[M]
+\energy=mc^2\implies[\energy]=[m]=[M],
 $$ 
 
-and $\hbar$ has the following units:
+and $\hbar$ has the following units
 
 $$
 \energy=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 .$$ 
 
 Thus momentum $\emom$ has units of $[\emom]=[M]$ mass and Wavenumber $[\bar{\emom}]=[\frac{\emom}{\hbar}]=[T]^{-1}$ has units of inverse time. 
-We will denote the on-mass-$m$-shell measure by $\ddP{p}$^[Repeated integration will be denoted $\ddP[n]{p_1,\dots,p_n}$]:
+We will denote the Lorentz-invariant phase space measure by $\ddP{p}$^[Repeated integration will be denoted $\ddP[n]{p_1,\dots,p_n}$]:
 
 $$
 \int \ddP{p} \dots      = \int \frac{\dd[3]{\tv{p}}}{2\hbar\shellen (2\pi)^3} \dots = \int \dn[4]{p}\nposendelta[-m^2]{p} \dots,
 $$
 
-where quantities denoted by bars absorb the relevant factors of $2\pi$, such that $\dn[n]{p}=\frac{\dd[n]p}{(2\pi)^n}$. Additionally we have defined $\hbar\shellen=\sqrt{\tv{p}^2+m^2}$ to be the on-shell energy and  $\delta^{(+)}$ is the normalised positive energy on-shell delta function:
+where quantities denoted by bars absorb the relevant factors of $2\pi$, such that $\dn[n]{p}=\frac{\dd[n]p}{(2\pi)^n}$. Additionally, we have defined $\hbar\shellen=\sqrt{\tv{p}^2+m^2}$ to be the on-shell energy and  $\delta^{(+)}$ is the normalised positive energy on-shell delta function:
 
 $$
 \nposendelta[-m^2]{p}=(2\pi)\deltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}=\ndeltafn{\lv{p}^2-m^2}\thetafn{\ct[0]{p}}
@@ -2949,48 +2948,47 @@ $$
 
 ### Intital State
 
-With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons into each other, with a constant particle number (i.e. a classical two in two out scattering). As mentioned in @sec-scatamp, in (?:qft) the framework that formalizes scattering of definite particle number states is called the (?:lsz) reduction. 
+With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons, into each other, with a constant particle number (i.e. a classical two in two out scattering). As mentioned in @sec-scatamp, in (?:qft) the framework that formalizes scattering of definite particle number states is based on the (?:lsz) reduction formula. 
 
 [we work in the Heisenberg picture here]{.aside}
 
-Let us look at it in more detail. The first component is to define the states we want to scatter. Suppose our theory has single particle states $\momket$, with mass $\mass$, eigenstates of the momentum:
+Let us look at it in more detail. The first step is to define the states we want to scatter. Suppose our theory has single particle states $\momket$, with mass $\mass$, eigenstates of the momentum:
 
-$$\ct{\momop}\momket=\ct{\emom}\momket \quad \text{where} \quad p^0=\hbar\shellen=\sqrt{\tv{\emom}^2+\mass^2}.$$
+$$\ct{\momop}\momket=\ct{\emom}\momket \quad \text{with} \quad p^0=\hbar\shellen=\sqrt{\tv{\emom}^2+\mass^2}.$$
 
 These states can be seen as special cases (the plane wave states) of wavepacket states:^[A plane wave state $\ket{f}=\momket$ would be given by $\shellft{f}(k)=2 \hbar\shellen[\tv{k}]  \ndeltafn[(3)]{\tv{k}-\tv{p}}$]
 
 $$\ket{f}=\int \ddP{k} \shellft{f}(k) \momket[k],$$
 
-where $\shellft{f}(k)$ is the momentum space wavefunction or more mathematically the momentum distribution function. Note that it is almost a fourier transform, but not quite, as it is performed on mass shell. If the spacetime 'wavefunction' ^[Note that the concept of coordinate space wavefunction is ill defined in interacting theories. However for such asymptotic states, the wavefunction outside the bulk (on the infinte time boundary) is that of a free wavefunction] is given by:
+where $\shellft{f}(k)$ is the momentum space wavefunction or, more mathematically, the momentum distribution function. Note that it is almost a Fourier transform, but not quite, as it is performed on the mass shell. If the spacetime 'wavefunction' ^[Note that the concept of coordinate space wavefunction is ill defined in interacting theories. However for such asymptotic states, the wavefunction outside the bulk (on the infinte time boundary) is that of a free wavefunction.] is given by
 
 $$f(x)=\int \ddP{k} \shellft{f}(k) \exp{-\im\lv{k}\cdot\lv{x}},$${#eq-spacetimewf}
 
-the $\shellft{f}(k)$ is consequently given by:
+so that $\shellft{f}(k)$ is consequently given by
 
 $$\ip{k}{f}=\shellft{f}(k)= 2 \hbar\shellen \int \dd[3]{\tv{x}}f(x) \exp{\im k\cdot x}.$${#eq-momdist}
 
 
-If we now define the following operators:^[$f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g$]
-
-:::{.aside}
+If we now define the following operators^[$f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g$]
+^[
 Note that if we replace $f(x)$ by a plane wave state  $\exp{-\im k\cdot x}$ we obtain and define the following:
 
 $$
-\createop[\tv{k}](t)=  \int \dd[3]{\tv{x}} \exp{-\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)-\im \partialder[0]\wf(x)}
+\createop[\tv{k}](t)=  \int \dd[3]{\tv{x}} \exp{-\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)-\im \partialder[0]\wf(x)},
 $$
 
 $$
-\annihilop[\tv{k}](t)=   \int \dd[3]{\tv{x}} \exp{\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)+\im \partialder[0]\wf(x)}
+\annihilop[\tv{k}](t)=   \int \dd[3]{\tv{x}} \exp{\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)+\im \partialder[0]\wf(x)},
 $$
 
-:::
+]
 
 $$
-\createop[f](t)= -  \im \int \dd[3]{\tv{x}}f(x) \lrder[0] \scf(x)
+\createop[f](t)= -  \im \int \dd[3]{\tv{x}}f(x) \lrder[0] \scf(x),
 $$
 
 $$
-\annihilop[f](t)=   \im \int \dd[3]{\tv{x}}\conj{f}(x) \lrder[0] \scf(x)
+\annihilop[f](t)=   \im \int \dd[3]{\tv{x}}\conj{f}(x) \lrder[0] \scf(x),
 $$
 
 where $\scf(x)$ is the Heisenberg field operator of our theory. Note that while these operators are time dependent, this dependence is not given by applying the Heisenberg (?s:eom) ^[$\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}$], instead it is present through the time dependence of the wavefunction $f(x)$. It turns out that these operators, suggestively written are the true creation and annilihation operators in the interacting theory. 
