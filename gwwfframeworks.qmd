@@ -9,39 +9,39 @@
 
 
 
-The matched filtering approach introduced in the previous section motivates tools for generating waveforms. Specifically the matched filtering technique is especially sensitive to the phase of the (?:gw) , necessitating very precise waveforms in the phase. These can be varied in physical content, but also in practicality. In all cases they need to be able to cover the set of parameters (the parameter space) that one is interested in exploring. Clearly if the waveform has been generated purely heuristically, then the physical content of the detection is close to zero. One can only say one has detected a phenomenon that produces this waveform, but not much more. However, if the input parameters are physically meaningful, like the mass ratio of a binary compact inspiraling system, then the waveform constructed purely from this input, if matched to the signal, tells us that a compact binary inspiraling system with this mass ratio has been detected. This is called parameter estimation, and is key to maximsing the physics output of a detection. 
+The matched filtering approach introduced in the previous section motivates the developement of tools for generating waveforms. Specifically, the matched filtering technique is especially sensitive to the phase of the (?:gw) , necessitating precise determination of the waveform template's phase. These templates can be varied in physical content, but also in practicality. In all cases they need to be able to cover the set of parameters (the parameter space) that one is interested in exploring. Clearly, if the waveform has been generated purely heuristically, then the physical content of the detection is close to zero. One can only say one has detected a phenomenon that produces this waveform, but not much more. However, if the input parameters are physically meaningful, e.g. the mass ratio of a binary compact inspiraling system, then the waveform constructed purely from this input, if matched to the signal, tells us that a compact binary inspiraling system with this mass ratio has been detected. This is called parameter estimation, and is key to maximizing the physics output of a detection. 
 
-Crucially the waveform generation must be able to cover the whole parameter space (for example all feasible mass ratios) to be useful, as one does *not* know the parameters of the object one is looking for.  Ideally this waveform generation can be done in a way that is computationally efficient, as the number of parameters to explore can be large. In the end, currently, waveform generation is done in a hybrid way, where some waveforms at some parameter space points are generated from first principles, and the rest of the parameter space waveforms are interpolated. 
+Crucially the waveform generation must be able to cover the whole parameter space (for example all feasible mass ratios) to be useful, as one does *not* know in advance the parameters describing the system being observed.  Ideally waveform generation should be done in a way that is computationally efficient, as the number of parameters as well as their range to explore is large. Currently, waveform generation is performed in a hybrid way: some waveforms for specific parameter space points, are generated from first principles, while the rest of the parameter space waveforms are interpolated. 
 
-In this chapter we will look at the physically motivated waveform generation tools currently being developed in research. More specifically we are going to explore techniques for compact binary waveforms. Of these, there are two types, the inspiralling binaries, and the  scattering ones. Currently only the inspiralling binaries have been detected, as these are the systems for which (?:ligo) and others are most sensitive to (see @sec-ligo) and they are by far the most common emitters of high intensity (?:gw) s. As discussed in @sec-compactbinaries, orbiting and (?:gw)  emitting compact objects will necessarily inspiral and merge at somepoint. 
+In this chapter we will look at the first-principles waveform generation tools currently being developed. More specifically we are going to explore techniques for compact binary waveforms. In this context waveforms may describe  inspiralling or scattering binaries. Currently, only the inspiralling binaries have been detected, as these are the systems whose signal (?:ligo) and other detectors are most sensitive to (see @sec-ligo), other than being by far the most common emitters of high-intensity (?s:gw). As discussed in @sec-compactbinaries, orbiting and (?:gw)  emitting compact objects will necessarily inspiral and merge at some point. 
 
-For such inspiraling binaries, the waveform has three distinct parts, corresponding to distinct phases of a binary merger: a first inspiral phase, a merger phase where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or ringdown phase where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase has specific characteristics in the dynamics of the objects and thus correspondingly different frameworks are aimed at specific portions of the waveforms. Even within one phase, different regimes and thus frameworks exist, additionally dependent to the type/initial state of the two orbiting bodies.
+For such inspiraling binaries, the waveform features 3 distinct phases: a first *inspiral phase*, a *merger phase* where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or *ringdown phase*, where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase is characterized by different dynamical properties of the orbiting bodies and thus different frameworks are aimed at describing the corresponding features of the waveforms. Even the description of one phase involves different regimes, and thus more specific framework, additionally dependent on the type/initial state of the two orbiting bodies.
 
-For scattering binaries there is hope of detecting them @Mukherjee:2020hnm, but they are mainly used as a testbed for new theories making use of particle physics knowledge. Additionally one might be able to extend their validity to inspiraling binaries [see @Kalin:2019rwq]. 
+For scattering binaries there is hope of detecting them as argued in @Mukherjee:2020hnm, but they are mainly used as a test-bed for new theories making use of particle physics knowledge. Additionally, one might be able to extend their validity to inspiraling binaries [see @Kalin:2019rwq]. 
 
-Most of these techniques have two important parts. The first consists in the precise modelling of the evolution of the emitting system. In most cases, this boils down to obtaining the (?s:eom) for the interacting bodies, however for scattering this can just be the amplitude of the event. The second part is extracting the variation of the metric due to the source movement at the measurement point, far away from the source, i.e., the waveform. Of course the metric at the source is tightly coupled to the dynamics of the system, and thus the approximations conducted at the source also effects the way one extracts the waveform. 
+Most of these techniques have two important parts. The first consists in the precise modelling of the evolution of the emitting system. In most cases, this boils down to obtaining the (?s:eom) for the interacting bodies. For scattering, this can just be the amplitude of the event. The second part is extracting the variation of the metric due to the source movement at the measurement point, far away from the source, i.e., the waveform. Of course, the metric at the source is tightly coupled to the dynamics of the system, and thus the approximations conducted at the source also effects the way one extracts the waveform. 
 
-The only full, physically motivated waveform techniques are (?:nr)  and (?:eob) ^[There are a whole family of phenomenological frameworks that we will not discuss]. (?:nr)  is quite unique when compared to other methods. Let us look at it now before proceeding to (?:eob)  and all the partial waveform techniques. 
+The only full, first-principles waveform techniques are (?:nr)  and (?:eob) ^[There are a whole family of phenomenological frameworks that we will not discuss]. (?:nr)  is quite unique when compared to other methods. Let us look at it before proceeding to (?:eob)  and all the inspiral waveform techniques. 
 
 ## (?:nr) 
 
-The most precise physically motivated waveform-generation technique to date is numerical relativity ( (?:nr) ). It was first developed as early as the 1960s [@hahn:1964]. Initially and until relatively recently, these numerical methods were unusable because of numerical instabilities. The idea, however, is simple: the (?:efe)  are a system of coupled partial differential equations (PDEs) (albeit quite nonlinear) that can be solved numerically by discretizing the fields involved, i.e. the metric in this case. The cause of instability, and the difficult nature of the problem is three-fold. First, the aforementioned non-linearities make the discretization particularly sensitive, and means that one needs a fine mesh to control error buildup. Second, the gauge freedom that simplified the derivation in the last chapter, puts limits on the type of discretization procedure, so that spurious modes are not introduced. Third, for (?s:bh) one needs to consider what to do about the physical metric singularity, as infinity is not a number one can plug into a computer! On top of stability problems, when compact binary objects are considered, the scales involved further complicate things, as one needs enough resolution to resolve the objects, and the deformations on the metric, as well as a large enough volume to have reasonable orbits. This leads to a huge amount of points in the model, meaning such simulations (even if stable) are extremely computationally expensive.
+The most precise, first-principles waveform-generation technique to date is numerical relativity ((?:nr)). It was developed as early as the 1960s [@hahn:1964]. Initially and until relatively recently, these numerical methods were unusable because of numerical instabilities. The idea, however, is simple: the (?:efe)  are a system of coupled partial differential equations (PDEs) (albeit nonlinear) that can be solved numerically by discretizing the metric. The causes of instability is three-fold. First, the aforementioned non-linearities make the discretization particularly sensitive to extreme variations, such as those close to a (?:bh), which means that one needs a fine mesh to control error buildup. Second, the gauge freedom establishes limits on the type of discretization procedures, so that spurious modes are not introduced. Third, for (?s:bh) one needs to consider what to do about the physical metric singularity, as infinity is not a number one can plug into a computer! On top of stability problems, when compact binary objects are considered, the scales involved further complicate things, as one needs enough resolution to resolve the objects, and the deformations on the metric, as well as a large enough volume to have reasonable orbits. This requires a huge amount of lattice nodes, meaning such simulations (even if stable) are extremely computationally expensive.
 
-In 2005 @Pretorius:2005gq and a little later @Campanelli:2005dd made a breakthrough advance and were able to fully compute an inspiral-merger-ringdown sequence for a (?:bbh) . Pretorius made use of two techniques, (?:amr)  and the (?:gh)  formalism. (?:amr) , like its name suggests dynamically modified the discretiztation as the two black holes orbited each other. The (?:gh)  formalism, on the other hand tackled the singularity problem validating the excision of the black hole, and crucially letting that region move. Both combined, were able to finally slay the proverbial  numerical dragon. 
+In 2005 [Pretorious @Pretorius:2005gq] and a little later [Campanelli et al. @Campanelli:2005dd] made a breakthrough advance and were able to fully compute an inspiral-merger-ringdown sequence for a (?:bbh) . Pretorius made use of two techniques: (?:amr)  and the (?:gh)  formalism. (?:amr) , like its name suggests, is a technique based on a dynamical discretization procedure . The (?:gh)  formalism, tackles the singularity problem validating the excision of the black hole, and crucially letting that region move. The combination of the procedures, were able to finally slay the proverbial numerical dragon. 
 
-These waveforms, like the one in @fig-pretwave confirmed the predictions made in @Buonanno:2000ef, that the merger phase of a (?:bbh)  would not be as complicated as thought. As numercal techniques evolved further, they were able to elucidate more and more complex behaviors.
+These waveforms, such as the one in @fig-pretwave, confirmed the predictions made in [Buonanno and Damour @Buonanno:2000ef] that the merger phase of a (?:bbh)  would not be as complicated as previously thought. As numerical techniques evolved further, they were able to elucidate more and more complex behaviors.
 
 ![The first (?:nr)  waveform, as presented in @Pretorius:2005gq](pretwave.png){#fig-pretwave}
 
-Nowadays, it is the backbone of all other methods and is seen as the gold standard. Of course it remains very computationally expensive and making any sizable bank of purely (?:nr)  waveforms fools endeavor. To date only a couple hundred parameter space points have been simulated. Thus (?:nr)  is used to complement, calibrate and extend the other waveform generation techniques. For example to detect the first signals (?:ligo) and others interpolated between parameter space points to reach the ones needed for detection. However, with the advent of (?:lisa) on the horizon, a further problem will arise. (?:nr)  results by nature only take into account the last few orbit cycles before merger. Any more than that, and computational time becomes prohibitive. (?:lisa) with its low noise floor should be able to detect inspiraling but not yet merging binaries. To do so however will require waveform templates with hundreds of orbits, well out of reach from any modern (?:nr)  package. Nonetheless, this technique has shown and will continue to show its worth, as no approximations other than discretization are made. The physical content of such waveforms is thus quite high. 
+Nowadays, it is the gold standard of waveform generation. Of course it remains increadibly computationally expensive ^[A single waveform with 10 orbits can take a week and tens of thousands of CPU hours] and making any sizable bank of purely (?:nr) waveforms is seen as a fools endeavor. To date, only a couple hundred parameter space points have been simulated. (?:nr)  is used to complement, calibrate and extend the other waveform generation techniques. For example to detect the first signals (?:ligo) and other detectors interpolated between (?:nr)-generated parameter space points to reach the ones needed for detection. However, with the advent of (?:lisa) on the horizon, a further problem will arise. (?:nr)  results by nature only take into account the last few orbit cycles before merger. Any more than that and computational time becomes prohibitive. (?:lisa), with its low noise floor, should be able to detect inspiraling but not yet merging binaries. Doing so will require waveform templates with hundreds of orbits, well out of reach of any modern (?:nr)  package. Nonetheless, this technique has shown and will continue to show its worth, as no approximations other than discretization are made. The physical content of such waveforms is thus high. 
 
 ## Inspiral methods
 
-Before continuing to the (?:eob)  method, let us look at the techniques that focus on the inspiral part of the waveform. There are broadly speaking three methods that fall in this category. The first we have already encountered at 1st order: (?:pn) . It is a perturbative expansion in both relative velocity (slow moving limit) and the coupling constant $\grav$ (weak field limit) of the (?:efe) . The second is the (?:pm)  method, which is a perturbative expansion in *only* the coupling constant $\grav$. At face value the (?:pm)  method contains the (?:pn)  one as a special case, however as at zeroth order, the (?:pm)  approximation capures straight line motion, and is generally more expressive of scattering. The final approximation can be applied when the mass ratio of the object in question is large. Here one can expand around a fixed but *not* flat mertric, essentially considering one of the objects as a test-particle evolving on a background caused by the heavier object. This is called the (?:gsf) formalism.
+Before continuing to the (?:eob)  method, let us look at the techniques that focus on the inspiral part of the waveform. There are broadly speaking three methods that fall in this category. The first we have already encountered at 1st order: (?:pn) . It is a perturbative expansion in both relative velocity (slow moving limit) and the coupling constant $\grav$ (weak field limit) of the (?:efe) . The second is the (?:pm)  method, which is a perturbative expansion in *only* the coupling constant $\grav$. At face value the (?:pm)  method contains the (?:pn)  one as a special case, however as at zeroth order, the (?:pm)  approximation captures straight line motion, and is generally more expressive of scattering. The final approximation can be applied when the mass ratio of the object in question is large. Here one can expand around a fixed but *non-flat* metric, essentially considering one of the objects as a test-particle evolving on a background caused by the heavier object. This is called the (?:gsf) formalism.
 
 ### (?:pn) 
 
-The (?:pn)  expansion, like its name suggests, is a perturbative expansion of (?:efe)  in the orbital regime, that at (?:lo)  is given by tnewtonian gravity.  Consider a system of orbiting bodies with typical values $\bar{M},\bar{R},\bar{v}$ for masses, separations, and velocties. Then the virial theorem states:
+The (?:pn)  expansion, is a perturbative expansion of (?:efe)  in the orbital regime, which at (?:lo)  reproduces Newtonian gravity.  Consider a system of orbiting bodies with typical values $\bar{M},\bar{R},\bar{v}$ for masses, separations, and velocities. Then, the viral theorem states:
 
 $$
 \ang{T}_\tau=-\half \ang{U} \implies \quad \bar{M} \bar{v}^2\sim \frac{G \bar{M}^2}{\bar{R}}
@@ -53,44 +53,44 @@ $$
 \bar{v}^2\sim \frac{\grav \bar{M}}{\bar{R}}
 $$
 
-We therefor expand in both velocities and coupling constant. This can be achieved with a by both a classical (albeit quite complicated) perturbative treatment [see @Blanchet:2013haa;@Blanchet:1995fg], and a more contemporary (?:eft)  based approach called coyly (?:nrgr)  [@Goldberger:2004jt;@Sturani:2021xpq] as it was inspired by (?:nrqcd) . We call specific orders of the expansion $nPM$ when the expansion is carried out to $\order[2n]{v}$. 
+We therefore expand in both velocities and coupling constant. This can be achieved either by a classical (albeit quite complicated) perturbative treatment [see @Blanchet:2013haa;@Blanchet:1995fg], or a more contemporary (?:eft)-based approach coyly called (?:nrgr) [@Goldberger:2004jt;@Sturani:2021xpq], itself inspired by (?:nrqcd) . We call $n$(?:pm) the expansion carried out to $\order[2n]{v}$. 
 
 
 
-Regardless of method, there are a few shortcomings with this expansion. While it is well suited to describe the *motion* of objects in an orbital regime, it is not well suited to describe gravitional radiation far from the source, as it exhibits divergences for $r\to\infty$^[in HEP speak this is an infrared divergence]. This means that in the (?:gw)  context, the (?:pn)  expansion is in fact usually coupled to a weak-field approximation (see below), outside of the near zone. This is the region surrounding the source, that is of small extent compared to the wavelength of the emitted radiation:
+Regardless of method, there are a few shortcomings with this expansion. While it is well suited to describe the *motion* of objects in an orbital regime, it is not equally effective at describing gravitational radiation far from the source, as it exhibits divergences for $r\to\infty$^[In HEP speak this is called an infrared divergence]. This means that in the (?:gw)  context, the (?:pn)  expansion is in fact usually coupled to a weak-field approximation (see below), outside of the near zone. This is the region surrounding the source, that is of small extent compared to the wavelength of the emitted radiation:
 
 $$
 r \ll \lambda
 $$ {#eq-nearzone}
 
-The (?:pn)  expansion can equally be viewed as an expansion in small 'retardations'. To see this consider that if the source is slowly moving, then the time derivatives of the metric generated by this source will be smaller than the spatial derivatives by a factor $\order{v}$,
+The (?:pn)  expansion can also be viewed as an expansion in small 'retardations'. To see this, consider a slowly  moving source, such that the time derivatives of the metric generated by this source will be smaller than the spatial derivatives by a factor $\order{v}$,
 $$
 \frac{\partial}{\partial t}=\order{v} \frac{\partial}{\partial x^i},
 $$
-or $\partial_0=\order{\epsilon)} \partial_i$. Thus the d'Alembertian operator, applied to the metric, to lowest order becomes a Laplacian,
+or $\partial_0=\order{\epsilon)} \partial_i$. Thus the d'Alembertian operator, applied to the metric is, to lowest order, a Laplacian operator
 $$
 -\frac{1}{c^2} \frac{\partial^2}{\partial t^2}+\nabla^2=\left[1+O\left(\epsilon^2\right)\right] \nabla^2 .
 $$
 
-This means that retardation effects, due to the time derivative, are small corrections. In the (?:pn)  expansion we are consequently trying to compute some quantity $F(t-r)$, such as a given component of the metric, which is intrinsically a function of retarded time $t_r=t-r$, from its expansion for small retardation $r$,
+This means that retardation effects, due to the time derivative, are small corrections. In the (?:pn)  expansion we are consequently trying to compute some quantity $F(t-r)$, such as a component of the metric, which is intrinsically a function of the retarded time $t_r=t-r$, from its expansion for small retardation $r$,
 $$
 F(t_r)=F(t)-{r} \dot{F}(t)+\frac{r^2}{2} \ddot{F}(t)+\ldots
 $$
 
-Now importantly the derivatives should bring down factors proportional to frequency $\Omega$ of the emitted radiation. Thus this is in fact an expansion in $r \Omega\sim r / \lambda$, and is thus only valid in the near zone as defined by @eq-nearzone, and breaks down outside of this zone, in the so called *radiation zone*. A serious consequence of this fact is that the pure, naive (?:pn)  expansion is unable to account for outgoing or incoming radiation, and thus unable to describe isolated systems. This is where the (?:pm)  expansion comes in.
+Importantly, the derivatives should bring down factors proportional to frequency $\Omega$ of the emitted radiation. Thus this is in fact an expansion in $r \Omega\sim r / \lambda$, which is only valid in the near zone as defined by @eq-nearzone, and breaks down outside of this zone, in the so called *radiation zone*. A serious consequence of this fact is that the pure, naive (?:pn)  expansion is unable to account for outgoing or incoming radiation, and thus unable to describe isolated systems. This is where the (?:pm)  expansion comes in.
 
 
 ### (?:pm) 
  
-The (?:pm)  expansion is a rather more straightforward weak field expansion of (?:efe) , a perturbative expansion in the coupling constant $\grav$. It thus covers all orders in velocity of the (?:pn)  expansion, at a specific $\grav$ order. We usually call $nPM$ the corresponding $\order[n]{\grav}$ expansion. Historically, it was mainly seen as the radiation zone partner to the (?:pn)  expansion, providing the propagatation of the waves up to the observer. In such combination, the (?:pm)  expansion is solving the vacuum (?:efe) . It is usally set up to compute the a version of the metric perturabation, that is exact:^[we have used $\weakmet$ to denote the linear perturbation, whereas $\pertmet$ is the all order metric perturbation.]
+The (?:pm)  expansion is a weak field expansion of (?:efe), in the coupling constant $\grav$. It thus covers all orders in velocity of the (?:pn)  expansion, at any fixed $\grav$ order. We usually call $nPM$ the corresponding $\order[n]{\grav}$-truncated expansion. Historically, it was derived with the objective of being the radiation zone partner to the (?:pn)  expansion, as it provides a description of the propagation of the waves up to the observer. When used with the (?:pn) expansion in such a way, the (?:pm)  expansion is used to solve the vacuum (?:efe) . It is usually set up to compute a version of the metric perturbation that is exact:^[We have used $\weakmet$ to denote the linear perturbation, whereas $\pertmet$ is the all order metric perturbation.]
 
 $$\pertmet=\sqrt{-\metricTensor} \invmet-\invmink.$$
 
 
-The (?:pm)  expansion is then given as:
+The (?:pm)  expansion is then given as
 
 $$
-\sqrt{-\metricTensor} \invmet=\invmink+ \grav \invpertnmet{1}+\grav^2 \invpertnmet{2}+\ldots
+\sqrt{-\metricTensor} \invmet=\invmink+ \grav \invpertnmet{1}+\grav^2 \invpertnmet{2}+\ldots,
 $$
 
 meaning that:
@@ -98,25 +98,25 @@ $$
 \invpertmet=\sum\limits_{n=1}^{\infty} \grav^n \invpertnmet{n} .
 $$
 
-The (?:efe)  for this metric perturbation, when imposing dedonder gauge (@eq-dedonder) is given by:
+The (?:efe)  for this metric perturbation, when imposing De-Donder gauge conditions (@eq-dedonder), is given by
 
 $$
-\SRDA \invpertmet=-16 \pi \grav \invpertmet \relSEct ,
+\SRDA \invpertmet=-16 \pi \grav \invpertmet \relSEct .
 $$ {#eq-relEFE}
 
 where $\relSEct$ is the effective energy momentum tensor given by:
 
 $$
-\relSEct=(-\metricTensor)\SEct -\inv{16 \pi \grav}\ct[\mu\nu]{\Lambda}
+\relSEct=(-\metricTensor)\SEct -\inv{16 \pi \grav}\ct[\mu\nu]{\Lambda}.
 $$
 
-where $\ct[\mu\nu]{\Lambda}$ is the result of putting all the nonlinear terms of the einstein tensor to the (?:rhs) . It is dependent on the metric and thus depends highly non-linearly on $\pertmet$. We can write it as:
+$\ct[\mu\nu]{\Lambda}$ contains all non-linear terms of the Einstein tensor, and its definition can be obtained by comparing with @eq-EFE. Thus, it depends on the metric and thus on $\pertmet$ in a highly non-linearly fashion . We can write it as:
 
 $$
 \ct[\mu\nu]{\Lambda}=\ct[\mu\nu]{L}[\pertTensor,\pertTensor]+\ct[\mu\nu]{M}[\pertTensor,\pertTensor,\pertTensor]+\ct[\mu\nu]{N}[\pertTensor,\pertTensor,\pertTensor,\pertTensor]+\order[5]{\pertTensor}.
 $$
 
-In a vaccuum @eq-relEFE reduces to:
+Here the number of $\pertTensor$'s in the argument of $L,M$ and $N$ indicates the order of the non-linear term. In a vaccuum @eq-relEFE reduces to
 
 $$
 \SRDA \invpertmet=\ct[\mu\nu]{\Lambda},
@@ -132,101 +132,103 @@ $$
 \end{aligned}
 $$
 
-This method can be supplemented by a multipolar expansion of the $\invpertnmet{n}$, that are truncated to a specific order corresponding to the (?:pm)  order we are interested in. This combined expansion was pioneered by @Bonnor:1959, then formalised by @Thorne:1980ru, and finally applied in this present context by @Blanchet:1986. 
+This method can be supplemented by a multipolar expansion of the $\invpertnmet{n}$, truncated to the specific (?:pm) order we are interested in. This combined expansion was pioneered by [Bonnor and Rosenhead @Bonnor:1959], then formalised by [Thorne @Thorne:1980ru], and finally applied in this present context by [Blanchet @Blanchet:1986]. 
 
 
-In terms of source dynamics, it is more appropriate (and uniquely able) to describe inherently relativistic phenomena, like gravitional scattering. Due to being less restrictive than (?:pn)  it is also relatively more difficult, as at higher orders one encounters intricate families of relativistic integrals. Note that we have in fact computed the  1 (?:pm)  approximation already, in the last chapter when we linearized the (?:efe) . Higher orders are far more difficult, especially for sources such as (?:bbh) . 
+In terms of source dynamics, it is more appropriate (and uniquely able) to describe inherently relativistic phenomena, such as gravitational scattering. Its wider scope of applicability comes at the cost of a higher computational complexity, as at higher orders one encounters intricate families of relativistic integrals. Note that we have in fact computed the  1 (?:pm)  approximation already in the @sec-gwdetect when we linearized the (?:efe). Higher orders are far more difficult to obtain, especially for sources such as (?:bbh) . 
 
-With the rise of amplitude techniques from high energy physics, both (?:eft)  and full theory results have been succesful in extracting previously unreachable orders. nthis is because such techniques are perfectly suited to compute relativistic scattering as they were devellopped for this specific task. We will see this in the next chapter. 
+With the rise of amplitude techniques from high energy physics, both (?:eft)  and full theory results have been successful in extracting previously unreachable orders. Such techniques are perfectly suited to compute relativistic scattering as they were developed for this specific task. We will see this in the next chapter. 
 
 
 ## (?:eob) 
 
-The second main full waveform generation technique is the the effective one body ( (?:eob) ) formalism. It was develepped by @Buonanno:1998gg, initially as a non-perturbative re-summing of the (?:pn)  expansion. It was later extended to include the merger and ringdown effects in @Buonanno:2000ef. Thus it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the (?:pn)  expansions have gotten better, and even more recently (?:pm)  results have been included @Damour:2016gwp. Additonally (?:nr)  and (?:eob)  can be combined to produce a very accurate waveform, with less computional overhead than (?:nr)  alone. 
+The second full-waveform generation technique is the (>>>:eob) formalism. It was initially developed by [Buonanno and Damour @Buonanno:1998gg], as a non-perturbative re-summing of the (?:pn)  expansion. It was later extended to include the merger and ringdown effects in @Buonanno:2000ef. Thus, it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the (?:pn)  expansions have gotten better. More recently (?:pm) results have also been included @Damour:2016gwp. Additionally (?:eob) can be combined with (?:nr) to produce a very accurate waveform, with less computational overhead than (?:nr)  alone. 
 
-As it's name suggests, the (?:eob)  framework tries to combine all the previous data into a hamitonian describing the motion of a single body. The idea comes from Newtonian binaries where the method to solve the two body problem is to turn it into a one body problem. Further inspiration came from the two body problem in (?:qed)  [see @Brezin:1970zr] .
+As its name suggests, the (?:eob)  framework combines all the (?:pn), (?:pm) and (?:nr) data into a Hamiltonian describing the motion of a single body. It is inspired by solutions of two-body problems in Newtonian gravity which make use of barycentric coordinates to turn it into a one body problem. Further inspiration came from the two body problem in (?:qed)  [see @Brezin:1970zr] .
 
-Consider two bodies, with masses $\mass[1]$ and $\mass[2]$, positions $\tv[1]{q}$, $\tv[1]{q}$ and momenta $\tv{\emom[1]}$ and $\tv{\emom[2]}$ respectievly. The system can be described by the following hamiltonian:
+Consider two bodies, with masses $\mass[1]$ and $\mass[2]$, positions $\tv[1]{q}$, $\tv[1]{q}$ and momenta $\tv{\emom[1]}$ and $\tv{\emom[2]}$ respectively. The system can be described by the following Hamiltonian:
 
 $$
 \ham[\text{newton}]{\tv[1]{q},\tv[1]{q}}{\tv{\emom[1]},\tv{\emom[2]}}= \frac{\tv{\emom[1]}^2}{2\mass[1]}  + \frac{\tv{\emom[2]}^2}{2\mass[2]}  - \frac{G\mass[1]\mass[2]}{\abs{\tv[1]{q}-\tv[1]{q}}}
 $$
 
-One then transforms this hamitionan into one descibing the relative motion $\tv{q}=\tv[1]{q}-\tv[1]{q}$. One can formalise this by defining a new set of generalised coordinates, through a canonical transformation. We can even go further and employ a generating function for the transformation, ensuring that hamiton's equations stay unchanged (see @Goldstein:2002). To descibe relative motion, we use jacobi coordinates $(\tv{Q},\tv{q})$:
+One then transforms this Hamiltonian into one describing the relative motion $\tv{q}=\tv[1]{q}-\tv[1]{q}$. One can formalize this by defining a new set of generalized coordinates, through a canonical transformation. We can go even  further and employ a generating function for the transformation, ensuring that Hamilton's equations remain unchanged in form (see @Goldstein:2002). To describe relative motion, we use Jacobi coordinates $(\tv{Q},\tv{q})$:
 $$
-\begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\mass[1]}{\totmass} & \frac{\mass[2]}{\totmass} \\ 1&-1 \end{pmatrix}}_{A} \begin{pmatrix} \tv[1]{q} \\ \tv[1]{q}\end{pmatrix}=\begin{pmatrix} \tv{Q} \\ \tv{q}\end{pmatrix}
+\begin{pmatrix} \tv[1]{q} \\ \tv[2]{q}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\mass[1]}{\totmass} & \frac{\mass[2]}{\totmass} \\ 1&-1 \end{pmatrix}}_{=A} \begin{pmatrix} \tv[1]{q} \\ \tv[2]{q}\end{pmatrix}=\begin{pmatrix} \tv{Q} \\ \tv{q}\end{pmatrix}
 $${#eq-jacobi2}
 
-If we now define the following generating function for the transformation, depending on the old positions coordinates  $\tv[i]{q}$ and the new momenta $\tv[i]{P}$: [note the use of einstein summation]{.aside}
+If we now define the following generating function for the transformation, depending on the old positions coordinates  $\tv[i]{q}$ and the new momenta $\tv[i]{P}$: [Note the use of Einstein summation]{.aside}
 
 $$
-f_{II}(\tv[i]{q},\tv[i]{P})=\tv[i]{P}A^{ij}\tv[j]{q}
+f_{II}(\tv[i]{q},\tv[i]{P})=\tv[i]{P}A^{ij}\tv[j]{q},
 $${#eq-genfunc}
 
-Then the old momenta is given by: 
+then the old momenta are given by
 
 $$
-\tv{\emom[i]}=\pdv{f_{II}}{\tv[i]{q}}=\tv[i]{P} A^{ij} \iff \tv[i]{P}=[A^{-1}]{}^{ij}\tv{\emom[i]}
+\tv{\emom[i]}=\pdv{f_{II}}{\tv[i]{q}}=\tv[i]{P} A^{ij} \iff \tv[i]{P}=[A^{-1}]{}^{ij}\tv{\emom[j]}.
 $${#eq-momtrans}
+
 Where we can directly invert this equation and obtain the new momenta as:
 
 $$
   \begin{pmatrix} \tv{P} \\ \tv{p}\end{pmatrix}=\begin{pmatrix} \tv[1]{P} \\ \tv[2]{P}\end{pmatrix}=\begin{pmatrix} 1&1\\ \frac{\mass[2]}{\totmass} & -\frac{\mass[1]}{\totmass} \end{pmatrix} \begin{pmatrix} \tv{\emom[1]} \\ \tv{\emom[2]}\end{pmatrix}
 $$
  
-Where as expected we obtain that one of the momenta descibes the center of mass momentum $\tv{P}=\tv{\emom[1]}+\tv{\emom[2]}$. The other positions are by constuction given by $\pdv{f_{II}}{\tv[1]{q}}=\tv{Q}$ and $\pdv{f_{II}}{\tv[1]{q}}=\tv{q}$ i.e the same as equation @eq-jacobi2. Finally the new hamitonian $\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}$ can be directly obtained by the generating function:^[We just plug in the definition of the old momenta in terms of the new (@eq-momtrans):
-$$ \tv{\emom[1]}=\frac{\mass[1]}{\totmass} \tv{P} + \tv{p}$$
-$$ \tv{\emom[2]}=\frac{\mass[2]}{\totmass} \tv{P} - \tv{p}$$
+As expected, we obtain that one of the momenta describes the center of mass momentum $\tv{P}=\tv{\emom[1]}+\tv{\emom[2]}$. The other positions are by construction given by $\pdv{f_{II}}{\tv[1]{q}}=\tv{Q}$ and $\pdv{f_{II}}{\tv[2]{q}}=\tv{q}$ i.e the same as equation @eq-jacobi2. Finally the new Hamiltonian $\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}$ can be directly obtained from the generating function:^[We just plug in the definition of the old momenta in terms of the new (@eq-momtrans):
+$$ \tv{\emom[1]}=\frac{\mass[1]}{\totmass} \tv{P} + \tv{p},$$
+$$ \tv{\emom[2]}=\frac{\mass[2]}{\totmass} \tv{P} - \tv{p}.$$
 ]
 
 $$
-\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}=\ham[\text{newton}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}+\cancelto{0}{\pdv{f_{II}}{t}}= \frac{\tv{P}^2}{2\totmass}  + \frac{\tv{p}^2}{2\redmass}  - \frac{G\mass[1]\mass[2]}{\abs{\tv{q}}}
+\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}=\ham[\text{newton}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}+\cancelto{0}{\pdv{f_{II}}{t}}= \frac{\tv{P}^2}{2\totmass}  + \frac{\tv{p}^2}{2\redmass}  - \frac{G\mass[1]\mass[2]}{\abs{\tv{q}}},
 $$
-Where $\totmass = \mass[1] + \mass[2]$ is the total mass, and $\redmass = \frac{\mass[1]\mass[2]}{\totmass}$ is the reduced mass. If we move to a frame where the $\tv{Q}$ is at rest, i.e. $\tv{P}=0$ the hamiltonian colapses to a one body hamiltonian. The two-body problem we started with has can now be though of as the one body problem of a test-particle of mass $\redmass$ orbiting an external mass $\totmass$. 
 
-The (?:eob)  framework takes the above derivation and generalises it to general relativity. The defining trick used above is to transform to 'better' coordinates. A first step is to demand that for straight line motion the (?:com)  energy $E_{\text{\small COM}}=\ct[0]{P}$, where $P$ it the 4-momentum of the entire-system, is equal to the hamiltonian. We have then:^[In the (?:com)  frame, the spacial part of the total momentum is zero (by defintion), and thus we have:
+where $\totmass = \mass[1] + \mass[2]$ is the total mass, and $\redmass = \frac{\mass[1]\mass[2]}{\totmass}$ is the reduced mass. If we change coordinates to a frame where the $\tv{Q}$ is at rest, i.e. $\tv{P}=0$, the Hamiltonian collapses to a one body Hamiltonian. The two-body problem we started with can now be though of as the one body problem of a test-particle of mass $\redmass$ orbiting an external mass $\totmass$. 
+
+In Newtonian gravity, a small change of coordinates makes the two body problem exactly solvable. In much the same way, (?:eob) generalizes this framework to general relativity. The defining trick used above is to transform to 'better' coordinates. A first step is to demand that for straight line motion the (?:com)  energy $E_{\text{\small COM}}=\ct[0]{P}$, where $P$ it the 4-momentum of the entire-system, is equal to the Hamiltonian. We then have:^[In the (?:com)  frame, the spatial part of the total momentum is zero (by definition), and thus we have:
 $$
-\co[0]{P}^2=P^2=(\emom[1]+\emom[2])^2=\emom[1]^2+\emom[2]^2+2\emom[1]\cdot\emom[2]
+\co[0]{P}^2=P^2=(\emom[1]+\emom[2])^2=\emom[1]^2+\emom[2]^2+2\emom[1]\cdot\emom[2].
 $$]
 
 $$
-\mathcal{H}=\sqrt{\totmass^2(1+2\symmratio(\lorentzfactor-1))}
+\mathcal{H}=\sqrt{\totmass^2(1+2\symmratio(\lorentzfactor-1))},
 $$
 
-Where $\symmratio=\frac{\redmass}{\totmass}$ is the symmetric mass ratio, and $\lorentzfactor=\frac{1}{\sqrt{1-{v^2}}}=\frac{\ct{\emom[1]}\co{\emom[2]}}{\mass[1]\mass[2]}$ is the relative lorentz-factor. Note that for noninteracting systems we have $\co{\emom}\ct{\emom}=\redmass^2$ and we can call the effective hamitonian:
+where $\symmratio=\frac{\redmass}{\totmass}$ is the symmetric mass ratio, and $\lorentzfactor=\frac{1}{\sqrt{1-{v^2}}}=\frac{\ct{\emom[1]}\co{\emom[2]}}{\mass[1]\mass[2]}$ is the relative Lorentz-factor. Note that for non-interacting systems we have $\co{\emom}\ct{\emom}=\redmass^2$ and we can define the effective Hamiltonian:
 
 $$
-\Heff=\ct[0]{\emom}=\sqrt{\redmass^2+\tv{\emom}^2} = \redmass \lorentzfactor
+\Heff=\ct[0]{\emom}=\sqrt{\redmass^2+\tv{\emom}^2} = \redmass \lorentzfactor.
 $${#eq-straightheff}
 
-And then we can substitute this into the hamiltonian above, and add back a generic system momentum $\tv{P}$ and obtain:
+We can substitute this into the Hamiltonian above, and add back a generic system momentum $\tv{P}$ and obtain
 
 $$
 \Heob=\sqrt{\totmass^2(1+2\symmratio(\frac{\Heff}{\redmass}-1))+\tv{P}^2}
 $$
 
 
-This Hamiltonian (with $\Heff$ given by @eq-straightheff) now describes straight line motion in a relativistic framework. The key point is that we can take $\Heff$ to be a gravitational test mass Hamiltonian, with some specific deformations and this will match the (?:pn)  result. Consider a test mass in a schwarzschild background @eq-Schwarzschild, i.e. we consider the case of non spinnning black holes. We can start from the reduced-mass shell expression:
+This Hamiltonian (with $\Heff$ given by @eq-straightheff) now describes straight line motion in a relativistic framework. The key point is that we can take $\Heff$ to be a gravitational test mass Hamiltonian, with some specific deformations and this will match the (?:pn)  result. Consider a test mass in a Schwarzschild background @eq-Schwarzschild, i.e. we consider the case of non-spinnning black holes. We can start from the reduced-mass shell expression:
 
 $$
 \invmet \ct{\emom}\ct[\nu]{\emom} =- \redmass^2
 $$ {#eq-schwarzmassshell}
 
-where $\invmet$ is given by @eq-Schwarzschild, where we can set $\theta=\Half{\pi}$ to fix the orientation^[this is always possible through a change of variables]. Just as before the effective hamiltonian is the 0th component of the momentum, which is implicitly given by @eq-schwarzmassshell:
+where $\invmet$ is given by @eq-Schwarzschild, where we can set $\theta=\Half{\pi}$ to fix the orientation^[This is always possible through a change of variables.]. Just as before, the effective Hamiltonian is the 0th component of the momentum, which is implicitly given by @eq-schwarzmassshell:
 
 $$
 \mathcal{H}_S=\sqrt{A_S(\redmass^2+A_S\emom[r]^2+\frac{L^2}{r^2})},
 $$
 
-where $A_S=\frac{1}{1-R_S/r}$, and $L=\emom[\phi]$ is the angular momentum. We then allow deformations from this hamiltionian defining:
+where $A_S=\frac{1}{1-R_S/r}$, $\emom[r]$ and $L=\emom[\phi]$ are the radial and angular momentum respectively. We then allow deformations from this Hamiltonian defining
 
 $$
-\Heff(r,\emom[r],phi,L) = \sqrt{A (\redmass^2+A \bar{D} \emom[r]^2+\frac{L^2}{r^2})+Q},      
+\Heff(r,\emom[r],\phi,L) = \sqrt{A (\redmass^2+A \bar{D} \emom[r]^2+\frac{L^2}{r^2})+Q},      
 $$
 
-where $A,\bar{D},Q$ are the so-called (?:eob)  potentials. $A,\bar{D}$ correspond to the radial potentials of the effective metric, while $Q$ contains terms quadratic in the momentum. We can then match these to (?:pn)  reslults, by matching observables. 
+where $A,\bar{D},Q$ are the so-called (?:eob)  potentials. $A,\bar{D}$ correspond to the radial potentials of the effective metric, while $Q$ contains terms quadratic in the momentum. We can then match these to (?:pn)  results, by matching observables. 
 
-This is more than a neat trick as this Hamiltonian when well-matched fits the gold standard (?:nr)  result up to the merger, well out of the (?:pn)  regime. Crucially this Hamiltonian framework does not take into account radiation reaction by construction (since it is based on conserved energy). These dissipative effects are rather added after the fact, as friction terms in the (?:eom). The normal conservative eom is straightforwardly obtained through Hamiltions equations:
+This is more than a neat trick as this Hamiltonian, when well-matched, fits the gold standard (?:nr)  result up to the merger, well out of the (?:pn)  regime. Crucially, this Hamiltonian framework does not take into account radiation reaction by construction since it is based on conserved energy. These dissipative effects are included after the fact, as friction terms in the (?:eom). The usual conservative (?:eom) is straightforwardly obtained through Hamiltonians equations:
 
 $$
 \begin{aligned}
@@ -235,22 +237,22 @@ $$
 \end{aligned}
 $$
  
-Note that as expected the angular momentum is conserved. We will now spoil this conservation, add friction forces, so called radiation reaction forces to the changes in momentum (radial and angular):
+Note that, as expected, the angular momentum is conserved. We will now spoil this conservation, by adding friction forces, also called radiation reaction forces to the (?s:eom) governing radial and angular momentum dynamics:
 
 $$
 \begin{aligned}
-\dot{\emom[r]}&=- \pdv{\Heff}{r} +f_r\\
+\dot{\emom[r]}&=- \pdv{\Heff}{r} +f_r,\\
 \dot{L}&=f_\phi.
 \end{aligned}
 $$
 
-Now we can express the energy loss:
+We can now express the energy loss:
 
 $$
 \dot{E}=\odv{\Heff}{t}=\pdv{\Heff}{r}\dot{r}+\pdv{\Heff}{\emom[r]}\dot{\emom[r]}+\pdv{\Heff}{L}\dot{L}=f_r\dot{r}+f_\phi\omega.
 $$
 
-We can now account for such dissipative effects by matching to (?:pn)  results for the angular momentum flux, and the energy flux given by the so called balance laws:
+Such dissipative effects are accounted for by matching to (?:pn)  results for the angular momentum and energy fluxes, which are given by the so called balance laws:
 
 $$
 \begin{aligned}
@@ -259,5 +261,5 @@ $$
 \end{aligned}
 $$
 
-With this we obtain as full of a picture of the inspiral as possible given the inputs, namely (?:pn) . The matching can also be done with (?:pm)  and (?:nr)  results, further increasing the validity and precision of (?:eob) . Of course we are still missing the merger and ringdown. The merger, or plunge was predicted in @Buonanno:2000ef to be simply the peak in the waveform. This waveform is conected smoothly to a ringdown waveform, defined by a sum of quasi -normal modes of the remnant after merger. Thus one obtains a sort of frankenstein waveform, pooling resources from (?:pn) , (?:pm) , (?:nr)  and black hole perturbation theory. Importantly, when well matched, this waveform is almost as accurate as (?:nr)  results, but with the added benefit of being able to be computed in a reasonable amount of time. Of course it is still only as powerful as the inputs tow which we match, namely the (?:pn)  or (?:pm)  results. We will explore how to compute (?:pm)  results using amplitudes in the next section.
+We have denoted averaging with angle brackets. With this we obtain as full of a picture of the inspiral as possible given the inputs, namely (?:pn) . The matching can also be done with (?:pm)  and (?:nr)  results, further increasing the validity and precision of (?:eob) . Of course we are still missing the merger and ringdown phases. The merger, or plunge was predicted in @Buonanno:2000ef to be simply the peak in the waveform. This waveform is connected smoothly to a ringdown waveform, defined by a sum of quasi-normal modes of the remnant after merger. Thus one obtains a sort of frankenstein waveform, pooling resources from (?:pn) , (?:pm) , (?:nr)  and (?:bh) perturbation theory. Importantly, when well matched, this waveform is almost as accurate as (?:nr)  results, but with the added benefit of being able to be computed in a reasonable amount of time. Of course it is still only as powerful as the inputs to which we match, namely the (?:pn)  or (?:pm)  results. We will explore how to compute (?:pm)  results using amplitudes in the next section.
 

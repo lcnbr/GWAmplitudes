@@ -15,3 +15,5 @@ uncountably
 Levi-Civita
 Ricci
 diffeomorphisms
+Fabry-Perot
+velocties
