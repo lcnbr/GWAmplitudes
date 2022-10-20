@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, sharp corners, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, interior hidden, sharp corners, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -1834,35 +1834,35 @@ galaxies\sidenote{\footnotesize more massive objects have longer orbital periods
 \chapter{Waveform Generation}\label{sec-wfgen}}
 
 The matched filtering approach introduced in the previous section
-motivates the developement of tools for generating waveforms.
-Specifically, the matched filtering technique is especially sensitive to
-the phase of the \gls{gw} , necessitating precise determination of the
-waveform template's phase. These templates can be varied in physical
-content, but also in practicality. In all cases they need to be able to
-cover the set of parameters (the parameter space) that one is interested
-in exploring. Clearly, if the waveform has been generated purely
-heuristically, then the physical content of the detection is close to
-zero. One can only say one has detected a phenomenon that produces this
-waveform, but not much more. However, if the input parameters are
-physically meaningful, e.g.~the mass ratio of a binary compact
-inspiraling system, then the waveform constructed purely from this
-input, if matched to the signal, tells us that a compact binary
+motivates the developement of tools for generating waveforms. The
+matched filtering technique is especially sensitive to the phase of the
+\gls{gw} , necessitating precise determination of the waveform
+template's phase. These templates can be varied in physical content, but
+also in practicality. In all cases they need to be able to cover the set
+of parameters (the parameter space) that one is interested in exploring.
+Clearly, if the waveform has been generated purely heuristically, then
+the physical content of the detection is close to zero. From this
+approach, one can only deduce that a phenomenon producing a similar
+waveform was detected, but not much more. However, if the input
+parameters are physically meaningful, e.g.~the mass ratio of a binary
+compact inspiraling system, then the waveform constructed purely from
+this input, if matched to the signal, tells us that a compact binary
 inspiraling system with this mass ratio has been detected. This is
 called parameter estimation, and is key to maximizing the physics output
 of a detection.
 
-Crucially the waveform generation must be able to cover the whole
+Crucially, the waveform generation must be able to cover the whole
 parameter space (for example all feasible mass ratios) to be useful, as
 one does \emph{not} know in advance the parameters describing the system
-being observed. Ideally waveform generation should be done in a way that
-is computationally efficient, as the number of parameters as well as
-their range to explore is large. Currently, waveform generation is
-performed in a hybrid way: some waveforms for specific parameter space
-points, are generated from first principles, while the rest of the
-parameter space waveforms are interpolated.
+to be identified. Ideally waveform generation should be done in a way
+that is computationally efficient, as the number of parameters as well
+as their range to explore is large. In the end, waveform generation is
+currently performed in a hybrid way: some waveforms for specific
+parameter space points, are generated from first principles, while the
+rest of the parameter space waveforms are interpolated.
 
-In this chapter we will look at the first-principles waveform generation
-tools currently being developed. More specifically we are going to
+In this chapter we will describe the first-principles waveform
+generation tools currently being developed. More specifically we will
 explore techniques for compact binary waveforms. In this context
 waveforms may describe inspiralling or scattering binaries. Currently,
 only the inspiralling binaries have been detected, as these are the
@@ -1884,11 +1884,11 @@ the description of one phase involves different regimes, and thus more
 specific framework, additionally dependent on the type/initial state of
 the two orbiting bodies.
 
-For scattering binaries there is hope of detecting them as argued in
+There is also hope to detect scattering binaries as argued in
 ~{[}\protect\hyperlink{ref-Mukherjee:2020hnm}{22}{]}, but they are
-mainly used as a test-bed for new theories making use of particle
-physics knowledge. Additionally, one might be able to extend their
-validity to inspiraling binaries ~{[}see
+currently mainly used as a testbed for new theories making use of
+particle physics knowledge. Additionally, one might be able to extend
+their validity to inspiraling binaries ~{[}see
 \protect\hyperlink{ref-Kalin:2019rwq}{23}{]}.
 
 Most of these techniques have two important parts. The first consists in
@@ -1908,10 +1908,10 @@ compared to other methods. Let us look at it before proceeding to
 \gls{eob} and all the inspiral waveform techniques.
 
 \hypertarget{nr}{%
-\section{\texorpdfstring{\gls{nr}}{}}\label{nr}}
+\section{\texorpdfstring{\acrlong{nr}}{}}\label{nr}}
 
 The most precise, first-principles waveform-generation technique to date
-is numerical relativity (\gls{nr}). It was developed as early as the
+is numerical relativity (\acrfull{nr}). It was developed as early as the
 1960s ~{[}\protect\hyperlink{ref-hahn:1964}{24}{]}. Initially and until
 relatively recently, these numerical methods were unusable because of
 numerical instabilities. The idea, however, is simple: the \gls{efe} are
@@ -2158,7 +2158,7 @@ intricate families of relativistic integrals. Note that we have in fact
 computed the 1 \gls{pm} approximation already in the
 Chapter~\ref{sec-gwdetect} when we linearized the \gls{efe}. Higher
 orders are far more difficult to obtain, especially for sources such as
-\gls{bbh} .
+\gls{bbh}.
 
 With the rise of amplitude techniques from high energy physics, both
 \gls{eft} and full theory results have been successful in extracting
@@ -2167,7 +2167,7 @@ compute relativistic scattering as they were developed for this specific
 task. We will see this in the next chapter.
 
 \hypertarget{eob}{%
-\section{\texorpdfstring{\gls{eob}}{}}\label{eob}}
+\section{\texorpdfstring{\acrlong{eob}}{}}\label{eob}}
 
 The second full-waveform generation technique is the \acrfull{eob}
 formalism. It was initially developed by ~{[}Buonanno and Damour
