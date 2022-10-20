@@ -38,7 +38,7 @@ crossref:
   fig-title: Fig     # (default is "Figure")
   tbl-title: Tbl     # (default is "Table")
   eq-title: Eqn     # (default is "Equation")
-  eq-prefix: " "
+  eq-prefix: "eq."
 comments:
   hypothesis: true
 
@@ -54,7 +54,7 @@ execute:
 keep-tex: true
 
 
-filters: 
+filters:   
   - assets/lua/parse_acronyms.lua
   - assets/lua/not-in-format.lua
   - assets/lua/diagram-generator.lua

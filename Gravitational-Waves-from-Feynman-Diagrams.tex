@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}, frame hidden, interior hidden, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, frame hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -716,14 +716,14 @@ improve their precision and breadth of applicability.
 
 In recent years, an unlikely ally in this precision race has arisen,
 based on \gls{qft} techniques
-~{[}\protect\hyperlink{ref-Neill:2013wsa}{7}{]}. This is seemingly an
-impossibility as \gls{qft} and \gls{gr} have historically been the two
-irreconcilable theories that `together' span the whole range of scales
-in the universe. \gls{qft} and the standard model, describe physics at
-the smallest scales, where quantum effects dominate. This is the physics
-of colliders, and condensed matter. The standard model is our best guess
-as to the nature of the fundamental constituents of `matter' and
-`light'.
+~{[}\protect\hyperlink{ref-Goldberger:2004jt}{4}--\protect\hyperlink{ref-Neill:2013wsa}{7}{]}.
+This is seemingly an impossibility as \gls{qft} and \gls{gr} have
+historically been the two irreconcilable theories that `together' span
+the whole range of scales in the universe. \gls{qft} and the standard
+model, describe physics at the smallest scales, where quantum effects
+dominate. This is the physics of colliders, and condensed matter. The
+standard model is our best guess as to the nature of the fundamental
+constituents of `matter' and `light'.
 
 \gls{gr} on the other hand describes physics at the largest scales,
 where gravity dominates. It was developed by Einstein as the successor
@@ -759,12 +759,13 @@ dynamics from an initially quantum description of the setup. This is
 interesting because the tools developed for high energy physics have
 become extremely powerful and efficient theoretical machines, often
 making use of diagrammatic reasoning. Tools such as Feynman diagrams,
-differential equations ~{[}\protect\hyperlink{ref-Kotikov:1990kg}{11}{]}
+differential equations
+~{[}\protect\hyperlink{ref-Remiddi:1997ny}{9}--\protect\hyperlink{ref-Kotikov:1990kg}{11}{]}
 and more recently generalized unitarity
-~{[}\protect\hyperlink{ref-Anastasiou:2006jv}{15}{]}, all yielding
-efficient computations for scattering amplitudes, can all be applied to
-\emph{classical} orbital dynamics in \gls{gr}. This is exactly the
-subject of this thesis.
+~{[}\protect\hyperlink{ref-Bern:1994cg}{12}--\protect\hyperlink{ref-Anastasiou:2006jv}{15}{]},
+all yielding efficient computations for scattering amplitudes, can all
+be applied to \emph{classical} orbital dynamics in \gls{gr}. This is
+exactly the subject of this thesis.
 
 Specifically we are interested in the diagrammatic objects that arise
 when framing the two body problem similarly to particle collisions.
@@ -800,88 +801,92 @@ with a discussion of the challenges that lie ahead, and the future of
 
 We start by looking at where and how \glspl{gw} are generated. We will
 see that \gls{gr} predicts the existence of \glspl{gw}, and we will
-explore what conditions have to be met for them to become observable.
+explore under what conditions they are observable.
 
-\hypertarget{gravitational-waves}{%
-\section{Gravitational Waves}\label{gravitational-waves}}
+\hypertarget{sgw}{%
+\section{\texorpdfstring{\glspl{gw}}{}}\label{sgw}}
 
-The most complete theory of gravity we have right now is that of
-\gls{gr} , due to Einstein. It formulates spacetime as a Riemannian
-manifold with curvature, senstive to mass. Objects then move around in
-that deformed spacetime encoded in the metric \(\met\). Objects interact
-gravitationally when the spacetime they move around in is affected by
-the curvature caused by other objects. The equation that governs this
-interaction between mass and curvature is Einstein's field equations,
+To this day, the most fundamental theory of gravity is \gls{gr} , due to
+Einstein. It formulates spacetime as a Riemannian manifold with
+curvature, determined by mass distribution. This curvature is encoded in
+the metric \(\met\). Objects then move in this deformed spacetime
+following \glspl{eom} written in terms of \(\met\). Interaction is thus
+caused by the dependence of \(\met\) on mass distribution, which itself
+evolves through \(\met\). The physical laws that governs the interaction
+between mass and curvature are manifested in Einstein's field equations,
 
 \begin{equation}\protect\hypertarget{eq-EFE}{}{
 \boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \grav \SEco} .
 }\label{eq-EFE}\end{equation}
 
-The \gls{lhs} of this equation, contains several objects that are all
-only really dependent on the metric \(\met\). \(\RicciTco\) is the Ricci
-tensor\sidenote{\footnotesize The Ricci Tensor is given by: \[
+The \gls{lhs} of this equation contains several objects that only depend
+on the metric \(\met\). \(\RicciTco\) is the Ricci tensor\sidenote{\footnotesize The
+  Ricci Tensor is given by: \[
   \RicciTco \coloneq \Riem[\ind{\alpha}{\mu\alpha\nu}]=\invmet[\alpha\beta]\RiemCt[\alpha\mu\beta\nu]
-  \]}, a contraction of the Riemann curvature tensor \(\Riem\). This
-tensor\sidenote{\footnotesize The Riemann Tensor is given by: \[
+  \]}, a contraction of the Riemann curvature tensor \(\Riem\). The
+Riemann tensor\sidenote{\footnotesize The Riemann Tensor is given by: \[
   \Riem=\RiemannTensorExplicit{\beta}{\mu}{\nu}{\rho}.
-  \]} encodes the curvature of spacetime, as it is essentially a
-measurement of the amount with which covariant derivatives don't
-commute. When they do, it means that they have collapsed to regular
-derivatives, and thus the Levi-civita connection\sidenote{\footnotesize The
-  Levi-Civita Connection is given by: \[\LC{\alpha}{\mu}{\nu}=
+  \]} encodes the curvature of spacetime, in terms of the
+non-commutativity of covariant derivatives. When they do, it means that
+they have collapsed to regular derivatives, and thus the Levi-civita
+connection\sidenote{\footnotesize The Levi-Civita Connection is given by:
+  \[\LC{\alpha}{\mu}{\nu}=
   \frac{1}{2} \invmet[\alpha \rho]
   \brk[\Big]{
   \ipdv{ \met[\rho \nu]}{\mu}
   +\ipdv{ \met[\rho \mu]}{\nu}
   -\ipdv{ \met}{\rho}}
-  \]} must have vanished. This is only possible if the metric is flat
-\(\mink\). The Riemann curvature tensor is exclusively made up of the
-metric, its first, second derivatives and it is linear in the second
-derivative of the metric. In fact it is the only possible tensor of that
-sort. The second term on the \gls{lhs} is the Ricci scalar, a further
-contraction of the Ricci Tensor: \(\RicciS = \invmet \RicciTco\). The
-final term on the \gls{lhs} is just a proportional constant factor of
-the metric, where \(\cosmo\) is called the cosmological constant. It can
-be measured and has a low known upper bound. It is in part responsible
-for the expansion of the universe.
+  \]} must have vanished. This is only possible if the metric is flat,
+\(\met=\mink\). The Riemann curvature tensor is exclusively composed of
+the metric, its first, second derivatives, and it is linear in the
+second derivative of the metric. In fact, it is the only possible tensor
+of this form. The second term on the \gls{lhs} is the Ricci scalar, a
+further contraction of the Ricci Tensor:
+\(\RicciS = \invmet \RicciTco\). The final term on the \gls{lhs} is just
+a proportional constant factor of the metric, \(\cosmo\), called the
+cosmological constant. It can be measured and has a low known upper
+bound. It is in part responsible for the expansion of the universe.
 
-The \gls{rhs} of \ref{eq-EFE} encodes the effect of mass and energy on
-the metric. \(\SEco\) is the stress-energy tensor, dependent on the
-dynamics of the system. In empty space this term is zero. It is further
-multiplied by the Gravitational constant \(\grav\).
+The \gls{rhs} of eq.~\ref{eq-EFE} encodes the distribution of mass and
+energy in the universe, through the stress-energy tensor \(\SEco\),
+which depends on the dynamical properties of the system. It is further
+multiplied by the Gravitational constant \(\grav\). In empty space,
+\(\SEco\) is zero.
 
-Equation \ref{eq-EFE} can be recast in a form where the Ricci scalar has
-been eliminated,
+Equation~\ref{eq-EFE} can be recast in a form where the Ricci scalar has
+been substituted by the trace of the stress-energy tensor,
 
 \begin{equation}\protect\hypertarget{eq-EFEwoR}{}{
 \boxed{\RicciTco=-8 \pi \grav\left(\SEco-\trSE \frac{\met}{2}\right)+\cosmo \met} 
 }\label{eq-EFEwoR}\end{equation}
 
-Either equation \ref{eq-EFE}, \ref{eq-EFEwoR} with \(\cosmo=0\) admit
-wave solutions. We can see this by looking at these equations in the
-weak field approximation. Namely, we take the metric to be a Minkowskian
-background and a small perturbation
+Both eq.~\ref{eq-EFE} \& eq.~\ref{eq-EFEwoR} with \(\cosmo=0\) admit
+wave solutions. In order to see this, let us look at these equations in
+the weak field approximation. We take the metric to be a small
+perturbation around the Minkowskian background,
 
 \begin{equation}\protect\hypertarget{eq-WeakFA}{}{
     \met = \mink + \weakmet,
 }\label{eq-WeakFA}\end{equation}
 
-with \(\weakmet\) small. Note that if we restrict ourselves to first
-order in \(\weakmet\) then all raising and lowering of indices has to be
-done with \(\mink\), or else we increase the order of the term by 1. Now
-since the \gls{lhs} of \ref{eq-EFE} is made up of the Ricci tensor and
+where \(\weakmet\) is the expansion parameter (thus considered small).
+Note that if we restrict ourselves to first order in \(\weakmet\) then
+all raising and lowering of indices is done with \(\mink\). Since the
+\gls{lhs} of eq.~\ref{eq-EFE} is composed of the Ricci tensor and
 scalar, let us see how these behave in the weak approximation. Both are
 in fact made up of Levi-Civita connections, which to first order in
 \(\weakmet\) is given by:
-\begin{equation}\protect\hypertarget{eq-weakaffine}{}{\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
+\begin{equation}\protect\hypertarget{eq-weakaffine}{}{
+\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
 \brk[\Big]{
     \ipdv{ \weakmet[\rho \nu]}{\mu}
     +\ipdv{ \weakmet[\rho \mu]}{\nu}
-    -\ipdv{ \weakmet}{\rho}} + \order[2]{h}\quad .}\label{eq-weakaffine}\end{equation}
+    -\ipdv{ \weakmet}{\rho}} + \order[2]{h}\quad .
+}\label{eq-weakaffine}\end{equation}
 
-Plugging in to the definition of the Ricci tensor we see that the terms
-with products of the connection vanish, and we are left with the
-derivative terms:
+Plugging eq.~\ref{eq-weakaffine} into the definition of the Ricci tensor
+we see that the terms with products of the connection vanish, and we are
+left with the derivative terms:
 
 \begin{equation}\protect\hypertarget{eq-Ricciweak}{}{ 
 \RicciTco  =
@@ -889,22 +894,24 @@ derivative terms:
 }\label{eq-Ricciweak}\end{equation}
 
 The linearized Ricci scalar is then just
-\(\linRicciS=\invmink\linRicciTco\). Regardless of the weak
-approximation, \ref{eq-EFE} has some gauge freedom. This means that if
-we solve eq \ref{eq-EFE}, it won't be the only possible solution, and in
-fact we can generate the others by changing coordinates in such a way
-that the equation isn't affected. To fix this ambiguity we choose a
-coordinate system (`gauge'), by imposing the harmonic coordinate
-conditions:
+\(\linRicciS=\invmink\linRicciTco\). The symmetry of the \gls{efe} under
+general diffeomorphisms implies the existence of gauge freedom. In
+particular, eq.~\ref{eq-EFE}, admits an infinite number of solutions,
+and in fact we can map a solution into another by changing coordinates
+in such a way that the equation isn't affected. To fix this ambiguity we
+choose a coordinate system (`gauge choice') by imposing the harmonic
+coordinate conditions:
 
 \begin{equation}\protect\hypertarget{eq-hcc}{}{ 
    \invmet[\alpha\beta]\LC{\mu}{\alpha}{\beta} =0
 }\label{eq-hcc}\end{equation}
 
-The harmonic coordinate conditions demand the vanishing of the
-Levi-Civita connection. They have a simplified form in the weak
-approximation, which we can acces by plugging \ref{eq-weakaffine} into
-\ref{eq-hcc}, giving: \[
+The harmonic coordinate conditions demand the vanishing of the trace of
+the Levi-Civita connection. They have a simplified form in the weak
+approximation, which we can access by plugging eq.~\ref{eq-weakaffine}
+into eq.~\ref{eq-hcc}, giving:
+
+\[
 \begin{split}
     (\invmink[\alpha\beta]+\invweakmet[\alpha\beta])\frac{1}{2}(\invmink[\mu\rho]+\invweakmet[\mu\rho])\left[\ipdv{\weakmet[\alpha\rho]}{\beta}+\ipdv{\weakmet[\beta\rho]}{\alpha}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right] &= 0 \\
     \invmink[\mu\rho]\invmink[\alpha\beta]\left[2\ipdv{\weakmet[\alpha\rho]}{\beta}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right]+ \mathcal{O}(h^2)&= 0 \\
@@ -912,46 +919,55 @@ approximation, which we can acces by plugging \ref{eq-weakaffine} into
 \end{split}
 \]
 
-The last equation to first order is called the de Donder gauge and is
-often written: \[
-\ipdv[^]{\weakmet}{\mu} = \frac{1}{2}\ipdv{\trweakmet}{\nu}
-\] In de Donder gauge we can simplify the terms in \ref{eq-Ricciweak}
-to:
+The last equation, truncated to first order, is called the de-Donder
+gauge condition:
 
 \[
-    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\mu]}{\nu\beta} \approx \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet[\alpha\beta]}{\mu\nu},
-\] and \[
-    \invmink[\alpha\beta]\ipdv{\weakmet[\beta\nu]}{\mu\alpha} \approx \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\mu\nu}.
-\] With these two relations the expression for the linearized Ricci
-tensor \ref{eq-Ricciweak} simplifies to
+\ipdv[^]{\weakmet}{\mu} = \frac{1}{2}\ipdv{\trweakmet}{\nu}
+\]
+
+In the de-Donder gauge we can simplify the terms in
+eq.~\ref{eq-Ricciweak} to:
+
+\[
+    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\mu]}{\nu\beta} = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet[\alpha\beta]}{\mu\nu},
+\]
+
+and \[
+    \invmink[\alpha\beta]\ipdv{\weakmet[\beta\nu]}{\mu\alpha} = \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\mu\nu}.
+\]
+
+With these two relations the expression for the linearized Ricci tensor
+eq.~\ref{eq-Ricciweak} simplifies to
 \begin{equation}\protect\hypertarget{eq-Ricciweak2}{}{
     \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
-}\label{eq-Ricciweak2}\end{equation}\\
-Where we have defined the \gls{sr} D'Alembertian as:
-\(\SRDA=\invmink \partialder[\mu]\partialder[\nu]\) We can plug this
-into \ref{eq-EFEwoR}, with \(\cosmo=0\), and up to first order in
-\(\weakmet\) we get the linearized Einstein field equations for a system
-of harmonic coordinates:
+}\label{eq-Ricciweak2}\end{equation}
+
+Where we have defined the \gls{sr} D'Alembertian differential operator
+as: \(\SRDA=\invmink \partialder[\mu]\partialder[\nu]\) We can plug
+eq.~\ref{eq-Ricciweak2} into eq.~\ref{eq-EFEwoR}, with \(\cosmo=0\) and
+up to first order in \(\weakmet\), we get the linearized Einstein field
+equations for a system of harmonic coordinates:
 
 \begin{equation}\protect\hypertarget{eq-linearized}{}{
-\square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} 
+\square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} ,
 }\label{eq-linearized}\end{equation}
 \begin{equation}\protect\hypertarget{eq-dedonder}{}{
 \ipdv{\mixweakmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
-}\label{eq-dedonder}\end{equation} Where raising and lowering indices
-has been done with the Minkowski metric. The tensor \(\srcco\) encodes
-the behavior of the source of \glspl{gw}. One could also plug
-\ref{eq-Ricciweak2} into \ref{eq-EFE}, with \(\cosmo=0\), and if we
-change to the trace reversed perturbation:
-\(\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink\), we get similar and
-simpler equations at the cost of a more complex perturbation:
-\sidenote{\footnotesize Note that the inverse change of variables is just:
-  \(\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink\).} \sidenote{\footnotesize We
-  eliminate the trace of the stress-energy tensor by using:
+}\label{eq-dedonder}\end{equation} Recall raising and lowering indices
+is done with the Minkowski metric. The tensor \(\srcco\) encodes the
+behavior of the source of \glspl{gw}. One could also plug
+eq.~\ref{eq-Ricciweak2} into eq.~\ref{eq-EFE}, with \(\cosmo=0\), and
+express it in terms of the trace reversed perturbation:
+\(\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink\). Then, we obtain
+similar and simpler equations at the cost of a more complex
+perturbation: \sidenote{\footnotesize Note that the inverse change of variables is
+  just: \(\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink\).}
+\sidenote{\footnotesize We eliminate the trace of the stress-energy tensor by using:
   \(\RicciS= 8\pi\grav\trSE\). We can write
   \(\linRicciS=-\frac{1}{2}\SRDA\trweakTRmet\), in de Donder gauge,
   which is precisely the extra term dropping out of \(\SRDA\weakmet\)
-  when we express it in terms of \(\weakTRmet\)}
+  when we express it in terms of \(\weakTRmet\).}
 
 \begin{equation}\protect\hypertarget{eq-linearizedTR}{}{
 \square_{SR} \weakTRmet = -16\pi \grav \SEco
@@ -960,9 +976,9 @@ simpler equations at the cost of a more complex perturbation:
     \ipdv[^]{\weakTRmet}{\nu}=0. 
 }\label{eq-dedonderTR}\end{equation}
 
-In this form we can very easily recover the conservation equation for
-the stress-energy tensor. We take the divergence of
-\ref{eq-linearizedTR} and use \ref{eq-dedonderTR} to get:
+We can easily recover the conservation equation for the stress-energy
+tensor. We take the divergence of eq.~\ref{eq-linearizedTR} and use
+eq.~\ref{eq-dedonderTR} to get:
 
 \begin{equation}\protect\hypertarget{eq-SEcons}{}{
     \ipdv[^]{\SEco}{\nu}=0.
@@ -973,35 +989,35 @@ Let us look at what sorts of solutions come out of these equations.
 \hypertarget{homogenous-solutions}{%
 \section{Homogenous solutions}\label{homogenous-solutions}}
 
-The simplest first step is to consider the homogeous solution, as all
-solutions will involve these terms. Setting \(\SEco=0\) or \(\srcco=0\)
-yields an easily recognisable wave equation.
+The first step is to consider the homogeous solution, as all solutions
+will involve these terms. Setting \(\SEco=0\) or \(\srcco=0\) yields the
+wave equation in the absence of sources,
 \begin{equation}\protect\hypertarget{eq-homogenous}{}{
-   \SRDA \weakmet = 0 
+   \SRDA \weakmet = 0 .
 }\label{eq-homogenous}\end{equation}
 
-The de Donder gauge (\ref{eq-dedonder}) and the remaining gauge
-freedom\sidenote{\footnotesize from changes in coordinates such as
-  \(\ct{x}\to\ct{x}+\ct{\xi}\) with \(\SRDA\ct{\xi}=0\)} restricts the
+The de-Donder gauge (eq.~\ref{eq-dedonder}) and the remaining gauge
+freedom\sidenote{\footnotesize Associated to changes in coordinates of the form
+  \(\ct{x}\to\ct{x}+\ct{\xi}\) with \(\SRDA\ct{\xi}=0\).} restricts the
 possible forms of this solution to having only helicity \(\pm2\)
 physically significant components (see
-~{[}\protect\hyperlink{ref-Weinberg:1972}{16}{]}). Let us look at its
-generic form. The metric \(\weakmet\) ought to be real-valued, thus we
-seek real solutions of the form
+~{[}\protect\hyperlink{ref-Weinberg:1972}{16}{]}). Let us look at
+generic forms of the solution. The metric \(\weakmet\) ought to be
+real-valued, thus we seek real solutions of the form
 
-\[
+\begin{equation}\protect\hypertarget{eq-solutiongeneric}{}{
     \weakmet = \polco \exp{\im k\cdot x} + \conjpolco \exp{-\im k\cdot x},
-\]
+}\label{eq-solutiongeneric}\end{equation}
 
-where \(\polco\) is the polarization tensor and \(k\) is the wave
-vector. The polarization tensor is a symmetric rank-2 tensor, since
-\(\weakmet\) is. Additionally we define: \[
-    k\cdot x\equiv \mink \ct{k} \ct[\nu]{k} = \co{k} \ct{x}.
-\] Substituting into \(\SRDA\weakmet=0\) gives
-\(\co{k} \ct{k} \equiv k^2=0\)\sidenote{\footnotesize assuming non-zero perturbation
-  \(\weakmet\) of course} \sidenote{\footnotesize this is saying that the wavevector
+where \(\polco\) is the polarization tensor, \(k\) is the wave vector
+and we define:
+\(k\cdot x\equiv \mink \ct{k} \ct[\nu]{k} = \co{k} \ct{x}\). The
+polarization tensor is a symmetric rank-2 tensor, since \(\weakmet\) is.
+Substituting eq.~\ref{eq-solutiongeneric} into \(\SRDA\weakmet=0\) gives
+\(\co{k} \ct{k} \equiv k^2=0\).\sidenote{\footnotesize Assuming non-zero perturbation
+  \(\weakmet\) of course.} \sidenote{\footnotesize This is saying that the wavevector
   for the wave is null, thus that the wave propagates at the speed of
-  light}. From \ref{eq-dedonder} we have
+  light.} From eq.~\ref{eq-dedonder} we have
 \begin{equation}\protect\hypertarget{eq-polk}{}{
     \polmix \co{k} = \frac{1}{2}\trpol k_\nu.
 }\label{eq-polk}\end{equation} As said at the beginning of this
@@ -1011,24 +1027,26 @@ fix, choosing the following coordinate change
 \ct{\zeta}=\im \ct{A} \exp{\im k\cdot x}    =  - \im \ct{\conj{A}} \exp{ -\im k\cdot x}
 \]
 
-Imposing this change yields the following modified perturbation:
+In the new coordinates, the tensor perturbation takes the form:
 
 \[
 \weakTensor'_{\mu\nu}=\weakmet-\pdv{\co{\zeta}}{\ct[\nu]{x}}-\pdv{\co[\nu]{\zeta}}{\ct{x}}=\polTensor'_{\mu\nu} \exp{\im k\cdot x} + \polTensor^{\prime\ast}{}_{\mu\nu} \exp{-\im k\cdot x}.
-\] with
+\]
+
+with
 
 \begin{equation}\protect\hypertarget{eq-polTprime}{}{
 \polTensor'_{\mu\nu} = \polco + \co{k}\co[\nu]{A} + \co[\nu]{k}\co{A}
 }\label{eq-polTprime}\end{equation}
 
-Equations \ref{eq-polk} and \ref{eq-polTprime} reduce the free
+Equations -eq.~\ref{eq-polk} and -eq.~\ref{eq-polTprime} reduce the free
 components in the polarization tensor to just two. Additionally these
-equations can conspire to yield a traceless polarisation tensor
+equations conspire to yield a traceless polarisation tensor
 \(\trpol=0\), with \(\polco[0\mu]=0\) (see
-~{[}\protect\hyperlink{ref-Carroll:2019}{17}{]}). This then extends to
-the metric perturbation, which when imposed to be traceless, becomes
-equal to its trace-reversed counterpart. This is the so-called
-transverse traceless gauge:
+~{[}\protect\hyperlink{ref-Carroll:2019}{17}{]}). This in turn implies
+that the metric perturbation itself is traceless, and thus becomes equal
+to its trace-reversed counterpart. This is the so-called transverse
+traceless gauge:
 
 \[
 \weakmet[0\mu]=0,\quad \trweakmet=0, \quad \ipdv[^]{\weakmet}{\nu}=0.
@@ -1039,20 +1057,25 @@ The metric perturbation in this gauge is written as: \(\weakTTmet\).
 \hypertarget{inhomogenous-solutions}{%
 \section{Inhomogenous solutions}\label{inhomogenous-solutions}}
 
-With the homogenous part of \ref{eq-linearized} accounted for, we can
-now look at the inhomogenous part. The solution in the presence of a
-source term of \ref{eq-linearized} will be heavily inspired by the
-analogous problem in electromagnetism. If we define the following
-retarded Green's function
+With the homogenous part of eq.~\ref{eq-linearized} accounted for, we
+are now ready to derive the inhomogenous part. The solution of
+eq.~\ref{eq-linearized} in the presence of a source term will be heavily
+inspired by the analogous problem in electromagnetism, where one learns
+that any linear differential equation:
+
+\[\mathcal{\hat{L}}\phi=J\]
+
+is solved using green's functions. If we define the following retarded
+Green's function
 
 \[
-    \greens{\ct{x}-\ct{x'}} = -2\pi\,\deltafn[4]{(\ct{x}-\ct{x'})^2}\thetafn{x^0>x^{\prime0}},
+    \greens{\ct{x}-\ct{x'}} = -2\pi\,\deltafn{({x}-{x'})^2}\thetafn{t>t^{\prime}},
 \]
 
 which satisfies,
 
 \[
-    \SRDA\greens{\ct{x}-\ct{x'}} = \deltafn[4]{\ct{x}-\ct{x'}}.
+    \SRDA\greens{\ct{x}-\ct{x'}} = -2\pi \deltafn[4]{\ct{x}-\ct{x'}}.
 \]
 
 Then, the solution to
@@ -1061,25 +1084,25 @@ Then, the solution to
  \SRDA \weakmet =  -16 \pi \grav \srcco
 }\label{eq-EFEwave}\end{equation}
 
-is given by:
+is given by
 
 \begin{equation}\protect\hypertarget{eq-hsolInhom}{}{
-    \weakmet(x) = 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\srcco(x'),
+    \weakmet(x) = 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\srcco(x').
 }\label{eq-hsolInhom}\end{equation}
 
 \marginnote{\begin{footnotesize}
 
 One gets the parallel solution to the trace reversed equation
-\ref{eq-linearizedTR} by swapping \(\srcTensor\) with \(\SETensor\) and
-all \(\weakTensor\) with \(\weakTRTensor\)
+eq.~\ref{eq-linearizedTR} by swapping \(\srcTensor\) with \(\SETensor\)
+and all \(\weakTensor\) with \(\weakTRTensor\).
 
 \end{footnotesize}}
 
-since when we plug in \ref{eq-hsolInhom} into \ref{eq-EFEwave} \[
+Indeed plugging in eq.~\ref{eq-hsolInhom} into eq.~\ref{eq-EFEwave}, \[
     \Box_x\weakmet = 8\grav\int\dd[4]{x'}\pa[\big]{(\underbrace{\Box_x\greens{\ct{x}-\ct{x'}}}_{=-2\pi\,\deltafn{\ct{x}-\ct{x'}}}} \srcco(x') = -16\pi \grav\srcco(x).
 \] We can perform the \(x^{\prime0}=t'\) integration in
-\ref{eq-hsolInhom}, with the delta function, setting
-\(t'=t-\abs{\ct{x}-\ct{x'}}= t_r\) the retarded time, i.e: \[
+eq.~\ref{eq-hsolInhom}, with the Dirac delta function, which sets \(t'\)
+to be the retarded time, \(t'=t-\abs{\ct{x}-\ct{x'}}= t_r\), i.e: \[
 \weakmet(x) = 8\grav\int\dd[3]{\tv{y}}\srcco(t,\tv{y})\dd{t'}\frac{\delta(t'-(t-\abs{\tv{x}-\tv{y}}))}{2\abs{\tv{x}-\tv{y}}} 
 \]
 
@@ -1087,21 +1110,22 @@ since when we plug in \ref{eq-hsolInhom} into \ref{eq-EFEwave} \[
 \weakmet(\tv{x},t) = 4\grav\int\dd[3]{\tv{y}}\frac{\srcco(t-\abs{\tv{x}-\tv{y}},\tv{y})}{\abs{\tv{x}-\tv{y}}}.
 }\label{eq-solInhomt}\end{equation}
 
-We can interpret the solution at \((\tv{x},t)\) above, as the
-perturbation due to the sumed up contributions of all the sources at the
-point \((\tv{x}-\tv{y},t_r)\) on the past light cone. Put differently
-this will be the gravitational radiation produced by the source
-\(\srcco\). Additionally, the form of the time argument of the source
-tensor, imposed by the definition of the Green's function, shows that
-the radiation propagates with velocity \(=1=c\). This retarded solution
-satisfies the harmonic coordinate condition of \ref{eq-linearized}, as
-required. Indeed, we have
+We can interpret \(\weakmet(\tv{x},t)\), as the perturbation obtained by
+summing up all the radiation from point-sources located at
+\((\tv{x}-\tv{y},t_r)\) on the past light cone. Put differently
+\(\weakmet(\tv{x},t)\) is the gravitational radiation produced by the
+source \(\srcco\). Additionally, the form of the time argument of the
+source tensor, imposed by the definition of the Green's function, shows
+that the radiation propagates with velocity \(=1=c\). The solution given
+by eq.~\ref{eq-solInhomt} satisfies the harmonic coordinate condition of
+eq.~\ref{eq-linearized}, since
 
 \[
     \covd{\SEco}{\mu}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}=0,
 \]
 
-ignoring non-linearities. Then,
+where we have ingored the non-linear terms encoded in the Levi-Civita
+connections. Then,
 
 \[
     \ipdv{\srcct}{\mu} = \partial_\mu\left(\SEco-\frac{\invmink[\mu\nu]}{2}\trSE\right) = -\frac{\invmink[\mu\nu]}{2}\ipdv{\trSE}{\mu}.
@@ -1129,7 +1153,7 @@ Then
     \ipdv{\mixweakmet}{\mu} &= 8\grav\pdv{} {\ct{x}} \int\dd[4]{x'} \greens{\ct{x}-\ct{x'}} \srcmix (x') \\
 &= 8\grav\int\dd[4]{x'}\,\pdv{\greens{\ct{x}-\ct{x'}}}{ \ct{x}} \srcmix(x') \\
 &= -8\grav\int\dd[4]{x'}\pdv{\greens{\ct{x}-\ct{x'}}}{\ct{x'}}\srcmix(x') \\
-    &= \underbrace{8\grav\greens{\ct{x}-\ct{x'}}\kron(x')}_{=0\ \mathrm{for}\ x=x'} + 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\pdv{\srcmix(x')}{\ct{x'}} \\
+    &= \underbrace{8\grav\greens{\ct{x}-\ct{x'}}\srcmix(x')}_{=0\ \mathrm{at the boundary}} + 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}}\pdv{\srcmix(x')}{\ct{x'}} \\
     &= 8G\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}} \frac{1}{2}\pdv{\trsrc(x')}{\ct{x'}} \\
     &=\quad \dots \quad \text{repeat in reverse} \\
     &= \pdv{} {\ct{x}} \brk[\Big]{8\grav\int\dd[4]{x'}\,\greens{\ct{x}-\ct{x'}} \frac{1}{2}\trsrc(x')} \\
@@ -1141,71 +1165,84 @@ Then
 \section{Gravitational Wave Sources}\label{gravitational-wave-sources}}
 
 Now that we have the general form of the solutions to the linearized
-Einstein equations, we can proceed to the analysis of the sources of
-gravitational waves. The first step is to analyse the equations in the
-frequency domain. We will use the following notation:
+Einstein equations, we can proceed to the analysis of sources of
+\glspl{gw}. The first step is to analyse the equations in the frequency
+domain. We will use the following notation:
 
 \[\FT[t]{\phi}{\omega}(\omega,\tv{x})=\int \dd{t} \phi(t,\tv{x}) \exp{\im\omega t}\]
 \[\invFT[\omega]{\phi}{t}(t,\tv{x})=\int \frac{\dd{\omega}}{2\pi} \FT[t]{\phi}{\omega}(\omega,\tv{x}) \exp{- \im \omega t}\]
 
-Let us look at the trace reversed solution, as the conservation equation
-for
+Let us look at frequency domain of the soludtion given in
+eq.~\ref{eq-solInhomt}. We have
 \begin{equation}\protect\hypertarget{eq-FTweakmet}{}{\begin{aligned} 
 \FT[t]{\weakmet}{\omega}(\omega, \tv{x}) &=\int \dd{t} \weakmet(t,\tv{x}) \exp{\im\omega t}
 \\ &=4\grav\int\dd[3]{\tv{y}}\dd{t} \frac{\srcco(t-\abs{\tv{x}-\tv{y}},\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t}
 \\ &=4\grav\int\dd[3]{\tv{y}}\dd{t_r} \frac{\srcco(t_r,\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t_r}\exp{\im\omega\abs{\tv{x}-\tv{y}}}
-\\ &=4\grav\int\dd[3]{\tv{y}} \frac{\FT[t_r]{\srcco}{\omega}(\omega,\tv{y})}{\abs{\tv{x}-\tv{y}}} \exp{\im\omega\abs{\tv{x}-\tv{y}}} 
-\end{aligned}}\label{eq-FTweakmet}\end{equation}
+\\ &=4\grav\int\dd[3]{\tv{y}} \frac{\FT[t_r]{\srcco}{\omega}(\omega,\tv{y})}{\abs{\tv{x}-\tv{y}}} \exp{\im\omega\abs{\tv{x}-\tv{y}}} .
+\end{aligned}
+}\label{eq-FTweakmet}\end{equation}
 
 We can now apply various approximations to this form of the
-perturbation. The first is to consider that we look at the radiation
-only in the so called \emph{wave zone}, at a distance \(r=\abs{\tv{x}}\)
-much larger than the dimensions of the source
-\(R=\abs{\tv{y}}_\text{max}\). Additionally we assume that
-\(r \gg \frac{1}{\omega}\), i.e long wavelengths don't dominate. Finally
-we assume that \(r \gg \omega R^2\), i.e.~the ratio of \(R\) to the
-wavelength is not comparable to the ratio of \(r\) to \(R\). Using this
-approximation we can write:
+perturbation:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consider a compact source, centered on the origin of our coordinate
+  system. This implies that \(\srcco\) is peaked and compactly supported
+  in a region around the origin. We look at the radiation only in the so
+  called \emph{wave zone}, at a distance \(r=\abs{\tv{x}}\) much larger
+  than the dimensions of the source \(R=\abs{\tv{y}}_\text{max}\).
+\item
+  We assume that \(r \gg \frac{1}{\omega}\), i.e long wavelengths don't
+  dominate.
+\item
+  We assume that \(r \gg \omega R^2\), i.e.~the ratio of \(R\) to the
+  wavelength is not comparable to the ratio of \(r\) to \(R\). Using
+  this approximation we can write:
+\end{enumerate}
 
 \[
 \begin{split}
-    \abs{\tv{x}-\tv{y}} &= r\left(1-2\hat{\tv{x}}\cdot\tv{y}+\frac{\tv{x}^{\prime2}}{r^2}\right)^{1/2} \\
+    \abs{\tv{x}-\tv{y}} &= r\left(1-2\hat{\tv{x}}\cdot\tv{y}+\frac{\tv{x}^{\prime2}}{r^2}\right)^{1/2} , \\
     \abs{\tv{x}-\tv{y}} &\approx r\left(1-\frac{\hat{\tv{x}}\cdot\tv{y}}{r}\right) \quad \text{with: } \hat{\tv{x}} = \frac{\tv{x}}{r}.
 \end{split}
 \]
 
 If we additionally further separate the scales in the following
-way\sidenote{\footnotesize we just add the condition that \(\frac{1}{\omega}\gg R\),
-  that is the source radius is much smaller than the wavelength}
+way\sidenote{\footnotesize We just add the condition that \(\frac{1}{\omega}\gg R\),
+  that is the source radius is much smaller than the wavelength.}
 
 \[
 r\gg \brc{\frac{1}{\omega},\omega R^2}\gg R,
 \]
 
-Then \ref{eq-FTweakmet} becomes much simpler\sidenote{\footnotesize the approximations
-  all conspire to be able to neglect the \(\tv{y}\) dependence of
-  \(\exp{\im\omega\abs{\tv{x}-\tv{y}}}\) in the integral}:
+Then eq.~\ref{eq-FTweakmet} becomes much simpler\sidenote{\footnotesize The
+  approximations all conspire to be able to neglect the \(\tv{y}\)
+  dependence of \(\frac{\exp{\im\omega\abs{\tv{x}-\tv{y}}}}{\abs{x-y}}\)
+  in the integral.}:
 
 \begin{equation}\protect\hypertarget{eq-FTweakmet2}{}{
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega r}}{r} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) 
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega r}}{r} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) .
 }\label{eq-FTweakmet2}\end{equation}
 
-Now let us look at the fourier transform of the source term. By
-definition we have
+Now, let us look at the Fourier transform of the source term. By
+definition, we have
 
 \[
 \FT[t]{\srcco}{\omega}(\omega,\tv{y})=\FT[t]{\SEco}{\omega}(\omega,\tv{y})+\half \mink\FT[t]{\trSE}{\omega}(\omega,\tv{y})
 \]
 
-Thus the term to analyse is actually \(\FT[t]{\SEco}{\omega}\). We can
-use the conservation equation \ref{eq-SEcons} in fourrier \(t\)-space to
-write:
+Thus we can study the Fourier transform of \(\SEco\),
+\(\FT[t]{\SEco}{\omega}\) instead. Using the conservation equation
+eq.~\ref{eq-SEcons} in Fourier \(t\)-space, we obtain:
 
 \begin{equation}\protect\hypertarget{eq-FTSEcons}{}{
 -\ipdv[^]{ \FT[t]{\SEco[i\mu]}{\omega}}{i} = \im \omega\FT[t]{\SEco[0\mu]}{\omega}
 }\label{eq-FTSEcons}\end{equation}
 
-This equation becomes algebraic when we further fourrier transorm in
+This equation becomes algebraic when we further Fourier transform in
 \(\tv{x}\)-space:
 
 \[
@@ -1214,34 +1251,34 @@ This equation becomes algebraic when we further fourrier transorm in
 \ct{k}\SEco(\omega,\tv{k}) = 0
 \]
 
-These four equations enable us to just care about the purely spacelike
-components of \(\SEco\). Let us apply \ref{eq-FTSEcons} to itself to
-obtain:
+These four equations relate the time components of
+\(\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}\) to the spatial ones. We now
+apply eq.~\ref{eq-FTSEcons} to itself to obtain:
 
 \[
 \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=-\omega^2\FT[t]{\SEco[00]}{\omega}
-\] which when multiplied by \(\co[m]{x}\co[n]{x}\) and integrated over
-\(\tv{x}\) gives\sidenote{\footnotesize two integrations by parts cancel the
+\] which, when multiplied by \(\co[m]{x}\co[n]{x}\), and integrated over
+\(\tv{x}\) gives\sidenote{\footnotesize Two integrations by parts cancel the
   \(\co[m]{x}\co[n]{x}\) term in the \gls{lhs} and since boundary terms
   are 0 (the source is finite) we have
   \[\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}\]
   The hessian of \(\co[m]{x}\co[n]{x}\) is
   \((\kron[^i_m]+\kron[^i_n])(\kron[^j_n]+\kron[^j_m])\), but since
   \(\SEco\) is symmetric the integral is
-  \[\int \dd{\tv{y}} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\tv{y}) \]}: \[
-\int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x})
+  \[\int \dd{\tv{y}} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\tv{y}) \]} \[
+\int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega^2] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x}).
 \]
 
-Notice the last integral is in fact the fourrier transform of (a third
-of) the quadrupole moment tensor of the energy denisty:
+Notice that the integral on the \gls{rhs} is in fact the Fourier
+transform of the quadrupole moment tensor of the energy denisty:
 
 \begin{equation}\protect\hypertarget{eq-quadmom}{}{
 \quadmom[mn]=\int \co[m]{x}\co[n]{x} \SEco[00](t,\tv{x})\dd[3]{x}.
 }\label{eq-quadmom}\end{equation}
 
-We call its fourrier transform
+We call its Fourier transform
 \(\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)\) and we can finally rewrite
-\ref{eq-FTweakmet2} as:
+eq.~\ref{eq-FTweakmet2} as:
 
 \[
 \FT[t]{\weakmet}{\omega}(\omega, \tv{x})=-{2\grav\omega^2}\frac{\exp{\im\omega r}}{r} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}
@@ -1257,27 +1294,29 @@ Going back \(t\)-space we have:
 \end{aligned}
 }\label{eq-metricquadmom}\end{equation}
 
-This equation has a very nice physical interpretation. The gravitational
-wave produced by a non-relativistic source is proportional to the second
-derivative of the quadrupole moment of the energy denisty at the time
-where the past light cone of the observer intersects the source
-(\(t_r\)). The nature of gravitational radiation is in stark contrast to
-the leading electromagnetic contribution which is due the the change in
-the \emph{dipole} moment of the charge density. The change of the dipole
+This equation has a nice physical interpretation. The gravitational wave
+produced by a non-relativistic source is proportional to the second
+derivative of the quadrupole moment of the energy density at the time
+\(t_r\) where the past light cone of the observer intersects the source.
+The nature of gravitational radiation is in stark contrast to the
+leading electromagnetic contribution which is due the change in the
+\emph{dipole} moment of the charge density. The change of the dipole
 moment can be attributed to the change in center of charge (for \gls{em}
-), or mass (for \gls{gr} ), and while a center of charge is free to move
-around, the center of mass (of an isolated) is fixed by the conservation
-of momentum. The quadrupole moment, on the other hand, is sensitive to
-the shape of the source, which a gravitional system can modify. Finally
-the quadrupole radiation is subleading when compared to dipole
-radiation. Thus on top of the much smaller coupling constant,
-gravitional radiation is also weakened by this fact, and thus is usually
-orders of magnitude weaker than electromagnetic radiation.
+), or mass (for \gls{gr} ). While a center of charge is free to move
+around, the center of mass (of an isolated source) is fixed by the
+conservation of momentum, so the dipole moment is zero.
 
-Thus any object that is modifying its shape is a source of \glspl{gw}.
-All orbiting systems therefore are sources of \glspl{gw} . However as
-said just above, only very important `changes in shape' have a chance to
-be detectable. These phenomena are what we will explore next.
+The quadrupole moment, on the other hand, is sensitive to the shape of
+the source, which a gravitational system can modify. We observe that the
+quadrupole radiation is subleading when compared to dipole radiation.
+Thus on top of the much smaller coupling constant, gravitational
+radiation is also weakened by this fact, and thus is usually orders of
+magnitude weaker than electromagnetic radiation.
+
+In summary, any object that is modifying its shape is a source of
+\glspl{gw}. All orbiting systems therefore are sources of \glspl{gw} .
+However as outlined above, only significant `changes in shape' have a
+chance to be detectable. We will now explore these phenomena.
 
 \hypertarget{sec-compactbinaries}{%
 \subsection{Compact binaries}\label{sec-compactbinaries}}
@@ -1295,7 +1334,7 @@ lose energy\sidenote{\footnotesize of course this happens in every orbiting syst
   enough to produce large amounts of radiation actually lose enough
   energy for it to matter}. Thus they slow down, and their orbit
 shrinks. This continues until the orbit is so small that the objects
-merge into a single object. Of course this is a very important change of
+merge into a single object. Of course this is a significant change of
 shape and thus we have a constructed (if not all on purpose) a very
 powerful source of \glspl{gw} . Such objects are called compact
 binaries.
@@ -1304,7 +1343,7 @@ To \gls{lo} we can use a newtonian circular orbit to describe the motion
 of the binary. nsuch a system is in fact equivalent to effective one
 body \sidenote{\footnotesize This choice of wording is nota coincidence as we shall
   see} of reduced mass \(\redmass=\frac{\mass[1]\mass[2]}{\totmass}\)
-orbiting in a gravitional potential of mass
+orbiting in a gravitational potential of mass
 \(\totmass=\mass[1]+\mass[2]\), at a distance \(R\) equal to the
 distance between the binary. Such an orbit can easily be characterized
 by a balancing act between the gravitational attraction due to the
@@ -1317,8 +1356,8 @@ mass:\sidenote{\footnotesize or equivalently between conserved angular momentum 
 }\label{eq-newtongrav}\end{equation}
 
 where \(\vel\) is the norm of tangential velocity, and \(\dist\) is the
-distance between the two objects. \ref{eq-newtongrav} gives us the the
-norm of the velocity:
+distance between the two objects. eq.~\ref{eq-newtongrav} gives us the
+the norm of the velocity:
 
 \[
 \vel=\sqrt{\frac{\grav \totmass}{\dist}}.
@@ -1359,8 +1398,8 @@ the \gls{eom} of the reduced mass:
 \SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)}.
 \]
 
-Which when plugged into \ref{eq-quadmom} gives us the quadrupole moment
-of the the rotating system:
+Which when plugged into eq.~\ref{eq-quadmom} gives us the quadrupole
+moment of the the rotating system:
 
 \[
 \begin{aligned}
@@ -1378,8 +1417,8 @@ Thus we have roughly:
 \]
 
 where we have expanded in small \(\dist\) in the second relation. The
-metric perturbation is then given by \ref{eq-metricquadmom} and has norm
-ignoring constants:
+metric perturbation is then given by eq.~\ref{eq-metricquadmom} and has
+norm ignoring constants:
 
 \begin{equation}\protect\hypertarget{eq-hnorm}{}{
 h \sim \frac{\ddot{\quadmom[]}}{r} \sim \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
@@ -1392,9 +1431,9 @@ Binaries}{ Binaries}}\label{bh-binaries}}
 Taking the process described above to the limit one could imagine asking
 for the most dense objects possible to orbit each other. In \gls{gr}
 this object is called a black hole ( \gls{bh} ). It is a possible
-solution to the full fat \gls{efe} (\ref{eq-EFE}), where we consider a
-static and isotropic universe, with point like mass at its center. Then
-the solutions to the equations \ref{eq-EFE} have a unique form
+solution to the full fat \gls{efe} (eq.~\ref{eq-EFE}), where we consider
+a static and isotropic universe, with point like mass at its center.
+Then the solutions to the equations eq.~\ref{eq-EFE} have a unique form
 ~{[}\protect\hyperlink{ref-Birkhoff:1923}{18}{]}, called the
 Schwarzschild solution. The solution is given by, in spherical
 coordinates:
@@ -1416,8 +1455,8 @@ R_S=\frac{2GM}{c^2}.
 
 For stellar masses we have \(R_S=2954\; \mathrm{m}\), quite a lot
 smaller than the radius of the sun \(\sim 7\cdot10^8\; \mathrm{m}\).
-Note that \ref{eq-Schwarzschild} exhibits singularities (blowing up of
-the metric compontents) at both \(r=R_S\) and \(r=0\). The former is
+Note that eq.~\ref{eq-Schwarzschild} exhibits singularities (blowing up
+of the metric compontents) at both \(r=R_S\) and \(r=0\). The former is
 spurious, as it is an artefact of the coordinate choice, while the
 latter is real, in the sense that coordiante independent scalars formed
 from the metric (such as the ricci scalar) do in fact blow up as
@@ -1426,14 +1465,14 @@ from the metric (such as the ricci scalar) do in fact blow up as
 
 If we consider a compable stellar mass binary black hole system, we can
 use the calculations of the previous section to compute the order of
-magnitude of the perturbation. \ref{eq-omega} in terms of the
+magnitude of the perturbation. eq.~\ref{eq-omega} in terms of the
 Schwarzschild radius gives us the orbital frequency:
 
 \[
 f=\frac{\Omega}{2\pi}\approx\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}}
 \]
 
-and the metric perturbation is given by \ref{eq-hnorm}:
+and the metric perturbation is given by eq.~\ref{eq-hnorm}:
 
 \[
 h \approx \frac{R_S^2}{r\dist}.
@@ -1479,9 +1518,9 @@ its infancy and we will not treat it here.
 There are naturally many other binaries that could be feasably be
 detected. Finite size binaries such as \glspl{ns} include very
 interesting tidal effects, that are not present in the \gls{bh} case.
-Other non binary objects could also produce detectable gravitational
-waves, such as Cosmic strings, corresponding to early universe
-topological defects creating a stochasitc \gls{gw} backround.
+Other non binary objects could also produce detectable \glspl{gw}, such
+as Cosmic strings, corresponding to early universe topological defects
+creating a stochasitc \gls{gw} backround.
 
 \bookmarksetup{startatroot}
 
@@ -2024,8 +2063,8 @@ F(t_r)=F(t)-{r} \dot{F}(t)+\frac{r^2}{2} \ddot{F}(t)+\ldots
 Now importantly the derivatives should bring down factors proportional
 to frequency \(\Omega\) of the emitted radiation. Thus this is in fact
 an expansion in \(r \Omega\sim r / \lambda\), and is thus only valid in
-the near zone as defined by \ref{eq-nearzone}, and breaks down outside
-of this zone, in the so called \emph{radiation zone}. A serious
+the near zone as defined by eq.~\ref{eq-nearzone}, and breaks down
+outside of this zone, in the so called \emph{radiation zone}. A serious
 consequence of this fact is that the pure, naive \gls{pn} expansion is
 unable to account for outgoing or incoming radiation, and thus unable to
 describe isolated systems. This is where the \gls{pm} expansion comes
@@ -2060,7 +2099,7 @@ meaning that: \[
 \]
 
 The \gls{efe} for this metric perturbation, when imposing dedonder gauge
-(\ref{eq-dedonder}) is given by:
+(eq.~\ref{eq-dedonder}) is given by:
 
 \begin{equation}\protect\hypertarget{eq-relEFE}{}{
 \SRDA \invpertmet=-16 \pi \grav \invpertmet \relSEct ,
@@ -2081,7 +2120,7 @@ dependent on the metric and thus depends highly non-linearly on
 \ct[\mu\nu]{\Lambda}=\ct[\mu\nu]{L}[\pertTensor,\pertTensor]+\ct[\mu\nu]{M}[\pertTensor,\pertTensor,\pertTensor]+\ct[\mu\nu]{N}[\pertTensor,\pertTensor,\pertTensor,\pertTensor]+\order[5]{\pertTensor}.
 \]
 
-In a vaccuum \ref{eq-relEFE} reduces to:
+In a vaccuum eq.~\ref{eq-relEFE} reduces to:
 
 \[
 \SRDA \invpertmet=\ct[\mu\nu]{\Lambda},
@@ -2189,10 +2228,11 @@ Where as expected we obtain that one of the momenta descibes the center
 of mass momentum \(\tv{P}=\tv{\emom[1]}+\tv{\emom[2]}\). The other
 positions are by constuction given by \(\pdv{f_{II}}{\tv[1]{q}}=\tv{Q}\)
 and \(\pdv{f_{II}}{\tv[1]{q}}=\tv{q}\) i.e the same as equation
-\ref{eq-jacobi2}. Finally the new hamitonian
+eq.~\ref{eq-jacobi2}. Finally the new hamitonian
 \(\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}\) can be directly
 obtained by the generating function:\sidenote{\footnotesize We just plug in the
-  definition of the old momenta in terms of the new (\ref{eq-momtrans}):
+  definition of the old momenta in terms of the new
+  (eq.~\ref{eq-momtrans}):
   \[ \tv{\emom[1]}=\frac{\mass[1]}{\totmass} \tv{P} + \tv{p}\]
   \[ \tv{\emom[2]}=\frac{\mass[2]}{\totmass} \tv{P} - \tv{p}\]}
 
@@ -2239,23 +2279,23 @@ a generic system momentum \(\tv{P}\) and obtain:
 \Heob=\sqrt{\totmass^2(1+2\symmratio(\frac{\Heff}{\redmass}-1))+\tv{P}^2}
 \]
 
-This Hamiltonian (with \(\Heff\) given by \ref{eq-straightheff}) now
+This Hamiltonian (with \(\Heff\) given by eq.~\ref{eq-straightheff}) now
 describes straight line motion in a relativistic framework. The key
 point is that we can take \(\Heff\) to be a gravitational test mass
 Hamiltonian, with some specific deformations and this will match the
 \gls{pn} result. Consider a test mass in a schwarzschild background
-\ref{eq-Schwarzschild}, i.e.~we consider the case of non spinnning black
-holes. We can start from the reduced-mass shell expression:
+eq.~\ref{eq-Schwarzschild}, i.e.~we consider the case of non spinnning
+black holes. We can start from the reduced-mass shell expression:
 
 \begin{equation}\protect\hypertarget{eq-schwarzmassshell}{}{
 \invmet \ct{\emom}\ct[\nu]{\emom} =- \redmass^2
 }\label{eq-schwarzmassshell}\end{equation}
 
-where \(\invmet\) is given by \ref{eq-Schwarzschild}, where we can set
-\(\theta=\Half{\pi}\) to fix the orientation\sidenote{\footnotesize this is always
+where \(\invmet\) is given by eq.~\ref{eq-Schwarzschild}, where we can
+set \(\theta=\Half{\pi}\) to fix the orientation\sidenote{\footnotesize this is always
   possible through a change of variables}. Just as before the effective
 hamiltonian is the 0th component of the momentum, which is implicitly
-given by \ref{eq-schwarzmassshell}:
+given by eq.~\ref{eq-schwarzmassshell}:
 
 \[
 \mathcal{H}_S=\sqrt{A_S(\redmass^2+A_S\emom[r]^2+\frac{L^2}{r^2})},
@@ -2504,12 +2544,12 @@ impact parameter is proportional to the inverse of the momentum transfer
 q=(0,\tv{q})=(0,\tv{k}-\tv{k'}).
 \]
 
-The last relation in \ref{eq-invang} holds due to the virial theorem.
-Where \(\kappa\) is the coupling constant, which in the case of gravity
-is \(\kappa=4\pi\grav\). Since the potential must encode the coulomb
-potential \(\kappa/\abs{\tv{k}-\tv{k'}}^2\propto J^3\), it must scale
-similarly. We thus formulate the following ansatz for the potential:
-\begin{equation}\protect\hypertarget{eq-ansatzpot}{}{
+The last relation in eq.~\ref{eq-invang} holds due to the virial
+theorem. Where \(\kappa\) is the coupling constant, which in the case of
+gravity is \(\kappa=4\pi\grav\). Since the potential must encode the
+coulomb potential \(\kappa/\abs{\tv{k}-\tv{k'}}^2\propto J^3\), it must
+scale similarly. We thus formulate the following ansatz for the
+potential: \begin{equation}\protect\hypertarget{eq-ansatzpot}{}{
 \pot(\tv{k},\tv{k'})=\sum_{n=0}^\infty \frac{\kappa^n}{\abs{\tv{k}-\tv{k'}}^{\Dim-1-n}} c_n\pa[\Big]{\frac{\tv{k}^2+\tv{k'}^2}{2}}
 }\label{eq-ansatzpot}\end{equation}
 
@@ -2577,7 +2617,7 @@ The interaction term encodes the vertex:
 The key point is that the EFT amplitude for two-to-two scattering must
 be equal to the full amplitude at every order in the coupling constant
 \(\coupling\). The expression for the \gls{eft} amplitude will contain
-the coefficient functions from \ref{eq-ansatzpot} since they will be
+the coefficient functions from eq.~\ref{eq-ansatzpot} since they will be
 present as vertex terms. Particle number must be conserved in the
 non-relativistic limit \sidenote{\footnotesize as pair production is kinematically
   forbidden}, so the amplitude is a sum of bubble diagrams:
@@ -2674,7 +2714,7 @@ that
 \]
 
 This enables us to fix the coefficients in the potential ansatz
-\ref{eq-ansatzpot}, and fullfils the promised map from amplitude to
+eq.~\ref{eq-ansatzpot}, and fullfils the promised map from amplitude to
 potential. Importantly we must apply the limiting procedure applied
 above, i.e.~the classical and non relativitic limit. We can summarise
 this by setting the following heirarchy:
@@ -2901,7 +2941,7 @@ state is defined as:
 We now have the definitions for asymptotic in and out states for any
 number of particles. Before continuing to define the setup to scatter
 our two particles, let us look at the meaning of the position space
-wavefunction \(f(x)\) as defined in \ref{eq-spacetimewf}. Consider a
+wavefunction \(f(x)\) as defined in eq.~\ref{eq-spacetimewf}. Consider a
 sharply peaked, compactly supported momentum distribution
 \(\shellft{f}(k)\) around a value \(\tv[0]{p}\) and a characteristic
 width \(\Delta p\). One such function could be:
@@ -2914,9 +2954,9 @@ N \exp{-1 /\pa{1-\abs{\tv{p}-\tv[0]{p}}^2 / \Delta p^2}} & \text { if }\abs{\tv[
 }\label{eq-peak}\end{equation}
 
 where \(N\) is a normalization constant. Now the integrand in
-\ref{eq-spacetimewf}, at large \(t\) or \(\tv{x}\), will be dominated by
-the stationary phase point \(\tv[s]{p}\) which is given by:\sidenote{\footnotesize This
-  then means that
+eq.~\ref{eq-spacetimewf}, at large \(t\) or \(\tv{x}\), will be
+dominated by the stationary phase point \(\tv[s]{p}\) which is given
+by:\sidenote{\footnotesize This then means that
   \[\tv[s]{p}=\frac{\mass\tv{x}\sign{t}}{\sqrt{t^2-\tv{x}^2}}\] thus
   \[\hbar\shellen[{\tv[s]{p}}]=\frac{\mass\abs{t}}{\sqrt{t^2-\tv{x}^2}}\]}
 \begin{equation}\protect\hypertarget{eq-stationaryphase}{}{0=-\pdv{}{\tv[s]{p}}\pa{\hbar\shellen[{\tv[s]{p}}]t+\tv[s]{p}\cdot\tv{x}}=-\frac{\tv[s]{p}t}{\hbar\shellen[{\tv[s]{p}}]}+\tv{x}.}\label{eq-stationaryphase}\end{equation}
@@ -2925,7 +2965,7 @@ In the case of a sharply peaked momentum distribution, the coordinate
 space wavefunction will be largest when the stationary phase point is be
 the same as the peak of the momentum distribution,
 i.e.~\(\tv[s]{p}=\tv[0]{p}\) i.e.~substituting \(\tv[s]{p}\) into
-\ref{eq-stationaryphase} gives: \[
+eq.~\ref{eq-stationaryphase} gives: \[
 \tv{x}\simeq \frac{\tv[0]{p}t}{\hbar\shellen[{\tv[0]{p}}]}=\tv[0]{v}t.
 \]
 
@@ -2990,7 +3030,8 @@ identity vanish (as \(\id\) commutes with everything).
 \end{aligned}
 }\label{eq-DeltaO}\end{equation}
 
-If we put in the definition of our in state (\ref{eq-instate}) we have:
+If we put in the definition of our in state (eq.~\ref{eq-instate}) we
+have:
 
 \[
 \Delta O = \int \ddP[4]{\emom[1],\emom[2],\emom[1]',\emom[2]'} 
@@ -3094,10 +3135,10 @@ now.
 \subsection{Classical limit}\label{classical-limit}}
 
 Since we are concerned with classial observables we need to explore the
-classical limit of \ref{eq-DeltaO}, i.e.~the limit of \(\hbar \to 0\).
-The first target is the wavefunctions. We have multiple conditions on
-the wavefunctions. The first are those imposed by \gls{lsz} reduction.
-That is,
+classical limit of eq.~\ref{eq-DeltaO}, i.e.~the limit of
+\(\hbar \to 0\). The first target is the wavefunctions. We have multiple
+conditions on the wavefunctions. The first are those imposed by
+\gls{lsz} reduction. That is,
 
 \begin{itemize}
 \tightlist
@@ -3205,7 +3246,7 @@ f(\frac{\emom \cdot u }{m}\vert\cls{\vel[i]};\mass[i] ;\beta^{(i)}).
 \]
 
 This function can take the form of a gaussian, or something similar to
-\ref{eq-peak}. Now there is one final requirement, that concerns the
+eq.~\ref{eq-peak}. Now there is one final requirement, that concerns the
 overlap of \(\wf\) and \(\cwf\) must be \(\mathcal{O}(1)\), equivalently
 and more precisely:
 
@@ -3230,8 +3271,8 @@ inequality with ones we obtain from the specific cases of integrations
 required above.
 
 We now want to examine the classical limit of something like
-\ref{eq-DeltaOv}. If we consider just the integration over the initial
-momenta \(\emom[i]\) and the initial wavefunctions with
+eq.~\ref{eq-DeltaOv}. If we consider just the integration over the
+initial momenta \(\emom[i]\) and the initial wavefunctions with
 \(\ndeltafn{2 \emom[i] \cdot \tm+\tm^2}\), the delta function will smear
 out to a sharply peaked function whose scale is the same order as the
 original wavefunctions. As \(\xi\) gets smaller, this function will turn
@@ -3267,8 +3308,8 @@ The delta function can then be rewritten as: \[
 \ndeltafn{2 \emom \cdot \tm+\tm^2}=\ndeltafn{2\hbar m\, u\cdot \tw+\hbar^2 \tw^2}=\frac{1}{\hbar m}\ndeltafn{2 \tw \cdot u-\frac{\comptlen}{\scatlen^2}}=\frac{\scatlen}{\hbar m}\ndeltafn{2\scatlen\, \tw \cdot u-\frac{\comptlen}{\scatlen}}.
 \]
 
-Performing the integration over \(\emom\) in \ref{eq-dfunct} we obtain
-symbolically:
+Performing the integration over \(\emom\) in eq.~\ref{eq-dfunct} we
+obtain symbolically:
 
 \[
 d(m,\xi,u,\tm)=\text{peaked function imposing that } {2\scatlen\, \tw \cdot u=\frac{\comptlen}{\scatlen}}\text{ with width } \xi^\beta.
@@ -3356,7 +3397,7 @@ that the steps above have been applied:
 \AAngle{g(\emom[1],\emom[2],\dots)}\defeq \int\limits \ddP{\emom[1]}\ddP{\emom[2]} \abs{\wf[1](\emom[1])}^2\abs{\wf[2](\emom[2])}^2\,g(\emom[1],\emom[2],\dots)
 \]
 
-We can now rewrite \ref{eq-DeltaO}:
+We can now rewrite eq.~\ref{eq-DeltaO}:
 
 \begin{equation}\protect\hypertarget{eq-DeltaOclas}{}{
 \changeob = \AAngle{\int \overbracket{\dn[4]{\tm} \ndeltafn{2\emom[1]\cdot \tm +\tm^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}  
@@ -3565,7 +3606,7 @@ And the integrand is given by the tree level 4 point amplitude.
 \]
 
 At \gls{nlo}, i.e.~\(\kappa^4\) order, both integrands contribute, as
-\ref{eq-rvloopmatch} can be satisfied for \(L=1\), \(L'=0\) and
+eq.~\ref{eq-rvloopmatch} can be satisfied for \(L=1\), \(L'=0\) and
 \(\abs{X}=2\). Thus we have the following equation:
 
 \begin{equation}\protect\hypertarget{eq-impulseNLO}{}{
@@ -3589,8 +3630,8 @@ observable, the objects that are needed are the amplitudes.
 
 For each loop level, many diagrams can contribute, but the classical
 limit enforces that they must cancel the \(\hbar\) orders given by
-\ref{eq-hbarreal} and \ref{eq-hbarvirt}. The cancellation order is
-dependent on the considered observable and filters the contributing
+eq.~\ref{eq-hbarreal} and eq.~\ref{eq-hbarvirt}. The cancellation order
+is dependent on the considered observable and filters the contributing
 diagrams. It can also be reformulated in the language of the method of
 regions.
 
@@ -3826,7 +3867,7 @@ to the soft limit, namely:
 }\label{eq-newmom}\end{equation}
 
 The new momentum variables \(\semom[i]\) are crucially orthogonal to
-momentum transfer \(\tm\) :\sidenote{\footnotesize we use \ref{eq-masses}}
+momentum transfer \(\tm\) :\sidenote{\footnotesize we use eq.~\ref{eq-masses}}
 
 \begin{equation}\protect\hypertarget{eq-orthog}{}{
 \semom[i]\cdot\tm=0,
@@ -3853,7 +3894,7 @@ amplitudes.
 \subsection{Tree level}\label{tree-level}}
 
 We start with the tree level amplitude, the only \gls{lo} contribution
-in for example \ref{eq-impulseLO}. The only possible diagram we can
+in for example eq.~\ref{eq-impulseLO}. The only possible diagram we can
 build with four external scalar legs, and vertices as defined in
 Table~\ref{tbl-sqedfrules}, is the following tree:
 
@@ -3896,17 +3937,17 @@ frame of particle 2:
 }\label{eq-relfact}\end{equation}
 
 We now input the reduced version \(\redampl[(0)]\elch^2=\ampl[(0)]\) of
-the amplitude, and take the \(\hbar\to0\) limit of \ref{eq-impulseLO}.
-We can safely take the \(\hbar \to 0\) limit as the integrand contains
-no terms singular in \(\hbar\) (the \(\frac{1}{\hbar^2}\) is cancelled
-by the \(\hbar^2\) pre-factor). Notice that the integration measure
-\ref{eq-DeltaOclas} simplifies in the classical limit:\sidenote{\footnotesize Compare
-  to
+the amplitude, and take the \(\hbar\to0\) limit of
+eq.~\ref{eq-impulseLO}. We can safely take the \(\hbar \to 0\) limit as
+the integrand contains no terms singular in \(\hbar\) (the
+\(\frac{1}{\hbar^2}\) is cancelled by the \(\hbar^2\) pre-factor).
+Notice that the integration measure eq.~\ref{eq-DeltaOclas} simplifies
+in the classical limit:\sidenote{\footnotesize Compare to
   \[\begin{aligned}\dPsb{\tw}&=\dn[4]{\tw} \ndeltafn{2\emom[1]\cdot\tw+\hbar\tw^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}\\& \ndeltafn{2\emom[1]\cdot \tw +\hbar\tw^2}\thetafn{\ct[0]{\emom[2]}+\tm^0}\end{aligned}\]
   The theta functions cancel as \(\tm^0\to0\) and \(\emom[i]\) becomes
-  classical. Changing to the special kinematic variables \ref{eq-newmom}
-  we can even eliminate the delta functions, since by constuction
-  \(\semom[1]\cdot\tw=0\).}
+  classical. Changing to the special kinematic variables
+  eq.~\ref{eq-newmom} we can even eliminate the delta functions, since
+  by constuction \(\semom[1]\cdot\tw=0\).}
 
 \[
 \lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} \cancel{\ndeltafn{2\semom[1]\cdot\tw}}\cancel{\ndeltafn{2\semom[1]\cdot \tw }}.
@@ -4389,12 +4430,13 @@ package.
 There is one final simplification we can do. The first diagram above has
 two photon propagators, and two quartic vertices, which give it its
 name: the double-seagull. The photon propagators have homogeonous
-\(\hbar^{-2}\) scaling (see \ref{eq-photonscale}), the vertices only
+\(\hbar^{-2}\) scaling (see eq.~\ref{eq-photonscale}), the vertices only
 bring constants, and the loop integration has \(\hbar^4\) scaling.
 Together this means that the reduced amplitude has \(\hbar^0\) scaling.
 However in the virtual integrand the reduced amplitude has to cancel
-with the transfer momentum's \(\hbar\) scale (see \ref{eq-impulseIr}).
-Thus the double seagull diagram dies in the classical limit.
+with the transfer momentum's \(\hbar\) scale (see
+eq.~\ref{eq-impulseIr}). Thus the double seagull diagram dies in the
+classical limit.
 
 We are left with only 4 diagrams, the two triangle diagrams, the box and
 cross box, which we can now compute. At this point we can do this
@@ -4502,7 +4544,8 @@ spanning tree of the graph, and then setting the loop momenta to be
 those internal edges that are missing from the tree. Using \texttt{FORM}
 we can contract indices and apply the momentum conservation rules.
 Finallly we also apply the relableing rules described in
-\ref{eq-newmom}. The \texttt{FORM} version of the box integrand is then:
+eq.~\ref{eq-newmom}. The \texttt{FORM} version of the box integrand is
+then:
 
 \begin{codelisting}
 
@@ -4546,14 +4589,14 @@ for powers \(\brk{i}\in\brk{0,1}^4\), where the inverse propagators
 \]
 
 Note that in the classical limit we can expand the massive propagators
-as shown in \ref{eq-massiveScale} and obtain to first order in
+as shown in eq.~\ref{eq-massiveScale} and obtain to first order in
 \(\hbar\):
 
 \[
 \rho_3=2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4= -2\ell\cdot\semom[2]+\im \epsilon,
 \]
 
-where we used \ref{eq-orthog}. The cross box can in fact extend this
+where we used eq.~\ref{eq-orthog}. The cross box can in fact extend this
 family, by adding just one more inverse propagator. We now have the
 complete descripition of the denominators of all 1-loop contributing
 diagrams. The numerators in fact do not complicate things much. They are
@@ -4583,16 +4626,16 @@ contain the dot product: \(\ell\cdot p_b\). We can do this for every
 quadruplet \(\brk{A,B,a,b}\), after every replacement and obtain an
 integrand containing only so called \emph{irreducible} loop-momenta
 scalar products. In the cases we have here, they all dissapear, leaving
-us truely with a family of integrands like \ref{eq-boxfam}. This can be
-readily fed into a IBP solver, such as \texttt{AIR}
+us truely with a family of integrands like eq.~\ref{eq-boxfam}. This can
+be readily fed into a IBP solver, such as \texttt{AIR}
 ~{[}\protect\hyperlink{ref-Anastasiou:2004}{62}{]}, \texttt{FIRE}
 ~{[}\protect\hyperlink{ref-Smirnov:2020}{63}{]} or \texttt{Kira}
 ~{[}\protect\hyperlink{ref-Maierhofer:2018}{64}{]}.
 
 With such a solver we can obtain a complete family of integrals, that
 one can then look up. We are thus able to obtain the integrated
-integrands at \gls{nlo} that are then used in \ref{eq-impulseIr} and
-\ref{eq-impulseIv}. The algorithm described above was implemented in
+integrands at \gls{nlo} that are then used in eq.~\ref{eq-impulseIr} and
+eq.~\ref{eq-impulseIv}. The algorithm described above was implemented in
 \texttt{FORM} and is able to rapibly process the 1-loop diagrams. The
 code is available at the repository for this document.
 
@@ -4615,8 +4658,8 @@ into wavenumbers:
 \(\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\inv{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}\)
 is the box family with wavenumber instead of messenger momenta, and
 \(\hbar\)s extracted. We notice that if we apply the scalar product
-reduction \ref{eq-scalarred}, we will necessarily still have an integral
-of the form\sidenote{\footnotesize along with ones that are of the form
+reduction eq.~\ref{eq-scalarred}, we will necessarily still have an
+integral of the form\sidenote{\footnotesize along with ones that are of the form
   \(\Box_{1,1,1,0}\) and other permutations. These are not divergent in
   the classical limit, as they have one less propagator, thus one less
   \(\hbar\), just enough to cancel what is left of the \(\hbar\) in the
@@ -4627,11 +4670,11 @@ of the form\sidenote{\footnotesize along with ones that are of the form
 \]
 
 whislt we need to cancel with the \(\hbar\) in the classical limit
-(\ref{eq-hbarvirt}), here we have one too many orders in the denominator
-(if D=4). Thus we would get a divergent (\(\inv{\hbar}\)) contribution
-when taking the classical \(\hbar\to 0\) limit. If we consider now the
-cross box, which is the same family as above but with an extra minus
-sign:
+(eq.~\ref{eq-hbarvirt}), here we have one too many orders in the
+denominator (if D=4). Thus we would get a divergent (\(\inv{\hbar}\))
+contribution when taking the classical \(\hbar\to 0\) limit. If we
+consider now the cross box, which is the same family as above but with
+an extra minus sign:
 
 \[
 \tilde{\rho}_4=( \Half[q] -\ell+\semom[2])^2-\mass[2]^2+\im \epsilon\simeq  2\ell\cdot\semom[2]+\im \epsilon.
@@ -4655,18 +4698,19 @@ where in the equation line we used \emph{reverse unitarity}
 This idea was developped in the context of cross-section calculations in
 the for collider physics computations. It enables to set on equal
 footing real contributions \sidenote{\footnotesize such as ones in the real integrand
-  \ref{eq-rInt}} where we integrate over on shell momenta \sidenote{\footnotesize thus
-  three dimensional momentum space} and virtual integrals, where the
-integration is over all possible four-momentum \sidenote{\footnotesize as virtual
-  particles can be off shell}. The idea is to trade the on-shell delta
-functions and their \(n\)-th derivatives for differences of (powers of)
-propagators with alternating \(\im \epsilon\):
+  eq.~\ref{eq-rInt}} where we integrate over on shell momenta
+\sidenote{\footnotesize thus three dimensional momentum space} and virtual integrals,
+where the integration is over all possible four-momentum \sidenote{\footnotesize as
+  virtual particles can be off shell}. The idea is to trade the on-shell
+delta functions and their \(n\)-th derivatives for differences of
+(powers of) propagators with alternating \(\im \epsilon\):
 
 \begin{equation}\protect\hypertarget{eq-reverseunitarity}{}{
 \frac{\im}{(-1)^ nn!} \odv[n]{}{z} \ndeltafn{z}   = \inv{\pa{z  -\im \epsilon}^{(n+1)}}  - \inv{\pa{z+\im \epsilon}^{(n+1)}}.
 }\label{eq-reverseunitarity}\end{equation}
 
-In our case \ref{eq-reverseunitarity} implies the following identities:
+In our case eq.~\ref{eq-reverseunitarity} implies the following
+identities:
 
 \begin{equation}\protect\hypertarget{eq-revone}{}{
 \ndeltafn{-2\ell\cdot\semom[2]}=\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}
@@ -4680,7 +4724,7 @@ Since we where able to write this difference of propagators as a sort of
 cut, we could further compare the divergent part of the box and cross
 box with the corresponding real contribution, which is at tree level,
 with no cut messengers: \(L'=0\) and \(\abs{X}=0\) such that
-\ref{eq-rvloopmatch} is satisfied. We have:
+eq.~\ref{eq-rvloopmatch} is satisfied. We have:
 
 \[
 \begin{aligned}
@@ -4691,14 +4735,14 @@ with no cut messengers: \(L'=0\) and \(\abs{X}=0\) such that
 \end{aligned}
 \]
 
-where the \(\redampl[(0)]\) we already computed in \ref{eq-treeampl},
-and we have eliminated the theta functions in prepartation of taking the
-classical limit. Thus it is essentially a cut of a one-loop box. Notice
-that in the classical limit we must cancel with \(\hbar^3\)
-(\ref{eq-hbarreal}) which at leading order is again overdone. The
-\(\semom[1]\cdot \semom[2]\) contribution from each tree scales like
-\(\inv{\hbar^4}\), and is thus classically divergent as the box and
-cross box before it. We also notice it has the following form:
+where the \(\redampl[(0)]\) we already computed in
+eq.~\ref{eq-treeampl}, and we have eliminated the theta functions in
+prepartation of taking the classical limit. Thus it is essentially a cut
+of a one-loop box. Notice that in the classical limit we must cancel
+with \(\hbar^3\) (eq.~\ref{eq-hbarreal}) which at leading order is again
+overdone. The \(\semom[1]\cdot \semom[2]\) contribution from each tree
+scales like \(\inv{\hbar^4}\), and is thus classically divergent as the
+box and cross box before it. We also notice it has the following form:
 
 \[
 \elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2\inv{\hbar}\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
@@ -4707,8 +4751,8 @@ cross box before it. We also notice it has the following form:
 where we've changed variables from \(\bar{w}\) to \(\bar{\ell}\) and
 removed the \(\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)\) term
 in the delta functions, in prepation for the classical limit. We can now
-apply reverse unitarity (\ref{eq-revone},\ref{eq-revtwo}) and focus on
-the integral without the prefactors:
+apply reverse unitarity (eq.~\ref{eq-revone},eq.~\ref{eq-revtwo}) and
+focus on the integral without the prefactors:
 
 \[
 \begin{aligned}
@@ -4740,14 +4784,14 @@ Thus we have that the cut integral with the \(\ct{\tw}\) factored out:
 \]
 
 We can apply the relabelling only this time only for the last two
-integrands, and the integral becomes, applying \ref{eq-boxtrans}:
+integrands, and the integral becomes, applying eq.~\ref{eq-boxtrans}:
 
 \[
 \int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1}}}= \int \dn[4]{\bar{\ell}}\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}  .
 \]
 
-If we now add the box and cross box contributions from \ref{eq-boxcross}
-we get:
+If we now add the box and cross box contributions from
+eq.~\ref{eq-boxcross} we get:
 
 \[
 \int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.

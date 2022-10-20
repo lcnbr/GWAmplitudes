@@ -12,3 +12,6 @@ graviton
 un-renormalisable
 compactified
 uncountably
+Levi-Civita
+Ricci
+diffeomorphisms
