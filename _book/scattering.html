@@ -639,7 +639,7 @@ d(m,\xi,u,q_{})=\int \,\mathrm{d}\Phi_{}(p_{})\, \tilde{\delta}^{}(2 p_{}\cdot q
 <p><span class="math display">\[
 d(m,\xi,u,q_{})=\text{peaked function imposing that } {2\ell_s\, \bar{q}_{}\cdot u=\frac{\ell_c}{\ell_s}}\text{ with width } \xi^\beta.
 \]</span></p>
-<div class="cell page-columns page-full" data-execution_count="5">
+<div class="cell page-columns page-full" data-execution_count="4">
 
 <div class="no-row-height column-margin column-container page-columns page-full"><div class="cell-output cell-output-display page-columns page-full" data-execution_count="2">
 <div id="fig-gaussian" class="quarto-figure quarto-figure-center anchored page-columns page-full">
@@ -992,7 +992,7 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <p><span class="math display">\[
 \mathcal{\bar{A}}^{(0)} = \mathring{\imath}\tilde{D}^{{\mu \nu}}(q)\cdot \,e^2Q_{1} Q_{2}2 \tilde{p}_{1}{}^{\mu} 2\tilde{p}_{2}{}^{\nu}=\frac{4e^2Q_{1} Q_{2}\tilde{p}_{1}\cdot\tilde{p}_{2}}{q_{}^2} ,
 \]</span></p>
-<p>using the Mandelstahm invariants described above we can infact write this as:</p>
+<p>using the Mandelstahm invariants described above we can write this as:</p>
 <p><span id="eq-treeampl"><span class="math display">\[
 \mathcal{\bar{A}}^{(0)} =e^2Q_{1} Q_{2} \frac{4m_{1}m_{2}\sigma}{\hbar^2\bar{q}_{}^2},
 \tag{5.27}\]</span></span></p>
@@ -1015,8 +1015,8 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 </section>
 <section id="one-loop" class="level3 page-columns page-full" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="one-loop"><span class="header-section-number">5.5.3</span> One loop</h3>
-<p>Already at one loop the number of possible diagrams one can for increases dramatically from 1 to 13. One can nonetheless relatively easily enumerate them. As we increase loop count, the number of diagrams increases exponentially. It is therefore very useful to have a systematic, programmatic way to handle these diagrams, and while we are at it, also to compute the amplitudes. Note that all the code needed to do these computations can be found on the repository for this book.</p>
-<p>The first tool we will use is <code>QGRAF</code> <span class="citation" data-cites="Nogueira:1993a">&nbsp;[<a href="references.html#ref-Nogueira:1993a" role="doc-biblioref">23</a>]</span>, a fortran program that can generate Feynman diagrams for a given set of vertices and external legs. The first step to is to define the theory we are working in. This is essentially writing down the Feynman rules, without actually specifying what the graphical objects are. For <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> the model file is short:</p>
+<p>Already at one loop the number of possible diagrams increases dramatically from 1 to 13. One can nonetheless enumerate them. As we increase loop count, the number of diagrams increases exponentially. It is therefore useful to have a systematic, programmatic way to handle these diagrams, and while we are at it, also to compute the amplitudes. Note that all the code needed to do these computations can be found on the repository for this book: <a href="https://github.com/lcnhb/GWAmplitudes" class="uri">https://github.com/lcnhb/GWAmplitudes</a>.</p>
+<p>The first tool we will use is <code>QGRAF</code> <span class="citation" data-cites="Nogueira:1993a">&nbsp;[<a href="references.html#ref-Nogueira:1993a" role="doc-biblioref">23</a>]</span>, a Fortran based program that can generate Feynman diagrams for a given set of vertices and external legs. The first step is to define the theory we want to derive the diagrams from. This is essentially writing down the Feynman rules, without actually specifying what the graphical objects are. For <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> the model file is short:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>SQEDmodel</strong></pre>
@@ -1049,7 +1049,7 @@ t=\Big(-\big(\tilde{p}_{1}-\frac{q_{}}{2} \big)+\tilde{p}_{1}+\frac{q_{}}{2} \Bi
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>options=  notadpole,nosnail,onshell ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the <code>julia.sty</code> style file. The <code>julia.sty</code> file is a style file that is used to generate the output in a format that can be read by a <code>Julia</code> <span class="citation" data-cites="Bezanson:2015">&nbsp;[<a href="references.html#ref-Bezanson:2015" role="doc-biblioref">24</a>]</span> package built to process and visualise the outputted graphs. This package is called (maybe too broadly) <code>QFT.jl</code> is hosted on <a href="https://github.com/lcnhb/QFT.jl">github</a> . Let us see it in action. We can run <code>QGRAF</code> from the command line, and it will generate a file called <code>{{output filename}}</code> that contains the output of the program. We can then use this in a <code>Julia</code> file to visualise the diagrams.</p>
+<p>where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the <code>julia.sty</code> style file. The <code>julia.sty</code> file is a style file that is used to generate the output in a format that can be read by a <code>Julia</code> <span class="citation" data-cites="Bezanson:2015">&nbsp;[<a href="references.html#ref-Bezanson:2015" role="doc-biblioref">24</a>]</span> package built to process and visualise the outputted graphs. This package is called (maybe too broadly) <code>QFT.jl</code>, and is hosted on <a href="https://github.com/lcnhb/QFT.jl">github</a> . Let us see it in action. We can run <code>QGRAF</code> from the command line, and it will generate a file called <code>{{output filename}}</code> that contains the output of the program. We can then use this in a <code>Julia</code> file to visualise the diagrams.</p>
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Images</span></span>
@@ -1845,7 +1845,7 @@ n7-&gt;n2
 </div>
 </figure>
 </div>
-<div class="page-columns page-full"><p>We can notice a few things about the diagrams above. Not all the diagrams contribute to the classical limit. Clearly the diagrams with internal matter loops cannot be allowed when the momenta incoming to the loop is soft <a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>. In the classical limit this momenta will go to 0, and since the scalars are massive, they need momentum greater than their mass to be pair produced, thus these diagrams do not contribute. Another class of diagrams that does not contribute to the classical limit are the ones with photon loops that start and end on the same matter line. These do not contribute because they are scaleless. An integral is scaleless when its integrand <span class="math inline">\(\mathcal{I}_\text{scaleless}(\{\ell_i \})\)</span> scales homegenously under any rescaling of the loop momentum <span class="math inline">\(\ell_i\)</span>:</p><div class="no-row-height column-margin column-container"><li id="fn30"><p><sup>30</sup>&nbsp;scales like <span class="math inline">\(\hbar\)</span></p></li></div></div>
+<div class="page-columns page-full"><p>We notice a few things about the diagrams in <a href="#fig-oneloopsqed">Figure&nbsp;<span>5.5</span></a> above. Not all the diagrams contribute to the classical limit. Clearly the diagrams with internal matter loops cannot be allowed when the momenta incoming to the loop is soft <a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>. In the classical limit this momenta will go to 0, and since the scalars are massive, they need momentum greater than their mass to be pair produced, thus these diagrams do not contribute. Another class of diagrams that does not contribute to the classical limit are the ones with photon loops that start and end on the same matter line. These do not contribute because they are scaleless. An integral is scaleless when its integrand <span class="math inline">\(\mathcal{I}_\text{scaleless}(\{\ell_i \})\)</span> scales homegenously under any rescaling of the loop momentum <span class="math inline">\(\ell_i\)</span>:</p><div class="no-row-height column-margin column-container"><li id="fn30"><p><sup>30</sup>&nbsp;scales like <span class="math inline">\(\hbar\)</span></p></li></div></div>
 <p><span class="math display">\[
 \mathcal{I}_\text{scaleless}(\{\ell_i \})\stackrel{\ell_j\to\lambda \ell_j}{\longrightarrow}\lambda^\eta \mathcal{I}_\text{scaleless}(\{\ell_i \})
 \]</span></p>
@@ -2174,10 +2174,10 @@ n7-&gt;n2
 </div>
 </figure>
 </div>
-<p>There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous <span class="math inline">\(\hbar^{-2}\)</span> scaling (see <a href="#eq-photonscale">eq.&nbsp;<span>5.22</span></a>), the vertices only bring constants, and the loop integration has <span class="math inline">\(\hbar^4\)</span> scaling. Together this means that the reduced amplitude has <span class="math inline">\(\hbar^0\)</span> scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum’s <span class="math inline">\(\hbar\)</span> scale (see <a href="#eq-impulseIr">eq.&nbsp;<span>5.16</span></a>). Thus the double seagull diagram dies in the classical limit.</p>
-<div class="page-columns page-full"><p>We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>. We will also extract one of these integrands by hand, for completeness and comparison.</p><div class="no-row-height column-margin column-container"><li id="fn31"><p><sup>31</sup>&nbsp;at least at the unintegrated level</p></li></div></div>
-<p>The first step is to define the Feynman rules in a computer readable format. We will use <code>Julia</code> to apply these rules at every vertex and every edge, but for the actual computation we will use <code>FORM</code> <span class="citation" data-cites="Vermaseren:2000nd Kuipers:2012rf">&nbsp;[<a href="references.html#ref-Vermaseren:2000nd" role="doc-biblioref">26</a>,<a href="references.html#ref-Kuipers:2012rf" role="doc-biblioref">27</a>]</span> which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of <code>Julia</code>s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> as follows:</p>
-<div class="cell" data-execution_count="15">
+<p>There is one final simplification we can do. The first diagram in <a href="#fig-onefilterloopsqed">Figure&nbsp;<span>5.6</span></a> has two photon propagators, and two quartic vertices, which give it the name: “double-seagull”. The photon propagators have homogeonous <span class="math inline">\(\hbar^{-2}\)</span> scaling (see <a href="#eq-photonscale">eq.&nbsp;<span>5.22</span></a>), the vertices only bring constants, and the loop integration has <span class="math inline">\(\hbar^4\)</span> scaling. Collecting all scalings this means that the reduced amplitude has <span class="math inline">\(\hbar^0\)</span> scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum’s <span class="math inline">\(\hbar\)</span> scale (see <a href="#eq-impulseIr">eq.&nbsp;<span>5.16</span></a>). Thus the double seagull diagram vanishes in the classical limit.</p>
+<div class="page-columns page-full"><p>We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point, we can do this manually, but again, putting in place a programatic framework means that subsequent loops can be treated systematically<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>. We will also extract one of these integrands by hand, for completeness and comparison.</p><div class="no-row-height column-margin column-container"><li id="fn31"><p><sup>31</sup>&nbsp;at least at the unintegrated level</p></li></div></div>
+<p>The first step is to define the Feynman rules in a computer readable format. We will use <code>Julia</code> to apply these rules at every vertex and every edge, but for the actual computation we will use <code>FORM</code> <span class="citation" data-cites="Vermaseren:2000nd Kuipers:2012rf">&nbsp;[<a href="references.html#ref-Vermaseren:2000nd" role="doc-biblioref">26</a>,<a href="references.html#ref-Kuipers:2012rf" role="doc-biblioref">27</a>]</span>, which can automatically contract indices and performs expression manipulations in an optimized way. The Feynman rules implementation in the package developped for this thesis make use of <code>Julia</code>s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for <abbr title="Scalar Quantum Electrodynamics">SQED</abbr> as follows:</p>
+<div class="cell" data-execution_count="14">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-overflow-wrap code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">feynmanRule</span>(mime<span class="op">::</span><span class="dt">MIME"text/FORM"</span>,p,f1<span class="op">::</span><span class="dt">Photon</span>,f2<span class="op">::</span><span class="dt">Photon</span>)</span>
@@ -2221,8 +2221,8 @@ n7-&gt;n2
 <p><span class="math display">\[
 D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=(p^2-m_i^2+i\epsilon )^{n} \quad \text{thus} \quad \mathtt{prop(-1,i,p)}=\frac{1}{p^2-m_i^2+i\epsilon}.
 \]</span></p>
-<p>We can now apply these feynamn rules to the graphs we have left, obtaining <code>FORM</code> readable integrands. For example the box diagram gives:</p>
-<div class="cell" data-execution_count="17">
+<p>We can now apply these feynamn rules to the graphs we have left, obtaining <code>FORM</code> readable integrands. For example, the box diagram gives:</p>
+<div class="cell" data-execution_count="16">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{julia}</span></span>
@@ -2241,16 +2241,15 @@ D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=(p^2-m_i^2+i\epsilon )^{n} \quad \text{thus} \
 Id p1 = p2 + p4 + -p3;
 Id q1 = p3 + -p4 + -q4;
 Id q3 = p2 + p4 + q4 + -p3;
-
-Id q4= l1;
-#endprocedure</code></pre>
+</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre><code>Id q4= l1;
+#endprocedure
 *--#]d3l1:</code></pre>
 </div>
 </div>
-<p>Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the <code>Julia</code> program, using kruskal’s algorithm <span class="citation" data-cites="Kruskal:1956">&nbsp;[<a href="references.html#ref-Kruskal:1956" role="doc-biblioref">28</a>]</span> to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using <code>FORM</code> we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in <a href="#eq-newmom">eq.&nbsp;<span>5.25</span></a>. The <code>FORM</code> version of the box integrand is then:</p>
+<p>Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta to be homogeous on the massless lines. This is done by the <code>Julia</code> program, using kruskal’s algorithm <span class="citation" data-cites="Kruskal:1956">&nbsp;[<a href="references.html#ref-Kruskal:1956" role="doc-biblioref">28</a>]</span> to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using <code>FORM</code>, we can contract indices and apply the momentum conservation rules. Finally we also apply the relabeling rules described in <a href="#eq-newmom">eq.&nbsp;<span>5.25</span></a>. The <code>FORM</code> version of the box integrand is then given in <span class="quarto-unresolved-ref">?lst-formbox</span>.</p>
 <div id="lst-formBox" class="listing">
 <p>Listing&nbsp;5.1: Box integrand in FORM</p>
 <div class="sourceCode" id="lst-formBox" data-lst-cap="Box integrand in FORM"><pre class="sourceCode default sql code-with-copy"><code class="sourceCode default"><span id="lst-formBox-1"><a href="#lst-formBox-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -2265,7 +2264,7 @@ Id q4= l1;
 <span id="lst-formBox-10"><a href="#lst-formBox-10" aria-hidden="true" tabindex="-1"></a>       * ( qch2 ) * ( qch2 ) * ( qch1 ) * ( qch1 )</span>
 <span id="lst-formBox-11"><a href="#lst-formBox-11" aria-hidden="true" tabindex="-1"></a>       * ( e ) * ( e ) * ( e ) * ( e );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>When applied to all 4 diagrams we obtain precisely the same integrands as those in <span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span>. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:</p>
+<p>When applied to all 4 diagrams, we obtain precisely the same integrands as those in <span class="citation" data-cites="Kosower:2018adc">&nbsp;[<a href="references.html#ref-Kosower:2018adc" role="doc-biblioref">14</a>]</span>. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:</p>
 <p><span id="eq-boxfam"><span class="math display">\[
 \Box_{i_1,i_2,i_3,i_4}=\frac{1}{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
 \tag{5.29}\]</span></span></p>
@@ -2273,52 +2272,53 @@ Id q4= l1;
 <p><span class="math display">\[
 \rho_1=\ell^2+\mathring{\imath}\epsilon,\quad \rho_2=(\ell-q)^2+\mathring{\imath}\epsilon,\quad \rho_3=(\frac{q}{2}-\ell+\tilde{p}_{1})^2-m_{1}^2+\mathring{\imath}\epsilon,\quad \rho_4=(-  \frac{q}{2}+\ell+\tilde{p}_{2})^2-m_{2}^2+\mathring{\imath}\epsilon
 \]</span></p>
-<p>Note that in the classical limit we can expand the massive propagators as shown in <a href="#eq-massiveScale">eq.&nbsp;<span>5.23</span></a> and obtain to first order in <span class="math inline">\(\hbar\)</span>:</p>
+<p>Note that in the classical limit we can expand the massive propagators as shown in <a href="#eq-massiveScale">eq.&nbsp;<span>5.23</span></a> and obtain, to first order in <span class="math inline">\(\hbar\)</span>,</p>
 <p><span class="math display">\[
 \rho_3=2\ell\cdot\tilde{p}_{1}+\mathring{\imath}\epsilon,\quad \rho_4= -2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon,
 \]</span></p>
-<p>where we used <a href="#eq-orthog">eq.&nbsp;<span>5.26</span></a>. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:</p>
+<p>where we used <a href="#eq-orthog">eq.&nbsp;<span>5.26</span></a>. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete description of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be written as inverse powers of the propagators. This is the case for any Feynman like integrand. Consider the following general integrand:</p>
 <p><span class="math display">\[
 \mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
 \]</span></p>
-<p>where <span class="math inline">\({S}\)</span> and <span class="math inline">\({S'}\)</span> are sets of coefficient matrices for all possible dot products. If we have a quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span> such that <span class="math inline">\(A_{a,b}\neq0\)</span> and <span class="math inline">\(B_{a,b}neq0\)</span> and <span class="math inline">\(p_{a}\)</span>or <span class="math inline">\(p_{b}\)</span> is a loop momentum <span class="math inline">\(\ell\)</span>, say <span class="math inline">\(p_a=\ell\)</span> then it is useful to write this component of the integrand as:</p>
+<p>where <span class="math inline">\({S}\)</span> and <span class="math inline">\({S'}\)</span> are sets of coefficient matrices for all possible dot products. If we have a quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span> such that <span class="math inline">\(A_{a,b}\neq0\)</span> and <span class="math inline">\(B_{a,b}neq0\)</span> and <span class="math inline">\(p_{a}\)</span>or <span class="math inline">\(p_{b}\)</span> is a loop momentum <span class="math inline">\(\ell\)</span>, say <span class="math inline">\(p_a=\ell\)</span>,then it is useful to write this component of the integrand as:</p>
 <p><span id="eq-scalarred"><span class="math display">\[
-\frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\Big(1-\frac{\tilde{D}_A}{D_A} \Big).
+\frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\Big(1-\frac{\tilde{D}_A}{D_A} \Big),
 \tag{5.30}\]</span></span></p>
-<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like <a href="#eq-boxfam">eq.&nbsp;<span>5.29</span></a>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">&nbsp;[<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">29</a>]</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">&nbsp;[<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">30</a>]</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">&nbsp;[<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">31</a>]</span>.</p>
-<p>With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at <abbr title="Next-to-Leading Order">NLO</abbr> that are then used in <a href="#eq-impulseIr">eq.&nbsp;<span>5.16</span></a> and <a href="#eq-impulseIv">eq.&nbsp;<span>5.15</span></a>. The algorithm described above was implemented in <code>FORM</code> and is able to rapibly process the 1-loop diagrams. The code is available at the repository for this document.</p>
-<p>Importantly we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from <a href="#lst-formBox">Listing&nbsp;<span>5.1</span></a> that the integral for the box diagram <span class="math inline">\(B\)</span> is:</p>
+<p>where the tilde means that we have remove the <span class="math inline">\(ab\)</span> contribution. Thus, we see that we obtain a sum of objects in the numerator, none of which contains the dot product: <span class="math inline">\(\ell\cdot p_b\)</span>. We can do this for every quadruplet <span class="math inline">\(\{A,B,a,b \}\)</span>, after every replacement, and obtain an integrand containing only so called <em>irreducible</em> loop-momenta scalar products. In the cases we have here, they all disappear, leaving us truly with a family of integrands like <a href="#eq-boxfam">eq.&nbsp;<span>5.29</span></a>. This can be readily fed into a IBP solver, such as <code>AIR</code> <span class="citation" data-cites="Anastasiou:2004">&nbsp;[<a href="references.html#ref-Anastasiou:2004" role="doc-biblioref">29</a>]</span>, <code>FIRE</code> <span class="citation" data-cites="Smirnov:2020">&nbsp;[<a href="references.html#ref-Smirnov:2020" role="doc-biblioref">30</a>]</span> or <code>Kira</code> <span class="citation" data-cites="Maierhofer:2018">&nbsp;[<a href="references.html#ref-Maierhofer:2018" role="doc-biblioref">31</a>]</span>.</p>
+<p>With such a solver we can obtain a complete family of integrals, which can be evaluated. We are thus able to obtain the integrated integrands at <abbr title="Next-to-Leading Order">NLO</abbr> that are then used in <a href="#eq-impulseIr">eq.&nbsp;<span>5.16</span></a> and <a href="#eq-impulseIv">eq.&nbsp;<span>5.15</span></a>. The algorithm described above was implemented in <code>FORM</code> and is able to rapidly process the 1-loop diagrams. The code is available in the repository for this thesis.</p>
+<p>Importantly, we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from <a href="#lst-formBox">Listing&nbsp;<span>5.1</span></a> that the integral for the box diagram <span class="math inline">\(B\)</span> is:</p>
 <p><span class="math display">\[
-\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\ell\, \Box_{1,1,1,1}(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(q_{}-\ell )^2 )(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(\ell )^2 )
+\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\ell\, \\pa{4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(q_{}-\ell )^2}(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + 2\ell\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -(\ell )^2 )Box_{1,1,1,1}
 \]</span></p>
 <p>we can apply the procedure described above, turning messenger momenta into wavenumbers:</p>
-<div class="page-columns page-full"><p><span class="math display">\[
-\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\bar{\ell}\,\frac{\hbar^D}{\hbar^6} \Box_{\bar{1},\bar{1},\bar{1},\bar{1}}(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{q}_{}-\bar{\ell} )^2 )(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{\ell} )^2 ),
-\]</span> where <span class="math inline">\(\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\frac{1}{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}\)</span> is the box family with wavenumber instead of messenger momenta, and <span class="math inline">\(\hbar\)</span>s extracted. We notice that if we apply the scalar product reduction <a href="#eq-scalarred">eq.&nbsp;<span>5.30</span></a>, we will necessarily still have an integral of the form<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn32"><p><sup>32</sup>&nbsp;along with ones that are of the form <span class="math inline">\(\Box_{1,1,1,0}\)</span> and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less <span class="math inline">\(\hbar\)</span>, just enough to cancel what is left of the <span class="math inline">\(\hbar\)</span> in the numerator, and have an overall <span class="math inline">\(\mathcal{O}(\hbar^{0})\)</span> scaling.</p></li></div></div>
 <p><span class="math display">\[
-e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2 \int \,\tilde{\mathrm{d}}^{D}{\ell}\,\Box_{1,1,1,1}=\mathcal{O}(\hbar^{D-6})
+\mathring{\imath}B = e^4 Q_{1} Q_{2} \int \,\tilde{\mathrm{d}}^{D}\bar{\ell}\,\frac{\hbar^D}{\hbar^6} (4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{q}_{}-\bar{\ell} )^2 )(4 \tilde{p}_{1}\cdot \tilde{p}_{2}  + \hbar 2\bar{\ell}\cdot(\tilde{p}_{2} -\tilde{p}_{1} ) -\hbar^2(\bar{\ell} )^2 )\Box_{\bar{1},\bar{1},\bar{1},\bar{1}},
 \]</span></p>
-<p>whislt we need to cancel with the <span class="math inline">\(\hbar\)</span> in the classical limit (<a href="#eq-hbarvirt">eq.&nbsp;<span>5.18</span></a>), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent (<span class="math inline">\(\frac{1}{\hbar}\)</span>) contribution when taking the classical <span class="math inline">\(\hbar\to 0\)</span> limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:</p>
+<div class="page-columns page-full"><p>where <span class="math inline">\(\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\frac{1}{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}\)</span> is the box family with wavenumber instead of messenger momenta, and <span class="math inline">\(\hbar\)</span>s extracted. We notice that if we apply the scalar product reduction <a href="#eq-scalarred">eq.&nbsp;<span>5.30</span></a>, we will necessarily still have an integral of the form<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn32"><p><sup>32</sup>&nbsp;along with ones that are of the form <span class="math inline">\(\Box_{1,1,1,0}\)</span> and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less <span class="math inline">\(\hbar\)</span>, just enough to cancel what is left of the <span class="math inline">\(\hbar\)</span> in the numerator, and have an overall <span class="math inline">\(\mathcal{O}(\hbar^{0})\)</span> scaling.</p></li></div></div>
+<p><span class="math display">\[
+e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2 \int \,\tilde{\mathrm{d}}^{D}{\ell}\,\Box_{1,1,1,1}=\mathcal{O}(\hbar^{D-6}).
+\]</span></p>
+<p>We need to cancel with the <span class="math inline">\(\hbar\)</span> in the classical limit (<a href="#eq-hbarvirt">eq.&nbsp;<span>5.18</span></a>), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent (<span class="math inline">\(\frac{1}{\hbar}\)</span>) contribution when taking the classical <span class="math inline">\(\hbar\to 0\)</span> limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:</p>
 <p><span class="math display">\[
 \tilde{\rho}_4=( \frac{q}{2} -\ell+\tilde{p}_{2})^2-m_{2}^2+\mathring{\imath}\epsilon\simeq  2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon.
 \]</span></p>
-<p>If we write that <span class="math inline">\(\Box_{+i_1,+i_2,+i_3,+i_4}=\Box_{i_1,i_2,i_3,i_4}\)</span> where the sign is the sign of the <span class="math inline">\(\mathring{\imath}\epsilon\)</span> presciption, then we can write the cross box integral as: <span class="math display">\[
-\int \,\tilde{\mathrm{d}}^{D}\ell\, -\Box_{1,1,1,-1}
+<p>If we write that <span class="math inline">\(\Box_{i_1^+,i_2^+,i_3^+,i_4^+}=\Box_{i_1,i_2,i_3,i_4}\)</span> where the sign is the sign of the <span class="math inline">\(\mathring{\imath}\epsilon\)</span> presciption, then we can write the cross box integral as: <span class="math display">\[
+\int \,\tilde{\mathrm{d}}^{D}\ell\, -\Box_{1,1,1,1^-}
 \]</span></p>
 <p>thus summing up the two divergent contributions from the box and cross box we have:</p>
 <p><span id="eq-boxcross"><span class="math display">\[
-\Box_{1,1,1,1}-\Box_{1,1,1,-1}=\Box_{1,1,1,0}\Big(\frac{1}{-2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon}-\frac{1}{    2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon} \Big)=-\mathring{\imath}\Box_{1,1,1,0}\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{2}),
+\Box_{1,1,1,1}-\Box_{1,1,1,1^-}=\Box_{1,1,1,0}\Big(\frac{1}{-2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon}-\frac{1}{    2\ell\cdot\tilde{p}_{2}+\mathring{\imath}\epsilon} \Big)=-\mathring{\imath}\Box_{1,1,1,0}\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{2}),
 \tag{5.31}\]</span></span></p>
-<div class="page-columns page-full"><p>where in the equation line we used <em>reverse unitarity</em> <span class="citation" data-cites="Anastasiou:2002yz Anastasiou:2002qz Anastasiou:2003yy">&nbsp;[<a href="references.html#ref-Anastasiou:2002yz" role="doc-biblioref">32</a>–<a href="references.html#ref-Anastasiou:2003yy" role="doc-biblioref">34</a>]</span>. This idea was developped in the context of cross-section calculations in the for collider physics computations. It enables to set on equal footing real contributions <a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a> where we integrate over on shell momenta <a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a> and virtual integrals, where the integration is over all possible four-momentum <a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>. The idea is to trade the on-shell delta functions and their <span class="math inline">\(n\)</span>-th derivatives for differences of (powers of) propagators with alternating <span class="math inline">\(\mathring{\imath}\epsilon\)</span>:</p><div class="no-row-height column-margin column-container"><li id="fn33"><p><sup>33</sup>&nbsp;such as ones in the real integrand <a href="#eq-rInt">eq.&nbsp;<span>5.10</span></a></p></li><li id="fn34"><p><sup>34</sup>&nbsp;thus three dimensional momentum space</p></li><li id="fn35"><p><sup>35</sup>&nbsp;as virtual particles can be off shell</p></li></div></div>
+<div class="page-columns page-full"><p>where in the equation line we used <em>reverse unitarity</em> <span class="citation" data-cites="Anastasiou:2002yz Anastasiou:2002qz Anastasiou:2003yy">&nbsp;[<a href="references.html#ref-Anastasiou:2002yz" role="doc-biblioref">32</a>–<a href="references.html#ref-Anastasiou:2003yy" role="doc-biblioref">34</a>]</span>. This idea was developed in the context of cross-section calculations in the for collider physics. It enables to set on equal footing real contributions <a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a> where we integrate over on shell momenta <a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a> and virtual integrals, where the integration is over all possible four-momentum <a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>. The idea is to trade the on-shell delta functions and their <span class="math inline">\(n\)</span>-th derivatives for differences of (powers of) propagators with alternating <span class="math inline">\(\mathring{\imath}\epsilon\)</span>:</p><div class="no-row-height column-margin column-container"><li id="fn33"><p><sup>33</sup>&nbsp;such as ones in the real integrand <a href="#eq-rInt">eq.&nbsp;<span>5.10</span></a></p></li><li id="fn34"><p><sup>34</sup>&nbsp;thus three dimensional momentum space</p></li><li id="fn35"><p><sup>35</sup>&nbsp;as virtual particles can be off shell</p></li></div></div>
 <p><span id="eq-reverseunitarity"><span class="math display">\[
 \frac{\mathring{\imath}}{(-1)^ nn!} \frac{\mathrm{d}^{n} }{\mathrm{d}{z}^{n}} \tilde{\delta}^{}(z)   = \frac{1}{(z  -\mathring{\imath}\epsilon )^{(n+1)}}  - \frac{1}{(z+\mathring{\imath}\epsilon )^{(n+1)}}.
 \tag{5.32}\]</span></span></p>
 <p>In our case <a href="#eq-reverseunitarity">eq.&nbsp;<span>5.32</span></a> implies the following identities:</p>
 <p><span id="eq-revone"><span class="math display">\[
-\tilde{\delta}^{}(-2\ell\cdot\tilde{p}_{2})=\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,-1} )
+\tilde{\delta}^{}(-2\ell\cdot\tilde{p}_{2})=\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,1^-} )
 \tag{5.33}\]</span></span></p>
 <p><span id="eq-revtwo"><span class="math display">\[
-\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{1})=\mathring{\imath}(\Box_{0,0,1,0}-\Box_{0,0,-1,0} )
+\tilde{\delta}^{}(2\ell\cdot\tilde{p}_{1})=\mathring{\imath}(\Box_{0,0,1,0}-\Box_{0,0,1^-,0} )
 \tag{5.34}\]</span></span></p>
 <p>Since we where able to write this difference of propagators as a sort of cut, we could further compare the divergent part of the box and cross box with the corresponding real contribution, which is at tree level, with no cut messengers: <span class="math inline">\(L'=0\)</span> and <span class="math inline">\(\vert X \vert=0\)</span> such that <a href="#eq-rvloopmatch">eq.&nbsp;<span>5.17</span></a> is satisfied. We have:</p>
 <p><span class="math display">\[
@@ -2329,16 +2329,16 @@ e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2 \int \,\tilde{\mathrm{d}
 &amp;\times\mathcal{{\bar{A}{}^\ast}}^{(0)}(\tilde{p}_{1}+\hbar\frac{\bar{q}_{}}{2},\tilde{p}_{2}+\hbar\frac{\bar{q}_{}}{2}-\hbar \bar{q}_{}\to\tilde{p}_{1}-\hbar\frac{\bar{q}_{}}{2}+\hbar\bar{w}, \tilde{p}_{2}+\hbar\frac{\bar{q}_{}}{2}-   \hbar\bar{w}_2).
 \end{aligned}
 \]</span></p>
-<p>where the <span class="math inline">\(\mathcal{\bar{A}}^{(0)}\)</span> we already computed in <a href="#eq-treeampl">eq.&nbsp;<span>5.27</span></a>, and we have eliminated the theta functions in prepartation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with <span class="math inline">\(\hbar^3\)</span> (<a href="#eq-hbarreal">eq.&nbsp;<span>5.19</span></a>) which at leading order is again overdone. The <span class="math inline">\(\tilde{p}_{1}\cdot \tilde{p}_{2}\)</span> contribution from each tree scales like <span class="math inline">\(\frac{1}{\hbar^4}\)</span>, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:</p>
+<p>where the <span class="math inline">\(\mathcal{\bar{A}}^{(0)}\)</span> we already computed in <a href="#eq-treeampl">eq.&nbsp;<span>5.27</span></a>, and we have eliminated the theta functions in preparation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with <span class="math inline">\(\hbar^3\)</span> (<a href="#eq-hbarreal">eq.&nbsp;<span>5.19</span></a>) which at leading order is again overdone. The <span class="math inline">\(\tilde{p}_{1}\cdot \tilde{p}_{2}\)</span> contribution from each tree scales like <span class="math inline">\(\frac{1}{\hbar^4}\)</span>, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:</p>
 <p><span class="math display">\[
 e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2\frac{1}{\hbar}\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{\ell})\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
 \]</span></p>
-<p>where we’ve changed variables from <span class="math inline">\(\bar{w}\)</span> to <span class="math inline">\(\bar{\ell}\)</span> and removed the <span class="math inline">\(\hbar(\frac{\bar{q}_{}}{2} \cdot \bar{\ell}\pm\bar{ \ell}^2)\)</span> term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (<a href="#eq-revone">eq.&nbsp;<span>5.33</span></a>,<a href="#eq-revtwo">eq.&nbsp;<span>5.34</span></a>) and focus on the integral without the prefactors:</p>
+<p>where we have changed variables from <span class="math inline">\(\bar{w}\)</span> to <span class="math inline">\(\bar{\ell}\)</span> and removed the <span class="math inline">\(\hbar(\frac{\bar{q}_{}}{2} \cdot \bar{\ell}\pm\bar{ \ell}^2)\)</span> term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (<a href="#eq-revone">eq.&nbsp;<span>5.33</span></a>,<a href="#eq-revtwo">eq.&nbsp;<span>5.34</span></a>) and focus on the integral without the prefactors:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu&amp;\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{\ell})\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,-1} )\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
-&amp;=-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu(\Box_{0,0,1,0}-\Box_{0,0,-1,0} )(\Box_{1,1,0,1}-\Box_{1,1,0,-1} ) ,\\
-&amp;=\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box_{1,1,-1,1}-\Box_{1,1,-1,-1} ) ] .
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu&amp;\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\tilde{\delta}^{}(-2\tilde{p}_{2} \cdot \bar{\ell})\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu\tilde{\delta}^{}(2\tilde{p}_{1} \cdot \bar{\ell})\mathring{\imath}(\Box_{0,0,0,1}-\Box_{0,0,0,1^-} )\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
+&amp;=-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu(\Box_{0,0,1,0}-\Box_{0,0,1^-,0} )(\Box_{1,1,0,1}-\Box_{1,1,0,1^-} ) ,\\
+&amp;=\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\bar{\ell}^\mu[(\Box_{1,1,1,1^-}-\Box_{1,1,1,1} )+(\Box_{1,1,1^-,1}-\Box_{1,1,1^-,1^-} ) ] .
 \end{aligned}
 \]</span></p>
 <p>We now notice something interesting, this cut integral has a sort of horizontal flip symmetry, i.e.&nbsp;if we average over the existing ‘loop’ momentum labelling and a new <span class="math inline">\(\ell'=q-\ell\)</span> we eliminate the <span class="math inline">\(\ell{}^{\mu}\)</span> dependence in the numerator:</p>
@@ -2351,15 +2351,15 @@ e^4 Q_{1} Q_{2} 16 (\tilde{p}_{1}\cdot \tilde{p}_{2})^2\frac{1}{\hbar}\int \,\ti
 \tag{5.35}\]</span></span></p>
 <p>Thus we have that the cut integral with the <span class="math inline">\(\bar{q}_{}{}^{\mu}\)</span> factored out:</p>
 <p><span class="math display">\[
-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box_{1,1,-1,1}-\Box_{1,1,-1,-1} ) ] .
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,1^-}-\Box_{1,1,1,1} )+(\Box_{1,1,1^-,1}-\Box_{1,1,1^-,1^-} ) ] .
 \]</span></p>
 <p>We can apply the relabelling only this time only for the last two integrands, and the integral becomes, applying <a href="#eq-boxtrans">eq.&nbsp;<span>5.35</span></a>:</p>
 <p><span class="math display">\[
-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )+(\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1} ) ]= \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\Box_{1,1,1,-1}-\Box_{1,1,1,1} )  .
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,\frac{1}{2}[(\Box_{1,1,1,1^-}-\Box_{1,1,1,1} )+(\Box'_{1,1,1^-,1}-\Box'_{1,1,1^-,1^-} ) ]= \int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\Box_{1,1,1,1^-}-\Box_{1,1,1,1} )  .
 \]</span></p>
 <p>If we now add the box and cross box contributions from <a href="#eq-boxcross">eq.&nbsp;<span>5.31</span></a> we get:</p>
 <p><span class="math display">\[
-\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}} )+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.
+\int \,\tilde{\mathrm{d}}^{4}\bar{\ell}\,(\bcancel{\Box_{1,1,1,1^-}}-\cancel{\Box_{1,1,1,1}} )+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,1^-}}  =  0.
 \]</span></p>
 <p>The classically divergent terms have cancelled leaving us with only the finite terms!</p>
 <!-- [^5]: Here $\tw=\frac{\tm}{\hbar}$ is the wavenumber -->
@@ -3915,7 +3915,7 @@ $$
 \redampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
 $$
 
-using the Mandelstahm invariants described above we can infact write this as:
+using the Mandelstahm invariants described above we can write this as:
 
 $$
 \redampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
@@ -3949,9 +3949,9 @@ $$
 
 ### One loop
 
-Already at one loop the number of possible diagrams one can for increases dramatically from 1 to 13. One can nonetheless relatively easily enumerate them. As we increase loop count, the number of diagrams increases exponentially. It is therefore very useful to have a systematic, programmatic way to handle these diagrams, and while we are at it, also to compute the amplitudes. Note that all the code needed to do these computations can be found on the repository for this book.
+Already at one loop the number of possible diagrams increases dramatically from 1 to 13. One can nonetheless enumerate them. As we increase loop count, the number of diagrams increases exponentially. It is therefore useful to have a systematic, programmatic way to handle these diagrams, and while we are at it, also to compute the amplitudes. Note that all the code needed to do these computations can be found on the repository for this book: &lt;https://github.com/lcnhb/GWAmplitudes&gt;. 
 
-The first tool we will use is `QGRAF` @Nogueira:1993a, a fortran program that can generate Feynman diagrams for a given set of vertices and external legs. The first step to is to define the theory we are working in. This is essentially writing down the Feynman rules, without actually specifying what the graphical objects are. For (?:sqed) the model file is short:
+The first tool we will use is `QGRAF` @Nogueira:1993a, a Fortran based program that can generate Feynman diagrams for a given set of vertices and external legs. The first step is to define the theory we want to derive the diagrams from. This is essentially writing down the Feynman rules, without actually specifying what the graphical objects are. For (?:sqed) the model file is short:
 
 
 ```{.default filename="SQEDmodel"}
@@ -3983,7 +3983,7 @@ loop_momentum= k;
 options=  notadpole,nosnail,onshell ;
 ```
 
-where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the `julia.sty` style file. The `julia.sty` file is a style file that is used to generate the output in a format that can be read by a `Julia` [@Bezanson:2015]  package built to process and visualise the outputted graphs. This package is called (maybe too broadly) `QFT.jl` is hosted on [github](https://github.com/lcnhb/QFT.jl) . Let us see it in action. We can run `QGRAF` from the command line, and it will generate a file called `{{output filename}}` that contains the output of the program. We can then use this in a `Julia`  file to visualise the diagrams.
+where we specify what process we are interested in (two-to-two scattering). We also specify that we want to compute the one loop amplitude, and that we want to use the `julia.sty` style file. The `julia.sty` file is a style file that is used to generate the output in a format that can be read by a `Julia` [@Bezanson:2015]  package built to process and visualise the outputted graphs. This package is called (maybe too broadly) `QFT.jl`, and is hosted on [github](https://github.com/lcnhb/QFT.jl) . Let us see it in action. We can run `QGRAF` from the command line, and it will generate a file called `{{output filename}}` that contains the output of the program. We can then use this in a `Julia`  file to visualise the diagrams.
 
 quarto-executable-code-5450563D
 
@@ -4015,7 +4015,7 @@ nothing
 
 
 
-We can notice a few things about the diagrams above. Not all the diagrams contribute to the classical limit. Clearly the diagrams with internal matter loops cannot be allowed when the momenta incoming to the loop is soft ^[scales like $\hbar$]. In the classical limit this momenta will go to 0, and since the scalars are massive, they need momentum greater than their mass to be pair produced, thus these diagrams do not contribute. Another class of diagrams that does not contribute to the classical limit are the ones with photon loops that start and end on the same matter line. These do not contribute because they are scaleless. An integral is scaleless when its integrand $\mathcal{I}_\text{scaleless}(\brk{\ell_i})$ scales homegenously under any rescaling of the loop momentum $\ell_i$:
+We notice a few things about the diagrams in @fig-oneloopsqed above. Not all the diagrams contribute to the classical limit. Clearly the diagrams with internal matter loops cannot be allowed when the momenta incoming to the loop is soft ^[scales like $\hbar$]. In the classical limit this momenta will go to 0, and since the scalars are massive, they need momentum greater than their mass to be pair produced, thus these diagrams do not contribute. Another class of diagrams that does not contribute to the classical limit are the ones with photon loops that start and end on the same matter line. These do not contribute because they are scaleless. An integral is scaleless when its integrand $\mathcal{I}_\text{scaleless}(\brk{\ell_i})$ scales homegenously under any rescaling of the loop momentum $\ell_i$:
 
 $$
 \mathcal{I}_\text{scaleless}(\brk{\ell_i})\stackrel{\ell_j\to\lambda \ell_j}{\longrightarrow}\lambda^\eta \mathcal{I}_\text{scaleless}(\brk{\ell_i})
@@ -4061,11 +4061,11 @@ println(":::")
 nothing
 ```
 
-There is one final simplification we can do. The first diagram above has two photon propagators, and two quartic vertices, which give it its name: the double-seagull. The photon propagators have homogeonous $\hbar^{-2}$ scaling (see @eq-photonscale), the vertices only bring constants, and the loop integration has $\hbar^4$ scaling. Together this means that the reduced amplitude has $\hbar^0$ scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum's $\hbar$ scale (see @eq-impulseIr). Thus the double seagull diagram dies in the classical limit.
+There is one final simplification we can do. The first diagram in @fig-onefilterloopsqed  has two photon propagators, and two quartic vertices, which give it the name: "double-seagull". The photon propagators have homogeonous $\hbar^{-2}$ scaling (see @eq-photonscale), the vertices only bring constants, and the loop integration has $\hbar^4$ scaling. Collecting all scalings this means that the reduced amplitude has $\hbar^0$ scaling. However in the virtual integrand the reduced amplitude has to cancel with the transfer momentum's $\hbar$ scale (see @eq-impulseIr). Thus the double seagull diagram vanishes in the classical limit.
 
-We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point we can do this manually, but again, putting in place a programattic framework means that subsequent loops can be treated systematically^[at least at the unintegrated level]. We will also extract one of these integrands by hand, for completeness and comparison. 
+We are left with only 4 diagrams, the two triangle diagrams, the box and cross box, which we can now compute. At this point, we can do this manually, but again, putting in place a programatic framework means that subsequent loops can be treated systematically^[at least at the unintegrated level]. We will also extract one of these integrands by hand, for completeness and comparison. 
 
-The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf] which can automatically contract indices and does expression manipulations in an extremely fast way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for (?:sqed) as follows:
+The first step is to define the Feynman rules in a computer readable format. We will use `Julia`  to apply these rules at every vertex and every edge, but for the actual computation we will use `FORM` [@Vermaseren:2000nd;@Kuipers:2012rf], which can automatically contract indices and performs expression manipulations in an optimized way. The Feynman rules implementation in the package developped for this thesis make use of `Julia`s defining paradigm of multiple dispatch. This allows us to define the rules for each vertex and each edge in a very compact way. We can define the rules for (?:sqed) as follows:
 
 quarto-executable-code-5450563D
 
@@ -4116,7 +4116,7 @@ $$
  D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=\pa{p^2-m_i^2+i\epsilon}^{n} \quad \text{thus} \quad \mathtt{prop(-1,i,p)}=\frac{1}{p^2-m_i^2+i\epsilon}.
 $$
 
-We can now apply these feynamn rules to the graphs we have left, obtaining `FORM` readable integrands. For example the box diagram gives:
+We can now apply these feynamn rules to the graphs we have left, obtaining `FORM` readable integrands. For example, the box diagram gives:
 
 quarto-executable-code-5450563D
 
@@ -4153,7 +4153,7 @@ quarto-executable-code-5450563D
 toform(stdout,classicaldiags[3])
 ```
 
-Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM` we can contract indices and apply the momentum conservation rules. Finallly we also apply the relableing rules described in @eq-newmom. The `FORM` version of the box integrand is then:
+Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta to be homogeous on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM`, we can contract indices and apply the momentum conservation rules. Finally we also apply the relabeling rules described in @eq-newmom. The `FORM` version of the box integrand is then given in @lst-formbox.
 
 ```{.default #lst-formBox .sql lst-cap="Box integrand in FORM"}
 
@@ -4169,7 +4169,7 @@ Notice that we also define the momentum routing by imposing the replacement rule
        * ( e ) * ( e ) * ( e ) * ( e );
 ```
 
-When applied to all 4 diagrams we obtain precisely the same integrands as those in @Kosower:2018adc. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:
+When applied to all 4 diagrams, we obtain precisely the same integrands as those in @Kosower:2018adc. Additionally we notice that the two triangles and the box diagram have overlapping propagators. In fact the denominators of the integrands for all three can be written as:
 
 $$
 \Box_{i_1,i_2,i_3,i_4}=\inv{\rho_1^{i_1}\rho_2^{i_2}\rho_3^{i_3}\rho_4^{i_4}},
@@ -4181,64 +4181,65 @@ $$
 \rho_1=\ell^2+\im \epsilon,\quad \rho_2=(\ell-q)^2+\im \epsilon,\quad \rho_3=(\Half[q]-\ell+\semom[1])^2-\mass[1]^2+\im \epsilon,\quad \rho_4=(-  \Half[q]+\ell+\semom[2])^2-\mass[2]^2+\im \epsilon
 $$
 
-Note that in the classical limit we can expand the massive propagators as shown in @eq-massiveScale and obtain to first order in $\hbar$:
+Note that in the classical limit we can expand the massive propagators as shown in @eq-massiveScale and obtain, to first order in $\hbar$,
 
 $$
 \rho_3=2\ell\cdot\semom[1]+\im \epsilon,\quad \rho_4= -2\ell\cdot\semom[2]+\im \epsilon,
 $$
 
-where we used @eq-orthog. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete descripition of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be intelligently written as inverse powers of the propagators. This is the case for any feynman like integrand. Consider the following general integrand:
+where we used @eq-orthog. The cross box can in fact extend this family, by adding just one more inverse propagator. We now have the complete description of the denominators of all 1-loop contributing diagrams. The numerators in fact do not complicate things much. They are all composed of scalar products of momenta. If these do not contain loop-momenta they are just constant factors in front of the integral. The scalar products that do contain loop momenta can be written as inverse powers of the propagators. This is the case for any Feynman like integrand. Consider the following general integrand:
 
 $$
 \mathcal{I}= \frac{\mathcal{N}}{\mathcal{D}}=\frac{\prod\limits_{S'}N_{S'}}{\prod\limits_{S}D_S}=\frac{\prod\limits_{S'}\sum\limits_{i\geq j} S'_{ij}p_i\cdot p_j}{\prod\limits_{S}\sum\limits_{i\geq j} S_{ij}p_i\cdot p_j},
 $$
 
-where ${S}$ and ${S'}$ are sets of coefficient matrices for all possible dot products. If we have a quadruplet $\brk{A,B,a,b}$ such that $A_{a,b}\neq0$ and $B_{a,b}neq0$ and $p_{a}$or $p_{b}$ is a loop momentum $\ell$, say $p_a=\ell$ then it is useful to write this component of the integrand as:
+where ${S}$ and ${S'}$ are sets of coefficient matrices for all possible dot products. If we have a quadruplet $\brk{A,B,a,b}$ such that $A_{a,b}\neq0$ and $B_{a,b}neq0$ and $p_{a}$or $p_{b}$ is a loop momentum $\ell$, say $p_a=\ell$,then it is useful to write this component of the integrand as:
 
 $$
-\frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}}.
+\frac{N_{B}}{D_{A}}=\frac{\tilde{N}_B+B_{ab}\ell\cdot p_b}{A_{ab}\ell\cdot p_b +\sum\limits_{\substack{i\geq j \\ i,j\neq a,b}}A_{ij}p_i\cdot p_j}=\frac{\tilde{N}_B}{D_A}+\frac{B_{ab}}{A_{ab}}\pa[\Big]{1-\frac{\tilde{D}_A}{D_A}},
 $$ {#eq-scalarred}
 
-where the tilde means that we have remove the $ab$ contribution. Thus we see that we obtain in the numerator, a sum of objects, none of which contain the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all dissapear, leaving us truely with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
+where the tilde means that we have remove the $ab$ contribution. Thus, we see that we obtain a sum of objects in the numerator, none of which contains the dot product: $\ell\cdot p_b$. We can do this for every quadruplet $\brk{A,B,a,b}$, after every replacement, and obtain an integrand containing only so called *irreducible* loop-momenta scalar products. In the cases we have here, they all disappear, leaving us truly with a family of integrands like @eq-boxfam. This can be readily fed into a IBP solver, such as `AIR` [@Anastasiou:2004], `FIRE` [@Smirnov:2020] or `Kira` [@Maierhofer:2018]. 
 
-With such a solver we can obtain a complete family of integrals, that one can then look up. We are thus able to obtain the integrated integrands at (?:nlo) that are then used in @eq-impulseIr and @eq-impulseIv. The algorithm described above was implemented in `FORM` and is able to rapibly process the 1-loop diagrams. The code is available at the repository for this document. 
+With such a solver we can obtain a complete family of integrals, which can be evaluated. We are thus able to obtain the integrated integrands at (?:nlo) that are then used in @eq-impulseIr and @eq-impulseIv. The algorithm described above was implemented in `FORM` and is able to rapidly process the 1-loop diagrams. The code is available in the repository for this thesis. 
 
-Importantly we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from @lst-formBox that the integral for the box diagram $B$ is: 
+Importantly, we still need to take the classical limit. At this point a problem shows up. The box and cross box integrals are divergent in the classical limit (some authors call this super classical). Let us see this for the box integral. We have from @lst-formBox that the integral for the box diagram $B$ is: 
 
 $$
-\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\ell} \Box_{1,1,1,1}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\tm-\ell}^2}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\ell}^2}
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\ell} \\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\tm-\ell}^2}\pa{4 \semom[1]\cdot \semom[2]  + 2\ell\cdot\pa{\semom[2] -\semom[1]} -\pa{\ell}^2}Box_{1,1,1,1}
 $$
 
 we can apply the procedure described above, turning messenger momenta into wavenumbers:
 
 $$
-\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\bar{\ell}}\frac{\hbar^D}{\hbar^6} \Box_{\bar{1},\bar{1},\bar{1},\bar{1}}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\tw-\bar{\ell}}^2}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\bar{\ell}}^2},
+\im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\bar{\ell}}\frac{\hbar^D}{\hbar^6} \pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\tw-\bar{\ell}}^2}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\bar{\ell}}^2}\Box_{\bar{1},\bar{1},\bar{1},\bar{1}},
 $$
+
 where $\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\inv{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}$ is the box family with wavenumber instead of messenger momenta, and $\hbar$s extracted. We notice that if we apply the scalar product reduction @eq-scalarred, we will necessarily still have an integral of the form^[along with ones that are of the form $\Box_{1,1,1,0}$ and other permutations. These are not divergent in the classical limit, as they have one less propagator, thus one less $\hbar$, just enough to cancel what is left of the $\hbar$ in the numerator, and have an overall $\order[0]{\hbar}$ scaling.]:
 
 $$
-\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2 \int \dn[D]{{\ell}}\Box_{1,1,1,1}=\order[D-6]{\hbar}
+\elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2 \int \dn[D]{{\ell}}\Box_{1,1,1,1}=\order[D-6]{\hbar}.
 $$
 
-whislt we need to cancel with the $\hbar$ in the classical limit (@eq-hbarvirt), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent ($\inv{\hbar}$) contribution when taking the classical $\hbar\to 0$ limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:
+We need to cancel with the $\hbar$ in the classical limit (@eq-hbarvirt), here we have one too many orders in the denominator (if D=4). Thus we would get a divergent ($\inv{\hbar}$) contribution when taking the classical $\hbar\to 0$ limit. If we consider now the cross box, which is the same family as above but with an extra minus sign:
 
 $$
 \tilde{\rho}_4=( \Half[q] -\ell+\semom[2])^2-\mass[2]^2+\im \epsilon\simeq  2\ell\cdot\semom[2]+\im \epsilon.
 $$
 
-If we write that $\Box_{+i_1,+i_2,+i_3,+i_4}=\Box_{i_1,i_2,i_3,i_4}$ where the sign is the sign of the $\im\epsilon$ presciption, then we can write the cross box integral as:
+If we write that $\Box_{i_1^+,i_2^+,i_3^+,i_4^+}=\Box_{i_1,i_2,i_3,i_4}$ where the sign is the sign of the $\im\epsilon$ presciption, then we can write the cross box integral as:
 $$
-\int \dn[D]{\ell} -\Box_{1,1,1,-1}
+\int \dn[D]{\ell} -\Box_{1,1,1,1^-}
 $$
 
 thus summing up the two divergent contributions from the box and cross box we have:
 
 
 $$
-\Box_{1,1,1,1}-\Box_{1,1,1,-1}=\Box_{1,1,1,0}\pa[\Big]{\inv{-2\ell\cdot\semom[2]+\im \epsilon}-\inv{    2\ell\cdot\semom[2]+\im \epsilon}}=-\im\Box_{1,1,1,0}\ndeltafn{2\ell\cdot\semom[2]},
+\Box_{1,1,1,1}-\Box_{1,1,1,1^-}=\Box_{1,1,1,0}\pa[\Big]{\inv{-2\ell\cdot\semom[2]+\im \epsilon}-\inv{    2\ell\cdot\semom[2]+\im \epsilon}}=-\im\Box_{1,1,1,0}\ndeltafn{2\ell\cdot\semom[2]},
 $$ {#eq-boxcross}
 
-where in the equation line we used *reverse unitarity* [@Anastasiou:2002yz;@Anastasiou:2002qz;@Anastasiou:2003yy]. This idea was developped in the context of cross-section calculations in the for collider physics computations. It enables to set on equal footing real contributions ^[such as ones in the real integrand @eq-rInt] where we integrate over on shell momenta ^[thus three dimensional momentum space] and virtual integrals, where the integration is over all possible four-momentum ^[as virtual particles can be off shell]. The idea is to trade the on-shell delta functions and their $n$-th derivatives for differences of (powers of) propagators with alternating $\im \epsilon$:
+where in the equation line we used *reverse unitarity* [@Anastasiou:2002yz;@Anastasiou:2002qz;@Anastasiou:2003yy]. This idea was developed in the context of cross-section calculations in the for collider physics. It enables to set on equal footing real contributions ^[such as ones in the real integrand @eq-rInt] where we integrate over on shell momenta ^[thus three dimensional momentum space] and virtual integrals, where the integration is over all possible four-momentum ^[as virtual particles can be off shell]. The idea is to trade the on-shell delta functions and their $n$-th derivatives for differences of (powers of) propagators with alternating $\im \epsilon$:
 
 $$
 \frac{\im}{(-1)^ nn!} \odv[n]{}{z} \ndeltafn{z}   = \inv{\pa{z  -\im \epsilon}^{(n+1)}}  - \inv{\pa{z+\im \epsilon}^{(n+1)}}.
@@ -4247,11 +4248,11 @@ $$ {#eq-reverseunitarity}
 In our case @eq-reverseunitarity implies the following identities:
 
 $$
-\ndeltafn{-2\ell\cdot\semom[2]}=\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}
+\ndeltafn{-2\ell\cdot\semom[2]}=\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,1^-}}
 $$ {#eq-revone}
 
 $$
-\ndeltafn{2\ell\cdot\semom[1]}=\im\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}
+\ndeltafn{2\ell\cdot\semom[1]}=\im\pa{\Box_{0,0,1,0}-\Box_{0,0,1^-,0}}
 $$ {#eq-revtwo}
 
 Since we where able to write this difference of propagators as a sort of cut, we could further compare the divergent part of the box and cross box with the corresponding real contribution, which is at tree level, with no cut messengers: $L'=0$ and $\abs{X}=0$ such that @eq-rvloopmatch is satisfied. We have:
@@ -4266,19 +4267,19 @@ $$
 \end{aligned}
 $$
 
-where the $\redampl[(0)]$ we already computed in @eq-treeampl, and we have eliminated the theta functions in prepartation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with $\hbar^3$ (@eq-hbarreal) which at leading order is again overdone. The $\semom[1]\cdot \semom[2]$ contribution from each tree scales like $\inv{\hbar^4}$, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:
+where the $\redampl[(0)]$ we already computed in @eq-treeampl, and we have eliminated the theta functions in preparation of taking the classical limit. Thus it is essentially a cut of a one-loop box. Notice that in the classical limit we must cancel with $\hbar^3$ (@eq-hbarreal) which at leading order is again overdone. The $\semom[1]\cdot \semom[2]$ contribution from each tree scales like $\inv{\hbar^4}$, and is thus classically divergent as the box and cross box before it. We also notice it has the following form:
 
 $$
 \elch^4 Q_{1} Q_{2} 16 (\semom[1]\cdot \semom[2])^2\inv{\hbar}\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}},
 $$
 
-where we've changed variables from $\bar{w}$ to $\bar{\ell}$ and removed the $\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)$ term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (@eq-revone,@eq-revtwo) and focus on the integral without the prefactors:
+where we have changed variables from $\bar{w}$ to $\bar{\ell}$ and removed the $\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)$ term in the delta functions, in prepation for the classical limit. We can now apply reverse unitarity (@eq-revone,@eq-revtwo) and focus on the integral without the prefactors:
 
 $$
 \begin{aligned}
-\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu&amp;\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,-1}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
-&amp;=-\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\pa{\Box_{0,0,1,0}-\Box_{0,0,-1,0}}\pa{\Box_{1,1,0,1}-\Box_{1,1,0,-1}} ,\\
-&amp;=\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu&amp;\ndeltafn{2\semom[1] \cdot \bar{\ell}}\ndeltafn{-2\semom[2] \cdot \bar{\ell}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  =    \int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\ndeltafn{2\semom[1] \cdot \bar{\ell}}\im\pa{\Box_{0,0,0,1}-\Box_{0,0,0,1^-}}\Box_{\bar{1},\bar{1},\bar{0},\bar{0}}  \\  
+&amp;=-\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\pa{\Box_{0,0,1,0}-\Box_{0,0,1^-,0}}\pa{\Box_{1,1,0,1}-\Box_{1,1,0,1^-}} ,\\
+&amp;=\int \dn[4]{\bar{\ell}}\bar{\ell}^\mu\brc{\pa{\Box_{1,1,1,1^-}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,1^-,1}-\Box_{1,1,1^-,1^-}}} .
 \end{aligned}
 $$
 
@@ -4297,19 +4298,19 @@ $$ {#eq-boxtrans}
 Thus we have that the cut integral with the $\ct{\tw}$ factored out:
 
 $$
-\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,-1,1}-\Box_{1,1,-1,-1}}} .
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,1^-}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,1^-,1}-\Box_{1,1,1^-,1^-}}} .
 $$
 
 We can apply the relabelling only this time only for the last two integrands, and the integral becomes, applying @eq-boxtrans:
 
 $$
-\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}+\pa{\Box'_{1,1,-1,1}-\Box'_{1,1,-1,-1}}}= \int \dn[4]{\bar{\ell}}\pa{\Box_{1,1,1,-1}-\Box_{1,1,1,1}}  .
+\int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,1^-}-\Box_{1,1,1,1}}+\pa{\Box'_{1,1,1^-,1}-\Box'_{1,1,1^-,1^-}}}= \int \dn[4]{\bar{\ell}}\pa{\Box_{1,1,1,1^-}-\Box_{1,1,1,1}}  .
 $$
 
 If we now add the box and cross box contributions from @eq-boxcross we get:
 
 $$
-\int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,-1}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,-1}}  =  0.
+\int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,1^-}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,1^-}}  =  0.
 $$
 
 The classically divergent terms have cancelled leaving us with only the finite terms!
