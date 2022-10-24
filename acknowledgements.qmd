@@ -3,7 +3,7 @@
 
 I would like to thank my supervisor, Prof. Babis Anastasiou, for his trust, his support, and kindness throughout the last half year that has led to this thesis. Without his curiosity towards this new subject, I would have never discovered and learned about this wonderful world at the confluence of two great physical theories, (?:gr) and (?:qft) . I would also like to extend this thanks to the rest of the theoretical particle physics group a ETH. Dr Achilleas Lazopoulos, Dr. Ben Ruijl, Dr. Valentin Hirschi, Rayan Haindl, Dario Kermanschah, Zeno Capatti, Matilde Vicini, and Julia Karlen, the many shared lunches, coffee breaks, and discussions have been a incredible source of inspiration and motivation for me. In particular, I would like to thank Ben for his help with all things `FORM`, Zeno for our very insightful discussions and your great suggestions, and Julia for reading through the first draft of this thesis. 
 
-I would also like to thank my girlfriend, for her patience, love, and support. Thanks for keeping me grounded and reminding me that there is more to life than physics!
+I would also like to thank my girlfriend, Maria Miklos, for her patience, love, and support. Thanks for keeping me grounded and reminding me that there is more to life than physics (such as math)!
 
 Thanks aswell to my Grandfather Martin Huber, who graciously hosted me during the start of my masters, and with which I shared many great discussions and stories at the breakfast, dinner, and Jass table. 
 
