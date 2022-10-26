@@ -230,7 +230,7 @@ $$
 \ampl[(i)]_\text{EFT}=\ampl[(i)]_\text{full} \quad \forall i.
 $$
 
-which fixes the coefficients in the potential ansatz @eq-ansatzpot, and fullfils the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e. the classical and non relativistic limit, which is summarised by the following heirarchy of scales:
+which fixes the coefficients in the potential ansatz @eq-ansatzpot, and fullfils the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e. the classical and non relativistic limit, which is summarised by the following hierarchy of scales:
 
 $$
 \mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
@@ -495,7 +495,7 @@ We have arrived at an integral expression for the change in observable $\Delta\o
 
 ### Classical limit
 
-Since we are concerned with classical observables we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. We first discuss the classical limit of wavefunctions. We impose multiple conditions on the wavefunctions. The first are those imposed by (?:lsz) reduction. That is,
+Since we are concerned with classical observables, we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. We first discuss the classical limit of wavefunctions. We impose multiple conditions on the wavefunctions. The first are those imposed by (?:lsz) reduction. That is,
 
 - Compact support momentum space wavefunction
 - Peaked around one value of momenta
@@ -1270,16 +1270,16 @@ $$ {#eq-relfact}
 We now input the reduced version $\redampl[(0)]\elch^2=\ampl[(0)]$ of the amplitude, and take the $\hbar\to0$ limit of @eq-impulseLO. We can safely take the $\hbar \to 0$ limit as the integrand contains no terms singular in $\hbar$ (the $\frac{1}{\hbar^2}$ is cancelled by the $\hbar^2$ pre-factor).  Notice that the integration measure @eq-DeltaOclas simplifies in the classical limit:[^comp]
 
 $$
-\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} \cancel{\ndeltafn{2\semom[1]\cdot\tw}}\cancel{\ndeltafn{2\semom[1]\cdot \tw }}.
+\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} {\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
 $$
 
 The integrand corresponding to the (?:lo) contribution to the impulse is then:
 
 $$
-\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}.
+\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}{\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
 $$
 
-This can be analytically computed (see LO impulse SQED) to find a closed form for the (?:lo) impulse.
+This can be analytically computed to find a closed form for the (?:lo) impulse.
 
 $$
 \Delta \emom[1]^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}
@@ -1338,7 +1338,7 @@ diags=include("QGRAFout/julia/1lSQED.jl")
 
 qDiags=[qDiagram(;diag...) for diag in diags]
 grafs=(x -> x.g).(qDiags)
-println("::: {#fig-oneloopsqed  layout-ncol=3}")
+println("::: {#fig-oneloopsqed  layout-ncol=4 .column-body-right }")
 for (i,graf) in enumerate(grafs)
 println("```{dot}")
 println("//| fig-width: 1.5")
@@ -1384,7 +1384,7 @@ for (i,d) in enumerate(classicaldiags)
   d.ID=i
 end
 
-println("::: {#fig-onefilterloopsqed  layout-ncol=5 fig-cap-location=margin}")
+println("::: {#fig-onefilterloopsqed  layout-ncol=5 .column-body-right }")
 for (i,graf) in enumerate(grafs[.!scaleless.(grafs)])
 println("```{dot}")
 println("//| fig-width: 1")
@@ -1482,7 +1482,23 @@ end;
 toform(stdout,classicaldiags[3])
 ```
 
-Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta to be homogeous on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. Using `FORM`, we can contract indices and apply the momentum conservation rules. Finally we also apply the relabeling rules described in @eq-newmom. The `FORM` version of the box integrand is then given in @lst-formbox.
+Notice that we also define the momentum routing by imposing the replacement rules, one per vertex. This can be done in many ways but to ensure proper scaling we set the loop momenta to be homogeous on the massless lines. This is done by the `Julia` program, using kruskal's algorithm [@Kruskal:1956] to find the maximal-mass spanning tree of the graph, and then setting the loop momenta to be those internal edges that are missing from the tree. The maximal mass spanning tree of the box is visualized in @fig-kruskalbox .Using `FORM`, we can contract indices and apply the momentum conservation rules. Finally we also apply the relabeling rules described in @eq-newmom. The `FORM` version of the box integrand is then given in @lst-formBox.
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+
+import  Catlab.Graphics.Graphviz: run_graphviz
+
+open("kruskalbox.png";create=true,write=true) do io
+run_graphviz( io,to_graphviz(kruskal(classicaldiags[3].g,mass;rev=true),node_labels=true, edge_labels=true,graph_attrs=Dict("layout"=>"neato")),format="png") 
+end
+```
+
+![The maximal mass spanning tree of the box diagram in blue. The loop momenta are the edges that are missing from the tree.](kruskalbox.png){#fig-kruskalbox .margin}
+
+
 
 ```{.default #lst-formBox .sql lst-cap="Box integrand in FORM"}
 
@@ -1642,14 +1658,135 @@ $$
 \int \dn[4]{\bar{\ell}}\pa{\bcancel{\Box_{1,1,1,1^-}}-\cancel{\Box_{1,1,1,1}}}+\cancel{\Box_{1,1,1,1}}-\bcancel{\Box_{1,1,1,1^-}}  =  0.
 $$
 
-The classically divergent terms have cancelled leaving us with only the finite terms!
+The classically divergent terms have cancelled leaving us with only the finite terms. We now have full control over the classical limit of the one loop contrbution to the real and virtual parts of the amplitude. 
 
+### Higher order and gravity 
+
+The code provided is fully general in loop number and can be extended readily to higher loops, at the unintegrated level. The number of contributing diagrams quickly increases however. At two loops, we go from 5 non-scaleless diagrams to 34 (see @fig-2lSQEDclassical), and at three loops we have 470 diagrams (see @fig-3lSQEDclassical). 
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+diags=include("QGRAFout/julia/2lSQED.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=qDiags[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+alldiags=(⊕(((x -> x.g).(noscalelessdiags))...))
+open("2lSQEDclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-2lSQEDclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at two loops in SQED"
+//| file: 2lSQEDclass.dot
+//| cap-location: margin
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+
+import  Catlab.Graphics.Graphviz: run_graphviz
+diags=include("QGRAFout/julia/3lSQED.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+
+alldiags=(⊕(noscalelessdiags...))
+open("3lSQEDclass.png";create=true,write=true) do io
+
+run_graphviz(io, to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")), format="png")
+end
+```
+
+![All scaleful diagrams, in the classical limit at three loops in SQED](3lSQEDclass.png){#fig-3lSQEDclassical}
+
+
+
+The classically divergent term cancelations, have been explicitly derived above for the one loop case, however it is not immediately extendable to higher loops. Arguments using Cutkosky rules have been used in [Herrmann et al. @Herrmann:2021tct] to show this at two loops. 
+
+We have up to now only considered the toy model of scalar QED, however the same techniques can be applied to gravity. In this case one considers the same scalars minimally coupled to gravity, using the Einstein-Hilbert action. Going through the same procedures as above, with more algebra, one can also obtain Feynman rules. One key difference is that the gravitons self interact, and do so for any vertex degree. Additionally the graviton-scalar vertex can also involve any number of gravitons. Of course the highest degree vertex is always limited by the number of loops, such that in practice, one only needs to consider truncated Feynman rules. We implemented these rules in `QGRAF` and `Julia` and we can see the resulting diagrams at one loop in @fig-1lGRclassical only contains one new diagram, and two loops @fig-2lGRclassical, there are substantially more new diagrams. 
+
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+include("GR.jl")
+diags=include("QGRAFout/julia/1lGR.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+
+alldiags=(⊕(noscalelessdiags...))
+open("1lGRclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-1lGRclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at 1 loop in GR"
+//| file: 1lGRclass.dot
+//| cap-location: margin
+```
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+diags=include("QGRAFout/julia/2lGR.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+alldiags=(⊕(noscalelessdiags...))
+
+open("2lGRclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-2lGRclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at 2 loops in GR"
+//| file: 2lGRclass.dot
+//| cap-location: margin
+```
 
 
 [^measurech]: We changed the integration variable from $r_i$ to $w_i=r_i-\emom[i]$ thus the measure changes:$$\ddP[2+\abs{X}]{r_1,r_2,X}=\ddP[\abs {X}]{r_X}\prod\limits_{i=1,2}\dn[4]{w_i}\ndeltafn{2\emom[i] \cdot w_i+w_i^2}\thetafn{\emom[i]^0+w_i^0}$$ where we used the same reasoning as for the $q_i$ variable change.
     
 [^expand]: Here the expansion is in powers of the coupling constant, so even though we want $\hbar$s to cancel, the loop order will still affect the order of the contribution through the coupling constant  $\coupling$  and the (?:lo) corresponds to $\coupling$
-[^comp]: Compare to $$\begin{aligned}\dPsb{\tw}&=\dn[4]{\tw} \ndeltafn{2\emom[1]\cdot\tw+\hbar\tw^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}\\& \ndeltafn{2\emom[1]\cdot \tw +\hbar\tw^2}\thetafn{\ct[0]{\emom[2]}+\tm^0}\end{aligned}$$ The theta functions cancel as $\tm^0\to0$ and $\emom[i]$ becomes classical. Changing to the special kinematic variables @eq-newmom we can even eliminate the delta functions, since by constuction $\semom[1]\cdot\tw=0$.
+[^comp]: Compare to $$\begin{aligned}\dPsb{\tw}&=\dn[4]{\tw} \ndeltafn{2\emom[1]\cdot\tw+\hbar\tw^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}\\& \ndeltafn{2\emom[1]\cdot \tw +\hbar\tw^2}\thetafn{\ct[0]{\emom[2]}+\tm^0}\end{aligned}$$ The theta functions cancel as $\tm^0\to0$ and $\emom[i]$ becomes classical. 
 
 
 

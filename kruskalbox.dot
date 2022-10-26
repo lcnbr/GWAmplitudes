@@ -1,0 +1,21 @@
+digraph G {
+  graph [layout="neato"];
+  node [height="0.05",margin="0",shape="circle",width="0.05"];
+  edge [arrowsize="0.5"];
+  n1 [color="cornflowerblue",label="1"];
+  n2 [color="cornflowerblue",label="2"];
+  n3 [color="cornflowerblue",label="3"];
+  n4 [color="cornflowerblue",label="4"];
+  n5 [label="",shape="none",style="invis"];
+  n6 [label="",shape="none",style="invis"];
+  n7 [label="",shape="none",style="invis"];
+  n8 [label="",shape="none",style="invis"];
+  n5 -> n4 [color="lightcoral",label="9",penwidth="2"];
+  n2 -> n6 [color="red",label="10",penwidth="2"];
+  n7 -> n3 [color="deepskyblue",label="11",penwidth="2"];
+  n1 -> n8 [color="blue",label="12",penwidth="2"];
+  n1 -> n2 [color="cornflowerblue",label="5",penwidth="1"];
+  n3 -> n1 [color="cornflowerblue",label="6",penwidth="2"];
+  n4 -> n2 [color="cornflowerblue",label="7",penwidth="2"];
+  n3 -> n4 [color="grey;0.5:grey",label="8",penwidth="1"];
+}

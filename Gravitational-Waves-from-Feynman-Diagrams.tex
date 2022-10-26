@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, boxrule=0pt, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt, enhanced, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -653,20 +653,20 @@ repository \url{https://github.com/lcnhb/GWAmplitudes}.
 \chapter*{Acknowledgements}\label{acknowledgements}}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
-I would like to thank my supervisor, Prof.~Babis Anastasiou, for his
-trust, his support, and kindness throughout the last half year that has
-led to this thesis. Without his curiosity towards this new subject, I
-would have never discovered and learned about this wonderful world at
-the confluence of two great physical theories, \gls{gr} and \gls{qft} .
-I would also like to extend this thanks to the rest of the theoretical
-particle physics group a ETH. Dr Achilleas Lazopoulos, Dr.~Ben Ruijl,
-Dr.~Valentin Hirschi, Rayan Haindl, Dario Kermanschah, Zeno Capatti,
-Matilde Vicini, and Julia Karlen, the many shared lunches, coffee
-breaks, and discussions have been a incredible source of inspiration and
-motivation for me. In particular, I would like to thank Ben for his help
-with all things \texttt{FORM}, Zeno for our very insightful discussions
-and your great suggestions, and Julia for reading through the first
-draft of this thesis.
+First and foremost I would like to thank my supervisor, Prof.~Babis
+Anastasiou, for his trust, his support, and kindness throughout the last
+half year that has led to this thesis. Without his curiosity towards
+this new subject, I would have never discovered and learned about this
+wonderful world at the confluence of two great physical theories,
+\gls{gr} and \gls{qft} . I would also like to extend this thanks to the
+rest of the theoretical particle physics group a ETH. Dr Achilleas
+Lazopoulos, Dr.~Ben Ruijl, Dr.~Valentin Hirschi, Rayan Haindl, Dario
+Kermanschah, Zeno Capatti, Matilde Vicini, and Julia Karlen, the many
+shared lunches, coffee breaks, and discussions have been a incredible
+source of inspiration and motivation for me. In particular, I would like
+to thank Ben for his help with all things \texttt{FORM}, Zeno for our
+very insightful discussions and your great suggestions, and Julia for
+reading through the first draft of this thesis.
 
 I would also like to thank my girlfriend, for her patience, love, and
 support. Thanks for keeping me grounded and reminding me that there is
@@ -1971,20 +1971,21 @@ remains increadibly computationally expensive \sidenote{\footnotesize A single
   waveform with 10 orbits can take a week and tens of thousands of CPU
   hours} and making any sizable bank of purely \gls{nr} waveforms is
 seen as a fools endeavor. To date, only a couple hundred parameter space
-points have been simulated. \gls{nr} is used to complement, calibrate
-and extend the other waveform generation techniques. For example to
-detect the first signals \gls{ligo} and other detectors interpolated
-between \gls{nr}-generated parameter space points to reach the ones
-needed for detection. However, with the advent of \gls{lisa} on the
-horizon, a further problem will arise. \gls{nr} results by nature only
-take into account the last few orbit cycles before merger. Any more than
-that and computational time becomes prohibitive. \gls{lisa}, with its
-low noise floor, should be able to detect inspiraling but not yet
-merging binaries. Doing so will require waveform templates with hundreds
-of orbits, well out of reach of any modern \gls{nr} package.
-Nonetheless, this technique has shown and will continue to show its
-worth, as no approximations other than discretization are made. The
-physical content of such waveforms is thus high.
+points have been simulated. Consequently, \gls{nr} is used to
+complement, calibrate and extend the other waveform generation
+techniques. For example to detect the first signals \gls{ligo} and other
+detectors interpolated between \gls{nr}-generated parameter space points
+to reach the ones needed for detection. However, with the advent of
+\gls{lisa} on the horizon, a further problem will arise. \gls{nr}
+results by nature only take into account the last few orbit cycles
+before merger. Any more than that and computational time becomes
+prohibitive. \gls{lisa}, with its low noise floor, should be able to
+detect inspiraling but not yet merging binaries. Doing so will require
+waveform templates with hundreds of orbits, well out of reach of any
+modern \gls{nr} package. Nonetheless, this technique has shown and will
+continue to show its worth, as no approximations other than
+discretization are made. The physical content of such waveforms is thus
+high.
 
 \hypertarget{inspiral-methods}{%
 \section{Inspiral methods}\label{inspiral-methods}}
@@ -2007,11 +2008,11 @@ background caused by the heavier object. This is called the \gls{gsf}
 formalism.
 
 \hypertarget{pn}{%
-\subsection{\texorpdfstring{\gls{pn}}{}}\label{pn}}
+\subsection{\texorpdfstring{\acrlong{pn}}{}}\label{pn}}
 
-The \gls{pn} expansion, is a perturbative expansion of \gls{efe} in the
-orbital regime, which at \gls{lo} reproduces Newtonian gravity. Consider
-a system of orbiting bodies with typical values
+The \acrfull{pn} expansion, is a perturbative expansion of \gls{efe} in
+the orbital regime, which at \gls{lo} reproduces Newtonian gravity.
+Consider a system of orbiting bodies with typical values
 \(\bar{M},\bar{R},\bar{v}\) for masses, separations, and velocities.
 Then, the viral theorem states:
 
@@ -2079,11 +2080,11 @@ describe isolated systems. This is where the \gls{pm} expansion comes
 in.
 
 \hypertarget{pm}{%
-\subsection{\texorpdfstring{\gls{pm}}{}}\label{pm}}
+\subsection{\texorpdfstring{\acrlong{pm}}{}}\label{pm}}
 
-The \gls{pm} expansion is a weak field expansion of \gls{efe}, in the
-coupling constant \(\grav\). It thus covers all orders in velocity of
-the \gls{pn} expansion, at any fixed \(\grav\) order. We usually call
+The \acrfull{pm} expansion is a weak field expansion of \gls{efe}, in
+the coupling constant \(\grav\). It thus covers all orders in velocity
+of the \gls{pn} expansion, at any fixed \(\grav\) order. We usually call
 \(nPM\) the corresponding \(\order[n]{\grav}\)-truncated expansion.
 Historically, it was derived with the objective of being the radiation
 zone partner to the \gls{pn} expansion, as it provides a description of
@@ -2177,8 +2178,8 @@ The second full-waveform generation technique is the \acrfull{eob}
 formalism. It was initially developed by ~{[}Buonanno and Damour
 \protect\hyperlink{ref-Buonanno:1998gg}{34}{]}, as a non-perturbative
 re-summing of the \gls{pn} expansion. It was later extended to include
-the merger and ringdown effects in
-~{[}\protect\hyperlink{ref-Buonanno:2000ef}{27}{]}. Thus, it became the
+the merger and ringdown effects in ~{[}Buonanno and Damour
+\protect\hyperlink{ref-Buonanno:2000ef}{27}{]}. Thus, it became the
 first full waveform generating technique to actually produce a waveform.
 It has gotten progressively more powerful, as the \gls{pn} expansions
 have gotten better. More recently \gls{pm} results have also been
@@ -2741,7 +2742,7 @@ which fixes the coefficients in the potential ansatz
 eq.~\ref{eq-ansatzpot}, and fullfils the promised map from amplitude to
 potential. Importantly, we must apply the limiting procedure applied
 above, i.e.~the classical and non relativistic limit, which is
-summarised by the following heirarchy of scales:
+summarised by the following hierarchy of scales:
 
 \[
 \mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
@@ -3164,8 +3165,8 @@ more detail now.
 \hypertarget{classical-limit}{%
 \subsection{Classical limit}\label{classical-limit}}
 
-Since we are concerned with classical observables we need to explore the
-classical limit of eq.~\ref{eq-DeltaO}, i.e.~the limit of
+Since we are concerned with classical observables, we need to explore
+the classical limit of eq.~\ref{eq-DeltaO}, i.e.~the limit of
 \(\hbar \to 0\). We first discuss the classical limit of wavefunctions.
 We impose multiple conditions on the wavefunctions. The first are those
 imposed by \gls{lsz} reduction. That is,
@@ -3969,23 +3970,21 @@ Notice that the integration measure eq.~\ref{eq-DeltaOclas} simplifies
 in the classical limit:\sidenote{\footnotesize Compare to
   \[\begin{aligned}\dPsb{\tw}&=\dn[4]{\tw} \ndeltafn{2\emom[1]\cdot\tw+\hbar\tw^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}\\& \ndeltafn{2\emom[1]\cdot \tw +\hbar\tw^2}\thetafn{\ct[0]{\emom[2]}+\tm^0}\end{aligned}\]
   The theta functions cancel as \(\tm^0\to0\) and \(\emom[i]\) becomes
-  classical. Changing to the special kinematic variables
-  eq.~\ref{eq-newmom} we can even eliminate the delta functions, since
-  by constuction \(\semom[1]\cdot\tw=0\).}
+  classical.}
 
 \[
-\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} \cancel{\ndeltafn{2\semom[1]\cdot\tw}}\cancel{\ndeltafn{2\semom[1]\cdot \tw }}.
+\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} {\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
 \]
 
 The integrand corresponding to the \gls{lo} contribution to the impulse
 is then:
 
 \[
-\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}.
+\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}{\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
 \]
 
-This can be analytically computed (see LO impulse SQED) to find a closed
-form for the \gls{lo} impulse.
+This can be analytically computed to find a closed form for the \gls{lo}
+impulse.
 
 \[
 \Delta \emom[1]^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}
@@ -4079,7 +4078,7 @@ to visualise the diagrams.
 
 \NormalTok{qDiags}\OperatorTok{=}\NormalTok{[}\FunctionTok{qDiagram}\NormalTok{(;diag}\OperatorTok{...}\NormalTok{) for diag }\KeywordTok{in}\NormalTok{ diags]}
 \NormalTok{grafs}\OperatorTok{=}\NormalTok{(x }\OperatorTok{{-}\textgreater{}}\NormalTok{ x.g).(qDiags)}
-\FunctionTok{println}\NormalTok{(}\StringTok{"::: \{\#fig{-}oneloopsqed  layout{-}ncol=3\}"}\NormalTok{)}
+\FunctionTok{println}\NormalTok{(}\StringTok{"::: \{\#fig{-}oneloopsqed  layout{-}ncol=4 .column{-}body{-}right \}"}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i,graf) }\KeywordTok{in} \FunctionTok{enumerate}\NormalTok{(grafs)}
 \FunctionTok{println}\NormalTok{(}\StringTok{"\textasciigrave{}\textasciigrave{}\textasciigrave{}\{dot\}"}\NormalTok{)}
 \FunctionTok{println}\NormalTok{(}\StringTok{"//| fig{-}width: 1.5"}\NormalTok{)}
@@ -4094,7 +4093,7 @@ to visualise the diagrams.
 
 \begin{figure}
 
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4110,7 +4109,55 @@ to visualise the diagrams.
 
 \end{minipage}%
 %
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-21.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.25\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-20.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.25\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-19.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4126,7 +4173,7 @@ to visualise the diagrams.
 
 \end{minipage}%
 %
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4141,8 +4188,8 @@ to visualise the diagrams.
 }
 
 \end{minipage}%
-\newline
-\begin{minipage}[t]{0.33\linewidth}
+%
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4158,7 +4205,7 @@ to visualise the diagrams.
 
 \end{minipage}%
 %
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4173,8 +4220,8 @@ to visualise the diagrams.
 }
 
 \end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
+\newline
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4189,8 +4236,8 @@ to visualise the diagrams.
 }
 
 \end{minipage}%
-\newline
-\begin{minipage}[t]{0.33\linewidth}
+%
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4206,7 +4253,7 @@ to visualise the diagrams.
 
 \end{minipage}%
 %
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4222,7 +4269,7 @@ to visualise the diagrams.
 
 \end{minipage}%
 %
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
@@ -4238,61 +4285,13 @@ to visualise the diagrams.
 
 \end{minipage}%
 \newline
-\begin{minipage}[t]{0.33\linewidth}
+\begin{minipage}[t]{0.25\linewidth}
 
 {\centering 
 
 \begin{figure}[H]
 
 {\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-10.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-9.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-8.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1.5in,height=3.5in]{./scattering_files/figure-latex/dot-figure-7.png}
 
 }
 
@@ -4356,7 +4355,7 @@ package.
 \NormalTok{  d.ID}\OperatorTok{=}\NormalTok{i}
 \ControlFlowTok{end}
 
-\FunctionTok{println}\NormalTok{(}\StringTok{"::: \{\#fig{-}onefilterloopsqed  layout{-}ncol=5 fig{-}cap{-}location=margin\}"}\NormalTok{)}
+\FunctionTok{println}\NormalTok{(}\StringTok{"::: \{\#fig{-}onefilterloopsqed  layout{-}ncol=5 .column{-}body{-}right \}"}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i,graf) }\KeywordTok{in} \FunctionTok{enumerate}\NormalTok{(grafs[.!}\FunctionTok{scaleless}\NormalTok{.(grafs)])}
 \FunctionTok{println}\NormalTok{(}\StringTok{"\textasciigrave{}\textasciigrave{}\textasciigrave{}\{dot\}"}\NormalTok{)}
 \FunctionTok{println}\NormalTok{(}\StringTok{"//| fig{-}width: 1"}\NormalTok{)}
@@ -4371,6 +4370,54 @@ package.
 
 \begin{figure}
 
+\begin{minipage}[t]{0.20\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-9.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.20\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-8.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.20\linewidth}
+
+{\centering 
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-7.png}
+
+}
+
+\end{figure}
+
+}
+
+\end{minipage}%
+%
 \begin{minipage}[t]{0.20\linewidth}
 
 {\centering 
@@ -4394,54 +4441,6 @@ package.
 \begin{figure}[H]
 
 {\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-5.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.20\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-4.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.20\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-3.png}
-
-}
-
-\end{figure}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.20\linewidth}
-
-{\centering 
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=1in,height=3.5in]{./scattering_files/figure-latex/dot-figure-2.png}
 
 }
 
@@ -4568,10 +4567,23 @@ massless lines. This is done by the \texttt{Julia} program, using
 kruskal's algorithm ~{[}\protect\hyperlink{ref-Kruskal:1956}{61}{]} to
 find the maximal-mass spanning tree of the graph, and then setting the
 loop momenta to be those internal edges that are missing from the tree.
-Using \texttt{FORM}, we can contract indices and apply the momentum
-conservation rules. Finally we also apply the relabeling rules described
-in eq.~\ref{eq-newmom}. The \texttt{FORM} version of the box integrand
-is then given in \textbf{?@lst-formbox}.
+The maximal mass spanning tree of the box is visualized in
+Figure~\ref{fig-kruskalbox} .Using \texttt{FORM}, we can contract
+indices and apply the momentum conservation rules. Finally we also apply
+the relabeling rules described in eq.~\ref{eq-newmom}. The \texttt{FORM}
+version of the box integrand is then given in Listing~\ref{lst-formBox}.
+
+\begin{figure}
+
+\sidecaption{\label{fig-kruskalbox}The maximal mass spanning tree of the
+box diagram in blue. The loop momenta are the edges that are missing
+from the tree.}
+
+{\centering \includegraphics{./kruskalbox.png}
+
+}
+
+\end{figure}
 
 \begin{codelisting}
 
@@ -4827,21 +4839,140 @@ eq.~\ref{eq-boxcross} we get:
 \]
 
 The classically divergent terms have cancelled leaving us with only the
-finite terms!
+finite terms. We now have full control over the classical limit of the
+one loop contrbution to the real and virtual parts of the amplitude.
+
+\hypertarget{higher-order-and-gravity}{%
+\subsection{Higher order and gravity}\label{higher-order-and-gravity}}
+
+The code provided is fully general in loop number and can be extended
+readily to higher loops, at the unintegrated level. The number of
+contributing diagrams quickly increases however. At two loops, we go
+from 5 non-scaleless diagrams to 34 (see
+Figure~\ref{fig-2lSQEDclassical}), and at three loops we have 470
+diagrams (see Figure~\ref{fig-3lSQEDclassical}).
+
+\hypertarget{fig-2lSQEDclassical}{}
+{
+\makeatletter
+\def\LT@makecaption#1#2#3{%
+  \noalign{\smash{\hbox{\kern\textwidth\rlap{\kern\marginparsep
+  \parbox[t]{\marginparwidth}{%
+    \footnotesize{%
+      \vspace{(1.1\baselineskip)}
+    #1{#2: }\ignorespaces #3}}}}}}%
+    }
+\makeatother
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=8in,height=3.5in]{./scattering_files/figure-latex/dot-figure-4.png}
+
+}
+
+\end{figure}
+
+\label{fig-2lSQEDclassical}All scaleful diagrams, in the classical limit
+at two loops in SQED
+
+}
+
+\begin{figure}
+
+\sidecaption{\label{fig-3lSQEDclassical}All scaleful diagrams, in the
+classical limit at three loops in SQED}
+
+{\centering \includegraphics{./3lSQEDclass.png}
+
+}
+
+\end{figure}
+
+The classically divergent term cancelations, have been explicitly
+derived above for the one loop case, however it is not immediately
+extendable to higher loops. Arguments using Cutkosky rules have been
+used in ~{[}Herrmann et al.
+\protect\hyperlink{ref-Herrmann:2021tct}{68}{]} to show this at two
+loops.
+
+We have up to now only considered the toy model of scalar QED, however
+the same techniques can be applied to gravity. In this case one
+considers the same scalars minimally coupled to gravity, using the
+Einstein-Hilbert action. Going through the same procedures as above,
+with more algebra, one can also obtain Feynman rules. One key difference
+is that the gravitons self interact, and do so for any vertex degree.
+Additionally the graviton-scalar vertex can also involve any number of
+gravitons. Of course the highest degree vertex is always limited by the
+number of loops, such that in practice, one only needs to consider
+truncated Feynman rules. We implemented these rules in \texttt{QGRAF}
+and \texttt{Julia} and we can see the resulting diagrams at one loop in
+Figure~\ref{fig-1lGRclassical} only contains one new diagram, and two
+loops Figure~\ref{fig-2lGRclassical}, there are substantially more new
+diagrams.
+
+\hypertarget{fig-1lGRclassical}{}
+{
+\makeatletter
+\def\LT@makecaption#1#2#3{%
+  \noalign{\smash{\hbox{\kern\textwidth\rlap{\kern\marginparsep
+  \parbox[t]{\marginparwidth}{%
+    \footnotesize{%
+      \vspace{(1.1\baselineskip)}
+    #1{#2: }\ignorespaces #3}}}}}}%
+    }
+\makeatother
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=8in,height=3.5in]{./scattering_files/figure-latex/dot-figure-3.png}
+
+}
+
+\end{figure}
+
+\label{fig-1lGRclassical}All scaleful diagrams, in the classical limit
+at 1 loop in GR
+
+}
+
+\hypertarget{fig-2lGRclassical}{}
+{
+\makeatletter
+\def\LT@makecaption#1#2#3{%
+  \noalign{\smash{\hbox{\kern\textwidth\rlap{\kern\marginparsep
+  \parbox[t]{\marginparwidth}{%
+    \footnotesize{%
+      \vspace{(1.1\baselineskip)}
+    #1{#2: }\ignorespaces #3}}}}}}%
+    }
+\makeatother
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=8in,height=3.5in]{./scattering_files/figure-latex/dot-figure-2.png}
+
+}
+
+\end{figure}
+
+\label{fig-2lGRclassical}All scaleful diagrams, in the classical limit
+at 2 loops in GR
+
+}
 
 \bookmarksetup{startatroot}
 
 \hypertarget{sec-conclusion}{%
 \chapter{Conclusion}\label{sec-conclusion}}
 
-In this thesis we explored the landscape of theoretical research that
-surrounds gravitational waves. We showed the existence of gravitational
-waves theoretically. We motivated waveform generation techniques
-grounded in first principles' physics. It is only through such precise
-frameworks that we can hope to elucidate the nature of the objects that
-emit this gravitational radiation. We looked at \gls{nr} and \gls{eob}
-two complementary approaches to waveform generation that enabled
-\gls{ligo} to make that field changing detection in 2016. Both
+In this thesis, we explored the landscape of theoretical research that
+surrounds gravitational wave detection. We showed the existence of
+gravitational waves theoretically. We motivated waveform generation
+techniques grounded in first principles' physics. It is only through
+such precise frameworks that we can hope to elucidate the nature of the
+objects that emit gravitational radiation. We looked at \gls{nr} and
+\gls{eob} two complementary approaches to waveform generation that
+enabled \gls{ligo} to make the field changing detection in 2016. Both
 approaches have their challenges, \gls{nr} with stability and
 computational cost, and \gls{eob} with higher order perturbative
 calculations. Each increase in precision enables a more precise match of
@@ -4852,28 +4983,28 @@ physicits aswell.
 We then went on to understand these nascent formalisms built on
 techniques from particle physics. The \gls{eft} matching approach
 enables a simple map from \gls{eob} to amplitudes computed in the
-potential kinematic region. This, and \gls{eob} in general, struggle to
-use and implement dissipation however. The Hamiltonian framework has to
-be somehow augmented with the dissipative forces. This motivates
-frameworks that sidestep the \gls{eob} framework. We explored the most
-developed one currently: \gls{kmoc} . We were able to express classical
-observables such as the impulse in terms of the classical limit
-amplitudes and their unitarity cuts. We then went on to implement a
-programmatic framework for expressing the necessary integrals that the
+potential kinematic region. \gls{eft}, and \gls{eob} in general,
+struggle to use and implement dissipation however. The Hamiltonian
+framework has to be somehow augmented with the dissipative forces. This
+motivates frameworks that sidestep the \gls{eob} framework. We explored
+the most developed one currently: \gls{kmoc} . We were able to express
+classical observables such as the impulse in terms of the classical
+limit amplitudes and their unitarity cuts. We then went on to implement
+a programmatic framework for expressing the necessary integrals that the
 amplitudes yield. We used custom code to apply Feynman rules, manipulate
 and filter the graphs. We matched the results from
 ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}, and then implemented
 a scalar product reduction for preparing the input to IBP reduction
 programs.
 
-The results and formalsims explored here show that amplitude techniques
-in gravitaional wave theory are a very promising and powerful tool. A
-lot of the recent high energy physics results can directly be put to use
-in this context, and can already outperfom traditional methods. The
-higher perturbative order frontier however is increasingly difficult. At
-some point in the near future, these computations will have exhausted
-the techniques currently in use for particle physics. The next step is
-to develop new techniques that can be applied to both fields. Important
+The results and formalisms explored here show that amplitude techniques
+in gravitational wave theory are a very promising and powerful tool.
+Much of the recent \gls{hep} techniques can directly be put to use in
+this context, and can already outperfom traditional methods. The higher
+perturbative order frontier however is increasingly difficult. At some
+point in the near future, these computations will have exhausted the
+techniques currently in use for particle physics. The next step is to
+develop new techniques that can be applied to both fields. Important
 work needs to be done to have a fully amplitude based waveform
 generation framework. This might be the next revolution in gravitational
 wave theory.
@@ -5358,6 +5489,15 @@ Proceedings Supplements \textbf{116}, 193 (2003).}
 {Rapidity Distribution} in the {Drell-Yan Process} at
 {Next-to-Next-to-Leading Order} in {QCD}}}, Physical Review Letters
 \textbf{91}, 182002 (2003).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Herrmann:2021tct}{}}%
+\CSLLeftMargin{{[}68{]} }%
+\CSLRightInline{E. Herrmann, J. Parra-Martinez, M. S. Ruf, and M. Zeng,
+\emph{\href{https://doi.org/10.1007/JHEP10(2021)148}{Radiative Classical
+Gravitational Observables at
+\$\textbackslash Mathcal\{\vphantom\}{O}\vphantom\{\}({G}3̂)\$ from
+Scattering Amplitudes}}, Journal of High Energy Physics \textbf{10}, 148
+(2021).}
 
 \end{CSLReferences}
 

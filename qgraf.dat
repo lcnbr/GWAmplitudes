@@ -1,5 +1,5 @@
   
-output= './QGRAFout/julia/1lSQED.jl' ;
+output= './QGRAFout/julia/3lSQED.jl' ;
 *output= './QGRAFout/julia/2lGR.jl' ;
 
 
@@ -12,7 +12,7 @@ model= './qgraf/SQEDmodel';
 
  out= Phi1,Phi2;
 
- loops=           1 ;
+ loops=           3 ;
 
 loop_momentum= k;
 
