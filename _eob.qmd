@@ -1,0 +1,122 @@
+
+The second full-waveform generation technique is the (>>>:eob) formalism. It was initially developed by [Buonanno and Damour @Buonanno:1998gg], as a non-perturbative re-summing of the (?:pn)  expansion. It was later extended to include the merger and ringdown effects in [Buonanno and Damour @Buonanno:2000ef]. Thus, it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the (?:pn)  expansions have gotten better. More recently (?:pm) results have also been included @Damour:2016gwp. Additionally, (?:eob) can be combined with (?:nr) to produce a very accurate waveform, with less computational overhead than (?:nr)  alone. 
+
+As its name suggests, the (?:eob)  framework combines all the (?:pn), (?:pm) and (?:nr) data into a Hamiltonian describing the motion of a single body. It is inspired by solutions of two-body problems in Newtonian gravity which make use of barycentric coordinates to turn it into a one body problem. Further inspiration came from the two body problem in (?:qed)  [see @Brezin:1970zr] .
+
+Consider two bodies, with masses $\mass[1]$ and $\mass[2]$, positions $\tv[1]{q}$, $\tv[1]{q}$ and momenta $\tv{\emom[1]}$ and $\tv{\emom[2]}$ respectively. The system can be described by the following Hamiltonian:
+
+$$
+\ham[\text{newton}]{\tv[1]{q},\tv[1]{q}}{\tv{\emom[1]},\tv{\emom[2]}}= \frac{\tv{\emom[1]}^2}{2\mass[1]}  + \frac{\tv{\emom[2]}^2}{2\mass[2]}  - \frac{G\mass[1]\mass[2]}{\abs{\tv[1]{q}-\tv[1]{q}}}
+$$
+
+One then transforms this Hamiltonian into one describing the relative motion $\tv{q}=\tv[1]{q}-\tv[1]{q}$. One can formalize this by defining a new set of generalized coordinates, through a canonical transformation. We can go even  further and employ a generating function for the transformation, ensuring that Hamilton's equations remain unchanged in form (see @Goldstein:2002). To describe relative motion, we use Jacobi coordinates $(\tv{Q},\tv{q})$:
+$$
+\begin{pmatrix} \tv[1]{q} \\ \tv[2]{q}\end{pmatrix}\to \underbrace{\begin{pmatrix} \frac{\mass[1]}{\totmass} & \frac{\mass[2]}{\totmass} \\ 1&-1 \end{pmatrix}}_{=A} \begin{pmatrix} \tv[1]{q} \\ \tv[2]{q}\end{pmatrix}=\begin{pmatrix} \tv{Q} \\ \tv{q}\end{pmatrix}
+$${#eq-jacobi2}
+
+If we now define the following generating function for the transformation, depending on the old positions coordinates  $\tv[i]{q}$ and the new momenta $\tv[i]{P}$: [Note the use of Einstein summation]{.aside}
+
+$$
+f_{II}(\tv[i]{q},\tv[i]{P})=\tv[i]{P}A^{ij}\tv[j]{q},
+$${#eq-genfunc}
+
+then the old momenta are given by
+
+$$
+\tv{\emom[i]}=\pdv{f_{II}}{\tv[i]{q}}=\tv[i]{P} A^{ij} \iff \tv[i]{P}=[A^{-1}]{}^{ij}\tv{\emom[j]}.
+$${#eq-momtrans}
+
+Where we can directly invert this equation and obtain the new momenta as:
+
+$$
+  \begin{pmatrix} \tv{P} \\ \tv{p}\end{pmatrix}=\begin{pmatrix} \tv[1]{P} \\ \tv[2]{P}\end{pmatrix}=\begin{pmatrix} 1&1\\ \frac{\mass[2]}{\totmass} & -\frac{\mass[1]}{\totmass} \end{pmatrix} \begin{pmatrix} \tv{\emom[1]} \\ \tv{\emom[2]}\end{pmatrix}
+$$
+ 
+As expected, we obtain that one of the momenta describes the center of mass momentum $\tv{P}=\tv{\emom[1]}+\tv{\emom[2]}$. The other positions are by construction given by $\pdv{f_{II}}{\tv[1]{q}}=\tv{Q}$ and $\pdv{f_{II}}{\tv[2]{q}}=\tv{q}$ i.e the same as equation @eq-jacobi2. Finally the new Hamiltonian $\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}$ can be directly obtained from the generating function:^[We just plug in the definition of the old momenta in terms of the new (@eq-momtrans):
+$$ \tv{\emom[1]}=\frac{\mass[1]}{\totmass} \tv{P} + \tv{p},$$
+$$ \tv{\emom[2]}=\frac{\mass[2]}{\totmass} \tv{P} - \tv{p}.$$
+]
+
+$$
+\ham[\text{rel}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}=\ham[\text{newton}]{\tv{Q},\tv{q}}{\tv{P},\tv{p}}+\cancelto{0}{\pdv{f_{II}}{t}}= \frac{\tv{P}^2}{2\totmass}  + \frac{\tv{p}^2}{2\redmass}  - \frac{G\mass[1]\mass[2]}{\abs{\tv{q}}},
+$$
+
+where $\totmass = \mass[1] + \mass[2]$ is the total mass, and $\redmass = \frac{\mass[1]\mass[2]}{\totmass}$ is the reduced mass. If we change coordinates to a frame where the $\tv{Q}$ is at rest, i.e. $\tv{P}=0$, the Hamiltonian collapses to a one body Hamiltonian. The two-body problem we started with can now be though of as the one body problem of a test-particle of mass $\redmass$ orbiting an external mass $\totmass$. 
+
+In Newtonian gravity, a small change of coordinates makes the two body problem exactly solvable. In much the same way, (?:eob) generalizes this framework to general relativity. The defining trick used above is to transform to 'better' coordinates. A first step is to demand that for straight line motion the (?:com)  energy $E_{\text{\small COM}}=\ct[0]{P}$, where $P$ it the 4-momentum of the entire-system, is equal to the Hamiltonian. We then have:^[In the (?:com)  frame, the spatial part of the total momentum is zero (by definition), and thus we have:
+$$
+\co[0]{P}^2=P^2=(\emom[1]+\emom[2])^2=\emom[1]^2+\emom[2]^2+2\emom[1]\cdot\emom[2].
+$$]
+
+$$
+\mathcal{H}=\sqrt{\totmass^2(1+2\symmratio(\lorentzfactor-1))},
+$$
+
+where $\symmratio=\frac{\redmass}{\totmass}$ is the symmetric mass ratio, and $\lorentzfactor=\frac{1}{\sqrt{1-{v^2}}}=\frac{\ct{\emom[1]}\co{\emom[2]}}{\mass[1]\mass[2]}$ is the relative Lorentz-factor. Note that for non-interacting systems we have $\co{\emom}\ct{\emom}=\redmass^2$ and we can define the effective Hamiltonian:
+
+$$
+\Heff=\ct[0]{\emom}=\sqrt{\redmass^2+\tv{\emom}^2} = \redmass \lorentzfactor.
+$${#eq-straightheff}
+
+We can substitute this into the Hamiltonian above, and add back a generic system momentum $\tv{P}$ and obtain
+
+$$
+\Heob=\sqrt{\totmass^2(1+2\symmratio(\frac{\Heff}{\redmass}-1))+\tv{P}^2}
+$$
+
+
+This Hamiltonian (with $\Heff$ given by @eq-straightheff) now describes straight line motion in a relativistic framework. The key point is that we can take $\Heff$ to be a gravitational test mass Hamiltonian, with some specific deformations and this will match the (?:pn)  result. Consider a test mass in a Schwarzschild background @eq-Schwarzschild, i.e. we consider the case of non-spinning black holes. We can start from the reduced-mass shell expression:
+
+$$
+\invmet \ct{\emom}\ct[\nu]{\emom} =- \redmass^2
+$$ {#eq-schwarzmassshell}
+
+where $\invmet$ is given by @eq-Schwarzschild, where we can set $\theta=\Half{\pi}$ to fix the orientation ^[This is always possible through a change of variables.]. Just as before, the effective Hamiltonian is the 0th component of the momentum, which is implicitly given by @eq-schwarzmassshell:
+
+$$
+\mathcal{H}_S=\sqrt{A_S(\redmass^2+A_S\emom[r]^2+\frac{L^2}{r^2})},
+$$
+
+where $A_S=\frac{1}{1-R_S/r}$, $\emom[r]$ and $L=\emom[\phi]$ are the radial and angular momentum respectively. We then allow deformations from this Hamiltonian defining
+
+$$
+\Heff(r,\emom[r],\phi,L) = \sqrt{A (\redmass^2+A \bar{D} \emom[r]^2+\frac{L^2}{r^2})+Q},      
+$$
+
+where $A,\bar{D},Q$ are the so-called (?:eob)  potentials. $A,\bar{D}$ correspond to the radial potentials of the effective metric, while $Q$ contains terms quadratic in the momentum. We can then match these to (?:pn)  results, by matching observables. 
+
+This is more than a neat trick as this Hamiltonian, when well-matched, fits the gold standard (?:nr)  result up to the merger, well out of the (?:pn)  regime. Crucially, this Hamiltonian framework does not take into account radiation reaction by construction since it is based on conserved energy. These dissipative effects are included after the fact, as friction terms in the (?:eom). The usual conservative (?:eom) is straightforwardly obtained through Hamilton's equations:
+
+$$
+\begin{aligned}
+\dot{r}&=\pdv{\Heff}{\emom[r]},\quad \dot{\emom[r]}=- \pdv{\Heff}{r}\\
+\omega=\dot{\phi}&=\pdv{\Heff}{L},\quad \dot{L}= \cancelto{0}{- \pdv{\Heff}{\phi}}.
+\end{aligned}
+$$
+ 
+Note that, as expected, the angular momentum is conserved. We will now spoil this conservation, by adding friction forces, also called radiation reaction forces to the (?s:eom) governing radial and angular momentum dynamics:
+
+$$
+\begin{aligned}
+\dot{\emom[r]}&=- \pdv{\Heff}{r} +f_r,\\
+\dot{L}&=f_\phi.
+\end{aligned}
+$$
+
+We can now express the energy loss:
+
+$$
+\dot{E}=\odv{\Heff}{t}=\pdv{\Heff}{r}\dot{r}+\pdv{\Heff}{\emom[r]}\dot{\emom[r]}+\pdv{\Heff}{L}\dot{L}=f_r\dot{r}+f_\phi\omega.
+$$
+
+Such dissipative effects are accounted for by matching to (?:pn)  results for the angular momentum and energy fluxes, which are given by the so called balance laws:
+
+$$
+\begin{aligned}
+\ang{\mathcal{F}_L}&=-\ang{\dot{L}}=-\ang{f_\phi},\\
+\ang{\mathcal{F}_E}&=-\ang{\dot{E}}=-\ang{f_r\dot{r}+f_\phi \omega}.
+\end{aligned}
+$$
+
+We have denoted averaging with angle brackets. With this we obtain as full of a picture of the inspiral as possible given the inputs, namely (?:pn) . The matching can also be done with (?:pm)  and (?:nr)  results, further increasing the validity and precision of (?:eob) . Of course, we are still missing the merger and ringdown phases. The merger, or plunge was predicted in @Buonanno:2000ef to be simply the peak in the waveform. This waveform is connected smoothly to a ringdown waveform, defined by a sum of quasi-normal modes of the remnant after merger. Thus, one obtains a sort of Frankenstein waveform, pooling resources from (?:pn) , (?:pm) , (?:nr)  and (?:bh) perturbation theory. Importantly, when well-matched, this waveform is almost as accurate as (?:nr)  results, but with the added benefit of being able to be computed in a reasonable amount of time. Of course, it is still only as powerful as the inputs to which we match, namely the (?:pn)  or (?:pm)  results. We will explore how to compute (?:pm)  results using amplitudes in the next section.
+

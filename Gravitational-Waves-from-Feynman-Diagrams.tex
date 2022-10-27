@@ -627,7 +627,7 @@ pics/mom/.style args = {#1/#2}{code={
 \newcommand{\texttip}[2]{#1}
 \newcommand{\mathtip}[2]{#1}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, boxrule=0pt, frame hidden, breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, boxrule=0pt, breakable]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -672,7 +672,7 @@ I would also like to thank my girlfriend, Maria Miklos, for her
 patience, love, and support. Thanks for keeping me grounded and
 reminding me that there is more to life than physics (such as math)!
 
-Thanks aswell to my Grandfather Martin Huber, who graciously hosted me
+Thanks as well to my grandfather Martin Huber, who graciously hosted me
 during the start of my masters, and with which I shared many great
 discussions and stories at the breakfast, dinner, and Jass table.
 
@@ -788,15 +788,15 @@ extract the signals from the noise, and motivate precise theoretical
 predictions. In Chapter~\ref{sec-wfgen} we look at how to generate
 partial and full waveforms. We explore the \gls{eob} and \gls{nr}
 frameworks. Motivated by the need for more precise ingredients to input
-into \gls{eob}, in Chapter~\ref{sec-scat} we explain the state of the
-art formalisms that incorporate amplitude tools into the program. We
-describe the conservative \gls{eft} matching approach, where the system
-does not lose energy to its environement. Taking into account the loss
-of energy due to \glspl{gw} necesitates another method: the \gls{kmoc}
-formalism, which makes up the second half of the chapter. In this
-context, we take a deeper look at amplitude computing tools. We conclude
-with a discussion of the challenges that lie ahead, and the future of
-\gls{gw} astronomy.
+into \gls{eob}, in Chapter~\ref{sec-scat} we explain the
+state-of-the-art formalisms that incorporate amplitude tools into the
+program. We describe the conservative \gls{eft} matching approach, where
+the system does not lose energy to its environment. Taking into account
+the loss of energy due to \glspl{gw} necessitates another method: the
+\gls{kmoc} formalism, which makes up the second half of the chapter. In
+this context, we take a deeper look at amplitude computing tools. We
+conclude with a discussion of the challenges that lie ahead, and the
+future of \gls{gw} astronomy.
 
 \bookmarksetup{startatroot}
 
@@ -810,7 +810,7 @@ explore under what conditions they are observable.
 \hypertarget{sgw}{%
 \section{\texorpdfstring{\glspl{gw}}{}}\label{sgw}}
 
-To this day, the most fundamental theory of gravity is \gls{gr} , due to
+To this day, the most fundamental theory of gravity is \gls{gr}, due to
 Einstein. It formulates spacetime as a Riemannian manifold with
 curvature, determined by mass distribution. This curvature is encoded in
 the metric \(\met\). Objects then move in this deformed spacetime
@@ -923,7 +923,7 @@ into eq.~\ref{eq-hcc}, giving:
 \end{split}
 \]
 
-The last equation, truncated to first order, is called the de-Donder
+The last equation, truncated to first order, is called the De-Donder
 gauge condition:
 
 \[
@@ -988,20 +988,20 @@ eq.~\ref{eq-dedonderTR} to get:
     \ipdv[^]{\SEco}{\nu}=0.
 }\label{eq-SEcons}\end{equation}
 
-Let us look at what sorts of solutions come out of these equations.
+Let us look at what sorts of solutions come out of these
 
-\hypertarget{homogenous-solutions}{%
-\section{Homogenous solutions}\label{homogenous-solutions}}
+\hypertarget{homogeneous-solutions}{%
+\section{Homogeneous solutions}\label{homogeneous-solutions}}
 
-The first step is to consider the homogeous solution, as all solutions
+The first step is to consider the homogeneous solution, as all solutions
 will involve these terms. Setting \(\SEco=0\) or \(\srcco=0\) yields the
 wave equation in the absence of sources,
 \begin{equation}\protect\hypertarget{eq-homogenous}{}{
    \SRDA \weakmet = 0 .
 }\label{eq-homogenous}\end{equation}
 
-The de-Donder gauge (eq.~\ref{eq-dedonder}) and the remaining gauge
-freedom\sidenote{\footnotesize Associated to changes in coordinates of the form
+The De-Donder gauge (eq.~\ref{eq-dedonder}) and the remaining gauge
+freedom \sidenote{\footnotesize Associated to changes in coordinates of the form
   \(\ct{x}\to\ct{x}+\ct{\xi}\) with \(\SRDA\ct{\xi}=0\).} restricts the
 possible forms of this solution to having only helicity \(\pm2\)
 physically significant components (see
@@ -1044,7 +1044,7 @@ with
 }\label{eq-polTprime}\end{equation}
 
 Equations -eq.~\ref{eq-polk} and -eq.~\ref{eq-polTprime} reduce the free
-components in the polarization tensor to just two. Additionally these
+components in the polarisation tensor to just two. Additionally, these
 equations conspire to yield a traceless polarisation tensor
 \(\trpol=0\), with \(\polco[0\mu]=0\) (see
 ~{[}\protect\hyperlink{ref-Carroll:2019}{17}{]}). This in turn implies
@@ -1058,11 +1058,11 @@ traceless gauge:
 
 The metric perturbation in this gauge is written as: \(\weakTTmet\).
 
-\hypertarget{inhomogenous-solutions}{%
-\section{Inhomogenous solutions}\label{inhomogenous-solutions}}
+\hypertarget{inhomogeneous-solutions}{%
+\section{Inhomogeneous solutions}\label{inhomogeneous-solutions}}
 
-With the homogenous part of eq.~\ref{eq-linearized} accounted for, we
-are now ready to derive the inhomogenous part. The solution of
+With the homogeneous part of eq.~\ref{eq-linearized} accounted for, we
+are now ready to derive the inhomogeneous part. The solution of
 eq.~\ref{eq-linearized} in the presence of a source term will be heavily
 inspired by the analogous problem in electromagnetism, where one learns
 that any linear differential equation:
@@ -1102,7 +1102,7 @@ and all \(\weakTensor\) with \(\weakTRTensor\).
 
 \end{footnotesize}}
 
-Indeed plugging in eq.~\ref{eq-hsolInhom} into eq.~\ref{eq-EFEwave}, \[
+Indeed, plugging in eq.~\ref{eq-hsolInhom} into eq.~\ref{eq-EFEwave}, \[
     \Box_x\weakmet = 8\grav\int\dd[4]{x'}\pa[\big]{(\underbrace{\Box_x\greens{\ct{x}-\ct{x'}}}_{=-2\pi\,\deltafn{\ct{x}-\ct{x'}}}} \srcco(x') = -16\pi \grav\srcco(x).
 \] We can perform the \(x^{\prime0}=t'\) integration in
 eq.~\ref{eq-hsolInhom}, with the Dirac delta function, which sets \(t'\)
@@ -1128,7 +1128,7 @@ eq.~\ref{eq-linearized}, since
     \covd{\SEco}{\mu}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}=0,
 \]
 
-where we have ingored the non-linear terms encoded in the Levi-Civita
+where we have ignored the non-linear terms encoded in the Levi-Civita
 connections. Then,
 
 \[
@@ -1176,7 +1176,7 @@ domain. We will use the following notation:
 \[\FT[t]{\phi}{\omega}(\omega,\tv{x})=\int \dd{t} \phi(t,\tv{x}) \exp{\im\omega t}\]
 \[\invFT[\omega]{\phi}{t}(t,\tv{x})=\int \frac{\dd{\omega}}{2\pi} \FT[t]{\phi}{\omega}(\omega,\tv{x}) \exp{- \im \omega t}\]
 
-Let us look at frequency domain of the soludtion given in
+Let us look at frequency domain of the solution given in
 eq.~\ref{eq-solInhomt}. We have
 \begin{equation}\protect\hypertarget{eq-FTweakmet}{}{\begin{aligned} 
 \FT[t]{\weakmet}{\omega}(\omega, \tv{x}) &=\int \dd{t} \weakmet(t,\tv{x}) \exp{\im\omega t}
@@ -1214,9 +1214,9 @@ perturbation:
 \end{split}
 \]
 
-If we additionally further separate the scales in the following
-way\sidenote{\footnotesize We just add the condition that \(\frac{1}{\omega}\gg R\),
-  that is the source radius is much smaller than the wavelength.}
+If we additionally further separate the scales in the following way
+\sidenote{\footnotesize We just add the condition that \(\frac{1}{\omega}\gg R\), that
+  is the source radius is much smaller than the wavelength.}
 
 \[
 r\gg \brc{\frac{1}{\omega},\omega R^2}\gg R,
@@ -1238,7 +1238,7 @@ definition, we have
 \FT[t]{\srcco}{\omega}(\omega,\tv{y})=\FT[t]{\SEco}{\omega}(\omega,\tv{y})+\half \mink\FT[t]{\trSE}{\omega}(\omega,\tv{y})
 \]
 
-Thus we can study the Fourier transform of \(\SEco\),
+Thus, we can study the Fourier transform of \(\SEco\),
 \(\FT[t]{\SEco}{\omega}\) instead. Using the conservation equation
 eq.~\ref{eq-SEcons} in Fourier \(t\)-space, we obtain:
 
@@ -1274,7 +1274,7 @@ apply eq.~\ref{eq-FTSEcons} to itself to obtain:
 \]
 
 Notice that the integral on the \gls{rhs} is in fact the Fourier
-transform of the quadrupole moment tensor of the energy denisty:
+transform of the quadrupole moment tensor of the energy density:
 
 \begin{equation}\protect\hypertarget{eq-quadmom}{}{
 \quadmom[mn]=\int \co[m]{x}\co[n]{x} \SEco[00](t,\tv{x})\dd[3]{x}.
@@ -1305,21 +1305,21 @@ derivative of the quadrupole moment of the energy density at the time
 The nature of gravitational radiation is in stark contrast to the
 leading electromagnetic contribution which is due the change in the
 \emph{dipole} moment of the charge density. The change of the dipole
-moment can be attributed to the change in center of charge (for \gls{em}
-), or mass (for \gls{gr} ). While a center of charge is free to move
-around, the center of mass (of an isolated source) is fixed by the
+moment can be attributed to the change in center of charge (for
+\gls{em}), or mass (for \gls{gr}). While a center of charge is free to
+move around, the center of mass (of an isolated source) is fixed by the
 conservation of momentum, so the dipole moment is zero.
 
 The quadrupole moment, on the other hand, is sensitive to the shape of
 the source, which a gravitational system can modify. We observe that the
-quadrupole radiation is subleading when compared to dipole radiation.
-Thus on top of the much smaller coupling constant, gravitational
+quadrupole radiation is sub-leading when compared to dipole radiation.
+Thus, on top of the much smaller coupling constant, gravitational
 radiation is also weakened by this fact, and thus is usually orders of
 magnitude weaker than electromagnetic radiation.
 
 In summary, any object that is modifying its shape is a source of
 \glspl{gw}. All orbiting systems therefore are sources of \glspl{gw} .
-However as outlined above, only significant `changes in shape' have a
+However, as outlined above, only significant `changes in shape' have a
 chance to be detectable. We will now explore these phenomena.
 
 \hypertarget{sec-compactbinaries}{%
@@ -1327,24 +1327,24 @@ chance to be detectable. We will now explore these phenomena.
 
 How could one construct a very powerful source of \glspl{gw} ? An
 example would be that of two highly-massive bodies (such that
-\(\SEco[00]\) is large) that orbit each other. Furthermore in order for
+\(\SEco[00]\) is large) that orbit each other. Furthermore, in order for
 the \glspl{gw} emitted by the system to be detectable they must orbit
 close enough to each other that their quadrupole moment is large. For
 these very massive objects to be close enough for a small orbit, they
 have to be very compact. Assuming that is the case, a funny thing
 happens, as these objects orbit each other, they emit \glspl{gw} , and
-in doing so they lose energy\sidenote{\footnotesize Of course this happens in every
-  orbiting system just on a time scale that is neglible. Only systems
+in doing so they lose energy \sidenote{\footnotesize Of course this happens in every
+  orbiting system just on a timescale that is negligible. Only systems
   which are massive enough to produce large amounts of radiation
-  actually lose enough energy for it to matter.}. Thus they slow down,
+  actually lose enough energy for it to matter.}. Thus, they slow down,
 and their orbit shrinks. This continues until the orbit is so small that
 the objects merge into a single object. Of course this is a significant
-change of shape and thus we have a constructed (if not all on purpose) a
-very powerful source of \glspl{gw} . Such objects are called compact
+change of shape, and thus we have a constructed (if not all on purpose)
+a very powerful source of \glspl{gw} . Such objects are called compact
 binaries.
 
 To \gls{lo} in \(\grav\) the motion of the binary is described by a
-newtonian circular orbit. In baricentric coordinates, such a system is
+Newtonian circular orbit. In barycentric coordinates, such a system is
 in fact equivalent to effective one body \sidenote{\footnotesize This choice of
   wording is not a coincidence as we shall see} of reduced mass
 \(\redmass=\frac{\mass[1]\mass[2]}{\totmass}\) orbiting in a
@@ -1367,7 +1367,7 @@ the norm of the velocity
 \vel=\sqrt{\frac{\grav \totmass}{\dist}}.
 \]
 
-Thus the orbital period is simply, in the case of
+Thus, the orbital period is simply, in the case of
 
 \[
 T=\frac{2\pi\dist}{\vel}=2\pi\sqrt{\frac{\dist^3}{\grav\totmass}}.
@@ -1387,7 +1387,7 @@ circular orbit in the \(x-y\) plane i.e.:
 }\label{eq-eomred}\end{equation}
 
 We have not written the third \(z\) component of the trajectory as that
-can be set to zero, for a well chosen set of inertial coordinates. The
+can be set to zero, for a well-chosen set of inertial coordinates. The
 corresponding trajectory for both masses is simply given by applying the
 following scaling:
 
@@ -1395,10 +1395,10 @@ following scaling:
 \redmass \tv{r}(t)  = \mass[1] \tv[1]{r}(t) = \mass[2] \tv[2]{r}(t).
 \]
 
-We can straightforwardly obtain the \(00\) component of the energy
-momentum tensor of the system\sidenote{\footnotesize The energy density is the same
-  for the effective one body system and the two body system.} by using
-the \gls{eom} of the reduced mass (eq.~\ref{eq-eomred}):
+We can straightforwardly obtain the \(00\) component of the
+energy-momentum tensor of the system \sidenote{\footnotesize The energy density is the
+  same for the effective one body system and the two body system.} by
+using the \gls{eom} of the reduced mass (eq.~\ref{eq-eomred}):
 
 \[
 \SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)},
@@ -1416,7 +1416,7 @@ moment of the rotating system:
 \end{aligned}
 \]
 
-Thus we have roughly:
+Thus, we have roughly:
 
 \[
 \quadmom[]\sim \redmass \dist^2 \cos (2 \Omega  t) \sim \redmass \dist^2 \sim \redmass \pa[\Big]{\frac{\grav\totmass}{\Omega^2}}^{\frac{2}{3}}= \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{-\frac{4}{3}},
@@ -1437,7 +1437,7 @@ Binaries}{ Binaries}}\label{bh-binaries}}
 Taking the process described above to the limit of more massive and more
 compact objects one could imagine asking for the most dense objects
 possible to orbit each other. In \gls{gr} this object is called a black
-hole ( \gls{bh} ). It is a possible solution to the full fat \gls{efe}
+hole (\gls{bh}). It is a possible solution to the full fat \gls{efe}
 (eq.~\ref{eq-EFE}), in a static and isotropic universe, with point like
 mass at its center. Then the solutions to the equations eq.~\ref{eq-EFE}
 have a unique form ~{[}\protect\hyperlink{ref-Birkhoff:1923}{18}{]},
@@ -1468,7 +1468,7 @@ it is an artefact of the coordinate choice, while the latter is real, in
 the sense that coordinate independent scalars formed from the metric
 (such as the ricci scalar) do in fact blow up as \(r\to0\). This encodes
 the non-spurious mass singularity that gives rise to the \gls{bh}
-phenomena .
+phenomena.
 
 If we consider a comparable stellar mass \gls{bbh} system, we can use
 the calculations of the previous section to compute the order of
@@ -1488,7 +1488,7 @@ h = \frac{R_S^2}{r\dist}.
 Thus, if we consider \glspl{bh} separated by ten times their
 Schwarzschild radius, observed at cosmological distances
 \(\sim 100 \;\mathrm{Mpc}\), we obtain the values for the scales
-characterising the binary system:
+characterizing the binary system:
 
 \[
 \begin{aligned}
@@ -1519,16 +1519,16 @@ Non-spinning black holes orbiting around each other are the simplest
 binary system to model. However, they are extremely unlikely to occur in
 nature (realistic physical scenarios). The nature of \gls{bh} formation
 implies that they necessarily also spin. Spinning black holes, also
-refered to as Kerr black holes, are characterized by a different metric
+referred to as Kerr black holes, are characterized by a different metric
 tensor defining the spacetime surrounding them. The modelling of
 spinning black holes is still in its infancy and will not be treated it
 here.
 
-There are many other binary systems that could feasably be detected.
+There are many other binary systems that could feasibly be detected.
 Finite-size binaries such as \glspl{ns} result in tidal phenomena that
-are not present in the \gls{bh} case. Also non-binary sytems, such as
+are not present in the \gls{bh} case. Also, non-binary systems, such as
 Cosmic strings, corresponding to early universe topological defects,
-could produce a detectable stochasitc \gls{gw} backround.
+could produce a detectable stochastic \gls{gw} background.
 
 \bookmarksetup{startatroot}
 
@@ -1583,7 +1583,7 @@ components, \(h_{+}\) and \(h_{\times}\), which are the plus and cross
 polarisations of the wave. The strain sensitivity can be further
 increased by bouncing the light back and forth multiple times along the
 arms of the interferometer. In current implementations this is achieved
-using fabry - perot cavities spanning the whole length of the arms.
+using Fabry - Perot cavities spanning the whole length of the arms.
 
 \hypertarget{sec-ligo}{%
 \subsection{\texorpdfstring{\gls{ligo} and ground based
@@ -1604,8 +1604,8 @@ live in a vacuum. In fact for the first published detection, the data
 analysis teams from \gls{ligo} joined forces with those for Virgo, the
 European gravitational wave detector. The Virgo detector is located in
 Cascina, Italy, and is similar to \gls{ligo} . It has \(3\text{ km}\)
-long arms and a different suspention system. It joined data collection
-with \gls{ligo} in the second observing run in 2017. Finally there are
+long arms and a different suspension system. It joined data collection
+with \gls{ligo} in the second observing run in 2017. Finally, there are
 two other detectors that are now part of the collaboration, KAGRA in
 Japan and GEO600 in Germany. KAGRA is a similar detector to Virgo in
 scale, but is built underground further isolating it from seismic
@@ -1741,22 +1741,22 @@ where the bar denotes the average over the noise realisation,
 is the Heaviside step function. We can now define the \emph{signal to
 noise ratio} for the signal when filtered by \(h_i\) as \sidenote{\footnotesize The
   equality is due to the fact that we average over all realisations of
-  noise, which averrages to uniform:
+  noise, which averages to uniform:
   \(\overline{\ang{h_i,n}\ang{n,h_i}}=\ang{h_i,h_i}\).}
 
 \[
 \rho (s,h_i)=\frac{\ang{s,h_i}}{\operatorname{rms}\ang{n,h_i}}=\frac{\ang{s,h_i}}{\sqrt{\ang{h_i,h_i}}}.
 \]
 
-where \(\operatorname{rms}\) denotes the root mean square. This is the
+where \(\operatorname{rms}\) denotes the root-mean-square. This is the
 functional \(\mathcal{F}\brc{s,h_i}\) we are after and we claim
 detection if \(\rho(h_i)>\rho^*\). The functional
 \(\mathcal{F}\brc{s,h_i}=\rho (s,h_i)\), provided that the noise is
 normally distributed, is provably the optimal filtering technique, in
-the sense that it minimises the probability of false positives. For
-example, if we have a fully gaussian noisy signal \(s=n\) then \(\rho\)
+the sense that it minimizes the probability of false positives. For
+example, if we have a fully Gaussian noisy signal \(s=n\) then \(\rho\)
 is a normal variable with zero mean and unit variance. If a signal
-\(h_i\) is present, over some again gaussian noise \(n\), then it can be
+\(h_i\) is present, over some again Gaussian noise \(n\), then it can be
 proven that \(\rho\) is still normal but centered on
 \(\sqrt{\ang{h_i,h_i}}\) with unit variance.
 
@@ -1826,11 +1826,11 @@ sensitivity in a drastically different band than that of \gls{ligo} and
 \]
 
 The nature of sources that can be detected by \glspl{pta} is therefore
-different from that of \gls{ligo} and \gls{lisa} . The \gls{pta}
+different from that of \gls{ligo} and \gls{lisa}. The \gls{pta}
 sensitivity is more suited to detect stochastic gravitational waves,
 such as those emitted by early-universe phenomena, or by supermassive
-black holes (\(10^6-10^9\stellarmass\)) in the centers of
-galaxies\sidenote{\footnotesize more massive objects have longer orbital periods}.
+black holes (\(10^6-10^9\stellarmass\)) in the centers of galaxies
+\sidenote{\footnotesize more massive objects have longer orbital periods}.
 
 \bookmarksetup{startatroot}
 
@@ -1838,12 +1838,12 @@ galaxies\sidenote{\footnotesize more massive objects have longer orbital periods
 \chapter{Waveform Generation}\label{sec-wfgen}}
 
 The matched filtering approach introduced in the previous section
-motivates the developement of tools for generating waveforms. The
-matched filtering technique is especially sensitive to the phase of the
-\gls{gw} , necessitating precise determination of the waveform
-template's phase. These templates can be varied in physical content, but
-also in practicality. In all cases they need to be able to cover the set
-of parameters (the parameter space) that one is interested in exploring.
+motivates the development of tools for generating waveforms. The matched
+filtering technique is especially sensitive to the phase of the \gls{gw}
+, necessitating precise determination of the waveform template's phase.
+These templates can be varied in physical content, but also in
+practicality. In all cases they need to be able to cover the set of
+parameters (the parameter space) that one is interested in exploring.
 Clearly, if the waveform has been generated purely heuristically, then
 the physical content of the detection is close to zero. From this
 approach, one can only deduce that a phenomenon producing a similar
@@ -1966,26 +1966,25 @@ presented in ~{[}\protect\hyperlink{ref-Pretorius:2005gq}{25}{]}}
 
 \end{figure}
 
-Nowadays, it is the gold standard of waveform generation. Of course it
-remains increadibly computationally expensive \sidenote{\footnotesize A single
-  waveform with 10 orbits can take a week and tens of thousands of CPU
-  hours} and making any sizable bank of purely \gls{nr} waveforms is
-seen as a fools endeavor. To date, only a couple hundred parameter space
-points have been simulated. Consequently, \gls{nr} is used to
-complement, calibrate and extend the other waveform generation
-techniques. For example to detect the first signals \gls{ligo} and other
-detectors interpolated between \gls{nr}-generated parameter space points
-to reach the ones needed for detection. However, with the advent of
-\gls{lisa} on the horizon, a further problem will arise. \gls{nr}
-results by nature only take into account the last few orbit cycles
-before merger. Any more than that and computational time becomes
-prohibitive. \gls{lisa}, with its low noise floor, should be able to
-detect inspiraling but not yet merging binaries. Doing so will require
-waveform templates with hundreds of orbits, well out of reach of any
-modern \gls{nr} package. Nonetheless, this technique has shown and will
-continue to show its worth, as no approximations other than
-discretization are made. The physical content of such waveforms is thus
-high.
+Nowadays, it is the gold standard of waveform generation. Of course, it
+remains incredibly computationally expensive \sidenote{\footnotesize A single waveform
+  with 10 orbits can take a week and tens of thousands of CPU hours} and
+making any sizable bank of purely \gls{nr} waveforms is seen as a fools
+endeavor. To date, only a couple hundred parameter space points have
+been simulated. Consequently, \gls{nr} is used to complement, calibrate
+and extend the other waveform generation techniques. For example to
+detect the first signals \gls{ligo} and other detectors interpolated
+between \gls{nr}-generated parameter space points to reach the ones
+needed for detection. However, with the advent of \gls{lisa} on the
+horizon, a further problem will arise. \gls{nr} results by nature only
+take into account the last few orbit cycles before merger. Any more than
+that and computational time becomes prohibitive. \gls{lisa}, with its
+low noise floor, should be able to detect inspiraling but not yet
+merging binaries. Doing so will require waveform templates with hundreds
+of orbits, well out of reach of any modern \gls{nr} package.
+Nonetheless, this technique has shown and will continue to show its
+worth, as no approximations other than discretization are made. The
+physical content of such waveforms is thus high.
 
 \hypertarget{inspiral-methods}{%
 \section{Inspiral methods}\label{inspiral-methods}}
@@ -2042,7 +2041,7 @@ radiation far from the source, as it exhibits divergences for
 \(r\to\infty\)\sidenote{\footnotesize In HEP speak this is called an infrared
   divergence}. This means that in the \gls{gw} context, the \gls{pn}
 expansion is in fact usually coupled to a weak-field approximation (see
-below), outside of the near zone. This is the region surrounding the
+below), outside the near zone. This is the region surrounding the
 source, that is of small extent compared to the wavelength of the
 emitted radiation:
 
@@ -2055,7 +2054,7 @@ The \gls{pn} expansion can also be viewed as an expansion in small
 the time derivatives of the metric generated by this source will be
 smaller than the spatial derivatives by a factor \(\order{v}\), \[
 \frac{\partial}{\partial t}=\order{v} \frac{\partial}{\partial x^i},
-\] or \(\partial_0=\order{\epsilon)} \partial_i\). Thus the
+\] or \(\partial_0=\order{\epsilon)} \partial_i\). Thus, the
 d'Alembertian operator, applied to the metric is, to lowest order, a
 Laplacian operator \[
 -\frac{1}{c^2} \frac{\partial^2}{\partial t^2}+\nabla^2=\left[1+O\left(\epsilon^2\right)\right] \nabla^2 .
@@ -2070,14 +2069,13 @@ F(t_r)=F(t)-{r} \dot{F}(t)+\frac{r^2}{2} \ddot{F}(t)+\ldots
 \]
 
 Importantly, the derivatives should bring down factors proportional to
-frequency \(\Omega\) of the emitted radiation. Thus this is in fact an
+frequency \(\Omega\) of the emitted radiation. Thus, this is in fact an
 expansion in \(r \Omega\sim r / \lambda\), which is only valid in the
 near zone as defined by eq.~\ref{eq-nearzone}, and breaks down outside
-of this zone, in the so called \emph{radiation zone}. A serious
-consequence of this fact is that the pure, naive \gls{pn} expansion is
-unable to account for outgoing or incoming radiation, and thus unable to
-describe isolated systems. This is where the \gls{pm} expansion comes
-in.
+this zone, in the so-called \emph{radiation zone}. A serious consequence
+of this fact is that the pure, naive \gls{pn} expansion is unable to
+account for outgoing or incoming radiation, and thus unable to describe
+isolated systems. This is where the \gls{pm} expansion comes in.
 
 \hypertarget{pm}{%
 \subsection{\texorpdfstring{\acrlong{pm}}{}}\label{pm}}
@@ -2114,7 +2112,7 @@ gauge conditions (eq.~\ref{eq-dedonder}), is given by
 \SRDA \invpertmet=-16 \pi \grav \invpertmet \relSEct .
 }\label{eq-relEFE}\end{equation}
 
-where \(\relSEct\) is the effective energy momentum tensor given by:
+where \(\relSEct\) is the effective energy-momentum tensor given by:
 
 \[
 \relSEct=(-\metricTensor)\SEct -\inv{16 \pi \grav}\ct[\mu\nu]{\Lambda}.
@@ -2123,7 +2121,7 @@ where \(\relSEct\) is the effective energy momentum tensor given by:
 \(\ct[\mu\nu]{\Lambda}\) contains all non-linear terms of the Einstein
 tensor, and its definition can be obtained by comparing with
 eq.~\ref{eq-EFE}. Thus, it depends on the metric and thus on
-\(\pertmet\) in a highly non-linearly fashion . We can write it as:
+\(\pertmet\) in a highly non-linearly fashion. We can write it as:
 
 \[
 \ct[\mu\nu]{\Lambda}=\ct[\mu\nu]{L}[\pertTensor,\pertTensor]+\ct[\mu\nu]{M}[\pertTensor,\pertTensor,\pertTensor]+\ct[\mu\nu]{N}[\pertTensor,\pertTensor,\pertTensor,\pertTensor]+\order[5]{\pertTensor}.
@@ -2183,9 +2181,9 @@ the merger and ringdown effects in ~{[}Buonanno and Damour
 first full waveform generating technique to actually produce a waveform.
 It has gotten progressively more powerful, as the \gls{pn} expansions
 have gotten better. More recently \gls{pm} results have also been
-included ~{[}\protect\hyperlink{ref-Damour:2016gwp}{35}{]}. Additionally
-\gls{eob} can be combined with \gls{nr} to produce a very accurate
-waveform, with less computational overhead than \gls{nr} alone.
+included ~{[}\protect\hyperlink{ref-Damour:2016gwp}{35}{]}.
+Additionally, \gls{eob} can be combined with \gls{nr} to produce a very
+accurate waveform, with less computational overhead than \gls{nr} alone.
 
 As its name suggests, the \gls{eob} framework combines all the \gls{pn},
 \gls{pm} and \gls{nr} data into a Hamiltonian describing the motion of a
@@ -2302,7 +2300,7 @@ describes straight line motion in a relativistic framework. The key
 point is that we can take \(\Heff\) to be a gravitational test mass
 Hamiltonian, with some specific deformations and this will match the
 \gls{pn} result. Consider a test mass in a Schwarzschild background
-eq.~\ref{eq-Schwarzschild}, i.e.~we consider the case of non-spinnning
+eq.~\ref{eq-Schwarzschild}, i.e.~we consider the case of non-spinning
 black holes. We can start from the reduced-mass shell expression:
 
 \begin{equation}\protect\hypertarget{eq-schwarzmassshell}{}{
@@ -2310,8 +2308,8 @@ black holes. We can start from the reduced-mass shell expression:
 }\label{eq-schwarzmassshell}\end{equation}
 
 where \(\invmet\) is given by eq.~\ref{eq-Schwarzschild}, where we can
-set \(\theta=\Half{\pi}\) to fix the orientation\sidenote{\footnotesize This is always
-  possible through a change of variables.}. Just as before, the
+set \(\theta=\Half{\pi}\) to fix the orientation \sidenote{\footnotesize This is
+  always possible through a change of variables.}. Just as before, the
 effective Hamiltonian is the 0th component of the momentum, which is
 implicitly given by eq.~\ref{eq-schwarzmassshell}:
 
@@ -2338,7 +2336,7 @@ fits the gold standard \gls{nr} result up to the merger, well out of the
 into account radiation reaction by construction since it is based on
 conserved energy. These dissipative effects are included after the fact,
 as friction terms in the \gls{eom}. The usual conservative \gls{eom} is
-straightforwardly obtained through Hamiltonians equations:
+straightforwardly obtained through Hamilton's equations:
 
 \[
 \begin{aligned}
@@ -2380,16 +2378,16 @@ We have denoted averaging with angle brackets. With this we obtain as
 full of a picture of the inspiral as possible given the inputs, namely
 \gls{pn} . The matching can also be done with \gls{pm} and \gls{nr}
 results, further increasing the validity and precision of \gls{eob} . Of
-course we are still missing the merger and ringdown phases. The merger,
+course, we are still missing the merger and ringdown phases. The merger,
 or plunge was predicted in
 ~{[}\protect\hyperlink{ref-Buonanno:2000ef}{27}{]} to be simply the peak
 in the waveform. This waveform is connected smoothly to a ringdown
 waveform, defined by a sum of quasi-normal modes of the remnant after
-merger. Thus one obtains a sort of frankenstein waveform, pooling
+merger. Thus, one obtains a sort of Frankenstein waveform, pooling
 resources from \gls{pn} , \gls{pm} , \gls{nr} and \gls{bh} perturbation
-theory. Importantly, when well matched, this waveform is almost as
+theory. Importantly, when well-matched, this waveform is almost as
 accurate as \gls{nr} results, but with the added benefit of being able
-to be computed in a reasonable amount of time. Of course it is still
+to be computed in a reasonable amount of time. Of course, it is still
 only as powerful as the inputs to which we match, namely the \gls{pn} or
 \gls{pm} results. We will explore how to compute \gls{pm} results using
 amplitudes in the next section.
@@ -2421,9 +2419,9 @@ context of perturbative computations of collider observables now find an
 application to the scattering problem in gravity. A key part of applying
 tools originally developed for quantum systems to problems in gravity is
 controlling the classical limit, a historically difficult endeavor. Once
-scattering data is obtained one needs to extract the relevant
+scattering data is obtained, one needs to extract the relevant
 observables. This may be in an effort to compare results from the
-different methods, in which case gauge and diffeomorphism, and lorentz
+different methods, in which case gauge and diffeomorphism, and Lorentz
 invariance are key, since different methods make different gauge and
 frame choices. It can also be to extract the relevant information for
 detection and data extraction, in which case the \gls{gw} waveform is
@@ -2451,19 +2449,19 @@ have shown a path forward in directly extending unbound data to bound
 orbits, obviating the need to use a potential and \gls{eob} at all.
 
 Finally, as mentioned in the last chapter, scattering can stand on its
-own and still be usefull without being extended to the orbital case. The
+own and still be useful without being extended to the orbital case. The
 \gls{pm} approximation can be computed from scattering amplitudes in an
 \gls{eft} framework ~{[}\protect\hyperlink{ref-Kalin:2020mvi}{47}{]}. We
 can also explore the classical observables possible in scattering
-scenarios. This has been developped in
+scenarios. This has been developed in
 ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]} and was extended to
-local observables\sidenote{\footnotesize local as in not time integrated and thus
+local observables \sidenote{\footnotesize local as in not time integrated and thus
   presenting time dependent dynamics} such as waveforms in
 ~{[}\protect\hyperlink{ref-Cristofoli:2021vyo}{48}{]}.
 
 In this chapter we will first look at how to use amplitude data to
 extract orbital and scattering waveforms. We will then look at the
-\gls{kmoc} formalism to directly extract observables. Finally we will
+\gls{kmoc} formalism to directly extract observables. Finally, we will
 look at how to compute amplitudes, and comparing to results such as
 those in
 ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5},\protect\hyperlink{ref-Bern:2021xze}{49}{]}.
@@ -2487,7 +2485,7 @@ stays the same). In the above equation we also define the
 \emph{scattering matrix element} \(\ampl_{fi}\) ~{[}see
 \protect\hyperlink{ref-Srednicki:2007}{50}{]} or \emph{invariant Feynman
 amplitude} ~{[}see \protect\hyperlink{ref-Coleman:2018a}{51}{]}, by
-factoring out a normalised spacetime delta-function that impose the
+factoring out a normalized spacetime delta-function that impose the
 conservation of momentum on the external particles, and a complex unit.
 The computation of \(\ampl\) is made possible by the \gls{lsz}
 ~{[}\protect\hyperlink{ref-Lehmann:1954rq}{52},\protect\hyperlink{ref-Collins:2019ozc}{53}{]}
@@ -2587,7 +2585,7 @@ others can be reabsorbed by field redefinitions, or vanish on-shell,
 such as \(\tv{k}^2-\tv{k'}^2\). Note as-well that we work in
 \(\Dim=4-2\dimreg\) dimensions such that the integrals are dimensionally
 regulated ~{[}see \protect\hyperlink{ref-tHooft:1972tcz}{54}{]}. In
-particular an \(\dimreg\)-power corresponds to a logarithm\sidenote{\footnotesize The
+particular an \(\dimreg\)-power corresponds to a logarithm \sidenote{\footnotesize The
   third term in the sum is given by
   \(\coupling^3\ln{\tv{k}-\tv{k'}}^2 c_3\pa[\Big]{\Half{\tv{k}^2+\tv{k'}^2}}\).}.
 Finally, note that in gravity this is precisely a \gls{pm} expansion!
@@ -2663,8 +2661,8 @@ amplitude is a sum of bubble diagrams:
 
 }
 
-We can consequently neatly organise the amplitude into a sum of terms
-with specific loop counts. We can also equivalently organise it into a
+We can consequently neatly organize the amplitude into a sum of terms
+with specific loop counts. We can also equivalently organize it into a
 sum of terms with specific \(\coupling\) powers. We write,
 
 \[\ampl_\text{EFT}=\sum\limits_{L=0}^\infty\ampl[L\text{loop}]_\text{EFT}=\sum\limits_{i=1}^\infty \ampl[(i)]_\text{EFT}.\]
@@ -2676,14 +2674,14 @@ eventually want to partition over the coupling power to compare the full
 theory.
 
 Since every cut of the diagrams contributing to \(\ampl_\text{EFT}\)
-contains two propagators it is useful to define a 2-body propagator. We
+contains two propagators, it is useful to define a 2-body propagator. We
 can integrate over the energy components of the loop momentum, since the
 vertex does not have an energy dependence:\sidenote{\footnotesize The 4-momentum
   conservation at each vertex means that the energy components of the
   two propagating momenta must carry along the energy component of the
   initial state \(\energy=\energy[1]+\energy[2]\). This can be encoded
   by demanding that \(\omega_1+\omega_2=\energy\). Taking the \gls{com}
-  frame for the intial momenta means that the 3 momenta of each
+  frame for the initial momenta means that the 3 momenta of each
   propagator must cancel i.e.~\(\tv[1]{k}+\tv[2]{k}=0\)}
 
 \[\im \proptwobody{\tv{k}}=\int \dn{\omega} \frac{\im}{\omega-\sqrt{\tv{k}^2+m_1^2}}\frac{\im}{\energy-\omega-\sqrt{\tv{k}^2+m_2^2}}=\frac{\im}{\energy-\sqrt{\tv{k}^2+\mass[1]^2}-\sqrt{\tv{k}^2+\mass[2]^2}},\]
@@ -2691,7 +2689,8 @@ vertex does not have an energy dependence:\sidenote{\footnotesize The 4-momentum
 where the integral is performed using the residue theorem, closing the
 contour in either half plane, where in either case a pole is present. We
 have define \(\energy=\energy[1]+\energy[2]\) to be the \gls{com} energy
-of the two inital states:\sidenote{\footnotesize which is equal to the outgoing energy}
+of the two initial states:\sidenote{\footnotesize which is equal to the outgoing
+  energy}
 
 \[
 \energy[i]=\sqrt{\tv{p}^2+\mass[i]^2}=\sqrt{\tv{p'}^2+\mass[i]^2},
@@ -2710,7 +2709,7 @@ the \gls{com} frame. Finally, we can write the diagram at loop level
 This integral can be performed in the non-relativistic limit, as done by
 ~{[}Bern et al. \protect\hyperlink{ref-Bern:2019crd}{55}{]} up to
 3\gls{pm}. Up to 2\gls{pm}, the amplitudes of the \gls{eft}
-is:\sidenote{\footnotesize Here the repartioning mentioned above has been applied and
+is:\sidenote{\footnotesize Here the re-partioning mentioned above has been applied and
   a change in loop momenta: \(\tv[i]{k}\to\tv{p}+\tv[i]{\ell}\).}
 
 \[
@@ -2739,10 +2738,10 @@ procedures, we impose that
 \]
 
 which fixes the coefficients in the potential ansatz
-eq.~\ref{eq-ansatzpot}, and fullfils the promised map from amplitude to
+eq.~\ref{eq-ansatzpot}, and fulfills the promised map from amplitude to
 potential. Importantly, we must apply the limiting procedure applied
-above, i.e.~the classical and non relativistic limit, which is
-summarised by the following hierarchy of scales:
+above, i.e., the classical and non-relativistic limit, which is
+summarized by the following hierarchy of scales:
 
 \[
 \mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
@@ -2765,19 +2764,19 @@ soft & \((\abs{\tv{\tm}},\abs{\tv{\tm}})\) \\
 
 In this language, the soft region is responsible for the classical
 limit, since we consider a small \(\abs{\tv{\tm}}\) expansion. We will
-infact explore this expansion in a different light in
+in fact explore this expansion in a different light in
 Section~\ref{sec-kmoc}. Taking the \gls{nr} limit corresponds to a
 subregion of the soft region, the so-called potential region:
 
 \[ (\omega,\tv{\ell})\sim (\abs{\tv{\vel}}\abs{\tv{\tm}},\abs{\tv{\tm}}),\]
 
 where we use that the \gls{nr} expansion is a given by
-\[\abs{\tv{\emom}}\ll m\] and thus equivalently\sidenote{\footnotesize dividing by
+\[\abs{\tv{\emom}}\ll m\] and thus equivalently \sidenote{\footnotesize dividing by
   mass} by a small relative velocity:
 
 \[ \abs{\tv{\vel}}\ll1.\]
 
-To summarise, in order to obtain the form of the potential, we first
+To summarize, in order to obtain the form of the potential, we first
 compute the amplitude in an \gls{eft}, absorbing all force carrying
 particles into an effective vertex. Making an ansatz for the potential
 we can compute the amplitude in the non-relativistic limit in terms of
@@ -2789,7 +2788,7 @@ full amplitude.
 
 Unfortunately, the procedure described above, and in fact \emph{any}
 procedure trying to make contact with \gls{eob} by expanding the
-gravitiational potential, intrinsically does not capture the full
+gravitational potential, intrinsically does not capture the full
 physics. The crucial point that makes compact binaries interesting is
 that they are not isolated, energy conserving systems. The energy of the
 system is lost to the gravitational waves that enable us to detect them.
@@ -2838,10 +2837,10 @@ and \(\hbar\) has the following units
 \energy=\hbar \omega\implies [M]=[\hbar][T]^{-1}\implies [\hbar]=[T][M]
 .\]
 
-Thus momentum \(\emom\) has units of \([\emom]=[M]\) mass and Wavenumber
-\([\bar{\emom}]=[\frac{\emom}{\hbar}]=[T]^{-1}\) has units of inverse
-time. We will denote the Lorentz-invariant phase space measure by
-\(\ddP{p}\)\sidenote{\footnotesize Repeated integration will be denoted
+Thus, momentum \(\emom\) has units of \([\emom]=[M]\) mass and
+wavenumber \([\bar{\emom}]=[\frac{\emom}{\hbar}]=[T]^{-1}\) has units of
+inverse time. We will denote the Lorentz-invariant phase space measure
+by \(\ddP{p}\)\sidenote{\footnotesize Repeated integration will be denoted
   \(\ddP[n]{p_1,\dots,p_n}\)}:
 
 \[
@@ -2851,7 +2850,7 @@ time. We will denote the Lorentz-invariant phase space measure by
 where quantities denoted by bars absorb the relevant factors of
 \(2\pi\), such that \(\dn[n]{p}=\frac{\dd[n]p}{(2\pi)^n}\).
 Additionally, we have defined \(\hbar\shellen=\sqrt{\tv{p}^2+m^2}\) to
-be the on-shell energy and \(\delta^{(+)}\) is the normalised positive
+be the on-shell energy and \(\delta^{(+)}\) is the normalized positive
 energy on-shell delta function:
 
 \[
@@ -2885,14 +2884,14 @@ wavepacket states:\sidenote{\footnotesize A plane wave state \(\ket{f}=\momket\)
 
 \[\ket{f}=\int \ddP{k} \shellft{f}(k) \momket[k],\]
 
-where \(\shellft{f}(k)\) is the momentum space wavefunction or, more
+where \(\shellft{f}(k)\) is the momentum space wave-function or, more
 mathematically, the momentum distribution function. Note that it is
 almost a Fourier transform, but not quite, as it is performed on the
-mass shell. If the spacetime `wavefunction' \sidenote{\footnotesize Note that the
-  concept of coordinate space wavefunction is ill defined in interacting
-  theories. However for such asymptotic states, the wavefunction outside
-  the bulk (on the infinte time boundary) is that of a free
-  wavefunction.} is given by
+mass shell. If the spacetime `wave-function' \sidenote{\footnotesize Note that the
+  concept of coordinate space wave-function is ill-defined in
+  interacting theories. However, for such asymptotic states, the
+  wave-function outside the bulk (on the infinite time boundary) is that
+  of a free wave-function.} is given by
 
 \begin{equation}\protect\hypertarget{eq-spacetimewf}{}{f(x)=\int \ddP{k} \shellft{f}(k) \exp{-\im\lv{k}\cdot\lv{x}},}\label{eq-spacetimewf}\end{equation}
 
@@ -2900,7 +2899,7 @@ so that \(\shellft{f}(k)\) is consequently given by
 
 \begin{equation}\protect\hypertarget{eq-momdist}{}{\ip{k}{f}=\shellft{f}(k)= 2 \hbar\shellen \int \dd[3]{\tv{x}}f(x) \exp{\im k\cdot x}.}\label{eq-momdist}\end{equation}
 
-If we now define the following operators\sidenote{\footnotesize \(f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g\)}
+If we now define the following operators \sidenote{\footnotesize \(f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g\)}
 \^{}{[} Note that if we replace \(f(x)\) by a plane wave state
 \(\exp{-\im k\cdot x}\) we obtain and define the following:
 
@@ -2925,9 +2924,9 @@ If we now define the following operators\sidenote{\footnotesize \(f\lrder g=f\pa
 where \(\scf(x)\) is the Heisenberg field operator of our theory. While
 these operators are time dependent, this dependence is not obtained from
 applying the Heisenberg \glspl{eom} \sidenote{\footnotesize \(\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}\)},
-instead it is present through the time dependence of the wavefunction
+instead it is present through the time dependence of the wave-function
 \(f(x)\). It turns out that these operators, suggestively written are
-the true creation and annilihation operators in the interacting theory.
+the true creation and annihilation operators in the interacting theory.
 
 We can now define a general one particle state \(\ket{f}\) as the result
 of a creation operator acting on the physical vacuum. Crucially, this
@@ -2936,7 +2935,7 @@ only makes sense in the boundary of the bulk, i.e.~at asymptotic times
   ~{[}\protect\hyperlink{ref-Coleman:2018a}{51}{]} or
   ~{[}\protect\hyperlink{ref-Collins:2019ozc}{53}{]} for a more in depth
   discussion of this point}. Inside the bulk, any thusly created state
-would infact not have definite particle number. This definitely makes
+would in fact not have definite particle number. This definitely makes
 sense in the scattering problem because if you consider the whole system
 as a state, it only has definite particle number at asymptotic times,
 and inside the bulk the scattering happens, and the particle number is
@@ -2954,7 +2953,7 @@ and the corresponding \(t \to +\infty\) state where in is replaced with
 out. It turns out that the extension to multiparticle states is not much
 more complicated. The one thing to demand is that the momentum
 distributions say \(\shellft{f_1},\shellft{f_2},\dots\) have no common
-support, i.e.~they are not overlapping. In this case an n-particle in
+support, i.e., they are not overlapping. In this case an n-particle in
 state is defined as:
 
 \[
@@ -2963,7 +2962,7 @@ state is defined as:
 
 We now have the definitions for asymptotic in and out states for any
 number of particles. Before defining the setup to scatter two particles,
-let us look at the meaning of the position space wavefunction \(f(x)\)
+let us look at the meaning of the position space wave-function \(f(x)\)
 as defined in eq.~\ref{eq-spacetimewf}. Consider a sharply peaked,
 compactly supported momentum distribution \(\shellft{f}(k)\) around a
 value \(\tv[0]{p}\) and a characteristic width \(\Delta p\). One such
@@ -2987,9 +2986,9 @@ by:\sidenote{\footnotesize This then means that
 }\label{eq-stationaryphase}\end{equation}
 
 In the case of a sharply peaked momentum distribution, the coordinate
-space wavefunction will be largest when the stationary phase point is
-the same as the peak of the momentum distribution,
-i.e.~\(\tv[s]{p}=\tv[0]{p}\) i.e.~substituting \(\tv[s]{p}\) into
+space wave-function will be largest when the stationary phase point is
+the same as the peak of the momentum distribution, i.e.,
+\(\tv[s]{p}=\tv[0]{p}\) i.e., substituting \(\tv[s]{p}\) into
 eq.~\ref{eq-stationaryphase} gives: \[
 \tv{x}\simeq \frac{\tv[0]{p}t}{\hbar\shellen[{\tv[0]{p}}]}=\tv[0]{v}t.
 \]
@@ -2997,14 +2996,14 @@ eq.~\ref{eq-stationaryphase} gives: \[
 This is precisely the trajectory of the classical relativistic particle.
 Now consider the case of two particles with different peaked momentum
 distributions their trajectories will have different velocities, but the
-same positions at time \(0\). Thus we will shift one of these
+same positions at time \(0\). Thus, we will shift one of these
 trajectories by a so called impact parameter
 \(\ct{\impactParameter}\)\sidenote{\footnotesize \(f(x)=\int \ddP{\emom} \shellft{f}({\emom})\exp{-\frac{\im}{\hbar} \emom^\mu x_\mu}\).
   Then a shifted, i.e.~translated version of \(f(x)\) can be
   written:\[\begin{aligned}f(x-x_0)&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{-\frac{\im}{\hbar} p_\mu (x^\mu-x_0^\mu)}\\&=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{\frac{\im}{\hbar}p_\mu x^\mu_0}\,\exp{-\frac{\im}{\hbar} p_\mu x^\mu}\end{aligned}\]
   Thus the associated, translated state
   is:\[\ket{f}=\int \ddP{\emom} \shellft{f}({\emom})\,\exp{\frac{\im}{\hbar}p_\mu x^\mu_0}\,\ket{\emom }\]},
-parametrising the relative separtation of the two particles/wavepackets.
+parametrizing the relative separation of the two particles/wave-packets.
 This can be simply done by multiplying the momentum distribution
 \(\shellft{\wf[1]}(p)\) by a factor of
 \(\exp{\frac{\im}{\hbar} \impactParameter \cdot p}\). We take it to be
@@ -3017,7 +3016,7 @@ write down the initial state that we are going to study:
 
 From now on we will drop the breve and infer from the arguments the type
 of \(\wf\) we are dealing with. Observe that by extracting the impact
-parameter in this way, the wavefunctions can be identitcal in form, and
+parameter in this way, the wave-functions can be identical in form, and
 will still be separated as required.
 
 \hypertarget{change-in-observable}{%
@@ -3025,20 +3024,20 @@ will still be separated as required.
 
 The \gls{kmoc} framework concerns itself with the change of an
 observable quantity during a scattering event encoded in an operator
-\(\op{O}\). For such an observable quantitiy \(\obs{O}\) , its change is
+\(\op{O}\). For such an observable quantity \(\obs{O}\) , its change is
 obtained by evaluating the difference of the expectation value of
 \(\op{O}\), between in and out states \[
 \Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}.
 \]
 
 In quantum mechanics, the out states are related to the in states by the
-time evolution operator, i.e.~the S-matrix,
+time evolution operator, i.e., the S-matrix,
 \(\ket{\text{out}}=\Smat \ket{\text{in}}\). Thus:
 
 \marginnote{\begin{footnotesize}
 
 In order, we use the unitarity of the S-matrix, then express the
-S-matrex as the identity (no actual interaction) and the transfer matrix
+S-matrix as the identity (no actual interaction) and the transfer matrix
 \(\Tmat\). The commutators are then expanded and the part with the
 identity vanish (as \(\id\) commutes with everything).
 
@@ -3134,7 +3133,7 @@ then integrate over \(q_2\), and finally relabel \(q_1 \to \tm\)
   \[\begin{aligned}\ddP{\emom[i]}&\,\ndeltafn{(\emom[i]+q_i)^2-m_i^2}\\&=\ddP{\emom[i]}\ndeltafn{\underbracket{(\emom[i]^2-m_i^2)}_{\text{redundant}}+2 \emom[i] \cdot q_i+q_i^2}\\&=\ddP{\emom[i]}\ndeltafn{2 \emom[i] \cdot q_i+q_i^2}\end{aligned}\]
   Finally we integrate \(q_2\) by solving
   \(\ndeltafn[(4)]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'}=\ndeltafn[(4)]{q_1+q_2}\)
-  and thus we just set \(q_2=-q_1\)}. Thus we have
+  and thus we just set \(q_2=-q_1\)}. Thus, we have
 
 \begin{equation}\protect\hypertarget{eq-DeltaOv}{}{
 \begin{aligned}
@@ -3167,34 +3166,34 @@ more detail now.
 
 Since we are concerned with classical observables, we need to explore
 the classical limit of eq.~\ref{eq-DeltaO}, i.e.~the limit of
-\(\hbar \to 0\). We first discuss the classical limit of wavefunctions.
-We impose multiple conditions on the wavefunctions. The first are those
+\(\hbar \to 0\). We first discuss the classical limit of wave-functions.
+We impose multiple conditions on the wave-functions. The first are those
 imposed by \gls{lsz} reduction. That is,
 
 \begin{itemize}
 \tightlist
 \item
-  Compact support momentum space wavefunction
+  Compact support momentum space wave-function
 \item
   Peaked around one value of momenta
 \end{itemize}
 
-Furthermore the classical limit of the wavefunctions should make sense,
-i.e.~
+Furthermore, the classical limit of the wave-functions should make
+sense, i.e.~
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  as \(\hbar \to 0\) the position and momentum wavefunction should
+  as \(\hbar \to 0\) the position and momentum wave-function should
   approach Dirac delta functions, centered around their classical
   values.
 \item
-  The overlap between the wavefunction and its conjugate should be
+  The overlap between the wave-function and its conjugate should be
   nearly full, since they represent the same particle classically.
 \end{enumerate}
 
-Consider for example a nonrelativistic wavefunction for a particle of
+Consider for example a non-relativistic wave-function for a particle of
 mass \(\mass\):
 
 \[
@@ -3202,7 +3201,7 @@ f(\tv{\emom})=\Exp[\Big]{-\frac{\abs{\tv{\emom}}}{2 \hbar m \comptlen/\wfwidth^2
 \]
 
 where \(\comptlen=\frac{\hbar}{m}\) is the compton wavelength of the
-particle and \(\wfwidth\) is a characteristic width. This wavefunction,
+particle and \(\wfwidth\) is a characteristic width. This wave-function,
 with the proper normalization, grows sharper in the \(\hbar \to 0\)
 limit. If we now take the Fourier transform of \(f(\tv{\emom})\) to
 obtain the position ``probability density'', we have:\sidenote{\footnotesize \(A\)
@@ -3216,16 +3215,16 @@ obtain the position ``probability density'', we have:\sidenote{\footnotesize \(A
 \]
 
 This elucidates more clearly the meaning of characteristic width, as
-\(\wfwidth\) is the standard deviation of the wavefunction in position
-space. Thus, the position-space wavefunction grows sharper in the
-\(\wfwidth^2 \to 0\) limit. For both wavefunctions to simultaneously
+\(\wfwidth\) is the standard deviation of the wave-function in position
+space. Thus, the position-space wave-function grows sharper in the
+\(\wfwidth^2 \to 0\) limit. For both wave-functions to simultaneously
 grow sharper in the classical limit, we must then have that
 \(\xi=\pa{\frac{\comptlen}{\wfwidth}}^2\to0\) remembering that the
 \(\hbar \to 0\) limit is just given by the \(\comptlen\to0\) one.
 Finally the meaning of classical limit in this context is the
 \(\xi \to 0\) limit.
 
-Going back to the general conditions, we want a wavefunction
+Going back to the general conditions, we want a wave-function
 \(\wf[i](\emom[i])\) such that in the classical limit the momentum
 reaches its classical value: \(\cls{\emom[i]}=\mass[i]\cls{\vel[i]}\),
 with \(\cls{\vel[i]}\) the classical four-velocity of particle \(i\),
@@ -3240,7 +3239,7 @@ reached in the \(\xi\to0\) limit. The velocity normalization convergence
 is controlled by \(\beta''\)
 \[\breve{u}_i \cdot u_i = 1+ \order[\beta'']{\xi},\]
 
-Finally wavefunction's spread is controlled by \(\beta\), and must
+Finally wave-function's spread is controlled by \(\beta\), and must
 converge to 0:
 \[\begin{aligned} \sigma^2(\emom[i])/m_i^2&=\inv{m_i^2}\av{(\emom[i]-\av{\emom[i]})^2}\\&=\inv{m_i^2}(\av{\emom[i]^2}-\av{\emom[i]}^2)\\&=\inv{\mass[i]^2}(\mass[i]^2-(\mass[i]\cls{\vel[i]}(1+\order[\beta']{\xi}))^2)
 \\&\propto\xi^\beta,\end{aligned}\]
@@ -3248,14 +3247,14 @@ converge to 0:
 where \(\av{\emom[i]^2}=m_i^2\) is enforced by the measure
 \(\ddP{\emom}\).
 
-Additionally, the wavefunction should be Lorentz invariant, and naively
+Additionally, the wave-function should be Lorentz invariant, and naively
 we would have that \(\wf(\emom[i]^\mu)=\wf'(\emom[i]^2)\). However the
 integration measure enforces an on-shell condition:
-\(m_i^2=\emom[i]^2\). Thus the wavefunction cannot depend on
+\(m_i^2=\emom[i]^2\). Thus the wave-function cannot depend on
 \(\emom[i]^2\), and we need to introduce at least one additional four
 vector parameter \(u\). The simplest dimensionless combination of
 parameters it then \(\frac{\emom \cdot u }{m}\). Of course the
-wavefunction must also depend on \(\xi\) and the simplest form of
+wave-function must also depend on \(\xi\) and the simplest form of
 argument will thus be \(\frac{\emom \cdot u }{m \xi}\) so that any
 \(\emom\) not aligned with \(u\) will be strongly suppressed in the
 \(\xi \to0\) limit.
@@ -3265,20 +3264,20 @@ We now have control over most of the conditions:
 \begin{itemize}
 \tightlist
 \item
-  The classical limit is well defined
+  The classical limit is well-defined
 \item
-  The wavefunction spread is controlled
+  The wave-function spread is controlled
 \item
-  The arguments of the wavefunction are clear
+  The arguments of the wave-function are clear
 \end{itemize}
 
-We can write a general wavefunction that satisfies the above as:
+We can write a general wave-function that satisfies the above as:
 
 \[
 f(\frac{\emom \cdot u }{m}\vert\cls{\vel[i]};\mass[i] ;\beta^{(i)}).
 \]
 
-This function can take the form of a gaussian, or something similar to
+This function can take the form of a Gaussian, or something similar to
 eq.~\ref{eq-peak}. Now there is one final requirement, that concerns the
 overlap of \(\wf\) and \(\cwf\) must be \(\mathcal{O}(1)\), equivalently
 and more precisely:
@@ -3299,19 +3298,19 @@ we have:
 
 having we denoted by a bar any quantity that has been rescaled by
 \(\hbar\). Thus, a momentum \(\emom\), when divided by \(\hbar\) will be
-written \(\bar{\emom}\) and called wavenumber. We will combine this
+written \(\bar{\emom}\) and called wave-number. We will combine this
 inequality with ones we obtain from the specific cases of integrations
 required above.
 
 We now want to examine the classical limit of the integrands of the form
 eq.~\ref{eq-DeltaOv}. If we consider just the integration over the
-initial momenta \(\emom[i]\) and the initial wavefunctions with
+initial momenta \(\emom[i]\) and the initial wave-functions with
 \(\ndeltafn{2 \emom[i] \cdot \tm+\tm^2}\), the delta function will smear
 out to a sharply peaked function whose scale is of the same order as the
-original wavefunctions. As \(\xi\) gets smaller, this function will turn
-back into a Dirac delta function imposed on the \(\tm\) integration. Let
-us examine this statement more closely. We are interested in the
-classical limit of the integrals such as:
+original wave-functions. As \(\xi\) gets smaller, this function will
+turn back into a Dirac delta function imposed on the \(\tm\)
+integration. Let us examine this statement more closely. We are
+interested in the classical limit of the integrals such as:
 
 \begin{equation}\protect\hypertarget{eq-dfunct}{}{
 d(m,\xi,u,\tm)=\int \ddP{\emom} \ndeltafn{2 \emom \cdot \tm+\tm^2} \thetafn{\emom^0+\tm^0}\varphi \pa[\Big]{\frac{\emom \cdot u }{m \xi}}\varphi^*\pa[\Big]{\frac{(\emom+\tm) \cdot u }{m \xi}}.
@@ -3332,7 +3331,7 @@ but we can render them dimensionless:
 \]
 
 If we call \(\frac{1}{\sqrt{-\tw^2}}=\scatlen\) a scattering
-length\sidenote{\footnotesize t \([\frac{1}{\sqrt{-\tw^2}}]=[T]=[L]=[\scatlen]\)} then
+length\sidenote{\footnotesize \([\frac{1}{\sqrt{-\tw^2}}]=[T]=[L]=[\scatlen]\)} then
 our dimensionless ratios become :
 
 \[\frac{\comptlen}{\scatlen} \quad \text{and}\quad \scatlen\,\tw \cdot u .\]
@@ -3358,7 +3357,7 @@ d(m,\xi,u,\tm)=\text{peaked function imposing that } {2\scatlen\, \tw \cdot u=\f
 
 \end{marginfigure}
 
-Let us disucss the wavefunction and the scales from a physical
+Let us disucss the wave-function and the scales from a physical
 perspective. The characteristic width \(\wfwidth\) is the particle's
 position uncertainty, \(\frac{\hbar}{\wfwidth}\) is the associated
 momentum uncertainty. In the classical limit the position uncertainty is
@@ -3394,7 +3393,7 @@ Thus in the classical limit we have that \(d\) collapses to:
 d(m,\xi,u,\tm)\propto\ndeltafn{ \tw \cdot u}.
 \]
 
-Thus, the wavefunction-weighted on-shell phase-space integration
+Thus, the wave-function-weighted on-shell phase-space integration
 disappears in the classical limit. The resulting condition is that the
 integration momenta take on their physical values. The sequence that we
 have gone through should be done for all the integrands of type \(d\).
@@ -3407,7 +3406,7 @@ following rules:
 \item
   Just as for the massless transfer momentum any messenger momentum, be
   it transfer, virtual-loop or real emmission, shall become a
-  wavenumber: \(k\to \hbar \bar{k}\).
+  wave-number: \(k\to \hbar \bar{k}\).
 \item
   Replace all couplings with their dimensionless counterparts:
   \(\coupling\to \frac{\coupling}{\sqrt{\hbar} }\) (this is only
@@ -3509,7 +3508,7 @@ We then have:
 \]
 
 We can extract \(\hbar\) from \(\tm\) and from the amplitude. In order
-to determine the \(\hbar\) scalin of \(\ampl\) we extract each coupling
+to determine the \(\hbar\) scaling of \(\ampl\) we extract each coupling
 constant \(\kappa\) along with an \(\frac{1}{\sqrt{\hbar}}\), so that
 quartic vertices yield a factor of \(\frac{\coupling^2}{\hbar}\) whereas
 cubic ones yield \(\frac{\kappa}{\sqrt{\hbar}}\)\sidenote{\footnotesize as mentioned
@@ -3532,11 +3531,11 @@ have that the number of loops of our graph \(L\) is given by: \[
 \]
 
 where \(N\) is the number of connected components (\(=1\) in our case) .
-Thus we see that the amount of extracted \(\hbar\)s corresponds directly
-to the number of loops plus one plus the number of additonal messenger
-particles. \sidenote{\footnotesize The number of extracted couplings being twice that.}
-We can thus write the amplitude \(\ampl\) as a sum over reduced
-\(L\)-loop amplitudes \(\redampl[(L)]\):
+Thus, we see that the amount of extracted \(\hbar\)s corresponds
+directly to the number of loops plus one plus the number of additional
+messenger particles. \sidenote{\footnotesize The number of extracted couplings being
+  twice that.} We can thus write the amplitude \(\ampl\) as a sum over
+reduced \(L\)-loop amplitudes \(\redampl[(L)]\):
 
 \[\amp{\emom[1],\emom[2]}{ r_1,r_2,X}=\sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(L+1+\frac{\abs{X}}{2})}\redamp[(L)]{\emom[1],\emom[2]}{r_1,r_2,X}.\]
 
@@ -3604,9 +3603,9 @@ where \(L\) is the loop count for the virtual kernel and \(L'\),
 respectively. Note that for a tree level virtual kernel, the real-kernel
 match does not exist. The real kernel is only present for \(L>0\). When
 taking the classical limit we will only retain contributions from graphs
-that cancel the \(\hbar\) divergences in each corresponding kernel. Thus
-at the \(L\)-loop level, the amplitude in the virtual kernel must cancel
-with terms of order
+that cancel the \(\hbar\) divergences in each corresponding kernel.
+Thus, at the \(L\)-loop level, the amplitude in the virtual kernel must
+cancel with terms of order
 
 \begin{equation}\protect\hypertarget{eq-hbarvirt}{}{
 \hbar^{1-L+O},
@@ -3648,18 +3647,19 @@ eq.~\ref{eq-rvloopmatch} can be satisfied for \(L=1\), \(L'=0\) and
 
 The virtual integrand is now given by the 1-loop level amplitude, and
 the real integrand is given by the square of a the tree level amplitude.
-This process can go on indefinetely, and is independent of the type of
+This process can go on indefinitely, and is independent of the type of
 observable and the theory. Here we considered the change of momentum a
 particle, which for a black hole very far away would be very difficult
 to measure. However, we can also consider an observable such as the
-four-momentum of the radiated particles, or more precisely its expection
-value. Of course, the operator corresponding to this observable gives
-zero when acting on the initial momentum states, and only gives a
-non-zero result when acting on the messenger states. Thus, for this
-observable only the real integrand, starting with \(\abs{X}=1\) will
-contribute, the \gls{lo} contribution being given by what is essentially
-the unitarity cut of a two loop amplitude. We see that regardless of
-observable, the objects that are needed are the amplitudes.
+four-momentum of the radiated particles, or more precisely its
+expectation value. Of course, the operator corresponding to this
+observable gives zero when acting on the initial momentum states, and
+only gives a non-zero result when acting on the messenger states. Thus,
+for this observable only the real integrand, starting with \(\abs{X}=1\)
+will contribute, the \gls{lo} contribution being given by what is
+essentially the unitarity cut of a two loop amplitude. We see that
+regardless of observable, the objects that are needed are the
+amplitudes.
 
 For each loop level, many diagrams can contribute, but the classical
 limit enforces that they must cancel the \(\hbar\) orders given by
@@ -3669,7 +3669,7 @@ diagrams. It can also be reformulated in the language of the method of
 regions.
 
 To see the whole machinery in action, let us take \gls{sqed} as an
-example theory, that shows the relevant subleties of the formalism.
+example theory, that shows the relevant subtleties of the formalism.
 
 \hypertarget{sqed-amplitudes}{%
 \section{\texorpdfstring{\gls{sqed}
@@ -3677,9 +3677,9 @@ amplitudes}{ amplitudes}}\label{sqed-amplitudes}}
 
 We want to couple a set of massive scalar fields to electromagnetism. We
 will use the minimal coupling prescription to ensure that the resulting
-lagrangian exhibits the required gauge symmetry. The minimal coupling
-prescription works provided that our free mass lagrangian admits a
-conserved current. Our free mass lagrangian for two complex scalar
+Lagrangian exhibits the required gauge symmetry. The minimal coupling
+prescription works provided that our free mass Lagrangian admits a
+conserved current. Our free mass Lagrangian for two complex scalar
 fields with different masses is:
 
 \[
@@ -3713,7 +3713,7 @@ derivatives \(D_\mu\):
 
 \[D_\mu=\partial_\mu+\im \,\elch\,\charge[i]\,A_\mu,\]
 
-i.e.~if along with the transformation above, we perform a gauge
+i.e., if along with the transformation above, we perform a gauge
 transformation of the photon field:
 
 \[A_\mu\rightarrow A_\mu + \frac{1}{\elch} \partial_\mu \lambda\]
@@ -3722,12 +3722,12 @@ or infinitesimally
 
 \[\delta A_\mu = \frac{1}{\elch} \partial_\mu \delta \lambda,\]
 
-then the whole lagrangian:
+then the whole Lagrangian:
 
 \[\mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,\partial_\mu \phi_i)\rightarrow \mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,D_\mu \phi_i),\]
 
 is invariant under the above defined gauge transformation. The final
-lagrangian is:
+Lagrangian is:
 
 \[\mathcal{L}=-\frac{1}{4} F_{\mu \nu} F^{\mu \nu}+\sum_{i=1}^{2}\left[\left(D_{\mu} \phi_{i}\right)^{\dagger}\left(D^{\mu} \phi_{i}\right)-m_{i}^{2} \phi_{i}^{\dagger} \phi_{i}\right],\]
 
@@ -3840,7 +3840,7 @@ simplifications}\label{expansions-and-simplifications}}
 Notice that if we rescale all photon momenta (taking them to be the loop
 momenta) by \(\hbar\) or equivalently take them to be in the soft
 region: \(\abs{k}\sim\abs{q}\ll \abs{p}\), where \(p\) is the external
-momenta, then the photon propagator scales homgeneously in \(\hbar\),
+momenta, then the photon propagator scales homogeneously in \(\hbar\),
 typically:
 
 \begin{equation}\protect\hypertarget{eq-photonscale}{}{
@@ -3848,12 +3848,12 @@ typically:
 }\label{eq-photonscale}\end{equation}
 
 thus contributes \(\order[-2]{\hbar}\) to the overall diagram. The
-matter propagator on the other hand, has inhomgeneous \(\hbar\) scaling,
-as we do not rescale the external momenta, (or equivalently the external
-momenta are not restricted by the regions). Note that we will not
-consider internal mass loops as the soft limit means that massive pair
-production is forbidden, thus massive propagators necessarily route an
-external momentum. We can nonetheless expand a generic massive
+matter propagator on the other hand, has inhomogeneous \(\hbar\)
+scaling, as we do not rescale the external momenta, (or equivalently the
+external momenta are not restricted by the regions). Note that we will
+not consider internal mass loops as the soft limit means that massive
+pair production is forbidden, thus massive propagators necessarily route
+an external momentum. We can nonetheless expand a generic massive
 propagator in the soft limit:
 
 \begin{equation}\protect\hypertarget{eq-massiveScale}{}{
@@ -4062,7 +4062,7 @@ process and visualise the outputted graphs. This package is called
 action. We can run \texttt{QGRAF} from the command line, and it will
 generate a file called \texttt{\{\{output\ filename\}\}} that contains
 the output of the program. We can then use this in a \texttt{Julia} file
-to visualise the diagrams.
+to visualize the diagrams.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4307,25 +4307,25 @@ We notice a few things about the diagrams in
 Figure~\ref{fig-oneloopsqed} above. Not all the diagrams contribute to
 the classical limit. Clearly the diagrams with internal matter loops
 cannot be allowed when the momenta incoming to the loop is soft
-\sidenote{\footnotesize scales like \(\hbar\)}. In the classical limit this momenta
+\sidenote{\footnotesize scales like \(\hbar\)}. In the classical limit this momentum
 will go to 0, and since the scalars are massive, they need momentum
-greater than their mass to be pair produced, thus these diagrams do not
+greater than their mass to be pair-produced, thus these diagrams do not
 contribute. Another class of diagrams that does not contribute to the
 classical limit are the ones with photon loops that start and end on the
 same matter line. These do not contribute because they are scaleless. An
 integral is scaleless when its integrand
-\(\mathcal{I}_\text{scaleless}(\brk{\ell_i})\) scales homegenously under
-any rescaling of the loop momentum \(\ell_i\):
+\(\mathcal{I}_\text{scaleless}(\brk{\ell_i})\) scales homogeneously
+under any rescaling of the loop momentum \(\ell_i\):
 
 \[
 \mathcal{I}_\text{scaleless}(\brk{\ell_i})\stackrel{\ell_j\to\lambda \ell_j}{\longrightarrow}\lambda^\eta \mathcal{I}_\text{scaleless}(\brk{\ell_i})
 \]
 
-Thus any diagram that has a basis of loops that does not contain both
+Thus, any diagram that has a basis of loops that does not contain both
 scalar fields (i.e.~does not cross over) cannot have its scale set by
-the momentum transfer, and is thus scaleless. Dimensionally regularised
+the momentum transfer, and is thus scaleless. Dimensionally regularized
 scaleless integrals vanish, thus we can also discard these diagrams. We
-can easily implement such a filter programatically, by checking that if
+can easily implement such a filter programmatically, by checking that if
 cycles are present they touch either both types of scalars, or neither.
 To compute the cycle basis we use an algorithm derived from
 ~{[}\protect\hyperlink{ref-Paton:1969}{58}{]}, implemented in the
@@ -4455,20 +4455,20 @@ package.
 There is one final simplification we can do. The first diagram in
 Figure~\ref{fig-onefilterloopsqed} has two photon propagators, and two
 quartic vertices, which give it the name: ``double-seagull''. The photon
-propagators have homogeonous \(\hbar^{-2}\) scaling (see
+propagators have homogeneous \(\hbar^{-2}\) scaling (see
 eq.~\ref{eq-photonscale}), the vertices only bring constants, and the
 loop integration has \(\hbar^4\) scaling. Collecting all scalings this
-means that the reduced amplitude has \(\hbar^0\) scaling. However in the
-virtual integrand the reduced amplitude has to cancel with the transfer
-momentum's \(\hbar\) scale (see eq.~\ref{eq-impulseIr}). Thus the double
-seagull diagram vanishes in the classical limit.
+means that the reduced amplitude has \(\hbar^0\) scaling. However, in
+the virtual integrand the reduced amplitude has to cancel with the
+transfer momentum's \(\hbar\) scale (see eq.~\ref{eq-impulseIr}). Thus,
+the double seagull diagram vanishes in the classical limit.
 
-We are left with only 4 diagrams, the two triangle diagrams, the box and
-cross box, which we can now compute. At this point, we can do this
-manually, but again, putting in place a programatic framework means that
-subsequent loops can be treated systematically\sidenote{\footnotesize at least at the
-  unintegrated level}. We will also extract one of these integrands by
-hand, for completeness and comparison.
+We are left with only 4 diagrams, the two triangle diagrams, the box,
+and cross box, which we can now compute. At this point, we can do this
+manually, but again, putting in place a programmatic framework means
+that subsequent loops can be treated systematically \sidenote{\footnotesize at least
+  at the un-integrated level}. We will also extract one of these
+integrands by hand, for completeness and comparison.
 
 The first step is to define the Feynman rules in a computer readable
 format. We will use \texttt{Julia} to apply these rules at every vertex
@@ -4476,7 +4476,7 @@ and every edge, but for the actual computation we will use \texttt{FORM}
 ~{[}\protect\hyperlink{ref-Vermaseren:2000nd}{59},\protect\hyperlink{ref-Kuipers:2012rf}{60}{]},
 which can automatically contract indices and performs expression
 manipulations in an optimized way. The Feynman rules implementation in
-the package developped for this thesis make use of \texttt{Julia}s
+the package developed for this thesis make use of \texttt{Julia}s
 defining paradigm of multiple dispatch. This allows us to define the
 rules for each vertex and each edge in a very compact way. We can define
 the rules for \gls{sqed} as follows:
@@ -4528,7 +4528,7 @@ propagator, which we will denote:
  D_{-}(n,i,p)=\mathtt{prop(n,i,p)}=\pa{p^2-m_i^2+i\epsilon}^{n} \quad \text{thus} \quad \mathtt{prop(-1,i,p)}=\frac{1}{p^2-m_i^2+i\epsilon}.
 \]
 
-We can now apply these feynamn rules to the graphs we have left,
+We can now apply these Feynman rules to the graphs we have left,
 obtaining \texttt{FORM} readable integrands. For example, the box
 diagram gives:
 
@@ -4562,16 +4562,17 @@ Id q4= l1;
 
 Notice that we also define the momentum routing by imposing the
 replacement rules, one per vertex. This can be done in many ways but to
-ensure proper scaling we set the loop momenta to be homogeous on the
+ensure proper scaling we set the loop momenta to be homogeneous on the
 massless lines. This is done by the \texttt{Julia} program, using
-kruskal's algorithm ~{[}\protect\hyperlink{ref-Kruskal:1956}{61}{]} to
+Kruskal's algorithm ~{[}\protect\hyperlink{ref-Kruskal:1956}{61}{]} to
 find the maximal-mass spanning tree of the graph, and then setting the
 loop momenta to be those internal edges that are missing from the tree.
-The maximal mass spanning tree of the box is visualized in
+The maximal mass spanning tree of the box is visualised in
 Figure~\ref{fig-kruskalbox} .Using \texttt{FORM}, we can contract
-indices and apply the momentum conservation rules. Finally we also apply
-the relabeling rules described in eq.~\ref{eq-newmom}. The \texttt{FORM}
-version of the box integrand is then given in Listing~\ref{lst-formBox}.
+indices and apply the momentum conservation rules. Finally, we also
+apply the relabeling rules described in eq.~\ref{eq-newmom}. The
+\texttt{FORM} version of the box integrand is then given in
+Listing~\ref{lst-formBox}.
 
 \begin{figure}
 
@@ -4611,7 +4612,7 @@ from the tree.}
 
 When applied to all 4 diagrams, we obtain precisely the same integrands
 as those in ~{[}\protect\hyperlink{ref-Kosower:2018adc}{5}{]}.
-Additionally we notice that the two triangles and the box diagram have
+Additionally, we notice that the two triangles and the box diagram have
 overlapping propagators. In fact the denominators of the integrands for
 all three can be written as:
 
@@ -4688,7 +4689,7 @@ the integral for the box diagram \(B\) is:
 \]
 
 we can apply the procedure described above, turning messenger momenta
-into wavenumbers:
+into wave-numbers:
 
 \[
 \im B = \elch^4 Q_{1} Q_{2} \int \dn[D]{\bar{\ell}}\frac{\hbar^D}{\hbar^6} \pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\tw-\bar{\ell}}^2}\pa{4 \semom[1]\cdot \semom[2]  + \hbar2\bar{\ell}\cdot\pa{\semom[2] -\semom[1]} -\hbar^2\pa{\bar{\ell}}^2}\Box_{\bar{1},\bar{1},\bar{1},\bar{1}},
@@ -4696,10 +4697,10 @@ into wavenumbers:
 
 where
 \(\Box_{\bar{i}_1,\bar{i}_2,\bar{i}_3,\bar{i}_4} =\inv{\hbar^{2(i_1+i_2)+i_3+i_4}} \Box_{i_1,i_2,i_3,i_4}\)
-is the box family with wavenumber instead of messenger momenta, and
+is the box family with wave-number instead of messenger momenta, and
 \(\hbar\)s extracted. We notice that if we apply the scalar product
 reduction eq.~\ref{eq-scalarred}, we will necessarily still have an
-integral of the form\sidenote{\footnotesize along with ones that are of the form
+integral of the form \sidenote{\footnotesize along with ones that are of the form
   \(\Box_{1,1,1,0}\) and other permutations. These are not divergent in
   the classical limit, as they have one less propagator, thus one less
   \(\hbar\), just enough to cancel what is left of the \(\hbar\) in the
@@ -4711,7 +4712,7 @@ integral of the form\sidenote{\footnotesize along with ones that are of the form
 
 We need to cancel with the \(\hbar\) in the classical limit
 (eq.~\ref{eq-hbarvirt}), here we have one too many orders in the
-denominator (if D=4). Thus we would get a divergent (\(\inv{\hbar}\))
+denominator (if D=4). Thus, we would get a divergent (\(\inv{\hbar}\))
 contribution when taking the classical \(\hbar\to 0\) limit. If we
 consider now the cross box, which is the same family as above but with
 an extra minus sign:
@@ -4722,7 +4723,7 @@ an extra minus sign:
 
 If we write that
 \(\Box_{i_1^+,i_2^+,i_3^+,i_4^+}=\Box_{i_1,i_2,i_3,i_4}\) where the sign
-is the sign of the \(\im\epsilon\) presciption, then we can write the
+is the sign of the \(\im\epsilon\) prescription, then we can write the
 cross box integral as: \[
 \int \dn[D]{\ell} -\Box_{1,1,1,1^-}
 \]
@@ -4761,7 +4762,7 @@ identities:
 \ndeltafn{2\ell\cdot\semom[1]}=\im\pa{\Box_{0,0,1,0}-\Box_{0,0,1^-,0}}
 }\label{eq-revtwo}\end{equation}
 
-Since we where able to write this difference of propagators as a sort of
+Since we were able to write this difference of propagators as a sort of
 cut, we could further compare the divergent part of the box and cross
 box with the corresponding real contribution, which is at tree level,
 with no cut messengers: \(L'=0\) and \(\abs{X}=0\) such that
@@ -4778,7 +4779,7 @@ eq.~\ref{eq-rvloopmatch} is satisfied. We have:
 
 where the \(\redampl[(0)]\) we already computed in
 eq.~\ref{eq-treeampl}, and we have eliminated the theta functions in
-preparation of taking the classical limit. Thus it is essentially a cut
+preparation of taking the classical limit. Thus, it is essentially a cut
 of a one-loop box. Notice that in the classical limit we must cancel
 with \(\hbar^3\) (eq.~\ref{eq-hbarreal}) which at leading order is again
 overdone. The \(\semom[1]\cdot \semom[2]\) contribution from each tree
@@ -4791,9 +4792,9 @@ box and cross box before it. We also notice it has the following form:
 
 where we have changed variables from \(\bar{w}\) to \(\bar{\ell}\) and
 removed the \(\hbar(\Half[\tw] \cdot \bar{\ell}\pm\bar{ \ell}^2)\) term
-in the delta functions, in prepation for the classical limit. We can now
-apply reverse unitarity (eq.~\ref{eq-revone},eq.~\ref{eq-revtwo}) and
-focus on the integral without the prefactors:
+in the delta functions, in preparation for the classical limit. We can
+now apply reverse unitarity (eq.~\ref{eq-revone},eq.~\ref{eq-revtwo})
+and focus on the integral without the pre-factors:
 
 \[
 \begin{aligned}
@@ -4804,7 +4805,7 @@ focus on the integral without the prefactors:
 \]
 
 We now notice something interesting, this cut integral has a sort of
-horizontal flip symmetry, i.e.~if we average over the existing `loop'
+horizontal flip symmetry, i.e., if we average over the existing `loop'
 momentum labelling and a new \(\ell'=q-\ell\) we eliminate the
 \(\ct{\ell}\) dependence in the numerator:
 
@@ -4824,7 +4825,7 @@ Thus we have that the cut integral with the \(\ct{\tw}\) factored out:
 \int \dn[4]{\bar{\ell}}\Half\brc{\pa{\Box_{1,1,1,1^-}-\Box_{1,1,1,1}}+\pa{\Box_{1,1,1^-,1}-\Box_{1,1,1^-,1^-}}} .
 \]
 
-We can apply the relabelling only this time only for the last two
+We can apply the relabeling only this time only for the last two
 integrands, and the integral becomes, applying eq.~\ref{eq-boxtrans}:
 
 \[
@@ -4840,13 +4841,13 @@ eq.~\ref{eq-boxcross} we get:
 
 The classically divergent terms have cancelled leaving us with only the
 finite terms. We now have full control over the classical limit of the
-one loop contrbution to the real and virtual parts of the amplitude.
+one loop contribution to the real and virtual parts of the amplitude.
 
 \hypertarget{higher-order-and-gravity}{%
 \subsection{Higher order and gravity}\label{higher-order-and-gravity}}
 
 The code provided is fully general in loop number and can be extended
-readily to higher loops, at the unintegrated level. The number of
+readily to higher loops, at the un-integrated level. The number of
 contributing diagrams quickly increases however. At two loops, we go
 from 5 non-scaleless diagrams to 34 (see
 Figure~\ref{fig-2lSQEDclassical}), and at three loops we have 470
@@ -4901,11 +4902,11 @@ considers the same scalars minimally coupled to gravity, using the
 Einstein-Hilbert action. Going through the same procedures as above,
 with more algebra, one can also obtain Feynman rules. One key difference
 is that the gravitons self interact, and do so for any vertex degree.
-Additionally the graviton-scalar vertex can also involve any number of
+Additionally, the graviton-scalar vertex can also involve any number of
 gravitons. Of course the highest degree vertex is always limited by the
 number of loops, such that in practice, one only needs to consider
 truncated Feynman rules. We implemented these rules in \texttt{QGRAF}
-and \texttt{Julia} and we can see the resulting diagrams at one loop in
+and \texttt{Julia}, and we can see the resulting diagrams at one loop in
 Figure~\ref{fig-1lGRclassical} only contains one new diagram, and two
 loops Figure~\ref{fig-2lGRclassical}, there are substantially more new
 diagrams.
@@ -4978,7 +4979,7 @@ computational cost, and \gls{eob} with higher order perturbative
 calculations. Each increase in precision enables a more precise match of
 the signal, enabling a much richer analysis of the incoming wave. Purely
 analytical tools have recently come into the crosshairs of particle
-physicits aswell.
+physicists as well.
 
 We then went on to understand these nascent formalisms built on
 techniques from particle physics. The \gls{eft} matching approach
@@ -5000,14 +5001,14 @@ programs.
 The results and formalisms explored here show that amplitude techniques
 in gravitational wave theory are a very promising and powerful tool.
 Much of the recent \gls{hep} techniques can directly be put to use in
-this context, and can already outperfom traditional methods. The higher
+this context, and can already outperform traditional methods. The higher
 perturbative order frontier however is increasingly difficult. At some
 point in the near future, these computations will have exhausted the
 techniques currently in use for particle physics. The next step is to
 develop new techniques that can be applied to both fields. Important
-work needs to be done to have a fully amplitude based waveform
-generation framework. This might be the next revolution in gravitational
-wave theory.
+work needs to be done to have a fully amplitude based
+waveform-generation framework. This might be the next revolution in
+gravitational wave theory.
 
 \bookmarksetup{startatroot}
 

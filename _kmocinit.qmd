@@ -1,0 +1,89 @@
+
+With our conventions at hand, let us set the stage for the problem. Imagine we want to scatter two particles, be they massive black holes, or tiny electrons, into each other, with a constant particle number (i.e. a classical two in two out scattering). As mentioned in @sec-scatamp, in (?:qft) the framework that formalizes scattering of definite particle number states is based on the (?:lsz) reduction formula. 
+
+[we work in the Heisenberg picture here]{.aside}
+
+Let us look at it in more detail. The first step is to define the states we want to scatter. Suppose our theory has single particle states $\momket$, with mass $\mass$, eigenstates of the momentum:
+
+$$\ct{\momop}\momket=\ct{\emom}\momket \quad \text{with} \quad p^0=\hbar\shellen=\sqrt{\tv{\emom}^2+\mass^2}.$$
+
+These states can be seen as special cases (the plane wave states) of wavepacket states:^[A plane wave state $\ket{f}=\momket$ would be given by $\shellft{f}(k)=2 \hbar\shellen[\tv{k}]  \ndeltafn[(3)]{\tv{k}-\tv{p}}$]
+
+$$\ket{f}=\int \ddP{k} \shellft{f}(k) \momket[k],$$
+
+where $\shellft{f}(k)$ is the momentum space wave-function or, more mathematically, the momentum distribution function. Note that it is almost a Fourier transform, but not quite, as it is performed on the mass shell. If the spacetime 'wave-function' ^[Note that the concept of coordinate space wave-function is ill-defined in interacting theories. However, for such asymptotic states, the wave-function outside the bulk (on the infinite time boundary) is that of a free wave-function.] is given by
+
+$$f(x)=\int \ddP{k} \shellft{f}(k) \exp{-\im\lv{k}\cdot\lv{x}},$${#eq-spacetimewf}
+
+so that $\shellft{f}(k)$ is consequently given by
+
+$$\ip{k}{f}=\shellft{f}(k)= 2 \hbar\shellen \int \dd[3]{\tv{x}}f(x) \exp{\im k\cdot x}.$${#eq-momdist}
+
+
+If we now define the following operators ^[$f\lrder g=f\pa{\partialder[\mu]g}-\pa{\partialder[\mu]f}g$]
+^[
+Note that if we replace $f(x)$ by a plane wave state  $\exp{-\im k\cdot x}$ we obtain and define the following:
+
+$$
+\createop[\tv{k}](t)=  \int \dd[3]{\tv{x}} \exp{-\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)-\im \partialder[0]\wf(x)},
+$$
+
+$$
+\annihilop[\tv{k}](t)=   \int \dd[3]{\tv{x}} \exp{\im k\cdot x} \brc[\Big]{\hbar\shellen[\tv{k}]\wf(x)+\im \partialder[0]\wf(x)},
+$$
+
+]
+
+$$
+\createop[f](t)= -  \im \int \dd[3]{\tv{x}}f(x) \lrder[0] \scf(x),
+$$
+
+$$
+\annihilop[f](t)=   \im \int \dd[3]{\tv{x}}\conj{f}(x) \lrder[0] \scf(x),
+$$
+
+where $\scf(x)$ is the Heisenberg field operator of our theory. While these operators are time dependent, this dependence is not obtained from applying the Heisenberg (?s:eom) ^[$\odv{A_H(t)}{t}=\im\com{H_H}{A_H(t)}$], instead it is present through the time dependence of the wave-function $f(x)$. It turns out that these operators, suggestively written are the true creation and annihilation operators in the interacting theory. 
+
+We can now define a general one particle state $\ket{f}$ as the result of a creation operator acting on the physical vacuum. Crucially, this only makes sense in the boundary of the bulk, i.e. at asymptotic times $t\to\pm\infty$^[See @Coleman:2018a or @Collins:2019ozc for a more in depth discussion of this point]. Inside the bulk, any thusly created state would in fact not have definite particle number. This definitely makes sense in the scattering problem because if you consider the whole system as a state, it only has definite particle number at asymptotic times, and inside the bulk the scattering happens, and the particle number is not conserved (at least quantum mechanically). 
+
+Consequently, we only define asymptotic states, denoting them by an $\text{in}$ subscript if they were created at $t\to-\infty$ and $\text{out}$ if they were created at $t\to+\infty$:
+
+$$ 
+\ket[in]{f}\defeq\lim_{t\to-\infty}\createop[f](t)\physvack=\createop[f;\text{in}]\physvack=\int \ddP{k} \shellft{f}(k) \underbracket{\createop[\tv{k}]\physvack}_{\momket[k]}
+$$
+
+and the corresponding $t \to +\infty$ state where in is replaced with out. It turns out that the extension to multiparticle states is not much more complicated. The one thing to demand is that the momentum distributions say $\shellft{f_1},\shellft{f_2},\dots$ have no common support, i.e., they are not overlapping. In this case an n-particle in state is defined as: 
+
+$$
+\ket[in]{f_1,\dots,f_n}\defeq\createop[f_1;\text{in}]\createop[f_2;\text{in}]\dots\createop[f_n;\text{in}]\physvack=\int \ddP[n]{k_1,\dots,k_n} \shellft{f_1}(k_1)\dots\shellft{f_n}(k_n) \momket[k_1,\dots,k_n]. 
+$$
+
+We now have the definitions for asymptotic in and out states for any number of particles. Before defining the setup to scatter two particles, let us look at the meaning of the position space wave-function $f(x)$ as defined in @eq-spacetimewf. Consider a sharply peaked, compactly supported momentum distribution $\shellft{f}(k)$ around a value $\tv[0]{p}$ and a characteristic width $\Delta p$. One such function could be:
+
+$$
+f\pa{\tv{p} ; \tv[0]{p}, \Delta p}=\left\{\begin{array}{ll}
+N \exp{-1 /\pa{1-\abs{\tv{p}-\tv[0]{p}}^2 / \Delta p^2}} & \text { if }\abs{\tv[0]{p}-\tv{p}}<\Delta p \\
+0 & \text { if }\abs{\tv[0]{p}-\tv{p}} \geq \Delta p
+\end{array}\right.,
+$${#eq-peak}
+
+
+
+where $N$ is a normalization constant. The integrand in @eq-spacetimewf, at large $t$ or $\tv{x}$, will be dominated by the stationary phase point $\tv[s]{p}$ which is given by:^[This then means that $$\tv[s]{p}=\frac{\mass\tv{x}\sign{t}}{\sqrt{t^2-\tv{x}^2}}$$ thus $$\hbar\shellen[{\tv[s]{p}}]=\frac{\mass\abs{t}}{\sqrt{t^2-\tv{x}^2}}$$]
+
+$$0=-\pdv{}{\tv[s]{p}}\pa{\hbar\shellen[{\tv[s]{p}}]t+\tv[s]{p}\cdot\tv{x}}=-\frac{\tv[s]{p}t}{\hbar\shellen[{\tv[s]{p}}]}+\tv{x}.
+$${#eq-stationaryphase}
+
+In the case of a sharply peaked momentum distribution, the coordinate space wave-function will be largest when the stationary phase point is the same as the peak of the momentum distribution, i.e., $\tv[s]{p}=\tv[0]{p}$ i.e., substituting $\tv[s]{p}$ into  @eq-stationaryphase gives:
+$$
+\tv{x}\simeq \frac{\tv[0]{p}t}{\hbar\shellen[{\tv[0]{p}}]}=\tv[0]{v}t.
+$$
+
+This is precisely the trajectory of the classical relativistic particle. Now consider the case of two particles with different peaked momentum distributions their trajectories will have different velocities, but the same positions at time $0$. Thus, we will shift one of these trajectories by a so called impact parameter $\ct{\impactParameter}$[^shift], parametrizing the relative separation of the two particles/wave-packets. This can be simply done by multiplying the momentum distribution $\shellft{\wf[1]}(p)$ by a factor of $\exp{\frac{\im}{\hbar} \impactParameter \cdot p}$. We take it to be perpendicular to the initial momenta $\emom[1],\emom[2]$. We now can write down the initial state that we are going to study:
+
+$$
+\ket{\text{in}}=\int \ddP[2]{\emom[1],\emom[2]} \shellft{\wf[1]}(\emom[1]) \shellft{\wf[2]}(\emom[2]) \exp{\frac{\im}{\hbar} \co{\impactParameter} \ct{\emom[1]}}\ket[in]{\emom[1],\emom[2]}.
+$$ {#eq-instate}
+
+
+From now on we will drop the breve and infer from the arguments the type of $\wf$ we are dealing with. Observe that by extracting the impact parameter in this way, the wave-functions can be identical in form, and will still be separated as required.

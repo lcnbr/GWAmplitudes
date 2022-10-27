@@ -1,0 +1,72 @@
+
+How could one construct a very powerful source of (?s:gw) ? An example would be that of two highly-massive bodies (such that $\SEco[00]$ is large) that orbit each other. Furthermore, in order for the (?s:gw) emitted by the system to be detectable they must orbit close enough to each other that their quadrupole moment is large. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy ^[Of course this happens in every orbiting system just on a timescale that is negligible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter.]. Thus, they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a significant change of shape, and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
+
+
+To (?:lo) in $\grav$ the motion of the binary is described by a Newtonian circular orbit. In barycentric coordinates, such a system is in fact equivalent to effective one body ^[This choice of wording is not a coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitational potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the two bodies forming the binary. The orbit is characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[Or equivalently between conserved angular momentum and the derivative of the potential energy.] 
+
+$$
+\frac{\grav \totmass\redmass}{\pa{\dist}^2}=\frac{\redmass \vel^2}{\dist},
+$$ {#eq-newtongrav}
+
+where $\vel$ is the norm of tangential velocity, and $\dist$ is the distance between the two objects. @eq-newtongrav gives us the the norm of the velocity
+
+$$
+\vel=\sqrt{\frac{\grav \totmass}{\dist}}.
+$$
+
+Thus, the orbital period is simply, in the case of 
+
+$$
+T=\frac{2\pi\dist}{\vel}=2\pi\sqrt{\frac{\dist^3}{\grav\totmass}}.
+$$
+
+This also gives us angular frequency:
+
+$$  
+\Omega=\frac{2\pi}{T}=\sqrt{\frac{\grav\totmass}{\dist^3}}.
+$$ {#eq-omega}
+
+Thus the (?:eom) $\tv{r}(t)$ of the reduced mass is described by a circular orbit in the $x-y$ plane i.e.:
+
+$$
+\tv[xy]{r}(t)= \begin{pmatrix} \dist \cos(\Omega t)\\ \dist \sin(\Omega t) \end{pmatrix} .
+$$ {#eq-eomred}
+
+We have not written the third $z$ component of the trajectory as that can be set to zero, for a well-chosen set of inertial coordinates. The corresponding trajectory for both masses is simply given by applying the following scaling:
+
+$$
+\redmass \tv{r}(t)  = \mass[1] \tv[1]{r}(t) = \mass[2] \tv[2]{r}(t).
+$$ 
+
+
+We can straightforwardly obtain the $00$ component of the energy-momentum tensor of the system ^[The energy density is the same for the effective one body system and the two body system.] by using the (?:eom) of the reduced mass (@eq-eomred):   
+
+$$
+\SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)},
+$$
+
+
+which when plugged into @eq-quadmom, gives us the quadrupole moment of the rotating system:
+
+
+$$
+\begin{aligned}
+\quadmom[11] &= \redmass \dist^2 \cos ^2( \Omega t)= \redmass \dist^2(1+\cos (2 \Omega t)) \\
+\quadmom[22] &= \redmass \dist^2 \sin ^2( \Omega t)= \redmass \dist^2(1-\cos (2 \Omega t)) \\
+\quadmom[12]=\quadmom[21] &=2  \redmass \dist^2(\cos \Omega t)(\sin \Omega t)= \redmass \dist^2 \sin (2 \Omega t) \\
+\quadmom[i 3] &=0 .
+\end{aligned}
+$$
+
+Thus, we have roughly:
+
+$$
+\quadmom[]\sim \redmass \dist^2 \cos (2 \Omega  t) \sim \redmass \dist^2 \sim \redmass \pa[\Big]{\frac{\grav\totmass}{\Omega^2}}^{\frac{2}{3}}= \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{-\frac{4}{3}},
+$$
+
+where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm proportional to:
+
+
+$$q
+h \propto \frac{\ddot{\quadmom[]}}{r} \propto \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
+$$ {#eq-hnorm}

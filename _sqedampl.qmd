@@ -1,0 +1,279 @@
+
+We want to couple a set of massive scalar fields to electromagnetism. We will use the minimal coupling prescription to ensure that the resulting Lagrangian exhibits the required gauge symmetry. The minimal coupling prescription works provided that our free mass Lagrangian admits a conserved current. Our free mass Lagrangian for two complex scalar fields with different masses is: 
+
+$$
+\mathcal{L}_m=\sum\limits_{i=1}^2 \partial_\mu \phi_i^\dagger\,\partial^\mu \phi_i - m_i^2 \phi^\dagger_i \phi_i.
+$$
+
+Notice that under the following transformation:
+
+$$
+\begin{aligned}
+\phi_i(x) &\rightarrow \exp{-\im \charge[i] \lambda} \phi_i(x), \\
+\phi_i^{\dagger}(x) &\rightarrow \exp{\im \charge[i] \lambda} \phi_i^\dagger(x) ,\\
+\end{aligned}
+$$
+
+or infinitesimally:
+
+$$
+\begin{aligned}
+\delta\phi_i &= -\im  \phi_i \charge[i] \delta\lambda ,\\
+\delta\phi_i^{\dagger} &= \im  \phi_i^\dagger \charge[i]\delta \lambda,\\
+\end{aligned}
+$$
+
+the above Lagrangian is unchanged. We will identitfy $\charge[i]$ with the charge, in units of $\elch$, of each particle. If we upgrade the parameter $\lambda$ to a spacetime function $\lambda(x)$, the Lagrangian is not invariant anymore and invariance is restored if we replace all the derivatives $\partial_\mu$ with the gauge-covariant derivatives $D_\mu$:
+
+$$D_\mu=\partial_\mu+\im \,\elch\,\charge[i]\,A_\mu,$$
+
+
+ i.e., if along with the transformation above, we perform a gauge transformation of the photon field:
+
+$$A_\mu\rightarrow A_\mu + \frac{1}{\elch} \partial_\mu \lambda$$
+
+or infinitesimally
+
+$$\delta A_\mu = \frac{1}{\elch} \partial_\mu \delta \lambda,$$
+
+then the whole Lagrangian: 
+
+$$\mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,\partial_\mu \phi_i)\rightarrow \mathcal{L}_{ED}+\mathcal{L}_{m}(\phi_i,D_\mu \phi_i),$$
+
+is invariant under the above defined gauge transformation. The final Lagrangian is:
+
+
+$$\mathcal{L}=-\frac{1}{4} F_{\mu \nu} F^{\mu \nu}+\sum_{i=1}^{2}\left[\left(D_{\mu} \phi_{i}\right)^{\dagger}\left(D^{\mu} \phi_{i}\right)-m_{i}^{2} \phi_{i}^{\dagger} \phi_{i}\right],$$
+
+with $F_{\mu \nu} \equiv \partial_{\mu} A_{\nu}-\partial_{\nu} A_{\mu}$. Expanding and then integrating by parts:
+
+$$
+\begin{aligned}
+\mathcal{L} &=-\frac{1}{4}\left(\partial_{\mu} A_{\nu}-\partial_{\nu} A_{\mu}\right)\left(\partial^{\mu} A^{\nu}-\partial^{\nu} A^{\mu}\right)
++\sum_{i=1}^{2}\left[
+    \left(\partial_{\mu}-\im\, \elch\,\charge[i]\, A_{\mu} \right)\phi_{i}^{\dagger}
+    \left(\partial_{\mu}+\im\, \elch\,\charge[i]\, A_{\mu}\right)\phi_{i}
+    -m_{i}^{2} \phi_{i}^{\dagger} \phi_{i}
+    \right]
+ \\
+&=\underbrace{
+    \frac{1}{2} A_{\mu}\left[\eta^{\mu \nu}\partial^{2}-\partial^{\mu} \partial^{\nu}\right] A_{\nu}
+    +\sum\limits_{i=1}^2-\phi_i^{\dagger}\left(\partial^{2}+m_i^{2}\right) \phi_i
+    }_{\mathcal{L}_{0}}
++\underbrace{
+    \sum\limits_{i=1}^2q_i^2\,\elch^{2} A_{\mu} A^{\mu} \,\phi^{\dagger}_i \phi_i
+    -\im\, \elch\,\charge[i]\, A_{\mu}\left(\phi^{\dagger}_i \partial^{\mu} \phi_i-\left(\partial^{\mu} \phi^{\dagger}_i\right) \phi_i\right)
+    }_{\mathcal{L}^{\prime}}.
+\end{aligned}
+$$
+
+Since we have a massless photon, and still have gauge freedom we have to implement gauge fixing in the usual way:
+
+$$
+\begin{aligned}\mathcal{L}_{\text{eff}}
+      &=\mathcal{L}+\overbracket{\frac{-1}{2 \xi}(\partial_\mu A^\mu)^2}^{\mathcal{L_\text{GF}}}\\
+      &=
+    \frac{1}{2} A_{\mu}\underbracket{\brc[\Bigg]{g^{\mu \nu}\partial^{2}-\pa[\Big]{1-\frac{1}{\xi}}\partial^{\mu} \partial^{\nu}}}_{\rightarrow \phprop_\xi(k)=\frac{-\im}{k^{2}+\im \varepsilon}\left[g_{\mu \nu}-(1-\xi) \frac{k_{\mu} k_{\nu}}{k^{2}}\right]} A_{\nu}
+    +\sum\limits_{i=1}^2-\phi_i^{\dagger}\underbracket{\pa{\partial^{2}+m_i^{2}}}_{\feynprop(q^2)=\frac{\im}{p^{2}-m^{2}+\im \varepsilon}} \phi_i\\
+&+
+    \sum\limits_{i=1}^2\underbracket{\charge[i]^2\,\elch^{2}\,\eta^{\mu \nu}}_{\times 2\im\rightarrow \mathrm{4-vertex} } A_{\mu} A_{\nu} \,\phi^{\dagger}_i \phi_i
+    \underbracket{-\im\, \elch\,\charge[i]\, A_{\mu}\left(\phi^{\dagger}_i \partial^{\mu} \phi_i-\left(\partial^{\mu} \phi^{\dagger}_i\right) \phi_i\right)}_{\times \im\rightarrow \mathrm{3-vertex}}.
+\end{aligned}
+$$
+
+In the last lines we identify the terms contributing to the Feynman rules. They are given in @tbl-sqedfrules
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=20mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1[as=$\mu$] --[photon,thick,postaction={draw,->, 
+     shorten >=5mm, shorten <=5mm, 
+     decoration={sl,raise=3mm},decorate},"$\ell$" {auto=left ,inner sep=4mm}]  p4[as=$\nu$];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/photonprop"; limit_to=:picture), tp)
+save(PDF("./tikz/photonprop"), tp)
+save(SVG("./tikz/photonprop"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=12mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1[as=$\mu$] --[photon,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" {auto=left ,inner sep=4mm}]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/extphoton"; limit_to=:picture), tp)
+save(SVG("./tikz/extphoton"), tp)
+save(PDF("./tikz/extphoton"), tp)
+tp
+```
+
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=20mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=5mm, shorten <=5mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" above=3mm]  p4;
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/scalarprop"; limit_to=:picture), tp)
+save(SVG("./tikz/scalarprop"), tp)
+save(PDF("./tikz/scalarprop"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=12mm,horizontal=p1 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k$" above=3mm]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/extscalar"; limit_to=:picture), tp)
+save(SVG("./tikz/extscalar"), tp)
+save(PDF("./tikz/extscalar"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+     \graph[ empty nodes,spring layout,node distance=15mm,horizontal=p1 to p3 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[thick,->-=.55] p3;
+     q1[as=$\mu$] --[thick,photon]  p4 --[thick,photon] q3[as=$\nu$];
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/seagull"; limit_to=:picture), tp)
+save(SVG("./tikz/seagull"), tp)
+save(PDF("./tikz/seagull"), tp)
+tp
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L""" 
+     \graph[ empty nodes,spring layout,node distance=15mm,horizontal=q3 to p4 ,random seed=4,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k_i$" {auto=left ,inner sep=3mm}]  p4[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[thick,->-=.55,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$k_i'$" {auto=left ,inner sep=3mm}] p3;
+    q3[as=$\nu$] --[thick,photon,] p4;
+};
+
+"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/cubic"; limit_to=:picture), tp)
+save(SVG("./tikz/cubic"), tp)
+save(PDF("./tikz/cubic"), tp)
+tp
+```
+
+:::{.fullwidth}
+
++--------------------------------------------+------------------------+------------------------------------------------+
+| For every                                  |                        | Write                                          |
++:===========================================+:=======================+:===============================================+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/photonprop.svg)                 |internal photon line    | $\phprop_\xi( \ell)=\frac{-\im}{ \ell^{2}+     |
+| :::                                        |                        | \im \varepsilon}\left[\eta_{\mu \nu}-(1-\xi)   |
+| ::: {.content-hidden unless-format="pdf"}  |                        | \frac{\ell_{\mu} \ell_{\nu}}{ ell^{2}}\right]$ |
+| ![](./tikz/photonprop.pdf)                 |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/scalarprop.svg)                 |internal scalar         | $\feynprop(k^2)=\frac{\im}{k^{2}-m^{2}         |
+| :::                                        |                        | +\im \varepsilon}$                             |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/scalarprop.pdf)                 |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/seagull.svg)                    | $\phi_i \phi_i^\dagger | $2 \im \charge[i]^2\,\elch^2\,\eta^{\mu \nu}$  |
+| :::                                        |  A_\mu A_\nu$  vertex  |                                                |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/seagull.pdf)                    |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/cubic.svg)                      | $\phi_i(k_i)           | $\im \elch\,\charge[i]\,(k_i^\mu-              |
+| :::                                        | \phi_i^\dagger(k'_i)   |           k_i^{\prime\mu})$                    |
+| ::: {.content-hidden unless-format="pdf"}  |  A_\mu$ vertex         |                                                |
+| ![](./tikz/cubic.pdf)                      |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/extscalar.svg)                  | External scalar        | $\times 1$                                     |
+| :::                                        |                        |                                                |
+| ::: {.content-hidden unless-format="pdf"}  |                        |                                                |
+| ![](./tikz/extscalar.pdf)                  |                        |                                                |
+| :::                                        |                        |                                                |
++--------------------------------------------+------------------------+------------------------------------------------+
+| ::: {.content-hidden unless-format="html"} |                        |                                                |
+| ![](./tikz/extphoton.svg)                  |$\left\{\begin{array}{c}|$\times \left\{\begin{array}{c}\varepsilon_{\mu}|
+| :::                                        |  \text { incoming } \\ |   \\ \varepsilon_{\mu}^{* \prime}              |
+| ::: {.content-hidden unless-format="pdf"}  |  \text { outgoing }    |     \end{array}\right\}$, with                 |
+| ![](./tikz/extphoton.pdf)                  | \end{array}\right\}$   |  $\varepsilon \cdot k=0,                       |
+| :::                                        |       photon           |      \varepsilon^{\prime} \cdot k^{\prime}=0$  |
++--------------------------------------------+------------------------+------------------------------------------------+
+
+: Feynman rules for (?:sqed) {#tbl-sqedfrules tbl-colwidths="[25,25,50]"}
+:::
+
+where we consider only incoming momenta and the arrows denote incoming or outgoing particles. For the photon, we will take the Feynamn gauge, setting $\xi=1$ and thus $\phprop_1(\ell)=\phprop(\ell)=\frac{-\im \eta^{\mu \nu}}{\ell^{2}+\im \varepsilon}$. 

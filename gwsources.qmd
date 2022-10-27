@@ -11,117 +11,16 @@ We start by looking at where and how (?s:gw) are generated. We will see that (?:
 
 ## (?s:gw)
 
-To this day, the most fundamental theory of gravity is (?:gr) , due to Einstein. It formulates spacetime as a Riemannian manifold with curvature, determined by mass distribution. This curvature is encoded in the metric $\met$. Objects then move in this deformed spacetime following (?s:eom) written in terms of $\met$. Interaction is thus caused by the dependence of $\met$ on mass distribution, which itself evolves through $\met$. The physical laws that governs the interaction between mass and curvature are manifested in Einstein's field equations,
+{{< include _gw.qmd >}}
 
-$$
-\boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \grav \SEco} .
-$${#eq-EFE}
+## Homogeneous solutions
 
-The (?:lhs) of this equation contains several objects that only depend on the metric $\met$. $\RicciTco$ is the Ricci tensor[^riccitensor], a contraction of the Riemann curvature tensor $\Riem$. The Riemann tensor[^riemannT] encodes the curvature of spacetime, in terms of the non-commutativity of covariant derivatives. When they do, it means that they have collapsed to regular derivatives, and thus the Levi-civita connection[^LCconn] must have vanished. This is only possible if the metric is flat, $\met=\mink$. The Riemann curvature tensor is exclusively composed of the metric, its first, second derivatives, and it is linear in the second derivative of the metric. In fact, it is the only possible tensor of this form. The second term on the (?:lhs) is the Ricci scalar, a further contraction of the Ricci Tensor: $\RicciS = \invmet \RicciTco$. The final term on the (?:lhs) is just a proportional constant factor of the metric, $\cosmo$, called the cosmological constant. It can be measured and has a low known upper bound. It is in part responsible for the expansion of the universe. 
-
-The (?:rhs)  of @eq-EFE encodes the distribution of mass and energy in the universe, through the stress-energy tensor $\SEco$, which depends on the dynamical properties of the system. It is further multiplied by the Gravitational constant $\grav$. In empty space, $\SEco$ is zero.
-
-[Equation @eq-EFE] can be recast in a form where the Ricci scalar has been substituted by the trace of the stress-energy tensor,
-
-$$
-\boxed{\RicciTco=-8 \pi \grav\left(\SEco-\trSE \frac{\met}{2}\right)+\cosmo \met} 
-$${#eq-EFEwoR}
-
-
-Both @eq-EFE & @eq-EFEwoR with $\cosmo=0$ admit wave solutions. In order to see this, let us look at these equations in the weak field approximation. We take the metric to be a small perturbation around the Minkowskian background,
-
-$$
-    \met = \mink + \weakmet,
-$$ {#eq-WeakFA}
-
-where $\weakmet$ is the expansion parameter (thus considered small). Note that if we restrict ourselves to first order in $\weakmet$ then all raising and lowering of indices is done with $\mink$. Since the (?:lhs) of @eq-EFE is composed of the Ricci tensor and scalar, let us see how these behave in the weak approximation. Both are in fact made up of Levi-Civita connections, which to first order in $\weakmet$ is given by:
-$$
-\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
-\brk[\Big]{
-    \ipdv{ \weakmet[\rho \nu]}{\mu}
-    +\ipdv{ \weakmet[\rho \mu]}{\nu}
-    -\ipdv{ \weakmet}{\rho}} + \order[2]{h}\quad .
-$$ {#eq-weakaffine}
-
-Plugging @eq-weakaffine into the definition of the Ricci tensor we see that the terms with products of the connection vanish, and we are left with the derivative terms: 
-
-$$ 
-\RicciTco  =
- \frac{\invmink[\alpha\rho]}{2}\left[ \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right] + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)
-$${#eq-Ricciweak}
-
-The linearized Ricci scalar is then just $\linRicciS=\invmink\linRicciTco$. The symmetry of the (?:efe) under general diffeomorphisms implies the existence of gauge freedom. In particular, @eq-EFE, admits an infinite number of solutions, and in fact we can map a solution into another by changing coordinates in such a way that the equation isn't affected. To fix this ambiguity we choose a coordinate system ('gauge choice') by  imposing the harmonic coordinate conditions: 
-
-$$ 
-   \invmet[\alpha\beta]\LC{\mu}{\alpha}{\beta} =0
-$$ {#eq-hcc}
-
-The harmonic coordinate conditions demand the vanishing of the trace of the Levi-Civita connection. They have a simplified form in the weak approximation, which  we can access by plugging @eq-weakaffine into @eq-hcc, giving:
-
-$$
-\begin{split}
-    (\invmink[\alpha\beta]+\invweakmet[\alpha\beta])\frac{1}{2}(\invmink[\mu\rho]+\invweakmet[\mu\rho])\left[\ipdv{\weakmet[\alpha\rho]}{\beta}+\ipdv{\weakmet[\beta\rho]}{\alpha}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right] &= 0 \\
-    \invmink[\mu\rho]\invmink[\alpha\beta]\left[2\ipdv{\weakmet[\alpha\rho]}{\beta}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right]+ \mathcal{O}(h^2)&= 0 \\
-    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\rho]}{\beta} &= \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\rho}\invmink[\alpha\beta] + \mathcal{O}(h^2).
-\end{split}
-$$
-
-The last equation, truncated to first order, is called the de-Donder gauge condition:
-
-$$
-\ipdv[^]{\weakmet}{\mu} = \frac{1}{2}\ipdv{\trweakmet}{\nu}
-$$
-
-In the de-Donder gauge we can simplify the terms in @eq-Ricciweak to:
-
-$$
-    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\mu]}{\nu\beta} = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet[\alpha\beta]}{\mu\nu},
-$$
-
-and
-$$
-    \invmink[\alpha\beta]\ipdv{\weakmet[\beta\nu]}{\mu\alpha} = \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\mu\nu}.
-$$
-
-With these two relations the expression for the linearized Ricci tensor @eq-Ricciweak simplifies to
-$$
-    \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
-$$ {#eq-Ricciweak2}
-
-Where we have defined the (?:sr)  D'Alembertian differential operator as: $\SRDA=\invmink \partialder[\mu]\partialder[\nu]$ We can plug @eq-Ricciweak2 into @eq-EFEwoR, with $\cosmo=0$ and up to first order in $\weakmet$, we get the linearized Einstein field equations for a system of harmonic coordinates:
-
-$$
-\square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} ,
-$${#eq-linearized}
-$$
-\ipdv{\mixweakmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
-$${#eq-dedonder}
-Recall raising and lowering indices is done with the Minkowski metric. The tensor $\srcco$ encodes the behavior of the source of (?s:gw).
-One could also plug @eq-Ricciweak2 into @eq-EFE, with $\cosmo=0$, and express it in terms of the trace reversed perturbation: $\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink$. Then, we obtain similar and simpler equations at the cost of a more complex perturbation: ^[Note that the inverse change of variables is just: $\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink$.] ^[We eliminate the trace of the stress-energy tensor by using: $\RicciS= 8\pi\grav\trSE$. We can write $\linRicciS=-\frac{1}{2}\SRDA\trweakTRmet$, in de Donder gauge, which is precisely the extra term dropping out of $\SRDA\weakmet$ when we express it in terms of $\weakTRmet$.]
-
-$$
-\square_{SR} \weakTRmet = -16\pi \grav \SEco
-$${#eq-linearizedTR}
-$$
-    \ipdv[^]{\weakTRmet}{\nu}=0. 
-$${#eq-dedonderTR}
-
-We can easily recover the conservation equation for the stress-energy tensor. We take the divergence of @eq-linearizedTR and use @eq-dedonderTR to get:
-
-$$
-    \ipdv[^]{\SEco}{\nu}=0.
-$${#eq-SEcons}
-
- Let us look at what sorts of solutions come out of these equations. 
-
-## Homogenous solutions
-
- The first step is to consider the homogeous solution, as all solutions will involve these terms. Setting $\SEco=0$ or $\srcco=0$ yields the wave equation in the absence of sources,
+ The first step is to consider the homogeneous solution, as all solutions will involve these terms. Setting $\SEco=0$ or $\srcco=0$ yields the wave equation in the absence of sources,
 $$
    \SRDA \weakmet = 0 .
 $${#eq-homogenous}
 
-The de-Donder gauge (@eq-dedonder) and the remaining gauge freedom^[Associated to changes in coordinates of the form $\ct{x}\to\ct{x}+\ct{\xi}$ with $\SRDA\ct{\xi}=0$.] restricts the possible forms of this solution to having only helicity $\pm2$ physically significant components (see @Weinberg:1972). Let us look at generic forms of the solution. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
+The De-Donder gauge (@eq-dedonder) and the remaining gauge freedom ^[Associated to changes in coordinates of the form $\ct{x}\to\ct{x}+\ct{\xi}$ with $\SRDA\ct{\xi}=0$.] restricts the possible forms of this solution to having only helicity $\pm2$ physically significant components (see @Weinberg:1972). Let us look at generic forms of the solution. The metric $\weakmet$ ought to be real-valued, thus we seek real solutions of the form
 
 $$
     \weakmet = \polco \exp{\im k\cdot x} + \conjpolco \exp{-\im k\cdot x},
@@ -150,7 +49,7 @@ $$
 \polTensor'_{\mu\nu} = \polco + \co{k}\co[\nu]{A} + \co[\nu]{k}\co{A}
 $$ {#eq-polTprime}
 
-Equations -@eq-polk and -@eq-polTprime reduce the free components in the polarization tensor to just two. Additionally these equations conspire to yield a traceless polarisation tensor $\trpol=0$, with $\polco[0\mu]=0$ (see @Carroll:2019). This in turn implies that the metric perturbation itself is traceless, and thus becomes equal to its trace-reversed counterpart. This is the so-called transverse traceless gauge:
+Equations -@eq-polk and -@eq-polTprime reduce the free components in the polarisation tensor to just two. Additionally, these equations conspire to yield a traceless polarisation tensor $\trpol=0$, with $\polco[0\mu]=0$ (see @Carroll:2019). This in turn implies that the metric perturbation itself is traceless, and thus becomes equal to its trace-reversed counterpart. This is the so-called transverse traceless gauge:
 
 $$
 \weakmet[0\mu]=0,\quad \trweakmet=0, \quad \ipdv[^]{\weakmet}{\nu}=0.
@@ -158,9 +57,9 @@ $$
 
 The metric perturbation in this gauge is written as:  $\weakTTmet$. 
 
-## Inhomogenous solutions
+## Inhomogeneous solutions
 
-With the homogenous part of @eq-linearized accounted for, we are now ready to derive the inhomogenous part. The solution of @eq-linearized in the presence of a source term will be heavily inspired by the analogous problem in electromagnetism, where one learns that any linear differential equation:
+With the homogeneous part of @eq-linearized accounted for, we are now ready to derive the inhomogeneous part. The solution of @eq-linearized in the presence of a source term will be heavily inspired by the analogous problem in electromagnetism, where one learns that any linear differential equation:
 
 $$\mathcal{\hat{L}}\phi=J$$
 
@@ -192,7 +91,7 @@ $$ {#eq-hsolInhom}
 One gets the parallel solution to the trace reversed equation @eq-linearizedTR by swapping $\srcTensor$ with $\SETensor$ and all $\weakTensor$ with $\weakTRTensor$.
 :::
 
-Indeed plugging in @eq-hsolInhom into @eq-EFEwave,
+Indeed, plugging in @eq-hsolInhom into @eq-EFEwave,
 $$
     \Box_x\weakmet = 8\grav\int\dd[4]{x'}\pa[\big]{(\underbrace{\Box_x\greens{\ct{x}-\ct{x'}}}_{=-2\pi\,\deltafn{\ct{x}-\ct{x'}}}} \srcco(x') = -16\pi \grav\srcco(x).
 $$
@@ -211,7 +110,7 @@ $$
     \covd{\SEco}{\mu}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}+\underbracket{\Gamma\,\Gamma\,}_{\mathclap{\mathrm{non-linear}}}=0\ \Rightarrow\ \ipdv{\SEco}{\mu}=0,
 $$
 
-where we have ingored the non-linear terms encoded in the Levi-Civita connections. Then, 
+where we have ignored the non-linear terms encoded in the Levi-Civita connections. Then, 
 
 $$
     \ipdv{\srcct}{\mu} = \partial_\mu\left(\SEco-\frac{\invmink[\mu\nu]}{2}\trSE\right) = -\frac{\invmink[\mu\nu]}{2}\ipdv{\trSE}{\mu}.
@@ -251,250 +150,16 @@ $$
 
 ## Gravitational Wave Sources
 
-Now that we have the general form of the solutions to the linearized Einstein equations, we can proceed to the analysis of sources of (?s:gw). The first step is to analyse the equations in the frequency domain. We will use the following notation:
-
-$$\FT[t]{\phi}{\omega}(\omega,\tv{x})=\int \dd{t} \phi(t,\tv{x}) \exp{\im\omega t}$$
-$$\invFT[\omega]{\phi}{t}(t,\tv{x})=\int \frac{\dd{\omega}}{2\pi} \FT[t]{\phi}{\omega}(\omega,\tv{x}) \exp{- \im \omega t}$$
-
-Let us look at frequency domain of the soludtion given in @eq-solInhomt. We have
-$$\begin{aligned} 
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x}) &=\int \dd{t} \weakmet(t,\tv{x}) \exp{\im\omega t}
-\\ &=4\grav\int\dd[3]{\tv{y}}\dd{t} \frac{\srcco(t-\abs{\tv{x}-\tv{y}},\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t}
-\\ &=4\grav\int\dd[3]{\tv{y}}\dd{t_r} \frac{\srcco(t_r,\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t_r}\exp{\im\omega\abs{\tv{x}-\tv{y}}}
-\\ &=4\grav\int\dd[3]{\tv{y}} \frac{\FT[t_r]{\srcco}{\omega}(\omega,\tv{y})}{\abs{\tv{x}-\tv{y}}} \exp{\im\omega\abs{\tv{x}-\tv{y}}} .
-\end{aligned}
-$$ {#eq-FTweakmet}
-
-We can now apply various approximations to this form of the perturbation:
-
-1. Consider a compact source, centered on the origin of our coordinate system. This implies that $\srcco$ is peaked and compactly supported in a region around the origin. We look at the radiation only in the so called *wave zone*, at a distance $r=\abs{\tv{x}}$ much larger than the dimensions of the source $R=\abs{\tv{y}}_\text{max}$.
-2. We assume that $r \gg \frac{1}{\omega}$, i.e long wavelengths don't dominate. 
-3. We assume that $r \gg \omega R^2$, i.e. the ratio of $R$ to the wavelength is not comparable to the ratio of $r$ to $R$. Using this approximation we can write:
-
-$$
-\begin{split}
-    \abs{\tv{x}-\tv{y}} &= r\left(1-2\hat{\tv{x}}\cdot\tv{y}+\frac{\tv{x}^{\prime2}}{r^2}\right)^{1/2} , \\
-    \abs{\tv{x}-\tv{y}} &\approx r\left(1-\frac{\hat{\tv{x}}\cdot\tv{y}}{r}\right) \quad \text{with: } \hat{\tv{x}} = \frac{\tv{x}}{r}.
-\end{split}
-$$
-
-If we additionally further separate the scales in the following way^[We just add the condition that $\frac{1}{\omega}\gg R$, that is the source radius is much smaller than the wavelength.]
-
-$$
-r\gg \brc{\frac{1}{\omega},\omega R^2}\gg R,
-$$
-
-Then @eq-FTweakmet becomes much simpler^[The approximations all conspire to be able to neglect the $\tv{y}$ dependence of $\frac{\exp{\im\omega\abs{\tv{x}-\tv{y}}}}{\abs{x-y}}$ in the integral.]:
-
-$$
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega r}}{r} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) .
-$${#eq-FTweakmet2}
-
-Now, let us look at the Fourier transform of the source term. By definition, we have
-
-$$
-\FT[t]{\srcco}{\omega}(\omega,\tv{y})=\FT[t]{\SEco}{\omega}(\omega,\tv{y})+\half \mink\FT[t]{\trSE}{\omega}(\omega,\tv{y})
-$$
-
-Thus we can study the Fourier transform of $\SEco$, $\FT[t]{\SEco}{\omega}$ instead. Using the conservation equation @eq-SEcons in Fourier $t$-space, we obtain:
-
-$$
--\ipdv[^]{ \FT[t]{\SEco[i\mu]}{\omega}}{i} = \im \omega\FT[t]{\SEco[0\mu]}{\omega}
-$${#eq-FTSEcons}
-
-
-This equation becomes algebraic when we further Fourier transform in $\tv{x}$-space:
-
-$$
-\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}(\ct[\alpha]{k}) =\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}(\omega,\tv{k}) = \int \dd[3]{\tv{y}} \FT[t]{\SEco}{\omega}(\omega,\tv{y}) \exp{\im\tv{k}\cdot\tv{y}}
-$$
-Then the conservation equation becomes:
-$$
-\ct{k}\SEco(\omega,\tv{k}) = 0
-$$
-
-These four equations relate the time components of $\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}$ to the spatial ones. We now apply @eq-FTSEcons to itself to obtain:
-
-$$
-\ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=-\omega^2\FT[t]{\SEco[00]}{\omega}
-$$
-which, when multiplied by $\co[m]{x}\co[n]{x}$, and integrated over $\tv{x}$ gives^[Two integrations by parts cancel the $\co[m]{x}\co[n]{x}$ term in the (?:lhs) and since boundary terms are 0 (the source is finite) we have $$\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}$$ 
-The hessian of $\co[m]{x}\co[n]{x}$ is $(\kron[^i_m]+\kron[^i_n])(\kron[^j_n]+\kron[^j_m])$, but since $\SEco$ is symmetric the integral is $$\int \dd{\tv{y}} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\tv{y}) $$]
-$$
-\int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega^2] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x}).
-$$
-
-Notice that the integral on the (?:rhs) is in fact the Fourier transform of the quadrupole moment tensor of the energy denisty:
-
-$$
-\quadmom[mn]=\int \co[m]{x}\co[n]{x} \SEco[00](t,\tv{x})\dd[3]{x}.
-$$ {#eq-quadmom}
-
-
-We call its Fourier transform $\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)$ and we can finally rewrite @eq-FTweakmet2 as:
-
-
-$$
-\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=-{2\grav\omega^2}\frac{\exp{\im\omega r}}{r} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}
-$$
-
-Going back $t$-space we have:
-
-$$
-\begin{aligned}
-\weakmet(t,\tv{x})&=-\frac{\grav}{\pi r}\int \dd{\omega} \exp{-\im\omega(t-r)} \omega^2 \pa{\ft[t]{\quadmom[]v}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
-&=\frac{\grav}{\pi r}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
-&=\frac{2\grav}{r}\odv[2]{}{t}\pa{\quadmom[mn](t_r)+\half\mink \quadmom[]^n{}_n(t_r)}
-\end{aligned}
-$$ {#eq-metricquadmom}
-
-This equation has a nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the energy density at the time $t_r$ where the past light cone of the observer intersects the source. The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the  change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for (?:em) ), or mass (for (?:gr) ). While a center of charge is free to move around, the center of mass (of an isolated source) is fixed by the conservation of momentum, so the dipole moment is zero.
-
-The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitational system can modify. We observe that the quadrupole radiation is subleading when compared to dipole radiation. Thus on top of the much smaller coupling constant, gravitational radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
-
-
-In summary, any object that is modifying its shape is a source of (?s:gw). All orbiting systems therefore are sources of (?s:gw) . However as outlined above, only significant 'changes in shape' have a chance to be detectable. We will now explore these phenomena.
+{{< include _gwsources.qmd >}}
 
 ### Compact binaries {#sec-compactbinaries}
 
-How could one construct a very powerful source of (?s:gw) ? An example would be that of two highly-massive bodies (such that $\SEco[00]$ is large) that orbit each other. Furthermore in order for the (?s:gw) emitted by the system to be detectable they must orbit close enough to each other that their quadrupole moment is large. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy^[Of course this happens in every orbiting system just on a time scale that is neglible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter.]. Thus they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a significant change of shape and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
-
-
-To (?:lo) in $\grav$ the motion of the binary is described by a newtonian circular orbit. In baricentric coordinates, such a system is in fact equivalent to effective one body ^[This choice of wording is not a coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitational potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the two bodies forming the binary. The orbit is characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[Or equivalently between conserved angular momentum and the derivative of the potential energy.] 
-
-$$
-\frac{\grav \totmass\redmass}{\pa{\dist}^2}=\frac{\redmass \vel^2}{\dist},
-$$ {#eq-newtongrav}
-
-where $\vel$ is the norm of tangential velocity, and $\dist$ is the distance between the two objects. @eq-newtongrav gives us the the norm of the velocity
-
-$$
-\vel=\sqrt{\frac{\grav \totmass}{\dist}}.
-$$
-
-Thus the orbital period is simply, in the case of 
-
-$$
-T=\frac{2\pi\dist}{\vel}=2\pi\sqrt{\frac{\dist^3}{\grav\totmass}}.
-$$
-
-This also gives us angular frequency:
-
-$$  
-\Omega=\frac{2\pi}{T}=\sqrt{\frac{\grav\totmass}{\dist^3}}.
-$$ {#eq-omega}
-
-Thus the (?:eom) $\tv{r}(t)$ of the reduced mass is described by a circular orbit in the $x-y$ plane i.e.:
-
-$$
-\tv[xy]{r}(t)= \begin{pmatrix} \dist \cos(\Omega t)\\ \dist \sin(\Omega t) \end{pmatrix} .
-$$ {#eq-eomred}
-
-We have not written the third $z$ component of the trajectory as that can be set to zero, for a well chosen set of inertial coordinates. The corresponding trajectory for both masses is simply given by applying the following scaling:
-
-$$
-\redmass \tv{r}(t)  = \mass[1] \tv[1]{r}(t) = \mass[2] \tv[2]{r}(t).
-$$ 
-
-
-We can straightforwardly obtain the $00$ component of the energy momentum tensor of the system^[The energy density is the same for the effective one body system and the two body system.] by using the (?:eom) of the reduced mass (@eq-eomred):   
-
-$$
-\SEco[00](t,\tv{x}) = \redmass\deltafn{x_3}\deltafn{x_1-\dist \cos(\Omega t)}\deltafn{x_2-\dist \sin(\Omega t)},
-$$
-
-
-which when plugged into @eq-quadmom, gives us the quadrupole moment of the rotating system:
-
-
-$$
-\begin{aligned}
-\quadmom[11] &= \redmass \dist^2 \cos ^2( \Omega t)= \redmass \dist^2(1+\cos (2 \Omega t)) \\
-\quadmom[22] &= \redmass \dist^2 \sin ^2( \Omega t)= \redmass \dist^2(1-\cos (2 \Omega t)) \\
-\quadmom[12]=\quadmom[21] &=2  \redmass \dist^2(\cos \Omega t)(\sin \Omega t)= \redmass \dist^2 \sin (2 \Omega t) \\
-\quadmom[i 3] &=0 .
-\end{aligned}
-$$
-
-Thus we have roughly:
-
-$$
-\quadmom[]\sim \redmass \dist^2 \cos (2 \Omega  t) \sim \redmass \dist^2 \sim \redmass \pa[\Big]{\frac{\grav\totmass}{\Omega^2}}^{\frac{2}{3}}= \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{-\frac{4}{3}},
-$$
-
-where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm proportional to:
-
-
-$$q
-h \propto \frac{\ddot{\quadmom[]}}{r} \propto \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
-$$ {#eq-hnorm}
+{{< include _compactbinaries.qmd >}}
 
 
 ### (?:bh)  Binaries
 
-
-Taking the process described above to the limit of more massive and more compact objects one could imagine asking for the most dense objects possible to orbit each other. In (?:gr)  this object is called a black hole ( (?:bh) ). It is a possible solution to the full fat (?:efe) (@eq-EFE), in a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. 
-
-The solution is given by, in spherical coordinates:  
-
-
-$$
-\dd{\tau^{2}}=\left[
-    1-\frac{R_{S}}{r}
-    \right]\dd{t^{2}}
--\frac{\dd{r^2}}{1-\frac{R_{S}}{r}}-r^{2}\left(\dd{ \theta^2}+\sin ^{2} \theta \dd{ \varphi^2}\right)
-$$ {#eq-Schwarzschild}
-
-
-where $R_S$ is the Schwarzschild radius, given by:^[we reinstate the speed of light, as we want to compute orders of magnitudes]
-
-$$
-R_S=\frac{2GM}{c^2}.
-$$
- 
-For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that the metric given in @eq-Schwarzschild exhibits singularities at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordinate independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the non-spurious mass singularity that gives rise to the (?:bh) phenomena  .
-
-If we consider a comparable stellar mass (?:bbh) system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency
-
-$$
-f=\frac{\Omega}{2\pi}=\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}},
-$$
-
-and the metric perturbation is given by @eq-hnorm:
-
-$$
-h = \frac{R_S^2}{r\dist}.
-$$
-
-
-Thus, if we consider (?s:bh)  separated by ten times their Schwarzschild radius, observed at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we obtain the values for the scales characterising the binary system:
-
-$$
-\begin{aligned}
-R_S &\approx 10^3\; \mathrm{m} ,\\
-\dist &\approx 10^4\; \mathrm{m} ,\\ 
-r &\approx 10^{23}\; \mathrm{m}.
-\end{aligned}
-$$
-
-Such a system would have an orbital frequency of:
-
-$$
-f\approx 10^{2}\; \mathrm{Hz},
-$$
-
-and would perturb the metric on earth by:
-
-$$
-h\approx 10^{-21}.
-$$
-
-To have any hope of detecting such systems, one would need to have detectors sensitive to frequency spectra up to hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at (?:ligo) and other detectors, and has enabled the detection of such systems. 
-
-
-Non-spinning black holes orbiting around each other are the simplest binary system to model. However, they are extremely unlikely to occur in nature (realistic physical scenarios). The nature of (?:bh) formation implies that they necessarily also spin. Spinning black holes, also refered to as Kerr black holes, are characterized by a different metric tensor defining the spacetime surrounding them. The modelling of spinning black holes is still in its infancy and will not be treated it here.
-
- There are many other binary systems that could feasably be detected. Finite-size binaries such as (?s:ns) result in tidal phenomena that are not present in the (?:bh)  case. Also non-binary sytems, such as Cosmic strings, corresponding to early universe topological defects, could produce a detectable stochasitc (?:gw) backround.
+{{< include _bhbinaries.qmd >}}
 
 
 [^riccitensor]: The Ricci Tensor is given by:

@@ -1,0 +1,171 @@
+
+The first step in establishing determining the potential from a generic scattering amplitude computed in the full theory is to compute the amplitude in the (?:eft). We first identify the Feynman rules from the action. The kinetic term encodes the propagator: 
+
+```{julia}
+#| echo: false
+#| eval: false
+#| output: false
+#| fig-align: center
+using TikzPictures
+
+tp = TikzPicture(L"""
+\matrix 
+{    \draw[line width=.3mm,->-=.5,bicolor={red}{blue}] (-1.5,0)  --  (1.5,0) node[midway,above,color=black]{$\displaystyle(k_0,\mathbf{k})$}; &
+    \node{$=$}; &
+    \node {$\displaystyle\frac{\im}{k_0-\sqrt{\mathbf{k}^2+m_{\textcolor{red}{1}, \textcolor{blue}{2}}^2}+\im 0},$}; \\
+  };"""
+, options="thick, transform shape",preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings}\\input{../latexmacros.tex}\\usepackage{xcolor}")
+save(PDF("./tikz/propagator.pdf"), tp)
+save(TEX("./tikz/propagator"; limit_to=:picture), tp)
+tp
+```
+
+![Propagator rule](tikz/propagator){#fig-propagator}
+
+
+
+
+where the $\im 0$ is the Feynman prescription for avoiding the poles. The interaction term is encoded in the vertex
+
+
+```{julia}
+#| echo: false
+#| eval: false
+#| output: false 
+#| fig-align: center 
+using TikzPictures
+
+tp = TikzPicture(L"""
+
+
+\matrix 
+{    \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,anchor node=a] 
+{
+  {i1} --[->-=.5,thick,"$\displaystyle \mathbf{k}$" font=\large,red]  a[circle,fill,scale=.6] --[->-=.6,thick,"$\displaystyle \mathbf{k'}$" {font=\large},red] o1;
+  i2 --[->-=.5,thick,"$\displaystyle -\mathbf{k}$" {font=\large, below,yshift=-5},blue]  a --[->-=.6,thick,"$\displaystyle  - \mathbf{k'}$"  {font=\large, below,yshift=-5,xshift=-5},blue] o2;
+};
+&
+    \node{$=$}; &
+    \node {$\displaystyle\im V(\mathbf{k},\mathbf{k'}).$}; \\
+  };"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+save(PDF("./tikz/vertex.pdf"), tp)
+save(TEX("./tikz/vertex"; limit_to=:picture), tp)
+tp
+```
+
+![Vertex rule](tikz/vertex){#fig-vertex} 
+
+The expression for the (?:eft) amplitude will contain the coefficient functions from @eq-ansatzpot since they will be present as vertex terms. Particle number must be conserved in the non-relativistic limit ^[As pair production is kinematically forbidden.], so the amplitude is a sum of bubble diagrams:
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+\matrix{
+      \node{$\ampl_\text{EFT}$};&
+      \node{$=$};&
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6]  --[->-=.6,thick,blue] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=a to d,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6] --[->-=.6,thick,red] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red,bend right=90] d --[->-=.6,thick,blue] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=a to d,horizontal=i1 to o1,anchor node=a]{
+            {i1} --[->-=.5,thick,blue]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6]--[->-=.6,thick,blue,bend left=90] c[circle,fill,scale=.6] --[->-=.6,thick,blue] o1;
+            i2 --[->-=.5,thick,red]  a --[->-=.6,thick,red,bend right=90] d--[->-=.6,thick,red,bend right=90] c --[->-=.6,thick,red] o2;};&
+      \node{$+$}; &
+      \graph[nodes=coordinate, empty nodes,spring layout,horizontal=i1 to o1,horizontal=a to b,anchor node=a]{
+            {i1} --[->-=.5,thick,red]  a[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] b[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] c[circle,fill,scale=.6] --[->-=.6,thick,blue,bend left=90] d[circle,fill,scale=.6] --[->-=.6,thick,red] o1;
+            i2 --[->-=.5,thick,blue]  a --[->-=.6,thick,red,bend right=90] b --[->-=.6,thick,red,bend right=90] c --[->-=.6,thick,red,bend right=90] d --[->-=.6,thick,blue] o2;};&
+      \node{$+$};&
+      \node{$\cdots$};
+      \\
+};"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(PDF("./tikz/eftampl.pdf"), tp)
+save(TEX("./tikz/eftampl"; limit_to=:picture), tp)
+tp
+```
+
+![EFT amplitude](./tikz/eftampl){#fig-eftampl}
+
+
+We can consequently neatly organize the amplitude into a sum of terms with specific loop counts. We can also equivalently organize it into a sum of terms with specific $\coupling$ powers. We write,
+
+$$\ampl_\text{EFT}=\sum\limits_{L=0}^\infty\ampl[L\text{loop}]_\text{EFT}=\sum\limits_{i=1}^\infty \ampl[(i)]_\text{EFT}.$$
+
+ Notably, these partitions do not line up for the (?:eft) since the vertex contains all powers of the coupling. This is in contrast to the full theory where in fact they yield the same partition. We will eventually want to partition over the coupling power to compare the full theory.
+
+Since every cut of the diagrams contributing to $\ampl_\text{EFT}$ contains two propagators, it is useful to define a 2-body propagator. We can integrate over the energy components of the loop momentum, since the vertex does not have an energy dependence:^[The 4-momentum conservation at each vertex means that the energy components of the two propagating momenta must carry along the energy component of the initial state $\energy=\energy[1]+\energy[2]$. This can be encoded by demanding that $\omega_1+\omega_2=\energy$.  Taking the (?:com) frame for the initial momenta means that the 3 momenta of each propagator must cancel i.e. $\tv[1]{k}+\tv[2]{k}=0$]
+
+
+$$\im \proptwobody{\tv{k}}=\int \dn{\omega} \frac{\im}{\omega-\sqrt{\tv{k}^2+m_1^2}}\frac{\im}{\energy-\omega-\sqrt{\tv{k}^2+m_2^2}}=\frac{\im}{\energy-\sqrt{\tv{k}^2+\mass[1]^2}-\sqrt{\tv{k}^2+\mass[2]^2}},$$
+
+where the integral is performed using the residue theorem, closing the contour in either half plane, where in either case a pole is present. We have define $\energy=\energy[1]+\energy[2]$ to be the (?:com) energy of the  two initial states:^[which is equal to the outgoing energy]
+
+$$
+\energy[i]=\sqrt{\tv{p}^2+\mass[i]^2}=\sqrt{\tv{p'}^2+\mass[i]^2},
+$$
+
+where $\tv{p}$ and $\tv{p'}$ are the initial and final three-momenta of the two states ^[For example in the initial state one scalar field will have 3-momentum $\tv{p}$, and the other $-\tv{p}$] in the (?:com) frame. Finally, we can write the diagram at loop level $L>0$ encodes:
+
+$$ 
+\ampl[L\text{loop}]_\text{EFT}= \int\prod\limits_{i=1}^L  \dn[\small \Dim-1]{\tv[i]{k}} \pot(\tv{p},\tv[1]{k})\proptwobody{\tv[1]{k}}\cdots\proptwobody{\tv[L]{k}}\pot(\tv[L]{k},\tv{p'}).
+$$
+
+This integral can be performed in the non-relativistic limit, as done by [Bern et al. @Bern:2019crd] up to 3(?:pm). Up to 2(?:pm), the amplitudes of the (?:eft) is:^[Here the re-partioning mentioned above has been applied and a change in loop momenta: $\tv[i]{k}\to\tv{p}+\tv[i]{\ell}$.] 
+
+$$
+\begin{aligned}
+\ampl[(1)]_\text{EFT}&=-\frac{4\pi\grav c_1}{\tv{q}^2},\\
+\ampl[(2)]_\text{EFT}&= \pi^2\grav^2 \Big(-\frac{2 c_2}{\abs{\tv{q}}}+\inv{\energy \redEratio \abs{\tv{q}}}\brc[\Big]{(1-3\redEratio)c_1^2+4\redEratio^2\energy^2c_1 c'_1}\\
+                  & \int \dn[\Dim-1]{\tv{\ell}}\frac{32\energy\redEratio c_1^2}{\tv{\ell}^2(\tv{q}+\tv{\ell})^2(\tv{\ell}^2+2\tv{p}\tv{\ell})}\Big),
+\end{aligned}
+$$
+
+where $\redEratio=\frac{\energy[1]\energy[2]}{\pa{\energy[1]+\energy[2]}^2}$ is the reduced energy ratio. The arguments of the coefficient functions $c_1$ are kept implicit and a prime denotes a derivative with respect to $\tv{\emom}$. Additionally, we defined $\tv{q}=\tv{p'}-\tv{p}$ to be the 3-momentum transfer. 
+
+The key point is that the matching procedure requires the EFT amplitude for two-to-two scattering to be equal to the full amplitude at every order in the coupling constant $\coupling$, i.e. provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we impose that
+
+$$
+\ampl[(i)]_\text{EFT}=\ampl[(i)]_\text{full} \quad \forall i.
+$$
+
+which fixes the coefficients in the potential ansatz @eq-ansatzpot, and fulfills the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e., the classical and non-relativistic limit, which is summarized by the following hierarchy of scales:
+
+$$
+\mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
+$$
+
+In the full theory this hierarchy is equivalent to restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:
+
+
+| Region | Momentum $\ell = (\omega,\tv{\ell})$ |
+| -----: | :----------------------------------: |
+|   hard |               $(m,m)$                |
+|   soft |  $(\abs{\tv{\tm}},\abs{\tv{\tm}})$   |
+
+In this language, the soft region is responsible for the classical limit, since we consider a small $\abs{\tv{\tm}}$ expansion. We will in fact explore this expansion in a different light in @sec-kmoc. Taking the (?:nr) limit corresponds to a subregion of the soft region, the so-called potential region:
+
+$$ (\omega,\tv{\ell})\sim (\abs{\tv{\vel}}\abs{\tv{\tm}},\abs{\tv{\tm}}),$$
+
+where we use that the (?:nr) expansion is a given by $$\abs{\tv{\emom}}\ll m$$ and thus equivalently ^[dividing by mass] by a small relative velocity:
+
+$$ \abs{\tv{\vel}}\ll1.$$
+
+To summarize, in order to obtain the form of the potential, we first compute the amplitude in an (?:eft), absorbing all force carrying particles into an effective vertex. Making an ansatz for the potential we can compute the amplitude in the non-relativistic limit in terms of unknown coefficients. This same amplitude can be computed in the full theory, which, as a consequence of the limiting procedure, has simplified kinematic dependence.  The coefficients of the (?:eft) amplitude are then determined by matching it order by order with the full amplitude.
+
+Unfortunately, the procedure described above, and in fact *any* procedure trying to make contact with (?:eob) by expanding the gravitational potential, intrinsically does not capture the full physics. The crucial point that makes compact binaries interesting is that they are not isolated, energy conserving systems. The energy of the system is lost to the gravitational waves that enable us to detect them. Any conservative dynamics, by construction, cannot capture this loss of energy. In the context of (?:eob), this radiation reaction was added after the fact, through direct modifications of the (?:eom)s obtained from Hamilton's equations. It is not clear how to incorporate dissipative data from the amplitude in the (?:eob) framework. 
+
+One way to not encounter this difficulty is to fully bypass the (?:eob) framework and try to obtain observables directly from the amplitude. This is the subject of the following sections. 
+
+
+
+

@@ -18,13 +18,13 @@ $$
 \frac{\Delta L}{L}=\left[(1 / 2)\left(1+\cos ^2 (\theta)\right) \cos (2 \phi)\right] h_{+}+[\cos (\theta) \sin (2 \phi)] h_{\times} \equiv h,
 $$
 
-where $\theta$ and $\phi$ are the polar and azimuthal angles of the direction of propagation of the (?:gw) . The strain is decomposed into components, $h_{+}$ and $h_{\times}$, which are the plus and cross polarisations of the wave. The strain sensitivity can be further increased by bouncing the light back and forth multiple times along the arms of the interferometer. In current implementations this is achieved using fabry - perot cavities spanning the whole length of the arms. 
+where $\theta$ and $\phi$ are the polar and azimuthal angles of the direction of propagation of the (?:gw) . The strain is decomposed into components, $h_{+}$ and $h_{\times}$, which are the plus and cross polarisations of the wave. The strain sensitivity can be further increased by bouncing the light back and forth multiple times along the arms of the interferometer. In current implementations this is achieved using Fabry - Perot cavities spanning the whole length of the arms. 
 
 ### (?:ligo)  and ground based observatories {#sec-ligo} 
 
 (?:ligo)  implements the measurement apparatus described in the past section. It consists of two detectors, both in the USA, one in Livingston Louisiana and one in Hanford Washington, a separation of  $3000 \text{ km}$. Each (?:ligo)  detector has two $4\text{ km}$ long arms made up of $1.2\text{ m}$-wide vacuum tubes, each operating as Fabry-Perot cavities. The light from an effective $750\text{ kW}$ laser bounces back and forth inside these arms around 300 times. Thus, the effective arm length becomes $1200\text{ km}$, drastically improving sensitivity. 
 
-While (?:ligo) was the first to provide detection data, it does not live in a vacuum. In fact for the first published detection, the data analysis teams from (?:ligo)  joined forces with those for Virgo, the European gravitational wave detector. The Virgo detector is located in Cascina, Italy, and is  similar to (?:ligo) . It has $3\text{ km}$ long arms and a different suspention system. It joined data collection with (?:ligo)  in the second observing run in 2017. Finally there are two other detectors that are now part of the collaboration, KAGRA in Japan and GEO600 in Germany. KAGRA is a similar detector to Virgo in scale, but is built underground further isolating it from seismic activity .GEO600 is a smaller detector, with $600  \text{ m}$ long arms, built with the objective of being a test bed for future detectors.
+While (?:ligo) was the first to provide detection data, it does not live in a vacuum. In fact for the first published detection, the data analysis teams from (?:ligo)  joined forces with those for Virgo, the European gravitational wave detector. The Virgo detector is located in Cascina, Italy, and is  similar to (?:ligo) . It has $3\text{ km}$ long arms and a different suspension system. It joined data collection with (?:ligo)  in the second observing run in 2017. Finally, there are two other detectors that are now part of the collaboration, KAGRA in Japan and GEO600 in Germany. KAGRA is a similar detector to Virgo in scale, but is built underground further isolating it from seismic activity .GEO600 is a smaller detector, with $600  \text{ m}$ long arms, built with the objective of being a test bed for future detectors.
 
 Although they exhibit impressive sensitivity, ground based detectors are limited, since they are subject to seismic activity, which can cause vibrations that limits the lower bound of the frequency sensitivity of the detectors. The optics and other higher frequency noise imposes an upper bound to the frequency. In particular ground based detectors are only sensitive to frequencies in the following rough range:
 
@@ -73,13 +73,13 @@ $$
 \overline{\conj{\ft{n}{2\pi f}}(f_1)\ft{n}{2\pi f}(f_2)}=\half \deltafn{f_1-f_2} S_n(f_1)\thetafn{f_1},
 $$
 
-where the bar denotes the average over the noise realisation, $\deltafn{f_1-f_2}$ is the Dirac delta function, and $\thetafn{f_1}$ is the Heaviside step function. We can now define the *signal to noise ratio* for the signal when filtered by $h_i$ as ^[The equality is due to the fact that we average over all realisations of noise, which averrages to uniform: $\overline{\ang{h_i,n}\ang{n,h_i}}=\ang{h_i,h_i}$.]
+where the bar denotes the average over the noise realisation, $\deltafn{f_1-f_2}$ is the Dirac delta function, and $\thetafn{f_1}$ is the Heaviside step function. We can now define the *signal to noise ratio* for the signal when filtered by $h_i$ as ^[The equality is due to the fact that we average over all realisations of noise, which averages to uniform: $\overline{\ang{h_i,n}\ang{n,h_i}}=\ang{h_i,h_i}$.]
 
 $$
 \rho (s,h_i)=\frac{\ang{s,h_i}}{\operatorname{rms}\ang{n,h_i}}=\frac{\ang{s,h_i}}{\sqrt{\ang{h_i,h_i}}}.
 $$
 
-where $\operatorname{rms}$ denotes the root mean square. This is the functional $\mathcal{F}\brc{s,h_i}$ we are after and we claim detection if $\rho(h_i)>\rho^*$. The functional $\mathcal{F}\brc{s,h_i}=\rho (s,h_i)$, provided that the noise is normally distributed, is provably the optimal filtering technique, in the sense that it minimises the probability of false positives. For example, if we have a fully gaussian noisy signal $s=n$ then $\rho$ is a normal variable with zero mean and unit variance. If a signal $h_i$ is present, over some again gaussian noise $n$, then it can be proven that $\rho$ is still normal but centered on $\sqrt{\ang{h_i,h_i}}$ with unit variance.
+where $\operatorname{rms}$ denotes the root-mean-square. This is the functional $\mathcal{F}\brc{s,h_i}$ we are after and we claim detection if $\rho(h_i)>\rho^*$. The functional $\mathcal{F}\brc{s,h_i}=\rho (s,h_i)$, provided that the noise is normally distributed, is provably the optimal filtering technique, in the sense that it minimizes the probability of false positives. For example, if we have a fully Gaussian noisy signal $s=n$ then $\rho$ is a normal variable with zero mean and unit variance. If a signal $h_i$ is present, over some again Gaussian noise $n$, then it can be proven that $\rho$ is still normal but centered on $\sqrt{\ang{h_i,h_i}}$ with unit variance.
 
 
 The threshold can be set to correspond to a desired false positive rate $\mathcal{F}$:^[The complementary error function is given by $\operatorname{erfc}( z)=\frac{2}{\sqrt{\pi}} \int_z^{\infty} \exp{-t^2} \dd{t}=1-\operatorname{erf}( z).$]
@@ -109,4 +109,4 @@ $$
 \brc{10^{-9},10^{-7}}\text{Hz}.
 $$
 
-The nature of sources that can be detected by (?s:pta)  is therefore different from that of (?:ligo)  and (?:lisa) . The (?:pta)  sensitivity is more suited to detect stochastic gravitational waves, such as those emitted by early-universe phenomena, or by supermassive black holes ($10^6-10^9\stellarmass$) in the centers of galaxies^[more massive objects have longer orbital periods].
+The nature of sources that can be detected by (?s:pta)  is therefore different from that of (?:ligo)  and (?:lisa). The (?:pta)  sensitivity is more suited to detect stochastic gravitational waves, such as those emitted by early-universe phenomena, or by supermassive black holes ($10^6-10^9\stellarmass$) in the centers of galaxies ^[more massive objects have longer orbital periods].

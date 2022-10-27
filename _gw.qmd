@@ -1,0 +1,104 @@
+
+To this day, the most fundamental theory of gravity is (?:gr), due to Einstein. It formulates spacetime as a Riemannian manifold with curvature, determined by mass distribution. This curvature is encoded in the metric $\met$. Objects then move in this deformed spacetime following (?s:eom) written in terms of $\met$. Interaction is thus caused by the dependence of $\met$ on mass distribution, which itself evolves through $\met$. The physical laws that governs the interaction between mass and curvature are manifested in Einstein's field equations,
+
+$$
+\boxed{\RicciTco-\frac{\met}{2} \RicciS+\cosmo \met=-8 \pi \grav \SEco} .
+$${#eq-EFE}
+
+The (?:lhs) of this equation contains several objects that only depend on the metric $\met$. $\RicciTco$ is the Ricci tensor[^riccitensor], a contraction of the Riemann curvature tensor $\Riem$. The Riemann tensor[^riemannT] encodes the curvature of spacetime, in terms of the non-commutativity of covariant derivatives. When they do, it means that they have collapsed to regular derivatives, and thus the Levi-civita connection[^LCconn] must have vanished. This is only possible if the metric is flat, $\met=\mink$. The Riemann curvature tensor is exclusively composed of the metric, its first, second derivatives, and it is linear in the second derivative of the metric. In fact, it is the only possible tensor of this form. The second term on the (?:lhs) is the Ricci scalar, a further contraction of the Ricci Tensor: $\RicciS = \invmet \RicciTco$. The final term on the (?:lhs) is just a proportional constant factor of the metric, $\cosmo$, called the cosmological constant. It can be measured and has a low known upper bound. It is in part responsible for the expansion of the universe. 
+
+The (?:rhs)  of @eq-EFE encodes the distribution of mass and energy in the universe, through the stress-energy tensor $\SEco$, which depends on the dynamical properties of the system. It is further multiplied by the Gravitational constant $\grav$. In empty space, $\SEco$ is zero.
+
+[Equation @eq-EFE] can be recast in a form where the Ricci scalar has been substituted by the trace of the stress-energy tensor,
+
+$$
+\boxed{\RicciTco=-8 \pi \grav\left(\SEco-\trSE \frac{\met}{2}\right)+\cosmo \met} 
+$${#eq-EFEwoR}
+
+
+Both @eq-EFE & @eq-EFEwoR with $\cosmo=0$ admit wave solutions. In order to see this, let us look at these equations in the weak field approximation. We take the metric to be a small perturbation around the Minkowskian background,
+
+$$
+    \met = \mink + \weakmet,
+$$ {#eq-WeakFA}
+
+where $\weakmet$ is the expansion parameter (thus considered small). Note that if we restrict ourselves to first order in $\weakmet$ then all raising and lowering of indices is done with $\mink$. Since the (?:lhs) of @eq-EFE is composed of the Ricci tensor and scalar, let us see how these behave in the weak approximation. Both are in fact made up of Levi-Civita connections, which to first order in $\weakmet$ is given by:
+$$
+\LC{\alpha}{\mu}{\nu} = \frac{1}{2} \invmink[\alpha \rho]
+\brk[\Big]{
+    \ipdv{ \weakmet[\rho \nu]}{\mu}
+    +\ipdv{ \weakmet[\rho \mu]}{\nu}
+    -\ipdv{ \weakmet}{\rho}} + \order[2]{h}\quad .
+$$ {#eq-weakaffine}
+
+Plugging @eq-weakaffine into the definition of the Ricci tensor we see that the terms with products of the connection vanish, and we are left with the derivative terms: 
+
+$$ 
+\RicciTco  =
+ \frac{\invmink[\alpha\rho]}{2}\left[ \ipdv{\weakmet[\rho\alpha]}{\mu\nu} + \ipdv{\weakmet}{\rho\alpha} - \ipdv{\weakmet[\mu\alpha]}{\rho\nu} - \ipdv{\weakmet[\nu\rho]}{\mu\alpha} \right] + \mathcal{O}(h^2)=\linRicciTco+ \mathcal{O}(h^2)
+$${#eq-Ricciweak}
+
+The linearized Ricci scalar is then just $\linRicciS=\invmink\linRicciTco$. The symmetry of the (?:efe) under general diffeomorphisms implies the existence of gauge freedom. In particular, @eq-EFE, admits an infinite number of solutions, and in fact we can map a solution into another by changing coordinates in such a way that the equation isn't affected. To fix this ambiguity we choose a coordinate system ('gauge choice') by  imposing the harmonic coordinate conditions: 
+
+$$ 
+   \invmet[\alpha\beta]\LC{\mu}{\alpha}{\beta} =0
+$$ {#eq-hcc}
+
+The harmonic coordinate conditions demand the vanishing of the trace of the Levi-Civita connection. They have a simplified form in the weak approximation, which  we can access by plugging @eq-weakaffine into @eq-hcc, giving:
+
+$$
+\begin{split}
+    (\invmink[\alpha\beta]+\invweakmet[\alpha\beta])\frac{1}{2}(\invmink[\mu\rho]+\invweakmet[\mu\rho])\left[\ipdv{\weakmet[\alpha\rho]}{\beta}+\ipdv{\weakmet[\beta\rho]}{\alpha}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right] &= 0 \\
+    \invmink[\mu\rho]\invmink[\alpha\beta]\left[2\ipdv{\weakmet[\alpha\rho]}{\beta}-\ipdv{\weakmet[\alpha\beta]}{\rho}\right]+ \mathcal{O}(h^2)&= 0 \\
+    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\rho]}{\beta} &= \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\rho}\invmink[\alpha\beta] + \mathcal{O}(h^2).
+\end{split}
+$$
+
+The last equation, truncated to first order, is called the De-Donder gauge condition:
+
+$$
+\ipdv[^]{\weakmet}{\mu} = \frac{1}{2}\ipdv{\trweakmet}{\nu}
+$$
+
+In the de-Donder gauge we can simplify the terms in @eq-Ricciweak to:
+
+$$
+    \invmink[\alpha\beta]\ipdv{\weakmet[\alpha\mu]}{\nu\beta} = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet[\alpha\beta]}{\mu\nu},
+$$
+
+and
+$$
+    \invmink[\alpha\beta]\ipdv{\weakmet[\beta\nu]}{\mu\alpha} = \frac{1}{2}\ipdv{\weakmet[\alpha\beta]}{\mu\nu}.
+$$
+
+With these two relations the expression for the linearized Ricci tensor @eq-Ricciweak simplifies to
+$$
+    \linRicciTco = \frac{1}{2}\invmink[\alpha\beta]\ipdv{\weakmet}{\alpha\beta} = \frac{1}{2}\SRDA \weakmet.
+$$ {#eq-Ricciweak2}
+
+Where we have defined the (?:sr)  D'Alembertian differential operator as: $\SRDA=\invmink \partialder[\mu]\partialder[\nu]$ We can plug @eq-Ricciweak2 into @eq-EFEwoR, with $\cosmo=0$ and up to first order in $\weakmet$, we get the linearized Einstein field equations for a system of harmonic coordinates:
+
+$$
+\square_{SR} \weakmet = -16\pi \grav \overbracket{(\SEco-\frac{\mink}{2}\trSE)}^{\srcco} ,
+$${#eq-linearized}
+$$
+\ipdv{\mixweakmet[\ind{\alpha}{\mu}]}{\alpha}=\frac{1}{2}\ipdv{\trweakmet}{\mu}. 
+$${#eq-dedonder}
+Recall raising and lowering indices is done with the Minkowski metric. The tensor $\srcco$ encodes the behavior of the source of (?s:gw).
+One could also plug @eq-Ricciweak2 into @eq-EFE, with $\cosmo=0$, and express it in terms of the trace reversed perturbation: $\weakTRmet=\weakmet - \frac{1}{2}\trweakmet\mink$. Then, we obtain similar and simpler equations at the cost of a more complex perturbation: ^[Note that the inverse change of variables is just: $\weakmet=\weakTRmet-\frac{1}{2}\trweakTRmet\mink$.] ^[We eliminate the trace of the stress-energy tensor by using: $\RicciS= 8\pi\grav\trSE$. We can write $\linRicciS=-\frac{1}{2}\SRDA\trweakTRmet$, in de Donder gauge, which is precisely the extra term dropping out of $\SRDA\weakmet$ when we express it in terms of $\weakTRmet$.]
+
+$$
+\square_{SR} \weakTRmet = -16\pi \grav \SEco
+$${#eq-linearizedTR}
+$$
+    \ipdv[^]{\weakTRmet}{\nu}=0. 
+$${#eq-dedonderTR}
+
+We can easily recover the conservation equation for the stress-energy tensor. We take the divergence of @eq-linearizedTR and use @eq-dedonderTR to get:
+
+$$
+    \ipdv[^]{\SEco}{\nu}=0.
+$${#eq-SEcons}
+
+ Let us look at what sorts of solutions come out of these
+ 

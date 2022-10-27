@@ -3,3 +3,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn fact this has been developped as early as the 1970s in [@Hiida:1972xs;@Iwasaki:1971vb].\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe back and forth between precise measurements (such as those conducted at the \\acr{lhc}) and precise predictions for particle scattering, has pushed the boundaries of the calculations possible.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QWhilst we have almost no hope to detect any \\acr{gw} scattering events with current experiments, scattering calculations can still be very useful in the quest for orbital waveforms.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIt was later extended to include the merger and ringdown effects in [Buonanno and Damour @Buonanno:2000ef].\\E$"}

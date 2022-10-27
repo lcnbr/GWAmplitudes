@@ -1,0 +1,120 @@
+
+The code provided is fully general in loop number and can be extended readily to higher loops, at the un-integrated level. The number of contributing diagrams quickly increases however. At two loops, we go from 5 non-scaleless diagrams to 34 (see @fig-2lSQEDclassical), and at three loops we have 470 diagrams (see @fig-3lSQEDclassical). 
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+diags=include("QGRAFout/julia/2lSQED.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=qDiags[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+alldiags=(⊕(((x -> x.g).(noscalelessdiags))...))
+open("2lSQEDclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-2lSQEDclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at two loops in SQED"
+//| file: 2lSQEDclass.dot
+//| cap-location: margin
+```
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+
+import  Catlab.Graphics.Graphviz: run_graphviz
+diags=include("QGRAFout/julia/3lSQED.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+
+alldiags=(⊕(noscalelessdiags...))
+open("3lSQEDclass.png";create=true,write=true) do io
+
+run_graphviz(io, to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")), format="png")
+end
+```
+
+![All scaleful diagrams, in the classical limit at three loops in SQED](3lSQEDclass.png){#fig-3lSQEDclassical}
+
+
+
+The classically divergent term cancelations, have been explicitly derived above for the one loop case, however it is not immediately extendable to higher loops. Arguments using Cutkosky rules have been used in [Herrmann et al. @Herrmann:2021tct] to show this at two loops. 
+
+We have up to now only considered the toy model of scalar QED, however the same techniques can be applied to gravity. In this case one considers the same scalars minimally coupled to gravity, using the Einstein-Hilbert action. Going through the same procedures as above, with more algebra, one can also obtain Feynman rules. One key difference is that the gravitons self interact, and do so for any vertex degree. Additionally, the graviton-scalar vertex can also involve any number of gravitons. Of course the highest degree vertex is always limited by the number of loops, such that in practice, one only needs to consider truncated Feynman rules. We implemented these rules in `QGRAF` and `Julia`, and we can see the resulting diagrams at one loop in @fig-1lGRclassical only contains one new diagram, and two loops @fig-2lGRclassical, there are substantially more new diagrams. 
+
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+include("GR.jl")
+diags=include("QGRAFout/julia/1lGR.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+
+alldiags=(⊕(noscalelessdiags...))
+open("1lGRclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-1lGRclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at 1 loop in GR"
+//| file: 1lGRclass.dot
+//| cap-location: margin
+```
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+diags=include("QGRAFout/julia/2lGR.jl")
+qDiags=[qDiagram(;diag...) for diag in diags]
+grafs=(x -> x.g).(qDiags)
+noscalelessdiags=grafs[.!scaleless.(grafs)]
+
+import Catlab.Theories: ⊕
+function ⊕(a, b...)
+  return ⊕(a, ⊕(b...))
+end
+
+alldiags=(⊕(noscalelessdiags...))
+
+open("2lGRclass.dot";create=true,write=true) do io
+pprint( io,to_graphviz(alldiags,graph_attrs=Dict("layout"=>"neato")))
+end
+
+```
+
+```{dot}
+//| fig-width: 8
+//| label: fig-2lGRclassical
+//| fig-cap: "All scaleful diagrams, in the classical limit at 2 loops in GR"
+//| file: 2lGRclass.dot
+//| cap-location: margin
+```

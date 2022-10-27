@@ -1,0 +1,64 @@
+
+
+Taking the process described above to the limit of more massive and more compact objects one could imagine asking for the most dense objects possible to orbit each other. In (?:gr)  this object is called a black hole ((?:bh)). It is a possible solution to the full fat (?:efe) (@eq-EFE), in a static and isotropic universe, with point like mass at its center. Then the solutions to the equations @eq-EFE have a unique form [@Birkhoff:1923], called the Schwarzschild solution. 
+
+The solution is given by, in spherical coordinates:  
+
+
+$$
+\dd{\tau^{2}}=\left[
+    1-\frac{R_{S}}{r}
+    \right]\dd{t^{2}}
+-\frac{\dd{r^2}}{1-\frac{R_{S}}{r}}-r^{2}\left(\dd{ \theta^2}+\sin ^{2} \theta \dd{ \varphi^2}\right)
+$$ {#eq-Schwarzschild}
+
+
+where $R_S$ is the Schwarzschild radius, given by:^[we reinstate the speed of light, as we want to compute orders of magnitudes]
+
+$$
+R_S=\frac{2GM}{c^2}.
+$$
+ 
+For stellar masses we have $R_S=2954\; \mathrm{m}$, quite a lot smaller than the radius of the sun $\sim 7\cdot10^8\; \mathrm{m}$. Note that the metric given in @eq-Schwarzschild exhibits singularities at both $r=R_S$ and $r=0$. The former is spurious, as it is an artefact of the coordinate choice, while the latter is real, in the sense that coordinate independent scalars formed from the metric (such as the ricci scalar) do in fact blow up as $r\to0$. This encodes the non-spurious mass singularity that gives rise to the (?:bh) phenomena.
+
+If we consider a comparable stellar mass (?:bbh) system, we can use the calculations of the previous section to compute the order of magnitude of the perturbation. @eq-omega in terms of the Schwarzschild radius gives us the orbital frequency
+
+$$
+f=\frac{\Omega}{2\pi}=\frac{\sol}{2\pi}\sqrt{\frac{ R_S}{\dist^3}},
+$$
+
+and the metric perturbation is given by @eq-hnorm:
+
+$$
+h = \frac{R_S^2}{r\dist}.
+$$
+
+
+Thus, if we consider (?s:bh)  separated by ten times their Schwarzschild radius, observed at cosmological distances $\sim 100 \;\mathrm{Mpc}$, we obtain the values for the scales characterizing the binary system:
+
+$$
+\begin{aligned}
+R_S &\approx 10^3\; \mathrm{m} ,\\
+\dist &\approx 10^4\; \mathrm{m} ,\\ 
+r &\approx 10^{23}\; \mathrm{m}.
+\end{aligned}
+$$
+
+Such a system would have an orbital frequency of:
+
+$$
+f\approx 10^{2}\; \mathrm{Hz},
+$$
+
+and would perturb the metric on earth by:
+
+$$
+h\approx 10^{-21}.
+$$
+
+To have any hope of detecting such systems, one would need to have detectors sensitive to frequency spectra up to hundreds of Hertz, with a strain sensitivity of $10^{-21}$. This has been achieved at (?:ligo) and other detectors, and has enabled the detection of such systems. 
+
+
+Non-spinning black holes orbiting around each other are the simplest binary system to model. However, they are extremely unlikely to occur in nature (realistic physical scenarios). The nature of (?:bh) formation implies that they necessarily also spin. Spinning black holes, also referred to as Kerr black holes, are characterized by a different metric tensor defining the spacetime surrounding them. The modelling of spinning black holes is still in its infancy and will not be treated it here.
+
+ There are many other binary systems that could feasibly be detected. Finite-size binaries such as (?s:ns) result in tidal phenomena that are not present in the (?:bh)  case. Also, non-binary systems, such as Cosmic strings, corresponding to early universe topological defects, could produce a detectable stochastic (?:gw) background.

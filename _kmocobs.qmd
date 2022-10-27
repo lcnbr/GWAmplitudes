@@ -1,0 +1,99 @@
+
+The (?:kmoc) framework concerns itself with the change of an observable quantity during a scattering event encoded in an operator $\op{O}$. For such an observable quantity $\obs{O}$ , its change is  obtained by evaluating the difference of the expectation value of $\op{O}$, between in and out states
+$$
+\Delta O=\ev{\op{O}}{\text{out}}-\ev{\op{O}}{\text{in}}.
+$$
+
+In quantum mechanics, the out states are related to the in states by the time evolution operator, i.e., the S-matrix, $\ket{\text{out}}=\Smat \ket{\text{in}}$. Thus: 
+
+::: {.aside}
+In order, we use the unitarity of the S-matrix, then express the S-matrix as the identity (no actual interaction) and the transfer matrix $\Tmat$. The commutators are then expanded and the part with the identity vanish (as $\id$ commutes with everything). 
+:::
+
+$$
+\begin{aligned}
+\Delta O    &=\ev{\adj{\Smat}\op{O}\Smat}{\text{in}}-\ev{\op{O}}{\text{in}}\\
+            &\stackrel{\adj{\Smat} \Smat=\id}{=}      \ev{\adj{\Smat} \com{\op{O}}{\Smat}}{\text{in}}\\
+            &\stackrel{\Smat=\id+\im \Tmat}{=}          \ev{\com{\op{O}}{\id+\im \Tmat}}{\text{in}}
+                                                      -\ev{\im \adj{\Tmat} \com{\op{O}}{\id+\im \Tmat}}{\text{in}}\\
+            &=    \ev{\im\com{\op{O}}{\Tmat}}{\text{in}}
+                  +\ev{ \adj{\Tmat} \com{\op{O}}{\Tmat}}{\text{in}}\\
+            &=\vchangeob+\Delta O_\text{r}.
+\end{aligned}
+$${#eq-DeltaO}
+
+
+If we put in the definition of our in state (@eq-instate), we have
+
+
+$$
+\Delta O = \int \ddP[4]{\emom[1],\emom[2],\emom[1]',\emom[2]'} 
+                  \wf[1](\emom[1]) \wf[2](\emom[2]) \cwf[1](\emom[1]') \cwf[2](\emom[2]')
+                  \,\exp{\im \co{\impactParameter} \frac{\ct{\emom[1]}-\ct{\emom[1]'}}{\hbar}}
+                  \brc[\big]{\vInt-\rInt},
+$$
+
+where we defined the real integrand $\rInt$ and the virtual integrand $\vInt$ as the following matrix elements ^[NB: the notation is slightly different in the @Bern:2021xze paper]
+
+$$
+\begin{aligned}
+\vInt &=\bra[in]{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}           }\ket[in]{\emom[1]\emom[2]}\\
+\rInt &=\bra[in]{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}   }\ket[in]{\emom[1]\emom[2]}.
+\end{aligned}
+$$
+
+
+
+Let us first look at the virtual integrand $\vInt$:^[Here we define $$\obs{O}_{\text{in}}\ket{\emom[1]\emom[2]}=\op{O}\ket{\emom[1]\emom[2]}$$ aswell as, $$\obs{O}_{\text{in}}'\bra{\emom[1]'\emom[2]'}=\bra{\emom[1]'\emom[2]'}\op{O}$$ and finally $$\obschange{\emom'-\emom}=\obs{O}_{\text{in}}'-\obs{O}_{\text{in}}$$]
+
+$$
+\begin{aligned}
+\vInt &=\bra[in]{\emom[1]'\emom[2]'}{\im\com{\op{O}}{\Tmat}     }\ket[in]{\emom[1]\emom[2]}  \\
+      &=\bra[in]{\emom[1]'\emom[2]'}{\im\op{O}\Tmat             }\ket[in]{\emom[1]\emom[2]}   
+      - \bra[in]{\emom[1]'\emom[2]'}{\im \Tmat\op{O}            }\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obs{O}_{\text{in}'}  \; \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}
+      - \im \obs{O}_{\text{in}} \;    \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obschange{\emom'-\emom} \,    \bra[in]{\emom[1]'\emom[2]'}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
+      &=\im \obschange{\emom'-\emom}\,\ndeltafn[4]{\emom[1]+\emom[2]-\emom[1]'-\emom[2]'} 
+                                    \amp{\emom[1],\emom[2]}{\emom[1]',\emom[2]'}.
+\end{aligned}
+$$ {#eq-vInt}
+
+Note that the amplitude is from in states to in states. In order to obtain the real integrand $\rInt$, we insert a complete set of states :[^complete]
+
+$$
+\begin{aligned}
+\rInt &=\bra[in]{\emom[1]'\emom[2]'}{\adj{\Tmat}\com{\op{O}}{\Tmat}}\ket[in]{\emom[1]\emom[2]}\\
+      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}   \bra[in]{\emom[1]'\emom[2]'}\adj{\Tmat}\vert{r_1 r_2 X}\rangle\langle {r_1 r_2 X} \vert
+                        \com{\op{O}}{\Tmat}\ket[in]{\emom[1]\emom[2]}\\
+      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}  \ndeltafn[4]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}}\,
+      \amp{\emom[1], \emom[2]}{r_{1}, r_{2}, r_{X}} \\
+      &\qquad \obschange{rX-\emom}\,\ndeltafn[4]{\emom[1]'+\emom[2]'-r_{1}-r_{2}-r_{X}}\,
+      \aamp{\emom[1]', \emom[2]'}{r_{1}, r_{2}, r_{X}},
+\end{aligned}
+$$ {#eq-rInt}
+
+where the $X$ encodes any number of additional messenger states, and $r_{X}$ is the sum of their momenta. For both integrands we can preform some variable changes and eliminate certain Dirac delta functions. We introduce momentum shifts $q_i=\emom[i]'-\emom[i]$ and then integrate over $q_2$, and finally relabel $q_1 \to \tm$   [^measureshift]. Thus, we have
+
+$$
+\begin{aligned}
+\vchangeob=\int &\ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm}
+      \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\, \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
+      &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} \co{\impactParameter} \tm^\mu}\\
+      &\times \im \obschange{\tm} \amp{\emom[1],\emom[2] }{\emom[1]+\tm,\emom[2]-\tm},
+\end{aligned}
+$${#eq-DeltaOv}
+
+
+$$
+\begin{aligned}
+\rchangeob=\sum\limits_X \int &\ddP[2+\abs{X}]{r_1, r_2,X}
+      \ddP[2]{\emom[1],\emom[2]} \dn[4]{\tm} \ndeltafn{2 \emom[1] \cdot \tm+\tm^2} \thetafn{\ct[0]{\emom[1]}+\tm^0}\\
+            &\times \ndeltafn{2 \emom[2] \cdot \tm-\tm^2} \thetafn{\ct[0]{\emom[2]}-\tm^0}\\
+            &\times\wf[1](\emom[1])\wf[2](\emom[2])\cwf[1](\emom[1]+\tm)\cwf[2](\emom[2]-\tm)\,\exp{-\frac{\im}{\hbar} b_\mu \tm^\mu}\\
+            &\times\obschange{rX-\emom}\ndeltafn[(4)]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}} \\
+            &\times   \amp{\emom[1], \emom[2] }{ r_{1}, r_{2}, r_{X}}\aamp{\emom[1]+\tm, \emom[2]-\tm }{r_{1}, r_{2}, r_{X}}.
+\end{aligned}
+$${#eq-DeltaOr}
+
+We have arrived at an integral expression for the change in observable $\Delta\obs{O}$. Luckily for us, we will not need to perform these integrals in the classical limit. We will just have carefully chosen replacement rules for the integrated variables! Let us look at this in more detail now.

@@ -1,0 +1,79 @@
+We start with the tree level amplitude, the only (?:lo) contribution in for example @eq-impulseLO. The only possible diagram we can build with four external scalar legs, and vertices as defined in @tbl-sqedfrules, is the following tree:
+
+
+```{julia}
+#| echo: false
+#| output: false
+#| eval: false
+using TikzPictures
+
+tp = TikzPicture(L"""
+\matrix{
+      \node{$\displaystyle \im\redamp[(0)]{\semom[1]-\Half[\tm],\semom[2]+\Half[\tm]}{\semom[1]+\Half[\tm],\semom[2]-\Half[\tm]}$};&
+      \node{$=$};&
+     \graph[nodes=coordinate, empty nodes,spring layout,node distance=20mm,vertical=p1 to p2,random seed=1,anchor node=a,anchor at={(0,0.5)}] 
+{
+  p1 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]-\Half[\tm]$" {auto=right ,inner sep=4mm}]  a[fill = red!20, draw = black, ultra thick, circle,scale=.6] --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm,mirror},decorate},"$\semom[1]+\Half[\tm]$" {auto=right ,inner sep=4mm}] p4;
+  a -- [photon,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$q$" {auto=left ,inner sep=4mm}]] b[fill = red!20, draw = black, ultra thick, circle,scale=.6];
+  p2 --[->-=.5,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$\semom[2]+\Half[\tm]$" {auto=left ,inner sep=4mm}]]  b --[->-=.7,thick,postaction={draw,->, 
+     shorten >=3mm, shorten <=3mm, 
+     decoration={sl,raise=3mm},decorate},"$ \semom[2]-\Half[\tm]$" {auto=left ,inner sep=4mm}]] p3;
+};\\
+};"""
+,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes,arrows.meta}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
+
+save(TEX("./tikz/treelevelsqed"; limit_to=:picture), tp)
+save(PDF("./tikz/treelevelsqed"), tp)
+save(SVG("./tikz/treelevelsqed"), tp)
+tp
+```
+
+
+![Tree](./tikz/treelevelsqed)
+
+
+
+The amplitude is read off diagram and using Feynman rules for SQED we have: 
+
+$$
+\redampl[(0)] = \im\phprop(q)\cdot \,\elch^2\charge[1] \charge[2]2 \ct{\semom[1]} 2\ct[\nu]{\semom[2]}=\frac{4\elch^2\charge[1] \charge[2]\semom[1]\cdot\semom[2]}{\tm^2} ,
+$$
+
+using the Mandelstahm invariants described above we can write this as:
+
+$$
+\redampl[(0)] =\elch^2\charge[1] \charge[2] \frac{4\mass[1]\mass[2]\relfact}{\hbar^2\tw^2},
+$$ {#eq-treeampl}
+
+
+where $\relfact$ is the relativistic factor of particle 1 in the rest frame of particle 2:
+
+$$
+\relfact=\frac{\mands-\mass[1]^2-\mass[2]^2}{2\mass[1]\mass[2]}=\frac{\emom[1]\cdot\emom[2]}{\mass[1]\mass[2]}=\frac{\semom[1]\cdot\semom[2]}{\mass[1]\mass[2]}+ \order{\hbar}.
+$$ {#eq-relfact}
+
+We now input the reduced version $\redampl[(0)]\elch^2=\ampl[(0)]$ of the amplitude, and take the $\hbar\to0$ limit of @eq-impulseLO. We can safely take the $\hbar \to 0$ limit as the integrand contains no terms singular in $\hbar$ (the $\frac{1}{\hbar^2}$ is cancelled by the $\hbar^2$ pre-factor).  Notice that the integration measure @eq-DeltaOclas simplifies in the classical limit:[^comp]
+
+$$
+\lim\limits_{\hbar \to0} \dPsb{\tw}=\dn[4]{\tw} {\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
+$$
+
+The integrand corresponding to the (?:lo) contribution to the impulse is then:
+
+$$
+\Delta \emom[1]^{\mu,(0)}=4e^2Q_1Q_2\mass[1]\mass[2]\relfact\int\dn[4]{\tw}\exp{-\im\tw\cdot b}\tw^\mu \frac{\cancel{\hbar^2}}{\cancel{\hbar^2}\tw^2}{\ndeltafn{2\mass[1]\cls{\vel[1]}\cdot\tw}}{\ndeltafn{2\mass[2]\cls{\vel[2]}\cdot \tw }}.
+$$
+
+This can be analytically computed to find a closed form for the (?:lo) impulse.
+
+$$
+\Delta \emom[1]^{\mu,(0)}=-\frac{e^{2} Q_{1} Q_{2}}{2 \pi} \frac{\gamma}{\sqrt{\gamma^{2}-1}} \frac{b^{\mu}}{b^{2}}
+$$

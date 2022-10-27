@@ -1,0 +1,122 @@
+
+
+
+We can now explore the integrands for a specific observable. Consider the change in momentum, or impulse of particle 1. The (?:kmoc) formalisms gives us a way to write this as:
+
+
+$$\Delta \ct{\emom[1]}=\AAngle{\int \dPsb{\tw}\Exp[\Big]{-\im\tw^\mu b_\mu}\pa[\Big]{\vIntb[\ct{\emom[1]}]+\rIntb[\ct{\emom[1]}]}}  .$$
+
+
+We then have: 
+
+$$
+\begin{aligned}
+\vIntb[\ct{\emom[1]}]&=\hbar^2\im\,  \tm\, \amp{\emom[1],\emom[2] }{ \emom[1]+\hbar \tw,\emom[2]-\hbar \tw}\\
+\rIntb[\ct{\emom[1]}]&=\hbar^2\sumint\ddP[2+\abs{X}]{r_1,r_2,r_X}(r_1^\mu-\emom[1]^\mu)\,\ndeltafn[(4)]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}} \\
+&\times   \amp{\emom[1], \emom[2] }{ r_{1}, r_{2}, r_{X}} \aamp{\emom[1]+\hbar \tw,\emom[2]-\hbar \tw }{ r_{1}, r_{2}, r_{X}}.
+\end{aligned}
+$$
+
+
+We can extract $\hbar$ from $\tm$ and from the amplitude. In order to determine the $\hbar$ scaling of $\ampl$ we extract each coupling constant $\kappa$ along with an $\frac{1}{\sqrt{\hbar}}$, so that quartic vertices yield a factor of $\frac{\coupling^2}{\hbar}$ whereas cubic ones yield $\frac{\kappa}{\sqrt{\hbar}}$^[as mentioned in the last section, this is true for gravity and (?:sqed) and we will extend this fact to schematically rescale the vertex coupling by $\hbar^-\Half[d-2]$, for $d$ the degree of the vertex in question.].  If we count the number $V_3$ of all cubic vertices, $V_4$ the number of quartic vertices, and so on,  we have that the number of internal lines is $I=\frac{1}{2}(\sum_{d=3}dV_d-E)$. This is because we have $\sum_{d=3}dV_d$  lines to start with, out of which $E$ are chosen to be external. The remaining $(\sum_{d=3}dV_d-E)$ ones are contracted in pairs among themselves to form $I$ internal lines, yielding the factor of $\half$. In our case we have $E=4+M$ where $M=\abs{X}$ is the number of messenger particles. Using the argument from loop counting we have that the number of loops of our graph $L$ is given by:
+$$
+\begin{aligned}
+        L=I-V+N=&\frac{1}{2}(\sum_{d=3}d\cdot V_d-4-M)-\sum_{d=3}V_d+1\\
+=&\frac{1}{2}(\sum_{d=3}(d-2)V_d)-1-\frac{M}{2},
+\end{aligned}
+$$
+
+where $N$ is the number of connected components ($=1$ in our case) . Thus, we see that the amount of extracted $\hbar$s corresponds directly to the number of loops plus one plus the number of additional messenger particles. ^[The number of extracted couplings being twice that.] We can thus write the amplitude $\ampl$ as a sum over reduced $L$-loop amplitudes $\redampl[(L)]$:
+
+$$\amp{\emom[1],\emom[2]}{ r_1,r_2,X}=\sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(L+1+\frac{\abs{X}}{2})}\redamp[(L)]{\emom[1],\emom[2]}{r_1,r_2,X}.$$
+
+
+Going back to the integrands we have:
+
+$$
+\begin{aligned}
+\vIntb[\ct{\emom[1]}]&=\hbar^3\im\,  \tw\, \sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(L+1)}\redamp[(L)]{\emom[1],\emom[2]}{\emom[1]+\hbar \tw,\emom[2]-\hbar\tw}\\
+&=\im\, \hbar  \tw\, \sum\limits_{L=0}^\infty \coupling^{2(L+1)}{\hbar}^{(1-L)}\redamp[(L)]{\emom[1],\emom[2]}{\emom[1]+\hbar \tw,\emom[2]-\hbar\tw},
+\end{aligned}
+$$ {#eq-impulseIv}
+
+as well as the real kernel:[^measurech]
+
+$$
+\begin{aligned}
+\rIntb[\ct{\emom[1]}]&=\hbar^2\sumint\ddP[\abs {X}]{r_X}\brc[\Big]{\prod\limits_{i=1,2}\dn[4]{w_i}\ndeltafn{2\emom[i] \cdot w_i+w_i^2}\thetafn{\emom[i]^0+w_i^0}} \\
+&\times w_1^\mu\,\ndeltafn[(4)]{w_1+w_2+r_{X}}
+\\
+&\times\amp{\emom[1], \emom[2] }{ \emom[1]+w_{1}, \emom[2]+w_{2}, r_{X}} 
+\aamp{\emom[1]+\hbar \tw,\emom[2]-\hbar \tw }{ \emom[1]+w_{1}, \emom[2]+w_{2}, r_{X}}\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+=\hbar^2\sumint&\ddP[\abs {X}]{{r}_X}\brc[\Big]{\prod\limits_{i=1,2}\hbar^3\dn[4]{\bar{w}_i}\ndeltafn{2\emom[i] \cdot \bar{w}_i+\hbar\bar{w}_i^2}\thetafn{\emom[i]^0+\hbar \bar{w}_i^0}} \\
+&\times   \hbar \bar{w}_1^\mu\,\hbar^{-4}\ndeltafn[(4)]{\bar{w}_1+\bar{w}_2+\bar{r}_{X}}
+\\
+&\times\sum\limits_{L=0}^\infty\pa[\Big]{\frac{\coupling^{2}}{\hbar}}^{(2L+2+\abs{X})}\redamp[(L)]{\emom[1], \emom[2] }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}} \\
+&\times\aredamp[(L)]{\emom[1]+\hbar \tw,\emom[2]-\hbar \tw }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+=\sumint&\ddP[\abs {X}]{{r}_X}\brc[\Big]{\prod\limits_{i=1,2}\dn[4]{\bar{w}_i}\ndeltafn{2\emom[i] \cdot \bar{w}_i+\hbar\bar{w}_i^2}\thetafn{\emom[i]^0+\hbar \bar{w}_i^0}} \\
+&\times    \hbar\bar{w}_1^\mu\,\ndeltafn[(4)]{\bar{w}_1+\bar{w}_2+\bar{r}_{X}}
+\\
+&\times\sum\limits_{L=0}^\infty \coupling^{2(2L+2+\abs{X})}{\hbar}^{2-2L-\abs{X}}\redamp[(L)]{\emom[1], \emom[2] }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}} \\
+&\times\aredamp[(L)]{\emom[1]+\hbar \tw,\emom[2]-\hbar \tw }{\emom[1]+\hbar\bar{w}_{1}, \emom[2]+\hbar\bar{w}_2, r_{X}}.\\
+\end{aligned}
+$$ {#eq-impulseIr}
+
+Schematically we have 
+
+$$
+\begin{aligned}
+\vIntb[\ct{\emom[1]}]&=\sum\limits_{L=0}^\infty \order[{2(L+1)}]{\coupling},\\
+\rIntb[\ct{\emom[1]}]&=\sum\limits_{L=0}^\infty \order[{4(L+1)+2\abs{X}}]{\coupling}
+\end{aligned}
+$$
+
+The contributions from the virtual kernel are lower order in the coupling $\coupling$ for a given loop order. Both kernels contribute together provided that the following equation is verified:
+
+$$L-1=2L'+\abs{X}.$$ {#eq-rvloopmatch}
+
+where $L$ is the loop count for the virtual kernel and $L'$, $\abs{X}$ are the real kernel loop count and messenger particle count respectively. Note that for a tree level virtual kernel, the real-kernel match does not exist. The real kernel is only present for $L>0$. When taking the classical limit we will only retain contributions from graphs that cancel the $\hbar$ divergences in each corresponding kernel. Thus, at the $L$-loop level, the amplitude in the virtual kernel must cancel with terms of order
+
+$$
+\hbar^{1-L+O},
+$$ {#eq-hbarvirt}
+
+where the $O$ term is the order of $\hbar$ that is present as a result of the observable. In the case of particle 1's momentum, $O=1$. Similarly, the amplitudes in the real kernel must cancel with:
+
+$$
+\hbar^{2-2L'-\abs{X}+O}.
+$$ {#eq-hbarreal}
+
+Now we see that the (?:lo) contribution [^expand]to the impulse, which we denote $\Delta \emom[1]^{\mu,(0)}$  can only be from the virtual kernel at tree level. Thus, we have the following equation,
+
+$$
+\Delta \emom[1]^{\mu,(0)}=\AAngle{\int \dPsb{\tw}\Exp[\big]{-\im\tw^\mu b_\mu}\ \vIntb[\ct{\emom[1]}]^{(L=0)}}.
+$$ {#eq-impulseLO}
+
+And the integrand is given by the tree level 4 point amplitude.
+
+$$
+\vIntb[\ct{\emom[1]}]^{L=0}=\im\,  \tw^\mu\,  \coupling^{2}{\hbar}^{2}\bar{\mathcal{A}}^{(0)}(\emom[1],\emom[2]\to \emom[1]+\hbar \tw,\emom[2]-\hbar\tw).
+$$
+
+At (?:nlo), i.e. $\kappa^4$ order, both integrands contribute, as @eq-rvloopmatch can be satisfied for $L=1$, $L'=0$ and $\abs{X}=2$. Thus we have the following equation:
+
+$$
+\Delta \emom[1]^{\mu,(1)}=\AAngle{\int \dPsb{\tw}\Exp[\big]{-\im\tw^\mu b_\mu} \pa[\Big]{\vIntb[\ct{\emom[1]}]^{(L=1)}+\rIntb[\ct{\emom[1]}]^{(L'=0)}}}.
+$$ {#eq-impulseNLO}
+
+The virtual integrand is now given by the 1-loop level amplitude, and the real integrand is given by the square of a the tree level amplitude. This process can go on indefinitely, and is independent of the type of observable and the theory. Here we considered the change of momentum a particle, which for a black hole very far away would be very difficult to measure. However, we can also consider an observable such as the four-momentum of the radiated particles, or more precisely its expectation value. Of course, the operator corresponding to this observable gives zero when acting on the initial momentum states, and only gives a non-zero result when acting on the messenger states. Thus, for this observable only the real integrand, starting with $\abs{X}=1$ will contribute, the (?:lo) contribution being given by what is essentially the unitarity cut of a two loop amplitude. We see that regardless of observable, the objects that are needed are the amplitudes. 
+
+For each loop level, many diagrams can contribute, but the classical limit enforces that they must cancel the $\hbar$ orders given by @eq-hbarreal and @eq-hbarvirt. The cancellation order is dependent on the considered observable and filters the contributing diagrams. It can also be reformulated in the language of the method of regions. 
+
+To see the whole machinery in action, let us take (?:sqed) as an example theory, that shows the relevant subtleties of the formalism.

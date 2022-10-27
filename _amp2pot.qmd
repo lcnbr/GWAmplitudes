@@ -1,0 +1,53 @@
+
+Let us now look at how to map the amplitude to the gravitational potential within the (?:eob) formalism. We will follow the treatment in @Cheung:2018wkq. We start by defining the effective theory that describes our problem: thi orbiting bodies are described by two scalar fields $\wf[1]$ and $\wf[2]$ with masses $\mass[1]$ and $\mass[2]$ interacting through a long range potential $V(r)$. It is the (?:eft) for  non-relativistic fields. This (?:eft) is described by the following action
+
+$$
+\action=\int \dd{t} \lag[kin]+\lag[int],
+$$
+
+where the kinetic term is given by:
+
+$$
+\begin{aligned}
+\lag[kin]=&\int \dn[\small \Dim-1]{\tv{k}} \cwf[1](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[1]} }\wf[1](\tv{k}),
+\\
+&+\int \dn[\small \Dim-1]{\tv{k}} \cwf[2](-\tv{k}) \pa[\Big]{\im \partialder[t]-\sqrt{\tv{k}^2+\mass[2]} }\wf[2](\tv{k}),
+\end{aligned}
+$$
+
+and the interaction term is given by
+
+$$
+\lag[int]=  -\int \dn[\small \Dim-1]{\tv{k}} \dn[\small \Dim-1]{\tv{k'}} \pot(\tv{k},\tv{k'}) \cwf[1](\tv{k'}) \cwf[2](-\tv{k'}) \wf[1](\tv{k}) \wf[2](- \tv{k}).
+$$
+
+This theory is obtained from the full one by integrating out all the massless force carriers , which are consequently encoded in the potential $\pot(\tv{k},\tv{k'})$ and taking the non-relativistic limit $\abs{\tv{k}},\abs{\tv{k'}}\ll \mass[1,2]$. In a classical system we assume the particles to be separated by a minimum distance, called impact parameter $\abs{\tv{\impactParameter}}$, and consider that their Compton wavelength $\comptlen\sim\inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}$^[Note the use of natural units.] is much smaller than this separation,
+
+$$
+\abs{\tv{\impactParameter}}\ll \comptlen \simeq \inv{\abs{\tv{k}}},\inv{\abs{\tv{k'}}}.
+$$
+ 
+This ensures that the particles are not interacting quantum mechanically in any significant way. Interestingly this hierarchy of scales can be rewritten as:
+
+$$
+\tv{J}\sim\abs{\tv{k}\times\tv{\impactParameter}}\gg 1.
+$$
+
+Thus, any two body classical system has large angular momentum. We can extract the classical part of any quantity by taking the (?:lo) contribution in the inverse of the angular momentum, or equivalently:
+
+$$
+  \inv{J} \propto \inv{\abs{\impactParameter}} \sim \abs{\tv{k}-\tv{k'}}\propto \inv{\kappa},
+$$ {#eq-invang}
+
+where $\kappa$ is the coupling constant, which in the case of gravity is $\kappa=4\pi\grav$. For the first relation we used that angular momentum is proportional to separation. We then applied the fact that in scattering scenarios the impact parameter is proportional to the inverse of the momentum transfer  $\sim\inv{\abs{\tv{q}}}$ where :
+
+$$
+q=(0,\tv{q})=(0,\tv{k}-\tv{k'}).
+$$
+
+The last relation in @eq-invang holds due to the virial theorem. Since the potential must encode the coulomb potential $\kappa/\abs{\tv{k}-\tv{k'}}^2\propto J^3$, it must scale similarly. We thus formulate the following ansatz for the potential:
+$$
+\pot(\tv{k},\tv{k'})=\sum_{n=1}^\infty \frac{\kappa^n}{\abs{\tv{k}-\tv{k'}}^{\Dim-1-n}} c_n\pa[\Big]{\frac{\tv{k}^2+\tv{k'}^2}{2}}
+$${#eq-ansatzpot}
+
+Note that higher order terms in the potential could be formed by any polynomial of momentum invariants $\tv{k}^2$, $\tv{k'}^2$, and $\tv{k}\cdot\tv{k'}$. However, not all combinations of these are independent. The ansatz is chosen such that only the variables $\abs{\tv{k}-\tv{k'}}$ and $\tv{k}^2+\tv{k'}^2$ are present, as the others can be reabsorbed by field redefinitions, or vanish on-shell, such as $\tv{k}^2-\tv{k'}^2$. Note as-well that we work in $\Dim=4-2\dimreg$ dimensions such that the integrals are dimensionally regulated [see @tHooft:1972tcz]. In particular an $\dimreg$-power corresponds to a logarithm ^[The third term in the sum is given by $\coupling^3\ln{\tv{k}-\tv{k'}}^2 c_3\pa[\Big]{\Half{\tv{k}^2+\tv{k'}^2}}$.]. Finally, note that in gravity this is precisely a (?:pm) expansion! 

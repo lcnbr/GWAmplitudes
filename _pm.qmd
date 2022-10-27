@@ -1,0 +1,57 @@
+
+The (>>>:pm)  expansion is a weak field expansion of (?:efe), in the coupling constant $\grav$. It thus covers all orders in velocity of the (?:pn)  expansion, at any fixed $\grav$ order. We usually call $nPM$ the corresponding $\order[n]{\grav}$-truncated expansion. Historically, it was derived with the objective of being the radiation zone partner to the (?:pn)  expansion, as it provides a description of the propagation of the waves up to the observer. When used with the (?:pn) expansion in such a way, the (?:pm)  expansion is used to solve the vacuum (?:efe) . It is usually set up to compute a version of the metric perturbation that is exact:^[We have used $\weakmet$ to denote the linear perturbation, whereas $\pertmet$ is the all order metric perturbation.]
+
+$$\pertmet=\sqrt{-\metricTensor} \invmet-\invmink.$$
+
+
+The (?:pm)  expansion is then given as
+
+$$
+\sqrt{-\metricTensor} \invmet=\invmink+ \grav \invpertnmet{1}+\grav^2 \invpertnmet{2}+\ldots,
+$$
+
+meaning that:
+$$
+\invpertmet=\sum\limits_{n=1}^{\infty} \grav^n \invpertnmet{n} .
+$$
+
+The (?:efe)  for this metric perturbation, when imposing De-Donder gauge conditions (@eq-dedonder), is given by
+
+$$
+\SRDA \invpertmet=-16 \pi \grav \invpertmet \relSEct .
+$$ {#eq-relEFE}
+
+where $\relSEct$ is the effective energy-momentum tensor given by:
+
+$$
+\relSEct=(-\metricTensor)\SEct -\inv{16 \pi \grav}\ct[\mu\nu]{\Lambda}.
+$$
+
+$\ct[\mu\nu]{\Lambda}$ contains all non-linear terms of the Einstein tensor, and its definition can be obtained by comparing with @eq-EFE. Thus, it depends on the metric and thus on $\pertmet$ in a highly non-linearly fashion. We can write it as:
+
+$$
+\ct[\mu\nu]{\Lambda}=\ct[\mu\nu]{L}[\pertTensor,\pertTensor]+\ct[\mu\nu]{M}[\pertTensor,\pertTensor,\pertTensor]+\ct[\mu\nu]{N}[\pertTensor,\pertTensor,\pertTensor,\pertTensor]+\order[5]{\pertTensor}.
+$$
+
+Here the number of $\pertTensor$'s in the argument of $L,M$ and $N$ indicates the order of the non-linear term. In a vaccuum @eq-relEFE reduces to
+
+$$
+\SRDA \invpertmet=\ct[\mu\nu]{\Lambda},
+$$
+
+which we can solve iteratively order by order:
+
+$$
+\begin{aligned}
+\SRDA \invpertnmet{1}&=0,\\
+\SRDA \invpertnmet{2}&=\ct[\mu\nu]{L}[\pertnTensor[1],\pertnTensor[1]],\\
+\SRDA \invpertnmet{3}&=\ct[\mu\nu]{M}[\pertnTensor[1],\pertnTensor[1],\pertnTensor[1]]+\ct[\mu\nu]{L}[\pertnTensor[1],\pertnTensor[2]]++\ct[\mu\nu]{L}[\pertnTensor[2],\pertnTensor[1]]\\
+\end{aligned}
+$$
+
+This method can be supplemented by a multipolar expansion of the $\invpertnmet{n}$, truncated to the specific (?:pm) order we are interested in. This combined expansion was pioneered by [Bonnor and Rosenhead @Bonnor:1959], then formalised by [Thorne @Thorne:1980ru], and finally applied in this present context by [Blanchet @Blanchet:1986]. 
+
+
+In terms of source dynamics, it is more appropriate (and uniquely able) to describe inherently relativistic phenomena, such as gravitational scattering. Its wider scope of applicability comes at the cost of a higher computational complexity, as at higher orders one encounters intricate families of relativistic integrals. Note that we have in fact computed the  1 (?:pm)  approximation already in the @sec-gwdetect when we linearized the (?:efe). Higher orders are far more difficult to obtain, especially for sources such as (?:bbh). 
+
+With the rise of amplitude techniques from high energy physics, both (?:eft)  and full theory results have been successful in extracting previously unreachable orders. Such techniques are perfectly suited to compute relativistic scattering as they were developed for this specific task. We will see this in the next chapter. 

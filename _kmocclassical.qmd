@@ -1,0 +1,238 @@
+
+Since we are concerned with classical observables, we need to explore the classical limit of @eq-DeltaO, i.e. the limit of $\hbar \to 0$. We first discuss the classical limit of wave-functions. We impose multiple conditions on the wave-functions. The first are those imposed by (?:lsz) reduction. That is,
+
+- Compact support momentum space wave-function
+- Peaked around one value of momenta
+
+Furthermore, the classical limit of the wave-functions should make sense, i.e. 
+
+1. as $\hbar \to 0$ the position and momentum wave-function should approach Dirac delta functions, centered around their classical values.
+3. The overlap between the wave-function and its conjugate should be nearly full, since they represent the same particle classically.
+
+Consider for example a non-relativistic wave-function for a particle of mass  $\mass$:
+
+$$
+f(\tv{\emom})=\Exp[\Big]{-\frac{\abs{\tv{\emom}}}{2 \hbar m \comptlen/\wfwidth^2}}\stackrel{\hbar=\comptlen m}{=}\Exp[\Big]{-\frac{\abs{\tv{\emom}}}{2 m^2 \comptlen^2 /\wfwidth^2}},
+$$
+
+where $\comptlen=\frac{\hbar}{m}$ is the compton wavelength of the particle and $\wfwidth$ is a characteristic width. This wave-function, with the proper normalization, grows sharper in the $\hbar \to 0$ limit. If we now take the Fourier transform of $f(\tv{\emom})$ to obtain the position "probability density", we have:[^constA]
+$$
+\begin{aligned}
+\invFT[\tv{\emom}]{f}{\tv{x}}(\tv{x})   &=\int \frac{\dd{\tv{\emom}}}{2 \pi} \Exp[\Big]{-\pa[\big]{\frac{\tv{\emom}}{A}}^2}\Exp[\Big]{-\frac{\im}{\hbar} \tv{\emom}\cdot \tv{x}}\\
+            &=\frac{1}{2\pi}\underbracket{\int \dd{\tv{\emom}} \Exp[\Big]{-\pa[\Big]{\frac{\tv{\emom}}{A}-\frac{\im\tv{x}A}{2 \hbar}}^2}}_{\sqrt{\pi}A}\Exp[\Big]{- \frac{\tv{x}^2A^2}{4 \hbar^2}}\\
+      &=\frac{\sqrt{2}A}{2 \pi}\Exp[\Big]{-\frac{\tv{x}^2}{2 \wfwidth^2}}.
+\end{aligned}
+$$
+
+This elucidates more clearly the meaning of characteristic width, as $\wfwidth$ is the standard deviation of the wave-function in position space. Thus, the position-space wave-function grows sharper in the $\wfwidth^2 \to 0$ limit. For both wave-functions to simultaneously grow sharper in the classical limit, we must then have that $\xi=\pa{\frac{\comptlen}{\wfwidth}}^2\to0$ remembering that the $\hbar \to 0$ limit is just given by the $\comptlen\to0$ one. Finally the meaning of classical limit in this context is the $\xi \to 0$ limit. 
+
+
+Going back to the general conditions, we want a wave-function $\wf[i](\emom[i])$ such that in the classical limit the momentum reaches its classical value: $\cls{\emom[i]}=\mass[i]\cls{\vel[i]}$, with $\cls{\vel[i]}$ the classical four-velocity of particle $i$, normalized to $\cls{\vel[i]}^2=1$. In other words,
+
+$$
+\av{\ct{\emom[i]}}=\int \ddP{\emom[i]} \ct{\emom[i]} \abs{\wf[i](\emom[i])}^2\stackrel{!}{=}m_i \breve{u}_i^\mu (1+\order[\beta']{\xi}),
+$$
+
+where $\beta'$ encodes the speed at which the classical value is reached in the $\xi\to0$ limit. The velocity normalization convergence is controlled by $\beta''$
+$$\breve{u}_i \cdot u_i = 1+ \order[\beta'']{\xi},$$
+
+Finally wave-function's spread is controlled by $\beta$, and must converge to 0:
+$$\begin{aligned} \sigma^2(\emom[i])/m_i^2&=\inv{m_i^2}\av{(\emom[i]-\av{\emom[i]})^2}\\&=\inv{m_i^2}(\av{\emom[i]^2}-\av{\emom[i]}^2)\\&=\inv{\mass[i]^2}(\mass[i]^2-(\mass[i]\cls{\vel[i]}(1+\order[\beta']{\xi}))^2)
+\\&\propto\xi^\beta,\end{aligned}$$
+
+where $\av{\emom[i]^2}=m_i^2$ is enforced by the measure $\ddP{\emom}$. 
+
+Additionally, the wave-function should be Lorentz invariant, and naively we would have that $\wf(\emom[i]^\mu)=\wf'(\emom[i]^2)$. However the integration measure enforces an on-shell condition: $m_i^2=\emom[i]^2$. Thus the wave-function cannot depend on $\emom[i]^2$, and we need to introduce at least one additional four vector parameter $u$. The simplest dimensionless combination of parameters it then $\frac{\emom \cdot u }{m}$. Of course the wave-function must also depend on $\xi$ and the simplest form of argument will thus be $\frac{\emom \cdot u }{m \xi}$ so that any $\emom$ not aligned with $u$ will be strongly suppressed in the $\xi \to0$ limit.
+
+We now have control over most of the conditions:
+
+- The classical limit is well-defined
+- The wave-function spread is controlled
+- The arguments of the wave-function are clear
+
+We can write a general wave-function that satisfies the above as:
+
+$$
+f(\frac{\emom \cdot u }{m}\vert\cls{\vel[i]};\mass[i] ;\beta^{(i)}).
+$$
+
+This function can take the form of a Gaussian, or something similar to @eq-peak. Now there is one final requirement, that concerns the overlap of $\wf$ and $\cwf$ must be $\mathcal{O}(1)$, equivalently and more precisely:
+
+$$
+\cwf(\emom+\tm)\sim \cwf(\emom) \implies \cwf(\emom+\tm)- \cwf(\emom)\ll 1 \implies \ct{\tm}\pdv{}{\ct{p}}\cwf(\emom)\ll1.
+$$
+Making explicit the $\frac{\emom \cdot u }{m \xi}$ dependence: $\wf(\emom)=\varphi(\frac{\emom \cdot u }{m \xi})$   for $\varphi(x)$ a scalar function.
+$$\implies \frac{\ct{\tm} u_\mu}{m \xi}\odv{\varphi^*(x)}{x}\Bigr|_{\frac{\emom \cdot u }{m \xi}}\ll  1.$$
+
+Thus we require that for a characteristic value of $\tm=\co[0]{\tm}$ we have:
+
+$$
+\frac{\co[0]{\tm}\cdot u}{m \xi}=\co[0]{\tw} \cdot u\frac{\wfwidth^2}{\comptlen}\ll1\iff \co[0]{\tw} \cdot u\,\wfwidth\ll \sqrt{ \xi},
+$$
+
+having we denoted by a bar any quantity that has been rescaled by $\hbar$. Thus, a momentum $\emom$, when divided by $\hbar$ will be written $\bar{\emom}$ and called wave-number. We will combine this inequality with ones we obtain from the specific cases of integrations required above. 
+
+We now want to examine the classical limit of the integrands of the form @eq-DeltaOv. If we consider just the integration over the initial momenta $\emom[i]$ and the initial wave-functions with $\ndeltafn{2 \emom[i] \cdot \tm+\tm^2}$, the delta function will smear out to a sharply peaked function whose scale is of the same order as the original wave-functions. As $\xi$ gets smaller, this function will turn back into a Dirac delta function imposed on the $\tm$ integration. Let us examine this statement more closely. We are interested in the classical limit of the integrals such as:
+
+
+$$
+d(m,\xi,u,\tm)=\int \ddP{\emom} \ndeltafn{2 \emom \cdot \tm+\tm^2} \thetafn{\emom^0+\tm^0}\varphi \pa[\Big]{\frac{\emom \cdot u }{m \xi}}\varphi^*\pa[\Big]{\frac{(\emom+\tm) \cdot u }{m \xi}}.
+$${#eq-dfunct}
+
+
+This integral must be Lorentz invariant and depends on $m,\xi, u,\tm$ thus it must manifestly only depend on the following Lorentz invariants: $u^2,\tm^2,u \cdot \tm, \xi$. One of these is not actually a variable as we will normalise $u^2=1$. The rest are not fully dimensionless, but we can render them dimensionless:
+
+$$
+\begin{aligned}
+\brc{\tm^2} &=[\hbar \tw]^2=[M]^2\implies[\comptlen \sqrt{-\tw^2}]=[\frac{\hbar}{m}\sqrt{-\tw^2}]=\frac{[M]}{[M]}=1,\\
+[u \cdot \tm]&=[M]\implies [\frac{u \cdot\tw}{\sqrt{-\tw^2}}]= [\frac{u \cdot{\tm}}{\sqrt{-{\tm}^2}}]=\frac{[M]}{[M]}=1,\\
+[\xi]&=1.
+\end{aligned}
+$$
+
+If we call $\frac{1}{\sqrt{-\tw^2}}=\scatlen$ a scattering length[^7] then our dimensionless ratios become :
+
+$$\frac{\comptlen}{\scatlen} \quad \text{and}\quad \scatlen\,\tw \cdot u .$$
+
+The Dirac delta function can then be rewritten as:
+$$
+\ndeltafn{2 \emom \cdot \tm+\tm^2}=\ndeltafn{2\hbar m\, u\cdot \tw+\hbar^2 \tw^2}=\frac{1}{\hbar m}\ndeltafn{2 \tw \cdot u-\frac{\comptlen}{\scatlen^2}}=\frac{\scatlen}{\hbar m}\ndeltafn{2\scatlen\, \tw \cdot u-\frac{\comptlen}{\scatlen}}.
+$$
+
+Performing the integration over $\emom$ in @eq-dfunct we obtain symbolically:
+
+$$
+d(m,\xi,u,\tm)=\text{peaked function imposing that } {2\scatlen\, \tw \cdot u=\frac{\comptlen}{\scatlen}}\text{ with width } \xi^\beta.
+$$
+
+
+
+
+
+
+
+```{julia}
+#| echo: false
+#| label: fig-gaussian
+#| fig-cap: "Sharpening gaussian"
+#| column: margin
+using Plots
+
+function delta(x)
+    if abs(x)<1e-3
+        return 1
+    else
+        return 0
+    end
+end
+
+function gauss(x)
+    return exp(-x^2)
+end
+
+function sharpen(f,eps,power)
+    return x->f(x/eps^power)/eps^power
+end
+
+epss=0.02:0.01:0.1
+
+
+
+p=plot([sharpen(gauss,eps,1) for eps in epss], -0.5,0.5,label=epss')
+```
+
+
+Let us disucss the wave-function and the scales from a physical perspective. The characteristic width $\wfwidth$ is the particle's position uncertainty, $\frac{\hbar}{\wfwidth}$ is the associated momentum uncertainty. In the classical limit the position uncertainty is neglible with respect to minimum distance between the particles $\scatlen$:
+
+$$
+\wfwidth\ll \scatlen,
+$$
+
+and the momentum uncertainty is neglible with respect to the masses of the particles:
+
+$$
+\frac{\hbar}{\wfwidth}\ll m \implies \comptlen\ll \wfwidth.
+$$
+
+Putting these together we obtain the goldilocks inequality:
+
+$$
+\comptlen\ll\wfwidth\ll\scatlen.
+$$
+
+Looking back at the arguments of $d$ we see that 
+
+$$
+\scatlen\, \tw \cdot u\gg\wfwidth \tw \cdot u \sim \sqrt{\xi} =   \frac{\comptlen}{\wfwidth}\gg\frac{\comptlen}{\scatlen}.
+$$
+
+Thus in the classical limit we have that $d$ collapses to:
+
+$$
+d(m,\xi,u,\tm)\propto\ndeltafn{ \tw \cdot u}.
+$$
+
+Thus, the wave-function-weighted on-shell phase-space integration disappears in the classical limit. The resulting condition is that the integration momenta take on their physical values. The sequence that we have gone through should be done for all the integrands of type $d$. We will not do this explicitly every time but instead apply the following rules:
+
+1. Just as for the massless transfer momentum any messenger momentum, be it transfer, virtual-loop or real emmission, shall become a wave-number: $k\to \hbar \bar{k}$. 
+2. Replace all couplings with their dimensionless counterparts: $\coupling\to \frac{\coupling}{\sqrt{\hbar} }$ (this is only precisely true for (?:sqed) and gravity, which are the applications we are interested in).
+2. Eliminate all on-shell integrations by approximating $\wf(\emom+\hbar\tw)$ by $\wf(\emom)$.
+3. Laurent expand all the integrands in $\hbar$.
+3. Make the integration momenta take on their physical values: $\emom[i]\to \mass[i]\cls{\vel[i]}$.
+
+To make this idea explicit we introduce the following notation, meaning that the steps above have been applied
+
+
+$$
+\AAngle{g(\emom[1],\emom[2],\dots)}\defeq \int\limits \ddP{\emom[1]}\ddP{\emom[2]} \abs{\wf[1](\emom[1])}^2\abs{\wf[2](\emom[2])}^2\,g(\emom[1],\emom[2],\dots)
+$$
+
+We can now rewrite @eq-DeltaO
+
+$$
+\changeob = \AAngle{\int \overbracket{\dn[4]{\tm} \ndeltafn{2\emom[1]\cdot \tm +\tm^2}\thetafn{\ct[0]{\emom[1]}+\tm^0}  
+                                          \ndeltafn{2\emom[2]\cdot \tm -\tm^2}\thetafn{\ct[0]{\emom[2]}+\tm^0}}^{\dPs{\tm}}
+                  \exp{{-\frac{\im}{\hbar}}\tm^\mu b_\mu}\pa[\Big]{\vIntp+\rIntp} },
+$$ {#eq-DeltaOclas}
+
+where 
+$$
+\begin{aligned}
+\vIntp      &=\im\,  \obschange{\tm} \amp{\emom[1],\emom[2] }{\emom[1]+\tm,\emom[2]-\tm}\\
+\rIntp      &=\sum\limits_X \int \ddP[2+\abs{X}]{r_1,r_2,X}\obschange{rX-\emom} 
+                  \ndeltafn[(4)]{\emom[1]+\emom[2]-r_{1}-r_{2}-r_{X}} \\
+            &\times   \amp{\emom[1], \emom[2] }{ r_{1}, r_{2}, r_{X}} \aamp{\emom[1]+\tm, \emom[2]-\tm }{ r_{1}, r_{2}, r_{X}}.
+\end{aligned}
+$$
+
+Additionally, we make clear the dependence on $\hbar$ since we want to eventually take the $\hbar \to0$ limit. We apply step 1. above, and change integration variables to $\tw=\frac{\tm}{\hbar}$ and absorb the $\hbar$ dependence into the redefinition of the integrands and the measure:
+
+$$
+\begin{aligned}
+\dPs{\tm}
+&=\hbar^2\dPsb{\tw}
+=\hbar^{\cancelto{2}{4}}\dn[4]{\tw} 
+\cancel{\frac{1}{\hbar}}\ndeltafn{2\emom[1]\cdot\tw+\hbar\tw^2}
+\thetafn{\ct[0]{\emom[1]}+\tm^0}
+\cancel{\frac{1}{\hbar}}\ndeltafn{2\emom[1]\cdot \tw +\hbar\tw^2}
+\thetafn{\ct[0]{\emom[2]}+\tm^0},
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\vIntb&=\hbar^2\vIntp,\\
+\rIntb&=\hbar^2\rIntp.
+\end{aligned}$$
+
+We can finally neatly write:
+
+$$\Delta O=\AAngle{\int \dPsb{\tw}\exp{-\im\tw^\mu b_\mu}\pa[\Big]{\vIntb+\rIntb}}  .$$
+
+The $\hbar$ dependence is now entirely contained in the integrands  (ignoring the $\hbar \tw^2$ factors in the delta function). The classical limit of this observable is then simply, 
+
+$$
+\Delta O_{\text{classical}}=\lim_{\hbar\to0}\hbar^{\beta_{LO}}\brc[\Big]{\int \dPsb{\tw}\pa[\Big]{\vIntb+\rIntb}},
+$$
+ 
+dropping the angle brackets, since these dissappear in the classical limit. Here $\beta_{LO}$ is the (?:lo) $\hbar$-dependence of the observable. This is so that $\Delta O_{\text{classical}}\sim\hbar^0$ i.e. classical scaling.

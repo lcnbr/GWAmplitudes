@@ -1,0 +1,104 @@
+
+Now that we have the general form of the solutions to the linearized Einstein equations, we can proceed to the analysis of sources of (?s:gw). The first step is to analyse the equations in the frequency domain. We will use the following notation:
+
+$$\FT[t]{\phi}{\omega}(\omega,\tv{x})=\int \dd{t} \phi(t,\tv{x}) \exp{\im\omega t}$$
+$$\invFT[\omega]{\phi}{t}(t,\tv{x})=\int \frac{\dd{\omega}}{2\pi} \FT[t]{\phi}{\omega}(\omega,\tv{x}) \exp{- \im \omega t}$$
+
+Let us look at frequency domain of the solution given in @eq-solInhomt. We have
+$$\begin{aligned} 
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x}) &=\int \dd{t} \weakmet(t,\tv{x}) \exp{\im\omega t}
+\\ &=4\grav\int\dd[3]{\tv{y}}\dd{t} \frac{\srcco(t-\abs{\tv{x}-\tv{y}},\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t}
+\\ &=4\grav\int\dd[3]{\tv{y}}\dd{t_r} \frac{\srcco(t_r,\tv{y})}{\abs{\tv{x}-\tv{y}}}  \exp{\im\omega t_r}\exp{\im\omega\abs{\tv{x}-\tv{y}}}
+\\ &=4\grav\int\dd[3]{\tv{y}} \frac{\FT[t_r]{\srcco}{\omega}(\omega,\tv{y})}{\abs{\tv{x}-\tv{y}}} \exp{\im\omega\abs{\tv{x}-\tv{y}}} .
+\end{aligned}
+$$ {#eq-FTweakmet}
+
+We can now apply various approximations to this form of the perturbation:
+
+1. Consider a compact source, centered on the origin of our coordinate system. This implies that $\srcco$ is peaked and compactly supported in a region around the origin. We look at the radiation only in the so called *wave zone*, at a distance $r=\abs{\tv{x}}$ much larger than the dimensions of the source $R=\abs{\tv{y}}_\text{max}$.
+2. We assume that $r \gg \frac{1}{\omega}$, i.e long wavelengths don't dominate. 
+3. We assume that $r \gg \omega R^2$, i.e. the ratio of $R$ to the wavelength is not comparable to the ratio of $r$ to $R$. Using this approximation we can write:
+
+$$
+\begin{split}
+    \abs{\tv{x}-\tv{y}} &= r\left(1-2\hat{\tv{x}}\cdot\tv{y}+\frac{\tv{x}^{\prime2}}{r^2}\right)^{1/2} , \\
+    \abs{\tv{x}-\tv{y}} &\approx r\left(1-\frac{\hat{\tv{x}}\cdot\tv{y}}{r}\right) \quad \text{with: } \hat{\tv{x}} = \frac{\tv{x}}{r}.
+\end{split}
+$$
+
+If we additionally further separate the scales in the following way ^[We just add the condition that $\frac{1}{\omega}\gg R$, that is the source radius is much smaller than the wavelength.]
+
+$$
+r\gg \brc{\frac{1}{\omega},\omega R^2}\gg R,
+$$
+
+Then @eq-FTweakmet becomes much simpler^[The approximations all conspire to be able to neglect the $\tv{y}$ dependence of $\frac{\exp{\im\omega\abs{\tv{x}-\tv{y}}}}{\abs{x-y}}$ in the integral.]:
+
+$$
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=4\grav\frac{\exp{\im\omega r}}{r} \int\dd[3]{\tv{y}} \FT[t]{\srcco}{\omega}(\omega,\tv{y}) .
+$${#eq-FTweakmet2}
+
+Now, let us look at the Fourier transform of the source term. By definition, we have
+
+$$
+\FT[t]{\srcco}{\omega}(\omega,\tv{y})=\FT[t]{\SEco}{\omega}(\omega,\tv{y})+\half \mink\FT[t]{\trSE}{\omega}(\omega,\tv{y})
+$$
+
+Thus, we can study the Fourier transform of $\SEco$, $\FT[t]{\SEco}{\omega}$ instead. Using the conservation equation @eq-SEcons in Fourier $t$-space, we obtain:
+
+$$
+-\ipdv[^]{ \FT[t]{\SEco[i\mu]}{\omega}}{i} = \im \omega\FT[t]{\SEco[0\mu]}{\omega}
+$${#eq-FTSEcons}
+
+
+This equation becomes algebraic when we further Fourier transform in $\tv{x}$-space:
+
+$$
+\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}(\ct[\alpha]{k}) =\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}(\omega,\tv{k}) = \int \dd[3]{\tv{y}} \FT[t]{\SEco}{\omega}(\omega,\tv{y}) \exp{\im\tv{k}\cdot\tv{y}}
+$$
+Then the conservation equation becomes:
+$$
+\ct{k}\SEco(\omega,\tv{k}) = 0
+$$
+
+These four equations relate the time components of $\ft[\tv{x}]{\SETensor}{\tv{k}}_{\mu\nu}$ to the spatial ones. We now apply @eq-FTSEcons to itself to obtain:
+
+$$
+\ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=-\omega^2\FT[t]{\SEco[00]}{\omega}
+$$
+which, when multiplied by $\co[m]{x}\co[n]{x}$, and integrated over $\tv{x}$ gives^[Two integrations by parts cancel the $\co[m]{x}\co[n]{x}$ term in the (?:lhs) and since boundary terms are 0 (the source is finite) we have $$\int \dd{x} \co[m]{x}\co[n]{x} \ipdv[^]{\FT[t]{\SEco[ij]}{\omega}}{ij}=\int\dd{x} \ipdv[^]{\co[m]{x}\co[n]{x}}{ij} \FT[t]{\SEco[ij]}{\omega}$$ 
+The hessian of $\co[m]{x}\co[n]{x}$ is $(\kron[^i_m]+\kron[^i_n])(\kron[^j_n]+\kron[^j_m])$, but since $\SEco$ is symmetric the integral is $$\int \dd{\tv{y}} 2\FT[t]{\SEco[mn]}{\omega}(\omega,\tv{y}) $$]
+$$
+\int \dd{\tv{x}} \FT[t]{\SEco[mn]}{\omega}(\omega,\tv{x})=-\Half[\omega^2] \int \dd{\tv{x}} \co[m]{x}\co[n]{x} \FT[t]{\SEco[00]}{\omega}(\omega,\tv{x}).
+$$
+
+Notice that the integral on the (?:rhs) is in fact the Fourier transform of the quadrupole moment tensor of the energy density:
+
+$$
+\quadmom[mn]=\int \co[m]{x}\co[n]{x} \SEco[00](t,\tv{x})\dd[3]{x}.
+$$ {#eq-quadmom}
+
+
+We call its Fourier transform $\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)$ and we can finally rewrite @eq-FTweakmet2 as:
+
+
+$$
+\FT[t]{\weakmet}{\omega}(\omega, \tv{x})=-{2\grav\omega^2}\frac{\exp{\im\omega r}}{r} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}
+$$
+
+Going back $t$-space we have:
+
+$$
+\begin{aligned}
+\weakmet(t,\tv{x})&=-\frac{\grav}{\pi r}\int \dd{\omega} \exp{-\im\omega(t-r)} \omega^2 \pa{\ft[t]{\quadmom[]v}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{\grav}{\pi r}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
+&=\frac{2\grav}{r}\odv[2]{}{t}\pa{\quadmom[mn](t_r)+\half\mink \quadmom[]^n{}_n(t_r)}
+\end{aligned}
+$$ {#eq-metricquadmom}
+
+This equation has a nice physical interpretation. The gravitational wave produced by a non-relativistic source is proportional to the second derivative of the quadrupole moment of the energy density at the time $t_r$ where the past light cone of the observer intersects the source. The nature of gravitational radiation is in stark contrast to the leading electromagnetic contribution which is due the  change in the *dipole* moment of the charge density. The change of the dipole moment can be attributed to the change in center of charge (for (?:em)), or mass (for (?:gr)). While a center of charge is free to move around, the center of mass (of an isolated source) is fixed by the conservation of momentum, so the dipole moment is zero.
+
+The quadrupole moment, on the other hand, is  sensitive to the shape of the source, which a gravitational system can modify. We observe that the quadrupole radiation is sub-leading when compared to dipole radiation. Thus, on top of the much smaller coupling constant, gravitational radiation is also weakened by this fact, and thus is usually orders of magnitude weaker than electromagnetic radiation. 
+
+
+In summary, any object that is modifying its shape is a source of (?s:gw). All orbiting systems therefore are sources of (?s:gw) . However, as outlined above, only significant 'changes in shape' have a chance to be detectable. We will now explore these phenomena.
