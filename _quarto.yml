@@ -232,7 +232,6 @@ format:
     fontsize: "11pt"
     from: markdown-latex_macros
     documentclass: scrreprt
-    classoption: [twoside]
     papersize: a4
     colorlinks: true
     include-in-header: preamble.tex
