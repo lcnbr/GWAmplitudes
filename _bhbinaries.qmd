@@ -30,7 +30,7 @@ $$
 and the metric perturbation is given by @eq-hnorm:
 
 $$
-h = \frac{R_S^2}{r\dist}.
+h = \frac{R_S^2}{\dist}.
 $$
 
 

@@ -216,7 +216,6 @@ acronyms:
     
 csl: physical-review-letters.csl
 
-
 pdf-engine: lualatex
 
 format:

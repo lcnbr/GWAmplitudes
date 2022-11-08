@@ -1,6 +1,13 @@
 
 How could one construct a very powerful source of (?s:gw) ? An example would be that of two highly-massive bodies (such that $\SEco[00]$ is large) that orbit each other. Furthermore, in order for the (?s:gw) emitted by the system to be detectable they must orbit close enough to each other that their quadrupole moment is large. For these very massive objects to be close enough for a small orbit, they have to be very compact. Assuming that is the case, a funny thing happens, as these objects orbit each other, they emit (?s:gw) , and in doing so they lose energy ^[Of course this happens in every orbiting system just on a timescale that is negligible. Only systems which are massive enough to produce large amounts of radiation actually lose enough energy for it to matter.]. Thus, they slow down, and their orbit shrinks. This continues until the orbit is so small that the objects merge into a single object. Of course this is a significant change of shape, and thus we have a constructed (if not all on purpose) a very powerful source of (?s:gw) . Such objects are called compact binaries.
 
+Let us consider two massive bodies orbiting each other. The mass of each body is $\mass[1]$ and $\mass[2]$ respectively. The distance to the observer is $r$ and the separation between the object is given by $R$. The setup is shown in @fig-compact-binaries
+
+::: {.column-margin}
+
+![Compact binary setup](Compact%20binaries.png){#fig-compact-binaries}
+:::
+
 
 To (?:lo) in $\grav$ the motion of the binary is described by a Newtonian circular orbit. In barycentric coordinates, such a system is in fact equivalent to effective one body ^[This choice of wording is not a coincidence as we shall see] of reduced mass $\redmass=\frac{\mass[1]\mass[2]}{\totmass}$ orbiting in a gravitational potential of mass $\totmass=\mass[1]+\mass[2]$, at a distance $R$ equal to the distance between the two bodies forming the binary. The orbit is characterized by a balancing act between the gravitational attraction due to the potential and the centripetal force due to the motion of the reduced mass:^[Or equivalently between conserved angular momentum and the derivative of the potential energy.] 
 
@@ -67,6 +74,6 @@ $$
 where we have expanded in small $\dist$ in the second relation. The metric perturbation is then given by @eq-metricquadmom and has norm proportional to:
 
 
-$$q
+$$
 h \propto \frac{\ddot{\quadmom[]}}{r} \propto \frac{1}{r} \frac{\grav\mass[1]\mass[2]}{\pa{\mass[1]+\mass[2]}^{\frac{1}{3}}}\Omega^{\frac{2}{3}}.
 $$ {#eq-hnorm}

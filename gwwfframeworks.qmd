@@ -15,9 +15,15 @@ Crucially, the waveform generation must be able to cover the whole parameter spa
 
 In this chapter we will describe the first-principles waveform generation tools currently being developed. More specifically we will explore techniques for compact binary waveforms. In this context waveforms may describe  inspiralling or scattering binaries. Currently, only the inspiralling binaries have been detected, as these are the systems whose signal (?:ligo) and other detectors are most sensitive to (see @sec-ligo), other than being by far the most common emitters of high-intensity (?s:gw). As discussed in @sec-compactbinaries, orbiting and (?:gw)  emitting compact objects will necessarily inspiral and merge at some point. 
 
-For such inspiraling binaries, the waveform features 3 distinct phases: a first *inspiral phase*, a *merger phase* where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or *ringdown phase*, where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase is characterized by different dynamical properties of the orbiting bodies and thus different frameworks are aimed at describing the corresponding features of the waveforms. Even the description of one phase involves different regimes, and thus more specific framework, additionally dependent on the type/initial state of the two orbiting bodies.
+For such inspiraling binaries, the waveform features 3 distinct phases shown in : a first *inspiral phase*, a *merger phase* where a remnant compact body is produced as a result of the coalescence of the two objects, and a postmerger, or *ringdown phase*, where the remnant still emits gravitational radiation while settling to its new stable configuration. Each phase is characterized by different dynamical properties of the orbiting bodies and thus different frameworks are aimed at describing the corresponding features of the waveforms. Even the description of one phase involves different regimes, and thus more specific framework, additionally dependent on the type/initial state of the two orbiting bodies.
+
+::: {.column-margin}
+![The different phases of an inspiraling binary. Source @LIGOScientific:2016aoc](compactbin.png)
+:::
 
 There is also hope to detect scattering binaries as argued in @Mukherjee:2020hnm, but they are currently mainly used as a testbed for new theories making use of particle physics knowledge. Additionally, one might be able to extend their validity to inspiraling binaries [see @Kalin:2019rwq]. 
+
+
 
 Most of these techniques have two important parts. The first consists in the precise modelling of the evolution of the emitting system. In most cases, this boils down to obtaining the (?s:eom) for the interacting bodies. For scattering, this can just be the amplitude of the event. The second part is extracting the variation of the metric due to the source movement at the measurement point, far away from the source, i.e., the waveform. Of course, the metric at the source is tightly coupled to the dynamics of the system, and thus the approximations conducted at the source also effects the way one extracts the waveform. 
 

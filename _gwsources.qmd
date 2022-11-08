@@ -90,7 +90,7 @@ Going back $t$-space we have:
 
 $$
 \begin{aligned}
-\weakmet(t,\tv{x})&=-\frac{\grav}{\pi r}\int \dd{\omega} \exp{-\im\omega(t-r)} \omega^2 \pa{\ft[t]{\quadmom[]v}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
+\weakmet(t,\tv{x})&=-\frac{\grav}{\pi r}\int \dd{\omega} \exp{-\im\omega(t-r)} \omega^2 \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
 &=\frac{\grav}{\pi r}  \odv[2]{}{t}\int \dd{\omega} \exp{-\im\omega(t_r)} \pa{\ft[t]{\quadmom[]}{\omega}_{mn}(\omega)+\half\mink\ft[t]{\quadmom[]}{\omega}^n{}_{n}(\omega)}\\
 &=\frac{2\grav}{r}\odv[2]{}{t}\pa{\quadmom[mn](t_r)+\half\mink \quadmom[]^n{}_n(t_r)}
 \end{aligned}

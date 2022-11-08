@@ -15,7 +15,7 @@ tp = TikzPicture(L"""
     \node {$\displaystyle\frac{\im}{k_0-\sqrt{\mathbf{k}^2+m_{\textcolor{red}{1}, \textcolor{blue}{2}}^2}+\im 0},$}; \\
   };"""
 , options="thick, transform shape",preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings}\\input{../latexmacros.tex}\\usepackage{xcolor}")
-save(PDF("./tikz/propagator.pdf"), tp)
+save(SVG("./tikz/propagator"), tp)
 save(TEX("./tikz/propagator"; limit_to=:picture), tp)
 tp
 ```
@@ -49,7 +49,7 @@ tp = TikzPicture(L"""
     \node {$\displaystyle\im V(\mathbf{k},\mathbf{k'}).$}; \\
   };"""
 ,preamble="\\usepackage{adjustbox}\\usepackage{amsmath}\\usetikzlibrary{decorations.markings,graphs,decorations.pathmorphing,graphdrawing,quotes}\\usegdlibrary{trees,force}\\input{../latexmacros.tex}")
-save(PDF("./tikz/vertex.pdf"), tp)
+save(SVG("./tikz/vertex"), tp)
 save(TEX("./tikz/vertex"; limit_to=:picture), tp)
 tp
 ```
@@ -130,7 +130,7 @@ $$
 \end{aligned}
 $$
 
-where $\redEratio=\frac{\energy[1]\energy[2]}{\pa{\energy[1]+\energy[2]}^2}$ is the reduced energy ratio. The arguments of the coefficient functions $c_1$ are kept implicit and a prime denotes a derivative with respect to $\tv{\emom}$. Additionally, we defined $\tv{q}=\tv{p'}-\tv{p}$ to be the 3-momentum transfer. 
+where $\redEratio=\frac{\energy[1]\energy[2]}{\pa{\energy[1]+\energy[2]}^2}$ is the reduced energy ratio. The arguments of the coefficient functions $c_1$ are kept implicit and a prime denotes a derivative with respect to $\tv{\emom}$. 
 
 The key point is that the matching procedure requires the EFT amplitude for two-to-two scattering to be equal to the full amplitude at every order in the coupling constant $\coupling$, i.e. provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we impose that
 
@@ -141,7 +141,7 @@ $$
 which fixes the coefficients in the potential ansatz @eq-ansatzpot, and fulfills the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e., the classical and non-relativistic limit, which is summarized by the following hierarchy of scales:
 
 $$
-\mass[1],\mass[2]\ll J \abs{\tv{q}} \ll \abs{\tv{q}}.
+\mass[1],\mass[2]\gg J \abs{\tv{q}} \gg \abs{\tv{q}}.
 $$
 
 In the full theory this hierarchy is equivalent to restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:

@@ -55,7 +55,16 @@ $$
 \weakmet[0\mu]=0,\quad \trweakmet=0, \quad \ipdv[^]{\weakmet}{\nu}=0.
 $$
 
-The metric perturbation in this gauge is written as:  $\weakTTmet$. 
+The metric perturbation in this gauge is written as:  $\weakTTmet$. In emtpy space we can write the two independent components of the metric perturbation as:
+
+$$
+\weakTTmet[a b](t, \tv{x})=\left(\begin{array}{cc}
+h_{+} & h_{\times} \\
+h_{\times} & -h_{+}
+\end{array}\right)_{a b} \cos [\omega t-\tv{k}\cdot\tv{x}],
+$$
+
+where $h_{+}$ and $h_{\times}$ are the so-called plus and cross polarisations.
 
 ## Inhomogeneous solutions
 

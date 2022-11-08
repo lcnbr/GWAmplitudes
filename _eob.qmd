@@ -1,5 +1,9 @@
 
-The second full-waveform generation technique is the (>>>:eob) formalism. It was initially developed by [Buonanno and Damour @Buonanno:1998gg], as a non-perturbative re-summing of the (?:pn)  expansion. It was later extended to include the merger and ringdown effects in [Buonanno and Damour @Buonanno:2000ef]. Thus, it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the (?:pn)  expansions have gotten better. More recently (?:pm) results have also been included @Damour:2016gwp. Additionally, (?:eob) can be combined with (?:nr) to produce a very accurate waveform, with less computational overhead than (?:nr)  alone. 
+The second full-waveform generation technique is the (>>>:eob) formalism. It was initially developed by [Buonanno and Damour @Buonanno:1998gg], as a non-perturbative re-summing of the (?:pn)  expansion. It was later extended to include the merger and ringdown effects in [Buonanno and Damour @Buonanno:2000ef] and one can see the produced waveform in @. Thus, it became the first full waveform generating technique to actually produce a waveform. It has gotten progressively more powerful, as the (?:pn)  expansions have gotten better. More recently (?:pm) results have also been included @Damour:2016gwp. Additionally, (?:eob) can be combined with (?:nr) to produce a very accurate waveform, with less computational overhead than (?:nr)  alone. 
+
+::: {.column-margin}
+![First full (?:eob) waveform, from @Buonanno:2000ef](firsteob.png){#fig-firsteob}
+:::
 
 As its name suggests, the (?:eob)  framework combines all the (?:pn), (?:pm) and (?:nr) data into a Hamiltonian describing the motion of a single body. It is inspired by solutions of two-body problems in Newtonian gravity which make use of barycentric coordinates to turn it into a one body problem. Further inspiration came from the two body problem in (?:qed)  [see @Brezin:1970zr] .
 
