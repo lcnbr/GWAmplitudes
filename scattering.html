@@ -372,14 +372,14 @@ E_{i}=\sqrt{\mathbf{{p}}_{}^2+m_{i}^2}=\sqrt{\mathbf{{p'}}_{}^2+m_{i}^2},
                   &amp; \int \,\tilde{\mathrm{d}}^{D-1}\mathbf{{\ell}}_{}\,\frac{32E_{}\xi c_1^2}{\mathbf{{\ell}}_{}^2(\mathbf{{q}}_{}+\mathbf{{\ell}}_{})^2(\mathbf{{\ell}}_{}^2+2\mathbf{{p}}_{}\mathbf{{\ell}}_{})}\Big),
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(\xi=\frac{E_{1}E_{2}}{(E_{1}+E_{2} )^2}\)</span> is the reduced energy ratio. The arguments of the coefficient functions <span class="math inline">\(c_1\)</span> are kept implicit and a prime denotes a derivative with respect to <span class="math inline">\(\mathbf{{p_{}}}_{}\)</span>. Additionally, we defined <span class="math inline">\(\mathbf{{q}}_{}=\mathbf{{p'}}_{}-\mathbf{{p}}_{}\)</span> to be the 3-momentum transfer.</p>
+<p>where <span class="math inline">\(\xi=\frac{E_{1}E_{2}}{(E_{1}+E_{2} )^2}\)</span> is the reduced energy ratio. The arguments of the coefficient functions <span class="math inline">\(c_1\)</span> are kept implicit and a prime denotes a derivative with respect to <span class="math inline">\(\mathbf{{p_{}}}_{}\)</span>.</p>
 <p>The key point is that the matching procedure requires the EFT amplitude for two-to-two scattering to be equal to the full amplitude at every order in the coupling constant <span class="math inline">\(\kappa\)</span>, i.e.&nbsp;provided we obtain the amplitude of the full theory, and carefully apply the same limiting procedures, we impose that</p>
 <p><span class="math display">\[
 \mathcal{A}^{(i)}_\text{EFT}=\mathcal{A}^{(i)}_\text{full} \quad \forall i.
 \]</span></p>
 <p>which fixes the coefficients in the potential ansatz <a href="#eq-ansatzpot">eq.&nbsp;<span>5.2</span></a>, and fulfills the promised map from amplitude to potential. Importantly, we must apply the limiting procedure applied above, i.e., the classical and non-relativistic limit, which is summarized by the following hierarchy of scales:</p>
 <p><span class="math display">\[
-m_{1},m_{2}\ll J \vert\mathbf{{q}}_{} \vert \ll \vert\mathbf{{q}}_{} \vert.
+m_{1},m_{2}\gg J \vert\mathbf{{q}}_{} \vert \gg \vert\mathbf{{q}}_{} \vert.
 \]</span></p>
 <p>In the full theory this hierarchy is equivalent to restricting to a specific kinematic regime, following the method of regions. We consider all the possible loop-momentum scalings, first due to the classical limit:</p>
 <table class="table">
@@ -764,8 +764,8 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 =\hbar^2\int\mathllap{\sum}&amp;\,\mathrm{d}\Phi_{\vert X \vert}({r}_X)\,\Big[\prod\limits_{i=1,2}\hbar^3\,\tilde{\mathrm{d}}^{4}\bar{w}_i\,\tilde{\delta}^{}(2p_{i} \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta^{{}}(p_{i}^0+\hbar \bar{w}_i^0) \Big] \\
 &amp;\times   \hbar \bar{w}_1^\mu\,\hbar^{-4}\tilde{\delta}^{(4)}(\bar{w}_1+\bar{w}_2+\bar{r}_{X})
 \\
-&amp;\times\sum\limits_{L=0}^\infty\Big(\frac{\kappa^{2}}{\hbar} \Big)^{(2L+2+\vert X \vert)}\mathcal{\bar{A}}^{(L)}(p_{1}, p_{2} \to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}) \\
-&amp;\times\mathcal{{\bar{A}{}^\ast}}^{(L)}(p_{1}+\hbar \bar{q}_{},p_{2}-\hbar \bar{q}_{}\to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X})
+&amp;\times \sum\limits_{L=0}^\infty \sum\limits_{L'=0}^\infty\Big(\frac{\kappa^{2}}{\hbar} \Big)^{(L+L'+2+\vert X \vert)}\mathcal{\bar{A}}^{(L)}(p_{1}, p_{2} \to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}) \\
+&amp;\times\mathcal{{\bar{A}{}^\ast}}^{(L')}(p_{1}+\hbar \bar{q}_{},p_{2}-\hbar \bar{q}_{}\to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X})
 \end{aligned}
 \]</span></p>
 <p><span id="eq-impulseIr"><span class="math display">\[
@@ -773,26 +773,26 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 =\int\mathllap{\sum}&amp;\,\mathrm{d}\Phi_{\vert X \vert}({r}_X)\,\Big[\prod\limits_{i=1,2}\,\tilde{\mathrm{d}}^{4}\bar{w}_i\,\tilde{\delta}^{}(2p_{i} \cdot \bar{w}_i+\hbar\bar{w}_i^2)\Theta^{{}}(p_{i}^0+\hbar \bar{w}_i^0) \Big] \\
 &amp;\times    \hbar\bar{w}_1^\mu\,\tilde{\delta}^{(4)}(\bar{w}_1+\bar{w}_2+\bar{r}_{X})
 \\
-&amp;\times\sum\limits_{L=0}^\infty \kappa^{2(2L+2+\vert X \vert)}{\hbar}^{2-2L-\vert X \vert}\mathcal{\bar{A}}^{(L)}(p_{1}, p_{2} \to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}) \\
-&amp;\times\mathcal{{\bar{A}{}^\ast}}^{(L)}(p_{1}+\hbar \bar{q}_{},p_{2}-\hbar \bar{q}_{}\to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}).\\
+&amp;\times\sum\limits_{L=0}^\infty \sum\limits_{L'=0}^\infty \kappa^{2(L+L'+2+\vert X \vert)}{\hbar}^{2-L-L'-\vert X \vert}\mathcal{\bar{A}}^{(L)}(p_{1}, p_{2} \to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}) \\
+&amp;\times\mathcal{{\bar{A}{}^\ast}}^{(L')}(p_{1}+\hbar \bar{q}_{},p_{2}-\hbar \bar{q}_{}\to p_{1}+\hbar\bar{w}_{1}, p_{2}+\hbar\bar{w}_2, r_{X}).\\
 \end{aligned}
 \tag{5.16}\]</span></span></p>
 <p>Schematically we have</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})&amp;=\sum\limits_{L=0}^\infty \mathcal{O}(\kappa^{{2(L+1)}}),\\
-\overline{\mathcal{{I}}_{\text{r}}'}(p_{1}{}^{\mu})&amp;=\sum\limits_{L=0}^\infty \mathcal{O}(\kappa^{{4(L+1)+2\vert X \vert}})
+\overline{\mathcal{{I}}_{\text{r}}'}(p_{1}{}^{\mu})&amp;=\sum\limits_{L=0}^\infty \sum\limits_{L'=0}^\infty \mathcal{O}(\kappa^{{2(L+L'+2)+2\vert X \vert}})
 \end{aligned}
 \]</span></p>
 <p>The contributions from the virtual kernel are lower order in the coupling <span class="math inline">\(\kappa\)</span> for a given loop order. Both kernels contribute together provided that the following equation is verified:</p>
-<p><span id="eq-rvloopmatch"><span class="math display">\[L-1=2L'+\vert X \vert. \tag{5.17}\]</span></span></p>
-<p>where <span class="math inline">\(L\)</span> is the loop count for the virtual kernel and <span class="math inline">\(L'\)</span>, <span class="math inline">\(\vert X \vert\)</span> are the real kernel loop count and messenger particle count respectively. Note that for a tree level virtual kernel, the real-kernel match does not exist. The real kernel is only present for <span class="math inline">\(L&gt;0\)</span>. When taking the classical limit we will only retain contributions from graphs that cancel the <span class="math inline">\(\hbar\)</span> divergences in each corresponding kernel. Thus, at the <span class="math inline">\(L\)</span>-loop level, the amplitude in the virtual kernel must cancel with terms of order</p>
+<p><span id="eq-rvloopmatch"><span class="math display">\[L-1=\tilde{L}+\tilde{L}'+\vert X \vert. \tag{5.17}\]</span></span></p>
+<p>where <span class="math inline">\(L\)</span> is the loop count for the virtual kernel, and <span class="math inline">\(\tilde{L}\)</span>,<span class="math inline">\(\tilde{L}'\)</span> and <span class="math inline">\(\vert X \vert\)</span> are the real kernel loop count and messenger particle count respectively. Note that for a tree level virtual kernel, the real-kernel match does not exist. The real kernel is only present for <span class="math inline">\(L&gt;0\)</span>. When taking the classical limit we will only retain contributions from graphs that cancel the <span class="math inline">\(\hbar\)</span> divergences in each corresponding kernel. Thus, at the <span class="math inline">\(L\)</span>-loop level, the amplitude in the virtual kernel must cancel with terms of order</p>
 <p><span id="eq-hbarvirt"><span class="math display">\[
 \hbar^{1-L+O},
 \tag{5.18}\]</span></span></p>
 <p>where the <span class="math inline">\(O\)</span> term is the order of <span class="math inline">\(\hbar\)</span> that is present as a result of the observable. In the case of particle 1’s momentum, <span class="math inline">\(O=1\)</span>. Similarly, the amplitudes in the real kernel must cancel with:</p>
 <p><span id="eq-hbarreal"><span class="math display">\[
-\hbar^{2-2L'-\vert X \vert+O}.
+\hbar^{2-\tilde{L}+\tilde{L}'-\vert X \vert+O}.
 \tag{5.19}\]</span></span></p>
 <div class="page-columns page-full"><p>Now we see that the <abbr title="Leading Order">LO</abbr> contribution <a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a>to the impulse, which we denote <span class="math inline">\(\Delta p_{1}^{\mu,(0)}\)</span> can only be from the virtual kernel at tree level. Thus, we have the following equation,</p><div class="no-row-height column-margin column-container"><li id="fn27"><p><sup>27</sup>&nbsp;Here the expansion is in powers of the coupling constant, so even though we want <span class="math inline">\(\hbar\)</span>s to cancel, the loop order will still affect the order of the contribution through the coupling constant <span class="math inline">\(\kappa\)</span> and the <abbr title="Leading Order">LO</abbr> corresponds to <span class="math inline">\(\kappa\)</span></p></li></div></div>
 <p><span id="eq-impulseLO"><span class="math display">\[
@@ -804,7 +804,7 @@ d(m,\xi,u,q_{})\propto\tilde{\delta}^{}( \bar{q}_{}\cdot u).
 \]</span></p>
 <p>At Next-to-Leading Order (<abbr title="Next-to-Leading Order">NLO</abbr>) i.e.&nbsp;<span class="math inline">\(\kappa^4\)</span> order, both integrands contribute, as <a href="#eq-rvloopmatch">eq.&nbsp;<span>5.17</span></a> can be satisfied for <span class="math inline">\(L=1\)</span>, <span class="math inline">\(L'=0\)</span> and <span class="math inline">\(\vert X \vert=2\)</span>. Thus we have the following equation:</p>
 <p><span id="eq-impulseNLO"><span class="math display">\[
-\Delta p_{1}^{\mu,(1)}=\Bigg\langle\hspace{-0.6em}\Bigg\langle \int \,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,\exp\big({-\mathring{\imath}\bar{q}_{}^\mu b_\mu}\big) \Big(\overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})^{(L=1)}+\overline{\mathcal{{I}}_{\text{r}}'}(p_{1}{}^{\mu})^{(L'=0)} \Big)\Bigg\rangle\hspace{-0.6em}\Bigg\rangle.
+\Delta p_{1}^{\mu,(1)}=\Bigg\langle\hspace{-0.6em}\Bigg\langle \int \,\mathrm{d}\overline{\Psi}_{}(\bar{q}_{})\,\exp\big({-\mathring{\imath}\bar{q}_{}^\mu b_\mu}\big) \Big(\overline{\mathcal{I}_{\text{v}}'}(p_{1}{}^{\mu})^{(L=1)}+\overline{\mathcal{{I}}_{\text{r}}'}(p_{1}{}^{\mu})^{(L=0,L'=0)} \Big)\Bigg\rangle\hspace{-0.6em}\Bigg\rangle.
 \tag{5.21}\]</span></span></p>
 <p>The virtual integrand is now given by the 1-loop level amplitude, and the real integrand is given by the square of a the tree level amplitude. This process can go on indefinitely, and is independent of the type of observable and the theory. Here we considered the change of momentum a particle, which for a black hole very far away would be very difficult to measure. However, we can also consider an observable such as the four-momentum of the radiated particles, or more precisely its expectation value. Of course, the operator corresponding to this observable gives zero when acting on the initial momentum states, and only gives a non-zero result when acting on the messenger states. Thus, for this observable only the real integrand, starting with <span class="math inline">\(\vert X \vert=1\)</span> will contribute, the <abbr title="Leading Order">LO</abbr> contribution being given by what is essentially the unitarity cut of a two loop amplitude. We see that regardless of observable, the objects that are needed are the amplitudes.</p>
 <p>For each loop level, many diagrams can contribute, but the classical limit enforces that they must cancel the <span class="math inline">\(\hbar\)</span> orders given by <a href="#eq-hbarreal">eq.&nbsp;<span>5.19</span></a> and <a href="#eq-hbarvirt">eq.&nbsp;<span>5.18</span></a>. The cancellation order is dependent on the considered observable and filters the contributing diagrams. It can also be reformulated in the language of the method of regions.</p>
