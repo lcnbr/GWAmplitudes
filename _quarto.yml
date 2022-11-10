@@ -214,7 +214,7 @@ acronyms:
   
 
     
-csl: physical-review-letters.csl
+csl: american-physics-society.csl
 
 pdf-engine: lualatex
 
